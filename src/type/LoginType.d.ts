@@ -7,3 +7,21 @@ type LoginType = {
 	password?: string;
     confirm_password?: string;
 };
+
+
+
+type LoginNew = {
+	email?: string;
+	password?: string;
+}
+
+
+type User = {
+	data: {
+	  authorization: {
+		access_token: string;
+	  };
+	};
+  }
+
+ 
