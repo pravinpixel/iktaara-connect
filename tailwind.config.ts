@@ -46,6 +46,54 @@ const config: Config = {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
+				ik_pink_button:{
+					DEFAULT: 'var(--ik_pink_button)',
+					foreground: 'var(--ik_pink-foreground-button)'
+				},
+				ik_green:{
+					DEFAULT: 'var(--ik_green)',
+					foreground: 'var(--ik_green-foreground)'
+				},
+				ik_blue:{
+					DEFAULT: 'var(--ik_blue)',
+					foreground: 'var(--ik_blue-foreground)'
+				},
+				ik_multicolor:{
+					DEFAULT: 'var(--ik_multicolor)',
+					foreground: 'var(--ik_multicolor-foreground)'
+				},
+				ik_white:{
+					DEFAULT: 'var(--ik_white)',
+					foreground: 'var(--ik_white-foreground)'
+				},
+				ik_whitevariant:{
+					DEFAULT: 'var(--ik_whitevariant)',
+					foreground: 'var(--ik_whitevariant-foreground)'
+				},
+				ik_bluegreydarken4:{
+					DEFAULT: 'var(--ik_bluegreydarken4)',	
+				},
+				ik_bluegreydarken3:{
+					DEFAULT: 'var(--ik_bluegreydarken3)',	
+				},
+				ik_bluegreydarken2:{
+					DEFAULT: 'var(--ik_bluegreydarken2)',	
+				},
+				ik_bluegreydarken1:{
+					DEFAULT: 'var(--ik_bluegreydarken1)',	
+				},
+				ik_bluegreylighten1:{
+					DEFAULT: 'var( --ik_bluegreylighten1)',	
+				},
+				ik_bluegreylighten2:{
+					DEFAULT: 'var( --ik_bluegreylighten2)',	
+				},
+				ik_bluegreylighten4:{
+					DEFAULT: 'var( --ik_bluegreylighten4)',	
+				},
+				ik_bluegreylighten5:{
+					DEFAULT: 'var(--ik_bluegreylighten5)',	
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -55,7 +103,8 @@ const config: Config = {
 					'3': 'hsl(var(--chart-3))',
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
-				}
+				},
+
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -73,7 +122,19 @@ const config: Config = {
 				f16: ['var(--f16)', {
 					lineHeight: "20.16px"
 				}],
-
+				f18: ['var(--f18)', {
+					lineHeight: "38px",
+					
+				}],
+				f22: ['var(--f22)', {
+					lineHeight: "38px",
+				
+				}],
+				f28: ['var(--f28)', {
+					lineHeight: "38px",
+					
+				}],
+				
 			}
 		}
 	},
