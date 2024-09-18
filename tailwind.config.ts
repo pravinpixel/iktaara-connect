@@ -23,12 +23,16 @@ const config: Config = {
 					foreground: 'hsl(var(--popover-foreground))'
 				},
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: 'var(--ik_pink)',
+					foreground: 'var(--ik_pink-foreground)'
+				},
+				ik_pink:{
+					DEFAULT: 'var(--ik_pink)',
+					foreground: 'var(--ik_pink-foreground)'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: 'var(--ik_pink_button)',
+					foreground: 'var(--ik_pink-foreground-button)'
 				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
@@ -64,6 +68,7 @@ const config: Config = {
 			fontSize: {
 				f14: ['var(--f14)', {
 					lineHeight: "20.16px"
+					
 				}],
 				f16: ['var(--f16)', {
 					lineHeight: "20.16px"

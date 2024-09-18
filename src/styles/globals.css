@@ -35,6 +35,14 @@
     --f14 : 14px;
     --f16 : 16px;
   /* font */
+
+  /* color */
+  --ik_pink: hsla(348, 75%, 57%, 1);
+  --ik_pink-foreground: hsla(0, 0%, 100%, 1);
+  --ik_pink_button: hsla(0, 0%, 100%, 1);
+  --ik_pink-foreground-button: hsla(348, 75%, 57%, 1);
+  ;
+  /* color */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
