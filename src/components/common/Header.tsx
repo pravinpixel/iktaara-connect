@@ -1,7 +1,7 @@
 import { NAV } from '@/utils/helpers/constant-helper'
 import React from 'react'
-import SearchBar from './SearchBar'
 import { Button } from '../ui/button'
+import { SearchBar } from './SearchBar'
 
 
 

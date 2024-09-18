@@ -1,62 +1,59 @@
-"use client"
+import { AutoComplete, type Option } from "./AutoComplete"
+import { useState } from "react"
 
-import * as React from "react"
-import { Check, ChevronsUpDown } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import {
-    Command,
-    CommandEmpty,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList,
-} from "@/components/ui/command"
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover"
-import { Input } from "../ui/input"
-
-const frameworks = [
-    {
-        value: "next.js",
-        label: "Next.js",
-    },
-    {
-        value: "sveltekit",
-        label: "SvelteKit",
-    },
-    {
-        value: "nuxt.js",
-        label: "Nuxt.js",
-    },
-    {
-        value: "remix",
-        label: "Remix",
-    },
-    {
-        value: "astro",
-        label: "Astro",
-    },
+const FRAMEWORKS = [
+  {
+    value: "next.js",
+    label: "Next.js",
+  },
+  {
+    value: "sveltekit",
+    label: "SvelteKit",
+  },
+  {
+    value: "nuxt.js",
+    label: "Nuxt.js",
+  },
+  {
+    value: "remix",
+    label: "Remix",
+  },
+  {
+    value: "astro",
+    label: "Astro",
+  },
+  {
+    value: "wordpress",
+    label: "WordPress",
+  },
+  {
+    value: "express.js",
+    label: "Express.js",
+  },
+  {
+    value: "nest.js",
+    label: "Nest.js",
+  },
 ]
 
-export default function SearchBar() {
-    const [open, setOpen] = React.useState(false)
+export function SearchBar() {
+  const [isLoading, ] = useState(false)
+  const [isDisabled] = useState(false)
+  const [value, setValue] = useState<Option>()
 
-    return (
-        <div className="relative">
+  return (
+    <div className="not-prose flex flex-col gap-4">
 
-            <Input onFocus={() => {
-                setOpen(true)
-            }} onBlur={() => {
-                setOpen(false)
-            }} />
-            <div className={`absolute ${open ? 'flex' : "hidden"} left-0 right-0 shadow-2xl bg-red-300 rounded`}>
-                <p className='p-2 text-f16' role="button">Demo</p>
-            </div>
-        </div>
-    )
+      <AutoComplete
+        options={FRAMEWORKS}
+        emptyMessage="No resulsts."
+        placeholder="Find something"
+        isLoading={isLoading}
+        onValueChange={setValue}
+        value={value}
+        disabled={isDisabled}
+      />
+    
+    </div>
+  )
 }
