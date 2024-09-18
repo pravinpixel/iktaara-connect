@@ -4,6 +4,32 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import type { NextAuthOptions } from "next-auth";
 import axios from "axios";
 
+interface CustomUser {
+  id: string;
+  first_name: string;
+  last_name: string;
+  email: string;
+  mobile_no: string;
+  customer_no: string;
+  authorization: {
+    access_token: string;
+    token_type: string;
+    expires_in: number;
+  };
+}
+
+declare module "next-auth" {
+  interface Session {
+    user: CustomUser;
+  }
+
+  interface User extends CustomUser {}
+
+  interface JWT {
+    user: CustomUser;
+  }
+}
+
 export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/login",
@@ -27,36 +53,41 @@ export const authOptions: NextAuthOptions = {
             credentials
           );
           const resultData = result.data.data;
-          const customerData = resultData.customer_data;
+          const customerData: CustomUser = resultData.customer_data;
           customerData.authorization = resultData.authorization;
-          console.log(customerData, "customerData");
           return customerData;
         } catch (error) {
-          console.error(error, "kkkk");
+          console.error(error, "errornext_auth");
           throw new Error(JSON.stringify(error));
         }
       },
     }),
-    // CredentialsProvider({
-    //   name: "OTP Login",
-    //   id: "otp-login",
-    //   credentials: {
-    //     phone: {
-    //       label: "Mobile No",
-    //       type: "text",
-    //     },
-    //     otp: { label: "OTP", type: "text" },
-    //   },
-    //   async authorize(credentials) {
-    //     try {
-    //       const result = await api.login(credentials);
-    //       return result.data.customer_data;
-    //     } catch (error) {
-    //       console.error(error);
-    //       return null;
-    //     }
-    //   },
-    // }),
+    CredentialsProvider({
+      name: "OTP Login",
+      id: "otp-login",
+      credentials: {
+        phone: {
+          label: "Mobile No",
+          type: "text",
+        },
+        otp: { label: "OTP", type: "text" },
+      },
+      async authorize(credentials) {
+        try {
+          const result = await axios.post(
+            "https://staging-admin.iktaraa.com/api/login",
+            credentials
+          );
+          const resultData = result.data.data;
+          const customerData = resultData.customer_data;
+          customerData.authorization = resultData.authorization;
+          return customerData;
+        } catch (error) {
+          console.error(error, "errornext_auth");
+          throw new Error(JSON.stringify(error));
+        }
+      },
+    }),
     GoogleProvider({
       clientId: process.env.GOOGLE_LOGIN_ID || "",
       clientSecret: process.env.GOOGLE_LOGIN_SECRET || "",
@@ -67,29 +98,36 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt",
   },
   callbacks: {
-    async signIn(user: any) {
-      if (user) return user;
-
+    async signIn(user) {
+      if (user) return true;
       return false;
     },
     async jwt({ token, user }) {
-      console.log(user, "user");
-
+      console.log(user, "user_new");
       if (user) {
-        console.log(user, "user_token");
-        console.log(token, "token");
-        return {
-          ...token,
-          auth: user,
-        };
+        token.user = user as CustomUser;
       }
+      console.log(token, "token");
       return token;
     },
     async session({ session, token }) {
-      session.user = token;
+      if (token.user) {
+        const customUser = token.user as CustomUser;
+        session.user = {
+          id: customUser.id,
+          first_name: customUser.first_name,
+          last_name: customUser.last_name,
+          email: customUser.email,
+          mobile_no: customUser.mobile_no,
+          customer_no: customUser.customer_no,
+          authorization: customUser.authorization,
+        };
+      }
+
       console.log(session, "session");
       return session;
     },
   },
 };
+
 export default NextAuth(authOptions);

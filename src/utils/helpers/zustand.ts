@@ -1,13 +1,15 @@
 import { create } from "zustand";
 
-
-
-const zustandStore = create<UserStoreType>()((set) => ({
-  token: null,
-  setToken: (newToken) => set({ token: newToken  }),
+type StoreState = {
+  token: string | null;
+  setToken: (token: string | null) => void;
  
-}))
+};
 
-
+const zustandStore = create<StoreState>((set) => ({
+  token: null,
+  setToken: (token: string | null) => set({ token }),  
+  
+}));
 
 export default zustandStore;

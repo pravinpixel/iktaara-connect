@@ -2,7 +2,7 @@ import axios from "axios";
 import { BASE_URL } from "./constant-helper";
 import zustandStore from "./zustand";
 import { getSession } from "next-auth/react";
-import { signIn } from "next-auth/react";
+// import { signIn } from "next-auth/react";
 
 const SECONDS = 30;
 const MILISECONDS = 1000;
@@ -17,7 +17,8 @@ const API = axios.create({
 
 
 const refreshToken = async () => {
-    // const session = await getSession();
+    const session = await getSession();
+    console.log("session", session);
   
     // if (session?.auth?.refresh_token) {
     //   try {
@@ -34,12 +35,11 @@ const refreshToken = async () => {
   };
 
 API.interceptors.request.use(async function (config) {
+  const session = await getSession()
     const token = zustandStore.getState().token;
-    const session = await getSession() as any;
-  
     // Client Side
-    if (session?.auth) {
-      config.headers["Authorization"] = `Bearer ${session?.auth?.token}`;
+    if (session?.user?.authorization?.access_token) {
+      config.headers["Authorization"] = `Bearer ${session?.user?.authorization?.access_token}`;
     } else if (token) {
       //Server Side
       config.headers["Authorization"] = `Bearer ${token}`;
