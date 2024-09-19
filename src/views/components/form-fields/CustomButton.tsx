@@ -1,5 +1,18 @@
-const CustomButton = () => {
-  return <div>CustomButton</div>;
-};
+import React from "react";
+import { Button, ButtonProps } from "@mui/material";
+
+interface CustomButtonType extends ButtonProps {
+  label?: string;
+}
+
+function CustomButton(props: CustomButtonType) {
+  const { label, variant = "contained", ...rest } = props;
+
+  return (
+    <Button variant={variant} {...rest}>
+      {label || "Login"}
+    </Button>
+  );
+}
 
 export default CustomButton;
