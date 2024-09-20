@@ -50,6 +50,7 @@ export function overrides(theme) {
         "*": {
           boxSizing: "border-box",
           textTransform: "unset !important",
+          // fontFamily: "Sora, sans-serif", // Set font family globally
         },
         html: {
           margin: 0,
@@ -59,6 +60,7 @@ export function overrides(theme) {
         body: {
           margin: 0,
           padding: 0,
+          // fontFamily:"Sora, sans-serif", // Set font family globally
         },
 
         img: {
@@ -108,7 +110,7 @@ export function overrides(theme) {
     MuiLoadingButton: {
       defaultProps: {
         variant: "contained",
-      },
+      }, 
     },
 
     MuiGrid: {
@@ -232,7 +234,7 @@ export function overrides(theme) {
           overflow: "hidden",
           textOverflow: "ellipsis",
           color: theme.palette.customColor.dark,
-          // fontFamily: "Sora",
+          fontFamily: "Sora, sans-serif",
           fontWeight: theme.typography.fontWeightRegular,
           fontSize: theme.typography.fontSizeList.f16,
         },
@@ -417,7 +419,7 @@ export function overrides(theme) {
       },
       styleOverrides: {
         root: {
-          // fontFamily: '"Sora", sans-serif',
+          fontFamily: "Sora",
           color: grey[1000],
           cursor: "pointer",
           fontSize: "18px",
@@ -477,7 +479,7 @@ export function overrides(theme) {
       styleOverrides: {
         root: {
           width: "100%",
-          // fontFamily: '"Sora", sans-serif',
+          fontFamily: "Sora",
           fontSize: "0.875rem",
         },
       },
@@ -507,32 +509,104 @@ export function overrides(theme) {
         root: {
           border: "none",
           borderRadius: "16px",
-          padding: "16px",
+          padding: "0px!important",
           backgroundColor: "#f5f5f5",
           height: "260px",
           width: "360px",
         },
       },
+      // variants: [
+      //   {
+      //     props: { variant: "small" },
+      //     style: {
+      //       height: "200px",
+      //       width: "300px",
+      //     },
+      //   },
+      //   {
+      //     props: { variant: "medium" },
+      //     style: {
+      //       height: "260px",
+      //       width: "360px",
+      //     },
+      //   },
+      //   {
+      //     props: { variant: "large" },
+      //     style: {
+      //       height: "420px",
+      //       width: "488px",
+      //     },
+      //   },
+      // ],
       variants: [
         {
-          props: { variant: "small" },
+          props: { variant: "top-right" },
           style: {
-            height: "200px",
-            width: "300px",
-          },
-        },
-        {
-          props: { variant: "medium" },
-          style: {
+            position: "relative",
             height: "260px",
             width: "360px",
+            borderRadius: "16px",
+            backgroundColor: "#f5f5f5",
+            "& .MuiTypography-root": {
+              position: "absolute",
+              top: "0%",
+              left: "20%",
+              transform: "translate(-50%, 0)",
+              color: "white",
+              // backgroundColor: "rgba(0, 0, 0, 0.5)",
+              padding: "10px",
+              borderRadius: "4px",
+              textAlign: "center",
+            },
           },
         },
         {
-          props: { variant: "large" },
+          props: { variant: "bottom-right" },
           style: {
-            height: "420px",
-            width: "488px",
+            position: "relative",
+            height: "260px",
+            width: "360px",
+            borderRadius: "16px",
+            backgroundColor: "#f5f5f5",
+            "& .MuiTypography-root": {
+              position: "absolute",
+              bottom: "-7%",
+              right: "-13%",
+              transform: "translate(-50%, -50%)",
+              color: "white",
+              // backgroundColor: "rgba(0, 0, 0, 0.5)",
+              padding: "10px",
+              borderRadius: "4px",
+              textAlign: "center",
+            },
+            "& img": {
+          position: "absolute",
+         
+          width: "50px",
+          height: "50px",
+          objectFit: "cover",
+          borderRadius: "50%",
+        },
+          },
+        },
+        {
+          props: { variant: "bottom-left" },
+          style: {
+            position: "relative",
+            height: "260px",
+            width: "360px",
+            borderRadius: "16px",
+            backgroundColor: "#f5f5f5",
+            "& .MuiTypography-root": {
+              position: "absolute",
+              bottom: "0%",
+              left:"4%",
+              color: "white",
+              // backgroundColor: "rgba(0, 0, 0, 0.5)",
+              padding: "10px",
+              borderRadius: "4px",
+              textAlign: "left",
+            },
           },
         },
       ],

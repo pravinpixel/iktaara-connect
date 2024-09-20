@@ -40,4 +40,5 @@ next-env.d.ts
 package-lock.json
 
 #files
-*.sample.*
+*sample.*
+src/pages/sample/index.tsx

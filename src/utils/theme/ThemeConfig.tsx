@@ -37,7 +37,7 @@ export default function ThemeProvider({ children }) {
     [theme]
   );
   const overRideTheme = createTheme(memoizedValue);
-  // console.log(overRideTheme, "nnnnn"); // Check the theme object
+
   overRideTheme.components = overrides(overRideTheme);
 
   return <MUIThemeProvider theme={overRideTheme}>{children}</MUIThemeProvider>;

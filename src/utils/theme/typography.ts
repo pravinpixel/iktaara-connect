@@ -17,8 +17,8 @@ export function responsiveFontSizes({ xs, sm, md, lg }) {
   };
 }
 
-// export const fontFamily = "Sora, sans-serif";
-// export const secondaryFont = "Sora, sans-serif";
+export const fontFamily = "Sora" ;
+export const secondaryFont = "Sora";
 
 export const fontWeightRegular = 400;
 export const fontWeightMedium = 500;
@@ -56,8 +56,8 @@ function createCustomFontSize() {
 }
 
 export const typography = {
-  // fontFamily,
-  // secondaryFont,
+  fontFamily,
+  secondaryFont,
   fontWeightRegular,
   fontWeightMedium,
   fontWeightSemiBold,
