@@ -1,14 +1,7 @@
 import {
-  ButtonProps,
-  Components,
-  formControlLabelClasses,
   formHelperTextClasses,
-  formLabelClasses,
-  SxProps,
   Theme,
 } from "@mui/material";
-import { fontFamily } from "./typography";
-import { bordercolor } from "./palette";
 
 // ----------------------------------------------------------------------
 
@@ -17,40 +10,22 @@ export const ConfigConst = {
   TableInput: 1.7125 - 16 / 16,
 };
 
-// -----------------------------------------------------------------------
-
-// interface ComponentsOverride extends Components<Omit<Theme, "components">> {
-// 	MuiLoadingButton: {
-// 		defaultProps: Partial<ButtonProps>;
-// 		styleOverrides?: SxProps;
-// 	};
-// }
-const componentsOverride = {
-  MuiLoadingButton: {
-    defaultProps: {
-      // Define any default props for the MuiLoadingButton component here
-    },
-    styleOverrides: {
-      // Define style overrides using the SxProps structure here
-    },
-  },
-};
-
 const grey = {
   1000: "rgba(55, 71, 79, 1)",
+  500: "rgba(55, 71, 79, 1)",
   1100: "rgba(227, 64, 97, 1)",
   1200: "rgba(255, 239, 242, 1)",
   1300: "rgba(242, 246, 248, 1)",
 };
 
-export function overrides(theme) {
+export function overrides(theme: Theme) {
   return {
     MuiCssBaseline: {
       styleOverrides: {
         "*": {
           boxSizing: "border-box",
           textTransform: "unset !important",
-          // fontFamily: "Sora, sans-serif", // Set font family globally
+          fontFamily: "Sora, sans-serif", // Set font family globally
         },
         html: {
           margin: 0,
@@ -60,7 +35,7 @@ export function overrides(theme) {
         body: {
           margin: 0,
           padding: 0,
-          // fontFamily:"Sora, sans-serif", // Set font family globally
+          fontFamily: "Sora, sans-serif", // Set font family globally
         },
 
         img: {
@@ -101,7 +76,7 @@ export function overrides(theme) {
               color: theme.palette.primarybutton.background,
               backgroundColor: theme.palette.primarybutton.textcolor,
               border: `1px solid ${theme.palette.primarybutton.background}`
-              
+
             },
           },
         },
@@ -110,7 +85,7 @@ export function overrides(theme) {
     MuiLoadingButton: {
       defaultProps: {
         variant: "contained",
-      }, 
+      },
     },
 
     MuiGrid: {
@@ -300,7 +275,7 @@ export function overrides(theme) {
           "&.MuiOutlinedInput": {
             borderRadius: "6px",
           },
-          
+
         },
       },
       variants: [
@@ -362,7 +337,7 @@ export function overrides(theme) {
     //     },
     //   ],
     // },
-  
+
     MuiModal: {
       styleOverrides: {
         root: {
@@ -486,7 +461,7 @@ export function overrides(theme) {
     },
     MuiTabsList: {
       styleOverrides: {
-        root: ({ theme }) => ({
+        root: {
           minWidth: "80px",
           backgroundColor: theme.palette.customColor.white,
           borderRadius: "12px",
@@ -498,10 +473,8 @@ export function overrides(theme) {
           alignItems: "center",
           justifyContent: "center",
           alignContent: "space-between",
-          boxShadow: `0px 4px 8px ${
-            theme.palette.mode === "dark" ? grey[1000] : grey[1100]
-          }`,
-        }),
+          boxShadow: `0px 4px 8px  ${grey[1000]}}`,
+        }
       },
     },
     MuiCard: {
@@ -580,13 +553,13 @@ export function overrides(theme) {
               textAlign: "center",
             },
             "& img": {
-          position: "absolute",
-         
-          width: "50px",
-          height: "50px",
-          objectFit: "cover",
-          borderRadius: "50%",
-        },
+              position: "absolute",
+
+              width: "50px",
+              height: "50px",
+              objectFit: "cover",
+              borderRadius: "50%",
+            },
           },
         },
         {
@@ -600,7 +573,7 @@ export function overrides(theme) {
             "& .MuiTypography-root": {
               position: "absolute",
               bottom: "0%",
-              left:"4%",
+              left: "4%",
               color: "white",
               // backgroundColor: "rgba(0, 0, 0, 0.5)",
               padding: "10px",

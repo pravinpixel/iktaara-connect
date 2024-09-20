@@ -1,26 +1,21 @@
 import { useMemo } from "react";
 import {
-  useTheme,
   createTheme,
   ThemeProvider as MUIThemeProvider,
+  ThemeOptions,
 } from "@mui/material/styles";
 
 import { palette } from "./palette";
-// import { shadows } from "./shadows";
 import { overrides } from "./overrides";
 import { typography } from "./typography";
-// import { customShadows } from "./custom-shadows";
 
 // ----------------------------------------------------------------------
 
-export default function ThemeProvider({ children }) {
-  const theme = useTheme();
+export default function ThemeProvider({ children } : {children : React.ReactNode}) {
   const memoizedValue = useMemo(
     () => ({
       palette: palette(),
       typography,
-      //   shadows: shadows(theme),
-      //   customShadows: customShadows(theme),
       shape: { borderRadius: 6 },
       transitions: {
         duration: {
@@ -34,11 +29,11 @@ export default function ThemeProvider({ children }) {
         },
       },
     }),
-    [theme]
+    []
   );
-  const overRideTheme = createTheme(memoizedValue);
+  const overRideTheme = createTheme(memoizedValue as unknown as ThemeOptions);
 
-  overRideTheme.components = overrides(overRideTheme);
+  overRideTheme.components  = overrides(overRideTheme) as never
 
   return <MUIThemeProvider theme={overRideTheme}>{children}</MUIThemeProvider>;
 }
