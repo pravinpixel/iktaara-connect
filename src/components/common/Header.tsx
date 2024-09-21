@@ -1,27 +1,85 @@
 import { NAV } from "@/utils/helpers/constant-helper";
 import React from "react";
 
-import { SearchBar } from "./SearchBar";
+// import { SearchBar } from "./SearchBar";
+import { Container } from "@mui/material";
+import Link from "next/link";
+import { AutoCompleteSearch } from "./AutoCompleteSearch";
+import CustomButton from "@/views/components/form-fields/CustomButton";
+import ImageComponent from "@/views/components/imageComponent";
 
 const Header = () => {
   return (
-    <div
-      className={`w-ful h-[${NAV.height}]  flex items-center shadow-md justify-between px-3 `}
-    >
-      <div className="flex items-center">
-        <div className="h-[81px] w-[158.13px] flex items-center">Logo</div>
-        <div>
-          <span className="text-f16">Chennai</span>
+    <div className="shadow-md">
+      <Container
+        maxWidth={"lg"}
+        sx={{ maxWidth: { xl: "83% !important", lg: "83%" } }}
+      >
+        <div
+          className={`w-ful h-[${NAV.height}]  flex items-center justify-between px-3 `}
+        >
+          <div className="flex items-center justify-between gap-5 w-100">
+            <div className="h-[71px] w-[110px] flex items-center">
+              <Link href="/">
+                <ImageComponent
+                  src={"assets/logo/logo.svg"}
+                  width={158}
+                  height={60}
+                  alt={"iktaraa"}
+                  priority={true}
+                />
+              </Link>
+            </div>
+            <div>
+              <button className="flex items-center gap-2">
+                <ImageComponent
+                  src={"assets/icons/location.svg"}
+                  width={12}
+                  height={15}
+                  alt={"location"}
+                  priority={true}
+                />
+                <span className="text-f12">Chennai</span>
+                <ImageComponent
+                  src={"assets/icons/arrowdown.svg"}
+                  width={13}
+                  height={6}
+                  alt={"arrowdown"}
+                  priority={true}
+                />
+              </button>
+            </div>
+            <div className="w-auto">
+              {/* <SearchBar /> */}
+              <AutoCompleteSearch />
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <button className="flex items-center gap-2 ">
+                <span className="text-f12 font-semibold">Services</span>
+                <ImageComponent
+                  src={"assets/icons/arrowdown.svg"}
+                  width={13}
+                  height={6}
+                  alt={"arrowdown"}
+                  priority={true}
+                />
+              </button>
+            </div>
+            <CustomButton
+              variant="primary-button"
+              label={"List Business/Talent"}
+              className="text-f12 font-semibold"
+            />
+            <CustomButton
+              variant="task"
+              label={"Login"}
+              className="text-f12 font-semibold text-ik_pink-foreground"
+            />
+          </div>
         </div>
-        <div>
-          <SearchBar />
-        </div>
-      </div>
-      <div>
-        <span className="pr-[28px]">Services</span>
-        <button className="mr-[10px]">List Business/Talent</button>
-        <button>Login</button>
-      </div>
+      </Container>
     </div>
   );
 };

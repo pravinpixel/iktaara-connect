@@ -115,6 +115,10 @@ const config: Config = {
 				sora: 'var(--sora)',
 			},
 			fontSize: {
+				f12: ['var(--f12)', {
+					lineHeight: "16px"
+					
+				}],
 				f14: ['var(--f14)', {
 					lineHeight: "20.16px"
 					
