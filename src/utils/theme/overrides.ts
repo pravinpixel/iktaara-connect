@@ -510,9 +510,9 @@ export function overrides(theme) {
           border: "none",
           borderRadius: "16px",
           padding: "0px!important",
-          backgroundColor: "#f5f5f5",
-          height: "260px",
-          width: "360px",
+          backgroundColor: "white",
+          // height: "260px",
+          // width: "360px",
         },
       },
       // variants: [
