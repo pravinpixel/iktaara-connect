@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -37,10 +38,21 @@ export default function CustomCard(props: CustomCardProps) {
         />
 
         <Box>
+          <Box
+            sx={{
+              position: "absolute",
+              width: "84px",
+              height: "84px",
+              borderRadius: "12px",
+              background: "red",
+              left: "5%",
+              bottom: "5%",
+            }}
+          ></Box>
           <img
             src={img1}
             alt="Overlay Image"
-            style={{ left: "5%", bottom: "5%" }}
+            style={{ left: "9%", bottom: "12%" }}
           />
 
           <Typography>{text}</Typography>

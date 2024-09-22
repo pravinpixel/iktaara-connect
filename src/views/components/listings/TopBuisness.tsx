@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 
-import { Box, Card, Grid, useTheme } from "@mui/material";
+import { Box, Card, Grid, Stack, useTheme } from "@mui/material";
 
 import AddressSection from "./Address";
 
@@ -27,7 +27,14 @@ const BusinessSection = () => {
                 color: theme.palette.customColor.white,
               }}
             >
-              Top Buisness
+              <Stack direction="row" spacing={1}>
+                <img
+                  src="images/static/image_4.png"
+                  alt="Business Image"
+                  style={{ width: "22px", height: "11px" }}
+                />
+                <p> Top Buisness</p>
+              </Stack>
             </Box>
           </Grid>
           <></>

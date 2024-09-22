@@ -554,12 +554,12 @@ export function overrides(theme: Theme) {
             },
             "& img": {
               position: "absolute",
-
               width: "50px",
               height: "50px",
               objectFit: "cover",
               borderRadius: "50%",
             },
+            
           },
         },
         {
