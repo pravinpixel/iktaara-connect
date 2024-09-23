@@ -3,6 +3,7 @@ import { Button, ButtonProps } from "@mui/material";
 
 interface CustomButtonType extends ButtonProps {
   label?: string;
+  variant?: string;
 }
 
 function CustomButton(props: CustomButtonType) {

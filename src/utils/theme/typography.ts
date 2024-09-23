@@ -1,6 +1,18 @@
 // import { pxToRem } from "../helpers/globalHelper";
+interface ResponsiveFontSizeProps {
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+}
 
-export function responsiveFontSizes({ xs, sm, md, lg }) {
+interface FontSizeConfig {
+  fontWeight: number;
+  lineHeight: number;
+  fontSize: number;
+ 
+}
+export function responsiveFontSizes({ xs, sm, md, lg }: ResponsiveFontSizeProps) {
   return {
     "@media (min-width:320px)": {
       fontSize: xs,
@@ -41,12 +53,12 @@ const fontSizeList = {
 };
 
 function createCustomFontSize() {
-  const returnObj = {};
+  const returnObj: { [key: string]: FontSizeConfig } = {}; 
 
   Object.entries(fontSizeList).forEach(([name, value]) => {
     returnObj[name] = {
       fontWeight: fontWeightRegular,
-      lineHeight: (value * 2) / value,
+      lineHeight: 1.5, // Assuming a line height of 1.5
       fontSize: value,
       ...responsiveFontSizes({ xs: value, sm: value, md: value, lg: value }),
     };

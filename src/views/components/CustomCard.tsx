@@ -7,7 +7,7 @@ import ImageComponent from "./imageComponent";
 import { CardMedia } from "@mui/material";
 
 interface CustomCardProps {
-  variant?: string;
+  variant?: "elevation" | "outlined";
   img: string;
   text: string;
   Contenttext?: string;

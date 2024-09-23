@@ -49,7 +49,7 @@ const StudioCard = () => {
             marginTop: "15px",
           }}
         >
-          <Box sx={{ px: 2, pt: 2, pb: 0 }}>
+          <Box sx={{ p: 2 }}>
             <Grid container>
               <>
                 {" "}
@@ -58,6 +58,7 @@ const StudioCard = () => {
                     variant="bottom-right"
                     img="/images/static/image_13.png"
                     img1="/images/static/image_12.png"
+                    type="true"
                   />
                 </Grid>
                 <Grid item xs={8}>
@@ -127,10 +128,11 @@ const StudioCard = () => {
                             spacing={1}
                             sx={{ display: "flex", alignItems: "center" }}
                           >
-                            <img
+                            <ImageComponent
                               src="/images/static/image_9.png"
                               alt="Business Image"
-                              style={{ width: "30px", height: "30px" }}
+                              width={30}
+                              height={30}
                             />
                             <p className="font-semibold text-f16 leading-5 text-ik_pink">
                               {business.inquiries} inquiries
@@ -141,11 +143,20 @@ const StudioCard = () => {
 
                       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
                         <Stack direction="column">
-                          <Stack direction="row" spacing={"20px"}>
-                            <img
+                          <Stack
+                            direction="row"
+                            spacing={"20px"}
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "flex-end",
+                            }}
+                          >
+                            <ImageComponent
                               src="/images/static/image_10.png"
-                              width="20px"
-                              height="16px"
+                              width={20}
+                              height={16}
+                              alt="static"
                             />
                             <p style={{ textAlign: "right" }}>
                               <span className="font-semibold text-f26 leading-8 text-ik_bluegreydarken3">
@@ -164,23 +175,27 @@ const StudioCard = () => {
                           >
                             100 Reviews
                           </p>
-                          <CustomImageButton
-                            image="images/static/image_7.png"
-                            width="27.57"
-                            height="27.57px"
-                            label="Enquiry"
-                          ></CustomImageButton>
+                          <Box mt={1}>
+                            <CustomImageButton
+                              image="/images/static/image_7.png"
+                              label="Enquiry"
+                            ></CustomImageButton>
+                          </Box>
                         </Stack>
                       </Box>
                     </Box>
                     <Box mt={4}>
                       <Stack direction="row" spacing={1}>
-                        <img
-                          src="/images/static/image_11.png"
-                          width="37.82px"
-                          height="36px"
-                        ></img>
-                        <p className="font-semibold text-f16 leading-8 text-ik_bluegreydarken3">
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                          <ImageComponent
+                            src="/images/static/image_11.png"
+                            width={37.82}
+                            height={36}
+                            alt="static"
+                          />
+                        </Box>
+
+                        <p className="font-semibold text-f16 leading-1 text-ik_bluegreydarken3">
                           Specialist in string instrument repairs. Pickup & Drop
                           service available across Chennai.
                         </p>
