@@ -7,7 +7,7 @@ import ImageComponent from "./imageComponent";
 import { CardMedia } from "@mui/material";
 
 interface CustomCardProps {
-  variant?: string;
+  variant?: "elevation" | "outlined";
   img: string;
   text: string;
   img1?: string;
@@ -16,7 +16,14 @@ interface CustomCardProps {
   type?: string;
 }
 export default function CustomCard(props: CustomCardProps) {
-  const { variant, img, text, img1, width = "100%", type = "false" } = props;
+  const {
+    variant = "elevation",
+    img,
+    text,
+    img1,
+    width = "100%",
+    type = "false",
+  } = props;
 
   return (
     <Card

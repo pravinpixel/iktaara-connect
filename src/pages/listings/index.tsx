@@ -4,14 +4,14 @@ const BusinessSection = dynamic(
   () => import("@/views/components/listings/TopBuisness")
 );
 
+import FilterSection from "@/views/components/listings/FilterSection";
 import Pagination from "@/views/components/listings/pagination";
 import StudioCard from "@/views/components/listings/StudioCard";
 // import { ThemeContext } from "@emotion/react";s
-import { Box, Container, Grid, useTheme } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import dynamic from "next/dynamic";
 
-const Listings = (props: any) => {
-  const theme = useTheme();
+const Listings = () => {
   return (
     <>
       {" "}
@@ -39,9 +39,9 @@ const Listings = (props: any) => {
             maxWidth: { xl: "90% !important", lg: "90%" },
           }}
         >
-          <Grid container>
+          <Grid container spacing={2}>
             <Grid item xs={3}>
-              dddd
+              <FilterSection />
             </Grid>
             <Grid item xs={9}>
               <BusinessSection />

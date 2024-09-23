@@ -55,6 +55,7 @@ export function overrides(theme: Theme) {
           fontSize: theme.typography.fontSizeList.f16,
           fontWeight: theme.typography.fontWeightSemiBold,
           backgroundColor: theme.palette.primarybutton.background,
+         
           "&:hover": {
             color: theme.palette.primarybutton.textcolor,
             backgroundColor: theme.palette.primarybutton.background,

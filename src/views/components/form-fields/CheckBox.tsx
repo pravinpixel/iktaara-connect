@@ -21,8 +21,8 @@ const CustomCheckbox: React.FC<CheckboxProps> = ({ label, name }) => {
       alignItems={"center"}
       sx={{
         svg: {
-          height: "18px",
-          width: "18px",
+          height: "22px",
+          width: "22px",
         },
       }}
     >
@@ -44,6 +44,7 @@ const CustomCheckbox: React.FC<CheckboxProps> = ({ label, name }) => {
         // />}
         sx={{
           marginTop: 0.8,
+          paddingLeft: "0px!important",
         }}
         checked={field?.value === 1}
         onChange={(e) => {

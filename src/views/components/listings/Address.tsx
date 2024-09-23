@@ -50,7 +50,13 @@ const AddressSection = () => {
                 type="true"
               />
               <Box>
-                <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    mt: 2,
+                  }}
+                >
                   <Box>
                     <p className="text-f22 leading-7 font-bold">
                       {business.name}
