@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { Box, Card, Grid, Stack, useTheme } from "@mui/material";
+import { Box, Grid, Stack } from "@mui/material";
 import CustomCard from "../CustomCard";
-import CustomButton from "../form-fields/CustomButton";
+
 import CustomSmallButton from "../form-fields/CustomSmallButton";
 import ImageComponent from "../imageComponent";
 
@@ -48,6 +48,7 @@ const AddressSection = () => {
                 img="/images/static/image_13.png"
                 img1="/images/static/image_12.png"
                 type="true"
+                text={""}
               />
               <Box>
                 <Box
@@ -104,8 +105,8 @@ const AddressSection = () => {
                   <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
                     <CustomSmallButton
                       image="/images/static/image_7.png"
-                      width="27.57px"
-                      height="27.57px"
+                      width={27.57}
+                      height={27.57}
                     ></CustomSmallButton>
                     {/* <p style={{ textAlign: "right" }}>{business.icon}</p> */}
                   </Box>

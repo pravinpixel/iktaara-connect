@@ -9,7 +9,7 @@ import {
 } from "@mui/material/styles/createTypography";
 
 type CustomVariants = "f12" | "f14" | "f16" | "f18" | "f20" | "f23" | "f24" | "f28" | "f32" | 'f40' | 'f52';
-type CustomColorKey = "ik_bluegreylighten1" | "ik_bluegreylighten2" | "ik_bluegreydarken3" | "ik_black" | "ik_bluegreydarken4" | "ik_bluegreydarken6" | "ik_bluegreydarken1" | "ik_bluegreydarken2" | "ik_pink" | "mixedcolor" | "mixedcolor1" | "ik_white" | "light" | "ik_bluegreylighten5";
+type CustomColorKey = "ik_bluegreylighten1" | "ik_bluegreylighten2" | "ik_bluegreydarken3" | "ik_black" | "ik_bluegreydarken4" | "ik_bluegreydarken6" | "ik_bluegreydarken1" | "ik_bluegreydarken2" | "ik_pink" | "mixedcolor" | "ik_multicolor" | "ik_white" | "light" | "ik_bluegreylighten5";
 
 export interface Typography
     extends Record<DefaultVariants | CustomVariants, TypographyStyleOptions>,

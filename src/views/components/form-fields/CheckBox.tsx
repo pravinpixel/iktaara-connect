@@ -53,7 +53,7 @@ const CustomCheckbox: React.FC<CheckboxProps> = ({ label, name }) => {
       />
       <Typography
         marginLeft={1}
-        sx={{ color: `${theme.palette.customColor.bluegreydarken}` }}
+        sx={{ color: `${theme.palette.customColor.ik_bluegreydarken3}` }}
         variant="f14"
       >
         {label}

@@ -2,7 +2,7 @@ import { NAV } from "@/utils/helpers/constant-helper";
 import React from "react";
 
 // import { SearchBar } from "./SearchBar";
-import { Container } from "@mui/material";
+
 import Link from "next/link";
 import { AutoCompleteSearch } from "./AutoCompleteSearch";
 import CustomButton from "@/views/components/form-fields/CustomButton";
@@ -75,7 +75,7 @@ const Header = () => {
               className="text-f12 font-semibold"
             />
             <CustomButton
-              variant="task"
+              variant="contained"
               label={"Login"}
               className="text-f12 font-semibold text-ik_pink-foreground"
             />

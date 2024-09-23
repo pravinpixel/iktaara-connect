@@ -24,8 +24,8 @@ function CustomSmallButton(props: CustomButtonType) {
       <ImageComponent
         src={image}
         alt="Button Image"
-        width={parseInt(width)}
-        height={parseInt(height)}
+        width={width}
+        height={height}
       />
     </Button>
   );

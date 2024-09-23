@@ -10,11 +10,12 @@ import {
 import { useController, useFormContext } from "react-hook-form";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useState } from "react";
+import { InputProps as MuiInputProps } from "@mui/material";
 // import { useTheme } from "@mui/material";
 
 type InputFieldType = TextFieldProps & {
   description?: string;
-  InputProps?: any;
+  InputProps?: MuiInputProps;
 };
 
 function InputField(props: InputFieldType) {

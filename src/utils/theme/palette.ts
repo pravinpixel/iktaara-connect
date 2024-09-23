@@ -1,13 +1,13 @@
 import { alpha } from "@mui/material/styles";
 
 export const grey = {
-  100:'var(--ik_bluegreydarken1)',
-  200:"var(--ik_bluegreylighten1)",
-  300:"var(--ik_bluegreylighten2)",
-  400:'var(--ik_bluegreydarken4)',
-  500:'var(ik_bluegreydarken6)',
-  600:'var(--ik_bluegreydarken3)',
-  700:'var(--ik_bluegreydarken2)',
+  100:"hsla(199, 18%, 40%, 1)",
+  200:"hsla(200, 15%, 54%, 1)",
+  300:"hsla(200, 16%, 62%, 1)",
+  400:'hsla(200, 19%, 18%, 1)',
+  500:'hsla(223, 19%, 29%, 1)',
+  600:'hsla(200, 18%, 26%, 1)',
+  700:'hsla(199, 18%, 33%, 1)',
 };
 
 
@@ -24,7 +24,7 @@ export const customColor = {
   ik_bluegreydarken3:'var(--ik_bluegreydarken3)',
   ik_black:'var(--ik_black)',
   ik_bluegreydarken4:'var(--ik_bluegreydarken4)',
-  ik_bluegreydarken6:'var(ik_bluegreydarken6)',
+  ik_bluegreydarken6:'var(--ik_bluegreydarken6)',
   ik_bluegreydarken1:'var(--ik_bluegreydarken1)',
   ik_bluegreydarken2:'var( --ik_bluegreydarken2)',
   ik_pink:'var(--ik_pink)',

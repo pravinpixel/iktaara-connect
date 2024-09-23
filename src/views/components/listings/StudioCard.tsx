@@ -59,6 +59,7 @@ const StudioCard = () => {
                     img="/images/static/image_13.png"
                     img1="/images/static/image_12.png"
                     type="true"
+                    text=""
                   />
                 </Grid>
                 <Grid item xs={8}>

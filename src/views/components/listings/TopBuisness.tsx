@@ -15,17 +15,17 @@ const BusinessSection = () => {
       <Card sx={{ width: "100%", height: "100%", background: "white" }}>
         <Grid
           container
-          sx={{ borderTop: `6px solid ${theme.palette.pink[100]}` }}
+          sx={{ borderTop: `6px solid ${theme.palette.customColor.ik_pink}` }}
         >
           <Grid item xs={4.5}>
             <Box
               sx={{
-                background: theme.palette.pink[100],
+                background: theme.palette.customColor.ik_pink,
                 ml: 3,
                 textAlign: "center",
                 borderRadius: "0px 0px 9px 9px",
                 padding: "5px",
-                color: theme.palette.customColor.white,
+                color: theme.palette.customColor.ik_white,
               }}
             >
               <Stack

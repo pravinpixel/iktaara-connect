@@ -4,8 +4,13 @@ import { useRouter } from "next/router";
 import { Typography } from "@mui/material";
 import Image from "next/image";
 // import { Pagination } from '@mui/material';
+interface PaginationProps {
+  from: number;
+  to: number;
+  total_count: number;
+}
 
-const Pagination = ({ from, to, total_count }: any) => {
+const Pagination = ({ from, to, total_count }: PaginationProps) => {
   const router = useRouter();
 
   const handleLoadMore = () => {
@@ -76,7 +81,7 @@ const Pagination = ({ from, to, total_count }: any) => {
       }
     );
   };
-  const isLastPage = to === total_count;
+  // const isLastPage = to === total_count;
   return (
     <div className="col-12 text-center mt-2">
       <div className="pagination-text">
