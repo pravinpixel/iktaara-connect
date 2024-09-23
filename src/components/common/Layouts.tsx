@@ -15,7 +15,7 @@ const Layouts = ({ children }: LayoutsTypes) => {
           <Header />
         </div>
         <div
-          className={`mt-[83px]  h-[calc(100vh-83px)] flex overflow-hidden overflow-y-auto flex-col`}
+          className={`mt-[73px]  h-[calc(100vh-73px)] flex overflow-hidden overflow-y-auto flex-col`}
         >
           {children}
           <Footer />
