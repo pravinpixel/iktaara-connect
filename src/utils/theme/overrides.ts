@@ -516,10 +516,10 @@ export function overrides(theme: Theme) {
           props: { variant: "top-right" },
           style: {
             position: "relative",
-            height: "260px",
-            width: "360px",
+            // height: "260px",
+            // width: "360px",
             borderRadius: "16px",
-            backgroundColor: "#f5f5f5",
+            // backgroundColor: "#f5f5f5",
             "& .MuiTypography-root": {
               position: "absolute",
               top: "0%",
@@ -537,10 +537,10 @@ export function overrides(theme: Theme) {
           props: { variant: "bottom-right" },
           style: {
             position: "relative",
-            height: "260px",
-            width: "360px",
+            // height: "260px",
+            // width: "360px",
             borderRadius: "16px",
-            backgroundColor: "#f5f5f5",
+            // backgroundColor: "#f5f5f5",
             "& .MuiTypography-root": {
               position: "absolute",
               bottom: "-7%",
@@ -553,11 +553,11 @@ export function overrides(theme: Theme) {
               textAlign: "center",
             },
             "& img": {
-              position: "absolute",
-              width: "50px",
-              height: "50px",
-              objectFit: "cover",
-              borderRadius: "50%",
+              // position: "absolute",
+              // width: "50px",
+              // height: "50px",
+              // objectFit: "cover",
+              // borderRadius: "50%",
             },
             
           },
@@ -566,10 +566,10 @@ export function overrides(theme: Theme) {
           props: { variant: "bottom-left" },
           style: {
             position: "relative",
-            height: "260px",
-            width: "360px",
+            // height: "260px",
+            // width: "360px",
             borderRadius: "16px",
-            backgroundColor: "#f5f5f5",
+            // backgroundColor: "#f5f5f5",
             "& .MuiTypography-root": {
               position: "absolute",
               bottom: "0%",

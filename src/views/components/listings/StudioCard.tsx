@@ -40,18 +40,23 @@ const StudioCard = () => {
   return (
     <section style={{ marginTop: "15px" }}>
       {businesses.map((business) => (
-        <Card sx={{ width: "100%", height: "100%", background: "white" }}>
-          <Box sx={{ mt: 2 }}>
+        <Card
+          sx={{
+            width: "100%",
+            height: "100%",
+            background: "white",
+            marginTop: "15px",
+          }}
+        >
+          <Box sx={{ px: 2, pt: 2, pb: 0 }}>
             <Grid container>
               <>
                 {" "}
                 <Grid item xs={4}>
                   <CustomCard
                     variant="bottom-right"
-                    img="images/static/image_1.png"
-                    img1="images/static/image_12.png"
-                    height="226px"
-                    width="312px"
+                    img="/images/static/image_13.png"
+                    img1="/images/static/image_12.png"
                   />
                 </Grid>
                 <Grid item xs={8}>
@@ -131,7 +136,7 @@ const StudioCard = () => {
                       </Box>
 
                       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                        <Stack direction="column" spacing={1}>
+                        <Stack direction="column">
                           <Stack direction="row" spacing={"20px"}>
                             <img
                               src="/images/static/image_10.png"

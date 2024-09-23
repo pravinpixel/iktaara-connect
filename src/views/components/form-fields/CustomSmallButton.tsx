@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, ButtonProps } from "@mui/material";
+import ImageComponent from "../imageComponent";
 
 interface CustomButtonType extends ButtonProps {
   image?: string;
@@ -20,7 +21,12 @@ function CustomSmallButton(props: CustomButtonType) {
         minWidth: "54px!important",
       }}
     >
-      <img src={image} alt="Button Image" width={width} height={height} />
+      <ImageComponent
+        src={image}
+        alt="Button Image"
+        width={parseInt(width)}
+        height={parseInt(height)}
+      />
     </Button>
   );
 }
