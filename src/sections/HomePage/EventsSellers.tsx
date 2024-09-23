@@ -24,7 +24,7 @@ const EventsSellers = (props: Props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerPadding: "150px",
+    centerPadding: "110px",
     className: "center",
     centerMode: true,
     dots: true,
@@ -61,7 +61,7 @@ const EventsSellers = (props: Props) => {
 
   return (
     <section
-      className="best-sellers-section"
+      className="best-sellers-section bg-cover bg-no-repeat pt-5 pb-14"
       style={{
         backgroundImage: `url(${bgChange ? bg1.src : bg.src})`,
       }}
@@ -69,9 +69,9 @@ const EventsSellers = (props: Props) => {
       <div>
         <Container
           maxWidth={"lg"}
-          sx={{ maxWidth: { xl: "81% !important", lg: "81%" } }}
+          sx={{ maxWidth: { xl: "89% !important", lg: "89%" } }}
         >
-          <div className="Events-title mb-2">
+          <div className="text-f28 font-semibold mb-3 ">
             <span>Popular Events in the City</span>
           </div>
         </Container>
@@ -81,8 +81,8 @@ const EventsSellers = (props: Props) => {
               <div>
                 <Image
                   src={item?.image}
-                  width={100}
-                  height={100}
+                  width={1496}
+                  height={451}
                   style={{
                     width: "100%",
                     height: "auto",

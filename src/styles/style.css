@@ -90,33 +90,7 @@
     border-right: 1px solid #fff;
 }
 
-.enjoy-family{
-    background-color:  #FCF6D9;
-    padding: 10px;
-}
-
-.enjoy-flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.text-family{
-    font-size: 14px;
-    font-weight: 500;
-}
-.text-family .off-text{
-    font-size: 14px;
-    font-weight: 700;
-}
-
 /* silder  css*/
-.best-sellers-section {
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 20px 0px 50px 0px;
-}
 
 .best-sellers-section .slick-track .slick-slide>div {
     margin-right: 15px;
@@ -155,11 +129,6 @@
     height: 6px !important;
 }
 
-.Events-title{
-    font-size: 20px;
-    font-weight: 600;
-}
-
 .slick-prev:before {
     content: '' !important;
     display: inline-block !important;
@@ -168,7 +137,7 @@
     background-image: url('/assets/icons/arrow-left.svg') !important;
     background-size: cover !important;
     position: relative;
-    left: 130px;
+    left: -15px;
     z-index: 0 !important;
     top: -11px !important;
 }
@@ -185,7 +154,7 @@
     background-image: url('/assets/icons/arrow-right.svg') !important;
     background-size: cover !important;
     position: relative;
-    right: 130px;
+    right: -18px;
     z-index: 9999;
     top: -11px !important;
 }
@@ -195,29 +164,10 @@
     z-index: 100;
 }
 
-.section-padding{
-    padding: 20px 0px 50px 0px;
-}
-
-.view-text{
-    font-size: 14px;
-    color: var(--ik_pink);
-    font-weight: 400;
-}
-
 .Category-button{
-    padding: 9px 12px;
     border: 1px solid #CCCCCC;
-    display: flex;
-    gap: 8px;
-    border-radius: 34px;
 }
 
-.Category-button span{
-    font-size: 12px;
-    font-weight: 600;
-
-}
 
 .category-section-sec .slick-slide {
     display: flex !important;
@@ -241,64 +191,15 @@
 
 }
 
-.category-section-sec{
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.category-name span{
-    font-size: 16px;
-    color: var(--ik_pink-foreground);
-    font-weight: 600;
-}
-
-.category-reviews{
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--ik_bluegreydarken3);
-}
-
-.category-text{
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--ik_bluegreydarken1);
-}
-
 .Category-button.active {
     background-color: var(--ik_pink);
     color: white;
 }
 
 
-.grosection{
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.groimage-section img{
-  width: 100%;
-}
-
-.growwwimage-section img{
-    width: 65%;
-    margin-top: 15px;
-}
-
-.gor-Business-section{
-    padding-top: 10px;
-    gap: 10px;
-}
-
-.gor-Business-section{
-    font-size: 12px;
-    color: var(--ik_pink-foreground);
-    font-weight: 400;
-}
-
 .gro-card-sections{
     padding: 15px;
-    border: 1px solid;
+    /* border: 1px solid; */
     border-radius: 12px;
-    opacity: 10%;
-    /* background-color: var(--ik_bluegreydarken1); */
+    background-color: #43346a; 
 }

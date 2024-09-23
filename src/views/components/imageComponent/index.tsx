@@ -15,39 +15,42 @@ const ImageComponent = (props: any) => {
     className,
   } = props;
   return (
-    <div>
-      {type === 1 ? (
-        <div
-          className="position-relative "
-          style={{
-            aspectRatio: aspectRatio,
-            objectFit: objectFit,
-          }}
-        >
+    <>
+      {/* <div> */}
+        {type === 1 ? (
+          <div
+            className="position-relative "
+            style={{
+              aspectRatio: aspectRatio,
+              objectFit: objectFit,
+            }}
+          >
+            <Image
+              src={src}
+              fill
+              alt={alt}
+              unoptimized={false}
+              priority={priority}
+              loading={priority ? "eager" : "lazy"}
+              className={className}
+            />
+          </div>
+        ) : (
           <Image
             src={src}
-            fill
             alt={alt}
             unoptimized={false}
             priority={priority}
             loading={priority ? "eager" : "lazy"}
+            width={width}
+            height={height}
+            sizes="100vw"
             className={className}
           />
-        </div>
-      ) : (
-        <Image
-          src={src}
-          alt={alt}
-          unoptimized={false}
-          priority={priority}
-          loading={priority ? "eager" : "lazy"}
-          width={width}
-          height={height}
-          sizes="100vw"
-          className={className}
-        />
-      )}
-    </div>
+        )}
+      
+      {/* </div> */}
+    </>
   );
 };
 

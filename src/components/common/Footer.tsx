@@ -1852,7 +1852,7 @@ const Footer = () => {
         <div className="footer bg-ik_blue">
           <Container
             maxWidth={"lg"}
-            sx={{ maxWidth: { xl: "81% !important", lg: "81%" } }}
+            sx={{ maxWidth: { xl: "88% !important", lg: "88%" } }}
           >
             <Grid container className="py-5">
               <Grid item xs={6} sm={6} md={2}>
@@ -1950,7 +1950,7 @@ const Footer = () => {
           <hr className="footerline-item mb-7" />
           <Container
             maxWidth={"lg"}
-            sx={{ maxWidth: { xl: "81% !important", lg: "81%" } }}
+            sx={{ maxWidth: { xl: "88% !important", lg: "88%" } }}
           >
             <div className="row g-2 ">
               <div className="new-design-div-footer">

@@ -520,17 +520,7 @@ export function overrides(theme: Theme) {
             // width: "360px",
             borderRadius: "16px",
             // backgroundColor: "#f5f5f5",
-            "& .MuiTypography-root": {
-              position: "absolute",
-              top: "0%",
-              left: "20%",
-              transform: "translate(-50%, 0)",
-              color: "white",
-              // backgroundColor: "rgba(0, 0, 0, 0.5)",
-              padding: "10px",
-              borderRadius: "4px",
-              textAlign: "center",
-            },
+            
           },
         },
         {

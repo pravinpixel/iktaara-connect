@@ -76,9 +76,9 @@ const BannerSection = () => {
           priority={true}
         />
       </div>
-      <div className="enjoy-family">
+      <div className="bg-ik_redvariant1 p-2.5">
         <Container>
-          <div className="enjoy-flex">
+          <div className="flex justify-center items-center gap-4">
             <ImageComponent
               src={"assets/icons/enjoyfamily.svg"}
               width={40}
@@ -87,16 +87,16 @@ const BannerSection = () => {
               priority={true}
             />
             <div>
-              <p className="text-family">
+              <p className="text-f18 font-medium ">
                 Enjoy family time. Book event tickets &
-                <span className="off-text"> Get 10% OFF </span>
+                <span className="font-bold"> Get 10% OFF </span>
               </p>
             </div>
             <div>
               <CustomButton
                 variant="task"
                 label={"VIEW SHOWS"}
-                className="text-f12 font-semibold text-ik_pink-foreground"
+                className="text-f14 font-semibold text-ik_pink-foreground"
               />
             </div>
           </div>

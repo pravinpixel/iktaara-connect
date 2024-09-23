@@ -1,11 +1,12 @@
-import React from 'react'
-import BannerSection from './BannerSection'
-import EventsSellers from './EventsSellers';
+import React from "react";
+import BannerSection from "./BannerSection";
+import EventsSellers from "./EventsSellers";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import CategorySection from './CategorySection';
-import GroSection from './GroSection';
-import MusicalSection from './MusicalSection'
+import CategorySection from "./CategorySection";
+import GroSection from "./GroSection";
+import MusicalSection from "./MusicalSection";
+import MusicTechnicians from "./musictechnicians";
 
 const HomePageComponent = () => {
   const music = [
@@ -408,6 +409,53 @@ const HomePageComponent = () => {
     ],
   };
 
+  const musictechnician_data = [
+    {
+      id: 1,
+      music_image: "/assets/image/music-arts.webp",
+      music_logo: "",
+      music_reviews: "4.5 (22 Reviews)",
+      music_title: "MUSIC & ARTS",
+      music_location: "Adyar",
+      music_text: "Specialist in Piano, Violin",
+    },
+    {
+      id: 2,
+      music_image: "/assets/image/music-arts.webp",
+      music_logo: "",
+      music_reviews: "4.5 (22 Reviews)",
+      music_title: "MUSIC & ARTS",
+      music_location: "Adyar",
+      music_text: "Specialist in Piano, Violin",
+    },
+    {
+      id: 3,
+      music_image: "/assets/image/music-arts.webp",
+      music_logo: "",
+      music_reviews: "4.5 (22 Reviews)",
+      music_title: "MUSIC & ARTS",
+      music_location: "Adyar",
+      music_text: "Specialist in Piano, Violin",
+    },
+    {
+      id: 4,
+      music_image: "/assets/image/music-arts.webp",
+      music_logo: "",
+      music_reviews: "4.5 (22 Reviews)",
+      music_title: "MUSIC & ARTS",
+      music_location: "Adyar",
+      music_text: "Specialist in Piano, Violin",
+    },
+    {
+      id: 5,
+      music_image: "/assets/image/music-arts.webp",
+      music_logo: "",
+      music_reviews: "4.5 (22 Reviews)",
+      music_title: "MUSIC & ARTS",
+      music_location: "Adyar",
+      music_text: "Specialist in Piano, Violin",
+    },
+  ];
 
   return (
     <section>
@@ -416,8 +464,13 @@ const HomePageComponent = () => {
       <EventsSellers Eventssections={Events} bgChange={true} />
       <CategorySection Categorysection={Category} />
       <GroSection />
+      <MusicTechnicians
+        musictechniciansection={musictechnician_data}
+        className={"flex pt-5 pb-5 bg-ik_white"}
+        title={"Music Instrument Technicians "}
+      />
     </section>
   );
-}
+};
 
-export default HomePageComponent
+export default HomePageComponent;

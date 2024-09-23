@@ -10,13 +10,14 @@ interface CustomCardProps {
   variant?: string;
   img: string;
   text: string;
+  Contenttext?: string;
   img1?: string;
   width?: string | number;
   height?: string | number;
   type?: string;
 }
 export default function CustomCard(props: CustomCardProps) {
-  const { variant, img, text, img1, width = "100%", type = "false" } = props;
+  const { variant, img, text,Contenttext, img1, width = "100%", type = "false" } = props;
 
   return (
     <Card
@@ -53,8 +54,20 @@ export default function CustomCard(props: CustomCardProps) {
           </div>
         </Box>
       )}
-
-      <Typography>{text}</Typography>
+      <Box
+        sx={{
+          position: "absolute",
+          top: "20px",
+          left: "20px",
+        }}
+      >
+        <Typography sx={{ fontSize: "22px", fontWeight: 600, color: "#fff" }}>
+          {text}
+        </Typography>
+        <Typography sx={{ fontSize: "14px", fontWeight: 400, color: "#fff" }}>
+          {Contenttext}
+        </Typography>
+      </Box>
 
       {/* </Box> */}
     </Card>

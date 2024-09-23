@@ -81,6 +81,8 @@
   --ik_bluegreylighten2:hsla(200, 16%, 62%, 1);
   --ik_bluegreylighten4:hsla(198, 16%, 84%, 1);
   --ik_bluegreylighten5:hsla(204, 15%, 94%, 1);
+  --ik_redvariant1: hsla(51, 83%, 92%, 1);
+  --ik_bordervariant: hsla(0, 0%, 80%, 1)
   ;
   /* color */
     --background: 0 0% 100%;
