@@ -209,7 +209,7 @@ export function overrides(theme: Theme) {
           overflow: "hidden",
           textOverflow: "ellipsis",
           color: theme.palette.customColor.dark,
-          fontFamily: "Sora, sans-serif",
+          fontFamily: theme.typography.fontFamily,
           fontWeight: theme.typography.fontWeightRegular,
           fontSize: theme.typography.fontSizeList.f16,
         },

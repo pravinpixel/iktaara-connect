@@ -13,7 +13,7 @@ interface CustomCardProps {
   height?: string | number;
 }
 export default function CustomCard(props: CustomCardProps) {
-  const { variant, img, text, img1, width = "360px", height = "260px" } = props;
+  const { variant, img, text, img1, width = "100%", height = "100%" } = props;
 
   return (
     <Card
@@ -32,12 +32,12 @@ export default function CustomCard(props: CustomCardProps) {
           style={{
             width: "100%",
             height: "100%",
-            objectFit: "cover",
+            objectFit: "contain",
             borderRadius: "16px",
           }}
         />
 
-        <Box>
+        {/* <Box>
           <Box
             sx={{
               position: "absolute",
@@ -56,7 +56,7 @@ export default function CustomCard(props: CustomCardProps) {
           />
 
           <Typography>{text}</Typography>
-        </Box>
+        </Box> */}
       </Box>
     </Card>
   );

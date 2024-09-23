@@ -16,7 +16,7 @@ function CustomImageButton(props: CustomButtonType) {
     <Button variant={variant} {...rest}>
       <Stack direction="row" spacing={1}>
         <img src={image} alt="Button Image" width={width} height={height} />
-        <p>{label}</p>
+        <p clasName="font-semibold text-f18 leading-6">{label}</p>
       </Stack>
     </Button>
   );

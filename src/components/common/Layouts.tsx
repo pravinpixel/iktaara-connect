@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import ThemeProvider from "@/utils/theme/ThemeConfig";
+import { Container } from "@mui/material";
 
 type LayoutsTypes = {
   children: React.ReactNode;

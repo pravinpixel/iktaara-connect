@@ -12,7 +12,12 @@ export const grey = {
 
 
 export const pink = {
-  100:"rgba(227, 64, 97, 1)"
+  100:"rgba(227, 64, 97, 1)",
+  200:"rgba(46, 30, 90, 1)"
+}
+
+export const blue = {
+  100:"rgba(46, 30, 90, 1)"
 }
 
 export const customColor = {

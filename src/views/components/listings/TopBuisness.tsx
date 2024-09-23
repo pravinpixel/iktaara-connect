@@ -4,19 +4,20 @@ import React from "react";
 import { Box, Card, Grid, Stack, useTheme } from "@mui/material";
 
 import AddressSection from "./Address";
+import ImageComponent from "../imageComponent";
 
 const BusinessSection = () => {
   const theme = useTheme();
 
   return (
-    <section>
+    <section style={{ marginTop: "15px" }}>
       {" "}
-      <Card sx={{ width: "1118px", height: "457px", background: "white" }}>
+      <Card sx={{ width: "100%", height: "100%", background: "white" }}>
         <Grid
           container
           sx={{ borderTop: `6px solid ${theme.palette.pink[100]}` }}
         >
-          <Grid item xs={3}>
+          <Grid item xs={4}>
             <Box
               sx={{
                 background: theme.palette.pink[100],
@@ -27,13 +28,27 @@ const BusinessSection = () => {
                 color: theme.palette.customColor.white,
               }}
             >
-              <Stack direction="row" spacing={1}>
-                <img
-                  src="images/static/image_4.png"
+              <Stack
+                direction="row"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "5px",
+                }}
+              >
+                <ImageComponent
+                  src="/images/static/image_4.png"
                   alt="Business Image"
-                  style={{ width: "22px", height: "11px" }}
+                  width={21}
+                  height={10}
+                  priority={true}
+                  // style={{ width: "22px", height: "11px" }}s
                 />
-                <p> Top Buisness</p>
+                <p className="text-f16 font-semibold leading-8">
+                  {" "}
+                  Top Businesses by Enquiries
+                </p>
               </Stack>
             </Box>
           </Grid>

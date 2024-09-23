@@ -50,22 +50,44 @@ const AddressSection = () => {
               <Box sx={{ padding: 2 }}>
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                   <Box>
-                    <p>{business.name}</p>
-                    <Stack direction="row" spacing={1}>
+                    <p className="text-f22 leading-7 font-bold">
+                      {business.name}
+                    </p>
+                    <Stack
+                      direction="row"
+                      spacing={1}
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                      }}
+                    >
                       <img
                         src={business.imgSrc}
                         alt="Business Image"
                         style={{ width: "19px", height: "20px" }}
                       />
-                      <p>{business.location}</p>
+                      <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken3">
+                        {business.location}
+                      </p>
                     </Stack>
-                    <Stack direction="row" spacing={1}>
+                    <Stack
+                      direction="row"
+                      spacing={1}
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                      }}
+                    >
                       <img
                         src="images/static/image_6.png"
                         alt="Business Image"
                         style={{ width: "22px", height: "11px" }}
                       />
-                      <p>{business.inquiries} inquiries</p>
+                      <p className="font-semibold text-f16 leading-5 text-ik_pink">
+                        {business.inquiries} inquiries
+                      </p>
                     </Stack>
                   </Box>
 

@@ -7,14 +7,16 @@ import Link from "next/link";
 import { AutoCompleteSearch } from "./AutoCompleteSearch";
 import CustomButton from "@/views/components/form-fields/CustomButton";
 import ImageComponent from "@/views/components/imageComponent";
+import CustomContainer from "@/views/components/Container";
 
 const Header = () => {
   return (
     <div className="shadow-md">
       <Container
         maxWidth={"lg"}
-        sx={{ maxWidth: { xl: "83% !important", lg: "83%" } }}
+        sx={{ maxWidth: { xl: "90% !important", lg: "90%" } }}
       >
+        <CustomContainer />
         <div
           className={`w-ful h-[${NAV.height}]  flex items-center justify-between px-3 `}
         >

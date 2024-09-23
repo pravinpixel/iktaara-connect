@@ -116,29 +116,15 @@ const config: Config = {
 				sora: 'var(--sora)',
 			},
 			fontSize: {
-				f12: ['var(--f12)', {
-					lineHeight: "16px"
-					
-				}],
-				f14: ['var(--f14)', {
-					lineHeight: "20.16px"
-					
-				}],
-				f16: ['var(--f16)', {
-					lineHeight: "20.16px"
-				}],
-				f18: ['var(--f18)', {
-					lineHeight: "38px",
-					
-				}],
-				f22: ['var(--f22)', {
-					lineHeight: "38px",
-				
-				}],
-				f28: ['var(--f28)', {
-					lineHeight: "38px",
-					
-				}],
+				f12: 'var(--f12)',
+				f14: 'var(--f14)',
+				f16: 'var(--f16)',
+				f18: 'var(--f18)',
+				f22: 'var(--f22)',
+				f24: 'var(--f24)',
+				f28: 'var(--f28)',
+				f26: 'var(--f26)',
+				f38: 'var(--f38)',
 				
 				
 			}

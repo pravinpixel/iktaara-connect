@@ -38,9 +38,9 @@ const StudioCard = () => {
   ];
 
   return (
-    <section>
+    <section style={{ marginTop: "15px" }}>
       {businesses.map((business) => (
-        <Card sx={{ width: "1118px", height: "247px", background: "white" }}>
+        <Card sx={{ width: "100%", height: "100%", background: "white" }}>
           <Box sx={{ mt: 2 }}>
             <Grid container>
               <>
@@ -60,41 +60,72 @@ const StudioCard = () => {
                       sx={{ display: "flex", justifyContent: "space-between" }}
                     >
                       <Box>
-                        <p>{business.name}</p>
-                        <Stack direction="row" spacing={1}>
+                        <p className="font-bold text-f24 leading-8 text-ik_bluegreydarken3">
+                          {business.name}
+                        </p>
+                        <Stack
+                          direction="row"
+                          spacing={1}
+                          sx={{ display: "flex", alignItems: "center" }}
+                        >
                           <img
                             src={business.imgSrc}
                             alt="Business Image"
                             style={{ width: "19px", height: "20px" }}
                           />
-                          <p>{business.location}</p>
+                          <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2">
+                            {business.location}
+                          </p>
+                          <p className="font-normal text-f16 leading-5 text-ik_pink">
+                            View on Map
+                          </p>
                         </Stack>
-                        <Stack direction="row" spacing={1}>
+                        <Stack
+                          direction="row"
+                          spacing={1}
+                          sx={{ display: "flex", alignItems: "center" }}
+                        >
                           <img
                             src="images/static/image_8.png"
                             alt="Business Image"
                             style={{ width: "25px", height: "25px" }}
                           />
-                          <p>{business.inquiries} inquiries</p>
-                          <Stack direction="row"></Stack>
+                          <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2">
+                            {business.inquiries} inquiries
+                          </p>
+                          <p className="font-bold text-f16 leading-5 text-ik_bluegreydarken2">
+                            Since 1924
+                          </p>
                         </Stack>
-                        <Stack direction="row">
+                        <Stack direction="row" spacing={1}>
                           {" "}
-                          <Stack direction="row" spacing={1}>
+                          <Stack
+                            direction="row"
+                            spacing={1}
+                            sx={{ display: "flex", alignItems: "center" }}
+                          >
                             <img
                               src="images/static/image_6.png"
                               alt="Business Image"
                               style={{ width: "22px", height: "11px" }}
                             />
-                            <p>{business.inquiries} inquiries</p>
+                            <p className="font-semibold text-f16 leading-5 text-ik_pink">
+                              {business.inquiries} inquiries
+                            </p>
                           </Stack>
-                          <Stack direction="row" spacing={1}>
+                          <Stack
+                            direction="row"
+                            spacing={1}
+                            sx={{ display: "flex", alignItems: "center" }}
+                          >
                             <img
                               src="images/static/image_9.png"
                               alt="Business Image"
                               style={{ width: "30px", height: "30px" }}
                             />
-                            <p>{business.inquiries} inquiries</p>
+                            <p className="font-semibold text-f16 leading-5 text-ik_pink">
+                              {business.inquiries} inquiries
+                            </p>
                           </Stack>
                         </Stack>
                       </Box>
@@ -108,11 +139,22 @@ const StudioCard = () => {
                               height="16px"
                             />
                             <p style={{ textAlign: "right" }}>
-                              {business.icon}
+                              <span className="font-semibold text-f26 leading-8 text-ik_bluegreydarken3">
+                                4.5
+                              </span>
+                              /
+                              <span className="font-normal text-f26 leading-8 text-ik_bluegreydarken3">
+                                5
+                              </span>
                             </p>
                           </Stack>
 
-                          <p style={{ textAlign: "right" }}>{business.icon}</p>
+                          <p
+                            style={{ textAlign: "right" }}
+                            className="font-noraml text-f16 leading-5 text-ik_bluegreydarken1"
+                          >
+                            100 Reviews
+                          </p>
                           <CustomImageButton
                             image="images/static/image_7.png"
                             width="27.57"
@@ -129,7 +171,7 @@ const StudioCard = () => {
                           width="37.82px"
                           height="36px"
                         ></img>
-                        <p className="">
+                        <p className="font-semibold text-f16 leading-8 text-ik_bluegreydarken3">
                           Specialist in string instrument repairs. Pickup & Drop
                           service available across Chennai.
                         </p>
