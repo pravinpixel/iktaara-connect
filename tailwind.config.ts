@@ -8,6 +8,7 @@ const config: Config = {
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/views/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 
 	theme: {
@@ -120,6 +121,7 @@ const config: Config = {
 				f14: 'var(--f14)',
 				f16: 'var(--f16)',
 				f18: 'var(--f18)',
+				f20: 'var(--f20)',
 				f22: 'var(--f22)',
 				f24: 'var(--f24)',
 				f28: 'var(--f28)',
