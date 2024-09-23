@@ -47,6 +47,7 @@ const AddressSection = () => {
                 variant="bottom-right"
                 img="/images/static/image_13.png"
                 img1="/images/static/image_12.png"
+                type="true"
               />
               <Box>
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>

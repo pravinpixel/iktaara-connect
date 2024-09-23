@@ -8,6 +8,7 @@ import CustomCard from "../CustomCard";
 import { Stack } from "@mui/material";
 
 import CustomImageButton from "../CustomImageButton";
+import ImageComponent from "../imageComponent";
 
 const StudioCard = () => {
   const businesses = [
@@ -16,7 +17,7 @@ const StudioCard = () => {
       name: "Schmitt Music Repair Services",
       location: "Nungambakkam",
       inquiries: 120,
-      imgSrc: "images/static/image_5.png",
+      imgSrc: "/images/static/image_5.png",
       icon: "Schmitt Music Icon",
     },
     {
@@ -24,7 +25,7 @@ const StudioCard = () => {
       name: "Muzik & Art",
       location: "Nungambakkam",
       inquiries: 115,
-      imgSrc: "images/static/image_5.png",
+      imgSrc: "/images/static/image_5.png",
       icon: "Music & Arts Icon",
     },
     {
@@ -32,7 +33,7 @@ const StudioCard = () => {
       name: "Music Doctor",
       location: "Nungambakkam",
       inquiries: 105,
-      imgSrc: "images/static/image_5.png",
+      imgSrc: "/images/static/image_5.png",
       icon: "Music Doctor Icon",
     },
   ];
@@ -73,10 +74,11 @@ const StudioCard = () => {
                           spacing={1}
                           sx={{ display: "flex", alignItems: "center" }}
                         >
-                          <img
+                          <ImageComponent
                             src={business.imgSrc}
                             alt="Business Image"
-                            style={{ width: "19px", height: "20px" }}
+                            width={19}
+                            height={20}
                           />
                           <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2">
                             {business.location}
@@ -90,10 +92,11 @@ const StudioCard = () => {
                           spacing={1}
                           sx={{ display: "flex", alignItems: "center" }}
                         >
-                          <img
-                            src="images/static/image_8.png"
+                          <ImageComponent
+                            src="/images/static/image_8.png"
                             alt="Business Image"
-                            style={{ width: "25px", height: "25px" }}
+                            width={25}
+                            height={25}
                           />
                           <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2">
                             {business.inquiries} inquiries
@@ -109,10 +112,11 @@ const StudioCard = () => {
                             spacing={1}
                             sx={{ display: "flex", alignItems: "center" }}
                           >
-                            <img
-                              src="images/static/image_6.png"
+                            <ImageComponent
+                              src="/images/static/image_6.png"
                               alt="Business Image"
-                              style={{ width: "22px", height: "11px" }}
+                              width={22}
+                              height={11}
                             />
                             <p className="font-semibold text-f16 leading-5 text-ik_pink">
                               {business.inquiries} inquiries
@@ -124,7 +128,7 @@ const StudioCard = () => {
                             sx={{ display: "flex", alignItems: "center" }}
                           >
                             <img
-                              src="images/static/image_9.png"
+                              src="/images/static/image_9.png"
                               alt="Business Image"
                               style={{ width: "30px", height: "30px" }}
                             />

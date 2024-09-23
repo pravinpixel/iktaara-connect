@@ -13,9 +13,10 @@ interface CustomCardProps {
   img1?: string;
   width?: string | number;
   height?: string | number;
+  type?: string;
 }
 export default function CustomCard(props: CustomCardProps) {
-  const { variant, img, text, img1, width = "100%" } = props;
+  const { variant, img, text, img1, width = "100%", type = "false" } = props;
 
   return (
     <Card
@@ -30,21 +31,28 @@ export default function CustomCard(props: CustomCardProps) {
       <CardMedia component="img" image={img} alt="Paella dish" />
       {/* <Box sx={{ position: "relative" }}>
         <ImageComponent src={img} alt="Card Image" width={260} height={360} /> */}
-
-      <Box
-        sx={{
-          position: "absolute",
-          width: "65px",
-          height: "65px",
-          borderRadius: "12px",
-          background: "red",
-          left: "13px",
-          bottom: "32px",
-        }}
-      ></Box>
-      <div style={{ position: "relative", bottom: "52px", left: "20px" }}>
-        <ImageComponent src={img1} alt="Overlay Image" width={50} height={50} />
-      </div>
+      {type === "true" && (
+        <Box
+          sx={{
+            position: "absolute",
+            width: "65px",
+            height: "65px",
+            borderRadius: "12px",
+            background: "red",
+            left: "13px",
+            bottom: "12px",
+          }}
+        >
+          <div style={{ position: "relative", top: "20px", left: "10px" }}>
+            <ImageComponent
+              src={img1}
+              alt="Overlay Image"
+              width={50}
+              height={50}
+            />
+          </div>
+        </Box>
+      )}
 
       <Typography>{text}</Typography>
 
