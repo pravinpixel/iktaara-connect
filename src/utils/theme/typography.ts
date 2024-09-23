@@ -17,7 +17,7 @@ export function responsiveFontSizes({ xs, sm, md, lg }) {
   };
 }
 
-export const fontFamily = "Sora" ;
+export const fontFamily = "var(--sora)" ;
 export const secondaryFont = "Sora";
 
 export const fontWeightRegular = 400;

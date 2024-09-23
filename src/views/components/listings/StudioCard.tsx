@@ -129,7 +129,7 @@ const StudioCard = () => {
                           width="37.82px"
                           height="36px"
                         ></img>
-                        <p>
+                        <p className="">
                           Specialist in string instrument repairs. Pickup & Drop
                           service available across Chennai.
                         </p>
