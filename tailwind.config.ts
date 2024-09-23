@@ -102,6 +102,13 @@ const config: Config = {
         ik_bordervariant: {
           DEFAULT: "var(--ik_bordervariant)",
         },
+        
+        ik_bluegreydarken6: {
+          DEFAULT: "var(--ik_bluegreydarken6)",
+        },
+        ik_black: {
+          DEFAULT: "var(--ik_black)",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

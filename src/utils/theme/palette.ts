@@ -1,68 +1,65 @@
 import { alpha } from "@mui/material/styles";
 
 export const grey = {
-  100:'rgba(84, 110, 122, 1)',
-  200:"rgba(120, 144, 156, 1)",
-  300:"rgba(144, 164, 174, 1)",
-  400:'rgba(38, 50, 56, 1)',
-  500:'rgba(59, 67, 87, 1)',
-  600:'rgba(55, 71, 79, 1)',
-  700:'rgba(69, 90, 100, 1)',
+  100:'var(--ik_bluegreydarken1)',
+  200:"var(--ik_bluegreylighten1)",
+  300:"var(--ik_bluegreylighten2)",
+  400:'var(--ik_bluegreydarken4)',
+  500:'var(ik_bluegreydarken6)',
+  600:'var(--ik_bluegreydarken3)',
+  700:'var(--ik_bluegreydarken2)',
 };
 
 
 export const pink = {
-  100:"rgba(227, 64, 97, 1)",
-  200:"rgba(46, 30, 90, 1)"
+  100:"var(--ik_pink)",
+  200:"var(--ik_blue)"
 }
 
-export const blue = {
-  100:"rgba(46, 30, 90, 1)"
-}
+
 
 export const customColor = {
-  bluegreylighten:"rgba(120, 144, 156, 1)",
-  bluegreylighten2:"rgba(144, 164, 174, 1)",
-  bluegreydarken:'rgba(55, 71, 79, 1)',
-  black:'rgba(0, 0, 0, 1)',
-  darkgrey:'rgba(38, 50, 56, 1)',
-  darkgrey1:'rgba(59, 67, 87, 1)',
-  lightgrey:'rgba(84, 110, 122, 1)',
-  bluegreydarken2:'rgba(69, 90, 100, 1)',
-  pink:'rgba(227, 64, 97, 1)',
+  ik_bluegreylighten1:"var(--ik_bluegreylighten1)",
+  ik_bluegreylighten2:"var(--ik_bluegreylighten2)",
+  ik_bluegreydarken3:'var(--ik_bluegreydarken3)',
+  ik_black:'var(--ik_black)',
+  ik_bluegreydarken4:'var(--ik_bluegreydarken4)',
+  ik_bluegreydarken6:'var(ik_bluegreydarken6)',
+  ik_bluegreydarken1:'var(--ik_bluegreydarken1)',
+  ik_bluegreydarken2:'var( --ik_bluegreydarken2)',
+  ik_pink:'var(--ik_pink)',
   mixedcolor: "linear-gradient(90deg, #FF5252 0%, #2E1E5A 51.5%, #10BAC5 100%)",
-  mixedcolor1:"linear-gradient(90deg, #E34061 0%, #3C1393 44%, #1E9D77 100%)",
-  white:'rgba(255, 255, 255, 1)',
+  ik_multicolor:"var(--ik_multicolor)",
+  ik_white:'var(--ik_white)',
   light:"rgba(129, 134, 148, 1)",
-  dark:"rgba(55, 71, 79, 1)",
-  bluegreylighten5:"rgba(236, 239, 241, 1)",
+  ik_bluegreylighten5:"var(--ik_bluegreylighten5)",
 
 
 };
 
 export const primarybutton = {
   background: 'rgba(227, 64, 97, 1)',
-  textcolor: 'rgba(255, 255, 255, 1)',
-  iconcolor:'rgba(59, 67, 87, 1)',
+  textcolor: 'var(--ik_white)',
+  iconcolor:'var(ik_bluegreydarken6)',
  
 };
 
 export const bordercolor = {
   light:"rgba(129, 134, 148, 1)",
-  dark:"rgba(55, 71, 79, 1)"
+  dark:"var(--ik_bluegreydarken3)"
 }
 
 export const primary = {
-  light:"rgba(120, 144, 156, 1)",
-  main:"rgba(144, 164, 174, 1)",
-  dark:'rgba(55, 71, 79, 1)',
-  contrastText: 'rgba(255, 255, 255, 1)'
+  light:"var(--ik_bluegreylighten1)",
+  main:"var(--ik_bluegreylighten2)",
+  dark:'var(--ik_bluegreydarken3)',
+  contrastText: 'var(--ik_white)'
 };
 
 
 export const common = {
-  black: 'rgba(0, 0, 0, 1)',
-  white: 'rgba(255, 255, 255, 1)',
+  black: 'var(--ik_black)',
+  white: 'var(--ik_white)',
 };
 
 export const action = {

@@ -160,7 +160,7 @@ export function overrides(theme: Theme) {
       styleOverrides: {
         root: {
           [`&.${formHelperTextClasses.root}`]: {
-            color: theme.palette.customColor.bluegreydarken2,
+            color: theme.palette.customColor.ik_bluegreydarken2,
             fontSize: theme.typography.fontSizeList.f16,
             fontWeight: theme.typography.fontWeightRegular,
           },
@@ -179,10 +179,10 @@ export function overrides(theme: Theme) {
           // paddingBottom: "7px",
           color: theme.palette.customColor.light,
           "&.Mui-checked": {
-            color: theme.palette.customColor.pink,
+            color: theme.palette.customColor.ik_pink,
           },
           "&:hover": {
-            backgroundColor: theme.palette.customColor.white,
+            backgroundColor: theme.palette.customColor.ik_white,
           },
         },
       },
@@ -196,10 +196,10 @@ export function overrides(theme: Theme) {
         root: {
           color: theme.palette.customColor.light,
           '&.Mui-checked': {
-            color: theme.palette.customColor.pink,
+            color: theme.palette.customColor.ik_pink,
           },
           '&:hover': {
-            backgroundColor: theme.palette.customColor.white,
+            backgroundColor: theme.palette.customColor.ik_white,
           },
         },
       },
@@ -209,7 +209,7 @@ export function overrides(theme: Theme) {
         root: {
           overflow: "hidden",
           textOverflow: "ellipsis",
-          color: theme.palette.customColor.dark,
+          color: theme.palette.customColor.ik_bluegreydarken3,
           fontFamily: theme.typography.fontFamily,
           fontWeight: theme.typography.fontWeightRegular,
           fontSize: theme.typography.fontSizeList.f16,
@@ -220,7 +220,7 @@ export function overrides(theme: Theme) {
         {
           props: { variant: "f500" },
           style: {
-            color: theme.palette.customColor.dark,
+            color: theme.palette.customColor.ik_bluegreydarken3,
             fontSize: theme.typography.fontSizeList.f16,
             fontWeight: theme.typography.fontWeightMedium,
           },
@@ -228,7 +228,7 @@ export function overrides(theme: Theme) {
         {
           props: { variant: "f600" },
           style: {
-            color: theme.palette.customColor.dark,
+            color: theme.palette.customColor.ik_bluegreydarken3,
             fontSize: theme.typography.fontSizeList.f16,
             fontWeight: theme.typography.fontWeightSemiBold,
           },
@@ -236,7 +236,7 @@ export function overrides(theme: Theme) {
         {
           props: { variant: "f700" },
           style: {
-            color: theme.palette.customColor.dark,
+            color: theme.palette.customColor.ik_bluegreydarken3,
             fontSize: theme.typography.fontSizeList.f16,
             fontWeight: theme.typography.fontWeightBold,
           },
@@ -269,7 +269,7 @@ export function overrides(theme: Theme) {
           border: `1px solid ${theme.palette.customColor.light}`,
           height: "54px",
           // borderRadius:"6px",
-          color: theme.palette.customColor.bluegreylighten2,
+          color: theme.palette.customColor.ik_bluegreylighten2,
           "& fieldset": {
             border: "none",
           },
@@ -283,8 +283,8 @@ export function overrides(theme: Theme) {
         {
           props: { variant: "customInput" },
           style: {
-            border: `1px solid ${theme.palette.customColor.dark}`,
-            color: theme.palette.customColor.dark,
+            border: `1px solid ${theme.palette.customColor.ik_bluegreydarken3}`,
+            color: theme.palette.customColor.ik_bluegreydarken3,
             "& fieldset": {
               border: "none",
             },
@@ -293,7 +293,7 @@ export function overrides(theme: Theme) {
         {
           props: { variant: "customSearch" },
           style: {
-            border: `1px solid ${theme.palette.customColor.bluegreylighten5}`,
+            border: `1px solid ${theme.palette.customColor.ik_bluegreylighten5}`,
 
             // color: theme.palette.customColor.bluegreylighten,
             // height: "58px",
@@ -464,7 +464,7 @@ export function overrides(theme: Theme) {
       styleOverrides: {
         root: {
           minWidth: "80px",
-          backgroundColor: theme.palette.customColor.white,
+          backgroundColor: theme.palette.customColor.ik_white,
           borderRadius: "12px",
           marginBottom: "16px",
           display: "flex",
@@ -578,16 +578,16 @@ export function overrides(theme: Theme) {
     MuiAutocomplete: {
       styleOverrides: {
         root: {
-          backgroundColor: theme.palette.customColor.bluegreylighten5,
+          backgroundColor: theme.palette.customColor.ik_bluegreylighten5,
           borderRadius: "8px",
           // border: `1px solid ${theme.palette.customColor.bluegreylighten5}`,
-          color: theme.palette.customColor.bluegreylighten,
+          color: theme.palette.customColor.ik_bluegreylighten1,
           height: "58px",
         },
 
         inputRoot: {
           "& .MuiAutocomplete-input": {
-            color: theme.palette.customColor.bluegreylighten, // Set input text color to red
+            color: theme.palette.customColor.ik_bluegreylighten1, // Set input text color to red
           },
         },
 
@@ -603,7 +603,7 @@ export function overrides(theme: Theme) {
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          color: theme.palette.customColor.bluegreylighten2,
+          color: theme.palette.customColor.ik_bluegreylighten2,
         },
       },
       variants: [
@@ -612,7 +612,7 @@ export function overrides(theme: Theme) {
             variant: "customLabel",
           },
           style: {
-            color: theme.palette.customColor.dark,
+            color: theme.palette.customColor.ik_bluegreydarken3,
           },
         },
       ],

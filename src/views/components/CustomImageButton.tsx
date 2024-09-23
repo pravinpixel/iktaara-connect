@@ -10,6 +10,7 @@ interface CustomButtonType extends ButtonProps {
   label?: string;
 }
 
+
 function CustomImageButton(props: CustomButtonType) {
   const { image, variant = "contained", label, ...rest } = props;
 
