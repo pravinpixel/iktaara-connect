@@ -483,9 +483,9 @@ export function overrides(theme: Theme) {
           border: "none",
           borderRadius: "16px",
           padding: "0px!important",
-          backgroundColor: "#f5f5f5",
-          height: "260px",
-          width: "360px",
+          backgroundColor: "white",
+          // height: "260px",
+          // width: "360px",
         },
       },
       // variants: [
@@ -554,12 +554,12 @@ export function overrides(theme: Theme) {
             },
             "& img": {
               position: "absolute",
-
               width: "50px",
               height: "50px",
               objectFit: "cover",
               borderRadius: "50%",
             },
+            
           },
         },
         {
