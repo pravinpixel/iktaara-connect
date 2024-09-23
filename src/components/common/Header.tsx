@@ -12,11 +12,11 @@ import CustomContainer from "@/views/components/Container";
 const Header = () => {
   return (
     <div className="shadow-md">
-      <Container
+      {/* <Container
         maxWidth={"lg"}
         sx={{ maxWidth: { xl: "90% !important", lg: "90%" } }}
-      >
-        <CustomContainer />
+      > */}
+      <CustomContainer>
         <div
           className={`w-ful h-[${NAV.height}]  flex items-center justify-between px-3 `}
         >
@@ -81,7 +81,7 @@ const Header = () => {
             />
           </div>
         </div>
-      </Container>
+      </CustomContainer>
     </div>
   );
 };

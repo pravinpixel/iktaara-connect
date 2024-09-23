@@ -1,34 +1,14 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 
-import { Box, Card, Grid, Stack, useTheme } from "@mui/material";
-
-import ImageComponent from "../imageComponent";
+import { Box, Stack } from "@mui/material";
 
 import CustomCheckbox from "../form-fields/CheckBox";
 import { FormProvider, useForm } from "react-hook-form";
 
 const LocationSection = () => {
-  const theme = useTheme();
   const methods = useForm();
 
-  const image = [
-    {
-      id: 1,
-
-      imgSrc: "/images/static/image_15.png",
-    },
-    {
-      id: 2,
-
-      imgSrc: "/images/static/image_16.png",
-    },
-    {
-      id: 3,
-
-      imgSrc: "/images/static/image_17.png",
-    },
-  ];
   const location = [
     {
       id: 1,

@@ -1,17 +1,14 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 
-import { Box, Card, Grid, Stack, useTheme } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
 import ImageComponent from "../imageComponent";
 
 import CustomCheckbox from "../form-fields/CheckBox";
 import { FormProvider, useForm } from "react-hook-form";
-import LocationSection from "./LocationSection";
-import InstrumentType from "./InstrumentTypes";
 
 const RatingSection = () => {
-  const theme = useTheme();
   const methods = useForm();
 
   const image = [
@@ -31,23 +28,7 @@ const RatingSection = () => {
       imgSrc: "/images/static/image_17.png",
     },
   ];
-  const location = [
-    {
-      id: 1,
 
-      name: "Adayar",
-    },
-    {
-      id: 2,
-
-      name: "Nungampakkam",
-    },
-    {
-      id: 3,
-
-      name: "Velachery",
-    },
-  ];
   return (
     <FormProvider {...methods}>
       <Box mt={1}>
