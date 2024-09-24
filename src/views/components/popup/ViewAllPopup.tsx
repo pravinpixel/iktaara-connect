@@ -15,6 +15,7 @@ import { TransitionProps } from "@mui/material/transitions";
 import { Divider } from "@mui/material";
 import ViewAllDialog from "./ViewAllDialog";
 
+import { AutoCompleteSearch } from "@/views/layouts/AutoCompleteSearch";
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
