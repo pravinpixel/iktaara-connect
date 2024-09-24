@@ -46,7 +46,7 @@ const Listings = () => {
             <Grid item xs={9}>
               <BusinessSection />
               <StudioCard />
-              <Pagination></Pagination>
+              <Pagination from={0} to={0} total_count={0}></Pagination>
             </Grid>
           </Grid>
         </Container>
