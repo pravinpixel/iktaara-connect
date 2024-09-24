@@ -8,6 +8,7 @@ import {
 import { palette } from "./palette";
 import { overrides } from "./overrides";
 import { typography } from "./typography";
+import { CssBaseline } from "@mui/material";
 
 // ----------------------------------------------------------------------
 
@@ -35,5 +36,7 @@ export default function ThemeProvider({ children } : {children : React.ReactNode
 
   overRideTheme.components  = overrides(overRideTheme) as never
 
-  return <MUIThemeProvider theme={overRideTheme}>{children}</MUIThemeProvider>;
+  return <MUIThemeProvider theme={overRideTheme}>
+    <CssBaseline/>
+    {children}</MUIThemeProvider>;
 }
