@@ -9,7 +9,6 @@ type Props = {
 };
 const MusicalSection = (props: Props) => {
     const { musicsection } = props;
-    console.log(musicsection, "musicsection");
   return (
     <section className="pt-7 pb-9 relative">
       <Container
@@ -25,7 +24,7 @@ const MusicalSection = (props: Props) => {
             priority={true}
           />
         </div>
-        <div className="text-f28 font-semibold mb-3 ">
+        <div className="text-f28 font-semibold mb-3 text-ik_bluegreydarken4">
           <span>Destination for everyone with musical interest</span>
         </div>
         <Grid container>
@@ -37,6 +36,7 @@ const MusicalSection = (props: Props) => {
                   img={item.image}
                   text={item.music_title}
                   Contenttext={item.music_text}
+                  typetop= 'true'
                 />
               </Grid>
             </Fragment>

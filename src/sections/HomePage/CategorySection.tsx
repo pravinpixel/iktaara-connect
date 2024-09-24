@@ -72,7 +72,7 @@ const CategorySection = (props: Props) => {
         sx={{ maxWidth: { xl: "89% !important", lg: "89%" } }}
       >
         <div className="flex items-center gap-3 mb-4">
-          <div className="text-f28 font-semibold">
+          <div className="text-f28 font-semibold text-ik_bluegreydarken4">
             <span>Find Talent by Category</span>
           </div>
           <div>

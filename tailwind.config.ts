@@ -102,7 +102,9 @@ const config: Config = {
         ik_bordervariant: {
           DEFAULT: "var(--ik_bordervariant)",
         },
-        
+        ik_bordervariant2: {
+          DEFAULT: "var(--ik_bordervariant2)",
+        },
         ik_bluegreydarken6: {
           DEFAULT: "var(--ik_bluegreydarken6)",
         },

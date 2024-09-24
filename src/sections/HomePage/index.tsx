@@ -7,6 +7,8 @@ import CategorySection from "./CategorySection";
 import GroSection from "./GroSection";
 import MusicalSection from "./MusicalSection";
 import MusicTechnicians from "./musictechnicians";
+import RecordingSection from "./recordingSection";
+import FrequentlyAskedSection from "./frequentlyAsked";
 
 const HomePageComponent = () => {
   const music = [
@@ -413,7 +415,7 @@ const HomePageComponent = () => {
     {
       id: 1,
       music_image: "/assets/image/music-arts.webp",
-      music_logo: "",
+      music_logo: "/assets/image/music-logo1.png",
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",
@@ -421,8 +423,8 @@ const HomePageComponent = () => {
     },
     {
       id: 2,
-      music_image: "/assets/image/music-arts.webp",
-      music_logo: "",
+      music_image: "/assets/image/schmitt.webp",
+      music_logo: "/assets/image/music-logo2.png",
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",
@@ -430,8 +432,8 @@ const HomePageComponent = () => {
     },
     {
       id: 3,
-      music_image: "/assets/image/music-arts.webp",
-      music_logo: "",
+      music_image: "/assets/image/kzone.webp",
+      music_logo: "/assets/image/music-logo3.png",
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",
@@ -439,8 +441,8 @@ const HomePageComponent = () => {
     },
     {
       id: 4,
-      music_image: "/assets/image/music-arts.webp",
-      music_logo: "",
+      music_image: "/assets/image/music-doctor.webp",
+      music_logo: "/assets/image/music-logo4.png",
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",
@@ -449,11 +451,29 @@ const HomePageComponent = () => {
     {
       id: 5,
       music_image: "/assets/image/music-arts.webp",
-      music_logo: "",
+      music_logo: "/assets/image/music-logo1.png",
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",
       music_text: "Specialist in Piano, Violin",
+    },
+  ];
+
+  const faq = [
+    {
+      id: 1,
+      title: "How do I choose the right pianica online?",
+      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
+    },
+    {
+      id: 2,
+      title: 'What are the advantages of shopping for a "Pianica Online"?',
+      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
+    },
+    {
+      id: 3,
+      title: "What is the typical price of a Pianica in India?",
+      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
     },
   ];
 
@@ -463,11 +483,16 @@ const HomePageComponent = () => {
       <MusicalSection musicsection={music} />
       <EventsSellers Eventssections={Events} bgChange={true} />
       <CategorySection Categorysection={Category} />
-      <GroSection />
       <MusicTechnicians
         musictechniciansection={musictechnician_data}
         className={"flex pt-5 pb-5 bg-ik_white"}
         title={"Music Instrument Technicians "}
+      />
+      <GroSection />
+      <RecordingSection />
+      <FrequentlyAskedSection
+        faqsection={faq}
+        className={"flex pt-5 pb-5 bg-ik_redvariant1"}
       />
     </section>
   );

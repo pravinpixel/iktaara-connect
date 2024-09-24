@@ -57,7 +57,7 @@ const GroSection = () => {
           <Grid item xs={5} className="flex items-center">
             <Grid container>
               <Grid xs={4} pr={2}>
-                <div className="gro-card-sections">
+                <div className="gro-card-sections h-full">
                   <div className="flex justify-center">
                     <ImageComponent
                       src={"/assets/icons/visitors.svg"}
@@ -78,7 +78,7 @@ const GroSection = () => {
                 </div>
               </Grid>
               <Grid xs={4} pr={2}>
-                <div className="gro-card-sections">
+                <div className="gro-card-sections h-full">
                   <div className="flex justify-center">
                     <ImageComponent
                       src={"/assets/icons/businesses.svg"}
@@ -99,7 +99,7 @@ const GroSection = () => {
                 </div>
               </Grid>
               <Grid xs={4} pr={2}>
-                <div className="gro-card-sections">
+                <div className="gro-card-sections h-full">
                   <div className="flex justify-center">
                     <ImageComponent
                       src={"/assets/icons/enquiries.svg"}

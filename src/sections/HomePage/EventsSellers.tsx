@@ -71,7 +71,7 @@ const EventsSellers = (props: Props) => {
           maxWidth={"lg"}
           sx={{ maxWidth: { xl: "89% !important", lg: "89%" } }}
         >
-          <div className="text-f28 font-semibold mb-3 ">
+          <div className="text-f28 font-semibold mb-3 text-ik_bluegreydarken4">
             <span>Popular Events in the City</span>
           </div>
         </Container>
