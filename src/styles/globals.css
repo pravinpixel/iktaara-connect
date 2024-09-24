@@ -70,7 +70,7 @@
   --ik_blue-foreground: hsla(0, 0%, 100%, 1);
   --ik_multicolor:linear-gradient(180deg, #E34061 0%, #00968A 100%);
   --ik_multicolor-foreground: hsla(0, 0%, 100%, 1);
-  --ik_white:hsla(256, 100%, 97%, 1);
+  --ik_white:hsla(0, 0%, 100%, 1);
   --ik_white-foreground: hsla(348, 75%, 57%, 1);
   --ik_whitevariant:hsla(349, 100%, 97%, 1);
   --ik_whitevariant-foreground: hsla(348, 75%, 57%, 1);

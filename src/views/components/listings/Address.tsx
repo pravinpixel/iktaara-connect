@@ -49,6 +49,7 @@ const AddressSection = () => {
                 img1="/images/static/image_12.png"
                 type="true"
                 text={""}
+                reviews={""}
               />
               <Box
                 sx={{
