@@ -106,13 +106,7 @@ export function overrides(theme: Theme) {
         },
       },
     },
-    MuiPopover: {
-      styleOverrides: {
-        paper: {
-          // left: "9px !important",
-        },
-      },
-    },
+    
     MuiPaper: {
       styleOverrides: {
         root: {
@@ -120,7 +114,7 @@ export function overrides(theme: Theme) {
           [theme.breakpoints.down("sm")]: {
             padding: "13px 13px",
           },
-          // left: "10px",
+          
         },
       },
       variants: [
@@ -209,7 +203,7 @@ export function overrides(theme: Theme) {
           overflow: "hidden",
           textOverflow: "ellipsis",
           color: theme.palette.customColor.ik_bluegreydarken3,
-          fontFamily: theme.typography.fontFamily,
+          fontFamily: "Sora",
           fontWeight: theme.typography.fontWeightRegular,
           fontSize: theme.typography.fontSizeList.f16,
         },
@@ -339,16 +333,16 @@ export function overrides(theme: Theme) {
     MuiModal: {
       styleOverrides: {
         root: {
-          "& .MuiBox-root": {
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 400,
-            backgroundColor: "white",
-            boxShadow: 24,
-            padding: "20px",
-          },
+          // "& .MuiBox-root": {
+          //   position: "absolute",
+          //   top: "50%",
+          //   left: "50%",
+          //   transform: "translate(-50%, -50%)",
+          //   width: 400,
+          //   backgroundColor: "white",
+          //   boxShadow: 24,
+          //   padding: "20px",
+          // },
         },
       },
     },

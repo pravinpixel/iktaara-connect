@@ -53,7 +53,9 @@ const Header = () => {
             </div>
             <div className="w-auto">
               {/* <SearchBar /> */}
-              <AutoCompleteSearch />
+              <AutoCompleteSearch
+                placeholder={"Find artists, sound engineers, bands..."}
+              />
             </div>
           </div>
           <div className="flex items-center gap-3">

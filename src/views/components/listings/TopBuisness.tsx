@@ -10,7 +10,7 @@ const BusinessSection = () => {
   const theme = useTheme();
 
   return (
-    <section style={{ marginTop: "15px" }}>
+    <section className="mt-[15px]">
       {" "}
       <Card sx={{ width: "100%", height: "100%", background: "white" }}>
         <Grid
@@ -52,7 +52,6 @@ const BusinessSection = () => {
               </Stack>
             </Box>
           </Grid>
-          <></>
         </Grid>
         <AddressSection />
       </Card>

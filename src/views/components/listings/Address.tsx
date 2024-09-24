@@ -50,66 +50,64 @@ const AddressSection = () => {
                 type="true"
                 text={""}
               />
-              <Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    mt: 2,
-                  }}
-                >
-                  <Box>
-                    <p className="text-f22 leading-7 font-bold">
-                      {business.name}
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  mt: 2,
+                }}
+              >
+                <Box>
+                  <p className="text-f22 leading-7 font-bold">
+                    {business.name}
+                  </p>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "flex-start",
+                    }}
+                  >
+                    <ImageComponent
+                      src={business.imgSrc}
+                      alt="Business Image"
+                      width={19}
+                      height={20}
+                    />
+                    <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken3">
+                      {business.location}
                     </p>
-                    <Stack
-                      direction="row"
-                      spacing={1}
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "flex-start",
-                      }}
-                    >
-                      <ImageComponent
-                        src={business.imgSrc}
-                        alt="Business Image"
-                        width={19}
-                        height={20}
-                      />
-                      <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken3">
-                        {business.location}
-                      </p>
-                    </Stack>
-                    <Stack
-                      direction="row"
-                      spacing={1}
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "flex-start",
-                      }}
-                    >
-                      <ImageComponent
-                        src="/images/static/image_6.png"
-                        alt="Business Image"
-                        width={22}
-                        height={11}
-                      />
-                      <p className="font-semibold text-f16 leading-5 text-ik_pink">
-                        {business.inquiries} inquiries
-                      </p>
-                    </Stack>
-                  </Box>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "flex-start",
+                    }}
+                  >
+                    <ImageComponent
+                      src="/images/static/image_6.png"
+                      alt="Business Image"
+                      width={22}
+                      height={11}
+                    />
+                    <p className="font-semibold text-f16 leading-5 text-ik_pink">
+                      {business.inquiries} inquiries
+                    </p>
+                  </Stack>
+                </Box>
 
-                  <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-                    <CustomSmallButton
-                      image="/images/static/image_7.png"
-                      width={27.57}
-                      height={27.57}
-                    ></CustomSmallButton>
-                    {/* <p style={{ textAlign: "right" }}>{business.icon}</p> */}
-                  </Box>
+                <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                  <CustomSmallButton
+                    image="/images/static/image_7.png"
+                    width={27.57}
+                    height={27.57}
+                  ></CustomSmallButton>
+                  {/* <p style={{ textAlign: "right" }}>{business.icon}</p> */}
                 </Box>
               </Box>
             </>

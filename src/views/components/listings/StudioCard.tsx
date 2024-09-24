@@ -39,7 +39,7 @@ const StudioCard = () => {
   ];
 
   return (
-    <section style={{ marginTop: "15px" }}>
+    <section className="mt-[15px]">
       {businesses.map((business) => (
         <Card
           sx={{

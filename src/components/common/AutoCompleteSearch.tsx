@@ -4,7 +4,7 @@ import { Autocomplete, Container, Grid, TextField } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-export const AutoCompleteSearch = ({}) => {
+export const AutoCompleteSearch = ({ placeholder }: any) => {
   const [open, setOpen] = useState(false);
   const temp = useRef(null);
 
@@ -82,7 +82,7 @@ export const AutoCompleteSearch = ({}) => {
                 onBlur={() => {
                   setOpen(false);
                 }}
-                placeholder="Find artists, sound engineers, bands..."
+                placeholder={placeholder}
                 aria-describedby="inputGroup-sizing-sm"
                 InputProps={{
                   ...params.InputProps,
