@@ -12,7 +12,6 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import { TransitionProps } from "@mui/material/transitions";
 
-import { AutoCompleteSearch } from "@/components/common/AutoCompleteSearch";
 import { Divider } from "@mui/material";
 import ViewAllDialog from "./ViewAllDialog";
 
