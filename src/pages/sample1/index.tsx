@@ -90,61 +90,151 @@
 
 // export default LoginForm;
 
-import { useForm, FormProvider } from "react-hook-form";
-import { signIn, useSession } from "next-auth/react";
-import zustandStore from "@/utils/helpers/zustand";
-import { useStore } from "zustand";
-import { Stack } from "@mui/material";
-import InputField from "@/views/components/form-fields/TextField";
-import CustomCheckbox from "@/views/components/form-fields/CheckBox";
-import SelectField from "@/views/components/form-fields/SelectField";
+// import { useForm, FormProvider } from "react-hook-form";
+// import { signIn, useSession } from "next-auth/react";
+// import zustandStore from "@/utils/helpers/zustand";
+// import { useStore } from "zustand";
+// import { Stack } from "@mui/material";
+// import InputField from "@/views/components/form-fields/TextField";
+// import CustomCheckbox from "@/views/components/form-fields/CheckBox";
+// import SelectField from "@/views/components/form-fields/SelectField";
 
-function LoginForm() {
-  const { data: session } = useSession();
-  const { setToken } = useStore(zustandStore);
-  const methods = useForm(); // Initialize form methods
+// function LoginForm() {
+//   const { data: session } = useSession();
+//   const { setToken } = useStore(zustandStore);
+//   const methods = useForm(); // Initialize form methods
 
-  const handlePasswordReset = async (data: any) => {
-    try {
-      const res = await signIn("sign-in", {
-        redirect: false,
-        email: data.email,
-        password: data.password,
-      });
-      const token = session?.user?.authorization?.access_token || null;
-      setToken(token);
-      return res;
-    } catch (error) {
-      console.error(error);
-    }
+//   const handlePasswordReset = async (data: any) => {
+//     try {
+//       const res = await signIn("sign-in", {
+//         redirect: false,
+//         email: data.email,
+//         password: data.password,
+//       });
+//       const token = session?.user?.authorization?.access_token || null;
+//       setToken(token);
+//       return res;
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+
+//   return (
+//     <FormProvider {...methods}>
+//       <Stack
+//         display={"flex"}
+//         alignItems={"center"}
+//         component={"form"}
+//         onSubmit={methods.handleSubmit(handlePasswordReset)}
+//       >
+//         {/* <InputField
+//           name="email"
+//           label="Email"
+//           placeholder="Email"
+//           type="email"
+//           InputProps={{ variant: "customInput" }} // Pass custom variant here
+//         />
+//         <InputField
+//           name="password"
+//           label="Password"
+//           placeholder="Password"
+//           type="password"
+//         />
+//         <CustomCheckbox name="mark_as_completed" label="Mark as Completed" /> */}
+//         <SelectField name="priority_id" label="Task priority" />
+//       </Stack>
+//     </FormProvider>
+//   );
+// }
+
+// export default LoginForm;
+
+import React, { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogActions,
+  Button,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  Typography,
+} from "@mui/material";
+
+const FullScreenPopup = () => {
+  const [open, setOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("hostEvent");
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
-    <FormProvider {...methods}>
-      <Stack
-        display={"flex"}
-        alignItems={"center"}
-        component={"form"}
-        onSubmit={methods.handleSubmit(handlePasswordReset)}
-      >
-        {/* <InputField
-          name="email"
-          label="Email"
-          placeholder="Email"
-          type="email"
-          InputProps={{ variant: "customInput" }} // Pass custom variant here
-        />
-        <InputField
-          name="password"
-          label="Password"
-          placeholder="Password"
-          type="password"
-        />
-        <CustomCheckbox name="mark_as_completed" label="Mark as Completed" /> */}
-        <SelectField name="priority_id" label="Task priority" />
-      </Stack>
-    </FormProvider>
-  );
-}
+    <>
+      <Button variant="contained" color="primary" onClick={handleClickOpen}>
+        Open Full-Screen Popup
+      </Button>
 
-export default LoginForm;
+      <Dialog fullScreen open={open} onClose={handleClose}>
+        <DialogContent
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+            backgroundImage: 'url("/your-background-image.jpg")',
+            backgroundSize: "cover",
+          }}
+        >
+          <div
+            style={{
+              background: "rgba(255, 255, 255, 0.8)",
+              padding: "20px",
+              borderRadius: "10px",
+            }}
+          >
+            <Typography variant="h4" gutterBottom>
+              Connecting musical talents & Businesses
+            </Typography>
+            <RadioGroup
+              value={selectedValue}
+              onChange={(e) => setSelectedValue(e.target.value)}
+            >
+              <FormControlLabel
+                value="findArtists"
+                control={<Radio />}
+                label="Find artists/venues"
+              />
+              <FormControlLabel
+                value="hostEvent"
+                control={<Radio />}
+                label="Host an event"
+              />
+              <FormControlLabel
+                value="listBusiness"
+                control={<Radio />}
+                label="List my business"
+              />
+              <FormControlLabel
+                value="createProfile"
+                control={<Radio />}
+                label="Create Online Profile"
+              />
+            </RadioGroup>
+          </div>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} variant="contained" color="primary">
+            Continue
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
+};
+
+export default FullScreenPopup;

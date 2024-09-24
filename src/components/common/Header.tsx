@@ -8,8 +8,19 @@ import { AutoCompleteSearch } from "./AutoCompleteSearch";
 import CustomButton from "@/views/components/form-fields/CustomButton";
 import ImageComponent from "@/views/components/imageComponent";
 import CustomContainer from "@/views/components/Container";
+import LoginPopup from "@/views/components/popup/LoginPopup";
 
 const Header = () => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="shadow-md">
       {/* <Container
@@ -80,10 +91,12 @@ const Header = () => {
               variant="contained"
               label={"Login"}
               className="text-f12 font-semibold text-ik_pink-foreground"
+              onClick={handleClickOpen}
             />
           </div>
         </div>
       </CustomContainer>
+      {open && <LoginPopup handleClose={handleClose} open={open} />}
     </div>
   );
 };

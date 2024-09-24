@@ -10,7 +10,7 @@ function CustomButton(props: CustomButtonType) {
   const { label, variant = "contained", ...rest } = props;
 
   return (
-    <Button variant={variant} {...rest}>
+    <Button variant={variant} {...rest} sx={{ textTransform: "capitalize" }}>
       {label || "Login"}
     </Button>
   );
