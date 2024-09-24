@@ -3,7 +3,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import ThemeProvider from "@/utils/theme/ThemeConfig";
 
-
 type LayoutsTypes = {
   children: React.ReactNode;
 };

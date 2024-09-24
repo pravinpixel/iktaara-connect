@@ -29,7 +29,7 @@ const Listings = () => {
         </CustomContainer>
       </section>
       <section className="bg-ik_lightblue">
-        <CustomContainer>
+        {/* <CustomContainer>
           <Grid container spacing={2}>
             <Grid item xs={3}>
               <FilterSection />
@@ -40,7 +40,7 @@ const Listings = () => {
               <Pagination from={0} to={0} total_count={0}></Pagination>
             </Grid>
           </Grid>
-        </CustomContainer>
+        </CustomContainer> */}
       </section>
     </>
   );

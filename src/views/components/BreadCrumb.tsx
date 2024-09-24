@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Breadcrumb() {
   return (
-    <div role="presentation">
+    <Box>
       <Breadcrumbs aria-label="breadcrumb">
         <Link
           // underline="hover"
@@ -37,6 +37,6 @@ export default function Breadcrumb() {
           All Listings
         </Link>
       </Breadcrumbs>
-    </div>
+    </Box>
   );
 }
