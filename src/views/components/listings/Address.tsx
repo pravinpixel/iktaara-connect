@@ -47,7 +47,7 @@ const AddressSection = () => {
                 variant="bottom-right"
                 img="/images/static/image_13.png"
                 img1="/images/static/image_12.png"
-                type="true"
+                type={true}
                 text={""}
                 reviews={""}
               />
@@ -65,11 +65,8 @@ const AddressSection = () => {
                   <Stack
                     direction="row"
                     spacing={1}
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "flex-start",
-                    }}
+                    alignItems={"center"}
+                    justifyContent={"flex-start"}
                   >
                     <ImageComponent
                       src={business.imgSrc}
@@ -84,11 +81,8 @@ const AddressSection = () => {
                   <Stack
                     direction="row"
                     spacing={1}
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "flex-start",
-                    }}
+                    alignItems={"center"}
+                    justifyContent={"flex-start"}
                   >
                     <ImageComponent
                       src="/images/static/image_6.png"

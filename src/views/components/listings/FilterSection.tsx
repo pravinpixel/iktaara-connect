@@ -8,19 +8,8 @@ import RatingSection from "./RatingSection";
 
 const FilterSection = () => {
   return (
-    <section
-      style={{
-        marginTop: "15px",
-        background: "white",
-        padding: "20px",
-        borderRadius: "12px",
-      }}
-    >
-      <Stack
-        direction="row"
-        spacing={2}
-        sx={{ display: "flex", alignItems: "center" }}
-      >
+    <section className="bg-ik_white rounded-xl p-[20px] mt-[15px]">
+      <Stack direction="row" spacing={2} alignItems={"center"}>
         <ImageComponent
           src="/images/static/image_14.png"
           width={24}

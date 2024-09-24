@@ -48,6 +48,7 @@ const StudioCard = () => {
             background: "white",
             marginTop: "15px",
           }}
+          key={business.id}
         >
           <Box sx={{ p: 2 }}>
             <Grid container>
@@ -58,7 +59,7 @@ const StudioCard = () => {
                     variant="bottom-right"
                     img="/images/static/image_13.png"
                     img1="/images/static/image_12.png"
-                    type="true"
+                    type={true}
                     text=""
                     reviews={""}
                   />
@@ -75,7 +76,7 @@ const StudioCard = () => {
                         <Stack
                           direction="row"
                           spacing={1}
-                          sx={{ display: "flex", alignItems: "center" }}
+                          alignItems={"center"}
                         >
                           <ImageComponent
                             src={business.imgSrc}
@@ -93,7 +94,7 @@ const StudioCard = () => {
                         <Stack
                           direction="row"
                           spacing={1}
-                          sx={{ display: "flex", alignItems: "center" }}
+                          alignItems={"center"}
                         >
                           <ImageComponent
                             src="/images/static/image_8.png"
@@ -113,7 +114,7 @@ const StudioCard = () => {
                           <Stack
                             direction="row"
                             spacing={1}
-                            sx={{ display: "flex", alignItems: "center" }}
+                            alignItems={"center"}
                           >
                             <ImageComponent
                               src="/images/static/image_6.png"
@@ -128,7 +129,7 @@ const StudioCard = () => {
                           <Stack
                             direction="row"
                             spacing={1}
-                            sx={{ display: "flex", alignItems: "center" }}
+                            alignItems={"center"}
                           >
                             <ImageComponent
                               src="/images/static/image_9.png"
@@ -148,11 +149,8 @@ const StudioCard = () => {
                           <Stack
                             direction="row"
                             spacing={"20px"}
-                            sx={{
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "flex-end",
-                            }}
+                            alignItems={"center"}
+                            justifyContent={"flex-end"}
                           >
                             <ImageComponent
                               src="/images/static/image_10.png"
@@ -210,6 +208,13 @@ const StudioCard = () => {
           </Box>
         </Card>
       ))}
+      <Box mt={2}>
+        <ImageComponent
+          src="/images/static/image_18.png"
+          width={1118}
+          height={250}
+        />
+      </Box>
     </section>
   );
 };

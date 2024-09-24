@@ -10,7 +10,7 @@ import { Grid } from "@mui/material";
 //   open?: boolean;
 // }
 
-export default function LocationDialog() {
+export default function ViewAllDialog() {
   const methods = useForm();
   const location = [
     {
@@ -35,8 +35,8 @@ export default function LocationDialog() {
     <>
       <Grid container>
         <FormProvider {...methods}>
-          {location?.map((row, i) => (
-            <Grid item xs={5} key={i}>
+          {location?.map((row) => (
+            <Grid item xs={5} key={row.id}>
               <Stack
                 direction="row"
                 sx={{ display: "flex", alignItems: "center" }}

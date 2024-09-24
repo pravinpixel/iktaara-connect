@@ -11,9 +11,10 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
 import { TransitionProps } from "@mui/material/transitions";
-import LocationDialog from "./LocationDialog";
+
 import { AutoCompleteSearch } from "@/components/common/AutoCompleteSearch";
 import { Divider } from "@mui/material";
+import ViewAllDialog from "./ViewAllDialog";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -27,7 +28,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
-    children: React.ReactElement<any, any>;
+    children: React.ReactElement;
   },
   ref: React.Ref<unknown>
 ) {
@@ -38,12 +39,11 @@ interface LocationDialogProps {
   open?: boolean;
 }
 
-export default function LocationPopup({
+export default function ViewAllPopup({
   handleClose,
   open,
 }: LocationDialogProps) {
   return (
-    // <Box sx={{ "& .MuiPaper": { padding: "200px!important" } }}>
     <>
       <BootstrapDialog
         fullWidth={true}
@@ -82,7 +82,7 @@ export default function LocationPopup({
             {/* <SearchBar /> */}
             <AutoCompleteSearch placeholder="Search Location" />
           </div>
-          <LocationDialog />
+          <ViewAllDialog />
         </DialogContent>
         <DialogActions>
           <Button

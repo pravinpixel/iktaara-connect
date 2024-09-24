@@ -3,9 +3,9 @@ import ImageComponent from "@/views/components/imageComponent";
 import { Container, Grid } from "@mui/material";
 import React from "react";
 
-const GroSection = () => {
+const GroSection = ({ type }: any) => {
   return (
-    <section className="bg-ik_blue grosection py-5">
+    <section className="bg-ik_blue grosection py-5 ">
       <Container
         maxWidth={"lg"}
         sx={{ maxWidth: { xl: "88% !important", lg: "88%" } }}

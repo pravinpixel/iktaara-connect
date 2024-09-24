@@ -6,7 +6,7 @@ import { Box, Stack } from "@mui/material";
 import CustomCheckbox from "../form-fields/CheckBox";
 import { FormProvider, useForm } from "react-hook-form";
 
-import LocationPopup from "../popup/LocationPopup";
+import ViewAllPopup from "../popup/ViewAllPopup";
 
 const LocationSection = () => {
   const methods = useForm();
@@ -47,12 +47,8 @@ const LocationSection = () => {
             </p>
             <Box mt={1}>
               {" "}
-              {location?.map((row, i) => (
-                <Stack
-                  key={i}
-                  direction="row"
-                  sx={{ display: "flex", alignItems: "center" }}
-                >
+              {location?.map((row) => (
+                <Stack key={row.id} direction="row" alignItems={"center"}>
                   <CustomCheckbox name={`rating_${row.id}`} label="" />
                   <Box sx={{ paddingTop: "5px" }}>
                     <p className="font-normal text-f18 leading-9 text-ik_bluegreydarken1">
@@ -73,7 +69,7 @@ const LocationSection = () => {
         </Box>
       </FormProvider>
       {open && (
-        <LocationPopup handleClose={handleClose} open={open}></LocationPopup>
+        <ViewAllPopup handleClose={handleClose} open={open}></ViewAllPopup>
       )}
     </>
   );

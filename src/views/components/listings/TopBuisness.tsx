@@ -30,12 +30,9 @@ const BusinessSection = () => {
             >
               <Stack
                 direction="row"
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "5px",
-                }}
+                alignItems={"center"}
+                justifyContent={"center"}
+                gap={"5px"}
               >
                 <ImageComponent
                   src="/images/static/image_4.png"

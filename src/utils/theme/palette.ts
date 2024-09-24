@@ -51,7 +51,7 @@ export const bordercolor = {
 
 export const primary = {
   light:"var(--ik_bluegreylighten1)",
-  main:"var(--ik_bluegreylighten2)",
+  main:"hsla(200, 16%, 62%, 1)",
   dark:'var(--ik_bluegreydarken3)',
   contrastText: 'var(--ik_white)'
 };

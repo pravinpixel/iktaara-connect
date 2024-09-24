@@ -55,7 +55,7 @@ export function overrides(theme: Theme) {
           fontSize: theme.typography.fontSizeList.f16,
           fontWeight: theme.typography.fontWeightSemiBold,
           backgroundColor: theme.palette.primarybutton.background,
-
+         
           "&:hover": {
             color: theme.palette.primarybutton.textcolor,
             backgroundColor: theme.palette.primarybutton.background,
@@ -76,7 +76,8 @@ export function overrides(theme: Theme) {
             "&:hover": {
               color: theme.palette.primarybutton.background,
               backgroundColor: theme.palette.primarybutton.textcolor,
-              border: `1px solid ${theme.palette.primarybutton.background}`,
+              border: `1px solid ${theme.palette.primarybutton.background}`
+
             },
           },
         },
@@ -188,10 +189,10 @@ export function overrides(theme: Theme) {
       styleOverrides: {
         root: {
           color: theme.palette.customColor.light,
-          "&.Mui-checked": {
+          '&.Mui-checked': {
             color: theme.palette.customColor.ik_pink,
           },
-          "&:hover": {
+          '&:hover': {
             backgroundColor: theme.palette.customColor.ik_white,
           },
         },
@@ -203,7 +204,7 @@ export function overrides(theme: Theme) {
           overflow: "hidden",
           textOverflow: "ellipsis",
           color: theme.palette.customColor.ik_bluegreydarken3,
-          fontFamily: "Sora",
+          fontFamily: theme.typography.fontFamily,
           fontWeight: theme.typography.fontWeightRegular,
           fontSize: theme.typography.fontSizeList.f16,
         },
@@ -269,6 +270,7 @@ export function overrides(theme: Theme) {
           "&.MuiOutlinedInput": {
             borderRadius: "6px",
           },
+
         },
       },
       variants: [
@@ -297,6 +299,7 @@ export function overrides(theme: Theme) {
         },
       ],
     },
+
 
     // MuiTextField: {
     //   defaultProps: {
@@ -466,7 +469,7 @@ export function overrides(theme: Theme) {
           justifyContent: "center",
           alignContent: "space-between",
           boxShadow: `0px 4px 8px  ${grey[1000]}}`,
-        },
+        }
       },
     },
     MuiCard: {
@@ -512,6 +515,7 @@ export function overrides(theme: Theme) {
             // width: "360px",
             borderRadius: "16px",
             // backgroundColor: "#f5f5f5",
+            
           },
         },
         {
@@ -522,17 +526,17 @@ export function overrides(theme: Theme) {
             // width: "360px",
             borderRadius: "16px",
             // backgroundColor: "#f5f5f5",
-            // "& .MuiTypography-root": {
-            //   position: "absolute",
-            //   bottom: "-7%",
-            //   right: "-13%",
-            //   transform: "translate(-50%, -50%)",
-            //   color: "white",
-            //   // backgroundColor: "rgba(0, 0, 0, 0.5)",
-            //   padding: "10px",
-            //   borderRadius: "4px",
-            //   textAlign: "center",
-            // },
+            "& .MuiTypography-root": {
+              position: "absolute",
+              bottom: "-7%",
+              right: "-13%",
+              transform: "translate(-50%, -50%)",
+              color: "white",
+              // backgroundColor: "rgba(0, 0, 0, 0.5)",
+              padding: "10px",
+              borderRadius: "4px",
+              textAlign: "center",
+            },
             "& img": {
               // position: "absolute",
               // width: "50px",
@@ -540,6 +544,7 @@ export function overrides(theme: Theme) {
               // objectFit: "cover",
               // borderRadius: "50%",
             },
+            
           },
         },
         {
@@ -550,16 +555,16 @@ export function overrides(theme: Theme) {
             // width: "360px",
             borderRadius: "16px",
             // backgroundColor: "#f5f5f5",
-            // "& .MuiTypography-root": {
-            //   position: "absolute",
-            //   bottom: "0%",
-            //   left: "4%",
-            //   color: "white",
-            //   // backgroundColor: "rgba(0, 0, 0, 0.5)",
-            //   padding: "10px",
-            //   borderRadius: "4px",
-            //   textAlign: "left",
-            // },
+            "& .MuiTypography-root": {
+              position: "absolute",
+              bottom: "0%",
+              left: "4%",
+              color: "white",
+              // backgroundColor: "rgba(0, 0, 0, 0.5)",
+              padding: "10px",
+              borderRadius: "4px",
+              textAlign: "left",
+            },
           },
         },
       ],

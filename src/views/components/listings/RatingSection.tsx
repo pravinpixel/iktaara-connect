@@ -39,12 +39,8 @@ const RatingSection = () => {
           </p>
           <Box mt={1}>
             {" "}
-            {image?.map((row, i) => (
-              <Stack
-                key={i}
-                direction="row"
-                sx={{ display: "flex", alignItems: "center" }}
-              >
+            {image?.map((row) => (
+              <Stack key={row.id} direction="row" alignItems={"center"}>
                 <CustomCheckbox name={`rating_${row.id}`} label="" />
                 <Box sx={{ paddingTop: "5px" }}>
                   <ImageComponent

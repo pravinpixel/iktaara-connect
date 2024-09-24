@@ -11,16 +11,25 @@ export default function Breadcrumb() {
   return (
     <div role="presentation">
       <Breadcrumbs aria-label="breadcrumb">
-        <Link href="/" className="font-sora text-f14 font-normal leading-7">
+        <Link
+          // underline="hover"
+          // color="inherit"
+          href="/"
+          className="font-sora text-f14 font-normal leading-7 text-ik_bluegreydarken3"
+        >
           Home
         </Link>
         <Link
+          // underline="hover"
+          // color="inherit"
           href="/material-ui/getting-started/installation/"
-          className="font-sora text-f14 font-normal leading-7"
+          className="font-sora text-f14 font-normal leading-7 text-ik_bluegreydarken3"
         >
           Music Repairs
         </Link>
         <Link
+          // underline="hover"
+          // color="text.primary"
           href="/material-ui/react-breadcrumbs/"
           aria-current="page"
           className="font-sora text-f14 font-normal leading-7"

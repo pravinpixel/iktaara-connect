@@ -7,7 +7,12 @@ import ImageComponent from "./imageComponent";
 import { CardMedia } from "@mui/material";
 
 interface CustomCardProps {
-  variant?: "elevation" | "outlined" | "bottom-right" | 'bottom-left' | 'top-right';
+  variant?:
+    | "elevation"
+    | "outlined"
+    | "bottom-right"
+    | "bottom-left"
+    | "top-right";
   img: string;
   text: string;
   reviews: string;
@@ -15,9 +20,9 @@ interface CustomCardProps {
   img1?: string;
   width?: string | number;
   height?: string | number;
-  type?: string;
-  typebottomleft?: string;
-  typetop?: string;
+  type?: boolean;
+  typebottomleft?: boolean;
+  typetop?: boolean;
 }
 export default function CustomCard(props: CustomCardProps) {
   const {
@@ -28,9 +33,9 @@ export default function CustomCard(props: CustomCardProps) {
     Contenttext,
     img1,
     width = "100%",
-    type = "false",
-    typebottomleft = "false",
-    typetop = 'false',
+    type,
+    typebottomleft,
+    typetop,
   } = props;
 
   return (
@@ -46,7 +51,7 @@ export default function CustomCard(props: CustomCardProps) {
       <CardMedia component="img" image={img} alt="Paella dish" />
       {/* <Box sx={{ position: "relative" }}>
         <ImageComponent src={img} alt="Card Image" width={260} height={360} /> */}
-      {type === "true" && (
+      {type && (
         <Box
           sx={{
             position: "absolute",
@@ -68,7 +73,7 @@ export default function CustomCard(props: CustomCardProps) {
           {/* </div> */}
         </Box>
       )}
-      {typebottomleft === "true" && (
+      {typebottomleft && (
         <>
           <div className="flex justify-between w-full">
             <Box
@@ -115,7 +120,7 @@ export default function CustomCard(props: CustomCardProps) {
           </div>
         </>
       )}
-      {typetop === "true" && (
+      {typetop && (
         <Box
           sx={{
             position: "absolute",
