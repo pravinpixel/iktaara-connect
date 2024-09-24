@@ -5,7 +5,7 @@ import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
 import { wrapper } from "@/redux/store";
 import { Sora } from "next/font/google";
-import Layouts from "@/views/layouts/Layouts";
+import Layouts from "@/components/common/Layouts";
 
 const sora = Sora({
   variable: "--sora",
