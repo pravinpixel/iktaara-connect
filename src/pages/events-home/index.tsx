@@ -1,11 +1,11 @@
 import EventsBanners from "@/views/components/events-new/EventsBanner";
 
 import React from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import EventsTitle from "@/views/components/events-new/EventsTitle";
 import HostEventsBanner from "@/views/components/events-new/HoseEventsBanner";
 import EventsThisWeek from "@/views/components/events-new/EventsThisWeek";
+import EventsByCategory from "@/views/components/events-new/EventsByCategory";
 
 const EventsHome = () => {
   const Events = [
@@ -91,6 +91,7 @@ const EventsHome = () => {
         className={"flex pt-5 pb-5 bg-ik_white"}
         title={"This Week "}
       />
+      <EventsByCategory />
     </>
   );
 };

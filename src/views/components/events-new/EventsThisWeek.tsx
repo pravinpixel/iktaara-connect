@@ -17,12 +17,12 @@ const EventsThisWeek = (props: Props) => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
-    swipe: musictechniciansection?.length > 4 ? true : false,
-    dots: musictechniciansection?.length > 4 ? true : false,
-    infinite: musictechniciansection?.length > 4 ? true : false,
+    swipe: musictechniciansection?.length > 5 ? true : false,
+    dots: musictechniciansection?.length > 5 ? true : false,
+    infinite: musictechniciansection?.length > 5 ? true : false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: musictechniciansection?.length >= 4 ? 4 : 1,
+    slidesToShow: 5,
+    slidesToScroll: musictechniciansection?.length >= 5 ? 5 : 1,
     lazyLoad: "progressive",
     customPaging: () => <div className="reactslick-custom-dots" />,
     responsive: [
@@ -61,8 +61,8 @@ const EventsThisWeek = (props: Props) => {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 5,
+          slidesToScroll: 5,
           swipe: true,
         },
       },

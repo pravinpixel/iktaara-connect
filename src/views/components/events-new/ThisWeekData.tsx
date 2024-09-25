@@ -23,22 +23,16 @@ const ThisWeekData = (props: Props) => {
       </div>
       <div className="py-2">
         <div>
-          <h6 className="text-ik_bluegreydarken3 text-f22 font-bold">
+          <h6 className="text-ik_bluegreydarken6 text-f20 font-semibold leading-6">
             {cartData?.music_title}
           </h6>
         </div>
         <div className="flex items-center gap-1">
-          <ImageComponent
-            src={"assets/icons/location-icons.svg"}
-            width={22}
-            height={20}
-            alt={"star"}
-          />
-          <span className="text-ik_bluegreydarken3 text-f18 font-normal">
+          <span className="text-ik_bluegreydarken6 text-f16 font-normal leading-6">
             {cartData?.music_location}
           </span>
         </div>
-        <span className="text-ik_bluegreydarken1 text-f16 font-normal">
+        <span className="text-ik_bluegreydarken6 text-f16 font-semibold leading-6">
           {cartData?.music_text}
         </span>
       </div>

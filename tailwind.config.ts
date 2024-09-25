@@ -122,6 +122,10 @@ const config: Config = {
         },
         ik_bluegreybluegrey: {
           DEFAULT: "var(--ik_bluegreybluegrey)"},
+
+        ik_lightbluevariant:{
+          DEFAULT: "var(--ik_lightbluevariant)"},
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

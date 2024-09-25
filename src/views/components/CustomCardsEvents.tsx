@@ -2,8 +2,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import Typography from "@mui/material/Typography";
-import ImageComponent from "./ImageComponent";
+
 import { CardMedia } from "@mui/material";
 
 interface CustomCardProps {
@@ -30,14 +29,8 @@ export default function CustomCardEvents(props: CustomCardProps) {
     variant,
     img,
     text,
-    reviews,
-    Contenttext,
-    img1,
+
     width = "100%",
-    type,
-    typebottomleft,
-    typetop,
-    typebottom,
   } = props;
 
   return (
@@ -62,8 +55,8 @@ export default function CustomCardEvents(props: CustomCardProps) {
               width: "84px",
               height: "84px",
               borderRadius: "12px",
-              left: "39px",
-              bottom: "12px",
+              left: "19px",
+              bottom: "-34px",
             }}
           >
             <Box className="bg-ik_bluevariantcolor text-center text-ik_white rounded-lg w-[67px] h-[37px] flex items-center justify-center">
