@@ -16,6 +16,15 @@ const EventsThisWeek = dynamic(
 );
 import { eventHome } from "@/redux/services/eventService";
 
+const FilterSectionEvents = dynamic(
+  () => import("@/views/components/events-new/FilterSection")
+);
+const AboutIktaraaEvents = dynamic(
+  () => import("@/views/components/events-new/AboutIktaraaEvents")
+);
+const FrequentlyAskedSection = dynamic(
+  () => import("@/views/components/home/frequentlyAsked")
+);
 const EventsByCategory = dynamic(
   () => import("@/views/components/events-new/EventsByCategory")
 );
@@ -96,6 +105,385 @@ const EventsHome = ({ eventData }: any) => {
     },
   ];
 
+  const Category = {
+    pianist: [
+      {
+        id: 1,
+        category_image: "/images/static/image_23.png",
+        category_name: "Ramaniya",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 2,
+        category_image: "/images/static/image_25.png",
+        category_name: "Kirankumar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 3,
+        category_image: "/images/static/image_23.png",
+        category_name: "Chitra Jones",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 4,
+        category_image: "/images/static/image_25.png",
+        category_name: "Abraham John",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 5,
+        category_image: "/images/static/image_23.png",
+        category_name: "Prakash Thirupuzhal",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+
+      {
+        id: 6,
+        category_image: "/images/static/image_25.png",
+        category_name: "Ram Prabhakar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 7,
+        category_image: "/images/static/image_23.png",
+        category_name: "Madhavi Nair",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+
+      {
+        id: 8,
+        category_image: "/images/static/image_23.png",
+        category_name: "Vamshika",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 9,
+        category_image: "/images/static/image_23.png",
+        category_name: "Madhavi Nair",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+
+      {
+        id: 10,
+        category_image: "/images/static/image_23.png",
+        category_name: "Vamshika",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+    ],
+    dancer: [
+      {
+        id: 1,
+        category_image: "/images/static/image_25.png",
+        category_name: "Abraham John",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 2,
+        category_image: "/images/static/image_23.png",
+        category_name: "Prakash Thirupuzhal",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 3,
+        category_image: "/images/static/image_25.png",
+        category_name: "Ramaniya",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 4,
+        category_image: "/images/static/image_23.png",
+        category_name: "Kirankumar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 5,
+        category_image: "/images/static/image_25.png",
+        category_name: "Madhavi Nair",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+
+      {
+        id: 6,
+        category_image: "/images/static/image_23.png",
+        category_name: "Vamshika",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 7,
+        category_image: "/images/static/image_25.png",
+        category_name: "Ram Prabhakar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 8,
+        category_image: "/images/static/image_23.png",
+        category_name: "Madhavi Nair",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+    ],
+    sound_engineer: [
+      {
+        id: 1,
+        category_image: "/images/static/image_25.png",
+        category_name: "Ramaniya",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 2,
+        category_image: "/images/static/image_23.png",
+        category_name: "Kirankumar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 3,
+        category_image: "/images/static/image_25.png",
+        category_name: "Chitra Jones",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 4,
+        category_image: "/images/static/image_23.png",
+        category_name: "Abraham John",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 5,
+        category_image: "/images/static/image_25.png",
+        category_name: "Prakash Thirupuzhal",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+
+      {
+        id: 6,
+        category_image: "/images/static/image_23.png",
+        category_name: "Ram Prabhakar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+    ],
+    theatre_artists: [
+      {
+        id: 1,
+        category_image: "/images/static/image_25.png",
+        category_name: "Abraham John",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 2,
+        category_image: "/images/static/image_23.png",
+        category_name: "Prakash Thirupuzhal",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 3,
+        category_image: "/images/static/image_25.png",
+        category_name: "Ramaniya",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 4,
+        category_image: "/images/static/image_23.png",
+        category_name: "Kirankumar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 5,
+        category_image: "/images/static/image_25.png",
+        category_name: "Madhavi Nair",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+
+      {
+        id: 6,
+        category_image: "/images/static/image_23.png",
+        category_name: "Vamshika",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 7,
+        category_image: "/images/static/image_25.png",
+        category_name: "Ram Prabhakar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 8,
+        category_image: "/images/static/image_23.png",
+        category_name: "Madhavi Nair",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+    ],
+    party_dJ: [
+      {
+        id: 1,
+        category_image: "/images/static/image_23.png",
+        category_name: "Ramaniya",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 2,
+        category_image: "/images/static/image_25.png",
+        category_name: "Kirankumar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 3,
+        category_image: "/images/static/image_23.png",
+        category_name: "Chitra Jones",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 4,
+        category_image: "/images/static/image_25.png",
+        category_name: "Abraham John",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 5,
+        category_image: "/images/static/image_23.png",
+        category_name: "Prakash Thirupuzhal",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+
+      {
+        id: 6,
+        category_image: "/images/static/image_25.png",
+        category_name: "Ram Prabhakar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 7,
+        category_image: "/images/static/image_23.png",
+        category_name: "Madhavi Nair",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+
+      {
+        id: 8,
+        category_image: "/images/static/image_25.png",
+        category_name: "Vamshika",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 9,
+        category_image: "/images/static/image_23.png",
+        category_name: "Madhavi Nair",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+
+      {
+        id: 10,
+        category_image: "/images/static/image_25.png",
+        category_name: "Vamshika",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+    ],
+    standup_comedian: [
+      {
+        id: 1,
+        category_image: "/images/static/image_23.png",
+        category_name: "Ramaniya",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 2,
+        category_image: "/images/static/image_25.png",
+        category_name: "Kirankumar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 3,
+        category_image: "/images/static/image_23.png",
+        category_name: "Chitra Jones",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 4,
+        category_image: "/images/static/image_25.png",
+        category_name: "Abraham John",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+      {
+        id: 5,
+        category_image: "/images/static/image_23.png",
+        category_name: "Prakash Thirupuzhal",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+
+      {
+        id: 6,
+        category_image: "/images/static/image_25.png",
+        category_name: "Ram Prabhakar",
+        category_reviews: "4.5 (22 Reviews)",
+        category_text: "Classical, Western, Hindustani",
+      },
+    ],
+  };
+
+  const faq = [
+    {
+      id: 1,
+      title: "How do I choose the right pianica online?",
+      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
+    },
+    {
+      id: 2,
+      title: 'What are the advantages of shopping for a "Pianica Online"?',
+      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
+    },
+    {
+      id: 3,
+      title: "What is the typical price of a Pianica in India?",
+      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
+    },
+  ];
+
   return (
     <>
       <EventsTitle label="Events" subLabel="in Chennai" />
@@ -107,6 +495,16 @@ const EventsHome = ({ eventData }: any) => {
         title={"This Week "}
       />
       <EventsByCategory label="Events by Category" />
+      <FilterSectionEvents categoryData={Category} />
+      <AboutIktaraaEvents
+        label="At Iktaraa Events, we believe that organizing and hosting online events should be accessible to everyone, which is why we offer a platform for ticketing your events completely free of charge. Whether you're planning a virtual concert, a webinar, a workshop, or a community meetup, our platform empowers you to manage your event with ease and reach your audience effectively."
+        title="About Iktaraa Events"
+      />
+      <HostEventsBanner />
+      <FrequentlyAskedSection
+        faqsection={faq}
+        className={"flex pt-5 pb-5 bg-ik_redvariant1"}
+      />
     </>
   );
 };

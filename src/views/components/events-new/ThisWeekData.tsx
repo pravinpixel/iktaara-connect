@@ -16,7 +16,7 @@ const ThisWeekData = (props: Props) => {
         <CustomCardEvents
           variant="bottom-left"
           img={cartData.music_image}
-          text={""}
+          text={"Art"}
           reviews={""}
           typebottom={false}
         />

@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Fragment } from "react";
 import Slider from "react-slick";
-import ImageComponent from "../ImageComponent";
+
+import CustomCardEvents from "../CustomCardsEvents";
 
 type Props = {
   Categorysection: any;
 };
 
-const CategoryComponent = (props: Props) => {
+const FilterEventData = (props: Props) => {
   const { Categorysection } = props;
 
   const settings = {
@@ -18,6 +19,7 @@ const CategoryComponent = (props: Props) => {
     infinite: Categorysection?.length > 8 ? true : false,
     autoplay: false,
     autoplaySpeed: 3000,
+    lazyLoad: "progressive" as const,
     arrows: Categorysection?.length > 8 ? true : false,
     rows: 2,
     speed: 500,
@@ -68,38 +70,28 @@ const CategoryComponent = (props: Props) => {
         {Categorysection?.map((item: any) => (
           <Fragment key={item?.id}>
             <div>
-              <div className="relative w-full h-full image-category">
-                <ImageComponent
-                  src={item?.category_image}
-                  alt={item?.category_name}
-                  aspectRatio={1.4}
-                  objectFit={"content"}
-                  type={1}
-                  priority={true}
-                />
-                <div className=" absolute bottom-2.5 left-3.5 ">
-                  <span className="text-ik_pink-foreground text-f22 font-semibold">
-                    {item?.category_name}
-                  </span>
-                </div>
+              <CustomCardEvents
+                variant="bottom-left"
+                img={item.category_image}
+                text={"Art"}
+                reviews={""}
+                typebottom={false}
+              />
+            </div>
+            <div className="py-2">
+              <div>
+                <h6 className="text-ik_bluegreydarken6 text-f20 font-semibold leading-6">
+                  {item?.category_name}
+                </h6>
               </div>
-              <div className="py-2">
-                <div className="flex items-center gap-2">
-                  <ImageComponent
-                    src={"assets/icons/star.svg"}
-                    width={20}
-                    height={19}
-                    alt={"star"}
-                    priority={true}
-                  />
-                  <span className="text-ik_bluegreydarken3 text-f18 font-normal">
-                    {item?.category_reviews}
-                  </span>
-                </div>
-                <span className="text-ik_bluegreydarken1 text-f16 font-normal">
-                  {item?.category_text}
+              <div className="flex items-center gap-1">
+                <span className="text-ik_bluegreydarken6 text-f16 font-normal leading-6">
+                  {item?.category_name}
                 </span>
               </div>
+              <span className="text-ik_bluegreydarken6 text-f16 font-semibold leading-6">
+                {item?.category_reviews}
+              </span>
             </div>
           </Fragment>
         ))}
@@ -108,4 +100,4 @@ const CategoryComponent = (props: Props) => {
   );
 };
 
-export default CategoryComponent;
+export default FilterEventData;

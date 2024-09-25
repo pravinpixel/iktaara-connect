@@ -60,7 +60,7 @@ export default function CustomCardEvents(props: CustomCardProps) {
             }}
           >
             <Box className="bg-ik_bluevariantcolor text-center text-ik_white rounded-lg w-[67px] h-[37px] flex items-center justify-center">
-              {"Art"}
+              {text}
             </Box>
           </Box>
         </div>

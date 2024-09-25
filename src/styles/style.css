@@ -228,9 +228,33 @@
     color: var(--ik_white);
 }
 
+
 .category-table .MuiTab-textColorPrimary{
     border: 1px solid var(--ik_bordervariant) !important;
 }
 .category-table .MuiTabs-flexContainer{
+    gap: 8px !important;
+}
+
+
+
+.category-table1 .MuiTabs-hideScrollbar .MuiTabs-indicator{
+    position: unset !important;
+
+}
+
+.category-table1 .Mui-selected{
+    background-color: var(--ik_whitevariant);
+    color: var(--ik_pink);
+    border: 1px solid var(--ik_pink)!important ;
+    border-radius: 34px;
+}
+
+
+.category-table1 .MuiTab-textColorPrimary{
+    border: 1px solid var(--ik_bordervariant2) ;
+    border-radius: 34px;
+}
+.category-table1 .MuiTabs-flexContainer{
     gap: 8px !important;
 }

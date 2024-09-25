@@ -11,7 +11,7 @@ const FilterSection = dynamic(
   () => import("@/views/components/listings/FilterSection")
 );
 const Pagination = dynamic(
-  () => import("@/views/components/listings/pagination")
+  () => import("@/views/components/listings/Pagination")
 );
 const StudioCard = dynamic(
   () => import("@/views/components/listings/StudioCard")

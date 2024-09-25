@@ -129,9 +129,7 @@ const config: Config = {
         ik_lightbluevariant: {
           DEFAULT: "var(--ik_lightbluevariant)"
         },
-        ik_bluebackgroundcolor: {
-          DEFAULT: "var(--ik_bluebackgroundcolor)"
-        },
+       
       },
       border: "hsl(var(--border))",
       input: "hsl(var(--input))",
