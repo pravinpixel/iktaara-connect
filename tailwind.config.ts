@@ -90,6 +90,9 @@ const config: Config = {
         ik_bluegreylighten2: {
           DEFAULT: "var( --ik_bluegreylighten2)",
         },
+        ik_bluegreylighten3: {
+          DEFAULT: "var( --ik_bluegreylighten3)",
+        },
         ik_bluegreylighten4: {
           DEFAULT: "var( --ik_bluegreylighten4)",
         },
@@ -111,8 +114,11 @@ const config: Config = {
         ik_black: {
           DEFAULT: "var(--ik_black)",
         },
-       ik_lightblue:{
-DEFAULT: "var(--ik_lightblue)"
+        ik_lightblue: {
+          DEFAULT: "var(--ik_lightblue)",
+        },
+        ik_bluegreybluegrey: {
+          DEFAULT: "var(--ik_bluegreybluegrey)",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -144,6 +150,7 @@ DEFAULT: "var(--ik_lightblue)"
         f28: "var(--f28)",
         f26: "var(--f26)",
         f38: "var(--f38)",
+        f64: "var(--f64)",
       },
     },
   },

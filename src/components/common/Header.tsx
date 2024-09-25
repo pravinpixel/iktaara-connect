@@ -1,5 +1,5 @@
 import { NAV } from "@/utils/helpers/constant-helper";
-import React from "react";
+import React, { useState } from "react";
 
 // import { SearchBar } from "./SearchBar";
 
@@ -9,9 +9,49 @@ import CustomButton from "@/views/components/form-fields/CustomButton";
 import ImageComponent from "@/views/components/imageComponent";
 import CustomContainer from "@/views/components/Container";
 import LoginPopup from "@/views/components/popup/LoginPopup";
+import CityLocation from "@/views/components/popup/CityLocation";
+import { Box} from "@mui/material";
+import Musicscomponent from "@/views/components/cartComponent/musicscomponent";
+import { ArrowdownIcon } from "@/utils/theme/svg";
+
 
 const Header = () => {
   const [open, setOpen] = React.useState(false);
+  const [opencity, setOpencity] = React.useState(false);
+  const [selected, setSelected] = useState<string | null>(null);
+
+ const music = [
+   {
+     id: 1,
+     image: "assets/image/music1.webp",
+     music_title: "Artists",
+   },
+   {
+     id: 2,
+     image: "assets/image/music2.webp",
+     music_title: "Recording /JAM Studios",
+     music_text: "Find venues for every musical occasions",
+   },
+   {
+     id: 3,
+     image: "assets/image/music3.webp",
+     music_title: "Music Instrument Sales & Service",
+   },
+   {
+     id: 4,
+     image: "assets/image/music4.webp",
+     music_title: "Events",
+   },
+ ];
+
+ 
+  const handleClickOpencity = () => {
+    setOpencity(true);
+  };
+
+  const handleClosecity = () => {
+    setOpencity(false);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -21,15 +61,19 @@ const Header = () => {
     setOpen(false);
   };
 
+  const handleMouseEnter = (value: string) => {
+    setSelected(value);
+  };
+
+  const handleMouseLeave = () => {
+    setSelected(null);
+  };
+
   return (
     <div className="shadow-md">
-      {/* <Container
-        maxWidth={"lg"}
-        sx={{ maxWidth: { xl: "90% !important", lg: "90%" } }}
-      > */}
       <CustomContainer>
         <div
-          className={`w-ful h-[${NAV.height}]  flex items-center justify-between px-3 `}
+          className={`w-ful h-[${NAV.height}]  flex items-center justify-between `}
         >
           <div className="flex items-center justify-between gap-5 w-100">
             <div className="h-[71px] w-[110px] flex items-center">
@@ -44,7 +88,10 @@ const Header = () => {
               </Link>
             </div>
             <div>
-              <button className="flex items-center gap-2">
+              <button
+                className="flex items-center gap-2"
+                onClick={handleClickOpencity}
+              >
                 <ImageComponent
                   src={"assets/icons/location.svg"}
                   width={12}
@@ -69,17 +116,23 @@ const Header = () => {
               />
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div
+            className="flex items-center gap-3"
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="relative">
-              <button className="flex items-center gap-2 ">
-                <span className="text-f12 font-semibold">Services</span>
-                <ImageComponent
-                  src={"assets/icons/arrowdown.svg"}
-                  width={13}
-                  height={6}
-                  alt={"arrowdown"}
-                  priority={true}
-                />
+              <button
+                className="flex items-center gap-2 hover:text-ik_whitevariant-foreground hover:underline underline-offset-8 decoration-2"
+                onMouseEnter={() => handleMouseEnter("Services")}
+              >
+                <span className="text-f12 font-semibold transition-colors duration-200 ease-in-out ">
+                  Services
+                </span>
+                  <ArrowdownIcon
+                    sx={{
+                      fontSize: "13px",
+                    }}
+                  />
               </button>
             </div>
             <CustomButton
@@ -97,6 +150,37 @@ const Header = () => {
         </div>
       </CustomContainer>
       {open && <LoginPopup handleClose={handleClose} open={open} />}
+
+      {opencity && (
+        <CityLocation handleClose={handleClosecity} open={opencity} />
+      )}
+
+      {selected === "Services" && (
+        <>
+          <Box
+            className="shadow-md"
+            sx={{
+              position: "absolute",
+              top: "100%",
+              left: 0,
+              width: "100%",
+              zIndex: 999,
+              background: "white",
+              paddingY: "20px",
+            }}
+            onMouseEnter={() => handleMouseEnter(selected)}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className={`sectionmusic ${selected ? "open" : ""}`}>
+              {selected === "Services" && (
+                <CustomContainer>
+                  <Musicscomponent musicsection={music} />
+                </CustomContainer>
+              )}
+            </div>
+          </Box>
+        </>
+      )}
     </div>
   );
 };

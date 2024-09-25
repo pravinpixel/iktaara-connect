@@ -459,6 +459,54 @@ const HomePageComponent = () => {
     },
   ];
 
+   const jam_studios_data = [
+     {
+       id: 1,
+       music_image: "/assets/image/prasad.webp",
+       music_logo: "/assets/image/music-logo1.png",
+       music_reviews: "4.5 (22 Reviews)",
+       music_title: "Prasad Studios Corp",
+       music_location: "Virugambakkam",
+       music_text: "Influencer Interviews / Interviews",
+     },
+     {
+       id: 2,
+       music_image: "/assets/image/epic.webp",
+       music_logo: "/assets/image/music-logo2.png",
+       music_reviews: "4.5 (22 Reviews)",
+       music_title: "Epic Recording",
+       music_location: "Saligramam",
+       music_text: "Music Recording / Interviews / Product Photos",
+     },
+     {
+       id: 3,
+       music_image: "/assets/image/sabari.webp",
+       music_logo: "/assets/image/music-logo3.png",
+       music_reviews: "4.5 (22 Reviews)",
+       music_title: "Sabari Music Station",
+       music_location: "Kodambakkam",
+       music_text: "Influencer Interviews / Music Recording / Interviews",
+     },
+     {
+       id: 4,
+       music_image: "/assets/image/bharath.webp",
+       music_logo: "/assets/image/music-logo4.png",
+       music_reviews: "4.5 (22 Reviews)",
+       music_title: "Bharath Studios",
+       music_location: "Nungambakkam",
+       music_text: "Sound Engineering / Sound Mixing / Recording",
+     },
+     {
+       id: 5,
+       music_image: "/assets/image/music-arts.webp",
+       music_logo: "/assets/image/music-logo1.png",
+       music_reviews: "4.5 (22 Reviews)",
+       music_title: "MUSIC & ARTS",
+       music_location: "Adyar",
+       music_text: "Specialist in Piano, Violin",
+     },
+   ];
+
   const faq = [
     {
       id: 1,
@@ -482,11 +530,16 @@ const HomePageComponent = () => {
       <BannerSection />
       <MusicalSection musicsection={music} />
       <EventsSellers Eventssections={Events} bgChange={true} />
-      <CategorySection Categorysection={Category} />
+      <CategorySection categoryData={Category} />
       <MusicTechnicians
         musictechniciansection={musictechnician_data}
         className={"flex pt-5 pb-5 bg-ik_white"}
         title={"Music Instrument Technicians "}
+      />
+      <MusicTechnicians
+        musictechniciansection={jam_studios_data}
+        className={"flex pt-7 pb-7"}
+        title={"Recording / JAM Studios Nearby "}
       />
       <GroSection />
       <RecordingSection />

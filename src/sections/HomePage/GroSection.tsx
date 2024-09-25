@@ -3,7 +3,7 @@ import ImageComponent from "@/views/components/imageComponent";
 import { Container, Grid } from "@mui/material";
 import React from "react";
 
-const GroSection = ({ type }: any) => {
+const GroSection = () => {
   return (
     <section className="bg-ik_blue grosection py-5 ">
       <Container

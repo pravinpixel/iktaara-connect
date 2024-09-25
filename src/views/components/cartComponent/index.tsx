@@ -19,7 +19,7 @@ const CaetComponent = (props: Props) => {
           img={cartData.music_image}
           img1={cartData.music_logo}
           reviews={cartData.music_reviews}
-          typebottomleft="true"
+          typebottomleft={true}
           text={""}
         />
       </div>

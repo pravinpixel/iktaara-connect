@@ -6,9 +6,9 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import { Container } from "@mui/material";
 import React, { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import CustomContainer from "@/views/components/Container";
 
 type Props = {
   faqsection: any;
@@ -18,16 +18,15 @@ type Props = {
 const FrequentlyAskedSection = (props: Props) => {
   const { faqsection, className } = props;
   const [expanded, setExpanded] = useState(0);
+
   const handleAccordionChange =
     (panel: any) => (event: any, isExpanded: any) => {
       setExpanded(isExpanded ? panel : false);
     };
+
   return (
     <section className={className}>
-      <Container
-        maxWidth={"lg"}
-        sx={{ maxWidth: { xl: "83% !important", lg: "83%" } }}
-      >
+      <CustomContainer>
         <Grid
           container
           sx={{
@@ -42,23 +41,24 @@ const FrequentlyAskedSection = (props: Props) => {
               <span>Frequently Asked Questions</span>
             </div>
           </Grid>
+
           <Grid item xs={12} md={8} className="catogory-accordin">
             {faqsection?.map((item: any, index: any) => (
               <Accordion
-                sx={{ mb: 2 }}
+                className={`${
+                  expanded === index
+                    ? "border-2 border-ik_bluegreydarken6 bg-ik_pink-foreground rounded-lg shadow-none mb-3"
+                    : "border  border-ik_bordervariant2 bg-ik_pink-foreground rounded-lg shadow-none mb-3"
+                }`}
                 expanded={expanded === index}
                 onChange={handleAccordionChange(index)}
                 key={item.id}
-                className={
-                  expanded === index
-                    ? "selected-accordion"
-                    : "unselected-accordion"
-                }
               >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1-content"
                   id="panel1-header"
+                  className={`${expanded === index ? "max-h-11" : ""}`}
                 >
                   <Typography className="text-f18 font-semibold text-ik_bluegreydarken6">
                     {item.title}
@@ -73,7 +73,7 @@ const FrequentlyAskedSection = (props: Props) => {
             ))}
           </Grid>
         </Grid>
-      </Container>
+       </CustomContainer>
     </section>
   );
 };

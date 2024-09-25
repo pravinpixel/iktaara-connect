@@ -26,71 +26,6 @@
 }
 
 
-/* footer css */
-
-.footer p {
-    font-weight: 500 !important;
-    font-size: 13px !important;
-    color: #fff;
-}
-
-.footer .list-group li a {
-    color: #d9d9d9 !important;
-}
-
-.footer-sign-section {
-    display: flex;
-    gap: 5px;
-}
-
-.footer-sign-section input {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-sign-section input {
-    max-height: 36px;
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 11px;
-    padding: 13px 9px 12px 9px;
-    border-radius: 4px;
-    background-color: white;
-    color: black;
-}
-
-.footer-pointer span {
-    font-size: 10px;
-    line-height: 22px;
-}
-
-/* Banner css */
-.bannerinner-text {
-    position: absolute;
-    top: 50%;
-    left: 27%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-}
-
-.muisc-text{
-    font-size: 45px;
-    font-weight: 800;
-}
-
-.Singers-line{
-    border-bottom: 1px solid #fff;
-    padding-right: 5px;
-}
-
-.right-line{
-    border-right: 1px solid #fff;
-}
-
-/* silder  css*/
 
 .best-sellers-section .slick-track .slick-slide>div {
     margin-right: 15px;
@@ -129,6 +64,44 @@
     height: 6px !important;
 }
 
+.category-section-sec .slick-prev:before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 35px !important;
+    height: 35px !important;
+    background-image: url('/assets/icons/category-prev.svg') !important;
+    background-size: cover !important;
+    position: relative;
+    left: 47%;
+    z-index: 0 !important;
+    top: 100%;
+}
+
+.category-section-sec .slick-prev {
+    left: 47% !important;
+    z-index: 100;
+    top: 100% !important;
+}
+
+.category-section-sec .slick-next:before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 35px !important;
+    height: 35px !important;
+    background-image: url('/assets/icons/category-next.svg') !important;
+    background-size: cover !important;
+    position: relative;
+    right: 47%;
+    z-index: 9999;
+    top: 100%;
+}
+
+.category-section-sec .slick-next {
+    right: 47% !important;
+    z-index: 100;
+    top: 100% !important;
+}
+
 .slick-prev:before {
     content: '' !important;
     display: inline-block !important;
@@ -137,9 +110,10 @@
     background-image: url('/assets/icons/arrow-left.svg') !important;
     background-size: cover !important;
     position: relative;
-    left: -15px;
+    left: -10px;
     z-index: 0 !important;
-    top: -11px !important;
+    bottom: 60px;
+    /* top: -11px !important; */
 }
 
 .slick-prev {
@@ -156,7 +130,8 @@
     position: relative;
     right: -18px;
     z-index: 9999;
-    top: -11px !important;
+    bottom: 60px;
+    /* top: -11px !important; */
 }
 
 .slick-next {
@@ -204,7 +179,6 @@
 
 .gro-card-sections{
     padding: 15px;
-    /* border: 1px solid; */
     border-radius: 12px;
     background-color: #43346a; 
 }
@@ -239,31 +213,19 @@
     background-position: center top;
 }
 
-.catogory-accordin .unselected-accordion {
-    box-shadow: none !important;
-    border-radius: 8px !important;
-    background-color: var(--ik_pink-foreground);
-    border: 1px solid var(--ik_bordervariant2);
-    margin-bottom: 12px !important;
-}
-
-.unselected-accordion::before {
-    background-color: unset !important;
-}
-
-.selected-accordion {
-    border-radius: 8px !important;
-    background-color: var(--ik_pink-foreground);
-    border: 2px solid var(--ik_bluegreydarken6);
-    box-shadow: none !important;
-    margin-bottom: 12px !important;
+.category-table .MuiTabs-hideScrollbar .MuiTabs-indicator{
+    position: unset !important;
 
 }
 
-.selected-accordion .MuiAccordionSummary-content{
-    margin: 5px 0px !important;
+.category-table .Mui-selected{
+    background-color: var(--ik_white-foreground);
+    color: var(--ik_white);
 }
 
-.selected-accordion .MuiAccordionSummary-gutters{
-    max-height: 44px !important;
+.category-table .MuiTab-textColorPrimary{
+    border: 1px solid var(--ik_bordervariant) !important;
+}
+.category-table .MuiTabs-flexContainer{
+    gap: 8px !important;
 }

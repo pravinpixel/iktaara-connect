@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import CustomContainer from "@/views/components/Container";
 import CustomButton from "@/views/components/form-fields/CustomButton";
 import { Divider } from "@mui/material";
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import Link from "next/link";
 import router from "next/router";
 import { Fragment } from "react";
@@ -1850,14 +1851,11 @@ const Footer = () => {
     <>
       <section id="footer">
         <div className="footer bg-ik_blue">
-          <Container
-            maxWidth={"lg"}
-            sx={{ maxWidth: { xl: "88% !important", lg: "88%" } }}
-          >
+          <CustomContainer>
             <Grid container className="py-5">
               <Grid item xs={6} sm={6} md={2}>
                 <div>
-                  <p className="text-ik_pink-foreground font-medium mb-2">
+                  <p className="text-ik_pink-foreground font-medium text-[13px] text-white mb-2">
                     Services
                   </p>
                   <ul className="list-group">
@@ -1878,24 +1876,24 @@ const Footer = () => {
               </Grid>
               <Grid item xs={6} sm={6} md={2}>
                 <div>
-                  <p className="text-ik_pink-foreground font-medium mb-2">
+                  <p className="text-ik_pink-foreground font-medium text-[13px] text-white mb-2">
                     Support
                   </p>
                   <ul className="list-group">
                     <li className="text-f12 text-ik_pink-foreground font-normal py-2">
-                      <Link href={"/"}>Return / Cancellation</Link>
+                      <Link href="/">Return / Cancellation</Link>
                     </li>
                     <li className="text-f12 text-ik_pink-foreground font-normal py-2">
-                      <Link href={"/"}>Privacy Policy</Link>
+                      <Link href="/">Privacy Policy</Link>
                     </li>
                     <li className="text-f12 text-ik_pink-foreground font-normal py-2">
-                      <Link href={"/"}>Terms &amp; Conditions</Link>
+                      <Link href="/">Terms &amp; Conditions</Link>
                     </li>
                     <li className="text-f12 text-ik_pink-foreground font-normal py-2">
-                      <Link href={"/buy/faq"}>FAQ</Link>
+                      <Link href="/buy/faq">FAQ</Link>
                     </li>
                     <li className="text-f12 text-ik_pink-foreground font-normal py-2">
-                      <Link href={"/"} target="_blank">
+                      <Link href="/" target="_blank">
                         Blog
                       </Link>
                     </li>
@@ -1904,7 +1902,7 @@ const Footer = () => {
               </Grid>
               <Grid item xs={6} sm={6} md={2}>
                 <div>
-                  <p className="text-f12 text-ik_pink-foreground font-medium mb-2">
+                  <p className="text-f12 text-ik_pink-foreground font-medium text-[13px] text-white mb-2">
                     About Us
                   </p>
                   <ul className="list-group">
@@ -1915,28 +1913,26 @@ const Footer = () => {
                       <Link href="/buy/about-us">About Iktaraa</Link>
                     </li>
                     <li className="text-f12 text-ik_pink-foreground font-normal py-2">
-                      <Link href={"/buy/contact-us"}>Contact Us</Link>
+                      <Link href="/buy/contact-us">Contact Us</Link>
                     </li>
                   </ul>
                 </div>
               </Grid>
               <Grid item xs={12} sm={6} md={5}>
-                <p className="text-ik_pink-foreground font-medium mb-2">
+                <p className="text-ik_pink-foreground font-medium text-[13px] text-white mb-2">
                   Sign Up for our Newsletter
                 </p>
                 <ul className="list-group">
-                  <li className="text-f12 text-ik_pink-foreground font-normal py-2 ">
+                  <li className="text-f12 text-ik_pink-foreground font-normal py-2">
                     Stay tuned to the latest musical trends
                   </li>
                 </ul>
-                <form className="footer-sign-section">
+                <form className="footer-sign-section flex gap-[5px]">
                   <input
                     name="email"
-                    // onChange={(e) => handleChange(e)}
-                    // value={values.email}
-                    // ref={emailRef}
                     type="email"
                     placeholder="Enter Email ID"
+                    className="max-h-[36px] w-full border-none outline-none text-[11px] p-[13px_9px_12px_9px] rounded-[4px] bg-white text-black"
                   />
                   <CustomButton
                     variant="task"
@@ -1946,13 +1942,10 @@ const Footer = () => {
                 </form>
               </Grid>
             </Grid>
-          </Container>
+          </CustomContainer>
           <hr className="footerline-item mb-7" />
-          <Container
-            maxWidth={"lg"}
-            sx={{ maxWidth: { xl: "88% !important", lg: "88%" } }}
-          >
-            <div className="row g-2 ">
+          <CustomContainer>
+            <div className="row g-2">
               <div className="new-design-div-footer">
                 {menus?.map((data: any, index: number) => {
                   return (
@@ -1969,7 +1962,7 @@ const Footer = () => {
                         }
                         router.push(path);
                       }}
-                      className="flex flex-wrap divider-style footer-pointer"
+                      className="flex flex-wrap divider-style footer-pointer items-center"
                     >
                       <span className="text-f12 text-ik_pink-foreground opacity-50">
                         {data.name}
@@ -1995,7 +1988,7 @@ const Footer = () => {
                                   }
                                 }}
                               >
-                                <span className="footer-category-child py-px px-1.5 ">
+                                <span className="footer-category-child py-px px-1.5 text-f12">
                                   {child.name}
                                 </span>
                                 {childIndex !== arr.length - 1 && "/"}
@@ -2005,7 +1998,7 @@ const Footer = () => {
                                   return (
                                     <div
                                       key={ChildIndex}
-                                      className="flex items-center footer-pointer py-px px-1.5 text-ik_pink-foreground opacity-20"
+                                      className="flex items-center footer-pointer py-px pl-1.5 text-ik_pink-foreground opacity-20"
                                       onClick={(e) => {
                                         e.preventDefault();
                                         e.stopPropagation();
@@ -2019,13 +2012,16 @@ const Footer = () => {
                                         );
                                       }}
                                     >
-                                      <span className="footer-category-child">
-                                        {arr.name}
-                                      </span>
-                                      <Divider
-                                        orientation="vertical"
-                                        flexItem
-                                      />
+                                      <div className="flex items-center justify-between gap-2">
+                                        <span className="footer-category-child text-f12">
+                                          {arr.name}
+                                        </span>
+                                        <Divider
+                                          orientation="vertical"
+                                          flexItem
+                                          className=" w-[2px] bg-white"
+                                        />
+                                      </div>
                                     </div>
                                   );
                                 }
@@ -2039,11 +2035,11 @@ const Footer = () => {
                 })}
               </div>
             </div>
-          </Container>
+          </CustomContainer>
         </div>
 
-        <div className="footer-bottom bg-ik_blue ">
-          <div className="container ">
+        <div className="footer-bottom bg-ik_blue">
+          <div className="container">
             <div className="col text-center text-light">
               <p className="text-ik_pink-foreground opacity-50 text-f12 py-5">
                 Iktaraa Copyrights @ 2024 | All Rights Reserved.

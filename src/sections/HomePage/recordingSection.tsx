@@ -1,13 +1,10 @@
-import { Container } from "@mui/material";
+import CustomContainer from "@/views/components/Container";
 import React from "react";
 
 const RecordingSection = () => {
   return (
     <section className="pt-7 pb-7">
-      <Container
-        maxWidth={"lg"}
-        sx={{ maxWidth: { xl: "89% !important", lg: "89%" } }}
-      >
+      <CustomContainer>
         <div className="text-f28 font-semibold  text-ik_bluegreydarken4 mb-3 ">
           <span>Recording / JAM Studios Nearby</span>
         </div>
@@ -71,7 +68,7 @@ const RecordingSection = () => {
             </span>
           </div>
         </div>
-      </Container>
+      </CustomContainer>
     </section>
   );
 };

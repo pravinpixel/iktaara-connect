@@ -1,7 +1,7 @@
-import CustomButton from '@/views/components/form-fields/CustomButton';
-import ImageComponent from '@/views/components/imageComponent';
-import { Container } from '@mui/material';
-import React from 'react'
+import CustomButton from "@/views/components/form-fields/CustomButton";
+import ImageComponent from "@/views/components/imageComponent";
+import { Container } from "@mui/material";
+import React from "react";
 // import { TextField, MenuItem, InputAdornment, IconButton } from "@mui/material";
 // import SearchIcon from "@mui/icons-material/Search";
 // import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -10,18 +10,22 @@ const BannerSection = () => {
   return (
     <div>
       <div className="relative">
-        {/* <div className="bannerinner-text">
-          <h1 className="text-ik_pink-foreground muisc-text">
+        <div className="absolute top-1/2 left-[27%] transform -translate-x-1/2 -translate-y-1/2 z-10">
+          <h1 className="text-ik_pink-foreground font-sora text-[64px] font-extrabold">
             Hire Music Talents <br />
-            <span className="Singers-line">Pop Singers</span>
-            <span className="right-line"></span>
+            <span className="relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[18px] after:w-full after:h-[3px] after:bg-white">
+              <a className="relative inline-block after:content-[''] after:absolute after:right-[-10px] after:top-[28px] after:h-[50px] after:w-[4px] after:bg-white">
+                Pop Singers
+              </a>
+            </span>
           </h1>
-          <p className="mt-2 text-ik_pink-foreground">
+          <p className="mt-1 text-ik_pink-foreground text-[22px] font-semibold">
             One stop to find everything with music.
           </p>
+
           <div className="search">
             <div className="flex mt-6 md:mt-8 w-full bg-white rounded-full overflow-hidden">
-              <TextField
+              {/* <TextField
                 select
                 defaultValue="Chennai"
                 variant="outlined"
@@ -40,9 +44,9 @@ const BannerSection = () => {
                 <MenuItem value="Chennai">Chennai</MenuItem>
                 <MenuItem value="Mumbai">Mumbai</MenuItem>
                 <MenuItem value="Delhi">Delhi</MenuItem>
-              </TextField>
+              </TextField> */}
 
-              <TextField
+              {/* <TextField
                 variant="outlined"
                 placeholder="Artists, sound engineers, bands & more"
                 className="flex-1 bg-white"
@@ -63,14 +67,14 @@ const BannerSection = () => {
                   ),
                   style: { border: "none" },
                 }}
-              />
+              /> */}
             </div>
           </div>
-        </div> */}
+        </div>
         <ImageComponent
           src={"/assets/banner/banner1.webp"}
           alt={"banner"}
-          aspectRatio={3.7}
+          aspectRatio={3.1}
           objectFit={"content"}
           type={1}
           priority={true}
@@ -104,6 +108,6 @@ const BannerSection = () => {
       </div>
     </div>
   );
-}
+};
 
-export default BannerSection
+export default BannerSection;

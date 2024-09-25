@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import CustomCard from '@/views/components/CustomCard'
+import Musicscomponent from '@/views/components/cartComponent/musicscomponent';
+import CustomContainer from '@/views/components/Container';
 import ImageComponent from '@/views/components/imageComponent';
-import { Container, Grid } from '@mui/material'
-import React, { Fragment } from 'react'
+import React from 'react';
 
 type Props = {
   musicsection: any;
@@ -11,15 +11,12 @@ const MusicalSection = (props: Props) => {
     const { musicsection } = props;
   return (
     <section className="pt-7 pb-9 relative">
-      <Container
-        maxWidth={"lg"}
-        sx={{ maxWidth: { xl: "81% !important", lg: "81%" } }}
-      >
-        <div className="absolute top-10 left-5">
+      <CustomContainer>
+        <div className="absolute top-10 left-0">
           <ImageComponent
             src={"/assets/image/star1.webp"}
-            width={127}
-            height={121}
+            width={60}
+            height={60}
             alt={"arrowdown"}
             priority={true}
           />
@@ -27,31 +24,17 @@ const MusicalSection = (props: Props) => {
         <div className="text-f28 font-semibold mb-3 text-ik_bluegreydarken4">
           <span>Destination for everyone with musical interest</span>
         </div>
-        <Grid container>
-          {musicsection?.map((item: any, index: any) => (
-            <Fragment key={index}>
-              <Grid item xs={3} gap={2} pr={2}>
-                <CustomCard
-                  variant="top-right"
-                  img={item.image}
-                  text={item.music_title}
-                  Contenttext={item.music_text}
-                  typetop= 'true'
-                />
-              </Grid>
-            </Fragment>
-          ))}
-        </Grid>
-        <div className="absolute bottom-5 right-8">
+        <Musicscomponent musicsection={musicsection} />
+        <div className="absolute bottom-5 right-2">
           <ImageComponent
             src={"/assets/image/star2.webp"}
-            width={127}
-            height={121}
+            width={60}
+            height={60}
             alt={"arrowdown"}
             priority={true}
           />
         </div>
-      </Container>
+      </CustomContainer>
     </section>
   );
 };

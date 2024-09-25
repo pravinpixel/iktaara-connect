@@ -4,7 +4,7 @@ import React, { Fragment } from "react";
 import bg from "../../../public/assets/image/bg.svg";
 import bg1 from "../../../public/assets/image/bg1.png";
 import Slider from "react-slick";
-import { Container } from "@mui/material";
+import CustomContainer from "@/views/components/Container";
 
 
 
@@ -24,11 +24,11 @@ const EventsSellers = (props: Props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerPadding: "110px",
+    centerPadding: "59px",
     className: "center",
     centerMode: true,
     dots: true,
-    lazyLoad: "progressive",
+    lazyLoad: "ondemand" as "ondemand" | "progressive" | undefined,
     customPaging: () => <div className="reactslick-custom-dots" />,
     responsive: [
       {
@@ -67,14 +67,11 @@ const EventsSellers = (props: Props) => {
       }}
     >
       <div>
-        <Container
-          maxWidth={"lg"}
-          sx={{ maxWidth: { xl: "89% !important", lg: "89%" } }}
-        >
+        <CustomContainer>
           <div className="text-f28 font-semibold mb-3 text-ik_bluegreydarken4">
             <span>Popular Events in the City</span>
           </div>
-        </Container>
+        </CustomContainer>
         <Slider {...settings} className="slider-white-dots">
           {Eventssections?.map((item: any) => (
             <Fragment key={item?.id}>
