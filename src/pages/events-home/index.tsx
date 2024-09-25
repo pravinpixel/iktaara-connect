@@ -1,13 +1,24 @@
-import EventsBanners from "@/views/components/events-new/EventsBanner";
-
 import React from "react";
+import dynamic from "next/dynamic";
+
 import { wrapper } from "@/redux/store";
-import EventsTitle from "@/views/components/events-new/EventsTitle";
-import HostEventsBanner from "@/views/components/events-new/HoseEventsBanner";
-import EventsThisWeek from "@/views/components/events-new/EventsThisWeek";
-import EventsByCategory from "@/views/components/events-new/EventsByCategory";
+const EventsBanners = dynamic(
+  () => import("@/views/components/events-new/EventsBanner")
+);
+const EventsTitle = dynamic(
+  () => import("@/views/components/events-new/EventsTitle")
+);
+const HostEventsBanner = dynamic(
+  () => import("@/views/components/events-new/HoseEventsBanner")
+);
+const EventsThisWeek = dynamic(
+  () => import("@/views/components/events-new/EventsThisWeek")
+);
 import { eventHome } from "@/redux/services/eventService";
 
+const EventsByCategory = dynamic(
+  () => import("@/views/components/events-new/EventsByCategory")
+);
 // import { eventHome } from "@/redux/services/eventService";
 
 const EventsHome = ({ eventData }: any) => {
@@ -95,12 +106,12 @@ const EventsHome = ({ eventData }: any) => {
         className={"flex pt-5 pb-5 bg-ik_white"}
         title={"This Week "}
       />
-      <EventsByCategory />
+      <EventsByCategory label="Events by Category" />
     </>
   );
 };
 export const getServerSideProps = wrapper.getServerSideProps(
-  (store) => async (ctx) => {
+  (store) => async () => {
     // Data to return in the catch block
     const fallbackData = {
       // error: 0,

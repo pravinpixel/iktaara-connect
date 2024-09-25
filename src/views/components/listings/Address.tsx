@@ -2,10 +2,12 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { Box, Grid, Stack } from "@mui/material";
-import CustomCard from "../CustomCard";
-
-import CustomSmallButton from "../form-fields/CustomSmallButton";
-import ImageComponent from "../ImageComponent";
+import dynamic from "next/dynamic";
+const CustomCard = dynamic(() => import("../CustomCard"));
+const CustomSmallButton = dynamic(
+  () => import("../form-fields/CustomSmallButton")
+);
+const ImageComponent = dynamic(() => import("../ImageComponent"));
 
 const AddressSection = () => {
   const businesses = [
@@ -50,6 +52,7 @@ const AddressSection = () => {
                 type={true}
                 text={""}
                 reviews={""}
+                typebottom={false}
               />
               <Box
                 sx={{

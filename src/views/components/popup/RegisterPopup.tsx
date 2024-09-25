@@ -4,14 +4,14 @@ import Dialog from "@mui/material/Dialog";
 import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
-import { Grid, IconButton, Typography } from "@mui/material";
+import { Grid, IconButton } from "@mui/material";
 import ImageComponent from "../ImageComponent";
 import { Box } from "@mui/material";
-
 import { FormProvider, useForm } from "react-hook-form";
 import { Stack } from "@mui/material";
-import CustomButton from "../form-fields/CustomButton";
-import InputField from "../form-fields/InputField";
+import dynamic from "next/dynamic";
+const InputField = dynamic(() => import("../form-fields/InputField"));
+const CustomButton = dynamic(() => import("../form-fields/CustomButton"));
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -43,7 +43,7 @@ export default function RegisterPopup({
     <React.Fragment>
       <Dialog
         fullScreen
-        open={openRegister}
+        open={openRegister ?? false}
         onClose={handleCloseRegister}
         TransitionComponent={Transition}
         sx={{

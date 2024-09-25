@@ -2,9 +2,10 @@
 import React from "react";
 
 import { Box, Card, Grid, Stack, useTheme } from "@mui/material";
+import dynamic from "next/dynamic";
 
-import AddressSection from "./Address";
-import ImageComponent from "../ImageComponent";
+const AddressSection = dynamic(() => import("./Address"));
+const ImageComponent = dynamic(() => import("../ImageComponent"));
 
 const BusinessSection = () => {
   const theme = useTheme();

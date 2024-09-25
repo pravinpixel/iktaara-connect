@@ -74,6 +74,8 @@
   --ik_bordervariant2: hsla(213, 15%, 85%, 1);
   --ik_bluevariantcolor:hsla(256, 50%, 24%, 0.9);
 
+  --ik_bluebackgroundcolor:hsla(0, 0%, 100%, 1)
+
   ;
   /* color */
     --background: 0 0% 100%;

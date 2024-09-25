@@ -6,10 +6,9 @@ import React from "react";
 import { Box, Card, Grid } from "@mui/material";
 import CustomCard from "../CustomCard";
 import { Stack } from "@mui/material";
-
-import CustomImageButton from "../CustomImageButton";
-import ImageComponent from "../ImageComponent";
-
+import dynamic from "next/dynamic";
+const CustomImageButton = dynamic(() => import("../CustomImageButton"));
+const ImageComponent = dynamic(() => import("../ImageComponent"));
 const StudioCard = () => {
   const businesses = [
     {
@@ -62,6 +61,7 @@ const StudioCard = () => {
                     type={true}
                     text=""
                     reviews={""}
+                    typebottom={false}
                   />
                 </Grid>
                 <Grid item xs={8}>

@@ -1,16 +1,23 @@
+import { Box, Grid } from "@mui/material";
+import dynamic from "next/dynamic";
+
 const Breadcrumb = dynamic(() => import("@/views/components/BreadCrumb"));
 const Title = dynamic(() => import("@/views/components/Title"));
 const BusinessSection = dynamic(
   () => import("@/views/components/listings/TopBuisness")
 );
+const CustomContainer = dynamic(() => import("@/views/components/Container"));
+const FilterSection = dynamic(
+  () => import("@/views/components/listings/FilterSection")
+);
+const Pagination = dynamic(
+  () => import("@/views/components/listings/pagination")
+);
+const StudioCard = dynamic(
+  () => import("@/views/components/listings/StudioCard")
+);
 
-import CustomContainer from "@/views/components/Container";
-import FilterSection from "@/views/components/listings/FilterSection";
-import Pagination from "@/views/components/listings/pagination";
-import StudioCard from "@/views/components/listings/StudioCard";
 // import { ThemeContext } from "@emotion/react";s
-import { Box, Grid } from "@mui/material";
-import dynamic from "next/dynamic";
 
 const Listings = () => {
   return (

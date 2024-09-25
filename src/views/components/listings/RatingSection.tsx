@@ -3,10 +3,11 @@ import React from "react";
 
 import { Box, Stack } from "@mui/material";
 
-import ImageComponent from "../ImageComponent";
+const ImageComponent = dynamic(() => import("../ImageComponent"));
+const CustomCheckbox = dynamic(() => import("../form-fields/CheckBox"));
 
-import CustomCheckbox from "../form-fields/CheckBox";
 import { FormProvider, useForm } from "react-hook-form";
+import dynamic from "next/dynamic";
 
 const RatingSection = () => {
   const methods = useForm();

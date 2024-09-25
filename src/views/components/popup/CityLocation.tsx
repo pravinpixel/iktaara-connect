@@ -9,9 +9,9 @@ import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { TransitionProps } from "@mui/material/transitions";
 import { Slide } from "@mui/material";
-import ImageComponent from "../ImageComponent";
-import CustomButton from "../form-fields/CustomButton";
-
+import dynamic from "next/dynamic";
+const ImageComponent = dynamic(() => import("../ImageComponent"));
+const CustomButton = dynamic(() => import("../form-fields/CustomButton"));
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
     children: React.ReactElement;
@@ -75,7 +75,7 @@ export default function CityLocation({ handleClose, open }: CityLocationProps) {
 
   return (
     <Dialog
-      open={open}
+      open={open ?? false}
       TransitionComponent={Transition}
       keepMounted
       fullWidth={true}

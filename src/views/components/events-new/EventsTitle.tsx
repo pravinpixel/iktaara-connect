@@ -1,8 +1,11 @@
 import React from "react";
-import ImageComponent from "../ImageComponent";
+
 import { Typography } from "@mui/material";
-import CustomContainer from "../Container";
+import dynamic from "next/dynamic";
 import { Stack } from "@mui/material";
+
+const ImageComponent = dynamic(() => import("../ImageComponent"));
+const CustomContainer = dynamic(() => import("../Container"));
 
 type EventsTitleProps = {
   label: string;

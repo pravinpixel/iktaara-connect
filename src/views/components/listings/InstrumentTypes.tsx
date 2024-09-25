@@ -2,9 +2,10 @@
 import React from "react";
 
 import { Box, Stack } from "@mui/material";
+const CustomCheckbox = dynamic(() => import("../form-fields/CheckBox"));
 
-import CustomCheckbox from "../form-fields/CheckBox";
 import { FormProvider, useForm } from "react-hook-form";
+import dynamic from "next/dynamic";
 
 const InstrumentType = () => {
   const methods = useForm();

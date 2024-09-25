@@ -1,8 +1,8 @@
 import * as React from "react";
-
+import dynamic from "next/dynamic";
 import { FormProvider, useForm } from "react-hook-form";
 import { Box, Stack } from "@mui/material";
-import CustomCheckbox from "../form-fields/CheckBox";
+const CustomCheckbox = dynamic(() => import("../form-fields/CheckBox"));
 import { Grid } from "@mui/material";
 
 // interface LocationDialogProps {

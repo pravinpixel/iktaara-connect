@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import dynamic from "next/dynamic";
 import React from "react";
-import ImageComponent from "../ImageComponent";
-import CustomCardEvents from "../CustomCardsEvents";
+const CustomCardEvents = dynamic(() => import("../CustomCardsEvents"));
 
 type Props = {
   cartData: any;

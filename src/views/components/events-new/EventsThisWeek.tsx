@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Container } from "@mui/material";
 import React from "react";
 import Slider from "react-slick";
-import ThisWeekData from "./ThisWeekData";
-
+import dynamic from "next/dynamic";
+const ThisWeekData = dynamic(() => import("./ThisWeekData"));
+const CustomContainer = dynamic(() => import("../Container"));
 type Props = {
   musictechniciansection: any;
   className: string;
@@ -23,7 +23,7 @@ const EventsThisWeek = (props: Props) => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: musictechniciansection?.length >= 5 ? 5 : 1,
-    lazyLoad: "progressive",
+    lazyLoad: "progressive" as const,
     customPaging: () => <div className="reactslick-custom-dots" />,
     responsive: [
       {
@@ -70,10 +70,7 @@ const EventsThisWeek = (props: Props) => {
   };
   return (
     <section className={className}>
-      <Container
-        maxWidth={"lg"}
-        sx={{ maxWidth: { xl: "89% !important", lg: "89%" } }}
-      >
+      <CustomContainer>
         <div className="flex items-center gap-3 mb-4">
           <div className="text-f24 font-bold text-ik_bluegreydarken6 leading-9">
             <span>{title}</span>
@@ -93,7 +90,7 @@ const EventsThisWeek = (props: Props) => {
             ))}
           </Slider>
         </div>
-      </Container>
+      </CustomContainer>
     </section>
   );
 };

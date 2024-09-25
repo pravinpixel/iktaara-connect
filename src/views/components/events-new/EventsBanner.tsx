@@ -1,12 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import React, { Fragment } from "react";
-// import bg from "../../../public/assets/image/bg.svg";
-
 import Slider from "react-slick";
 
+// type Props = {
+//   Eventssections: any;
+// };
+
 type Props = {
-  Eventssections: any;
+  Eventssections: Array<{
+    id: number;
+    banner_image: string;
+    event_name: string;
+  }>;
 };
 
 const EventsBanners = (props: Props) => {
@@ -24,7 +30,7 @@ const EventsBanners = (props: Props) => {
     className: "center",
     centerMode: true,
     dots: true,
-    lazyLoad: "progressive",
+    lazyLoad: "progressive" as const,
     customPaging: () => <div className="reactslick-custom-dots" />,
     responsive: [
       {

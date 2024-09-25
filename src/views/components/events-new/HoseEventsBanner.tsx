@@ -1,7 +1,7 @@
 import React from "react";
-import ImageComponent from "../ImageComponent";
-
-import CustomContainer from "../Container";
+import dynamic from "next/dynamic";
+const ImageComponent = dynamic(() => import("../ImageComponent"));
+const CustomContainer = dynamic(() => import("../Container"));
 import { Box } from "@mui/material";
 
 const HostEventsBanner = () => {

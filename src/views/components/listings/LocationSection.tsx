@@ -1,12 +1,10 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-
 import { Box, Stack } from "@mui/material";
-
-import CustomCheckbox from "../form-fields/CheckBox";
 import { FormProvider, useForm } from "react-hook-form";
-
-import ViewAllPopup from "../popup/ViewAllPopup";
+import dynamic from "next/dynamic";
+const CustomCheckbox = dynamic(() => import("../form-fields/CheckBox"));
+const ViewAllPopup = dynamic(() => import("../popup/ViewAllPopup"));
 
 const LocationSection = () => {
   const methods = useForm();
