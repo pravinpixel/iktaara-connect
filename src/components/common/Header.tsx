@@ -139,7 +139,6 @@ const Header = () => {
               className="text-f12 font-semibold"
             />
             <CustomButton
-              variant="contained"
               label={"Login"}
               className="text-f12 font-semibold text-ik_pink-foreground"
               onClick={handleClickOpen}

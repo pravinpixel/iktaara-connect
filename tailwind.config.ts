@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+import TailwindAnimate from 'tailwindcss-animate';
+
 const config: Config = {
   darkMode: ["class"],
 
@@ -114,52 +116,53 @@ const config: Config = {
         ik_black: {
           DEFAULT: "var(--ik_black)",
         },
-       ik_lightblue:{
-        DEFAULT: "var(--ik_lightblue)"
+        ik_lightblue: {
+          DEFAULT: "var(--ik_lightblue)"
         },
-        ik_bluevariantcolor:{
-        DEFAULT: "var(--ik_bluevariantcolor)"
+        ik_bluevariantcolor: {
+          DEFAULT: "var(--ik_bluevariantcolor)"
         },
         ik_bluegreybluegrey: {
-          DEFAULT: "var(--ik_bluegreybluegrey)"},
+          DEFAULT: "var(--ik_bluegreybluegrey)"
+        },
 
-        ik_lightbluevariant:{
-          DEFAULT: "var(--ik_lightbluevariant)"},
-        },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
+        ik_lightbluevariant: {
+          DEFAULT: "var(--ik_lightbluevariant)"
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      fontFamily: {
-        sora: "var(--sora)",
-      },
-      fontSize: {
-        f12: "var(--f12)",
-        f14: "var(--f14)",
-        f16: "var(--f16)",
-        f18: "var(--f18)",
-        f20: "var(--f20)",
-        f22: "var(--f22)",
-        f24: "var(--f24)",
-        f28: "var(--f28)",
-        f26: "var(--f26)",
-        f38: "var(--f38)",
-        f64: "var(--f64)",
+      border: "hsl(var(--border))",
+      input: "hsl(var(--input))",
+      ring: "hsl(var(--ring))",
+      chart: {
+        "1": "hsl(var(--chart-1))",
+        "2": "hsl(var(--chart-2))",
+        "3": "hsl(var(--chart-3))",
+        "4": "hsl(var(--chart-4))",
+        "5": "hsl(var(--chart-5))",
       },
     },
+    borderRadius: {
+      lg: "var(--radius)",
+      md: "calc(var(--radius) - 2px)",
+      sm: "calc(var(--radius) - 4px)",
+    },
+    fontFamily: {
+      sora: "var(--sora)",
+    },
+    fontSize: {
+      f12: "var(--f12)",
+      f14: "var(--f14)",
+      f16: "var(--f16)",
+      f18: "var(--f18)",
+      f20: "var(--f20)",
+      f22: "var(--f22)",
+      f24: "var(--f24)",
+      f28: "var(--f28)",
+      f26: "var(--f26)",
+      f38: "var(--f38)",
+      f64: "var(--f64)",
+    },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [TailwindAnimate]
 };
 export default config;

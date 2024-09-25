@@ -3,33 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* *{
-  font-family: "Sora", sans-serif;
-  font-family: "Sora", sans-serif !important;
-} */
-
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-} */
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
-/* body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+
 }
 
 @layer base {
@@ -62,7 +41,7 @@
   --ik_pink_button: hsla(0, 0%, 100%, 1);
   --ik_pink-foreground-button: hsla(348, 75%, 57%, 1);
 
-  --ik_black : hsla(0, 0%, 0%, 1)
+  --ik_black : hsla(0, 0%, 0%, 1);
 
   --ik_green:hsla(175, 100%, 29%, 1);
   --ik_green-foreground: hsla(0, 0%, 100%, 1);
@@ -159,7 +138,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply box-border
   }
 
   body {
