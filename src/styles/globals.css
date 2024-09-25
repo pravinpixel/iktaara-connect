@@ -91,7 +91,8 @@
 
   --ik_redvariant1: hsla(51, 83%, 92%, 1);
   --ik_bordervariant: hsla(0, 0%, 80%, 1);
-  --ik_bordervariant2: hsla(213, 15%, 85%, 1)
+  --ik_bordervariant2: hsla(213, 15%, 85%, 1);
+  --ik_bluevariantcolor:hsla(256, 50%, 24%, 0.9);
 
   ;
   /* color */

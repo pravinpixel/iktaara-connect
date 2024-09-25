@@ -160,6 +160,11 @@
     display: flex;
 }
 
+.music-section-sec1 .slick-track {
+    gap: 0px;
+    display: flex;
+}
+
 .image-category img{
     border-radius: 8px;
     filter: brightness(0.7);

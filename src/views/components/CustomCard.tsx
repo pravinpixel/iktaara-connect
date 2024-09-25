@@ -23,6 +23,7 @@ interface CustomCardProps {
   type?: boolean;
   typebottomleft?: boolean;
   typetop?: boolean;
+  typebottom: boolean;
 }
 export default function CustomCard(props: CustomCardProps) {
   const {
@@ -36,6 +37,7 @@ export default function CustomCard(props: CustomCardProps) {
     type,
     typebottomleft,
     typetop,
+    typebottom,
   } = props;
 
   return (
@@ -135,6 +137,26 @@ export default function CustomCard(props: CustomCardProps) {
             {Contenttext}
           </Typography>
         </Box>
+      )}{" "}
+      {typebottom && (
+        <>
+          <div className="flex justify-between w-full">
+            <Box
+              sx={{
+                position: "absolute",
+                width: "84px",
+                height: "84px",
+                borderRadius: "12px",
+                left: "39px",
+                bottom: "12px",
+              }}
+            >
+              <Box className="bg-ik_bluevariantcolor text-center text-ik_white rounded-lg w-[67px] h-[37px] flex items-center justify-center">
+                {"Art"}
+              </Box>
+            </Box>
+          </div>
+        </>
       )}
       {/* </Box> */}
     </Card>
