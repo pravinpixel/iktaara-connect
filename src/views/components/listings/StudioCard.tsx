@@ -8,7 +8,7 @@ import CustomCard from "../CustomCard";
 import { Stack } from "@mui/material";
 
 import CustomImageButton from "../CustomImageButton";
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 
 const StudioCard = () => {
   const businesses = [

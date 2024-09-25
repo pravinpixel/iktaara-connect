@@ -1,10 +1,9 @@
-import HomePageComponent from "@/sections/HomePage";
-
+import HomePageComponent from "@/views/components/home";
 
 export default function Home() {
   return (
-     <div>
+    <div>
       <HomePageComponent />
-     </div>
+    </div>
   );
 }

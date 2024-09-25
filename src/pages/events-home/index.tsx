@@ -1,11 +1,11 @@
-import EventsBanners from "@/views/components/eventsnew/EventsBanner";
+import EventsBanners from "@/views/components/events-new/EventsBanner";
 
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import EventsTitle from "@/views/components/eventsnew/EventsTitle";
-import HostEventsBanner from "@/views/components/eventsnew/HoseEventsBanner";
-import EventsThisWeek from "@/views/components/eventsnew/EventsThisWeek";
+import EventsTitle from "@/views/components/events-new/EventsTitle";
+import HostEventsBanner from "@/views/components/events-new/HoseEventsBanner";
+import EventsThisWeek from "@/views/components/events-new/EventsThisWeek";
 
 const EventsHome = () => {
   const Events = [

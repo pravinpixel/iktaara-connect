@@ -3,7 +3,7 @@ import React from "react";
 
 import { Box, Stack } from "@mui/material";
 
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 
 import CustomCheckbox from "../form-fields/CheckBox";
 import { FormProvider, useForm } from "react-hook-form";

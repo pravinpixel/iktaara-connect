@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, ButtonProps } from "@mui/material";
 import { Stack } from "@mui/material";
-import ImageComponent from "./imageComponent";
+import ImageComponent from "./ImageComponent";
 
 interface CustomButtonType extends ButtonProps {
   image?: string;
@@ -9,7 +9,6 @@ interface CustomButtonType extends ButtonProps {
   height?: number;
   label?: string;
 }
-
 
 function CustomImageButton(props: CustomButtonType) {
   const { image, variant = "contained", label, ...rest } = props;

@@ -1,5 +1,5 @@
 import React from "react";
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 import { Typography } from "@mui/material";
 import CustomContainer from "../Container";
 import { Stack } from "@mui/material";

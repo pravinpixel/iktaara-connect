@@ -5,7 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import { Grid, IconButton, Typography } from "@mui/material";
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 import { Box } from "@mui/material";
 
 import { FormProvider, useForm } from "react-hook-form";

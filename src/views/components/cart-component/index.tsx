@@ -1,24 +1,25 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
-import ImageComponent from "../imageComponent";
-import CustomCardEvents from "../CustomCardsEvents";
+import CustomCard from "../CustomCard";
+import ImageComponent from "../ImageComponent";
 
 type Props = {
   cartData: any;
 };
 
-const ThisWeekData = (props: Props) => {
+const CaetComponent = (props: Props) => {
   const { cartData } = props;
 
   return (
     <section>
       <div>
-        <CustomCardEvents
+        <CustomCard
           variant="bottom-left"
           img={cartData.music_image}
+          img1={cartData.music_logo}
+          reviews={cartData.music_reviews}
+          typebottomleft={true}
           text={""}
-          reviews={""}
-          typebottom={false}
         />
       </div>
       <div className="py-2">
@@ -46,4 +47,4 @@ const ThisWeekData = (props: Props) => {
   );
 };
 
-export default ThisWeekData;
+export default CaetComponent;

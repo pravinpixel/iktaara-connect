@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Card, Grid, Stack, useTheme } from "@mui/material";
 
 import AddressSection from "./Address";
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 
 const BusinessSection = () => {
   const theme = useTheme();

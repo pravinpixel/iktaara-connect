@@ -1,5 +1,5 @@
 import CustomButton from "@/views/components/form-fields/CustomButton";
-import ImageComponent from "@/views/components/imageComponent";
+import ImageComponent from "@/views/components/ImageComponent";
 import { Container } from "@mui/material";
 import React from "react";
 // import { TextField, MenuItem, InputAdornment, IconButton } from "@mui/material";

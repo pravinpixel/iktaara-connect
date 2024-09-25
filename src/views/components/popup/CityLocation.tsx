@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { TransitionProps } from "@mui/material/transitions";
 import { Slide } from "@mui/material";
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 import CustomButton from "../form-fields/CustomButton";
 
 const Transition = React.forwardRef(function Transition(
@@ -66,11 +66,11 @@ export default function CityLocation({ handleClose, open }: CityLocationProps) {
     },
   ];
 
-  const [selectedCity, setSelectedCity] = useState<number>(1); 
-  const [hoveredCity, setHoveredCity] = useState<number | null>(null); 
+  const [selectedCity, setSelectedCity] = useState<number>(1);
+  const [hoveredCity, setHoveredCity] = useState<number | null>(null);
 
   const handleCitySelect = (id: number) => {
-    setSelectedCity(id); 
+    setSelectedCity(id);
   };
 
   return (

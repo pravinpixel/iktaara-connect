@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Fragment } from "react";
 import Slider from "react-slick";
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 
 type Props = {
   Categorysection: any;

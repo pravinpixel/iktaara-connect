@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { Stack } from "@mui/material";
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 import LocationSection from "./LocationSection";
 import InstrumentType from "./InstrumentTypes";
 import RatingSection from "./RatingSection";

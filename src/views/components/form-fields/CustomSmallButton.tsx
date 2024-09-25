@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, ButtonProps } from "@mui/material";
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 
 interface CustomButtonType extends ButtonProps {
   image?: string;

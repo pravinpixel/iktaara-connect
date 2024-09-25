@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import ImageComponent from "@/views/components/imageComponent";
+import ImageComponent from "@/views/components/ImageComponent";
 import { Autocomplete, Container, Grid, TextField } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";

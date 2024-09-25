@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Musicscomponent from '@/views/components/cartComponent/musicscomponent';
-import CustomContainer from '@/views/components/Container';
-import ImageComponent from '@/views/components/imageComponent';
-import React from 'react';
+import Musicscomponent from "@/views/components/cart-component/MusicsComponent";
+import CustomContainer from "@/views/components/Container";
+import ImageComponent from "@/views/components/ImageComponent";
+import React from "react";
 
 type Props = {
   musicsection: any;
 };
 const MusicalSection = (props: Props) => {
-    const { musicsection } = props;
+  const { musicsection } = props;
   return (
     <section className="pt-7 pb-9 relative">
       <CustomContainer>
@@ -39,4 +39,4 @@ const MusicalSection = (props: Props) => {
   );
 };
 
-export default MusicalSection
+export default MusicalSection;

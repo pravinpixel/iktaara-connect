@@ -459,14 +459,19 @@
 
 // export default CategorySection;
 
-
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import CustomContainer from "@/views/components/Container";
-import CategoryComponent from "@/views/components/cartComponent/categorycomponent";
-import { ArtistsIcon, DancerIcon, PartyIcon, PianistIcon, SoundIcon, StandupIcon } from "@/utils/theme/svg";
-
+import CategoryComponent from "@/views/components/cart-component/CategoryComponent";
+import {
+  ArtistsIcon,
+  DancerIcon,
+  PartyIcon,
+  PianistIcon,
+  SoundIcon,
+  StandupIcon,
+} from "@/utils/theme/svg";
 
 type Props = {
   categoryData: any;

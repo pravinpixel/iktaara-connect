@@ -1,5 +1,5 @@
 import React from "react";
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 
 import CustomContainer from "../Container";
 import { Box } from "@mui/material";

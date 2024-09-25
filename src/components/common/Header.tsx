@@ -6,45 +6,43 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { AutoCompleteSearch } from "./AutoCompleteSearch";
 import CustomButton from "@/views/components/form-fields/CustomButton";
-import ImageComponent from "@/views/components/imageComponent";
+import ImageComponent from "@/views/components/ImageComponent";
 import CustomContainer from "@/views/components/Container";
 import LoginPopup from "@/views/components/popup/LoginPopup";
 import CityLocation from "@/views/components/popup/CityLocation";
-import { Box} from "@mui/material";
-import Musicscomponent from "@/views/components/cartComponent/musicscomponent";
+import { Box } from "@mui/material";
+import Musicscomponent from "@/views/components/cart-component/MusicsComponent";
 import { ArrowdownIcon } from "@/utils/theme/svg";
-
 
 const Header = () => {
   const [open, setOpen] = React.useState(false);
   const [opencity, setOpencity] = React.useState(false);
   const [selected, setSelected] = useState<string | null>(null);
 
- const music = [
-   {
-     id: 1,
-     image: "assets/image/music1.webp",
-     music_title: "Artists",
-   },
-   {
-     id: 2,
-     image: "assets/image/music2.webp",
-     music_title: "Recording /JAM Studios",
-     music_text: "Find venues for every musical occasions",
-   },
-   {
-     id: 3,
-     image: "assets/image/music3.webp",
-     music_title: "Music Instrument Sales & Service",
-   },
-   {
-     id: 4,
-     image: "assets/image/music4.webp",
-     music_title: "Events",
-   },
- ];
+  const music = [
+    {
+      id: 1,
+      image: "assets/image/music1.webp",
+      music_title: "Artists",
+    },
+    {
+      id: 2,
+      image: "assets/image/music2.webp",
+      music_title: "Recording /JAM Studios",
+      music_text: "Find venues for every musical occasions",
+    },
+    {
+      id: 3,
+      image: "assets/image/music3.webp",
+      music_title: "Music Instrument Sales & Service",
+    },
+    {
+      id: 4,
+      image: "assets/image/music4.webp",
+      music_title: "Events",
+    },
+  ];
 
- 
   const handleClickOpencity = () => {
     setOpencity(true);
   };
@@ -128,11 +126,11 @@ const Header = () => {
                 <span className="text-f12 font-semibold transition-colors duration-200 ease-in-out ">
                   Services
                 </span>
-                  <ArrowdownIcon
-                    sx={{
-                      fontSize: "13px",
-                    }}
-                  />
+                <ArrowdownIcon
+                  sx={{
+                    fontSize: "13px",
+                  }}
+                />
               </button>
             </div>
             <CustomButton

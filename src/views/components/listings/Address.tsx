@@ -5,7 +5,7 @@ import { Box, Grid, Stack } from "@mui/material";
 import CustomCard from "../CustomCard";
 
 import CustomSmallButton from "../form-fields/CustomSmallButton";
-import ImageComponent from "../imageComponent";
+import ImageComponent from "../ImageComponent";
 
 const AddressSection = () => {
   const businesses = [
