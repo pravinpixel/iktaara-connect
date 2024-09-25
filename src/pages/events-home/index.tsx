@@ -1,13 +1,17 @@
 import EventsBanners from "@/views/components/events-new/EventsBanner";
 
 import React from "react";
-
+import { wrapper } from "@/redux/store";
 import EventsTitle from "@/views/components/events-new/EventsTitle";
 import HostEventsBanner from "@/views/components/events-new/HoseEventsBanner";
 import EventsThisWeek from "@/views/components/events-new/EventsThisWeek";
 import EventsByCategory from "@/views/components/events-new/EventsByCategory";
+import { eventHome } from "@/redux/services/eventService";
 
-const EventsHome = () => {
+// import { eventHome } from "@/redux/services/eventService";
+
+const EventsHome = ({ eventData }: any) => {
+  console.log(eventData, "dddd");
   const Events = [
     {
       id: 1,
@@ -95,5 +99,80 @@ const EventsHome = () => {
     </>
   );
 };
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) => async (ctx) => {
+    // Data to return in the catch block
+    const fallbackData = {
+      // error: 0,
+      // status_code: 200,
+      // message: "Data loaded successfully",
+      // status: "success",
+      data: {
+        banners: [
+          {
+            id: 1,
+            event_name: "varchar",
+            banner_image: "path of the image",
+          },
+        ],
+        events: [
+          {
+            id: 1,
+            event_name: "varchar",
+            event_date: "date",
+            event_type: "varchar",
+            event_price: 0,
+            thumbnail_image: "path of image",
+          },
+        ],
+        week_events: [
+          {
+            id: 1,
+            event_name: "varchar",
+            event_date: "date",
+            event_type: "varchar",
+            event_price: 0,
+            thumbnail_image: "path of the image",
+          },
+        ],
+        faq: [
+          {
+            question: "question1?",
+            answer: "answer1",
+          },
+          {
+            question: "question2?",
+            answer: "answer2",
+          },
+        ],
+        "static-data": [
+          {
+            title: "About Iktaraa events",
+            description: "events data",
+          },
+        ],
+      },
+      total_count: 100,
+      from: 1,
+      to: 24,
+    };
+
+    const [eventData] = await Promise.all([
+      await store
+        .dispatch(eventHome())
+        .unwrap()
+        .then((res) => res)
+        .catch(() => {
+          return fallbackData;
+        }),
+    ]);
+    console.log(eventData, "event");
+    return {
+      props: {
+        eventData: eventData,
+      },
+    };
+  }
+);
 
 export default EventsHome;
