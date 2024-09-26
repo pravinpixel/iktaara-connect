@@ -201,8 +201,8 @@ export function overrides(theme: Theme) {
     MuiTypography: {
       styleOverrides: {
         root: {
-          overflow: "hidden",
-          textOverflow: "ellipsis",
+          // overflow: "hidden",
+          // textOverflow: "ellipsis",
           color: theme.palette.customColor.ik_bluegreydarken3,
           fontFamily: theme.typography.fontFamily,
           fontWeight: theme.typography.fontWeightRegular,

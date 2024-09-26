@@ -11,6 +11,7 @@ import //   ArtistsIcon,
 "@/utils/theme/svg";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import dynamic from "next/dynamic";
+import EventFilterPopup from "../popup/EventFilterPopup";
 
 const FilterEventData = dynamic(() => import("./FilterEventData"));
 type CategoryData = {
@@ -50,6 +51,15 @@ export default function FilterSectionEvents(props: Props) {
     }
   };
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <section className="section-padding pt-5 pb-14 bg-ik_lightbluevariant">
       <CustomContainer>
@@ -63,7 +73,7 @@ export default function FilterSectionEvents(props: Props) {
           className="w-full category-table1 gap-4 "
         >
           <Tab
-            icon={<FilterListIcon />}
+            icon={<FilterListIcon onClick={handleClickOpen} />}
             iconPosition="start"
             label="Filter by"
             className="text-f16 font-semibold h-auto min-h-[50px] w-auto max-[145px] rounded-full px-7"
@@ -101,6 +111,7 @@ export default function FilterSectionEvents(props: Props) {
         </Tabs>
 
         <FilterEventData Categorysection={getCategoryData()} />
+        {open && <EventFilterPopup handleClose={handleClose} open={open} />}
       </CustomContainer>
     </section>
   );
