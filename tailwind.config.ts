@@ -66,6 +66,9 @@ const config: Config = {
           DEFAULT: "var(--ik_multicolor)",
           foreground: "var(--ik_multicolor-foreground)",
         },
+        ik_multicolor1: {
+          DEFAULT: "var(--ik_multicolor1)",
+        },
         ik_white: {
           DEFAULT: "var(--ik_white)",
           foreground: "var(--ik_white-foreground)",
@@ -117,19 +120,24 @@ const config: Config = {
           DEFAULT: "var(--ik_black)",
         },
         ik_lightblue: {
-          DEFAULT: "var(--ik_lightblue)"
+          DEFAULT: "var(--ik_lightblue)",
         },
         ik_bluevariantcolor: {
-          DEFAULT: "var(--ik_bluevariantcolor)"
+          DEFAULT: "var(--ik_bluevariantcolor)",
         },
         ik_bluegreybluegrey: {
-          DEFAULT: "var(--ik_bluegreybluegrey)"
+          DEFAULT: "var(--ik_bluegreybluegrey)",
         },
 
         ik_lightbluevariant: {
-          DEFAULT: "var(--ik_lightbluevariant)"
+          DEFAULT: "var(--ik_lightbluevariant)",
         },
-       
+        ik_bluegreylightens3: {
+          DEFAULT: "var(--ik_bluegreylightens3)",
+        },
+        ik_bluegreylighten6: {
+          DEFAULT: "var(--ik_bluegreylighten6)",
+        },
       },
       border: "hsl(var(--border))",
       input: "hsl(var(--input))",
@@ -160,10 +168,11 @@ const config: Config = {
       f24: "var(--f24)",
       f28: "var(--f28)",
       f26: "var(--f26)",
+      f30: "var(--f30)",
       f38: "var(--f38)",
       f64: "var(--f64)",
     },
   },
-  plugins: [TailwindAnimate]
+  plugins: [TailwindAnimate],
 };
 export default config;
