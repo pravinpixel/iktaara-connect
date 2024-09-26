@@ -40,15 +40,7 @@ const StudioCard = () => {
   return (
     <section className="mt-[15px]">
       {businesses.map((business) => (
-        <Card
-          sx={{
-            width: "100%",
-            height: "100%",
-            background: "white",
-            marginTop: "15px",
-          }}
-          key={business.id}
-        >
+        <Card className="w-full h-full bg-white mt-[15px]" key={business.id}>
           <Box sx={{ p: 2 }}>
             <Grid container>
               <>

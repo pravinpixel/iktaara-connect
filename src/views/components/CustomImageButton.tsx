@@ -18,7 +18,8 @@ function CustomImageButton(props: CustomButtonType) {
       <Stack
         direction="row"
         spacing={1}
-        sx={{ display: "flex", alignItems: "center", padding: "4px" }}
+        alignItems={"center"}
+        className="p-[4px]"
       >
         <ImageComponent src={image} alt="Button Image" width={24} height={24} />
         <p className="font-semibold text-f18 leading-6 ">{label}</p>

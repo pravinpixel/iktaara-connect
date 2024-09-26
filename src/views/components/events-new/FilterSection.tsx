@@ -13,10 +13,17 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import dynamic from "next/dynamic";
 
 const FilterEventData = dynamic(() => import("./FilterEventData"));
-type Props = {
-  categoryData: any;
+type CategoryData = {
+  pianist: string[];
+  dancer: string[];
+  sound_engineer: string[];
+  theatre_artists: string[];
+  party_dJ: string[];
 };
 
+type Props = {
+  categoryData: CategoryData;
+};
 export default function FilterSectionEvents(props: Props) {
   const { categoryData } = props;
   const [selectedTab, setSelectedTab] = React.useState(0);

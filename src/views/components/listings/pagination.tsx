@@ -84,7 +84,7 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
   // const isLastPage = to === total_count;
   return (
     <div className="col-12 text-center mt-2">
-      <div className="pagination-text">
+      <div className="flex justify-center items-center">
         {/* {total_count > 24 && ( */}
         <>
           <Image
@@ -92,7 +92,7 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
             alt="loader_1"
             width="14"
             height="14"
-            className="paginatiion-first"
+            className="cursor-pointer object-contain mr-2"
             onClick={handleGoToFirstPage}
           />
           <Image
@@ -101,27 +101,34 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
             alt="loader_2"
             width="12"
             height="13"
-            className="left-arrow-icon"
+            className="mr-1 ml-2 cursor-pointer object-contain h-[13px]"
           />
           <Typography
             sx={{ pr: 1 }}
             onClick={handleLoadLess}
-            className="prev-text-icon"
+            className="text-[14px] font-normal leading-[20.16px] text-[#3b4357] cursor-pointer"
           >
             Prev
           </Typography>
         </>
         {/* )} */}
 
-        <span className="text-field-icon1">
+        <span className="border border-[#818694] rounded-[2px] p-[2px] text-[14px] my-2 font-normal leading-[20.16px] px-2 text-[#3b4357] py-2 rounded">
           {1} to {2}
         </span>
-        <span className="text-field-icon2">of</span>
-        <span className="text-field-icon3">1</span>
+        <span className="text-[14px] font-normal leading-[20.16px] px-2 text-[#3b4357]">
+          of
+        </span>
+        <span className="text-[14px] font-normal leading-[20.16px] mr-3 px-[3px] text-[#3b4357]">
+          1
+        </span>
 
         {/* {!isLastPage ? ( */}
         <>
-          <Typography className="prev-text-icon" onClick={handleLoadMore}>
+          <Typography
+            className="text-[14px] font-normal leading-[20.16px] text-[#3b4357] cursor-pointer"
+            onClick={handleLoadMore}
+          >
             Next
           </Typography>
           <Image
@@ -130,14 +137,14 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
             alt="loader_3"
             width="12"
             height="13"
-            className="left-arrow-icon1"
+            className="ml-1 mr-3 cursor-pointer object-contain h-[13px]"
           />
           <Image
             src="/images/collections/static/Group 1171277072.png"
             alt="loader_4"
             width="14"
             height="14"
-            className="paginatiion-last"
+            className="cursor-pointer object-contain"
             onClick={handleGoToLastPage}
           />
         </>

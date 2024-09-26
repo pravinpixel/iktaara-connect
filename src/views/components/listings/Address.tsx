@@ -38,7 +38,7 @@ const AddressSection = () => {
   ];
 
   return (
-    <Box sx={{ mt: 2 }}>
+    <Box className="mt-[16px]s">
       <Grid container>
         {" "}
         {businesses.map((business) => (
@@ -54,13 +54,7 @@ const AddressSection = () => {
                 reviews={""}
                 typebottom={false}
               />
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  mt: 2,
-                }}
-              >
+              <Box className="flex justify-between mt-2">
                 <Box>
                   <p className="text-f22 leading-7 font-bold">
                     {business.name}
@@ -99,7 +93,7 @@ const AddressSection = () => {
                   </Stack>
                 </Box>
 
-                <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                <Box className="flex justify-end">
                   <CustomSmallButton
                     image="/images/static/image_7.png"
                     width={27.57}

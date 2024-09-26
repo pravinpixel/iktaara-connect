@@ -13,7 +13,8 @@ const FilterEventData = (props: Props) => {
 
   const settings = {
     slidesToShow: 5,
-    slidesToScroll: Categorysection?.length > 4 ? true : false,
+    slidesToScroll: Categorysection?.length > 4 ? 1 : Categorysection.length,
+
     swipe: Categorysection?.length > 8 ? true : false,
     dots: Categorysection?.length > 8 ? true : false,
     infinite: Categorysection?.length > 8 ? true : false,

@@ -13,7 +13,7 @@ const BusinessSection = () => {
   return (
     <section className="mt-[15px]">
       {" "}
-      <Card sx={{ width: "100%", height: "100%", background: "white" }}>
+      <Card className="w-full h-full bg-white">
         <Grid
           container
           sx={{ borderTop: `6px solid ${theme.palette.customColor.ik_pink}` }}
