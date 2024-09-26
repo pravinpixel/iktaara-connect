@@ -4,7 +4,6 @@ import React, { useState } from "react";
 // import { SearchBar } from "./SearchBar";
 
 import Link from "next/link";
-import { AutoCompleteSearch } from "./AutoCompleteSearch";
 import CustomButton from "@/views/components/form-fields/CustomButton";
 import ImageComponent from "@/views/components/ImageComponent";
 import CustomContainer from "@/views/components/Container";
@@ -13,6 +12,8 @@ import CityLocation from "@/views/components/popup/CityLocation";
 import { Box } from "@mui/material";
 import Musicscomponent from "@/views/components/cart-component/MusicsComponent";
 import { ArrowdownIcon } from "@/utils/theme/svg";
+import AutoCompleteSearch from "./AutoCompleteSearch";
+
 
 const Header = () => {
   const [open, setOpen] = React.useState(false);
@@ -108,7 +109,6 @@ const Header = () => {
               </button>
             </div>
             <div className="w-auto">
-              {/* <SearchBar /> */}
               <AutoCompleteSearch
                 placeholder={"Find artists, sound engineers, bands..."}
               />

@@ -1,24 +1,36 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { configureStore } from "@reduxjs/toolkit";
-import reducer from "@/redux/reducer";
-import { createWrapper } from "next-redux-wrapper";
+import {
+  Action,
+  configureStore,
+  ThunkAction,
+} from '@reduxjs/toolkit';
+import { createWrapper } from 'next-redux-wrapper';
+import reducer from './reducer';
+import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from 'react-redux';
 
-export default function configureAppStore(preloadedStates) {
-  const {
-    req,
-    res,
-    query,
-    resolvedUrl,
-    locales,
-    defaultLocale,
-    ...preloadedState
-  } = preloadedStates;
-  const store = configureStore({
-    reducer,
-    preloadedState,
+
+
+export const makeStore = () =>
+  configureStore({
+    reducer: reducer as never,
   });
 
-  return store;
-}
+type Store = ReturnType<typeof makeStore>;
 
-export const wrapper = createWrapper(configureAppStore, { debug: false });
+export type AppDispatch = Store['dispatch'];
+export type RootState = ReturnType<Store['getState']>;
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;
+
+
+
+
+
+export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const useAppStore: () => Store = useStore;
+
+export const wrapper = createWrapper(makeStore, { debug: true });

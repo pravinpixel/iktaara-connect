@@ -1,15 +1,16 @@
-import { combineReducers } from "@reduxjs/toolkit";
-import { authSlice } from "./slice/authSlice";
 
-import { HYDRATE } from "next-redux-wrapper";
 import { eventSlice } from "./slice/eventSlice";
 import { buisnessListSlice } from "./slice/listingSlice";
+
+import { HYDRATE } from "next-redux-wrapper";
+import { Action, combineReducers } from "redux";
 
 const combinedReducer = combineReducers({
   event: eventSlice.reducer,
   listing: buisnessListSlice.reducer,
 });
-const reducer = (state, action) => {
+
+const reducer = (state: ReturnType<typeof combinedReducer>, action: Action & { payload: object }) => {
   if (action.type === HYDRATE) {
     const nextState = {
       ...state, // use previous state
@@ -21,4 +22,4 @@ const reducer = (state, action) => {
   }
 };
 
-export default reducer;
+export default reducer

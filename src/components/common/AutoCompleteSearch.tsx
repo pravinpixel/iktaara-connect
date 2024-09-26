@@ -2,28 +2,15 @@
 import ImageComponent from "@/views/components/ImageComponent";
 import { Autocomplete, Container, Grid, TextField } from "@mui/material";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-
-export const AutoCompleteSearch = ({ placeholder }: any) => {
+import {  useState } from "react";
+const AutoCompleteSearch = ({ placeholder }: any) => {
   const [open, setOpen] = useState(false);
-  const temp = useRef(null);
 
-  useEffect(() => {
-    if (open) {
-      document.body.style.position = "fixed";
-      document.body.style.width = "100%";
-      document.body.style.overflowY = "scroll";
-    } else {
-      document.body.style.position = "";
-      document.body.style.width = "";
-      document.body.style.overflowY = "";
-    }
-  }, [open]);
+ 
   return (
     <>
       <div
-        className="search-bar search-bar-new"
-        style={{ border: "none !important" }}
+        className="search-bar search-bar-new border-none"
       >
         {open && <div className="backdrop active"></div>}
         <Autocomplete
@@ -67,7 +54,6 @@ export const AutoCompleteSearch = ({ placeholder }: any) => {
           }}
           open={open}
           renderInput={(params) => (
-            <>
               <TextField
                 {...params}
                 size="small"
@@ -75,7 +61,6 @@ export const AutoCompleteSearch = ({ placeholder }: any) => {
                 autoComplete="off"
                 className="search-here"
                 sx={{ width: "100%" }}
-                ref={temp}
                 onFocus={() => {
                   setOpen(true);
                 }}
@@ -83,7 +68,6 @@ export const AutoCompleteSearch = ({ placeholder }: any) => {
                   setOpen(false);
                 }}
                 placeholder={placeholder}
-                aria-describedby="inputGroup-sizing-sm"
                 InputProps={{
                   ...params.InputProps,
                   startAdornment: (
@@ -97,7 +81,6 @@ export const AutoCompleteSearch = ({ placeholder }: any) => {
                   ),
                 }}
               />
-            </>
           )}
           options={[]}
         />
@@ -105,3 +88,6 @@ export const AutoCompleteSearch = ({ placeholder }: any) => {
     </>
   );
 };
+
+
+export default AutoCompleteSearch

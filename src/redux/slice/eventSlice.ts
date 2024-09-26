@@ -3,13 +3,23 @@ import { createSlice } from "@reduxjs/toolkit";
 import { eventCategory, eventDetails, eventHome, similarEventDetails } from "../services/eventService";
 
 const eventCases = [{ api: eventHome, name: "eventHome", isLoading: true },
-  { api: eventCategory, name: "eventCategory", isLoading: true },
-  { api: eventDetails, name: "eventDetails", isLoading: true },
-  { api: similarEventDetails, name: "similarEventDetails", isLoading: true }
+{ api: eventCategory, name: "eventCategory", isLoading: true },
+{ api: eventDetails, name: "eventDetails", isLoading: true },
+{ api: similarEventDetails, name: "similarEventDetails", isLoading: true }
 ];
 
-const initialState = {
-  eventState: false,
+
+type AsyncAction = {
+  isLoading: boolean;
+  data: unknown;
+  error: unknown;
+  // reFetchApi: any;
+};
+
+type Org = Record<string, AsyncAction>;
+
+const initialState: Org = {
+
 };
 
 eventCases.forEach((api) => {
@@ -24,15 +34,11 @@ export const eventSlice = createSlice({
   name: "eventSlice",
   initialState,
   reducers: {
-    setEventState: (state, action) => {
-      state.eventState = action.payload;
-    },
   },
   extraReducers: (builder) => {
     eventCases.forEach((cases) => {
       builder
         .addCase(cases.api.fulfilled, (state, { payload }) => {
-        
           state[cases.name].isLoading = false;
           state[cases.name].data = payload?.data ?? null;
           state[cases.name].error = null;
@@ -43,13 +49,13 @@ export const eventSlice = createSlice({
           state[cases.name].data = null;
         })
         .addCase(cases.api.rejected, (state, { payload }) => {
-         
+
           state[cases.name].isLoading = false;
-          state[cases.name].error = payload || null ;
+          state[cases.name].error = payload || null;
           state[cases.name].data = null;
         });
     });
   },
 });
 
-export const { eventDispatch } = eventSlice.actions;
+export const eventSliceDispatch = eventSlice.actions;

@@ -187,7 +187,7 @@ export default function CityLocation({ handleClose, open }: CityLocationProps) {
             </div>
           </Grid>
         ))}
-        <Grid xs={12}>
+        <Grid item xs={12}>
           <div className="flex justify-end pt-4">
             <CustomButton
               variant="contained"

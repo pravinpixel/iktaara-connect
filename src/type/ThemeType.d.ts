@@ -72,5 +72,6 @@ declare module "@mui/material/Button" {
     interface ButtonPropsVariantOverrides {
         white: true;
         "primary-button": true;
+        task :true
     }
 }

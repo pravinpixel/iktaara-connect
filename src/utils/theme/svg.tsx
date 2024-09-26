@@ -27,7 +27,7 @@ export const DancerIcon = (props: SvgIconOwnProps) =>
         viewBox="0 0 29 29"
         fill="none"
       >
-        <g clip-path="url(#clip0_1636_13622)">
+        <g clipPath="url(#clip0_1636_13622)">
           <path
             d="M23.6068 10.0785C22.7215 8.26266 21.2008 7.2438 19.7317 6.2594C18.6353 5.52488 17.5992 4.83128 16.8669 3.84042L16.7355 3.66379C16.3025 3.0822 15.8135 2.42306 15.736 1.86947C15.6584 1.30942 15.1501 0.910928 14.5943 0.943238C14.03 0.982011 13.5927 1.44944 13.5927 2.01595V21.2084C12.6902 20.6613 11.5787 20.3253 10.3617 20.3253C7.39339 20.3253 4.97656 22.2574 4.97656 24.6333C4.97656 27.0092 7.39339 28.9414 10.3617 28.9414C13.3299 28.9414 15.7468 27.0092 15.7468 24.6333V5.85229C16.5911 6.74837 17.5734 7.40751 18.5319 8.04941C19.8222 8.91318 21.0414 9.72956 21.6725 11.0241C22.0689 11.8319 22.2584 12.7129 22.211 13.497C22.0925 15.4162 21.3688 17.3462 20.3241 18.5374C19.9299 18.9833 19.973 19.664 20.421 20.056C20.8647 20.4524 21.5454 20.405 21.9396 19.9591C23.288 18.4276 24.2164 16.0021 24.3607 13.6305C24.4318 12.4609 24.1712 11.2331 23.6068 10.0785Z"
             fill="currentColor"
@@ -60,7 +60,7 @@ export const PianistIcon = (props: SvgIconOwnProps) =>
         viewBox="0 0 22 22"
         fill="none"
       >
-        <g clip-path="url(#clip0_1_176)">
+        <g clipPath="url(#clip0_1_176)">
           <path
             d="M19.9375 0H2.0625C0.923398 0 0 0.923398 0 2.0625V19.9375C0 21.0766 0.923398 22 2.0625 22H19.9375C21.0766 22 22 21.0766 22 19.9375V2.0625C22 0.923398 21.0766 0 19.9375 0ZM4.8125 20.625H2.0625C1.68279 20.625 1.375 20.3172 1.375 19.9375V2.0625C1.375 1.68279 1.68279 1.375 2.0625 1.375H3.4375V11.6875C3.4375 12.0672 3.74529 12.375 4.125 12.375H4.8125V20.625ZM10.3125 20.625H6.1875V12.375H6.875C7.25471 12.375 7.5625 12.0672 7.5625 11.6875V1.375H8.9375V11.6875C8.9375 12.0672 9.24529 12.375 9.625 12.375H10.3125V20.625ZM15.8125 20.625H11.6875V12.375H12.375C12.7547 12.375 13.0625 12.0672 13.0625 11.6875V1.375H14.4375V11.6875C14.4375 12.0672 14.7453 12.375 15.125 12.375H15.8125V20.625ZM20.625 19.9375C20.625 20.3172 20.3172 20.625 19.9375 20.625H17.1875V12.375H17.875C18.2547 12.375 18.5625 12.0672 18.5625 11.6875V1.375H19.9375C20.3172 1.375 20.625 1.68279 20.625 2.0625V19.9375Z"
             fill="currentColor"
@@ -88,7 +88,7 @@ export const SoundIcon = (props: SvgIconOwnProps) =>
         viewBox="0 0 25 25"
         fill="none"
       >
-        <g clip-path="url(#clip0_1636_13626)">
+        <g clipPath="url(#clip0_1636_13626)">
           <path
             d="M19.9295 5.01074C19.3179 5.01074 18.8203 5.50945 18.8203 6.12248V19.769C18.8763 21.2443 20.9873 21.239 21.0429 19.769V6.12248C21.0429 5.50949 20.5435 5.01074 19.9295 5.01074Z"
             fill="currentColor"
@@ -163,66 +163,66 @@ export const ArtistsIcon = (props: SvgIconOwnProps) =>
           <path
             d="M12.1797 16.4404C12.7212 15.5026 13.9204 15.1812 14.8582 15.7228"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M9.28906 23.5096C11.1004 24.5553 13.4166 23.9347 14.4623 22.1234"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M8.42854 17.4454C7.4907 16.9039 6.29147 17.2252 5.75 18.1631"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M14.5278 27.6114C13.7822 28.1268 12.8811 28.3682 11.9777 28.2947C7.88738 27.9617 4.44803 25.0935 3.38589 21.1295L1.5 14.0912C6.02661 11.3771 11.2227 9.98486 16.4999 10.0719L18.3858 17.1103C19.448 21.0742 17.9035 25.2779 14.5278 27.6114Z"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M18.1766 7.03926C17.347 7.73535 16.1102 7.62715 15.4141 6.79756"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M22.0391 7.37765C22.7352 8.20723 23.972 8.31544 24.8016 7.61929"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M12.0949 10.3445C12.0899 10.0146 12.1014 9.68232 12.1306 9.34855L12.7657 2.08961C17.9476 1.08748 23.3065 1.55635 28.2356 3.44302V3.44307L27.6006 10.702C27.2429 14.7901 24.3539 18.2121 20.3836 19.2503C19.8352 19.3936 19.2665 19.4156 18.7158 19.3194"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
           <path
             d="M17.6016 14.1776C19.117 13.4709 20.9752 13.8349 22.1012 15.1768"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeMiterlimit="10"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
       </svg>
@@ -245,32 +245,32 @@ export const PartyIcon = (props: SvgIconOwnProps) =>
         <path
           d="M21.6418 15.6557C21.6418 21.3363 17.0367 25.9414 11.356 25.9414C5.67538 25.9414 1.07031 21.3363 1.07031 15.6557C1.07031 9.97507 5.67538 5.37001 11.356 5.37001C17.0367 5.37001 21.6418 9.97507 21.6418 15.6557Z"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-miterlimit="10"
+          strokeWidth="2"
+          strokeMiterlimit="10"
         />
         <path
           d="M4.5 15.6553C4.5 11.8682 7.57006 8.79809 11.3571 8.79809"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-miterlimit="10"
+          strokeWidth="2"
+          strokeMiterlimit="10"
         />
         <path
           d="M14.7868 15.6554C14.7868 17.5489 13.2518 19.084 11.3583 19.084C9.46469 19.084 7.92969 17.5489 7.92969 15.6554C7.92969 13.7619 9.46469 12.2269 11.3583 12.2269C13.2518 12.2269 14.7868 13.7619 14.7868 15.6554Z"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-miterlimit="10"
+          strokeWidth="2"
+          strokeMiterlimit="10"
         />
         <path
           d="M25.0692 5.37012H21.6406V1.94155H25.0692V5.37012Z"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-miterlimit="10"
+          strokeWidth="2"
+          strokeMiterlimit="10"
         />
         <path
           d="M23.3556 5.37018V10.513L17.3516 17.5479"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-miterlimit="10"
+          strokeWidth="2"
+          strokeMiterlimit="10"
         />
       </svg>
     ),
@@ -307,62 +307,62 @@ export const StandupIcon = (props: SvgIconOwnProps) =>
           <path
             d="M23.0392 15.887C23.0392 20.4884 19.3888 24.2324 14.9024 24.2324C10.4161 24.2324 6.76562 20.4884 6.76562 15.887"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
           />
           <path
             d="M14.9055 20.8936C12.2092 20.8936 10.0234 18.6517 10.0234 15.8863V7.54086C10.0234 4.77541 12.2092 2.5336 14.9055 2.5336C17.6018 2.5336 19.7876 4.77541 19.7876 7.54086V15.8863C19.7876 18.6517 17.6018 20.8936 14.9055 20.8936Z"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
           />
           <path
             d="M14.9062 24.2321V29.3506"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
           />
           <path
             d="M8.39062 29.3506H21.4095"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
           />
           <path
             d="M10.0234 7.54102H13.2782"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
           />
           <path
             d="M10.0234 11.7139H13.2782"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
           />
           <path
             d="M10.0234 15.8867H13.2782"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
           />
           <path
             d="M16.5312 7.54102H19.786"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
           />
           <path
             d="M16.5312 11.7139H19.786"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
           />
           <path
             d="M16.5312 15.8867H19.786"
             stroke="currentColor"
-            stroke-width="2"
-            stroke-miterlimit="10"
+            strokeWidth="2"
+            strokeMiterlimit="10"
           />
         </g>
       </svg>
@@ -385,7 +385,7 @@ export const ArrowdownIcon = (props: SvgIconOwnProps) =>
         <path
           d="M0.851562 1.36816L7.85155 8.36818L14.8516 1.36816"
           stroke="currentColor"
-          stroke-width="2"
+          strokeWidth="2"
         />
       </svg>
     ),
