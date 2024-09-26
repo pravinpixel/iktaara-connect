@@ -9,7 +9,7 @@ import { Stack } from "@mui/material";
 import dynamic from "next/dynamic";
 const CustomImageButton = dynamic(() => import("../CustomImageButton"));
 const ImageComponent = dynamic(() => import("../ImageComponent"));
-const StudioCard = () => {
+const StudioCard = ({ buisnessListData }: any) => {
   const businesses = [
     {
       id: 1,
@@ -36,11 +36,13 @@ const StudioCard = () => {
       icon: "Music Doctor Icon",
     },
   ];
+  console.log(buisnessListData, "buisnessListData");
 
   return (
     <section className="mt-[15px]">
-      {businesses.map((business) => (
+      {buisnessListData.data.map((business: any) => (
         <Card className="w-full h-full bg-white mt-[15px]" key={business.id}>
+          {console.log(business, "hhhh")}
           <Box sx={{ p: 2 }}>
             <Grid container>
               <>
@@ -48,8 +50,8 @@ const StudioCard = () => {
                 <Grid item xs={4}>
                   <CustomCard
                     variant="bottom-right"
-                    img="/images/static/image_13.png"
-                    img1="/images/static/image_12.png"
+                    img={business.image}
+                    img1={business.logo_image}
                     type={true}
                     text=""
                     reviews={""}
@@ -63,7 +65,7 @@ const StudioCard = () => {
                     >
                       <Box>
                         <p className="font-bold text-f24 leading-8 text-ik_bluegreydarken3">
-                          {business.name}
+                          {business.title}
                         </p>
                         <Stack
                           direction="row"
@@ -71,7 +73,7 @@ const StudioCard = () => {
                           alignItems={"center"}
                         >
                           <ImageComponent
-                            src={business.imgSrc}
+                            src="/images/static/image_5.png"
                             alt="Business Image"
                             width={19}
                             height={20}
@@ -95,13 +97,13 @@ const StudioCard = () => {
                             height={25}
                           />
                           <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2">
-                            {business.inquiries} inquiries
+                            {business.experience} years in buisness,
                           </p>
                           <p className="font-bold text-f16 leading-5 text-ik_bluegreydarken2">
                             Since 1924
                           </p>
                         </Stack>
-                        <Stack direction="row" spacing={1}>
+                        {/* <Stack direction="row" spacing={1}>
                           {" "}
                           <Stack
                             direction="row"
@@ -133,7 +135,7 @@ const StudioCard = () => {
                               {business.inquiries} inquiries
                             </p>
                           </Stack>
-                        </Stack>
+                        </Stack> */}
                       </Box>
 
                       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
@@ -152,7 +154,7 @@ const StudioCard = () => {
                             />
                             <p style={{ textAlign: "right" }}>
                               <span className="font-semibold text-f26 leading-8 text-ik_bluegreydarken3">
-                                4.5
+                                {business.rating}
                               </span>
                               /
                               <span className="font-normal text-f26 leading-8 text-ik_bluegreydarken3">
@@ -165,7 +167,7 @@ const StudioCard = () => {
                             style={{ textAlign: "right" }}
                             className="font-noraml text-f16 leading-5 text-ik_bluegreydarken1"
                           >
-                            100 Reviews
+                            {business.reviews}Reviews
                           </p>
                           <Box mt={1}>
                             <CustomImageButton
