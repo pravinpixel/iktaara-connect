@@ -12,12 +12,13 @@ const CustomCardEventsCategory = dynamic(
 type EventsTitleProps = {
   label: string;
   eventByCate: any;
+  className: string;
 };
 
 const EventsByCategory = (props: EventsTitleProps) => {
   const { label, eventByCate } = props;
   return (
-    <Box className="bg-ik_lightbluevariant ">
+    <Box className={className}>
       <CustomContainer>
         <Stack
           direction="row"

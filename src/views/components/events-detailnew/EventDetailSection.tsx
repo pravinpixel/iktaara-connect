@@ -16,9 +16,8 @@ const CustomContainer = dynamic(() => import("../Container"));
 // };
 const EventDetailSection = () => {
   return (
-    <CustomContainer>
-      <Box>
-        {" "}
+    <Box className="bg-ik_lightblue">
+      <CustomContainer>
         <Grid container spacing={2}>
           <Grid item xs={8}>
             <BookTicket />
@@ -32,11 +31,18 @@ const EventDetailSection = () => {
             <WhyShouldAttend />
           </Grid>
           <Grid item xs={4}>
-            <ImageComponent src="/images/static/image_29.png" alt="image" />
+            <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white mt-[-100px]">
+              <ImageComponent
+                src="/images/static/image_29.png"
+                alt="image"
+                width={372}
+                height={500}
+              />
+            </Box>
           </Grid>
         </Grid>
-      </Box>
-    </CustomContainer>
+      </CustomContainer>
+    </Box>
   );
 };
 

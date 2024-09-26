@@ -2,7 +2,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 
-import { wrapper } from "@/redux/store";
+// import { wrapper } from "@/redux/store";
 const EventsBanners = dynamic(
   () => import("@/views/components/events-new/EventsBanner")
 );
@@ -17,6 +17,7 @@ import {
   eventDetails,
   similarEventDetails,
 } from "@/redux/services/eventService";
+import { wrapper } from "@/redux/store";
 
 const EventDetailSection = dynamic(
   () => import("@/views/components/events-detailnew/EventDetailSection")
@@ -36,10 +37,13 @@ const EventsDetails = ({ eventDetailData, similarEventsData }: any) => {
       <EventDetailSection />
       <EventsThisWeek
         musictechniciansection={similarEventsData?.data}
-        className={"flex pt-5 pb-5 bg-ik_white"}
+        className={"flex pt-5 pb-5 bg-ik_lightblue"}
         title={"Similar Events"}
       />
-      <EventsByCategory label="Events by Category" />
+      <EventsByCategory
+        label="Events by Category"
+        className="bg-ik_lightblue"
+      />
     </>
   );
 };

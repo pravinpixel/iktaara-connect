@@ -2,7 +2,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 
-import { wrapper } from "@/redux/store";
+// import { wrapper } from "@/redux/store";
 const EventsBanners = dynamic(
   () => import("@/views/components/events-new/EventsBanner")
 );
@@ -16,6 +16,7 @@ const EventsThisWeek = dynamic(
   () => import("@/views/components/events-new/EventsThisWeek")
 );
 import { eventCategory, eventHome } from "@/redux/services/eventService";
+import { wrapper } from "@/redux/store";
 
 const FilterSectionEvents = dynamic(
   () => import("@/views/components/events-new/FilterSection")
@@ -408,6 +409,7 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
       <EventsByCategory
         label="Events by Category"
         eventByCate={eventCategoryData?.data}
+        className="bg-ik_lightbluevariant "
       />
       <FilterSectionEvents categoryData={Category} />
       <AboutIktaraaEvents aboutData={eventData?.data?.static_data} />

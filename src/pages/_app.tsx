@@ -5,9 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 import type { AppProps } from "next/app";
 import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
-import { wrapper } from "@/redux/store";
+
 import { Sora } from "next/font/google";
 import Layouts from "@/components/common/Layouts";
+import { wrapper } from "@/redux/store";
 
 const sora = Sora({
   variable: "--sora",
