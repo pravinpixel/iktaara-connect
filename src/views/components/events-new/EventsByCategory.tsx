@@ -32,7 +32,7 @@ const EventsByCategory = (props: EventsTitleProps) => {
 
         <div className="flex flex-wrap gap-2 my-7">
           {" "}
-          {eventByCate.map((business: any) => (
+          {eventByCate?.map((business: any) => (
             <div className="" key={business.id}>
               {" "}
               <CustomCardEventsCategory

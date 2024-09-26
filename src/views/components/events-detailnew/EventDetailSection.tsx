@@ -4,6 +4,9 @@ import dynamic from "next/dynamic";
 
 import { Box, Grid } from "@mui/material";
 
+const ImageComponent = dynamic(() => import("../ImageComponent"));
+const HostInfo = dynamic(() => import("./HostInfo"));
+const WhyShouldAttend = dynamic(() => import("./WhyShoulAttend"));
 const BookTicket = dynamic(() => import("./BookTicket"));
 const CustomContainer = dynamic(() => import("../Container"));
 
@@ -16,20 +19,20 @@ const EventDetailSection = () => {
     <CustomContainer>
       <Box>
         {" "}
-        <Grid container>
-          <Grid item xs={9}>
+        <Grid container spacing={2}>
+          <Grid item xs={8}>
             <BookTicket />
           </Grid>
-          <Grid item xs={3}>
-            ddd
+          <Grid item xs={4}>
+            <HostInfo />
           </Grid>
         </Grid>
-        <Grid container>
-          <Grid item xs={9}>
-            s
+        <Grid container mt={2} spacing={2}>
+          <Grid item xs={8}>
+            <WhyShouldAttend />
           </Grid>
-          <Grid item xs={3}>
-            ddd
+          <Grid item xs={4}>
+            <ImageComponent src="/images/static/image_29.png" alt="image" />
           </Grid>
         </Grid>
       </Box>

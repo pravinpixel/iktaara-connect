@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { eventCategory, eventHome } from "../services/eventService";
+import { eventCategory, eventDetails, eventHome, similarEventDetails } from "../services/eventService";
 
 const eventCases = [{ api: eventHome, name: "eventHome", isLoading: true },
-  { api: eventCategory, name: "eventCategory", isLoading: true }
+  { api: eventCategory, name: "eventCategory", isLoading: true },
+  { api: eventDetails, name: "eventDetails", isLoading: true },
+  { api: similarEventDetails, name: "similarEventDetails", isLoading: true }
 ];
 
 const initialState = {

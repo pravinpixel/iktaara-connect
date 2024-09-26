@@ -138,6 +138,9 @@ const config: Config = {
         ik_bluegreylighten6: {
           DEFAULT: "var(--ik_bluegreylighten6)",
         },
+        ik_lightorange: {
+          DEFAULT: "var(--ik_ligntorange)",
+        },
       },
       border: "hsl(var(--border))",
       input: "hsl(var(--input))",
@@ -169,6 +172,7 @@ const config: Config = {
       f28: "var(--f28)",
       f26: "var(--f26)",
       f30: "var(--f30)",
+      f32: "var(--f32)",
       f38: "var(--f38)",
       f64: "var(--f64)",
     },

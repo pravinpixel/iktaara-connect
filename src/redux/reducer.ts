@@ -6,7 +6,6 @@ import { eventSlice } from "./slice/eventSlice";
 import { buisnessListSlice } from "./slice/listingSlice";
 
 const combinedReducer = combineReducers({
-  auth: authSlice.reducer,
   event: eventSlice.reducer,
   listing: buisnessListSlice.reducer,
 });
