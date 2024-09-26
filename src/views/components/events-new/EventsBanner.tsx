@@ -17,6 +17,7 @@ type Props = {
 
 const EventsBanners = (props: Props) => {
   const { Eventssections } = props;
+
   const settings = {
     autoplay: true,
     autoplaySpeed: 3000,

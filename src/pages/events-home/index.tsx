@@ -15,7 +15,7 @@ const HostEventsBanner = dynamic(
 const EventsThisWeek = dynamic(
   () => import("@/views/components/events-new/EventsThisWeek")
 );
-import { eventHome } from "@/redux/services/eventService";
+import { eventCategory, eventHome } from "@/redux/services/eventService";
 
 const FilterSectionEvents = dynamic(
   () => import("@/views/components/events-new/FilterSection")
@@ -31,80 +31,8 @@ const EventsByCategory = dynamic(
 );
 // import { eventHome } from "@/redux/services/eventService";
 
-const EventsHome = ({ eventData }: any) => {
-  console.log(eventData, "dddd");
-  const Events = [
-    {
-      id: 1,
-      banner_image: "/assets/image/events-img.webp",
-      event_name: "New",
-    },
-    {
-      id: 2,
-      banner_image: "/assets/image/events-img.webp",
-      event_name: "New",
-    },
-    {
-      id: 3,
-      banner_image: "/assets/image/events-img.webp",
-      event_name: "New",
-    },
-  ];
-  const musictechnician_data = [
-    {
-      id: 1,
-      music_image: "/images/static/image_23.png",
-      music_logo: "/assets/image/music-logo1.png",
-      music_reviews: "4.5 (3 Reviews)",
-      music_title: "MUSIC & ARTS",
-      music_location: "Adyar",
-      music_text: "Specialist in Piano, Violin",
-    },
-    //   {
-    //     "id": 1,
-    //     "event_name": "varchar",
-    //     "event_date": "date",
-    //     "event_type": "varchar",
-    //     "event_price": int,
-    //     "thumbnail_image": "path of the image"
-    // },
-    {
-      id: 2,
-      music_image: "/images/static/image_23.png",
-      music_logo: "/assets/image/music-logo2.png",
-      music_reviews: "4.5 (22 Reviews)",
-      music_title: "MUSIC & ARTS",
-      music_location: "Adyar",
-      music_text: "Specialist in Piano, Violin",
-    },
-    {
-      id: 3,
-      music_image: "/images/static/image_23.png",
-      music_logo: "/assets/image/music-logo3.png",
-      music_reviews: "4.5 (22 Reviews)",
-      music_title: "MUSIC & ARTS",
-      music_location: "Adyar",
-      music_text: "Specialist in Piano, Violin",
-    },
-    {
-      id: 4,
-      music_image: "/images/static/image_23.png",
-      music_logo: "/assets/image/music-logo4.png",
-      music_reviews: "4.5 (22 Reviews)",
-      music_title: "MUSIC & ARTS",
-      music_location: "Adyar",
-      music_text: "Specialist in Piano, Violin",
-    },
-    {
-      id: 5,
-      music_image: "/images/static/image_23.png",
-      music_logo: "/assets/image/music-logo1.png",
-      music_reviews: "4.5 (22 Reviews)",
-      music_title: "MUSIC & ARTS",
-      music_location: "Adyar",
-      music_text: "Specialist in Piano, Violin",
-    },
-  ];
+const EventsHome = ({ eventData, eventCategoryData }: any) => {
+  console.log(eventCategoryData, "eventCategoryData");
 
   const Category = {
     pianist: [
@@ -467,43 +395,25 @@ const EventsHome = ({ eventData }: any) => {
     ],
   };
 
-  const faq = [
-    {
-      id: 1,
-      title: "How do I choose the right pianica online?",
-      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
-    },
-    {
-      id: 2,
-      title: 'What are the advantages of shopping for a "Pianica Online"?',
-      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
-    },
-    {
-      id: 3,
-      title: "What is the typical price of a Pianica in India?",
-      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
-    },
-  ];
-
   return (
     <>
       <EventsTitle label="Events" subLabel="in Chennai" />
-      <EventsBanners Eventssections={Events} />
+      <EventsBanners Eventssections={eventData?.data?.banners} />
       <HostEventsBanner />
       <EventsThisWeek
-        musictechniciansection={musictechnician_data}
+        musictechniciansection={eventData?.data?.week_events}
         className={"flex pt-5 pb-5 bg-ik_white"}
         title={"This Week "}
       />
-      <EventsByCategory label="Events by Category" />
-      <FilterSectionEvents categoryData={Category} />
-      <AboutIktaraaEvents
-        label="At Iktaraa Events, we believe that organizing and hosting online events should be accessible to everyone, which is why we offer a platform for ticketing your events completely free of charge. Whether you're planning a virtual concert, a webinar, a workshop, or a community meetup, our platform empowers you to manage your event with ease and reach your audience effectively."
-        title="About Iktaraa Events"
+      <EventsByCategory
+        label="Events by Category"
+        eventByCate={eventCategoryData?.data}
       />
+      <FilterSectionEvents categoryData={Category} />
+      <AboutIktaraaEvents aboutData={eventData?.data?.static_data} />
       <HostEventsBanner />
       <FrequentlyAskedSection
-        faqsection={faq}
+        faqsection={eventData?.data?.faq}
         className={"flex pt-5 pb-5 bg-ik_redvariant1"}
       />
     </>
@@ -522,7 +432,22 @@ export const getServerSideProps = wrapper.getServerSideProps(
           {
             id: 1,
             event_name: "varchar",
-            banner_image: "path of the image",
+            banner_image: "/assets/image/events-img.webp",
+          },
+          {
+            id: 2,
+            event_name: "varchar",
+            banner_image: "/assets/image/events-img.webp",
+          },
+          {
+            id: 3,
+            event_name: "varchar",
+            banner_image: "/assets/image/events-img.webp",
+          },
+          {
+            id: 4,
+            event_name: "varchar",
+            banner_image: "/assets/image/events-img.webp",
           },
         ],
         events: [
@@ -532,7 +457,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
             event_date: "date",
             event_type: "varchar",
             event_price: 0,
-            thumbnail_image: "path of image",
+            thumbnail_image: "/images/static/image_23.png",
           },
         ],
         week_events: [
@@ -541,24 +466,77 @@ export const getServerSideProps = wrapper.getServerSideProps(
             event_name: "varchar",
             event_date: "date",
             event_type: "varchar",
-            event_price: 0,
-            thumbnail_image: "path of the image",
+            event_price: 10,
+            thumbnail_image: "/images/static/image_23.png",
+          },
+          {
+            id: 2,
+            event_name: "varchar",
+            event_date: "date",
+            event_type: "varchar",
+            event_price: 110,
+            thumbnail_image: "/images/static/image_23.png",
+          },
+          {
+            id: 3,
+            event_name: "varchar",
+            event_date: "date",
+            event_type: "varchar",
+            event_price: 10,
+            thumbnail_image: "/images/static/image_23.png",
+          },
+          {
+            id: 4,
+            event_name: "varchar",
+            event_date: "date",
+            event_type: "varchar",
+            event_price: 10,
+            thumbnail_image: "/images/static/image_23.png",
+          },
+          {
+            id: 5,
+            event_name: "varchar",
+            event_date: "date",
+            event_type: "varchar",
+            event_price: 10,
+            thumbnail_image: "/images/static/image_23.png",
+          },
+          {
+            id: 6,
+            event_name: "varchar",
+            event_date: "date",
+            event_type: "varchar",
+            event_price: 10,
+            thumbnail_image: "/images/static/image_23.png",
           },
         ],
         faq: [
           {
-            question: "question1?",
-            answer: "answer1",
+            id: 1,
+            question: "How do I choose the right pianica online?",
+            answer:
+              "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
           },
           {
-            question: "question2?",
-            answer: "answer2",
+            id: 2,
+            question:
+              'What are the advantages of shopping for a "Pianica Online"?',
+            answer:
+              "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
+          },
+          {
+            id: 3,
+            question: "What is the typical price of a Pianica in India?",
+            answer:
+              "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
           },
         ],
-        "static-data": [
+        static_data: [
           {
+            id: 1,
             title: "About Iktaraa events",
-            description: "events data",
+            description:
+              "At Iktaraa Events, we believe that organizing and hosting online events should be accessible to everyone, which is why we offer a platform for ticketing your events completely free of charge. Whether you're planning a virtual concert, a webinar, a workshop, or a community meetup, our platform empowers you to manage your event with ease and reach your audience effectively.",
           },
         ],
       },
@@ -567,7 +545,42 @@ export const getServerSideProps = wrapper.getServerSideProps(
       to: 24,
     };
 
-    const [eventData] = await Promise.all([
+    const category = {
+      data: [
+        {
+          id: 1,
+          name: "varchar",
+          icon: "/images/static/image_24.png",
+        },
+        {
+          id: 2,
+          name: "Music Doctor",
+          icon: "/images/static/image_24.png",
+        },
+        {
+          id: 3,
+          name: "Music Doctor",
+          icon: "/images/static/image_24.png",
+        },
+        {
+          id: 4,
+          name: "Music Doctor",
+          icon: "/images/static/image_24.png",
+        },
+        {
+          id: 5,
+          name: "Music Doctor",
+          icon: "/images/static/image_24.png",
+        },
+        {
+          id: 6,
+          name: "Music Doctor",
+          icon: "/images/static/image_24.png",
+        },
+      ],
+    };
+
+    const [eventData, eventCategoryData] = await Promise.all([
       await store
         .dispatch(eventHome())
         .unwrap()
@@ -575,11 +588,19 @@ export const getServerSideProps = wrapper.getServerSideProps(
         .catch(() => {
           return fallbackData;
         }),
+      await store
+        .dispatch(eventCategory())
+        .unwrap()
+        .then((res) => res)
+        .catch(() => {
+          return category;
+        }),
     ]);
-    console.log(eventData, "event");
+
     return {
       props: {
         eventData: eventData,
+        eventCategoryData: eventCategoryData,
       },
     };
   }

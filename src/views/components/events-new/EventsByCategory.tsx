@@ -11,69 +11,11 @@ const CustomCardEventsCategory = dynamic(
 
 type EventsTitleProps = {
   label: string;
+  eventByCate: any;
 };
 
-const businesses = [
-  {
-    id: 1,
-    name: "Schmitt Music Repair Services",
-    location: "Nungambakkam",
-    inquiries: 120,
-    imgSrc: "/images/static/image_24.png",
-    icon: "Schmitt Music Icon",
-  },
-  {
-    id: 2,
-    name: "Muzik & Art",
-    location: "Nungambakkam",
-    inquiries: 115,
-    imgSrc: "/images/static/image_24.png",
-    icon: "Music & Arts Icon",
-  },
-  {
-    id: 3,
-    name: "Music Doctor",
-    location: "Nungambakkam",
-    inquiries: 105,
-    imgSrc: "/images/static/image_24.png",
-    icon: "Music Doctor Icon",
-  },
-  {
-    id: 3,
-    name: "Music Doctor",
-    location: "Nungambakkam",
-    inquiries: 105,
-    imgSrc: "/images/static/image_24.png",
-    icon: "Music Doctor Icon",
-  },
-  {
-    id: 3,
-    name: "Music Doctor",
-    location: "Nungambakkam",
-    inquiries: 105,
-    imgSrc: "/images/static/image_24.png",
-    icon: "Music Doctor Icon",
-  },
-  // {
-  //   id: 3,
-  //   name: "Music Doctor",
-  //   location: "Nungambakkam",
-  //   inquiries: 105,
-  //   imgSrc: "/images/static/image_24.png",
-  //   icon: "Music Doctor Icon",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Music Doctor",
-  //   location: "Nungambakkam",
-  //   inquiries: 105,
-  //   imgSrc: "/images/static/image_24.png",
-  //   icon: "Music Doctor Icon",
-  // },
-];
-
 const EventsByCategory = (props: EventsTitleProps) => {
-  const { label } = props;
+  const { label, eventByCate } = props;
   return (
     <Box className="bg-ik_lightbluevariant ">
       <CustomContainer>
@@ -90,11 +32,11 @@ const EventsByCategory = (props: EventsTitleProps) => {
 
         <div className="flex flex-wrap gap-2 my-7">
           {" "}
-          {businesses.map((business) => (
+          {eventByCate.map((business: any) => (
             <div className="" key={business.id}>
               {" "}
               <CustomCardEventsCategory
-                img={business.imgSrc}
+                img={business.icon}
                 text={business.name}
                 reviews={""}
                 typebottom={false}

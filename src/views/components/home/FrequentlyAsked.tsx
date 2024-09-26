@@ -61,19 +61,19 @@ const FrequentlyAskedSection = (props: Props) => {
                   className={`${expanded === index ? "max-h-11" : ""}`}
                 >
                   <Typography className="text-f18 font-semibold text-ik_bluegreydarken6">
-                    {item.title}
+                    {item.question}
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography className="text-f16 font-normal text-ik_bluegreydarken6">
-                    {item.sub}
+                    {item.answer}
                   </Typography>
                 </AccordionDetails>
               </Accordion>
             ))}
           </Grid>
         </Grid>
-       </CustomContainer>
+      </CustomContainer>
     </section>
   );
 };
