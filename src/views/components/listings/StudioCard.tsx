@@ -42,12 +42,11 @@ const StudioCard = ({ buisnessListData }: any) => {
     <section className="mt-[15px]">
       {buisnessListData.data.map((business: any) => (
         <Card className="w-full h-full bg-white mt-[15px]" key={business.id}>
-          {console.log(business, "hhhh")}
           <Box sx={{ p: 2 }}>
             <Grid container>
               <>
                 {" "}
-                <Grid item xs={4}>
+                <Grid item md={4} xs={12}>
                   <CustomCard
                     variant="bottom-right"
                     img={business.image}
@@ -58,7 +57,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                     typebottom={false}
                   />
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item md={8} xs={12}>
                   <Box sx={{ padding: 2 }}>
                     <Box
                       sx={{ display: "flex", justifyContent: "space-between" }}
@@ -138,7 +137,12 @@ const StudioCard = ({ buisnessListData }: any) => {
                         </Stack> */}
                       </Box>
 
-                      <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                      <Box
+                        sx={{
+                          display: { xs: "none", md: "flex" },
+                          justifyContent: "flex-end",
+                        }}
+                      >
                         <Stack direction="column">
                           <Stack
                             direction="row"
@@ -193,6 +197,53 @@ const StudioCard = ({ buisnessListData }: any) => {
                           Specialist in string instrument repairs. Pickup & Drop
                           service available across Chennai.
                         </p>
+                      </Stack>
+                    </Box>
+                    <Box
+                      sx={{
+                        display: { xs: "flex", md: "none" },
+                        // justifyContent: "flex-end",
+                        mt: 2,
+                      }}
+                    >
+                      <Stack
+                        direction="row"
+                        spacing={"20px"}
+                        alignItems={"center"}
+                        justifyContent={"flex-end"}
+                      >
+                        <Box mt={1}>
+                          <CustomImageButton
+                            image="/images/static/image_7.png"
+                            label="Enquiry"
+                          ></CustomImageButton>
+                        </Box>
+                        <Box>
+                          <Stack direction="row">
+                            <ImageComponent
+                              src="/images/static/image_10.png"
+                              width={20}
+                              height={16}
+                              alt="static"
+                            />
+                            <p>
+                              <span className="font-semibold text-f26 leading-8 text-ik_bluegreydarken3">
+                                {business.rating}
+                              </span>
+                              /
+                              <span className="font-normal text-f26 leading-8 text-ik_bluegreydarken3">
+                                5
+                              </span>
+                            </p>
+                          </Stack>
+
+                          <p
+                            style={{ textAlign: "right" }}
+                            className="font-normal text-f16 leading-5 text-ik_bluegreydarken1"
+                          >
+                            {business.reviews} Reviews
+                          </p>
+                        </Box>
                       </Stack>
                     </Box>
                   </Box>
