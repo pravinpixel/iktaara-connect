@@ -14,10 +14,13 @@ const EventsThisWeek = dynamic(
   () => import("@/views/components/events-new/EventsThisWeek")
 );
 import {
+  eventCategory,
   eventDetails,
   similarEventDetails,
 } from "@/redux/services/eventService";
 import { wrapper } from "@/redux/store";
+import ImageComponent from "@/views/components/ImageComponent";
+import { Box } from "@mui/material";
 
 const EventDetailSection = dynamic(
   () => import("@/views/components/events-detailnew/EventDetailSection")
@@ -27,13 +30,28 @@ const EventsByCategory = dynamic(
 );
 // import { eventHome } from "@/redux/services/eventService";
 
-const EventsDetails = ({ eventDetailData, similarEventsData }: any) => {
+const EventsDetails = ({
+  eventDetailData,
+  similarEventsData,
+  eventCategoryData,
+}: any) => {
   console.log(similarEventsData, "dddd");
 
   return (
     <>
       <EventsTitle label="Events" subLabel="in Chennai" />
-      <EventsBanners Eventssections={eventDetailData?.data.banners} />
+      <EventsBanners
+        Eventssections={eventDetailData?.data.banners}
+        height={400}
+      />
+      <Box sx={{ marginTop: "-378px" }}>
+        <ImageComponent
+          src="/images/static/image_30.png"
+          alt="image"
+          width={1920}
+          height={691}
+        />
+      </Box>
       <EventDetailSection />
       <EventsThisWeek
         musictechniciansection={similarEventsData?.data}
@@ -43,6 +61,7 @@ const EventsDetails = ({ eventDetailData, similarEventsData }: any) => {
       <EventsByCategory
         label="Events by Category"
         className="bg-ik_lightblue"
+        eventByCate={eventCategoryData?.data}
       />
     </>
   );
@@ -175,27 +194,71 @@ export const getServerSideProps = wrapper.getServerSideProps(
         },
       ],
     };
-    const [eventDetailData, similarEventsData] = await Promise.all([
-      await store
-        .dispatch(eventDetails())
-        .unwrap()
-        .then((res) => res)
-        .catch(() => {
-          return fallbackData;
-        }),
-      await store
-        .dispatch(similarEventDetails())
-        .unwrap()
-        .then((res) => res)
-        .catch(() => {
-          return similarData;
-        }),
-    ]);
+
+    const category = {
+      data: [
+        {
+          id: 1,
+          name: "varchar",
+          icon: "/images/static/image_24.png",
+        },
+        {
+          id: 2,
+          name: "Music Doctor",
+          icon: "/images/static/image_24.png",
+        },
+        {
+          id: 3,
+          name: "Music Doctor",
+          icon: "/images/static/image_24.png",
+        },
+        {
+          id: 4,
+          name: "Music Doctor",
+          icon: "/images/static/image_24.png",
+        },
+        {
+          id: 5,
+          name: "Music Doctor",
+          icon: "/images/static/image_24.png",
+        },
+        {
+          id: 6,
+          name: "Music Doctor",
+          icon: "/images/static/image_24.png",
+        },
+      ],
+    };
+    const [eventDetailData, similarEventsData, eventCategoryData] =
+      await Promise.all([
+        await store
+          .dispatch(eventDetails())
+          .unwrap()
+          .then((res) => res)
+          .catch(() => {
+            return fallbackData;
+          }),
+        await store
+          .dispatch(similarEventDetails())
+          .unwrap()
+          .then((res) => res)
+          .catch(() => {
+            return similarData;
+          }),
+        await store
+          .dispatch(eventCategory())
+          .unwrap()
+          .then((res) => res)
+          .catch(() => {
+            return category;
+          }),
+      ]);
 
     return {
       props: {
         eventDetailData: eventDetailData,
         similarEventsData: similarEventsData,
+        eventCategoryData: eventCategoryData,
       },
     };
   }

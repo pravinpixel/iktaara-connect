@@ -16,7 +16,7 @@ type EventsTitleProps = {
 };
 
 const EventsByCategory = (props: EventsTitleProps) => {
-  const { label, eventByCate } = props;
+  const { label, eventByCate, className } = props;
   return (
     <Box className={className}>
       <CustomContainer>

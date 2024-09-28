@@ -12,11 +12,12 @@ type Props = {
     id: number;
     banner_image: string;
     event_name: string;
+    height: number;
   }>;
 };
 
 const EventsBanners = (props: Props) => {
-  const { Eventssections } = props;
+  const { Eventssections, height } = props;
 
   const settings = {
     autoplay: true,
@@ -72,7 +73,7 @@ const EventsBanners = (props: Props) => {
                 <Image
                   src={item?.banner_image}
                   width={1496}
-                  height={451}
+                  height={height ? height : 491}
                   style={{
                     width: "100%",
                     height: "auto",

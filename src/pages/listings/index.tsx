@@ -39,10 +39,10 @@ const Listings = ({ buisnessListData }: any) => {
       <section className="bg-ik_lightblue">
         <CustomContainer>
           <Grid container spacing={2}>
-            <Grid item xs={3}>
+            <Grid item md={3} xs={12} className="hidden md:block">
               <FilterSection />
             </Grid>
-            <Grid item xs={9}>
+            <Grid item md={9} xs={12}>
               <BusinessSection />
               <StudioCard buisnessListData={buisnessListData} />
               <Pagination from={0} to={0} total_count={0}></Pagination>
