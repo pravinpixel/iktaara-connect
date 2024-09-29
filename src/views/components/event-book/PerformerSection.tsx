@@ -47,7 +47,7 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           spacing={1}
           alignItems="center"
           onClick={onDateClick2}
-          className="cursor-pointer"
+          className="cursor-pointer mt-3"
         >
           <ImageComponent
             src="/images/static/image_33.png"
@@ -69,7 +69,7 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           spacing={1}
           alignItems="center"
           onClick={onDateClick}
-          className="cursor-pointer"
+          className="cursor-pointer mt-3"
         >
           <ImageComponent
             src="/images/static/image_5.png"
@@ -91,7 +91,7 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           spacing={1}
           alignItems="center"
           onClick={onDateClick1}
-          className="cursor-pointer"
+          className="cursor-pointer mt-3"
         >
           <ImageComponent
             src="/images/static/image_34.png"

@@ -22,13 +22,13 @@ const DateSection = () => {
             <Box className="border border-ik_pink rounded-xl w-[277px] h-[54px] flex items-center justify-center bg-ik_whitevariant mb-2">
               <Typography className="">11:00 A.M</Typography>
             </Box>
-            <Box className="border border-ik_pink rounded-xl w-[277px] h-[54px] flex items-center justify-center bg-ik_whitevariant mb-2">
+            <Box className="border border-ik_bordervariant2 rounded-xl w-[277px] h-[54px] flex items-center justify-center  mb-2">
               <Typography className="">11:00 A.M</Typography>
             </Box>
-            <Box className="border border-ik_pink rounded-xl w-[277px] h-[54px] flex items-center justify-center bg-ik_whitevariant mb-2">
+            <Box className="border border-ik_bordervariant2 rounded-xl w-[277px] h-[54px] flex items-center justify-center  mb-2">
               <Typography className="">11:00 A.M</Typography>
             </Box>
-            <Box className="border border-ik_pink rounded-xl w-[277px] h-[54px] flex items-center justify-center bg-ik_whitevariant mb-2">
+            <Box className="border border-ik_bordervariant2 rounded-xl w-[277px] h-[54px] flex items-center justify-center  mb-2">
               <Typography className="">11:00 A.M</Typography>
             </Box>
           </Grid>

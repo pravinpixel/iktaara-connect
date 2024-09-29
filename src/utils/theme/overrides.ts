@@ -81,6 +81,24 @@ export function overrides(theme: Theme) {
             },
           },
         },
+        {
+          props: {
+            variant: "payment-button",
+          },
+          style: {
+            color: "var(--ik_darkblue1)",
+            backgroundColor: theme.palette.primarybutton.textcolor,
+            // border: `1px solid ${theme.palette.primarybutton.background}`,
+            textTransform: "unset",
+
+            "&:hover": {
+              color: "var(--ik_darkblue1)",
+              backgroundColor: theme.palette.primarybutton.textcolor,
+              // border: `1px solid ${theme.palette.primarybutton.background}`
+
+            },
+          },
+        },
       ],
     },
     MuiLoadingButton: {

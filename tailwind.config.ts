@@ -141,6 +141,15 @@ const config: Config = {
         ik_lightorange: {
           DEFAULT: "var(--ik_ligntorange)",
         },
+        ik_lightgrey: {
+          DEFAULT: "var(--ik_lightgrey)",
+        },
+        ik_darkblue: {
+          DEFAULT: "var(--ik_darkblue)",
+        },
+        ik_darkblue1: {
+          DEFAULT: "var(--ik_darkblue1)",
+        },
       },
       border: "hsl(var(--border))",
       input: "hsl(var(--input))",
