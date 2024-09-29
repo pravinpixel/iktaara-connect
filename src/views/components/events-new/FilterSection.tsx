@@ -14,17 +14,26 @@ import dynamic from "next/dynamic";
 import EventFilterPopup from "../popup/EventFilterPopup";
 
 const FilterEventData = dynamic(() => import("./FilterEventData"));
+type CategoryItem = {
+  id: number;
+  category_image: string;
+  category_name: string;
+  category_reviews: string;
+  category_text: string;
+};
+
 type CategoryData = {
-  pianist: string[];
-  dancer: string[];
-  sound_engineer: string[];
-  theatre_artists: string[];
-  party_dJ: string[];
+  pianist: CategoryItem[];
+  dancer: CategoryItem[];
+  sound_engineer: CategoryItem[];
+  theatre_artists: CategoryItem[];
+  party_dJ: CategoryItem[];
 };
 
 type Props = {
   categoryData: CategoryData;
 };
+
 export default function FilterSectionEvents(props: Props) {
   const { categoryData } = props;
   const [selectedTab, setSelectedTab] = React.useState(0);

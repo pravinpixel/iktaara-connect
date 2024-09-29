@@ -28,11 +28,11 @@ const EventDetailSection = () => {
             </Grid>
           </Grid>
           <Grid container mt={2} spacing={2}>
-            <Grid item xs={8}>
+            <Grid item xs={8} sx={{ paddingTop: "0px!important" }}>
               <WhyShouldAttend />
             </Grid>
             <Grid item xs={4}>
-              <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white mt-[-100px]">
+              <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white mt-[-44px]">
                 <ImageComponent
                   src="/images/static/image_29.png"
                   alt="image"

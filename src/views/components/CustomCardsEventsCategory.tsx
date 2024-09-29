@@ -34,21 +34,22 @@ export default function CustomCardEventsCategory(props: CustomCardProps) {
       variant={variant}
       sx={{
         position: "relative",
-        width: "240px",
-        height: "236px",
+        width: "100%",
+        height: "100%",
         borderRadius: "16px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         overflow: "hidden",
+        padding: "20px",
       }}
     >
-      <Stack direction="column" alignItems={"center"}>
+      <Stack direction="column" alignItems={"center"} p={4}>
         <CardMedia
           component="img"
           image={img}
           alt="Paella dish"
-          sx={{ width: 100, height: 100 }}
+          sx={{ width: { md: 100, xs: 50 }, height: { md: 100, xs: 50 } }}
         />
         <Typography className="mt-[10px] text-center">{text}</Typography>
       </Stack>

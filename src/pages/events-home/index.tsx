@@ -399,7 +399,7 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
   return (
     <>
       <EventsTitle label="Events" subLabel="in Chennai" />
-      <EventsBanners Eventssections={eventData?.data?.banners} />
+      <EventsBanners Eventssections={eventData?.data?.banners} height={0} />
       <HostEventsBanner />
       <EventsThisWeek
         musictechniciansection={eventData?.data?.week_events}

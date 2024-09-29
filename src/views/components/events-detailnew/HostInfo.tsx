@@ -8,17 +8,21 @@ const ImageComponent = dynamic(() => import("../ImageComponent"));
 export default function HostInfo() {
   return (
     <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white p-4">
-      <Typography>Host Info</Typography>
-      <Stack direction="row">
+      <Typography className="text-f22 font-semibold leading-8 text-ik_bluegreydarken3">
+        Host Info
+      </Typography>
+      <Stack direction="row" spacing={2} alignItems="center">
         <ImageComponent
-          src="/images/static/image_27.png"
+          src="/images/static/image_36.png"
           alt="Business Image"
-          width={23.4}
-          height={24}
+          width={72}
+          height={72}
         />
-        <Typography>Name</Typography>
+        <Typography className="text-f18 font-semibold leading-8 text-ik_bluegreydarken3 mt-2">
+          Name
+        </Typography>
       </Stack>
-      <Typography>
+      <Typography className="text-f16 font-normal leading-6 text-ik_bluegreydarken1 mt-2">
         Calling all music lovers! Brace yourselves for the arrival of "Nee
         Singham Dhan", a captivating live concert experience featuring the
         phenomenal Sid Sriram!

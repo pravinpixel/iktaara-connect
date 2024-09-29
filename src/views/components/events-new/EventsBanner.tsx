@@ -12,8 +12,8 @@ type Props = {
     id: number;
     banner_image: string;
     event_name: string;
-    height: number;
   }>;
+  height: number;
 };
 
 const EventsBanners = (props: Props) => {

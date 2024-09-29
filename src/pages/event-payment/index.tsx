@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Box, Grid, Stack } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 import dynamic from "next/dynamic";
 
@@ -13,7 +13,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 // import Button from "@mui/material/Button";
-import ImageComponent from "@/views/components/ImageComponent";
+
 import { Typography } from "@mui/material";
 import { Divider } from "@mui/material";
 // const VenueSection = dynamic(
