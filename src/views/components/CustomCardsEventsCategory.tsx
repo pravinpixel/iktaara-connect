@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from "react";
-import Box from "@mui/material/Box";
+
 import Card from "@mui/material/Card";
 
 import { CardMedia } from "@mui/material";
@@ -8,12 +8,8 @@ import { Typography } from "@mui/material";
 import { Stack } from "@mui/material";
 
 interface CustomCardProps {
-  variant?:
-    | "elevation"
-    | "outlined"
-    | "bottom-right"
-    | "bottom-left"
-    | "top-right";
+  variant?: "elevation" | "outlined";
+
   img: string;
   text: string;
   reviews: string;
@@ -42,6 +38,18 @@ export default function CustomCardEventsCategory(props: CustomCardProps) {
         alignItems: "center",
         overflow: "hidden",
         padding: "20px",
+        ...(props.typebottomleft &&
+          {
+            /* Custom style for bottom-left */
+          }),
+        ...(props.typetop &&
+          {
+            /* Custom style for top-right */
+          }),
+        ...(props.typebottom &&
+          {
+            /* Custom style for bottom-right */
+          }),
       }}
     >
       <Stack direction="column" alignItems={"center"} p={4}>

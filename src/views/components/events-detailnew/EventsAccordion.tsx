@@ -77,8 +77,8 @@ export default function EventsAccordion() {
             </li>
             <li>
               <Typography className="text-f18 font-normal leading-6 text-ik_bluegreydarken1">
-                Sing along to all your favorites, from the chart-topping "Adiye"
-                and "Inkem Inkem Kavale" to the internet sensation "Srivalli."
+                Sing along to all your favorites, from the chart-topping Adiye
+                and Inkem Inkem Kavale to the internet sensation Srivalli.
               </Typography>
             </li>
             <li>

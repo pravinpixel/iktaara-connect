@@ -23,8 +23,8 @@ export default function HostInfo() {
         </Typography>
       </Stack>
       <Typography className="text-f16 font-normal leading-6 text-ik_bluegreydarken1 mt-2">
-        Calling all music lovers! Brace yourselves for the arrival of "Nee
-        Singham Dhan", a captivating live concert experience featuring the
+        Calling all music lovers! Brace yourselves for the arrival of Nee
+        Singham Dhan, a captivating live concert experience featuring the
         phenomenal Sid Sriram!
       </Typography>
     </Box>

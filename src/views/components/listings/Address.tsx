@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { Box, Grid, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import dynamic from "next/dynamic";
 import Slider from "react-slick";
 const CustomCard = dynamic(() => import("../CustomCard"));

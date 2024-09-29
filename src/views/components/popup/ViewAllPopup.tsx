@@ -14,8 +14,10 @@ import { TransitionProps } from "@mui/material/transitions";
 
 import { Divider } from "@mui/material";
 const ViewAllDialog = dynamic(() => import("./ViewAllDialog"));
-
-import { AutoCompleteSearch } from "@/components/common/AutoCompleteSearch";
+const AutoCompleteSearch = dynamic(
+  () => import("@/components/common/AutoCompleteSearch")
+);
+// import { AutoCompleteSearch } from "@/components/common/AutoCompleteSearch";
 import dynamic from "next/dynamic";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({

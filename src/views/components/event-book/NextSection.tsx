@@ -3,7 +3,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { Box } from "@mui/material";
-import { Typography } from "@mui/material";
+
 import { Stack } from "@mui/material";
 import CustomButton from "../form-fields/CustomButton";
 

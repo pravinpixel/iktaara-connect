@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 
 import dynamic from "next/dynamic";
@@ -5,8 +6,6 @@ import dynamic from "next/dynamic";
 import { FormProvider, useForm } from "react-hook-form";
 
 const CustomCheckbox = dynamic(() => import("../form-fields/CheckBox"));
-
-const CustomContainer = dynamic(() => import("../Container"));
 
 type EventsTitleProps = {
   filterLanguage: any;

@@ -30,8 +30,8 @@ export default function BookTicket() {
           </span>
         </Typography>
         <Typography className="text-f16 text-ik_bluegreydarken3 leading-6 font-normal">
-          Calling all music lovers! Brace yourselves for the arrival of "Need
-          Singham Dhan", a captivating live concert experience featuring the
+          Calling all music lovers! Brace yourselves for the arrival of Need
+          Singham Dhan, a captivating live concert experience featuring the
           phenomenal Sid Sriram!
         </Typography>
 

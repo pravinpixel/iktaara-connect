@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
@@ -9,33 +10,8 @@ import { Stack } from "@mui/material";
 import dynamic from "next/dynamic";
 const CustomImageButton = dynamic(() => import("../CustomImageButton"));
 const ImageComponent = dynamic(() => import("../ImageComponent"));
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StudioCard = ({ buisnessListData }: any) => {
-  const businesses = [
-    {
-      id: 1,
-      name: "Schmitt Music Repair Services",
-      location: "Nungambakkam",
-      inquiries: 120,
-      imgSrc: "/images/static/image_5.png",
-      icon: "Schmitt Music Icon",
-    },
-    {
-      id: 2,
-      name: "Muzik & Art",
-      location: "Nungambakkam",
-      inquiries: 115,
-      imgSrc: "/images/static/image_5.png",
-      icon: "Music & Arts Icon",
-    },
-    {
-      id: 3,
-      name: "Music Doctor",
-      location: "Nungambakkam",
-      inquiries: 105,
-      imgSrc: "/images/static/image_5.png",
-      icon: "Music Doctor Icon",
-    },
-  ];
   console.log(buisnessListData, "buisnessListData");
 
   return (
