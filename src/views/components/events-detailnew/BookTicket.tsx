@@ -29,7 +29,7 @@ export default function BookTicket() {
             ₹100 Onwards
           </span>
         </Typography>
-        <Typography className="text-f16 text-ik_bluegreydarken3 leading-6 font-normal">
+        <Typography className="text-f16 text-ik_bluegreydarken3 leading-6 font-normal mt-2">
           Calling all music lovers! Brace yourselves for the arrival of Need
           Singham Dhan, a captivating live concert experience featuring the
           phenomenal Sid Sriram!

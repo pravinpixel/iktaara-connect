@@ -59,7 +59,9 @@ export default function CustomCardEventsCategory(props: CustomCardProps) {
           alt="Paella dish"
           sx={{ width: { md: 100, xs: 50 }, height: { md: 100, xs: 50 } }}
         />
-        <Typography className="mt-[10px] text-center">{text}</Typography>
+        <Typography className="mt-[10px] text-center text-ik_bluegreydarken3 font-semibold text-f20 leading-7 whitespace-nowrap">
+          {text}
+        </Typography>
       </Stack>
     </Card>
   );

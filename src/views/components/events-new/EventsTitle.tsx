@@ -15,14 +15,14 @@ const EventsTitle = (props: EventsTitleProps) => {
   const { label, subLabel } = props;
   return (
     <CustomContainer>
-      <Stack direction="row" spacing={2} alignItems={"center"} pt={2}>
+      <Stack direction="row" spacing={2} alignItems={"center"} pt={2} pb={2}>
         <ImageComponent
           alt="calender"
           src="/images/static/image_21.png"
           width={40}
           height={40}
         />
-        <Typography className="font-bold text-f24 text-ik_pink leading-9">
+        <Typography className="font-bold text-f24 text-ik_pink leading-9 ">
           {label}{" "}
           <span className="font-normal text-f24 text-ik_pink leading-9">
             {subLabel}

@@ -17,7 +17,7 @@ const TicketSection = () => {
         <Box className="font-semibold text-f20 leading-6 text-ik_bluegreydarken3 text-center">
           Tickets
         </Box>
-        <Box className="border border-ik_bluegreydarken3-500 p-3 rounded-2xl">
+        <Box className="border border-ik_bluegreydarken3-500 p-3 rounded-2xl mb-3">
           <Stack direction="row">
             <Grid item xs={8}>
               <Typography className="text-f24 font-semibold leading-8 text-ik_bluegreydarken3">

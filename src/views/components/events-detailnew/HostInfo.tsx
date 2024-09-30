@@ -11,14 +11,14 @@ export default function HostInfo() {
       <Typography className="text-f22 font-semibold leading-8 text-ik_bluegreydarken3">
         Host Info
       </Typography>
-      <Stack direction="row" spacing={2} alignItems="center">
+      <Stack direction="row" spacing={2} alignItems="center" my={2}>
         <ImageComponent
           src="/images/static/image_36.png"
           alt="Business Image"
           width={72}
           height={72}
         />
-        <Typography className="text-f18 font-semibold leading-8 text-ik_bluegreydarken3 mt-2">
+        <Typography className="text-f18 font-semibold leading-8 text-ik_bluegreydarken3 mt-2 ">
           Name
         </Typography>
       </Stack>

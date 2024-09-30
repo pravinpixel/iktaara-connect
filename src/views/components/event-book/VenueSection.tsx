@@ -36,7 +36,7 @@ const VenueSection = () => {
   };
 
   return (
-    <Box className=" mt-1">
+    <Box className=" mt-1 mb-[100px]">
       <CustomContainer>
         <Grid container spacing={1}>
           <Grid item xs={4}>

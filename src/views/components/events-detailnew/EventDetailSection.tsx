@@ -32,7 +32,7 @@ const EventDetailSection = () => {
               <WhyShouldAttend />
             </Grid>
             <Grid item xs={4}>
-              <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white mt-[-44px]">
+              <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white mt-[-24px]">
                 <ImageComponent
                   src="/images/static/image_29.png"
                   alt="image"
