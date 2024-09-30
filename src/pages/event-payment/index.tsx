@@ -434,13 +434,22 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
-import CustomContainer from "@/views/components/Container";
-import InputField from "@/views/components/form-fields/InputField";
-import CustomButton from "@/views/components/form-fields/CustomButton";
-import CustomSmallButton from "@/views/components/form-fields/CustomSmallButton";
-import CustomRadio from "@/views/components/form-fields/RadioButton";
-import ImageComponent from "@/views/components/ImageComponent";
+const CustomContainer = dynamic(() => import("@/views/components/Container"));
+const InputField = dynamic(
+  () => import("@/views/components/form-fields/InputField")
+);
+const CustomButton = dynamic(
+  () => import("@/views/components/form-fields/CustomButton")
+);
+const CustomSmallButton = dynamic(
+  () => import("@/views/components/form-fields/CustomSmallButton")
+);
+const CustomRadio = dynamic(
+  () => import("@/views/components/form-fields/RadioButton")
+);
+const ImageComponent = dynamic(
+  () => import("@/views/components/ImageComponent")
+);
 
 const EventPayment = () => {
   const methods = useForm();
