@@ -82,12 +82,12 @@ const EventsByCategory = (props: EventsTitleProps) => {
           alignItems={"center"}
           className="my-3"
         >
-          <Typography className="font-bold text-f24 text-ik_bluegreydarken6 leading-9">
+          <Typography className="font-bold text-f24 text-ik_bluegreydarken6 leading-9 pt-[40px] pb-[0px]">
             {label}
           </Typography>
         </Stack>
 
-        <Grid container spacing={2} className="my-7">
+        <Grid container spacing={2} className="mb-7 mt-5 cursor-pointer">
           {eventByCate?.map((business: any) => (
             <Grid item xs={6} md={3} lg={2} key={business.id}>
               <CustomCardEventsCategory

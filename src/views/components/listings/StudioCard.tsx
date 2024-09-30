@@ -15,7 +15,7 @@ const StudioCard = ({ buisnessListData }: any) => {
   console.log(buisnessListData, "buisnessListData");
 
   return (
-    <section className="mt-[15px]">
+    <section className="mt-[15px] cursor-pointer">
       {buisnessListData.data.map((business: any) => (
         <Card className="w-full h-full bg-white mt-[15px]" key={business.id}>
           <Box sx={{ p: 2 }}>
@@ -34,7 +34,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                   />
                 </Grid>
                 <Grid item md={8} xs={12}>
-                  <Box sx={{ padding: 2 }}>
+                  <Box sx={{ padding: { xs: "5px", md: 2 } }}>
                     <Box
                       sx={{ display: "flex", justifyContent: "space-between" }}
                     >
@@ -78,7 +78,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                             Since 1924
                           </p>
                         </Stack>
-                        {/* <Stack direction="row" spacing={1}>
+                        <Stack direction="row" spacing={1}>
                           {" "}
                           <Stack
                             direction="row"
@@ -110,7 +110,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                               {business.inquiries} inquiries
                             </p>
                           </Stack>
-                        </Stack> */}
+                        </Stack>
                       </Box>
 
                       <Box
@@ -206,7 +206,9 @@ const StudioCard = ({ buisnessListData }: any) => {
                               <span className="font-semibold text-f26 leading-8 text-ik_bluegreydarken3">
                                 {business.rating}
                               </span>
-                              /
+                              <span className="font-semibold text-f26 leading-8 text-ik_bluegreydarken3">
+                                /
+                              </span>
                               <span className="font-normal text-f26 leading-8 text-ik_bluegreydarken3">
                                 5
                               </span>

@@ -15,7 +15,7 @@ const EventsTitle = (props: EventsTitleProps) => {
   const { label, subLabel } = props;
   return (
     <CustomContainer>
-      <Stack direction="row" spacing={2} alignItems={"center"}>
+      <Stack direction="row" spacing={2} alignItems={"center"} pt={2}>
         <ImageComponent
           alt="calender"
           src="/images/static/image_21.png"

@@ -117,7 +117,7 @@ const AddressSection = () => {
     ],
   };
   return (
-    <Box className="mt-[16px]s">
+    <Box className="mt-[16px]s cursor-pointer">
       {/* <Grid container> */}{" "}
       <Slider {...settings}>
         {businesses.map((business) => (

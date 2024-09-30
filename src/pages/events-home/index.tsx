@@ -17,6 +17,7 @@ const EventsThisWeek = dynamic(
 );
 import { eventCategory, eventHome } from "@/redux/services/eventService";
 import { wrapper } from "@/redux/store";
+import { Divider } from "@mui/material";
 
 const FilterSectionEvents = dynamic(
   () => import("@/views/components/events-new/FilterSection")
@@ -403,20 +404,21 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
       <HostEventsBanner />
       <EventsThisWeek
         musictechniciansection={eventData?.data?.week_events}
-        className={"flex pt-5 pb-5 bg-ik_white"}
+        className={"flex pt-5 mb-[60px] bg-ik_white "}
         title={"This Week "}
       />
       <EventsByCategory
         label="Events by Category"
         eventByCate={eventCategoryData?.data}
-        className="bg-ik_lightbluevariant "
+        className="bg-ik_lightbluevariant shadow-custom-hsla "
       />
+      <Divider />
       <FilterSectionEvents categoryData={Category} />
       <AboutIktaraaEvents aboutData={eventData?.data?.static_data} />
       <HostEventsBanner />
       <FrequentlyAskedSection
         faqsection={eventData?.data?.faq}
-        className={"flex pt-5 pb-5 bg-ik_redvariant1"}
+        className={"flex pt-3 pb-5 "}
       />
     </>
   );

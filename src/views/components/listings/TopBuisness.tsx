@@ -18,7 +18,7 @@ const BusinessSection = () => {
           container
           sx={{ borderTop: `6px solid ${theme.palette.customColor.ik_pink}` }}
         >
-          <Grid item xs={4.5}>
+          <Grid item md={4.5} xs={11}>
             <Box
               sx={{
                 background: theme.palette.customColor.ik_pink,

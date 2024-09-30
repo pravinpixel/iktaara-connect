@@ -34,6 +34,13 @@ type Props = {
   categoryData: CategoryData;
 };
 
+type TabInfo = {
+  label: string;
+  icon?: JSX.Element;
+  categoryKey: keyof CategoryData; // categoryData keys like 'pianist', 'dancer', etc.
+  onClick?: () => void;
+};
+
 export default function FilterSectionEvents(props: Props) {
   const { categoryData } = props;
   const [selectedTab, setSelectedTab] = React.useState(0);
@@ -68,7 +75,18 @@ export default function FilterSectionEvents(props: Props) {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const tabs: TabInfo[] = [
+    {
+      label: "Filter by",
+      icon: <FilterListIcon />,
+      categoryKey: "pianist",
+      onClick: handleClickOpen,
+    },
+    { label: "Performances", categoryKey: "dancer" },
+    { label: "FREE ENTRY", categoryKey: "sound_engineer" },
+    { label: "English", categoryKey: "theatre_artists" },
+    { label: "Theatre Artists", categoryKey: "party_dJ" },
+  ];
   return (
     <section className="section-padding pt-5 pb-14 bg-ik_lightbluevariant">
       <CustomContainer>
@@ -81,7 +99,17 @@ export default function FilterSectionEvents(props: Props) {
           aria-label="category tabs"
           className="w-full category-table1 gap-4 "
         >
-          <Tab
+          {tabs.map((tab, index) => (
+            <Tab
+              key={index}
+              icon={tab.icon || undefined}
+              iconPosition="start"
+              label={tab.label}
+              onClick={tab.onClick ? tab.onClick : undefined}
+              className="text-f16 font-semibold h-auto min-h-[50px] w-auto max-[145px] rounded-full px-7 "
+            />
+          ))}
+          {/* <Tab
             icon={<FilterListIcon onClick={handleClickOpen} />}
             iconPosition="start"
             label="Filter by"
@@ -110,7 +138,7 @@ export default function FilterSectionEvents(props: Props) {
             iconPosition="start"
             label="Theatre Artists"
             className="text-f16 font-semibold h-auto min-h-[50px] w-auto max-[145px] rounded-full px-7"
-          />
+          /> */}
           {/* <Tab
             icon={<StandupIcon />}
             iconPosition="start"

@@ -83,7 +83,7 @@ const EventsThisWeek = (props: Props) => {
             </button> */}
           </div>
         </div>
-        <div className="music-section-sec1">
+        <div className="music-section-sec1 cursor-pointer">
           <Slider {...settings}>
             {musictechniciansection?.map((item: any) => (
               <ThisWeekData cartData={item} key={item?.id} />

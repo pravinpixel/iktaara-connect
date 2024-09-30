@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { Box, Stack } from "@mui/material";
@@ -56,9 +57,8 @@ const LocationSection = () => {
                 </Stack>
               ))}
               <p
-                className="font-normal text-f18 leading-9 text-ik_pink "
+                className="font-normal text-f18 leading-9 text-ik_pink cursor-pointer"
                 onClick={handleClickOpen}
-                style={{ cursor: "pointer" }}
               >
                 View All
               </p>
