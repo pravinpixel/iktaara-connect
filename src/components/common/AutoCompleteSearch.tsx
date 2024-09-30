@@ -3,10 +3,11 @@ import ImageComponent from "@/views/components/ImageComponent";
 import { Autocomplete, Container, Grid, TextField } from "@mui/material";
 import Image from "next/image";
 import {  useState } from "react";
+
+
 const AutoCompleteSearch = ({ placeholder }: any) => {
   const [open, setOpen] = useState(false);
 
- 
   return (
     <>
       <div

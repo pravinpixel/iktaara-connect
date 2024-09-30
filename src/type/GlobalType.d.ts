@@ -27,3 +27,17 @@ type NotifyType = AxiosError<{
 }>["response"];
 
 type ToastPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right" | "top-center" | "bottom-center";
+
+type TypeSuggestion = 'login' | 'register' | 'event' | 'business'
+
+type PopupType = {
+	type?: TypeSuggestion,
+	nextStep?: TypeSuggestion
+}
+
+type StoreState = {
+	token: string | null;
+	popup: PopupType;
+	setToken: (token: string | null) => void;
+	setPopup: (popup: PopupType) => void;
+};

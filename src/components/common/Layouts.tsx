@@ -8,6 +8,8 @@ type LayoutsTypes = {
 };
 
 const Layouts = ({ children }: LayoutsTypes) => {
+
+  
   return (
     <ThemeProvider>
       <div className="flex flex-col w-full relative h-fit overflow-x-hidden">

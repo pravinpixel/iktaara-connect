@@ -1,8 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import CustomContainer from '@/views/components/Container'
-import ListingAboutComponents from '@/views/components/listing-views/ListingAbout'
-import ListingCustomerComponents from '@/views/components/listing-views/ListingCustomer'
-import ListingHeaderComponents from '@/views/components/listing-views/ListingHeader'
+
 import { Grid } from '@mui/material'
 import React from 'react'
 import { wrapper } from "@/redux/store";
@@ -11,9 +8,12 @@ import ListingBusinessComponents from '@/views/components/listing-views/ListingB
 import ListingReviewsComponents from '@/views/components/listing-views/ListingReviews'
 import ListingStoresComponents from '@/views/components/listing-views/ListingStores'
 import ListingImageComponents from '@/views/components/listing-views/ListingImage'
+import CustomContainer from '@/views/components/Container'
+import ListingAboutComponents from '@/views/components/listing-views/ListingAbout'
+import ListingCustomerComponents from '@/views/components/listing-views/ListingCustomer'
+import ListingHeaderComponents from '@/views/components/listing-views/ListingHeader'
 
 const ListingsView = ({ listingsView }: any) => {
-  console.log(listingsView, "event");
   return (
     <section>
       <CustomContainer>

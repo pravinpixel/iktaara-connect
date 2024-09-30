@@ -5,9 +5,10 @@ import EventsSellers from "./EventsSellers";
 import CategorySection from "./CategorySection";
 import GroSection from "./GroSection";
 import MusicalSection from "./MusicalSection";
-import MusicTechnicians from "./musictechnicians";
-import RecordingSection from "./recordingSection";
-import FrequentlyAskedSection from "./frequentlyAsked";
+import MusicTechnicians from "./MusicTechnicians";
+import RecordingSection from "./RecordingSection";
+import FrequentlyAskedSection from "./FrequentlyAsked";
+
 
 const HomePageComponent = () => {
   const music = [
