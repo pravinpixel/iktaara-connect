@@ -1,4 +1,10 @@
 /* Header css */
+.search-bar-new1 .MuiAutocomplete-inputRoot {
+    border: none !important;
+}
+.search-here1 .MuiAutocomplete-inputRoot {
+    padding: 15px 3px 11px 15px !important;
+}
 
 .search-bar .MuiAutocomplete-inputRoot {
     border: none !important;
@@ -22,7 +28,6 @@
 
 .search-here .MuiAutocomplete-input {
     font-size: 14px !important;
-    font-family: "Sora", sans-serif !important;
 }
 
 
@@ -113,7 +118,6 @@
     left: -10px;
     z-index: 0 !important;
     bottom: 60px;
-    /* top: -11px !important; */
 }
 
 .slick-prev {
@@ -161,6 +165,11 @@
 }
 
 .music-section-sec1 .slick-track {
+    gap: 12px;
+    display: flex;
+}
+
+.reviews-section .slick-track{
     gap: 12px;
     display: flex;
 }
@@ -258,3 +267,58 @@
 .category-table1 .MuiTabs-flexContainer{
     gap: 8px !important;
 }
+.font-linear{
+    background: linear-gradient(90deg, #E34061 30%, #3C1393 44%, #1E9D77 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: capitalize !important;
+}
+
+.askcolor{
+    background-image: linear-gradient(272.65deg, #2E1E5A -3.81%, #E34061 116.02%);
+}
+.shadow-color{
+box-shadow: 0px 10px 30px 0px hsla(0, 0%, 0%, 0.15);
+
+}
+
+.reviews-section .slick-prev:before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 10px !important;
+    height: 20px !important;
+    background-image: url('/assets/icons/reviews-prev.svg') !important;
+    background-size: cover !important;
+    position: relative;
+    z-index: 0 !important;
+    top: 50%;
+}
+
+.reviews-section .slick-prev {
+    z-index: 100;
+    top: 48% !important;
+
+}
+.reviews-section .slick-track{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.reviews-section .slick-next:before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 35px !important;
+    height: 35px !important;
+    background-image: url('/assets/icons/arrow-right.svg') !important;
+    background-size: cover !important;
+    position: relative;
+    right: -18px;
+    z-index: 9999;
+    bottom: 60px;
+}
+
+.reviews-section .slick-next {
+    right: 13px !important;
+    z-index: 100;
+}
+

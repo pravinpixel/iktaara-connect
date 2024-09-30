@@ -1,15 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { listingView } from "../services/listingService";
 
 
 import { buisnessListingApi } from "../services/listingService";
 
 const buisnessListingCases = [{ api: buisnessListingApi, name: "buisnessListingApi", isLoading: true },
+   { api: listingView, name: "listingView", isLoading: true },
  
 ];
 
-const initialState = {
-  buisnessListState: false,
+type AsyncAction = {
+  isLoading: boolean;
+  data: unknown;
+  error: unknown;
 };
+
+type Org = Record<string, AsyncAction>;
+
+const initialState: Org = {};
 
 buisnessListingCases.forEach((api) => {
   initialState[api.name] = {
@@ -19,19 +27,18 @@ buisnessListingCases.forEach((api) => {
   };
 });
 
-export const buisnessListSlice = createSlice({
-  name: "buisnessListSlice",
+export const listingSlice = createSlice({
+  name: "listingSlice",
   initialState,
   reducers: {
-    setbuisnessListState: (state, action) => {
-      state.buisnessListState = action.payload;
+    setEventState: (state, action) => {
+      state.eventState = action.payload;
     },
   },
   extraReducers: (builder) => {
     buisnessListingCases.forEach((cases) => {
       builder
         .addCase(cases.api.fulfilled, (state, { payload }) => {
-        
           state[cases.name].isLoading = false;
           state[cases.name].data = payload?.data ?? null;
           state[cases.name].error = null;
@@ -42,13 +49,12 @@ export const buisnessListSlice = createSlice({
           state[cases.name].data = null;
         })
         .addCase(cases.api.rejected, (state, { payload }) => {
-         
           state[cases.name].isLoading = false;
-          state[cases.name].error = payload || null ;
+          state[cases.name].error = payload || null;
           state[cases.name].data = null;
         });
     });
   },
 });
 
-export const { buisnessListDispatch } = buisnessListSlice.actions;
+export const  listingDispatch  = listingSlice.actions;

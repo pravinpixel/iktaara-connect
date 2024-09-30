@@ -1,13 +1,13 @@
 
 import { eventSlice } from "./slice/eventSlice";
-import { buisnessListSlice } from "./slice/listingSlice";
+import { listingSlice } from "./slice/listingSlice";
 
 import { HYDRATE } from "next-redux-wrapper";
 import { Action, combineReducers } from "redux";
 
 const combinedReducer = combineReducers({
   event: eventSlice.reducer,
-  listing: buisnessListSlice.reducer,
+  listing: listingSlice.reducer,
 });
 
 const reducer = (state: ReturnType<typeof combinedReducer>, action: Action & { payload: object }) => {

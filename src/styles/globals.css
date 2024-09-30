@@ -48,6 +48,8 @@
   --ik_blue:hsla(256, 50%, 24%, 1);
   --ik_blue-foreground: hsla(0, 0%, 100%, 1);
   --ik_multicolor:linear-gradient(180deg, #E34061 0%, #00968A 100%);
+  --ik_multicolor1: linear-gradient(90deg, #E34061 0%, #3C1393 44%, #1E9D77 100%);
+  --ik_multicolor2: linear-gradient(272.65deg, #2E1E5A -3.81%, #E34061 116.02%);
   --ik_multicolor-foreground: hsla(0, 0%, 100%, 1);
   --ik_white:hsla(0, 0%, 100%, 1);
   --ik_white-foreground: hsla(348, 75%, 57%, 1);
@@ -67,6 +69,8 @@
   --ik_bluegreylighten5:hsla(204, 15%, 94%, 1);
   --ik_bluegreydarken6:hsla(223, 19%, 29%, 1);
   --ik_bluegreybluegrey: hsla(200, 18%, 46%, 1);
+  --ik_bluegreylighten6: hsla(174, 38%, 95%, 1);
+  --ik_bluegreylightens3: hsla(200, 15%, 73%, 1);
 
 
   --ik_redvariant1: hsla(51, 83%, 92%, 1);
@@ -78,6 +82,7 @@
   --ik_darkblue1:hsla(210, 79%, 46%, 1);
 
   --ik_lightorange:hsla(48, 100%, 88%, 1);
+  --ik_boxshadiowcolor: hsla(0, 0%, 0%, 0.15);
 
 
 

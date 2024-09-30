@@ -69,6 +69,9 @@ const config: Config = {
         ik_multicolor1: {
           DEFAULT: "var(--ik_multicolor1)",
         },
+        ik_multicolor2: {
+          DEFAULT: "var(--ik_multicolor2)",
+        },
         ik_white: {
           DEFAULT: "var(--ik_white)",
           foreground: "var(--ik_white-foreground)",
@@ -150,6 +153,9 @@ const config: Config = {
         ik_darkblue1: {
           DEFAULT: "var(--ik_darkblue1)",
         },
+        ik_boxshadiowcolor: {
+          DEFAULT: "var(--ik_boxshadiowcolor)",
+        },
       },
       border: "hsl(var(--border))",
       input: "hsl(var(--input))",
@@ -184,6 +190,7 @@ const config: Config = {
       f32: "var(--f32)",
       f38: "var(--f38)",
       f64: "var(--f64)",
+      f68: "var(--f68)",
     },
   },
   plugins: [TailwindAnimate],
