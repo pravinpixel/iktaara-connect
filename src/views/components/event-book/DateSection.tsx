@@ -3,19 +3,16 @@
 import React from "react";
 // import dynamic from "next/dynamic";
 import { Box, Grid, Typography } from "@mui/material";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+import dynamic from "next/dynamic";
 
+const DateEventPicker = dynamic(() => import("../DateEventPicker"));
 const DateSection = () => {
   return (
     <>
       <Box className="bg-ik_white p-3 mt-1 rounded-2xl">
         <Grid container>
           <Grid item xs={7}>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DateCalendar />
-            </LocalizationProvider>
+            <DateEventPicker />
           </Grid>
           <Grid item xs={5}>
             <Typography>Time Slots</Typography>
