@@ -6,6 +6,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import { DialogContent } from '@mui/material';
 import SelectField from '../form-fields/SelectField';
 import { FormProvider, useForm } from 'react-hook-form';
+import dynamic from 'next/dynamic';
+import CustomButton from '../form-fields/CustomButton';
+
+const DatePickerField = dynamic(() => import("../form-fields/DatePickerField"));
+const TimePickerField = dynamic(() => import("../form-fields/TimePickerField"));
+
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
     children: React.ReactElement;
@@ -66,12 +72,12 @@ export default function EnquirePopup({ handleClose, open }: EnquirePopupProps) {
         <CloseIcon />
       </IconButton>
       <DialogContent className="pt-0">
-        <p>
+        <p className="text-f18 font-normal text-ik_bluegreydarken3">
           Your enquiry will be sent directly to business to contact immediately!
         </p>
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>
-            <div className='pt-8'>
+            <div className="pt-8">
               <SelectField
                 label={"Studio Purpose"}
                 name={"studio"}
@@ -80,6 +86,37 @@ export default function EnquirePopup({ handleClose, open }: EnquirePopupProps) {
                   { id: 20, name: "Twenty" },
                   { id: 30, name: "Thirty" },
                 ]}
+              />
+            </div>
+            <div className="pt-5">
+              <DatePickerField
+                name="date"
+                label="Date"
+                fieldProps={{
+                  placeholder: "Date",
+                }}
+              />
+            </div>
+            <div className="pt-5">
+              <TimePickerField label={"Time"} name={"time"} />
+            </div>
+            <div className="pt-5">
+              <SelectField
+                label={"Expected People Count"}
+                name={"studio"}
+                options={[
+                  { id: 10, name: "0-25" },
+                  { id: 20, name: "25-50" },
+                  { id: 30, name: "50-75" },
+                  { id: 30, name: "75-100" },
+                ]}
+              />
+            </div>
+            <div className="flex justify-end pt-10">
+              <CustomButton
+                variant="contained"
+                label={"Continue"}
+                className="text-f12 font-semibold text-ik_pink-foreground"
               />
             </div>
           </form>

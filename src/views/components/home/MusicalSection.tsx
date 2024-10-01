@@ -3,12 +3,69 @@ import Musicscomponent from "@/views/components/cart-component/MusicsComponent";
 import CustomContainer from "@/views/components/Container";
 import ImageComponent from "@/views/components/ImageComponent";
 import React from "react";
+import Slider from "react-slick";
 
 type Props = {
   musicsection: any;
 };
 const MusicalSection = (props: Props) => {
   const { musicsection } = props;
+
+  const settings = {
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    swipe: musicsection?.length > 4 ? true : false,
+    dots: musicsection?.length > 4 ? true : false,
+    infinite: musicsection?.length > 4 ? true : false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: musicsection?.length >= 4 ? 4 : 1,
+    lazyLoad: "ondemand" as "ondemand" | "progressive" | undefined,
+    customPaging: () => <div className="reactslick-custom-dots" />,
+    responsive: [
+      {
+        breakpoint: 420,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          swipe: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          swipe: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          swipe: true,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          swipe: true,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          swipe: true,
+        },
+      },
+    ],
+  };
   return (
     <section className="pt-7 pb-9 relative">
       <CustomContainer>
@@ -24,7 +81,13 @@ const MusicalSection = (props: Props) => {
         <div className="text-f28 font-semibold mb-3 text-ik_bluegreydarken4">
           <span>Destination for everyone with musical interest</span>
         </div>
-        <Musicscomponent musicsection={musicsection} />
+        <div className="music-select">
+          <Slider {...settings}>
+            {musicsection?.map((item: any) => (
+              <Musicscomponent musicsection={item} key={item?.id} />
+            ))}
+          </Slider>
+        </div>
         <div className="absolute bottom-5 right-2">
           <ImageComponent
             src={"/assets/image/star2.webp"}

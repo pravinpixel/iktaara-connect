@@ -159,6 +159,11 @@
     display: flex;
 }
 
+.music-select .slick-track {
+    gap: 12px;
+    display: flex;
+}
+
 .music-section-sec .slick-track {
     gap: 12px;
     display: flex;
@@ -307,18 +312,17 @@ box-shadow: 0px 10px 30px 0px hsla(0, 0%, 0%, 0.15);
 .reviews-section .slick-next:before {
     content: '' !important;
     display: inline-block !important;
-    width: 35px !important;
-    height: 35px !important;
-    background-image: url('/assets/icons/arrow-right.svg') !important;
+    width: 10px !important;
+    height: 20px !important;
+    background-image: url('/assets/icons/reviewa-next.svg') !important;
     background-size: cover !important;
     position: relative;
-    right: -18px;
     z-index: 9999;
-    bottom: 60px;
+    top: 50%;
 }
 
 .reviews-section .slick-next {
-    right: 13px !important;
+    top: 48% !important;
     z-index: 100;
 }
 

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { Grid } from '@mui/material'
 import React from 'react'
 import { wrapper } from "@/redux/store";
@@ -13,17 +11,17 @@ import ListingAboutComponents from '@/views/components/listing-views/ListingAbou
 import ListingCustomerComponents from '@/views/components/listing-views/ListingCustomer'
 import ListingHeaderComponents from '@/views/components/listing-views/ListingHeader'
 
-const ListingsView = ({ listingsView }: any) => {
+const ListingsView = () => {
   return (
     <section>
       <CustomContainer>
         <ListingHeaderComponents />
         <ListingImageComponents />
         <Grid container>
-          <Grid item xs={8}>
+          <Grid item xs={12} md={8}>
             <ListingAboutComponents />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <ListingCustomerComponents />
           </Grid>
         </Grid>

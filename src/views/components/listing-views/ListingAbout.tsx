@@ -24,7 +24,7 @@ const ListingAboutComponents = () => {
       <Grid container spacing={2}>
         {pivkup_data?.map((row) => (
           <>
-            <Grid item xs={4} key={row.id}>
+            <Grid item xs={12} md={4} key={row.id}>
               <div className="bg-ik_bluegreylighten6 py-7 px-5 rounded-[12px] h-full">
                 <div className="text-center">
                   <h6 className="text-f20 font-bold font-linear bg-clip-text mb-2 capitalize">
@@ -81,7 +81,7 @@ const ListingAboutComponents = () => {
           </h6>
         </div>
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <div className="text-f18 font-normal text-ik_bluegreydarken2 ">
               <div className="paragraph-Ctr">
                 <ul className="text-f18 font-normal text-ik_bluegreydarken3">
@@ -94,7 +94,7 @@ const ListingAboutComponents = () => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <div className="text-f18 font-normal text-ik_bluegreydarken2 ">
               <div className="paragraph-Ctr">
                 <ul className="text-f18 font-normal text-ik_bluegreydarken3">

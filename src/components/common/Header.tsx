@@ -12,7 +12,8 @@ import CityLocation from "@/views/components/popup/CityLocation";
 import { Box } from "@mui/material";
 import Musicscomponent from "@/views/components/cart-component/MusicsComponent";
 import { ArrowdownIcon } from "@/utils/theme/svg";
-import AutoCompleteSearch from "./AutoCompleteSearch";
+import {AutoCompleteSearch} from "./AutoCompleteSearch";
+import Slider from "react-slick";
 
 
 const Header = () => {
@@ -43,6 +44,62 @@ const Header = () => {
       music_title: "Events",
     },
   ];
+
+   const settings = {
+     autoplay: true,
+     autoplaySpeed: 3000,
+     arrows: false,
+     swipe: music?.length > 4 ? true : false,
+     dots: music?.length > 4 ? true : false,
+     infinite: music?.length > 4 ? true : false,
+     speed: 500,
+     slidesToShow: 4,
+     slidesToScroll: music?.length >= 4 ? 4 : 1,
+     lazyLoad: "ondemand" as "ondemand" | "progressive" | undefined,
+     customPaging: () => <div className="reactslick-custom-dots" />,
+     responsive: [
+       {
+         breakpoint: 420,
+         settings: {
+           slidesToShow: 1,
+           slidesToScroll: 1,
+           swipe: true,
+         },
+       },
+       {
+         breakpoint: 600,
+         settings: {
+           slidesToShow: 2,
+           slidesToScroll: 2,
+           swipe: true,
+         },
+       },
+       {
+         breakpoint: 768,
+         settings: {
+           slidesToShow: 2,
+           slidesToScroll: 2,
+           swipe: true,
+         },
+       },
+       {
+         breakpoint: 900,
+         settings: {
+           slidesToShow: 3,
+           slidesToScroll: 3,
+           swipe: true,
+         },
+       },
+       {
+         breakpoint: 1200,
+         settings: {
+           slidesToShow: 3,
+           slidesToScroll: 3,
+           swipe: true,
+         },
+       },
+     ],
+   };
 
   const handleClickOpencity = () => {
     setOpencity(true);
@@ -111,6 +168,8 @@ const Header = () => {
             <div className="w-auto">
               <AutoCompleteSearch
                 placeholder={"Find artists, sound engineers, bands..."}
+                typeheader={true}
+                typebanner={false}
               />
             </div>
           </div>
@@ -171,7 +230,13 @@ const Header = () => {
             <div className={`sectionmusic ${selected ? "open" : ""}`}>
               {selected === "Services" && (
                 <CustomContainer>
-                  <Musicscomponent musicsection={music} />
+                  <div className="music-select">
+                    <Slider {...settings}>
+                      {music?.map((item: any) => (
+                        <Musicscomponent musicsection={item} key={item?.id} />
+                      ))}
+                    </Slider>
+                  </div>
                 </CustomContainer>
               )}
             </div>

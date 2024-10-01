@@ -510,18 +510,21 @@ const HomePageComponent = () => {
   const faq = [
     {
       id: 1,
-      title: "How do I choose the right pianica online?",
-      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
+      question: "How do I choose the right pianica online?",
+      answer:
+        "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
     },
     {
       id: 2,
-      title: 'What are the advantages of shopping for a "Pianica Online"?',
-      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
+      question: 'What are the advantages of shopping for a "Pianica Online"?',
+      answer:
+        "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
     },
     {
       id: 3,
-      title: "What is the typical price of a Pianica in India?",
-      sub: "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
+      question: "What is the typical price of a Pianica in India?",
+      answer:
+        "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
     },
   ];
 

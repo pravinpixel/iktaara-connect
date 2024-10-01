@@ -1,25 +1,26 @@
 import { MenuItem, Typography } from "@mui/material";
 import { FormLabel } from "@mui/material";
-// import { styled } from "@mui/material";
+import { styled } from "@mui/material";
 import { Box } from "@mui/material";
 import { Select } from "@mui/material";
 import { useController, useFormContext } from "react-hook-form";
 // import { selectArrow } from "../../../utils/helpers/assetHelper";
 import { FormHelperText } from "@mui/material";
 
-// const CustomSelectIcon = styled("div")({
-//   display: "flex",
-//   alignItems: "center",
-//   justifyContent: "center",
-//   width: 13,
-//   height: 6,
-//   background: `url(${selectArrow})`,
-//   backgroundSize: "contain",
-//   backgroundRepeat: "no-repeat",
-//   backgroundPosition: "center",
-//   position: "relative",
-//   transform: "translateX(-12px) translateY(6px)",
-// });
+const CustomSelectIcon = styled("div")({
+  contain: '',
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  width: 16,
+  height: 10,
+  background: `url(${"/assets/icons/arrowdown.svg"})`,
+  backgroundSize: "contain",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  position: "relative",
+  transform: "translateX(0px) translateY(6px)",
+});
 // Define the type for each option
 type EssentailTypeListResponse = {
   id: number | string;
@@ -69,7 +70,9 @@ const SelectField = (props: {
           },
         }}
       >
-        <FormLabel>{label}</FormLabel>
+        <FormLabel className="text-f14 text-ik_bluegreydarken1 font-normal">
+          {label}
+        </FormLabel>
         <Select
           size="small"
           sx={{ mt: 1, width: "100%" }}
@@ -77,7 +80,7 @@ const SelectField = (props: {
           variant="outlined"
           error={!!errorMessage}
           displayEmpty
-          // IconComponent={CustomSelectIcon}
+          IconComponent={CustomSelectIcon}
           MenuProps={{
             sx: {
               "& ul": {

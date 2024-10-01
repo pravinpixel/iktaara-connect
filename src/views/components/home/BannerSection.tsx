@@ -2,8 +2,9 @@ import CustomButton from "@/views/components/form-fields/CustomButton";
 import ImageComponent from "@/views/components/ImageComponent";
 import { Container } from "@mui/material";
 import React from "react";
-import AutoCompleteSearch  from "@/components/common/AutoCompleteSearch";
+
 import CityLocation from "../popup/CityLocation";
+import { AutoCompleteSearch } from "@/components/common/AutoCompleteSearch";
 
 const BannerSection = () => {
   const [opencity, setOpencity] = React.useState(false);

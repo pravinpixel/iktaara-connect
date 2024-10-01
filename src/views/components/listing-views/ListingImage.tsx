@@ -59,7 +59,7 @@ const ListingImageComponents = () => {
     <section className="pb-5">
       <Grid container spacing={1}>
         {/* Main Image */}
-        <Grid item xs={hasSmallImages ? 8 : 12}>
+        <Grid item xs={12} sm={hasSmallImages ? 8 : 12}>
           <Image
             src={images.mainImage.src}
             width={images.mainImage.width}
@@ -76,7 +76,7 @@ const ListingImageComponents = () => {
 
         {/* Small Images */}
         {hasSmallImages && (
-          <Grid item xs={isSingleSmallImage ? 4 : 4}>
+          <Grid item xs={12} sm={isSingleSmallImage ? 4 : 4}>
             <Stack
               direction="row"
               useFlexGap
