@@ -80,6 +80,9 @@
   --ik_lightgrey:hsla(224, 8%, 54%, 1);
   --ik_darkblue:hsla(212, 100%, 44%, 1);
   --ik_darkblue1:hsla(210, 79%, 46%, 1);
+  --ik_titlecolor: linear-gradient(90deg, #FF5252 0%, #2E1E5A 51.5%, #10BAC5 100%);
+
+
 
   --ik_lightorange:hsla(48, 100%, 88%, 1);
   --ik_boxshadiowcolor: hsla(0, 0%, 0%, 0.15);

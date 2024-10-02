@@ -21,17 +21,24 @@ const FilterCategoryData = (props: EventsTitleProps) => {
 
     <FormProvider {...methods}>
       <Box className="border border-gray-300 p-4 rounded-lg mb-[20px]">
-        <Stack direction="row" spacing={2} alignItems={"center"}>
-          {" "}
-          <ImageComponent
-            alt="calender"
-            src={filterCate?.image}
-            width={40}
-            height={40}
-          />
-          <Typography className="font-normal text-f18 text-ik_bluegreydarken6 leading-6">
-            {filterCate.title}
-          </Typography>
+        <Stack
+          direction="row"
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
+          <Stack direction="row" spacing={2} alignItems={"center"}>
+            {" "}
+            <ImageComponent
+              alt="calender"
+              src={filterCate?.image}
+              width={40}
+              height={40}
+            />
+            <Typography className="font-normal text-f18 text-ik_bluegreydarken6 leading-6">
+              {filterCate.title}
+            </Typography>
+          </Stack>
+
           <CustomRadio name="" label="" value={""} />
         </Stack>
       </Box>

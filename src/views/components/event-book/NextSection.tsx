@@ -12,15 +12,31 @@ const ImageComponent = dynamic(
 );
 const CustomContainer = dynamic(() => import("@/views/components/Container"));
 
-const NextSection = () => {
+interface NextSectionProps {
+  justifyContent?:
+    | "flex-start"
+    | "center"
+    | "flex-end"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
+  alignItems?: "flex-start" | "center" | "flex-end" | "baseline" | "stretch";
+  className: string;
+}
+
+const NextSection = ({
+  justifyContent = "center",
+  alignItems = "center",
+  className = "",
+}: NextSectionProps) => {
   return (
-    <Box className="bg-ik_white p-3 mt-1">
+    <Box className={`bg-ik_white p-3 mt-1 ${className}`}>
       <CustomContainer>
         <Stack
           direction="row"
           spacing={1}
-          alignItems={"center"}
-          justifyContent={"center"}
+          alignItems={alignItems}
+          justifyContent={justifyContent}
         >
           <ImageComponent
             src="/images/static/image_35.png"

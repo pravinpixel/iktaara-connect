@@ -156,6 +156,9 @@ const config: Config = {
         ik_boxshadiowcolor: {
           DEFAULT: "var(--ik_boxshadiowcolor)",
         },
+        ik_titlecolor: {
+          DEFAULT: "var(--ik_titlecolor)",
+        },
       },
       boxShadow: {
         'custom-hsla': '0px 1px 2px 0px hsla(0, 0%, 0%, 0.25)',
@@ -194,6 +197,7 @@ const config: Config = {
       f38: "var(--f38)",
       f64: "var(--f64)",
       f68: "var(--f68)",
+      f52: "var(--f52)",
     },
   },
   plugins: [TailwindAnimate],

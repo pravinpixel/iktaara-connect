@@ -8,8 +8,6 @@ type LayoutsTypes = {
 };
 
 const Layouts = ({ children }: LayoutsTypes) => {
-
-  
   return (
     <ThemeProvider>
       <div className="flex flex-col w-full relative h-fit overflow-x-hidden">
@@ -20,7 +18,7 @@ const Layouts = ({ children }: LayoutsTypes) => {
           className={`mt-[73px]  h-[calc(100vh-73px)] flex overflow-hidden overflow-y-auto flex-col`}
         >
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </ThemeProvider>

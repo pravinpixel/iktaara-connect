@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <SessionProvider>
       <Provider store={store}>
-        <section className={`${sora.variable} font-sora h-[100vh] w-full flex`}>
+        <section className={` h-[100vh] w-full flex`}>
           <Layouts>
             <Component {...pageProps} />
           </Layouts>

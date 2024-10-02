@@ -51,7 +51,7 @@ function InputField(props: InputFieldType) {
 
   return (
     <Stack>
-      <FormLabel sx={{}}>{label}</FormLabel>
+      <FormLabel className="mb-2">{label}</FormLabel>
       {description && <Typography>{description}</Typography>}
       <TextField
         fullWidth

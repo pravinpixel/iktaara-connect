@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -35,21 +36,32 @@ const ImageComponent = (props: any) => {
             className={className}
           />
         </div>
-      ) : (
-        <Image
-          src={src}
-          alt={alt}
-          unoptimized={false}
-          priority={priority}
-          loading={priority ? "eager" : "lazy"}
-          width={width}
-          height={height}
-          sizes="100vw"
+      ) : type === 2 ? (
+        <Box
+          sx={{
+            position: "relative",
+            objectFit: "content",
+          }}
           className={className}
-        />
+        >
+          <Image src={src} alt={"banner"} fill />
+        </Box>
+      ) : (
+        <>
+          {" "}
+          <Image
+            src={src}
+            alt={alt}
+            unoptimized={false}
+            priority={priority}
+            loading={priority ? "eager" : "lazy"}
+            width={width}
+            height={height}
+            sizes="100vw"
+            className={className}
+          />
+        </>
       )}
-
-      {/* </div> */}
     </>
   );
 };

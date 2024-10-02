@@ -303,6 +303,19 @@ export function overrides(theme: Theme) {
           },
         },
         {
+          props: { variant: "customEventInput" },
+          style: {
+            border: `1px solid ${theme.palette.customColor.ik_bluegreydarken3}`,
+            color: theme.palette.customColor.ik_bluegreydarken3,
+            "& fieldset": {
+              border: "none",
+            },
+            "& .-MuiFormLabel-root":{
+              color: theme.palette.customColor.ik_bluegreydarken3,
+            }
+          },
+        },
+        {
           props: { variant: "customSearch" },
           style: {
             border: `1px solid ${theme.palette.customColor.ik_bluegreylighten5}`,
