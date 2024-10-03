@@ -55,7 +55,7 @@ export function overrides(theme: Theme) {
           fontSize: theme.typography.fontSizeList.f16,
           fontWeight: theme.typography.fontWeightSemiBold,
           backgroundColor: theme.palette.primarybutton.background,
-         
+
           "&:hover": {
             color: theme.palette.primarybutton.textcolor,
             backgroundColor: theme.palette.primarybutton.background,
@@ -76,8 +76,7 @@ export function overrides(theme: Theme) {
             "&:hover": {
               color: theme.palette.primarybutton.background,
               backgroundColor: theme.palette.primarybutton.textcolor,
-              border: `1px solid ${theme.palette.primarybutton.background}`
-
+              border: `1px solid ${theme.palette.primarybutton.background}`,
             },
           },
         },
@@ -95,7 +94,6 @@ export function overrides(theme: Theme) {
               color: "var(--ik_darkblue1)",
               backgroundColor: theme.palette.primarybutton.textcolor,
               // border: `1px solid ${theme.palette.primarybutton.background}`
-
             },
           },
         },
@@ -125,15 +123,14 @@ export function overrides(theme: Theme) {
         },
       },
     },
-    
+
     MuiPaper: {
       styleOverrides: {
         root: {
-          padding: "15px 16px 15px 16px",
+          padding: "15px 0px 15px 0px",
           [theme.breakpoints.down("sm")]: {
             padding: "13px 13px",
           },
-          
         },
       },
       variants: [
@@ -207,10 +204,10 @@ export function overrides(theme: Theme) {
       styleOverrides: {
         root: {
           color: theme.palette.customColor.light,
-          '&.Mui-checked': {
+          "&.Mui-checked": {
             color: theme.palette.customColor.ik_pink,
           },
-          '&:hover': {
+          "&:hover": {
             backgroundColor: theme.palette.customColor.ik_white,
           },
         },
@@ -288,7 +285,6 @@ export function overrides(theme: Theme) {
           "&.MuiOutlinedInput": {
             borderRadius: "6px",
           },
-
         },
       },
       variants: [
@@ -313,6 +309,20 @@ export function overrides(theme: Theme) {
             "& .-MuiFormLabel-root":{
               color: theme.palette.customColor.ik_bluegreydarken3,
             }
+          }
+        },
+        {
+          props: { variant: "customtextarea" },
+          style: {
+            // border: `1px solid ${theme.palette.customColor.ik_bluegreydarken2}`,
+            color: theme.palette.customColor.ik_bluegreydarken2,
+            height: "100%",
+            "& fieldset": {
+              border: "none",
+            },
+            "&.MuiOutlinedInput": {
+              borderRadius: "6px",
+            },
           },
         },
         {
@@ -330,7 +340,6 @@ export function overrides(theme: Theme) {
         },
       ],
     },
-
 
     // MuiTextField: {
     //   defaultProps: {
@@ -391,7 +400,7 @@ export function overrides(theme: Theme) {
         indicator: {
           left: 0,
           width: "4px",
-          backgroundColor: grey[1100],
+          backgroundColor: "#37474F",
           borderRadius: "4px",
         },
       },
@@ -428,16 +437,16 @@ export function overrides(theme: Theme) {
           backgroundColor: "transparent",
           width: "100%",
           padding: "12px",
-          border: "none",
+          BorderBottom: "none",
           borderRadius: "7px",
           display: "flex",
-
+          gap: "6px",
           justifyContent: "center",
           "&:hover": {
             backgroundColor: "#fff",
           },
           "&:focus": {
-            color: grey[1100],
+            // color: grey[1100],
             outline: "3px solid white",
             boxShadow: "none",
           },
@@ -451,9 +460,10 @@ export function overrides(theme: Theme) {
             cursor: "not-allowed",
           },
           "&.Mui-selected": {
-            backgroundColor: grey[1200],
-            color: grey[1100],
+            backgroundColor: "#fff",
+            color: "#455A64",
             boxShadow: "none",
+            fontWeight: 600,
           },
           variants: [
             {
@@ -461,14 +471,14 @@ export function overrides(theme: Theme) {
               style: {
                 "&.Mui-selected": {
                   backgroundColor: grey[1300],
-                  color: theme.palette.grey[600],
+                  // color: theme.palette.grey[600],
                   elevation: 0,
                   boxShadow: "none",
                 },
                 "&:focus": {
                   backgroundColor: grey[1300],
                   outline: "3px solid white",
-                  color: theme.palette.grey[600],
+                  // color: theme.palette.grey[600],
                 },
               },
             },
@@ -500,7 +510,7 @@ export function overrides(theme: Theme) {
           justifyContent: "center",
           alignContent: "space-between",
           boxShadow: `0px 4px 8px  ${grey[1000]}}`,
-        }
+        },
       },
     },
     MuiCard: {
@@ -546,7 +556,6 @@ export function overrides(theme: Theme) {
             // width: "360px",
             borderRadius: "16px",
             // backgroundColor: "#f5f5f5",
-            
           },
         },
         {
@@ -575,7 +584,6 @@ export function overrides(theme: Theme) {
               // objectFit: "cover",
               // borderRadius: "50%",
             },
-            
           },
         },
         {

@@ -14,12 +14,14 @@ import Musicscomponent from "@/views/components/cart-component/MusicsComponent";
 import { ArrowdownIcon } from "@/utils/theme/svg";
 import {AutoCompleteSearch} from "./AutoCompleteSearch";
 import Slider from "react-slick";
+import Startedpopup from "@/views/components/popup/Startedpopup";
 
 
 const Header = () => {
   const [open, setOpen] = React.useState(false);
   const [opencity, setOpencity] = React.useState(false);
   const [selected, setSelected] = useState<string | null>(null);
+  const [openStarted, setOpenStarted] = React.useState(false);
 
   const music = [
     {
@@ -100,6 +102,16 @@ const Header = () => {
        },
      ],
    };
+
+
+
+     const handleClickOpenStarted = () => {
+       setOpenStarted(true);
+     };
+
+     const handleCloseStarted = () => {
+       setOpenStarted(false);
+     };
 
   const handleClickOpencity = () => {
     setOpencity(true);
@@ -196,6 +208,7 @@ const Header = () => {
               variant="primary-button"
               label={"List Business/Talent"}
               className="text-f12 font-semibold"
+              onClick={handleClickOpenStarted}
             />
             <CustomButton
               label={"Login"}
@@ -206,6 +219,10 @@ const Header = () => {
         </div>
       </CustomContainer>
       {open && <LoginPopup handleClose={handleClose} open={open} />}
+
+      {openStarted && (
+        <Startedpopup handleClose={handleCloseStarted} open={openStarted} />
+      )}
 
       {opencity && (
         <CityLocation handleClose={handleClosecity} open={opencity} />

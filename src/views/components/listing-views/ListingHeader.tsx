@@ -1,16 +1,37 @@
 import React from "react";
 import ImageComponent from "../ImageComponent";
 import EnquirePopup from "../popup/EnquirePopup";
+import CustomButton from "../form-fields/CustomButton";
+import BusinessEditPopup from "../popup/BusinessEditPopup";
+import PostUpdatePapup from "../popup/PostUpdatePapup";
 
 const ListingHeaderComponents = () => {
   const [opencity, setOpencity] = React.useState(false);
-  
+  const [openbusinessedit, setOpenbusinessedit] = React.useState(false);
+  const [openUpdate, setOpenUpdate] = React.useState(false);
+
   const handleClickOpencity = () => {
     setOpencity(true);
   };
 
   const handleClosecity = () => {
     setOpencity(false);
+  };
+
+  const handleClickOpenbusiness = () => {
+    setOpenbusinessedit(true);
+  };
+
+  const handleClosebusiness = () => {
+    setOpenbusinessedit(false);
+  };
+
+  const handleClickUpdate = () => {
+    setOpenUpdate(true);
+  };
+
+  const handleCloseUpdate = () => {
+    setOpenUpdate(false);
   };
   return (
     <>
@@ -89,7 +110,7 @@ const ListingHeaderComponents = () => {
           </div>
           <div>
             <div className="flex gap-3 mt-2">
-              <div>
+              {/* <div>
                 <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-5">
                   <div className="flex gap-3">
                     <ImageComponent
@@ -108,21 +129,45 @@ const ListingHeaderComponents = () => {
                 </button>
               </div>
               <div>
-                {/* <CustomButton variant="contained" label="Enquire" /> */}
                 <button
                   className=" h-100 px-16 py-6 bg-ik_pink text-white text-f20  font-semibold rounded-lg"
                   onClick={handleClickOpencity}
                 >
                   <span>Enquire</span>
                 </button>
+              </div> */}
+
+              <button
+                className="border border-ik_bluegreylightens3 rounded-lg py-[23px] px-7"
+                onClick={handleClickUpdate}
+              >
+                <span className="text-f20 font-semibold text-ik_pink">
+                  Share Update
+                </span>
+              </button>
+              <div>
+                <CustomButton
+                  variant="contained"
+                  label="Edit Profile"
+                  className="py-[23px] px-7 text-f20 font-semibold"
+                  onClick={handleClickOpenbusiness}
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
-
+      {openUpdate && (
+        <PostUpdatePapup handleClose={handleCloseUpdate} open={openUpdate} />
+      )}
       {opencity && (
         <EnquirePopup handleClose={handleClosecity} open={opencity} />
+      )}
+      {openbusinessedit && (
+        <BusinessEditPopup
+          handleClose={handleClosebusiness}
+          open={openbusinessedit}
+        />
       )}
     </>
   );
