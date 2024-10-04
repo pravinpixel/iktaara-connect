@@ -187,6 +187,7 @@ const config: Config = {
       f14: "var(--f14)",
       f16: "var(--f16)",
       f18: "var(--f18)",
+      f19: "var(--f19)",
       f20: "var(--f20)",
       f22: "var(--f22)",
       f24: "var(--f24)",

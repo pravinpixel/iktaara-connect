@@ -1,57 +1,56 @@
-import React from 'react'
-import Slider from 'react-slick';
-import CaetComponent from '../cart-component';
+import React from "react";
+import Slider from "react-slick";
+import CaetComponent from "../cart-component";
 
 const ListingStoresComponents = () => {
+  const musictechnician_data = [
+    {
+      id: 1,
+      music_image: "/assets/image/music-arts.webp",
+      music_logo: "/assets/image/music-logo1.png",
+      music_reviews: "4.5 (22 Reviews)",
+      music_title: "MUSIC & ARTS",
+      music_location: "Adyar",
+      music_text: "Specialist in Piano, Violin",
+    },
+    {
+      id: 2,
+      music_image: "/assets/image/schmitt.webp",
+      music_logo: "/assets/image/music-logo2.png",
+      music_reviews: "4.5 (22 Reviews)",
+      music_title: "MUSIC & ARTS",
+      music_location: "Adyar",
+      music_text: "Specialist in Piano, Violin",
+    },
+    {
+      id: 3,
+      music_image: "/assets/image/kzone.webp",
+      music_logo: "/assets/image/music-logo3.png",
+      music_reviews: "4.5 (22 Reviews)",
+      music_title: "MUSIC & ARTS",
+      music_location: "Adyar",
+      music_text: "Specialist in Piano, Violin",
+    },
+    {
+      id: 4,
+      music_image: "/assets/image/music-doctor.webp",
+      music_logo: "/assets/image/music-logo4.png",
+      music_reviews: "4.5 (22 Reviews)",
+      music_title: "MUSIC & ARTS",
+      music_location: "Adyar",
+      music_text: "Specialist in Piano, Violin",
+    },
+    {
+      id: 5,
+      music_image: "/assets/image/music-arts.webp",
+      music_logo: "/assets/image/music-logo1.png",
+      music_reviews: "4.5 (22 Reviews)",
+      music_title: "MUSIC & ARTS",
+      music_location: "Adyar",
+      music_text: "Specialist in Piano, Violin",
+    },
+  ];
 
-     const musictechnician_data = [
-       {
-         id: 1,
-         music_image: "/assets/image/music-arts.webp",
-         music_logo: "/assets/image/music-logo1.png",
-         music_reviews: "4.5 (22 Reviews)",
-         music_title: "MUSIC & ARTS",
-         music_location: "Adyar",
-         music_text: "Specialist in Piano, Violin",
-       },
-       {
-         id: 2,
-         music_image: "/assets/image/schmitt.webp",
-         music_logo: "/assets/image/music-logo2.png",
-         music_reviews: "4.5 (22 Reviews)",
-         music_title: "MUSIC & ARTS",
-         music_location: "Adyar",
-         music_text: "Specialist in Piano, Violin",
-       },
-       {
-         id: 3,
-         music_image: "/assets/image/kzone.webp",
-         music_logo: "/assets/image/music-logo3.png",
-         music_reviews: "4.5 (22 Reviews)",
-         music_title: "MUSIC & ARTS",
-         music_location: "Adyar",
-         music_text: "Specialist in Piano, Violin",
-       },
-       {
-         id: 4,
-         music_image: "/assets/image/music-doctor.webp",
-         music_logo: "/assets/image/music-logo4.png",
-         music_reviews: "4.5 (22 Reviews)",
-         music_title: "MUSIC & ARTS",
-         music_location: "Adyar",
-         music_text: "Specialist in Piano, Violin",
-       },
-       {
-         id: 5,
-         music_image: "/assets/image/music-arts.webp",
-         music_logo: "/assets/image/music-logo1.png",
-         music_reviews: "4.5 (22 Reviews)",
-         music_title: "MUSIC & ARTS",
-         music_location: "Adyar",
-         music_text: "Specialist in Piano, Violin",
-       },
-     ];
-    
   const settings = {
     autoplay: true,
     autoplaySpeed: 3000,
@@ -123,6 +122,6 @@ const ListingStoresComponents = () => {
       </div>
     </section>
   );
-}
+};
 
-export default ListingStoresComponents
+export default ListingStoresComponents;

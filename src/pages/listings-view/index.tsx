@@ -12,10 +12,16 @@ import ListingCustomerComponents from '@/views/components/listing-views/ListingC
 import ListingHeaderComponents from '@/views/components/listing-views/ListingHeader'
 
 const ListingsView = () => {
+  const ListingHeader = {
+    logo: "/assets/image/music-logo.png",
+    title: "Musee Musicals Pvt. Ltd.",
+    location: "Chennai",
+    job: "Sales & Service (13 Years in Business)",
+  };
   return (
     <section>
       <CustomContainer>
-        <ListingHeaderComponents />
+        <ListingHeaderComponents ListHeader={ListingHeader} />
         <ListingImageComponents />
         <Grid container>
           <Grid item xs={12} md={8}>

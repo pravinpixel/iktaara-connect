@@ -107,7 +107,7 @@ const ListingReviewsComponents = () => {
                 <p className="line-clamp-6">{row.reviews_text}</p>
               </div>
               <div className="flex gap-3 items-center">
-                <StarRatings count={5} />
+                <StarRatings count={2} />
                 <div className="text-center">
                   <span className="text-ik_bluegreydarken2 text-f16 font-normal">
                     July 1, 2024

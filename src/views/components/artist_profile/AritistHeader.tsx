@@ -1,42 +1,21 @@
 import React from "react";
 import ImageComponent from "../ImageComponent";
-import EnquirePopup from "../popup/EnquirePopup";
-import CustomButton from "../form-fields/CustomButton";
-import BusinessEditPopup from "../popup/BusinessEditPopup";
-import PostUpdatePapup from "../popup/PostUpdatePapup";
+import AritistEnquirePopup from "../popup/AritistEnquirePopup";
 
 type Props = {
   ListHeader: any;
 };
 
-const ListingHeaderComponents = (props: Props) => {
+const AritistHeaderComponents = (props: Props) => {
   const { ListHeader } = props;
-  const [opencity, setOpencity] = React.useState(false);
-  const [openbusinessedit, setOpenbusinessedit] = React.useState(false);
-  const [openUpdate, setOpenUpdate] = React.useState(false);
+  const [openEnquire, setOpenEnquire] = React.useState(false);
 
-  const handleClickOpencity = () => {
-    setOpencity(true);
+  const handleClickOpenEnquire = () => {
+    setOpenEnquire(true);
   };
 
-  const handleClosecity = () => {
-    setOpencity(false);
-  };
-
-  const handleClickOpenbusiness = () => {
-    setOpenbusinessedit(true);
-  };
-
-  const handleClosebusiness = () => {
-    setOpenbusinessedit(false);
-  };
-
-  const handleClickUpdate = () => {
-    setOpenUpdate(true);
-  };
-
-  const handleCloseUpdate = () => {
-    setOpenUpdate(false);
+  const handleCloseEnquire = () => {
+    setOpenEnquire(false);
   };
   return (
     <>
@@ -46,10 +25,10 @@ const ListingHeaderComponents = (props: Props) => {
             <div className="h-[70px] w-[100px] flex items-center  ">
               <ImageComponent
                 src={ListHeader.logo}
-                width={120}
-                height={120}
+                width={132}
+                height={132}
                 alt={"music-logo"}
-                className={"rounded-xl"}
+                className={"rounded-full"}
               />
             </div>
             <div className="">
@@ -65,7 +44,6 @@ const ListingHeaderComponents = (props: Props) => {
                     alt={"location"}
                   />
                   <span className="text-16 font-normal text-ik_bluegreydarken3">
-                    Chennai
                     {ListHeader.location}
                   </span>
                 </div>
@@ -138,7 +116,7 @@ const ListingHeaderComponents = (props: Props) => {
               <div>
                 <button
                   className=" h-100 px-16 py-6 bg-ik_pink text-white text-f20  font-semibold rounded-lg"
-                  onClick={handleClickOpencity}
+                  onClick={handleClickOpenEnquire}
                 >
                   <span>Enquire</span>
                 </button>
@@ -164,20 +142,12 @@ const ListingHeaderComponents = (props: Props) => {
           </div>
         </div>
       </section>
-      {openUpdate && (
-        <PostUpdatePapup handleClose={handleCloseUpdate} open={openUpdate} />
-      )}
-      {opencity && (
-        <EnquirePopup handleClose={handleClosecity} open={opencity} />
-      )}
-      {openbusinessedit && (
-        <BusinessEditPopup
-          handleClose={handleClosebusiness}
-          open={openbusinessedit}
-        />
+
+      {openEnquire && (
+        <AritistEnquirePopup handleClose={handleCloseEnquire} open={openEnquire} />
       )}
     </>
   );
 };
 
-export default ListingHeaderComponents;
+export default AritistHeaderComponents;

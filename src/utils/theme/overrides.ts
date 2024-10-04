@@ -144,7 +144,7 @@ export function overrides(theme: Theme) {
     MuiPaper: {
       styleOverrides: {
         root: {
-          padding: "15px 0px 15px 0px",
+          padding: "15px 16px 15px 16px",
           [theme.breakpoints.down("sm")]: {
             padding: "13px 13px",
           },
@@ -323,10 +323,10 @@ export function overrides(theme: Theme) {
             "& fieldset": {
               border: "none",
             },
-            "& .-MuiFormLabel-root":{
+            "& .-MuiFormLabel-root": {
               color: theme.palette.customColor.ik_bluegreydarken3,
-            }
-          }
+            },
+          },
         },
         {
           props: { variant: "customtextarea" },

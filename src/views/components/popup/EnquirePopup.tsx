@@ -33,8 +33,8 @@ export default function EnquirePopup({ handleClose, open }: EnquirePopupProps) {
       },
     });
 
-    const onSubmit = (data: any) => {
-      console.log(data);
+    const onSubmit = () => {
+
     };
   return (
     <Dialog
@@ -116,7 +116,7 @@ export default function EnquirePopup({ handleClose, open }: EnquirePopupProps) {
               <CustomButton
                 variant="contained"
                 label={"Continue"}
-                className="text-f12 font-semibold text-ik_pink-foreground"
+                className="text-f18 font-semibold text-ik_pink-foreground px-[51px] py-4"
               />
             </div>
           </form>

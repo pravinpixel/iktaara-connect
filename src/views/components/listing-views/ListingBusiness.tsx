@@ -3,16 +3,26 @@ import React from "react";
 import ImageComponent from "../ImageComponent";
 import { Rating } from "@mui/material";
 import CustomButton from "../form-fields/CustomButton";
+import ReviewsPopup from "../popup/ReviewsPopup";
 
 const ListingBusinessComponents = () => {
   const [value, setValue] = React.useState<number | null>(0);
+  const [openreview, setOpenreview] = React.useState(false);
+
+  const handleClickOpenreview = () => {
+    setOpenreview(true);
+  };
+
+  const handleClosereview = () => {
+    setOpenreview(false);
+  };
 
   return (
     <>
       <section className="mb-5">
         <div className="text-f26 font-bold mb-2">
           <h6 className="text-ik_bluegreydarken3">
-            Business <span className="text-ik_pink">Reviews</span>
+            Business <span className="text-ik_pink">reviews</span>
           </h6>
         </div>
 
@@ -48,8 +58,13 @@ const ListingBusinessComponents = () => {
                       />
                     </div>
                     <div className="mt-2">
-                      <button className="py-3.5 px-5 border border-ik_bluegreylightens3 bg-ik_white rounded-lg">
-                        <span>Write a Review</span>
+                      <button
+                        className="py-3.5 px-5 border border-ik_bluegreylightens3 bg-ik_white rounded-lg "
+                        onClick={handleClickOpenreview}
+                      >
+                        <span className="font-semibold text-f18 text-ik_bluegreydarken3">
+                          Write a review
+                        </span>
                       </button>
                     </div>
                   </div>
@@ -82,7 +97,7 @@ const ListingBusinessComponents = () => {
                   <CustomButton
                     variant="contained"
                     label="Enquire"
-                    className="w-full"
+                    className="w-full px-12 py-3"
                   />
                 </div>
               </div>
@@ -90,6 +105,9 @@ const ListingBusinessComponents = () => {
           </Grid>
         </Grid>
       </section>
+      {openreview && (
+        <ReviewsPopup handleClose={handleClosereview} open={openreview} />
+      )}
     </>
   );
 };
