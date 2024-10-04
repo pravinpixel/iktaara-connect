@@ -44,7 +44,10 @@ const NextSection = ({
             width={54}
             height={54}
           />
-          <CustomButton label="Next"></CustomButton>
+          <CustomButton
+            label="Next"
+            className="w-[217px] h-[54px]"
+          ></CustomButton>
         </Stack>
       </CustomContainer>
     </Box>

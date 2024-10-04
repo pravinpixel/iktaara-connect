@@ -32,7 +32,7 @@ const EventHosting = () => {
       {" "}
       <Box className="">
         <Grid container>
-          <Grid item xs={3} className="bg-ik_blue h-[991px]">
+          <Grid item xs={3} className="bg-ik_blue h-[100vh]">
             <Box className="h-[100vh] overflow-y-hidden fixed">
               <VerticalLinearStepper onStepChange={handleStepChange} />
               {/* <Box className="">
