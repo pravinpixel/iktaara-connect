@@ -10,6 +10,8 @@ import StepperContent from "@/views/components/event-hostingcomponent/StepperCon
 import NextSection from "@/views/components/event-book/NextSection";
 
 import dynamic from "next/dynamic";
+import StepperContentTwo from "@/views/components/event-hostingcomponent/StepperContentTwo";
+import StepperContentThree from "@/views/components/event-hostingcomponent/StepperContentThree";
 
 const StepperContentOne = dynamic(
   () => import("@/views/components/event-hostingcomponent/StepperContentOne")
@@ -65,7 +67,7 @@ const EventHosting = () => {
             )}
             {activeStep === 2 && (
               <>
-                <StepperContent />
+                <StepperContentOne />
                 <NextSection
                   key="next-section"
                   justifyContent="flex-start"
@@ -75,7 +77,7 @@ const EventHosting = () => {
             )}
             {activeStep === 3 && (
               <>
-                <StepperContent />
+                <StepperContentTwo />
                 <NextSection
                   key="next-section"
                   justifyContent="flex-start"
@@ -85,7 +87,7 @@ const EventHosting = () => {
             )}
             {activeStep === 4 && (
               <>
-                <StepperContent />
+                <StepperContentThree />
                 <NextSection
                   key="next-section"
                   justifyContent="flex-start"
