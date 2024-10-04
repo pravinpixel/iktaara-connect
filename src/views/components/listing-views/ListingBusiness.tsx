@@ -3,19 +3,9 @@ import React from "react";
 import ImageComponent from "../ImageComponent";
 import { Rating } from "@mui/material";
 import CustomButton from "../form-fields/CustomButton";
-import Startedpopup from "../popup/Startedpopup";
 
 const ListingBusinessComponents = () => {
   const [value, setValue] = React.useState<number | null>(0);
-   const [open, setOpen] = React.useState(false);
-
-    const handleClickOpen = () => {
-      setOpen(true);
-    };
-
-    const handleClose = () => {
-      setOpen(false);
-    };
 
   return (
     <>
@@ -93,7 +83,6 @@ const ListingBusinessComponents = () => {
                     variant="contained"
                     label="Enquire"
                     className="w-full"
-                    onClick={handleClickOpen}
                   />
                 </div>
               </div>
@@ -101,7 +90,6 @@ const ListingBusinessComponents = () => {
           </Grid>
         </Grid>
       </section>
-      {open && <Startedpopup handleClose={handleClose} open={open} />}
     </>
   );
 };

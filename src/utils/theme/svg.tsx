@@ -514,9 +514,9 @@ export const TimepickerIcon = (props: SvgIconOwnProps) =>
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="5"
-        height="5"
-        viewBox="0 0 20 15"
+        width="2"
+        height="2"
+        viewBox="0 0 19 5"
         fill="none"
       >
         <path

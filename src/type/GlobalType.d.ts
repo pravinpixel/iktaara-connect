@@ -30,14 +30,10 @@ type ToastPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right" |
 
 type TypeSuggestion = 'login' | 'register' | 'event' | 'business'
 
-type PopupType = {
-	type?: TypeSuggestion,
-	nextStep?: TypeSuggestion
-}
 
 type StoreState = {
 	token: string | null;
-	popup: PopupType;
+	popup: TypeSuggestion | null;
 	setToken: (token: string | null) => void;
-	setPopup: (popup: PopupType) => void;
+	setPopup: (popup: TypeSuggestion | null) => void;
 };

@@ -5,10 +5,7 @@ import { create } from "zustand";
 const zustandStore = create<StoreState>((set) => ({
   token: null,
   setToken: (token: string | null) => set({ token }),
-  popup: {
-    type: undefined,
-    option: false,
-  },
+  popup: null,
   setPopup: (popup) => set({ popup })
 }));
 
