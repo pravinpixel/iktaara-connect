@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React from "react";
+import React, { useState } from "react";
 
 import { Box, Grid } from "@mui/material";
 
 import VerticalLinearStepper from "@/views/components/event-hostingcomponent/Stepper";
 import StepperContent from "@/views/components/event-hostingcomponent/StepperContent";
-import ImageComponent from "@/views/components/ImageComponent";
+// import ImageComponent from "@/views/components/ImageComponent";
 import NextSection from "@/views/components/event-book/NextSection";
 
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 
-// const NextSection = dynamic(
-//   () => import("@/views/components/event-book/NextSection")
-// );
+const StepperContentOne = dynamic(
+  () => import("@/views/components/event-hostingcomponent/StepperContentOne")
+);
 // const VenueSection = dynamic(
 //   () => import("@/views/components/event-book/VenueSection")
 // );
@@ -21,14 +21,18 @@ import NextSection from "@/views/components/event-book/NextSection";
 //   () => import("@/views/components/event-book/BookTicket")
 // );
 const EventHosting = () => {
+  const [activeStep, setActiveStep] = useState(0);
+  const handleStepChange = (step) => {
+    setActiveStep(step);
+  };
   return (
     <>
       {" "}
       <Box className="">
         <Grid container>
-          <Grid item xs={3} className="bg-ik_blue height-[991px]">
+          <Grid item xs={3} className="bg-ik_blue h-[991px]">
             <Box className="h-[100vh] overflow-y-hidden fixed">
-              <VerticalLinearStepper />
+              <VerticalLinearStepper onStepChange={handleStepChange} />
               {/* <Box className="">
                 <ImageComponent
                   src={"/images/static/image_45.png"}
@@ -38,215 +42,62 @@ const EventHosting = () => {
               </Box> */}
             </Box>
           </Grid>
-          <Grid item xs={7}>
-            <StepperContent />
-            <NextSection
-              key="next-section"
-              justifyContent="flex-start"
-              className="fixed bottom-0 w-full"
-            />
+          <Grid item xs={9}>
+            {activeStep === 0 && (
+              <>
+                <StepperContent />
+                <NextSection
+                  key="next-section"
+                  justifyContent="flex-start"
+                  className="fixed bottom-0 w-full"
+                />
+              </>
+            )}
+            {activeStep === 1 && (
+              <>
+                <StepperContentOne />
+                <NextSection
+                  key="next-section"
+                  justifyContent="flex-start"
+                  className="fixed bottom-0 w-full"
+                />
+              </>
+            )}
+            {activeStep === 2 && (
+              <>
+                <StepperContent />
+                <NextSection
+                  key="next-section"
+                  justifyContent="flex-start"
+                  className="fixed bottom-0 w-full"
+                />
+              </>
+            )}
+            {activeStep === 3 && (
+              <>
+                <StepperContent />
+                <NextSection
+                  key="next-section"
+                  justifyContent="flex-start"
+                  className="fixed bottom-0 w-full"
+                />
+              </>
+            )}
+            {activeStep === 4 && (
+              <>
+                <StepperContent />
+                <NextSection
+                  key="next-section"
+                  justifyContent="flex-start"
+                  className="fixed bottom-0 w-full"
+                />
+              </>
+            )}
           </Grid>
         </Grid>
       </Box>
     </>
   );
 };
-// export const getServerSideProps = wrapper.getServerSideProps(
-//   (store) => async () => {
-//     // Data to return in the catch block
-//     const fallbackData = {
-//       error: 0,
-//       status_code: 200,
-//       message: "Data loaded successfully",
-//       status: "success",
-//       data: {
-//         banners: [
-//           {
-//             id: 1,
-//             event_name: "Title",
-//             banner_image: "/assets/image/events-img.webp",
-//           },
-//           {
-//             id: 2,
-//             event_name: "Title",
-//             banner_image: "/assets/image/events-img.webp",
-//           },
-//           {
-//             id: 3,
-//             event_name: "Title",
-//             banner_image: "/assets/image/events-img.webp",
-//           },
-//           {
-//             id: 4,
-//             event_name: "Title",
-//             banner_image: "/assets/image/events-img.webp",
-//           },
-//         ],
-//         details: [
-//           {
-//             event_name: "Need Singham Dhan by SID SRIRAM",
-//             event_type: "Performance",
-//             event_hosting: "Priya Dhamodharan",
-//             event_description:
-//               "Calling all music lovers! Brace yourselves for the arrival of Nee Singham Dhan, a captivating live concert experience featuring the phenomenal Sid Sriram!",
-//             reasons_to_attend: [
-//               {
-//                 reason:
-//                   "Witness the maestro weave his soulful magic live, fusing Indian classical with contemporary Western influences",
-//               },
-//               {
-//                 reason:
-//                   "Sing along to all your favorites, from the chart-topping Adiye and Inkem Inkem Kavale to the internet sensation Srivalli.",
-//               },
-//               {
-//                 reason:
-//                   "Immerse yourself in a captivating performance by the reigning king of South Indian melodies, known for his ability to transcend genres and captivate audiences across generations",
-//               },
-//             ],
-//             address_line1: "Medai - The Stage, Alwarpet, Chennai",
-//             address_line2: "Medai - The Stage, Alwarpet, Chennai",
-//             city: "varchar",
-//             state: "varchar",
-//             landmark: "varchar",
-//             event_date: "varchar",
-//             event_time: "Saturday, 29 July 2024 @ 7:00 PM",
-//             terms_and_conditions: [
-//               {
-//                 condition: "condition 1",
-//               },
-//               {
-//                 condition: "condition 2",
-//               },
-//               {
-//                 condition: "condition 3",
-//               },
-//             ],
-//             ticket_type: "varchar",
-//           },
-//         ],
-//       },
-//     };
-
-//     const similarData = {
-//       data: [
-//         {
-//           id: 1,
-//           event_name: "varchar",
-//           event_date: "date",
-//           event_type: "varchar",
-//           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
-//         },
-//         {
-//           id: 2,
-//           event_name: "varchar",
-//           event_date: "date",
-//           event_type: "varchar",
-//           event_price: 110,
-//           thumbnail_image: "/images/static/image_23.png",
-//         },
-//         {
-//           id: 3,
-//           event_name: "varchar",
-//           event_date: "date",
-//           event_type: "varchar",
-//           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
-//         },
-//         {
-//           id: 4,
-//           event_name: "varchar",
-//           event_date: "date",
-//           event_type: "varchar",
-//           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
-//         },
-//         {
-//           id: 5,
-//           event_name: "varchar",
-//           event_date: "date",
-//           event_type: "varchar",
-//           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
-//         },
-//         {
-//           id: 6,
-//           event_name: "varchar",
-//           event_date: "date",
-//           event_type: "varchar",
-//           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
-//         },
-//       ],
-//     };
-
-//     const category = {
-//       data: [
-//         {
-//           id: 1,
-//           name: "varchar",
-//           icon: "/images/static/image_24.png",
-//         },
-//         {
-//           id: 2,
-//           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
-//         },
-//         {
-//           id: 3,
-//           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
-//         },
-//         {
-//           id: 4,
-//           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
-//         },
-//         {
-//           id: 5,
-//           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
-//         },
-//         {
-//           id: 6,
-//           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
-//         },
-//       ],
-//     };
-//     const [eventDetailData, similarEventsData, eventCategoryData] =
-//       await Promise.all([
-//         await store
-//           .dispatch(eventDetails())
-//           .unwrap()
-//           .then((res) => res)
-//           .catch(() => {
-//             return fallbackData;
-//           }),
-//         await store
-//           .dispatch(similarEventDetails())
-//           .unwrap()
-//           .then((res) => res)
-//           .catch(() => {
-//             return similarData;
-//           }),
-//         await store
-//           .dispatch(eventCategory())
-//           .unwrap()
-//           .then((res) => res)
-//           .catch(() => {
-//             return category;
-//           }),
-//       ]);
-
-//     return {
-//       props: {
-//         eventDetailData: eventDetailData,
-//         similarEventsData: similarEventsData,
-//         eventCategoryData: eventCategoryData,
-//       },
-//     };
-//   }
-// );
 
 export default EventHosting;

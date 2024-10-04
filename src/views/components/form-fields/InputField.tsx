@@ -29,7 +29,7 @@ function InputField(props: InputFieldType) {
     size = "small",
     sx,
     type,
-
+    className,
     InputProps = {},
   } = props;
   const { control } = useFormContext();
@@ -64,6 +64,7 @@ function InputField(props: InputFieldType) {
         helperText={errorMessage}
         variant="outlined"
         sx={sx}
+        className={className}
         type={showPassword ? "text" : type}
         InputProps={{
           ...InputProps,

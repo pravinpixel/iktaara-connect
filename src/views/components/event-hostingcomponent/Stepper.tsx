@@ -27,19 +27,51 @@ const steps = [
   },
 ];
 
-export default function VerticalLinearStepper() {
+export default function VerticalLinearStepper({ onStepChange }) {
   const [activeStep, setActiveStep] = React.useState(0);
 
+  // const handleNext = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  // };
+
+  // const handleBack = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  // };
+
+  // const handleReset = () => {
+  //   setActiveStep(0);
+  // };
+
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if (activeStep < steps.length - 1) {
+      setActiveStep((prevActiveStep) => {
+        const newStep = prevActiveStep + 1;
+        onStepChange(newStep); // Notify the parent component about the step change
+        return newStep;
+      });
+    }
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    if (activeStep > 0) {
+      setActiveStep((prevActiveStep) => {
+        const newStep = prevActiveStep - 1;
+        onStepChange(newStep); // Notify the parent component about the step change
+        return newStep;
+      });
+    }
   };
 
+  const handleStepClick = (index) => {
+    if (index > activeStep) {
+      handleNext();
+    } else if (index < activeStep) {
+      handleBack();
+    }
+  };
   const handleReset = () => {
     setActiveStep(0);
+    onStepChange(0); // Reset the parent step
   };
 
   return (
@@ -80,7 +112,10 @@ export default function VerticalLinearStepper() {
                 />
               )}
             >
-              <Typography className="font-semibold text-f18 leading-6 text-ik_green-foreground">
+              <Typography
+                className="font-semibold text-f18 leading-6 text-ik_green-foreground cursor-pointer"
+                onClick={() => handleStepClick(index)}
+              >
                 {" "}
                 {step.label}
               </Typography>
@@ -88,6 +123,8 @@ export default function VerticalLinearStepper() {
           </Step>
         ))}
       </Stepper>
+      <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}></Box>
+
       {activeStep === steps.length && (
         <Paper square elevation={0} sx={{ p: 3 }}>
           <Typography>All steps completed - you&apos;re finished</Typography>

@@ -7,6 +7,7 @@ import InputField from "../form-fields/InputField";
 import { Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
+import CustomButton from "../form-fields/CustomButton";
 export default function PromotionalCreatives() {
   const methods = useForm();
   const { control, register } = useForm({
@@ -20,12 +21,12 @@ export default function PromotionalCreatives() {
     required: true,
   });
   return (
-    <Box className="p-6">
+    <Box className="p-6 ">
       <Typography className="text-f22 font-semibold leading-7 text-ik_bluegreydarken3 pb-2">
         Upload Promotional Creatives
       </Typography>
       <Box>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className="max-w-[750px]">
           <Grid item xs={6}>
             {" "}
             <Box className="bg-ik_bluegreylighten5 rounded-md p-5">
@@ -88,6 +89,7 @@ export default function PromotionalCreatives() {
               my={8}
             >
               <InputField
+                className="max-w-[750px]"
                 name="event"
                 placeholder="Need Singham Dhan by SID SRIRAMail"
                 type="text"
@@ -99,6 +101,7 @@ export default function PromotionalCreatives() {
                 }
               ></InputField>
               <InputField
+                className="max-w-[750px]"
                 name="event_description"
                 placeholder="Calling all music lovers! Brace yourselves for the arrival of Nee Singham Dhan, a captivating live concert experience featuring the phenomenal Sid Sriram!"
                 type="text"
@@ -141,39 +144,65 @@ export default function PromotionalCreatives() {
               <div>
                 <div>
                   {fields.map((field, index) => (
-                    <div key={field.id}>
-                      <Box>
-                        <InputField
-                          {...register(
-                            `eventhosting.${index}.event_description`
-                          )}
-                          placeholder="Witness the maestro weave his soulful magic live, fusing Indian classical with contemporary..."
-                          type="text"
-                          InputProps={{ variant: "customEventInput" }}
-                          label={
-                            <Typography className="font-normal text-f16 leading-5 text-ik_bluegreybluegrey">
-                              Reasons to attend (Add a max of 5 points to sell)
-                            </Typography>
-                          }
-                        />
-                        {index != 0 && (
-                          <DeleteIcon onClick={() => remove(index)} />
-                        )}
-                      </Box>
-                    </div>
+                    <Stack
+                      direction="row"
+                      spacing={2}
+                      key={field.id}
+                      mt={1}
+                      alignItems={"center"}
+                    >
+                      <InputField
+                        {...register(`eventhosting.${index}.event_description`)}
+                        placeholder="Witness the maestro weave his soulful magic live, fusing Indian classical with contemporary..."
+                        type="text"
+                        InputProps={{ variant: "customEventInput" }}
+                        label={
+                          <Typography className="font-normal text-f16 leading-5 text-ik_bluegreybluegrey">
+                            Reasons to attend (Add a max of 5 points to sell)
+                          </Typography>
+                        }
+                        // className="max-w-[750px]"
+                        sx={{ width: "750px" }}
+                      />
+                      {index != 0 && (
+                        <>
+                          <Box className="" onClick={() => remove(index)}>
+                            <ImageComponent
+                              src={"/images/static/image_47.png"}
+                              alt=""
+                              width={21}
+                              height={21}
+                            />
+                          </Box>
+                        </>
+                      )}
+                      {/* <Stack direction="row" alignItems={"center"} spacing={2}> */}
+                      {/* <InputField
+                        {...register(`eventhosting.${index}.event_description`)}
+                        placeholder="Witness the maestro weave his soulful magic live, fusing Indian classical with contemporary..."
+                        type="text"
+                        InputProps={{ variant: "customEventInput" }}
+                        className="max-w-[750px]"
+                        label={
+                          <Typography className="font-normal text-f16 leading-5 text-ik_bluegreybluegrey">
+                            Reasons to attend (Add a max of 5 points to sell)
+                          </Typography>
+                        }
+                      />
+                      {index != 0 && (
+                        <DeleteIcon onClick={() => remove(index)} />
+                      )} */}
+                    </Stack>
+                    // </div>
                   ))}
                 </div>
               </div>
-              <Button
+              <CustomButton
                 onClick={() => append({ event_description: "" })}
-                variant="contained"
-                // startIcon={<AddIcon />}
-                className="bg-ik_bluegreylighten5 w-[118px]"
-              >
-                <Typography className="font-bold text-f20 leading-6 text-ik_bluegreydarken3">
-                  Add
-                </Typography>
-              </Button>
+                variant="event-button"
+                label="Add"
+                className="w-[150px]"
+              ></CustomButton>
             </Stack>
           </FormProvider>
         </Box>

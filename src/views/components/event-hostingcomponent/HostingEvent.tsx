@@ -40,11 +40,11 @@ export default function HostingEvent() {
     },
   ];
   return (
-    <Box className="p-6">
+    <Box className="p-6 ">
       <Typography className="text-f22 font-semibold leading-7 text-ik_bluegreydarken3 pb-2">
         Event Hosting
       </Typography>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} className="max-w-[750px]">
         {" "}
         {location?.map((item) => (
           <Grid item xs={6} key={item.id}>

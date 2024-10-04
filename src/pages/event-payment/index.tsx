@@ -454,9 +454,8 @@ const ImageComponent = dynamic(
 const EventPayment = () => {
   const methods = useForm();
 
-  const handleSubmit = (data: any) => {
+  const handleSubmit = () => {
     // Handle form submission logic here
-    console.log(data);
   };
 
   return (

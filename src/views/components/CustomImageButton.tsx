@@ -11,7 +11,7 @@ interface CustomButtonType extends ButtonProps {
 }
 
 function CustomImageButton(props: CustomButtonType) {
-  const { image, variant = "contained", label, ...rest } = props;
+  const { image, variant = "contained", label, width, height, ...rest } = props;
 
   return (
     <Button variant={variant} {...rest} sx={{ textTransform: "capitalize" }}>
@@ -21,7 +21,12 @@ function CustomImageButton(props: CustomButtonType) {
         alignItems={"center"}
         className="p-[4px]"
       >
-        <ImageComponent src={image} alt="Button Image" width={24} height={24} />
+        <ImageComponent
+          src={image}
+          alt="Button Image"
+          width={width ? width : 24}
+          height={height ? height : 24}
+        />
         <p className="font-semibold text-f18 leading-6 ">{label}</p>
       </Stack>
     </Button>

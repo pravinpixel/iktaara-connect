@@ -99,6 +99,23 @@ export function overrides(theme: Theme) {
             },
           },
         },
+        {
+          props: {
+            variant: "event-button",
+          },
+          style: {
+            color: theme.palette.customColor.ik_bluegreydarken3,
+            backgroundColor: theme.palette.customColor.ik_bluegreylighten5,
+            border: `1px solid ${theme.palette.customColor.ik_bluegreylighten5}`,
+            textTransform: "unset",
+
+            "&:hover": {
+              color: theme.palette.customColor.ik_bluegreydarken3,
+              backgroundColor: theme.palette.customColor.ik_bluegreylighten5,
+              border: `1px solid ${theme.palette.customColor.ik_bluegreylighten5}`,
+            },
+          },
+        },
       ],
     },
     MuiLoadingButton: {
