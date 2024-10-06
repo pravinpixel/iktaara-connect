@@ -37,7 +37,7 @@ const VenueListSection = () => {
                 justifyContent: "flex-end",
               }}
             >
-              <CustomButton />
+              <CustomButton className={""} />
             </Grid>
           </Stack>
         </Box>

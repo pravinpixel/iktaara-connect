@@ -42,33 +42,38 @@ export default function VerticalLinearStepper({ onStepChange }) {
   //   setActiveStep(0);
   // };
 
-  const handleNext = () => {
-    if (activeStep < steps.length - 1) {
-      setActiveStep((prevActiveStep) => {
-        const newStep = prevActiveStep + 1;
-        onStepChange(newStep); // Notify the parent component about the step change
-        return newStep;
-      });
-    }
+  // const handleNext = () => {
+  //   if (activeStep < steps.length - 1) {
+  //     setActiveStep((prevActiveStep) => {
+  //       const newStep = prevActiveStep + 1;
+  //       onStepChange(newStep); // Notify the parent component about the step change
+  //       return newStep;
+  //     });
+  //   }
+  // };
+
+  // const handleBack = () => {
+  //   if (activeStep > 0) {
+  //     setActiveStep((prevActiveStep) => {
+  //       const newStep = prevActiveStep - 1;
+  //       onStepChange(newStep); // Notify the parent component about the step change
+  //       return newStep;
+  //     });
+  //   }
+  // };
+
+  const handleStepClick = (index: number) => {
+    setActiveStep(index);
+    onStepChange(index); // Notify parent component about the change
   };
 
-  const handleBack = () => {
-    if (activeStep > 0) {
-      setActiveStep((prevActiveStep) => {
-        const newStep = prevActiveStep - 1;
-        onStepChange(newStep); // Notify the parent component about the step change
-        return newStep;
-      });
-    }
-  };
-
-  const handleStepClick = (index) => {
-    if (index > activeStep) {
-      handleNext();
-    } else if (index < activeStep) {
-      handleBack();
-    }
-  };
+  // const handleStepClick = (index) => {
+  //   if (index > activeStep) {
+  //     handleNext();
+  //   } else if (index < activeStep) {
+  //     handleBack();
+  //   }
+  // };
   const handleReset = () => {
     setActiveStep(0);
     onStepChange(0); // Reset the parent step

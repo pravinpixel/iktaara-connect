@@ -28,7 +28,7 @@ export default function StepperContentThree() {
     <>
       <FormProvider {...methods}>
         {" "}
-        <Box className="p-6 ">
+        <Box className="p-6 mb-[50px]">
           <Typography className="text-f16 font-normal leading-5 text-ik_bluegreybluegrey pb-2">
             Term and conditions
           </Typography>

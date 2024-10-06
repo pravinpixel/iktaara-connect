@@ -603,32 +603,49 @@ const PricingSummary = () => {
           ₹ 50000
         </Typography>
       </Box>
-      <Box className="flex justify-between my-2">
-        <Typography className="font-normal text-f18 leading-5 text-ik_bluegreydarken6 ">
-          Booking Fee
-        </Typography>
-        <Typography className="font-normal text-f20 leading-5 text-ik_bluegreydarken6 ">
-          ₹ 50000
-        </Typography>
-      </Box>
-      <Box className="bg-ik_bluegreylighten5 rounded-xl p-3">
-        <Box className="flex justify-between my-2">
-          <Typography className="font-normal text-f16 leading-4 text-ik_bluegreydarken6 ">
-            Base Fee
-          </Typography>
-          <Typography className="font-normal text-f16 leading-4 text-ik_bluegreydarken6 ">
-            ₹ 50000
-          </Typography>
-        </Box>
-        <Box className="flex justify-between my-2">
-          <Typography className="font-normal text-f16 leading-4 text-ik_bluegreydarken6 ">
-            GST
-          </Typography>
-          <Typography className="font-normal text-f16 leading-4 text-ik_bluegreydarken6 ">
-            ₹ 50000
-          </Typography>
-        </Box>
-      </Box>
+      <Accordion
+        sx={{
+          boxShadow: "none",
+          p: 0,
+          "& .MuiButtonBase-root.MuiAccordionSummary-root": {
+            p: 0,
+          },
+        }}
+      >
+        <AccordionSummary aria-controls="panel1-content" id="panel1-header">
+          <ExpandMoreIcon />
+          <Stack direction="row" alignItems="center" spacing={19}>
+            <Typography className="font-normal text-f18 leading-5 text-ik_bluegreydarken6 ">
+              Booking Fee
+            </Typography>
+            <Typography className="font-normal text-f20 leading-5 text-ik_bluegreydarken6 ">
+              ₹ 50000
+            </Typography>
+          </Stack>
+        </AccordionSummary>
+        <AccordionDetails sx={{ p: 0 }}>
+          {" "}
+          <Box className="bg-ik_bluegreylighten5 rounded-xl p-3">
+            <Box className="flex justify-between my-2">
+              <Typography className="font-normal text-f16 leading-4 text-ik_bluegreydarken6 ">
+                Base Fee
+              </Typography>
+              <Typography className="font-normal text-f16 leading-4 text-ik_bluegreydarken6 ">
+                ₹ 50000
+              </Typography>
+            </Box>
+            <Box className="flex justify-between my-2">
+              <Typography className="font-normal text-f16 leading-4 text-ik_bluegreydarken6 ">
+                GST
+              </Typography>
+              <Typography className="font-normal text-f16 leading-4 text-ik_bluegreydarken6 ">
+                ₹ 50000
+              </Typography>
+            </Box>
+          </Box>
+        </AccordionDetails>
+      </Accordion>
+
       <Box className="flex justify-between my-2">
         <Typography className="font-normal text-f18 leading-5 text-ik_bluegreydarken6 ">
           Convenience Fee

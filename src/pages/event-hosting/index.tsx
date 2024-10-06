@@ -30,10 +30,10 @@ const EventHosting = () => {
   return (
     <>
       {" "}
-      <Box className="">
-        <Grid container>
-          <Grid item xs={3} className="bg-ik_blue h-[100vh]">
-            <Box className="h-[100vh] overflow-y-hidden fixed">
+      <Box className="h-[100vh] overflow-hidden">
+        <Grid container className="h-full">
+          <Grid item xs={3} className="bg-ik_blue h-full">
+            <Box className="h-[100vh] fixed w-[25%]">
               <VerticalLinearStepper onStepChange={handleStepChange} />
               {/* <Box className="">
                 <ImageComponent
@@ -44,57 +44,59 @@ const EventHosting = () => {
               </Box> */}
             </Box>
           </Grid>
-          <Grid item xs={9}>
-            {activeStep === 0 && (
-              <>
-                <StepperContent />
-                <NextSection
-                  key="next-section"
-                  justifyContent="flex-start"
-                  className="fixed bottom-0 w-full"
-                />
-              </>
-            )}
-            {activeStep === 1 && (
-              <>
-                <StepperContentOne />
-                <NextSection
-                  key="next-section"
-                  justifyContent="flex-start"
-                  className="fixed bottom-0 w-full"
-                />
-              </>
-            )}
-            {activeStep === 2 && (
-              <>
-                <StepperContentOne />
-                <NextSection
-                  key="next-section"
-                  justifyContent="flex-start"
-                  className="fixed bottom-0 w-full"
-                />
-              </>
-            )}
-            {activeStep === 3 && (
-              <>
-                <StepperContentTwo />
-                <NextSection
-                  key="next-section"
-                  justifyContent="flex-start"
-                  className="fixed bottom-0 w-full"
-                />
-              </>
-            )}
-            {activeStep === 4 && (
-              <>
-                <StepperContentThree />
-                <NextSection
-                  key="next-section"
-                  justifyContent="flex-start"
-                  className="fixed bottom-0 w-full"
-                />
-              </>
-            )}
+          <Grid item xs={9} className="h-full">
+            <Box className="h-full overflow-y-auto" style={{ padding: "16px" }}>
+              {activeStep === 0 && (
+                <>
+                  <StepperContent />
+                  <NextSection
+                    key="next-section"
+                    justifyContent="flex-start"
+                    className="fixed bottom-0 w-full"
+                  />
+                </>
+              )}
+              {activeStep === 1 && (
+                <>
+                  <StepperContentOne />
+                  <NextSection
+                    key="next-section"
+                    justifyContent="flex-start"
+                    className="fixed bottom-0 w-full"
+                  />
+                </>
+              )}
+              {activeStep === 2 && (
+                <>
+                  <StepperContentOne />
+                  <NextSection
+                    key="next-section"
+                    justifyContent="flex-start"
+                    className="fixed bottom-0 w-full"
+                  />
+                </>
+              )}
+              {activeStep === 3 && (
+                <>
+                  <StepperContentTwo />
+                  <NextSection
+                    key="next-section"
+                    justifyContent="flex-start"
+                    className="fixed bottom-0 w-full"
+                  />
+                </>
+              )}
+              {activeStep === 4 && (
+                <>
+                  <StepperContentThree />
+                  <NextSection
+                    key="next-section"
+                    justifyContent="flex-start"
+                    className="fixed bottom-0 w-full"
+                  />
+                </>
+              )}
+            </Box>
           </Grid>
         </Grid>
       </Box>
