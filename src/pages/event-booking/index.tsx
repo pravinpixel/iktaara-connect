@@ -21,7 +21,7 @@ const EventsBooking = () => {
       <Box className="bg-ik_lightblue">
         <BookingTicket />
         <VenueSection />
-        <NextSection />
+        <NextSection className={""} />
       </Box>
     </>
   );

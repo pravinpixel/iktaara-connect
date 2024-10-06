@@ -24,7 +24,7 @@ const StepperContentOne = dynamic(
 // );
 const EventHosting = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const handleStepChange = (step) => {
+  const handleStepChange = (step: number) => {
     setActiveStep(step);
   };
   return (

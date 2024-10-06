@@ -20,6 +20,7 @@ const StudioCard = dynamic(
 
 // import { ThemeContext } from "@emotion/react";s
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Listings = ({ buisnessListData }: any) => {
   return (
     <>
@@ -152,6 +153,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
       await store
         .dispatch(buisnessListingApi())
         .unwrap()
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .then((res: any) => res)
         .catch(() => {
           return fallbackData;

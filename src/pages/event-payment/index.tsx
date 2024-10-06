@@ -490,7 +490,7 @@ const EventPayment = () => {
                     <InputField sx={{ width: "50%", mt: 2 }} />
                     <InputField sx={{ width: "50%", mt: 2 }} />
                     <Box className="mt-2 flex gap-3">
-                      <CustomButton label="Verify with OTP" />
+                      <CustomButton label="Verify with OTP" className={""} />
                       <CustomButton
                         label="Login with Password"
                         variant="payment-button"
@@ -544,7 +544,7 @@ const EventPayment = () => {
                     </Stack>
                   </Box>
                   <Box className="mt-4">
-                    <CustomButton label="Payment" />
+                    <CustomButton label="Payment" className={""} />
                   </Box>
                 </AccordionDetails>
               </Accordion>
@@ -643,7 +643,7 @@ const PricingSummary = () => {
       </Box>
       <Box className="flex justify-between">
         <InputField />
-        <CustomButton label="Apply" />
+        <CustomButton label="Apply" className={""} />
       </Box>
       <Box className="inline-flex my-3 gap-1 bg-ik_whitevariant p-2 rounded-lg">
         <ImageComponent

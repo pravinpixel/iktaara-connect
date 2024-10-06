@@ -26,7 +26,7 @@ const AboutIktaraaEvents = dynamic(
   () => import("@/views/components/events-new/AboutIktaraaEvents")
 );
 const FrequentlyAskedSection = dynamic(
-  () => import("@/views/components/home/frequentlyAsked")
+  () => import("@/views/components/home/FrequentlyAsked")
 );
 const EventsByCategory = dynamic(
   () => import("@/views/components/events-new/EventsByCategory")
@@ -34,8 +34,6 @@ const EventsByCategory = dynamic(
 // import { eventHome } from "@/redux/services/eventService";
 
 const EventsHome = ({ eventData, eventCategoryData }: any) => {
-  console.log(eventCategoryData, "eventCategoryData");
-
   const Category = {
     pianist: [
       {

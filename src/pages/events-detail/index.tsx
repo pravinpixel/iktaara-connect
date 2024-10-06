@@ -35,8 +35,6 @@ const EventsDetails = ({
   similarEventsData,
   eventCategoryData,
 }: any) => {
-  console.log(similarEventsData, "dddd");
-
   return (
     <>
       <EventsTitle label="Events" subLabel="in Chennai" />
