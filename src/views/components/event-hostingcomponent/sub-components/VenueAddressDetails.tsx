@@ -40,18 +40,15 @@ const VenueAddressDetails = () => {
               </Box>
 
               <Box>
-                <Typography className="text-f18 font-semibold leading-6 text-ik_bluegreydarken3 ">
-                  Narada Gana Sabha in Alwarpet, Chennai
-                </Typography>
-                <Typography className="text-f18 font-normal leading-6 text-ik_bluegreydarken1">
-                  No 314, Ttk Road, 
-                </Typography>
-                <Typography className="text-f18 font-normal leading-6 text-ik_bluegreydarken1">
-                  Alwarpet, Chennai - 600018
-                </Typography>
-                <Typography className="text-f18 font-normal leading-6 text-ik_bluegreydarken1">
-                  Near Sankara Hall
-                </Typography>
+                <Stack direction="row">
+                  {" "}
+                  <Typography className="text-f18 font-semibold leading-6 text-ik_bluegreydarken3 ">
+                    July 20,2024
+                  </Typography>
+                  <Typography className="text-f18 font-normal leading-6 text-ik_bluegreydarken1">
+                    09:00 AM - 10:00 AM (1hr)
+                  </Typography>
+                </Stack>
               </Box>
             </Stack>
             <Box>
