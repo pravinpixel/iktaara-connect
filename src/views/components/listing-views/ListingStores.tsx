@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import CaetComponent from "../cart-component";
+import TitleComponent from "../TitleComponent";
 
 const ListingStoresComponents = () => {
   const musictechnician_data = [
@@ -108,11 +109,7 @@ const ListingStoresComponents = () => {
   };
   return (
     <section className="mb-14 pt-5">
-      <div className="text-f26 font-bold mb-5">
-        <h6 className="text-ik_bluegreydarken3 ">
-          Most Viewed <span className="text-ik_pink">Stores</span>
-        </h6>
-      </div>
+      <TitleComponent first_title="Most Viewed" seconds_title="Stores" />
       <div className="music-section-sec">
         <Slider {...settings}>
           {musictechnician_data?.map((row) => (

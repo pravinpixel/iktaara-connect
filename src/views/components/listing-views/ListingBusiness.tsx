@@ -4,6 +4,7 @@ import ImageComponent from "../ImageComponent";
 import { Rating } from "@mui/material";
 import CustomButton from "../form-fields/CustomButton";
 import ReviewsPopup from "../popup/ReviewsPopup";
+import TitleComponent from "../TitleComponent";
 
 const ListingBusinessComponents = () => {
   const [value, setValue] = React.useState<number | null>(0);
@@ -20,11 +21,7 @@ const ListingBusinessComponents = () => {
   return (
     <>
       <section className="mb-5">
-        <div className="text-f26 font-bold mb-2">
-          <h6 className="text-ik_bluegreydarken3">
-            Business <span className="text-ik_pink">reviews</span>
-          </h6>
-        </div>
+        <TitleComponent first_title="Business" seconds_title="reviews" />
 
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>

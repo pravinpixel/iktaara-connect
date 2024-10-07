@@ -23,7 +23,7 @@ const Layouts = ({ children }: LayoutsTypes) => {
           <Header />
         </div>
         <div
-          className={`mt-[73px]  h-[calc(100vh-73px)] flex overflow-hidden overflow-y-auto flex-col`}
+          className={`mt-[72px]  h-[calc(100vh-73px)] flex overflow-hidden overflow-y-auto flex-col`}
         >
           {children}
           {url === "event-hosting" ? "" : <Footer />}

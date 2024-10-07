@@ -6,7 +6,8 @@ import { Select } from "@mui/material";
 import { useController, useFormContext } from "react-hook-form";
 // import { selectArrow } from "../../../utils/helpers/assetHelper";
 import { FormHelperText } from "@mui/material";
-import { TimepickerIcon } from "@/utils/theme/svg";
+// import { TimepickerIcon } from "@/utils/theme/svg";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 // const CustomSelectIcon = styled("div")({
 //   contain: '',
@@ -77,7 +78,7 @@ const SelectField = (props: {
           sx={{ mt: 1, width: "100%" }}
           {...field}
           variant="outlined"
-          IconComponent={TimepickerIcon}
+          IconComponent={KeyboardArrowDownIcon}
           error={!!errorMessage}
           displayEmpty
           MenuProps={{

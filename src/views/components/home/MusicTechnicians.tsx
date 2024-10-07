@@ -76,7 +76,7 @@ const MusicTechnicians = (props: Props) => {
             <span>{title}</span>
           </div>
           <div>
-            <button>
+            <button className="pt-[6px]">
               <span className=" text-f18 text-ik_pink font-normal">
                 View All
               </span>

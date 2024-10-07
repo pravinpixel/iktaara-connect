@@ -1,5 +1,6 @@
 import { Grid, } from '@mui/material';
 import React from 'react'
+import TitleComponent from '../TitleComponent';
 
 const ListingAboutComponents = () => {
     const pivkup_data = [
@@ -41,11 +42,7 @@ const ListingAboutComponents = () => {
         ))}
       </Grid>
       <div className="py-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
-        <div className="text-f26 font-bold mb-2">
-          <h6 className="text-ik_bluegreydarken3">
-            About <span className="text-ik_pink">Studio</span>
-          </h6>
-        </div>
+        <TitleComponent first_title="About" seconds_title="Studio" />
         <div className="text-f18 font-normal text-ik_bluegreydarken2">
           <p>
             Musee Musicals is an initiative by the founders of the oldest
@@ -58,11 +55,7 @@ const ListingAboutComponents = () => {
         </div>
       </div>
       <div className="py-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
-        <div className="text-f26 font-bold mb-2">
-          <h6 className="text-ik_bluegreydarken3">
-            Services <span className="text-ik_pink">Offered</span>
-          </h6>
-        </div>
+        <TitleComponent first_title="Services" seconds_title="Offered" />
         <div className="text-f18 font-normal text-ik_bluegreydarken2 ">
           <div className="paragraph-Ctr">
             <ul className="text-f18 font-normal text-ik_bluegreydarken3">
@@ -74,12 +67,9 @@ const ListingAboutComponents = () => {
           </div>
         </div>
       </div>
+
       <div className="py-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
-        <div className="text-f26 font-bold mb-2">
-          <h6 className="text-ik_bluegreydarken3">
-            Available <span className="text-ik_pink"> Facilities</span>
-          </h6>
-        </div>
+        <TitleComponent first_title="Available" seconds_title="Facilities" />
         <Grid container>
           <Grid item xs={12} md={6}>
             <div className="text-f18 font-normal text-ik_bluegreydarken2 ">
@@ -109,12 +99,9 @@ const ListingAboutComponents = () => {
           </Grid>
         </Grid>
       </div>
+
       <div className="py-5">
-        <div className="text-f26 font-bold mb-2">
-          <h6 className="text-ik_bluegreydarken3">
-            Store <span className="text-ik_pink"> Hours</span>
-          </h6>
-        </div>
+        <TitleComponent first_title="Store" seconds_title="Hours" />
         <div className="text-f18 font-normal text-ik_bluegreydarken2">
           <span>Open 24/7</span>
         </div>

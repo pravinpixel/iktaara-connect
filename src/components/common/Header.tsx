@@ -16,6 +16,7 @@ import { AutoCompleteSearch } from "./AutoCompleteSearch";
 import Slider from "react-slick";
 import Startedpopup from "@/views/components/popup/Startedpopup";
 import zustandStore from "@/utils/helpers/zustand";
+import CustomImageButton from "@/views/components/CustomImageButton";
 
 const Header = () => {
 
@@ -125,8 +126,6 @@ const Header = () => {
         setPopup("login");
     };
 
-
-
     const handleMouseEnter = (value: string) => {
         setSelected(value);
     };
@@ -136,122 +135,131 @@ const Header = () => {
     };
 
     return (
-        <div className="shadow-md">
-            <CustomContainer>
-                <div className={`w-ful h-[${NAV.height}]  flex items-center justify-between `}>
-                    <div className="flex items-center justify-between gap-5 w-100">
-                        <div className="h-[71px] w-[110px] flex items-center">
-                            <Link href="/">
-                                <ImageComponent
-                                    src={"assets/logo/logo.svg"}
-                                    width={158}
-                                    height={60}
-                                    alt={"iktaraa"}
-                                    priority={true}
-                                />
-                            </Link>
-                        </div>
-                        <div>
-                            <button
-                                className="flex items-center gap-2"
-                                onClick={handleClickOpencity}
-                            >
-                                <ImageComponent
-                                    src={"assets/icons/location.svg"}
-                                    width={12}
-                                    height={15}
-                                    alt={"location"}
-                                    priority={true}
-                                />
-                                <span className="text-f12">Chennai</span>
-                                <ImageComponent
-                                    src={"assets/icons/arrowdown.svg"}
-                                    width={13}
-                                    height={6}
-                                    alt={"arrowdown"}
-                                    priority={true}
-                                />
-                            </button>
-                        </div>
-                        <div className="w-auto">
-                            <AutoCompleteSearch
-                                placeholder={"Find artists, sound engineers, bands..."}
-                                typeheader={true}
-                                typebanner={false}
-                            />
-                        </div>
+      <div className="shadow-md">
+        <CustomContainer>
+          <div
+            className={`w-ful h-[${NAV.height}]  flex items-center justify-between `}
+          >
+            <div className="flex items-center justify-between gap-5 w-100">
+              <div className="h-[71px] w-[110px] flex items-center">
+                <Link href="/">
+                  <ImageComponent
+                    src={"assets/logo/logo.svg"}
+                    width={158}
+                    height={81}
+                    alt={"iktaraa"}
+                  />
+                </Link>
+              </div>
+              <div>
+                <button
+                  className="flex items-center gap-2"
+                  onClick={handleClickOpencity}
+                >
+                  <ImageComponent
+                    src={"assets/icons/location.svg"}
+                    width={17}
+                    height={21}
+                    alt={"location"}
+                  />
+                  <span className="text-f16 text-ik_bluegreydarken3 font-normal">
+                    Chennai
+                  </span>
+                  <ImageComponent
+                    src={"assets/icons/arrowdown.svg"}
+                    width={14}
+                    height={7}
+                    alt={"arrowdown"}
+                  />
+                </button>
+              </div>
+              <div className="w-auto">
+                <AutoCompleteSearch
+                  placeholder={"Find artists, sound engineers, bands..."}
+                  typeheader={true}
+                  typebanner={false}
+                />
+              </div>
+            </div>
+            <div
+              className="flex items-center gap-3"
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="relative">
+                <button
+                  className="flex items-center gap-2 hover:text-ik_whitevariant-foreground hover:underline underline-offset-8 decoration-2"
+                  onMouseEnter={() => handleMouseEnter("Services")}
+                >
+                  <span className="text-f16 text-ik_bluegreydarken3 font-semibold transition-colors duration-200 ease-in-out ">
+                    Services
+                  </span>
+                  <ArrowdownIcon
+                    sx={{
+                      fontSize: "13px",
+                    }}
+                  />
+                </button>
+              </div>
+              <CustomButton
+                variant="primary-button"
+                label={"List Business/Talent"}
+                className="text-f16 font-semibold py-3.5 px-5"
+                onClick={handleClickOpenStarted}
+              />
+              <CustomImageButton
+                width={16}
+                height={19}
+                image="/assets/icons/login-icons.svg"
+                label={"Login"}
+                newclass="px-[26px] py-3"
+                className="text-f16 font-semibold text-ik_pink-foreground "
+                onClick={() => handleLoginPopup()}
+              />
+            </div>
+          </div>
+        </CustomContainer>
+
+        {openStarted && (
+          <Startedpopup handleClose={handleCloseStarted} open={openStarted} />
+        )}
+
+        {opencity && (
+          <CityLocation handleClose={handleClosecity} open={opencity} />
+        )}
+
+        {selected === "Services" && (
+          <>
+            <Box
+              className="shadow-md"
+              sx={{
+                position: "absolute",
+                top: "100%",
+                left: 0,
+                width: "100%",
+                zIndex: 999,
+                background: "white",
+                paddingY: "20px",
+              }}
+              onMouseEnter={() => handleMouseEnter(selected)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className={`sectionmusic ${selected ? "open" : ""}`}>
+                {selected === "Services" && (
+                  <CustomContainer>
+                    <div className="music-select">
+                      <Slider {...settings}>
+                        {music?.map((item) => (
+                          <Musicscomponent musicsection={item} key={item?.id} />
+                        ))}
+                      </Slider>
                     </div>
-                    <div className="flex items-center gap-3" onMouseLeave={handleMouseLeave}>
-                        <div className="relative">
-                            <button
-                                className="flex items-center gap-2 hover:text-ik_whitevariant-foreground hover:underline underline-offset-8 decoration-2"
-                                onMouseEnter={() => handleMouseEnter("Services")}
-                            >
-                                <span className="text-f12 font-semibold transition-colors duration-200 ease-in-out ">
-                                    Services
-                                </span>
-                                <ArrowdownIcon
-                                    sx={{
-                                        fontSize: "13px",
-                                    }}
-                                />
-                            </button>
-                        </div>
-                        <CustomButton
-                            variant="primary-button"
-                            label={"List Business/Talent"}
-                            className="text-f12 font-semibold"
-                            onClick={handleClickOpenStarted}
-                        />
-                        <CustomButton
-                            label={"Login"}
-                            className="text-f12 font-semibold text-ik_pink-foreground"
-                            onClick={() => handleLoginPopup()}
-                        />
-                    </div>
-                </div>
-            </CustomContainer>
-
-            {openStarted && <Startedpopup handleClose={handleCloseStarted} open={openStarted} />}
-
-            {opencity && <CityLocation handleClose={handleClosecity} open={opencity} />}
-
-            {selected === "Services" && (
-                <>
-                    <Box
-                        className="shadow-md"
-                        sx={{
-                            position: "absolute",
-                            top: "100%",
-                            left: 0,
-                            width: "100%",
-                            zIndex: 999,
-                            background: "white",
-                            paddingY: "20px",
-                        }}
-                        onMouseEnter={() => handleMouseEnter(selected)}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <div className={`sectionmusic ${selected ? "open" : ""}`}>
-                            {selected === "Services" && (
-                                <CustomContainer>
-                                    <div className="music-select">
-                                        <Slider {...settings}>
-                                            {music?.map((item) => (
-                                                <Musicscomponent
-                                                    musicsection={item}
-                                                    key={item?.id}
-                                                />
-                                            ))}
-                                        </Slider>
-                                    </div>
-                                </CustomContainer>
-                            )}
-                        </div>
-                    </Box>
-                </>
-            )}
-        </div>
+                  </CustomContainer>
+                )}
+              </div>
+            </Box>
+          </>
+        )}
+      </div>
     );
 };
 

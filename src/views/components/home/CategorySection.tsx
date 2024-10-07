@@ -51,7 +51,7 @@ export default function CategorySection(props: Props) {
             <span>Find Talent by Category</span>
           </div>
           <div>
-            <button>
+            <button className="pt-[10px]">
               <span className="text-f18 text-ik_pink font-normal">
                 View All
               </span>

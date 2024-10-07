@@ -8,13 +8,20 @@ interface CustomButtonType extends ButtonProps {
   width?: number;
   height?: number;
   label?: string;
+  className?: string;
+  newclass?: string; 
 }
 
 function CustomImageButton(props: CustomButtonType) {
-  const { image, variant = "contained", label, width, height, ...rest } = props;
+  const { image, variant = "contained", label, className, newclass, width, height, ...rest } = props;
 
   return (
-    <Button variant={variant} {...rest} sx={{ textTransform: "capitalize" }}>
+    <Button
+      variant={variant}
+      className={newclass}
+      {...rest}
+      sx={{ textTransform: "capitalize" }}
+    >
       <Stack
         direction="row"
         spacing={1}
@@ -27,7 +34,13 @@ function CustomImageButton(props: CustomButtonType) {
           width={width ? width : 24}
           height={height ? height : 24}
         />
-        <p className="font-semibold text-f18 leading-6 ">{label}</p>
+        <p
+          className={
+            className ? className : "font-semibold text-f18 leading-6 "
+          }
+        >
+          {label}
+        </p>
       </Stack>
     </Button>
   );

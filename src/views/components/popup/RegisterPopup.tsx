@@ -6,15 +6,9 @@ import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import { Grid, IconButton } from "@mui/material";
 import ImageComponent from "../ImageComponent";
-import { Box } from "@mui/material";
-import { FormProvider, useForm } from "react-hook-form";
-import { Stack } from "@mui/material";
-import dynamic from "next/dynamic";
 import zustandStore from "@/utils/helpers/zustand";
-import { Typography } from "@mui/material";
+import RegsiterComponent from "../RegsiterComponent";
 
-const InputField = dynamic(() => import("../form-fields/InputField"));
-const CustomButton = dynamic(() => import("../form-fields/CustomButton"));
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -36,42 +30,42 @@ export default function RegisterPopup() {
         setPopup("login");
     };
 
-    const methods = useForm();
     return (
-        <React.Fragment>
-            <Dialog
-                fullScreen
-                open={popup === "register"}
-                onClose={handleClose}
-                TransitionComponent={Transition}
+      <React.Fragment>
+        <Dialog
+          fullScreen
+          open={popup === "register"}
+          onClose={handleClose}
+          TransitionComponent={Transition}
+          sx={{
+            "& .MuiPaper-root": {
+              padding: "0px",
+            },
+          }}
+        >
+          <Grid container>
+            <Grid item xs={6}>
+              <div className="w-full h-full">
+                <ImageComponent
+                  src="/images/static/image_19.png"
+                  className="h-full"
+                  type={2}
+                />
+              </div>
+            </Grid>
+            <Grid item xs={6} sx={{ position: "relative", padding: "20px" }}>
+              <IconButton
+                onClick={handleClose}
                 sx={{
-                    "& .MuiPaper-root": {
-                        padding: "0px",
-                    },
+                  position: "absolute",
+                  top: "10px",
+                  right: "10px",
+                  color: "inherit",
                 }}
-            >
-                <Grid container>
-                    <Grid item xs={6}>
-                        <ImageComponent
-                            src="/images/static/image_19.png"
-                            alt="login"
-                            width={1078}
-                            height={1060}
-                        />
-                    </Grid>
-                    <Grid item xs={6} sx={{ position: "relative", padding: "20px" }}>
-                        <IconButton
-                            onClick={handleClose}
-                            sx={{
-                                position: "absolute",
-                                top: "10px",
-                                right: "10px",
-                                color: "inherit",
-                            }}
-                        >
-                            <CloseIcon />
-                        </IconButton>
-                        <Box className="flex flex-col items-center justify-center h-full">
+              >
+                <CloseIcon />
+              </IconButton>
+              {/* <Box className="flex flex-col items-center justify-center h-full">
                             <ImageComponent
                                 src={"assets/logo/logo.svg"}
                                 width={158}
@@ -154,10 +148,11 @@ export default function RegisterPopup() {
                                     Login Now
                                 </Typography>
                             </FormProvider>
-                        </Box>
-                    </Grid>
-                </Grid>
-            </Dialog>
-        </React.Fragment>
+                        </Box> */}
+              <RegsiterComponent handleLoginPopup={handleLoginPopup} ClassNames={"px-10"} />
+            </Grid>
+          </Grid>
+        </Dialog>
+      </React.Fragment>
     );
 }

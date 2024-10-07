@@ -46,11 +46,11 @@ export default function Startedpopup({
       Startedpopup_image: "assets/icons/listbusiness.svg",
       Startedpopup_title: "List my business",
     },
-    {
-      id: 4,
-      Startedpopup_image: "assets/icons/create-profile.svg",
-      Startedpopup_title: "Create Online Profile",
-    },
+    // {
+    //   id: 4,
+    //   Startedpopup_image: "assets/icons/create-profile.svg",
+    //   Startedpopup_title: "Create Online Profile",
+    // },
   ];
   return (
     <React.Fragment>
@@ -67,13 +67,11 @@ export default function Startedpopup({
       >
         <Grid container>
           <Grid item xs={6}>
-            <div>
+            <div className="w-full h-full">
               <ImageComponent
                 src="/images/static/image_19.png"
-                alt="login"
-                width={1078}
-                height={1060}
-                className="w-[100%] h-[100%]"
+                className="h-full"
+                type={2}
               />
             </div>
           </Grid>
