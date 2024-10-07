@@ -8,10 +8,11 @@ interface CustomCardProps {
   placeholder: string;
   typeheader: boolean;
   typebanner: boolean;
+  className: string;
 }
 
 export const AutoCompleteSearch = (props: CustomCardProps) => {
-  const { placeholder, typeheader, typebanner } = props;
+  const { placeholder, typeheader, typebanner, className } = props;
   const [open, setOpen] = useState(false);
   const temp = useRef(null);
 
@@ -37,7 +38,7 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
           <Autocomplete
             fullWidth
             id="country-select-demo"
-            className="auto-item"
+            className={className ? className : "auto-item"}
             sx={{ width: "100%", border: "none" }}
             getOptionLabel={(option: any) => option.product_name}
             renderOption={(props, option: any) => {

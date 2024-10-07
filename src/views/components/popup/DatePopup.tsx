@@ -4,19 +4,17 @@ import { Slide } from "@mui/material";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
-import DialogTitle from "@mui/material/DialogTitle";
+// import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
+// import IconButton from "@mui/material/IconButton";
+// import CloseIcon from "@mui/icons-material/Close";
 
 import { TransitionProps } from "@mui/material/transitions";
 
-import { Divider } from "@mui/material";
 import dynamic from "next/dynamic";
-const ViewAllDialog = dynamic(() => import("./ViewAllDialog"));
-
-import { AutoCompleteSearch } from "@/components/common/AutoCompleteSearch";
+const DateEventPicker = dynamic(() => import("../DateEventPicker"));
+const CustomButton = dynamic(() => import("../form-fields/CustomButton"));
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -41,10 +39,7 @@ interface LocationDialogProps {
   open?: boolean;
 }
 
-export default function ViewAllPopup({
-  handleClose,
-  open,
-}: LocationDialogProps) {
+export default function DatePopup({ handleClose, open }: LocationDialogProps) {
   return (
     <>
       <BootstrapDialog
@@ -60,14 +55,7 @@ export default function ViewAllPopup({
           },
         }}
       >
-        <DialogTitle
-          sx={{ m: 0, p: 2 }}
-          className="font-semibold text-f22 text-ik_bluegreydarken3 leading-7"
-        >
-          Location
-        </DialogTitle>
-        <Divider sx={{ padding: "0px" }} />
-        <IconButton
+        {/* <IconButton
           aria-label="close"
           onClick={handleClose}
           sx={(theme) => ({
@@ -78,19 +66,17 @@ export default function ViewAllPopup({
           })}
         >
           <CloseIcon />
-        </IconButton>
+        </IconButton> */}
         <DialogContent>
-          <div className="w-64">
-            {/* <SearchBar /> */}
-            <AutoCompleteSearch
-              placeholder="Search Location"
-              typeheader={true}
-              typebanner={false}
-            />
-          </div>
-          <ViewAllDialog />
+          {/* <ViewAllDialog /> */}
+          <DateEventPicker />
         </DialogContent>
         <DialogActions>
+          <CustomButton
+            variant="primary-button"
+            label="Cancel"
+            onClick={handleClose}
+          />
           <Button
             autoFocus
             onClick={handleClose}

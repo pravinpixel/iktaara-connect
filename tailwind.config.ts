@@ -142,7 +142,7 @@ const config: Config = {
           DEFAULT: "var(--ik_bluegreylighten6)",
         },
         ik_lightorange: {
-          DEFAULT: "var(--ik_ligntorange)",
+          DEFAULT: "var(--ik_lightorange)",
         },
         ik_lightgrey: {
           DEFAULT: "var(--ik_lightgrey)",
@@ -158,6 +158,9 @@ const config: Config = {
         },
         ik_titlecolor: {
           DEFAULT: "var(--ik_titlecolor)",
+        },
+        ik_lightorangevariant: {
+          DEFAULT: "var(--ik_lightorangevariant)",
         },
       },
       boxShadow: {
@@ -195,6 +198,7 @@ const config: Config = {
       f26: "var(--f26)",
       f30: "var(--f30)",
       f32: "var(--f32)",
+      f36: "var(--f36)",
       f38: "var(--f38)",
       f64: "var(--f64)",
       f68: "var(--f68)",
