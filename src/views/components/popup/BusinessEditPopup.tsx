@@ -53,7 +53,7 @@ export default function BusinessEditPopup({
         <div className="flex flex-col items-center justify-center h-full">
           {/* <ImageUpload control={control} /> */}
           <ImageComponent
-            src={"//assets/image/music-logo.png"}
+            src={"/assets/image/music-logo.png"}
             width={160}
             height={160}
             alt={"music-logo"}

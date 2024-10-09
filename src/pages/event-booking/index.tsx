@@ -39,22 +39,22 @@ const EventsBooking = () => {
 //           {
 //             id: 1,
 //             event_name: "Title",
-//             banner_image: "//assets/image/events-img.webp",
+//             banner_image: "/assets/image/events-img.webp",
 //           },
 //           {
 //             id: 2,
 //             event_name: "Title",
-//             banner_image: "//assets/image/events-img.webp",
+//             banner_image: "/assets/image/events-img.webp",
 //           },
 //           {
 //             id: 3,
 //             event_name: "Title",
-//             banner_image: "//assets/image/events-img.webp",
+//             banner_image: "/assets/image/events-img.webp",
 //           },
 //           {
 //             id: 4,
 //             event_name: "Title",
-//             banner_image: "//assets/image/events-img.webp",
+//             banner_image: "/assets/image/events-img.webp",
 //           },
 //         ],
 //         details: [

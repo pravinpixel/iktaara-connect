@@ -7,68 +7,68 @@ const ArtistCustomerComponents = () => {
   const customer_data = [
     {
       id: 1,
-      customer_image: "//assets/icons/live-icons.svg",
+      customer_image: "/assets/icons/live-icons.svg",
       customer_title: " LIVE Online",
       customer_text: " Prior Booking Required",
     },
     {
       id: 2,
-      customer_image: "//assets/icons/home-icons.svg",
+      customer_image: "/assets/icons/home-icons.svg",
       customer_title: " At home",
       customer_text: "  Prior Appointment Required",
     },
     {
       id: 3,
-      customer_image: "//assets/icons/distance-icons.svg",
+      customer_image: "/assets/icons/distance-icons.svg",
       customer_title: "Travels Anywhere",
     },
   ];
   const similar_profiles = [
     {
       id: 1,
-      profiles_image: "//assets/image/chitra.png",
+      profiles_image: "/assets/image/chitra.png",
       profiles_name: "Chitra Jones",
       profiles_text: "Hindustani",
       profiles_reviews: "4.0 (320 Reviews)",
     },
     {
       id: 2,
-      profiles_image: "//assets/image/nakshatra.png",
+      profiles_image: "/assets/image/nakshatra.png",
       profiles_name: "Nakshatra",
       profiles_text: " Hindustani, Classical, Western",
       profiles_reviews: "4.0 (320 Reviews)",
     },
     {
       id: 3,
-      profiles_image: "//assets/image/thirupuzhal.png",
+      profiles_image: "/assets/image/thirupuzhal.png",
       profiles_name: "Prakash Thirupuzhal",
       profiles_text: "Western",
       profiles_reviews: "4.2 (122 Reviews)",
     },
     {
       id: 4,
-      profiles_image: "//assets/image/mallika.png",
+      profiles_image: "/assets/image/mallika.png",
       profiles_name: "Mallika Kargai",
       profiles_text: "Classical",
       profiles_reviews: "3.5 (5 Reviews)",
     },
     {
       id: 5,
-      profiles_image: "//assets/image/thangana.png",
+      profiles_image: "/assets/image/thangana.png",
       profiles_name: "Thangana",
       profiles_text: "Classical, Western",
       profiles_reviews: "4.25 (576 Reviews)",
     },
     {
       id: 6,
-      profiles_image: "//assets/image/jones.png",
+      profiles_image: "/assets/image/jones.png",
       profiles_name: "Thijo Jones",
       profiles_text: "Hindustani, Western",
       profiles_reviews: "4.0 (120 Reviews)",
     },
     {
       id: 7,
-      profiles_image: "//assets/image/ranavet.png",
+      profiles_image: "/assets/image/ranavet.png",
       profiles_name: "Kanaga Ranavet",
       profiles_text: "Classical, Western",
       profiles_reviews: "4.25 (1,022 Reviews)",
@@ -190,7 +190,7 @@ const ArtistCustomerComponents = () => {
             <div className="bg-ik_whitevariant py-[11px] px-[13px] h-full rounded-lg">
               <div className="flex justify-center">
                 <ImageComponent
-                  src={"//assets/icons/talent.svg"}
+                  src={"/assets/icons/talent.svg"}
                   width={64}
                   height={64}
                   alt={"talent"}

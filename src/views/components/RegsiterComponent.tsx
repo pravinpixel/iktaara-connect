@@ -37,7 +37,7 @@ const RegsiterComponent = ({ handleLoginPopup, ClassNames }: RegsiterProps) => {
           <div className="flex gap-2 justify-start items-center w-full pt-9 pl-4">
             <div className="cursor-pointer">
               <ImageComponent
-                src={"//assets/icons/arrow_prev.svg"}
+                src={"/assets/icons/arrow_prev.svg"}
                 width={8}
                 height={16}
                 alt={"arrow_prev"}

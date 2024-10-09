@@ -15,7 +15,7 @@ import { TimepickerIcon } from "@/utils/theme/svg";
 //   justifyContent: "center",
 //   width: 16,
 //   height: 10,
-//   background: `url(${"//assets/icons/arrowdown.svg"})`,
+//   background: `url(${"/assets/icons/arrowdown.svg"})`,
 //   backgroundSize: "contain",
 //   backgroundRepeat: "no-repeat",
 //   backgroundPosition: "center",

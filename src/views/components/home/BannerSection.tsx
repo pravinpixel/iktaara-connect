@@ -67,7 +67,7 @@ const BannerSection = () => {
             </div>
           </div>
           <ImageComponent
-            src={"//assets/banner/banner1.webp"}
+            src={"/assets/banner/banner1.webp"}
             alt={"banner"}
             aspectRatio={3.1}
             objectFit={"content"}

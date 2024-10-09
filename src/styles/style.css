@@ -72,7 +72,7 @@
     display: inline-block !important;
     width: 35px !important;
     height: 35px !important;
-    background-image: url("//assets/icons/category-prev.svg") !important;
+    background-image: url("/assets/icons/category-prev.svg") !important;
     background-size: cover !important;
     position: relative;
     left: 47%;
@@ -91,7 +91,7 @@
     display: inline-block !important;
     width: 35px !important;
     height: 35px !important;
-    background-image: url("//assets/icons/category-next.svg") !important;
+    background-image: url("/assets/icons/category-next.svg") !important;
     background-size: cover !important;
     position: relative;
     right: 47%;
@@ -110,7 +110,7 @@
     display: inline-block !important;
     width: 35px !important;
     height: 35px !important;
-    background-image: url("//assets/icons/arrow-left.svg") !important;
+    background-image: url("/assets/icons/arrow-left.svg") !important;
     background-size: cover !important;
     position: relative;
     left: -10px;
@@ -127,7 +127,7 @@
     display: inline-block !important;
     width: 35px !important;
     height: 35px !important;
-    background-image: url("//assets/icons/arrow-right.svg") !important;
+    background-image: url("/assets/icons/arrow-right.svg") !important;
     background-size: cover !important;
     position: relative;
     right: -18px;
@@ -214,7 +214,7 @@
 
 .paragraph-Ctr > ul > li::before {
     content: "";
-    background-image: url("//assets/icons/bulletin.svg");
+    background-image: url("/assets/icons/bulletin.svg");
     position: absolute;
     width: 20px;
     height: 16px;
@@ -279,7 +279,7 @@
     display: inline-block !important;
     width: 10px !important;
     height: 20px !important;
-    background-image: url("//assets/icons/reviews-prev.svg") !important;
+    background-image: url("/assets/icons/reviews-prev.svg") !important;
     background-size: cover !important;
     position: relative;
     z-index: 0 !important;
@@ -300,7 +300,7 @@
     display: inline-block !important;
     width: 10px !important;
     height: 20px !important;
-    background-image: url("//assets/icons/reviewa-next.svg") !important;
+    background-image: url("/assets/icons/reviewa-next.svg") !important;
     background-size: cover !important;
     position: relative;
     z-index: 9999;

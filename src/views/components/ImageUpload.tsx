@@ -15,7 +15,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   typeupload,
 }) => {
   const [imageSrc, setImageSrc] = useState<string | null>(
-    "//assets/image/music-logo.png"
+    "/assets/image/music-logo.png"
   );
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [imageSrcs, setImageSrcs] = useState<string[]>([]);
@@ -140,7 +140,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
             <div key={index} className="flex items-center gap-2 mt-2">
               <p className="text-f16">{fileName}</p>
               <Image
-                src="//assets/icons/delete-icons.svg"
+                src="/assets/icons/delete-icons.svg"
                 alt="delete"
                 width={20}
                 height={20}

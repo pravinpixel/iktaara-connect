@@ -28,7 +28,7 @@ const ListingReviewsComponents = dynamic(
 
 const ArtistDetail = () => {
   const artistHeader = {
-    logo: "//assets/image/artist-logo.png",
+    logo: "/assets/image/artist-logo.png",
     title: "Ramakrishna Paramahamsa",
     location: "Chennai",
     job: "Singer (13 Years in Business)",

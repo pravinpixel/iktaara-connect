@@ -122,7 +122,7 @@ export default function CustomCard(props: CustomCardProps) {
               }}
             >
               <ImageComponent
-                src={"//assets/icons/star.svg"}
+                src={"/assets/icons/star.svg"}
                 alt="Overlay Image"
                 width={19}
                 height={19}

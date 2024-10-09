@@ -6,33 +6,33 @@ import "react-18-image-lightbox/style.css";
 
 const images = {
   mainImage: {
-    src: "//assets/image/mask-group1.webp",
+    src: "/assets/image/mask-group1.webp",
     width: 1496,
     height: 461,
   },
   smallImages: [
     {
-      src: "//assets/image/bharath.webp",
+      src: "/assets/image/bharath.webp",
       width: 241,
       height: 248,
     },
     {
-      src: "//assets/image/mask-group3.webp",
+      src: "/assets/image/mask-group3.webp",
       width: 1496,
       height: 461,
     },
     {
-      src: "//assets/image/mask-group4.webp",
+      src: "/assets/image/mask-group4.webp",
       width: 1496,
       height: 400,
     },
     {
-      src: "//assets/image/mask-group4.webp",
+      src: "/assets/image/mask-group4.webp",
       width: 1496,
       height: 400,
     },
     {
-      src: "//assets/image/mask-group4.webp",
+      src: "/assets/image/mask-group4.webp",
       width: 1496,
       height: 400,
     },

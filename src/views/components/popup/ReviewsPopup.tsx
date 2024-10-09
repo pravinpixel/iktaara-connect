@@ -90,7 +90,7 @@ export default function ReviewsPopup({ handleClose, open }: ReviewsPopupProps) {
               <div className="flex items-center gap-5 w-100">
                 <div className="h-[122px] w-[122px] flex items-center  ">
                   <ImageComponent
-                    src={"//assets/image/artist-logo.png"}
+                    src={"/assets/image/artist-logo.png"}
                     width={132}
                     height={132}
                     alt={"music-logo"}

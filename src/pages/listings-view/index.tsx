@@ -27,7 +27,7 @@ const ListingHeaderComponents = dynamic(
 
 const ListingsView = () => {
   const ListingHeader = {
-    logo: "//assets/image/music-logo.png",
+    logo: "/assets/image/music-logo.png",
     title: "Musee Musicals Pvt. Ltd.",
     location: "Chennai",
     job: "Sales & Service (13 Years in Business)",

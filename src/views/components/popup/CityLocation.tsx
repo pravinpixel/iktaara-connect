@@ -30,37 +30,37 @@ export default function CityLocation({ handleClose, open }: CityLocationProps) {
   const citycomponent_data = [
     {
       id: 1,
-      city_icons: "//assets/icons/chennai.svg",
+      city_icons: "/assets/icons/chennai.svg",
       city_name: "Chennai",
       City_Soon: "",
     },
     {
       id: 2,
-      city_icons: "//assets/icons/bengaluru.svg",
+      city_icons: "/assets/icons/bengaluru.svg",
       city_name: "Bengaluru",
       City_Soon: "Launching Soon",
     },
     {
       id: 3,
-      city_icons: "//assets/icons/pune.svg",
+      city_icons: "/assets/icons/pune.svg",
       city_name: "Pune",
       City_Soon: "Launching Soon",
     },
     {
       id: 4,
-      city_icons: "//assets/icons/hyderabad.svg",
+      city_icons: "/assets/icons/hyderabad.svg",
       city_name: "Hyderabad",
       City_Soon: "Launching Soon",
     },
     {
       id: 5,
-      city_icons: "//assets/icons/mumbai.svg",
+      city_icons: "/assets/icons/mumbai.svg",
       city_name: "Mumbai",
       City_Soon: "Launching Soon",
     },
     {
       id: 6,
-      city_icons: "//assets/icons/delhi.svg",
+      city_icons: "/assets/icons/delhi.svg",
       city_name: "Delhi",
       City_Soon: "Launching Soon",
     },
@@ -127,7 +127,7 @@ export default function CityLocation({ handleClose, open }: CityLocationProps) {
               startAdornment: (
                 <IconButton>
                   <ImageComponent
-                    src="//assets/icons/search-icon.svg"
+                    src="/assets/icons/search-icon.svg"
                     width={20}
                     height={20}
                     alt="search_icon"

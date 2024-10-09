@@ -50,7 +50,7 @@ export default function AritistEditPopup({ handleClose, open }: BusinessEditProp
         <div className="flex flex-col items-center justify-center h-full">
           {/* <ImageUpload control={control} /> */}
           <ImageComponent
-            src={"//assets/image/artist-logo.png"}
+            src={"/assets/image/artist-logo.png"}
             width={160}
             height={160}
             alt={"music-logo"}

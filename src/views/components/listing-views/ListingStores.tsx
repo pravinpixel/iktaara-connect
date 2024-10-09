@@ -7,8 +7,8 @@ const ListingStoresComponents = () => {
   const musictechnician_data = [
     {
       id: 1,
-      music_image: "//assets/image/music-arts.webp",
-      music_logo: "//assets/image/music-logo1.png",
+      music_image: "/assets/image/music-arts.webp",
+      music_logo: "/assets/image/music-logo1.png",
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",
@@ -16,8 +16,8 @@ const ListingStoresComponents = () => {
     },
     {
       id: 2,
-      music_image: "//assets/image/schmitt.webp",
-      music_logo: "//assets/image/music-logo2.png",
+      music_image: "/assets/image/schmitt.webp",
+      music_logo: "/assets/image/music-logo2.png",
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",
@@ -25,8 +25,8 @@ const ListingStoresComponents = () => {
     },
     {
       id: 3,
-      music_image: "//assets/image/kzone.webp",
-      music_logo: "//assets/image/music-logo3.png",
+      music_image: "/assets/image/kzone.webp",
+      music_logo: "/assets/image/music-logo3.png",
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",
@@ -34,8 +34,8 @@ const ListingStoresComponents = () => {
     },
     {
       id: 4,
-      music_image: "//assets/image/music-doctor.webp",
-      music_logo: "//assets/image/music-logo4.png",
+      music_image: "/assets/image/music-doctor.webp",
+      music_logo: "/assets/image/music-logo4.png",
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",
@@ -43,8 +43,8 @@ const ListingStoresComponents = () => {
     },
     {
       id: 5,
-      music_image: "//assets/image/music-arts.webp",
-      music_logo: "//assets/image/music-logo1.png",
+      music_image: "/assets/image/music-arts.webp",
+      music_logo: "/assets/image/music-logo1.png",
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",

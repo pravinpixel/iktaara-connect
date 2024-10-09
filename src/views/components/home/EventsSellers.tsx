@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import React, { Fragment } from "react";
-import bg from "../../../../public//assets/image/bg.svg";
-import bg1 from "../../../../public//assets/image/bg1.png";
+import bg from "../../../../public/assets/image/bg.svg";
+import bg1 from "../../../../public/assets/image/bg1.png";
 import Slider from "react-slick";
 import CustomContainer from "@/views/components/Container";
 

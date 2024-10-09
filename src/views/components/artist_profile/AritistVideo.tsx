@@ -6,17 +6,17 @@ const AritistVideoComponents = () => {
   const artists_data = [
     {
       id: 1,
-      artists_image: "//assets/image/silder1.webp",
+      artists_image: "/assets/image/silder1.webp",
       artists_text: "Winning the Junior super singer award from Star Vijay TV",
     },
     {
       id: 2,
-      artists_image: "//assets/image/silder2.webp",
+      artists_image: "/assets/image/silder2.webp",
       artists_text: "Stage performance at Singapore for 90’s Ilayaraja Hits",
     },
     {
       id: 3,
-      artists_image: "//assets/image/silder3.webp",
+      artists_image: "/assets/image/silder3.webp",
       artists_text: "Singapore performance show organized by MK Events",
     },
   ];
