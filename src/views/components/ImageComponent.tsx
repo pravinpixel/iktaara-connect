@@ -1,9 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import CONSTANT from "@/utils/helpers/constant-helper";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-const basePath = '/connect/'
+const basePath = CONSTANT.ASSESTPATH
+
 
 const ImageComponent = (props: any) => {
   const {

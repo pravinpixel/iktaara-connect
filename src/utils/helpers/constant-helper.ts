@@ -1,5 +1,5 @@
 
-export const { NEXT_PUBLIC_API_BASE_URL } = process.env;
+export const { NEXT_PUBLIC_API_BASE_URL, NEXT_PUBLIC_MAIN_URL } = process.env;
 
 const CONSTANT = {
     BASE_URL: NEXT_PUBLIC_API_BASE_URL,
@@ -8,7 +8,7 @@ const CONSTANT = {
     // SECONDS * MILISECONDS
     TIMEOUT: 30 * 1000,
 
-    ASSESTPATH : NEXT_PUBLIC_API_BASE_URL
+    ASSESTPATH : NEXT_PUBLIC_MAIN_URL
 }
 
 

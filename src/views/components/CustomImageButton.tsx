@@ -2,6 +2,7 @@ import React from "react";
 import { Button, ButtonProps } from "@mui/material";
 import { Stack } from "@mui/material";
 import ImageComponent from "./ImageComponent";
+import CONSTANT from "@/utils/helpers/constant-helper";
 
 interface CustomButtonType extends ButtonProps {
   image?: string;
@@ -9,10 +10,10 @@ interface CustomButtonType extends ButtonProps {
   height?: number;
   label?: string;
   className?: string;
-  newclass?: string; 
+  newclass?: string;
 }
 
-const basePath = '/connect/'
+const basePath = CONSTANT.ASSESTPATH || ''
 
 function CustomImageButton(props: CustomButtonType) {
   const { image, variant = "contained", label, className, newclass, width, height, ...rest } = props;
