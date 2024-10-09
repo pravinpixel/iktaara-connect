@@ -6,6 +6,7 @@ import { Stack } from "@mui/material";
 import { Typography } from "@mui/material";
 import { signIn, SignInOptions } from "next-auth/react";
 import dynamic from "next/dynamic";
+import { notify } from "@/utils/helpers/global-function";
 
 const CustomButton = dynamic(() => import("./form-fields/CustomButton"));
 const InputField = dynamic(() => import("./form-fields/InputField"));
@@ -30,9 +31,18 @@ const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
         throw new Error(res?.error as never);
       });
     } catch (error) {
-      // console.log(error, "error");
+      notify(error)
     }
   };
+
+  const handleGoogleLogin = async () => {
+    try {
+      await signIn('google')
+    } catch (error) {
+      notify(error)
+    }
+  }
+
   return (
     <Box className="flex flex-col items-center justify-center h-full">
       <ImageComponent
@@ -114,7 +124,7 @@ const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
             </div>
           </div>
           <div className="w-full">
-            <button className=" p-3 w-full border border-ik_bluegreylightens3 rounded-md mb-[20px]">
+            <button className=" p-3 w-full border border-ik_bluegreylightens3 rounded-md mb-[20px]" onClick={handleGoogleLogin}>
               <div className="flex justify-center items-center gap-2">
                 <ImageComponent
                   src={"/assets/icons/google-icons.svg"}

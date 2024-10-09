@@ -81,8 +81,8 @@ export const authOptions: NextAuthOptions = {
             },
         }),
         GoogleProvider({
-            clientId: process.env.GOOGLE_LOGIN_ID || "",
-            clientSecret: process.env.GOOGLE_LOGIN_SECRET || "",
+            clientId: process.env.NEXT_PUBLIC_GOOGLE_LOGIN_ID || "",
+            clientSecret: process.env.NEXT_PUBLIC_GOOGLE_LOGIN_SECRET || "",
         }),
     ],
 
@@ -91,7 +91,7 @@ export const authOptions: NextAuthOptions = {
     },
     callbacks: {
         async signIn(user) {
-            if (user) return true;
+            if (user) return !!user;
             return false;
         },
         async jwt({ token, user }) {

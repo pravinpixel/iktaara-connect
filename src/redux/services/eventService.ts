@@ -20,7 +20,6 @@ export const eventHome = createAsyncThunk(
 export const eventCategory = createAsyncThunk(
   "eventCategory",
   async (params, thunkAPI) => {
-
     try {
       const response = await SERVER.get(`/get/events/category`, {
         params
