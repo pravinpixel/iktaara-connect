@@ -13,20 +13,14 @@ export function middleware(request: NextRequest) {
   const fisrtIndex = pathParts[1];
 
   const removedData = [
-    '_next',
-    'icons',
-    'images',
-    'api',
     'connect',
   ];
 
   if (!removedData.includes(fisrtIndex)) {
-    if (urlPathName !== '/') {
       const removedDataSplit = request.url.split('/');
       removedDataSplit.splice(3, 0, 'connect');
       const newUrlString = removedDataSplit.join('/');
       return NextResponse.redirect(new URL(newUrlString, request.url));
-    }
   }
 }
 
