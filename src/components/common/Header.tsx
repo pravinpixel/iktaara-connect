@@ -218,7 +218,7 @@ const Header = () => {
               height={19}
               image="/assets/icons/login-icons.svg"
               label={"Login"}
-              newclass="h-[48px]"
+              newclass="h-[48px]" 
               className="text-f16 font-semibold text-ik_pink-foreground"
               onClick={() => handleLoginPopup()}
             />

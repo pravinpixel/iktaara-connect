@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-const basePath = CONSTANT.ASSESTPATH
+const basePath = CONSTANT?.ASSESTPATH || ''
 
 
 const ImageComponent = (props: any) => {
@@ -48,7 +48,7 @@ const ImageComponent = (props: any) => {
           }}
           className={className}
         >
-          <Image src={ basePath + src} alt={"banner"} fill />
+          <Image src={basePath + src} alt={"banner"} fill />
         </Box>
       ) : (
         <>

@@ -13,7 +13,7 @@ interface CustomButtonType extends ButtonProps {
   newclass?: string;
 }
 
-const basePath = CONSTANT.ASSESTPATH || ''
+const basePath = CONSTANT?.ASSESTPATH || ''
 
 function CustomImageButton(props: CustomButtonType) {
   const { image, variant = "contained", label, className, newclass, width, height, ...rest } = props;
