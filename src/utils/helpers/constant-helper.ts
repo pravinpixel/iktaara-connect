@@ -7,11 +7,13 @@ const CONSTANT = {
 
     // SECONDS * MILISECONDS
     TIMEOUT: 30 * 1000,
+
+    ASSESTPATH : NEXT_PUBLIC_API_BASE_URL
 }
 
 
 export const NAV = {
-    height: "110px"
+    height: "110px",
 }
 
 

@@ -12,6 +12,8 @@ interface CustomButtonType extends ButtonProps {
   newclass?: string; 
 }
 
+const basePath = '/connect/'
+
 function CustomImageButton(props: CustomButtonType) {
   const { image, variant = "contained", label, className, newclass, width, height, ...rest } = props;
 
@@ -29,7 +31,7 @@ function CustomImageButton(props: CustomButtonType) {
         className="p-[4px]"
       >
         <ImageComponent
-          src={image}
+          src={basePath + image}
           alt="Button Image"
           width={width ? width : 24}
           height={height ? height : 24}

@@ -3,6 +3,8 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
+const basePath = '/connect/'
+
 const ImageComponent = (props: any) => {
   const {
     aspectRatio,
@@ -27,7 +29,7 @@ const ImageComponent = (props: any) => {
           }}
         >
           <Image
-            src={src}
+            src={basePath + src}
             fill
             alt={alt}
             unoptimized={false}
@@ -44,13 +46,13 @@ const ImageComponent = (props: any) => {
           }}
           className={className}
         >
-          <Image src={src} alt={"banner"} fill />
+          <Image src={ basePath + src} alt={"banner"} fill />
         </Box>
       ) : (
         <>
           {" "}
           <Image
-            src={src}
+            src={basePath + src}
             alt={alt}
             unoptimized={false}
             priority={priority}

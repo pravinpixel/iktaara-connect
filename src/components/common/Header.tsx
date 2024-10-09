@@ -150,7 +150,7 @@ const Header = () => {
             <div className="h-[71px] w-[110px] flex items-center">
               <Link href="/">
                 <ImageComponent
-                  src={"/connect/assets/logo/logo.svg"}
+                  src={"assets/logo/logo.svg"}
                   width={158}
                   height={81}
                   alt={"iktaraa"}
