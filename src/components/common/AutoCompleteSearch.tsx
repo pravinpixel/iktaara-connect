@@ -1,8 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import ImageComponent from "@/views/components/ImageComponent";
 import { Autocomplete, Container, Grid, TextField } from "@mui/material";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+
+const ImageComponent = dynamic(
+  () => import("@/views/components/ImageComponent")
+);
+const Searchcompound = dynamic(
+  () => import("@/views/components/Searchcompound")
+);
 
 interface CustomCardProps {
   placeholder: string;
@@ -38,9 +45,27 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
           <Autocomplete
             fullWidth
             id="country-select-demo"
-            className={className ? className : "auto-item"}
+            className={
+              className
+                ? className
+                : "auto-item bg-ik_bluegreylighten3 h-[48px]"
+            }
             sx={{ width: "100%", border: "none" }}
             getOptionLabel={(option: any) => option.product_name}
+            noOptionsText={
+              <>
+                <p className="text-f14 text-center font-normal leading-[17px] text-ik_bluegreybluegrey">
+                  Sorry we could not find the relevant one. Explore similar
+                  products.
+                </p>
+                <div className='pt-[24px]'>
+                  <div className="text-f16 font-semibold leading-[20px] text-ik_bluegreydarken6 mb-2">
+                    <span>Services</span>
+                  </div>
+                  <Searchcompound />
+                </div>
+              </>
+            }
             renderOption={(props, option: any) => {
               return (
                 <>
@@ -121,6 +146,12 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
             className="bg-white border-0"
             sx={{ width: "100%", border: "none" }}
             getOptionLabel={(option: any) => option.product_name}
+            noOptionsText={
+              <p className="text-f14">
+                Sorry we could not find the relevant one. Explore similar
+                products.
+              </p>
+            }
             renderOption={(props, option: any) => {
               return (
                 <>

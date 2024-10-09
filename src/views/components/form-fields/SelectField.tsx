@@ -72,7 +72,7 @@ const SelectField = (props: {
           },
         }}
       >
-        <FormLabel>{label}</FormLabel>
+        <FormLabel >{label}</FormLabel>
         <Select
           size="small"
           sx={{ mt: 1, width: "100%" }}
@@ -81,6 +81,7 @@ const SelectField = (props: {
           IconComponent={KeyboardArrowDownIcon}
           error={!!errorMessage}
           displayEmpty
+          className="mt-0"
           MenuProps={{
             sx: {
               "& ul": {

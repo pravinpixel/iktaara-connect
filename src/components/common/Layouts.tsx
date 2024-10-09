@@ -19,11 +19,11 @@ const Layouts = ({ children }: LayoutsTypes) => {
       <CommonPopup />
 
       <div className="flex flex-col w-full relative h-fit overflow-x-hidden">
-        <div className="absolute top-0 right-0 left-0 bg-white">
+        <div className="fixed top-0 right-0 left-0 bg-white z-[999]">
           <Header />
         </div>
         <div
-          className={`mt-[72px]  h-[calc(100vh-73px)] flex overflow-hidden overflow-y-auto flex-col`}
+          className={`mt-[110px]  flex overflow-hidden overflow-y-auto flex-col`}
         >
           {children}
           {url === "event-hosting" ? "" : <Footer />}

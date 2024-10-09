@@ -2,14 +2,28 @@ import { Grid } from '@mui/material'
 import React from 'react'
 import { wrapper } from "@/redux/store";
 import { listingView } from '@/redux/services/listingService'
-import ListingBusinessComponents from '@/views/components/listing-views/ListingBusiness'
-import ListingReviewsComponents from '@/views/components/listing-views/ListingReviews'
-import ListingStoresComponents from '@/views/components/listing-views/ListingStores'
-import ListingImageComponents from '@/views/components/listing-views/ListingImage'
-import CustomContainer from '@/views/components/Container'
-import ListingAboutComponents from '@/views/components/listing-views/ListingAbout'
-import ListingCustomerComponents from '@/views/components/listing-views/ListingCustomer'
-import ListingHeaderComponents from '@/views/components/listing-views/ListingHeader'
+import dynamic from 'next/dynamic';
+
+const ListingBusinessComponents = dynamic(() => import("@/views/components/listing-views/ListingBusiness"));
+const ListingReviewsComponents = dynamic(
+  () => import("@/views/components/listing-views/ListingReviews")
+);
+const ListingStoresComponents = dynamic(
+  () => import("@/views/components/listing-views/ListingStores")
+);
+const ListingImageComponents = dynamic(
+  () => import("@/views/components/listing-views/ListingImage")
+);
+const CustomContainer = dynamic(() => import("@/views/components/Container"));
+const ListingAboutComponents = dynamic(
+  () => import("@/views/components/listing-views/ListingAbout")
+);
+const ListingCustomerComponents = dynamic(
+  () => import("@/views/components/listing-views/ListingCustomer")
+);
+const ListingHeaderComponents = dynamic(
+  () => import("@/views/components/listing-views/ListingHeader")
+);
 
 const ListingsView = () => {
   const ListingHeader = {

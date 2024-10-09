@@ -159,7 +159,7 @@ const ListingHeaderComponents = (props: Props) => {
           </div>
           <div>
             <div className="flex gap-3 mt-2">
-              <div>
+              {/* <div>
                 <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-5">
                   <div className="flex gap-3">
                     <ImageComponent
@@ -184,9 +184,9 @@ const ListingHeaderComponents = (props: Props) => {
                 >
                   <span>Enquire</span>
                 </button>
-              </div>
+              </div> */}
 
-              {/* <button
+              <button
                 className="border border-ik_bluegreylightens3 rounded-lg py-[23px] px-7"
                 onClick={handleClickUpdate}
               >
@@ -201,7 +201,7 @@ const ListingHeaderComponents = (props: Props) => {
                   className="py-[23px] px-7 text-f20 font-semibold"
                   onClick={handleClickOpenbusiness}
                 />
-              </div> */}
+              </div>
             </div>
           </div>
         </div>

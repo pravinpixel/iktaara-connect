@@ -149,7 +149,7 @@ export default function RegisterPopup() {
                                 </Typography>
                             </FormProvider>
                         </Box> */}
-              <RegsiterComponent handleLoginPopup={handleLoginPopup} ClassNames={"px-10"} />
+              <RegsiterComponent handleLoginPopup={handleLoginPopup} ClassNames="px-[100px]" />
             </Grid>
           </Grid>
         </Dialog>

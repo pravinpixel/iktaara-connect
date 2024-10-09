@@ -1,11 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import CustomContainer from "@/views/components/Container";
-import CustomButton from "@/views/components/form-fields/CustomButton";
 import { Divider } from "@mui/material";
 import { Box, Grid } from "@mui/material";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import router from "next/router";
 import { Fragment } from "react";
+
+const CustomContainer = dynamic(() => import("@/views/components/Container"));
+const CustomButton = dynamic(
+  () => import("@/views/components/form-fields/CustomButton")
+);
 
 const Footer = () => {
   const menus = [

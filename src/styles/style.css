@@ -12,11 +12,11 @@
     height: 48px !important;
 }
 
-.search-bar .auto-item {
+/* .search-bar .auto-item {
     background-color: #ECEFF1 !important;
     height: 48px !important;
-    width: 120% !important;
-}
+
+} */
 
 .search-here .MuiAutocomplete-inputRoot input {
     width: 100% !important;

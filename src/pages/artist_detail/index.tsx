@@ -1,13 +1,30 @@
-import AritistHeaderComponents from '@/views/components/artist_profile/AritistHeader';
-import AritistStoresComponents from '@/views/components/artist_profile/AritistStores';
-import AritistVideoComponents from '@/views/components/artist_profile/AritistVideo';
-import ArtistAboutComponents from '@/views/components/artist_profile/ArtistAbout';
-import ArtistCustomerComponents from '@/views/components/artist_profile/ArtistCustomer';
-import CustomContainer from '@/views/components/Container'
-import ListingBusinessComponents from '@/views/components/listing-views/ListingBusiness';
-import ListingReviewsComponents from '@/views/components/listing-views/ListingReviews';
+import React from "react";
 import { Grid } from '@mui/material';
-import React from 'react'
+import dynamic from 'next/dynamic';
+
+const AritistHeaderComponents = dynamic(
+  () => import("@/views/components/artist_profile/AritistHeader")
+);
+const AritistStoresComponents = dynamic(
+  () => import("@/views/components/artist_profile/AritistStores")
+);
+const AritistVideoComponents = dynamic(
+  () => import("@/views/components/artist_profile/AritistVideo")
+);
+const ArtistAboutComponents = dynamic(
+  () => import("@/views/components/artist_profile/ArtistAbout")
+);
+const ArtistCustomerComponents = dynamic(
+  () => import("@/views/components/artist_profile/ArtistCustomer")
+);
+const CustomContainer = dynamic(() => import("@/views/components/Container"));
+const ListingBusinessComponents = dynamic(
+  () => import("@/views/components/listing-views/ListingBusiness")
+);
+const ListingReviewsComponents = dynamic(
+  () => import("@/views/components/listing-views/ListingReviews")
+);
+
 
 const ArtistDetail = () => {
    const artistHeader = {
