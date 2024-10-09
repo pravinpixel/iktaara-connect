@@ -2,9 +2,18 @@
 const nextConfig = {
     reactStrictMode: true,
     basePath: "/connect",
-    assetPrefix : "/connect/",
+    assetPrefix: "/connect/",
     typescript: {
         ignoreBuildErrors: true,
+    },
+    async redirects() {
+        return [
+            {
+                source: "/connect/",
+                destination: "/",
+                permanent: true,
+            },
+        ];
     },
 };
 
