@@ -22,7 +22,6 @@ export function middleware(request: NextRequest) {
     '/'
   ];
 
-  console.log(fisrtIndex, "fisrtIndex")
 
   if (!removedData.includes(fisrtIndex)) {
     const removedDataSplit = request.url.split('/');

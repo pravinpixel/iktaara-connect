@@ -8,7 +8,7 @@ const CONSTANT = {
     // SECONDS * MILISECONDS
     TIMEOUT: 30 * 1000,
 
-    ASSESTPATH: ''
+    ASSESTPATH: '/connect'
 }
 
 
