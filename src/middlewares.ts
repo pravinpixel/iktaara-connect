@@ -13,7 +13,11 @@ export function middleware(request: NextRequest) {
   const fisrtIndex = pathParts[1];
 
   const removedData = [
-    'connect',
+    '_next',
+    'icons',
+    'images',
+    'assets',
+    'api',
   ];
 
   if (!removedData.includes(fisrtIndex)) {
