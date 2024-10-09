@@ -37,23 +37,23 @@ const Header = () => {
   const music = [
     {
       id: 1,
-      image: "assets/image/music1.webp",
+      image: "/assets/image/music1.webp",
       music_title: "Artists",
     },
     {
       id: 2,
-      image: "assets/image/music2.webp",
+      image: "/assets/image/music2.webp",
       music_title: "Recording /JAM Studios",
       music_text: "Find venues for every musical occasions",
     },
     {
       id: 3,
-      image: "assets/image/music3.webp",
+      image: "/assets/image/music3.webp",
       music_title: "Music Instrument Sales & Service",
     },
     {
       id: 4,
-      image: "assets/image/music4.webp",
+      image: "/assets/image/music4.webp",
       music_title: "Events",
     },
   ];
@@ -150,7 +150,7 @@ const Header = () => {
             <div className="h-[71px] w-[110px] flex items-center">
               <Link href="/">
                 <ImageComponent
-                  src={"assets/logo/logo.svg"}
+                  src={"/assets/logo/logo.svg"}
                   width={158}
                   height={81}
                   alt={"iktaraa"}
@@ -163,7 +163,7 @@ const Header = () => {
                 onClick={handleClickOpencity}
               >
                 <ImageComponent
-                  src={"assets/icons/location.svg"}
+                  src={"/assets/icons/location.svg"}
                   width={17}
                   height={21}
                   alt={"location"}
@@ -172,7 +172,7 @@ const Header = () => {
                   Chennai
                 </span>
                 <ImageComponent
-                  src={"assets/icons/arrowdown.svg"}
+                  src={"/assets/icons/arrowdown.svg"}
                   width={14}
                   height={7}
                   alt={"arrowdown"}
@@ -216,7 +216,7 @@ const Header = () => {
             <CustomImageButton
               width={16}
               height={19}
-              image="/assets/icons/login-icons.svg"
+              image="//assets/icons/login-icons.svg"
               label={"Login"}
               newclass="h-[48px]"
               className="text-f16 font-semibold text-ik_pink-foreground"

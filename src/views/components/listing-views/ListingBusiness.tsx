@@ -30,7 +30,7 @@ const ListingBusinessComponents = () => {
                 <Grid item xs={12} sm={6}>
                   <div className="flex gap-3 border-b md:border-b-0 md:border-r border-ik_bluegreylightens3 justify-center md:justify-normal">
                     <ImageComponent
-                      src={"assets/icons/star-icons.svg"}
+                      src={"/assets/icons/star-icons.svg"}
                       width={60}
                       height={60}
                       alt={"arrowdown"}
@@ -75,7 +75,7 @@ const ListingBusinessComponents = () => {
                 <div className="flex gap-6">
                   <div>
                     <ImageComponent
-                      src={"assets/icons/messenger-icons.svg"}
+                      src={"/assets/icons/messenger-icons.svg"}
                       width={54}
                       height={54}
                       alt={"arrowdown"}

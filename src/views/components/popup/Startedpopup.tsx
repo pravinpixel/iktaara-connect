@@ -33,22 +33,22 @@ export default function Startedpopup({
   const Startedpopup = [
     {
       id: 1,
-      Startedpopup_image: "assets/icons/artistsvenues.svg",
+      Startedpopup_image: "/assets/icons/artistsvenues.svg",
       Startedpopup_title: "Find artists/venues",
     },
     {
       id: 2,
-      Startedpopup_image: "assets/icons/hostevent.svg",
+      Startedpopup_image: "/assets/icons/hostevent.svg",
       Startedpopup_title: "Host an event",
     },
     {
       id: 3,
-      Startedpopup_image: "assets/icons/listbusiness.svg",
+      Startedpopup_image: "/assets/icons/listbusiness.svg",
       Startedpopup_title: "List my business",
     },
     // {
     //   id: 4,
-    //   Startedpopup_image: "assets/icons/create-profile.svg",
+    //   Startedpopup_image: "/assets/icons/create-profile.svg",
     //   Startedpopup_title: "Create Online Profile",
     // },
   ];
@@ -89,12 +89,12 @@ export default function Startedpopup({
             </IconButton>
             <Box className="flex flex-col items-center justify-center h-full">
               <ImageComponent
-                src={"assets/logo/logo.svg"}
+                src={"/assets/logo/logo.svg"}
                 width={158}
                 height={60}
                 alt={"iktaraa"}
                 priority={true}
-                // sx={{ marginTop: "20px" }}
+              // sx={{ marginTop: "20px" }}
               />
 
               <div className="pt-12 flex justify-start w-[80%]">
@@ -107,11 +107,10 @@ export default function Startedpopup({
                   <>
                     <div key={row.id}>
                       <button
-                        className={`border py-7 pl-7 pr-5 flex items-center w-full justify-between rounded-lg mb-3 ${
-                          selectedstarted === row.id
-                            ? "border-ik_bluegreybluegrey"
-                            : "border-ik_bluegreylighten4"
-                        } ''`}
+                        className={`border py-7 pl-7 pr-5 flex items-center w-full justify-between rounded-lg mb-3 ${selectedstarted === row.id
+                          ? "border-ik_bluegreybluegrey"
+                          : "border-ik_bluegreylighten4"
+                          } ''`}
                         onClick={() => handlestartedSelect(row.id)}
                       >
                         <div className=" flex gap-7 items-center">
@@ -131,7 +130,7 @@ export default function Startedpopup({
                           {selectedstarted === row.id ? (
                             <div>
                               <ImageComponent
-                                src={"assets/icons/seect-tiki.svg"}
+                                src={"/assets/icons/seect-tiki.svg"}
                                 width={32}
                                 height={32}
                                 alt={"seect"}

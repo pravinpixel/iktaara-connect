@@ -434,22 +434,22 @@ export const getServerSideProps = wrapper.getServerSideProps(
           {
             id: 1,
             event_name: "varchar",
-            banner_image: "/assets/image/events-img.webp",
+            banner_image: "//assets/image/events-img.webp",
           },
           {
             id: 2,
             event_name: "varchar",
-            banner_image: "/assets/image/events-img.webp",
+            banner_image: "//assets/image/events-img.webp",
           },
           {
             id: 3,
             event_name: "varchar",
-            banner_image: "/assets/image/events-img.webp",
+            banner_image: "//assets/image/events-img.webp",
           },
           {
             id: 4,
             event_name: "varchar",
-            banner_image: "/assets/image/events-img.webp",
+            banner_image: "//assets/image/events-img.webp",
           },
         ],
         events: [

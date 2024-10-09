@@ -32,22 +32,22 @@ interface ReviewsPopupProps {
 }
 export default function ReviewsPopup({ handleClose, open }: ReviewsPopupProps) {
   const [value, setValue] = React.useState<number | null>(0);
-   const [opensuccess, setOpensuccess] = React.useState(false);
+  const [opensuccess, setOpensuccess] = React.useState(false);
 
-   const handleClickOpensuccess = () => {
-     setOpensuccess(true);
-   };
+  const handleClickOpensuccess = () => {
+    setOpensuccess(true);
+  };
 
-   const handleClosesuccess = () => {
-     setOpensuccess(false);
-   };
+  const handleClosesuccess = () => {
+    setOpensuccess(false);
+  };
   const methods = useForm({
     defaultValues: {
       studio: "",
     },
   });
 
-  const onSubmit = () => {};
+  const onSubmit = () => { };
   return (
     <>
       <Dialog
@@ -90,7 +90,7 @@ export default function ReviewsPopup({ handleClose, open }: ReviewsPopupProps) {
               <div className="flex items-center gap-5 w-100">
                 <div className="h-[122px] w-[122px] flex items-center  ">
                   <ImageComponent
-                    src={"/assets/image/artist-logo.png"}
+                    src={"//assets/image/artist-logo.png"}
                     width={132}
                     height={132}
                     alt={"music-logo"}
@@ -104,7 +104,7 @@ export default function ReviewsPopup({ handleClose, open }: ReviewsPopupProps) {
                   <div className="flex gap-3">
                     <div className="flex gap-2">
                       <ImageComponent
-                        src={"assets/icons/maps-location.svg"}
+                        src={"/assets/icons/maps-location.svg"}
                         width={20}
                         height={20}
                         alt={"location"}
@@ -115,7 +115,7 @@ export default function ReviewsPopup({ handleClose, open }: ReviewsPopupProps) {
                     </div>
                     <div className="flex gap-2">
                       <ImageComponent
-                        src={"assets/icons/work-icons.svg"}
+                        src={"/assets/icons/work-icons.svg"}
                         width={20}
                         height={20}
                         alt={"location"}

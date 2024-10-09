@@ -30,7 +30,7 @@ const CaetComponent = (props: Props) => {
         </div>
         <div className="flex items-center gap-1">
           <ImageComponent
-            src={"assets/icons/location-icons.svg"}
+            src={"/assets/icons/location-icons.svg"}
             width={22}
             height={20}
             alt={"star"}

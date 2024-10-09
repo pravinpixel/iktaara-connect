@@ -24,7 +24,7 @@ const BusinessServices = () => {
     name: "fields",
   });
 
-  const handleServices = async () => {};
+  const handleServices = async () => { };
   return (
     <section>
       <div>
@@ -114,7 +114,7 @@ const BusinessServices = () => {
                   </div>
                   <button type="button" onClick={() => remove(index)}>
                     <ImageComponent
-                      src={"/assets/icons/delete-icons.svg"}
+                      src={"//assets/icons/delete-icons.svg"}
                       width={20}
                       height={20}
                       alt={"delete"}
@@ -130,7 +130,7 @@ const BusinessServices = () => {
                 >
                   <div className="flex gap-1">
                     <ImageComponent
-                      src={"/assets/icons/add-icons.svg"}
+                      src={"//assets/icons/add-icons.svg"}
                       width={26}
                       height={26}
                       alt={"add-icons"}
@@ -164,7 +164,7 @@ const BusinessServices = () => {
                   </div>
                   <button type="button" onClick={() => remove(index)}>
                     <ImageComponent
-                      src={"/assets/icons/delete-icons.svg"}
+                      src={"//assets/icons/delete-icons.svg"}
                       width={20}
                       height={20}
                       alt={"delete"}
@@ -180,7 +180,7 @@ const BusinessServices = () => {
                 >
                   <div className="flex gap-1">
                     <ImageComponent
-                      src={"/assets/icons/add-icons.svg"}
+                      src={"//assets/icons/add-icons.svg"}
                       width={26}
                       height={26}
                       alt={"add-icons"}

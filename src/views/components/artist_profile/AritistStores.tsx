@@ -6,7 +6,7 @@ const AritistStoresComponents = () => {
   const artists_data = [
     {
       id: 1,
-      artists_image: "/assets/image/ramaniya.webp",
+      artists_image: "//assets/image/ramaniya.webp",
       artists_name: "Ramaniya",
       artists_title: "Hindustani",
       artists_reviews: "4.5 (22 Reviews)",
@@ -14,7 +14,7 @@ const AritistStoresComponents = () => {
     },
     {
       id: 2,
-      artists_image: "/assets/image/kirankumar.webp",
+      artists_image: "//assets/image/kirankumar.webp",
       artists_name: "Kirankumar",
       artists_title: "Hindustani, Classical, Western",
       artists_reviews: "4.5 (22 Reviews)",
@@ -22,7 +22,7 @@ const AritistStoresComponents = () => {
     },
     {
       id: 3,
-      artists_image: "/assets/image/jones.webp",
+      artists_image: "//assets/image/jones.webp",
       artists_name: "Chitra Jones",
       artists_title: "Classical, Western",
       artists_reviews: "4.5 (22 Reviews)",
@@ -30,7 +30,7 @@ const AritistStoresComponents = () => {
     },
     {
       id: 4,
-      artists_image: "/assets/image/john.webp",
+      artists_image: "//assets/image/john.webp",
       artists_name: "Abraham John",
       artists_title: "Hindustani, Classical",
       artists_reviews: "4.5 (22 Reviews)",
@@ -38,7 +38,7 @@ const AritistStoresComponents = () => {
     },
     {
       id: 5,
-      artists_image: "/assets/image/prakash.webp",
+      artists_image: "//assets/image/prakash.webp",
       artists_name: "Prakash Thirupuzhal",
       artists_title: "Hindustani, Classical",
       artists_reviews: "4.5 (22 Reviews)",
@@ -47,7 +47,7 @@ const AritistStoresComponents = () => {
 
     {
       id: 6,
-      artists_image: "/assets/image/prabhakar.webp",
+      artists_image: "//assets/image/prabhakar.webp",
       artists_name: "Ram Prabhakar",
       artists_title: "Hindustani, Classical",
       artists_reviews: "4.5 (22 Reviews)",
@@ -55,7 +55,7 @@ const AritistStoresComponents = () => {
     },
     {
       id: 7,
-      artists_image: "/assets/image/madhavi.webp",
+      artists_image: "//assets/image/madhavi.webp",
       artists_name: "Madhavi Nair",
       artists_title: "Hindustani, Classical, Western",
       artists_reviews: "4.5 (22 Reviews)",
@@ -64,7 +64,7 @@ const AritistStoresComponents = () => {
 
     {
       id: 8,
-      artists_image: "/assets/image/vamshika.webp",
+      artists_image: "//assets/image/vamshika.webp",
       artists_name: "Vamshika",
       artists_title: "Hindustani, Classical, Western",
       artists_reviews: "4.5 (22 Reviews)",

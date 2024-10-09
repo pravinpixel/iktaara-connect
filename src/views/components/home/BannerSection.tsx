@@ -41,7 +41,7 @@ const BannerSection = () => {
                     onClick={handleClickOpencity}
                   >
                     <ImageComponent
-                      src={"assets/icons/location.svg"}
+                      src={"/assets/icons/location.svg"}
                       width={14}
                       height={14}
                       alt={"location"}
@@ -49,7 +49,7 @@ const BannerSection = () => {
                     />
                     <span className="text-f14">Chennai</span>
                     <ImageComponent
-                      src={"assets/icons/arrowdown.svg"}
+                      src={"/assets/icons/arrowdown.svg"}
                       width={13}
                       height={6}
                       alt={"arrowdown"}
@@ -67,7 +67,7 @@ const BannerSection = () => {
             </div>
           </div>
           <ImageComponent
-            src={"/assets/banner/banner1.webp"}
+            src={"//assets/banner/banner1.webp"}
             alt={"banner"}
             aspectRatio={3.1}
             objectFit={"content"}
@@ -79,7 +79,7 @@ const BannerSection = () => {
           <Container>
             <div className="flex justify-center items-center gap-4">
               <ImageComponent
-                src={"assets/icons/enjoyfamily.svg"}
+                src={"/assets/icons/enjoyfamily.svg"}
                 width={40}
                 height={40}
                 alt={"enjoyfamily"}

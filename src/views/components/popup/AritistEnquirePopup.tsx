@@ -35,7 +35,7 @@ export default function AritistEnquirePopup({
     },
   });
 
-  const onSubmit = () => {};
+  const onSubmit = () => { };
   return (
     <Dialog
       open={open ?? false}
@@ -49,7 +49,7 @@ export default function AritistEnquirePopup({
     >
       <DialogTitle className="flex justify-center pt-0">
         <ImageComponent
-          src={"assets/logo/logo.svg"}
+          src={"/assets/logo/logo.svg"}
           width={158}
           height={81}
           alt={"iktaraa"}

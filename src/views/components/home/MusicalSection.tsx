@@ -71,7 +71,7 @@ const MusicalSection = (props: Props) => {
       <CustomContainer>
         <div className="absolute top-10 left-0">
           <ImageComponent
-            src={"/assets/image/star1.webp"}
+            src={"//assets/image/star1.webp"}
             width={60}
             height={60}
             alt={"arrowdown"}
@@ -90,7 +90,7 @@ const MusicalSection = (props: Props) => {
         </div>
         <div className="absolute bottom-5 right-2">
           <ImageComponent
-            src={"/assets/image/star2.webp"}
+            src={"//assets/image/star2.webp"}
             width={60}
             height={60}
             alt={"arrowdown"}

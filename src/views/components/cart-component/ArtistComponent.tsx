@@ -26,7 +26,7 @@ const ArtistComponent = (props: Props) => {
         </div>
         <div className="flex items-center gap-1">
           <ImageComponent
-            src={"assets/icons/star.svg"}
+            src={"/assets/icons/star.svg"}
             width={20}
             height={19}
             alt={"star"}

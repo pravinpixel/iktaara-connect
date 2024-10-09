@@ -60,7 +60,7 @@ const AritistHeaderComponents = (props: Props) => {
               <div className="flex gap-3">
                 <div className="flex gap-2">
                   <ImageComponent
-                    src={"assets/icons/maps-location.svg"}
+                    src={"/assets/icons/maps-location.svg"}
                     width={20}
                     height={20}
                     alt={"location"}
@@ -71,7 +71,7 @@ const AritistHeaderComponents = (props: Props) => {
                 </div>
                 <div className="flex gap-2">
                   <ImageComponent
-                    src={"assets/icons/work-icons.svg"}
+                    src={"/assets/icons/work-icons.svg"}
                     width={20}
                     height={20}
                     alt={"location"}
@@ -86,7 +86,7 @@ const AritistHeaderComponents = (props: Props) => {
                   <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-3">
                     <div className="flex gap-3">
                       <ImageComponent
-                        src={"assets/icons/phone-icons.svg"}
+                        src={"/assets/icons/phone-icons.svg"}
                         width={24}
                         height={24}
                         alt={"location"}
@@ -101,7 +101,7 @@ const AritistHeaderComponents = (props: Props) => {
                   <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-3 inline-flex items-center group">
                     <div className="flex gap-3">
                       <ImageComponent
-                        src={"assets/icons/share-icons.svg"}
+                        src={"/assets/icons/share-icons.svg"}
                         width={24}
                         height={24}
                         alt={"location"}
@@ -116,7 +116,7 @@ const AritistHeaderComponents = (props: Props) => {
                       <div className="flex justify-center items-center gap-5 ">
                         <div className="w-[44px]">
                           <ImageComponent
-                            src={"assets/icons/fb-icons.svg"}
+                            src={"/assets/icons/fb-icons.svg"}
                             width={44}
                             height={44}
                             alt={"location"}
@@ -125,7 +125,7 @@ const AritistHeaderComponents = (props: Props) => {
                         </div>
                         <div className="w-[44px]">
                           <ImageComponent
-                            src={"assets/icons/inked-icons.svg"}
+                            src={"/assets/icons/inked-icons.svg"}
                             width={44}
                             height={44}
                             alt={"location"}
@@ -134,7 +134,7 @@ const AritistHeaderComponents = (props: Props) => {
                         </div>
                         <div className="w-[44px]">
                           <ImageComponent
-                            src={"assets/icons/twit-icons.svg"}
+                            src={"/assets/icons/twit-icons.svg"}
                             width={44}
                             height={44}
                             alt={"location"}
@@ -143,7 +143,7 @@ const AritistHeaderComponents = (props: Props) => {
                         </div>
                         <div className="w-[44px]">
                           <ImageComponent
-                            src={"assets/icons/whatsapp-icons.svg"}
+                            src={"/assets/icons/whatsapp-icons.svg"}
                             width={44}
                             height={44}
                             alt={"location"}
@@ -163,7 +163,7 @@ const AritistHeaderComponents = (props: Props) => {
                 <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-5">
                   <div className="flex gap-3">
                     <ImageComponent
-                      src={"assets/icons/star-icons.svg"}
+                      src={"/assets/icons/star-icons.svg"}
                       width={24}
                       height={24}
                       alt={"location"}

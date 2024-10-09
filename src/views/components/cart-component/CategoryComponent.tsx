@@ -86,7 +86,7 @@ const CategoryComponent = (props: Props) => {
               <div className="py-2">
                 <div className="flex items-center gap-2">
                   <ImageComponent
-                    src={"assets/icons/star.svg"}
+                    src={"/assets/icons/star.svg"}
                     width={20}
                     height={19}
                     alt={"star"}

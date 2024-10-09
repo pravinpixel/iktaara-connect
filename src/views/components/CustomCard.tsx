@@ -49,17 +49,17 @@ export default function CustomCard(props: CustomCardProps) {
         width: width,
         borderRadius: "16px",
         ...(props.typebottomleft &&
-          {
-            /* Custom style for bottom-left */
-          }),
+        {
+          /* Custom style for bottom-left */
+        }),
         ...(props.typetop &&
-          {
-            /* Custom style for top-right */
-          }),
+        {
+          /* Custom style for top-right */
+        }),
         ...(props.typebottom &&
-          {
-            /* Custom style for bottom-right */
-          }),
+        {
+          /* Custom style for bottom-right */
+        }),
       }}
     >
       <CardMedia component="img" image={img} alt="Paella dish" />
@@ -122,7 +122,7 @@ export default function CustomCard(props: CustomCardProps) {
               }}
             >
               <ImageComponent
-                src={"/assets/icons/star.svg"}
+                src={"//assets/icons/star.svg"}
                 alt="Overlay Image"
                 width={19}
                 height={19}

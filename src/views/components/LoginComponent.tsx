@@ -46,7 +46,7 @@ const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
   return (
     <Box className="flex flex-col items-center justify-center h-full">
       <ImageComponent
-        src={"assets/logo/logo.svg"}
+        src={"/assets/logo/logo.svg"}
         width={158}
         height={60}
         alt={"iktaraa"}
@@ -62,7 +62,7 @@ const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
           <div className="flex gap-2 justify-start items-center w-full pt-9">
             <div className="cursor-pointer">
               <ImageComponent
-                src={"/assets/icons/arrow_prev.svg"}
+                src={"//assets/icons/arrow_prev.svg"}
                 width={8}
                 height={16}
                 alt={"arrow_prev"}
@@ -127,7 +127,7 @@ const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
             <button className=" p-3 w-full border border-ik_bluegreylightens3 rounded-md mb-[20px]" onClick={handleGoogleLogin}>
               <div className="flex justify-center items-center gap-2">
                 <ImageComponent
-                  src={"/assets/icons/google-icons.svg"}
+                  src={"//assets/icons/google-icons.svg"}
                   width={32}
                   height={32}
                   alt={"iktaraa"}
@@ -139,7 +139,7 @@ const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
             <button className=" p-3 w-full border border-ik_bluegreylightens3 rounded-md mb-[20px]">
               <div className="flex justify-center items-center gap-2">
                 <ImageComponent
-                  src={"/assets/icons/iphone-icons.svg"}
+                  src={"//assets/icons/iphone-icons.svg"}
                   width={32}
                   height={32}
                   alt={"iktaraa"}

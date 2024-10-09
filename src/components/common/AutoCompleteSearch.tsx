@@ -122,7 +122,7 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
                     ...params.InputProps,
                     startAdornment: (
                       <ImageComponent
-                        src={"assets/icons/search-icon.svg"}
+                        src={"/assets/icons/search-icon.svg"}
                         width={17}
                         height={17}
                         alt={"search"}
@@ -209,7 +209,7 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
                     endAdornment: (
                       <div className="bg-ik_pink p-4 cursor-pointer">
                         <ImageComponent
-                          src={"assets/icons/search-banner.svg"}
+                          src={"/assets/icons/search-banner.svg"}
                           width={20}
                           height={20}
                           alt={"search"}

@@ -11,63 +11,63 @@ import RegsiterComponent from "../RegsiterComponent";
 
 
 const Transition = React.forwardRef(function Transition(
-    props: TransitionProps & {
-        children: React.ReactElement;
-    },
-    ref: React.Ref<unknown>
+  props: TransitionProps & {
+    children: React.ReactElement;
+  },
+  ref: React.Ref<unknown>
 ) {
-    return <Slide direction="up" ref={ref} {...props} />;
+  return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function RegisterPopup() {
-    const { popup, setPopup } = zustandStore();
+  const { popup, setPopup } = zustandStore();
 
-    const handleClose = () => {
-        setPopup(null);
-    };
+  const handleClose = () => {
+    setPopup(null);
+  };
 
-    const handleLoginPopup = () => {
-        setPopup("login");
-    };
+  const handleLoginPopup = () => {
+    setPopup("login");
+  };
 
-    return (
-      <React.Fragment>
-        <Dialog
-          fullScreen
-          open={popup === "register"}
-          onClose={handleClose}
-          TransitionComponent={Transition}
-          sx={{
-            "& .MuiPaper-root": {
-              padding: "0px",
-            },
-          }}
-        >
-          <Grid container>
-            <Grid item xs={6}>
-              <div className="w-full h-full">
-                <ImageComponent
-                  src="/images/static/image_19.png"
-                  className="h-full"
-                  type={2}
-                />
-              </div>
-            </Grid>
-            <Grid item xs={6} sx={{ position: "relative", padding: "20px" }}>
-              <IconButton
-                onClick={handleClose}
-                sx={{
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
-                  color: "inherit",
-                }}
-              >
-                <CloseIcon />
-              </IconButton>
-              {/* <Box className="flex flex-col items-center justify-center h-full">
+  return (
+    <React.Fragment>
+      <Dialog
+        fullScreen
+        open={popup === "register"}
+        onClose={handleClose}
+        TransitionComponent={Transition}
+        sx={{
+          "& .MuiPaper-root": {
+            padding: "0px",
+          },
+        }}
+      >
+        <Grid container>
+          <Grid item xs={6}>
+            <div className="w-full h-full">
+              <ImageComponent
+                src="/images/static/image_19.png"
+                className="h-full"
+                type={2}
+              />
+            </div>
+          </Grid>
+          <Grid item xs={6} sx={{ position: "relative", padding: "20px" }}>
+            <IconButton
+              onClick={handleClose}
+              sx={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                color: "inherit",
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+            {/* <Box className="flex flex-col items-center justify-center h-full">
                             <ImageComponent
-                                src={"assets/logo/logo.svg"}
+                                src={"/assets/logo/logo.svg"}
                                 width={158}
                                 height={60}
                                 alt={"iktaraa"}
@@ -149,10 +149,10 @@ export default function RegisterPopup() {
                                 </Typography>
                             </FormProvider>
                         </Box> */}
-              <RegsiterComponent handleLoginPopup={handleLoginPopup} ClassNames="px-[100px]" />
-            </Grid>
+            <RegsiterComponent handleLoginPopup={handleLoginPopup} ClassNames="px-[100px]" />
           </Grid>
-        </Dialog>
-      </React.Fragment>
-    );
+        </Grid>
+      </Dialog>
+    </React.Fragment>
+  );
 }

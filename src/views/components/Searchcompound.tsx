@@ -3,28 +3,28 @@ import React from 'react'
 import ImageComponent from './ImageComponent';
 
 const Searchcompound = () => {
-    const search = [
-      {
-        id: 1,
-        seaech_image: "/assets/image/music1.webp",
-        search_text: " Artists/Instrumentalist/Music Experts",
-      },
-      {
-        id: 2,
-        seaech_image: "/assets/image/music2.webp",
-        search_text: " Recording Studios/JAM Rooms",
-      },
-      {
-        id: 3,
-        seaech_image: "/assets/image/music3.webp",
-        search_text: "Music Instrument Repairs",
-      },
-      {
-        id: 4,
-        seaech_image: "/assets/image/music4.webp",
-        search_text: " Music Shows",
-      },
-    ];
+  const search = [
+    {
+      id: 1,
+      seaech_image: "//assets/image/music1.webp",
+      search_text: " Artists/Instrumentalist/Music Experts",
+    },
+    {
+      id: 2,
+      seaech_image: "//assets/image/music2.webp",
+      search_text: " Recording Studios/JAM Rooms",
+    },
+    {
+      id: 3,
+      seaech_image: "//assets/image/music3.webp",
+      search_text: "Music Instrument Repairs",
+    },
+    {
+      id: 4,
+      seaech_image: "//assets/image/music4.webp",
+      search_text: " Music Shows",
+    },
+  ];
   return (
     <section>
       <Grid container spacing={1}>

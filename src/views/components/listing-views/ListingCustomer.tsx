@@ -2,26 +2,26 @@ import React from 'react'
 import ImageComponent from '../ImageComponent';
 
 const ListingCustomerComponents = () => {
-    const customer_data = [
-      {
-        id: 1,
-        customer_image: "/assets/icons/live-icons.svg",
-        customer_title: " LIVE Online",
-        customer_text: "  Prior Booking Required",
-      },
-      {
-        id: 2,
-        customer_image: "/assets/icons/home-icons.svg",
-        customer_title: " Home Pickup",
-        customer_text: "  Prior Appointment Required",
-      },
-      {
-        id: 3,
-        customer_image: "/assets/icons/distance-icons.svg",
-        customer_title: " Limited Distance",
-        customer_text: "  Chennai",
-      },
-    ];
+  const customer_data = [
+    {
+      id: 1,
+      customer_image: "//assets/icons/live-icons.svg",
+      customer_title: " LIVE Online",
+      customer_text: "  Prior Booking Required",
+    },
+    {
+      id: 2,
+      customer_image: "//assets/icons/home-icons.svg",
+      customer_title: " Home Pickup",
+      customer_text: "  Prior Appointment Required",
+    },
+    {
+      id: 3,
+      customer_image: "//assets/icons/distance-icons.svg",
+      customer_title: " Limited Distance",
+      customer_text: "  Chennai",
+    },
+  ];
   return (
     <>
       <div className="text-f20 font-semibold text-ik_bluegreydarken3">

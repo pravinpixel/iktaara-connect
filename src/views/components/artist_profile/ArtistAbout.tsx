@@ -7,21 +7,21 @@ const ArtistAboutComponents = () => {
   const Industry = [
     {
       id: 1,
-      industry_image: "/assets/icons/industry.svg",
+      industry_image: "//assets/icons/industry.svg",
       industry_text: "Vijay TV Awards",
       industry_title: "Super Singer Junior Award for the best performance",
       industry_data: "July 2024",
     },
     {
       id: 2,
-      industry_image: "/assets/icons/industry.svg",
+      industry_image: "//assets/icons/industry.svg",
       industry_text: "Arupathu Moovar - Festival Of 63 Savants",
       industry_title: "Stage Performance in Sri Kapaleeswarar temple",
       industry_data: "July 2024",
     },
     {
       id: 3,
-      industry_image: "/assets/icons/industry.svg",
+      industry_image: "//assets/icons/industry.svg",
       industry_text: "Singapore Stage Show",
       industry_title: "Standing Ovation by the huge 1,00,000+ audience crowd",
       industry_data: "July 2024",
@@ -77,7 +77,7 @@ const ArtistAboutComponents = () => {
             <Grid container>
               <Grid item xs={12} sm={9}>
                 <ImageComponent
-                  src={"/assets/image/maskgroup1.webp"}
+                  src={"//assets/image/maskgroup1.webp"}
                   width={967}
                   height={400}
                   alt={"arrowdown"}
@@ -93,7 +93,7 @@ const ArtistAboutComponents = () => {
                   <Grid container>
                     <Grid item xs={12}>
                       <ImageComponent
-                        src={"/assets/image/maskgroup2.webp"}
+                        src={"//assets/image/maskgroup2.webp"}
                         width={241}
                         height={451}
                         alt={"arrowdown"}
@@ -102,7 +102,7 @@ const ArtistAboutComponents = () => {
                     </Grid>
                     <Grid item xs={12}>
                       <ImageComponent
-                        src={"/assets/image/maskgroup3.webp"}
+                        src={"//assets/image/maskgroup3.webp"}
                         width={241}
                         height={222}
                         alt={"arrowdown"}
@@ -128,7 +128,7 @@ const ArtistAboutComponents = () => {
           </div>
           <div className="mt-7">
             <ImageComponent
-              src={"/assets/image/happen1.webp"}
+              src={"//assets/image/happen1.webp"}
               width={967}
               height={451}
               alt={"arrowdown"}
@@ -153,7 +153,7 @@ const ArtistAboutComponents = () => {
             <Grid item xs={6}>
               <div>
                 <ImageComponent
-                  src={"/assets/image/happen2.webp"}
+                  src={"//assets/image/happen2.webp"}
                   width={480}
                   height={451}
                   alt={"arrowdown"}
@@ -164,7 +164,7 @@ const ArtistAboutComponents = () => {
             <Grid item xs={6}>
               <div>
                 <ImageComponent
-                  src={"/assets/image/happen3.webp"}
+                  src={"//assets/image/happen3.webp"}
                   width={480}
                   height={451}
                   alt={"arrowdown"}

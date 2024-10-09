@@ -16,7 +16,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 //   justifyContent: "center",
 //   width: 16,
 //   height: 10,
-//   background: `url(${"/assets/icons/arrowdown.svg"})`,
+//   background: `url(${"//assets/icons/arrowdown.svg"})`,
 //   backgroundSize: "contain",
 //   backgroundRepeat: "no-repeat",
 //   backgroundPosition: "center",
@@ -40,8 +40,8 @@ const EssentailTypeListResponse = [
 const renderValue = (label: string, value?: string) => {
   return !value
     ? {
-        renderValue: () => <Typography>{`Select ${label}`}</Typography>,
-      }
+      renderValue: () => <Typography>{`Select ${label}`}</Typography>,
+    }
     : {};
 };
 

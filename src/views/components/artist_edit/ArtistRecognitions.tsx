@@ -25,7 +25,7 @@ const ArtistRecognitions = () => {
     name: "recognitions",
   });
 
-   const handleServices = async () => {};
+  const handleServices = async () => { };
   return (
     <section>
       <div>
@@ -41,7 +41,7 @@ const ArtistRecognitions = () => {
                       </div>
                       <button type="button" onClick={() => remove(index)}>
                         <ImageComponent
-                          src={"/assets/icons/delete-icons.svg"}
+                          src={"//assets/icons/delete-icons.svg"}
                           width={20}
                           height={20}
                           alt={"delete"}
@@ -84,7 +84,7 @@ const ArtistRecognitions = () => {
                 >
                   <div className="flex gap-1">
                     <ImageComponent
-                      src={"/assets/icons/add-icons.svg"}
+                      src={"//assets/icons/add-icons.svg"}
                       width={26}
                       height={26}
                       alt={"add-icons"}
@@ -118,7 +118,7 @@ const ArtistRecognitions = () => {
                   </div>
                   <button type="button" onClick={() => remove(index)}>
                     <ImageComponent
-                      src={"/assets/icons/delete-icons.svg"}
+                      src={"//assets/icons/delete-icons.svg"}
                       width={20}
                       height={20}
                       alt={"delete"}
@@ -134,7 +134,7 @@ const ArtistRecognitions = () => {
                 >
                   <div className="flex gap-1">
                     <ImageComponent
-                      src={"/assets/icons/add-icons.svg"}
+                      src={"//assets/icons/add-icons.svg"}
                       width={26}
                       height={26}
                       alt={"add-icons"}

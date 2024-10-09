@@ -6,33 +6,33 @@ import "react-18-image-lightbox/style.css";
 
 const images = {
   mainImage: {
-    src: "/assets/image/mask-group1.webp",
+    src: "//assets/image/mask-group1.webp",
     width: 1496,
     height: 461,
   },
   smallImages: [
     {
-      src: "/assets/image/bharath.webp",
+      src: "//assets/image/bharath.webp",
       width: 241,
       height: 248,
     },
     {
-      src: "/assets/image/mask-group3.webp",
+      src: "//assets/image/mask-group3.webp",
       width: 1496,
       height: 461,
     },
     {
-      src: "/assets/image/mask-group4.webp",
+      src: "//assets/image/mask-group4.webp",
       width: 1496,
       height: 400,
     },
     {
-      src: "/assets/image/mask-group4.webp",
+      src: "//assets/image/mask-group4.webp",
       width: 1496,
       height: 400,
     },
     {
-      src: "/assets/image/mask-group4.webp",
+      src: "//assets/image/mask-group4.webp",
       width: 1496,
       height: 400,
     },
@@ -90,8 +90,8 @@ const ListingImageComponents = () => {
                       isSingleSmallImage || isTwoSmallImages
                         ? 12
                         : index === 2
-                        ? 12
-                        : 6
+                          ? 12
+                          : 6
                     }
                     key={index}
                   >
@@ -172,14 +172,14 @@ const ListingImageComponents = () => {
             currentImageIndex === -1
               ? images.smallImages[0].src
               : images.smallImages[(currentImageIndex + 1) % totalSmallImages]
-                  .src
+                .src
           }
           prevSrc={
             currentImageIndex === -1
               ? images.smallImages[totalSmallImages - 1].src
               : images.smallImages[
-                  (currentImageIndex + totalSmallImages - 1) % totalSmallImages
-                ].src
+                (currentImageIndex + totalSmallImages - 1) % totalSmallImages
+              ].src
           }
           onCloseRequest={() => setIsOpen(false)}
           onMovePrevRequest={() =>

@@ -30,9 +30,7 @@
     font-size: 14px !important;
 }
 
-
-
-.best-sellers-section .slick-track .slick-slide>div {
+.best-sellers-section .slick-track .slick-slide > div {
     margin-right: 15px;
 }
 
@@ -70,11 +68,11 @@
 }
 
 .category-section-sec .slick-prev:before {
-    content: '' !important;
+    content: "" !important;
     display: inline-block !important;
     width: 35px !important;
     height: 35px !important;
-    background-image: url('/assets/icons/category-prev.svg') !important;
+    background-image: url("//assets/icons/category-prev.svg") !important;
     background-size: cover !important;
     position: relative;
     left: 47%;
@@ -89,11 +87,11 @@
 }
 
 .category-section-sec .slick-next:before {
-    content: '' !important;
+    content: "" !important;
     display: inline-block !important;
     width: 35px !important;
     height: 35px !important;
-    background-image: url('/assets/icons/category-next.svg') !important;
+    background-image: url("//assets/icons/category-next.svg") !important;
     background-size: cover !important;
     position: relative;
     right: 47%;
@@ -108,11 +106,11 @@
 }
 
 .slick-prev:before {
-    content: '' !important;
+    content: "" !important;
     display: inline-block !important;
     width: 35px !important;
     height: 35px !important;
-    background-image: url('/assets/icons/arrow-left.svg') !important;
+    background-image: url("//assets/icons/arrow-left.svg") !important;
     background-size: cover !important;
     position: relative;
     left: -10px;
@@ -125,11 +123,11 @@
     z-index: 100;
 }
 .slick-next:before {
-    content: '' !important;
+    content: "" !important;
     display: inline-block !important;
     width: 35px !important;
     height: 35px !important;
-    background-image: url('/assets/icons/arrow-right.svg') !important;
+    background-image: url("//assets/icons/arrow-right.svg") !important;
     background-size: cover !important;
     position: relative;
     right: -18px;
@@ -143,10 +141,9 @@
     z-index: 100;
 }
 
-.Category-button{
-    border: 1px solid #CCCCCC;
+.Category-button {
+    border: 1px solid #cccccc;
 }
-
 
 .category-section-sec .slick-slide {
     display: flex !important;
@@ -174,20 +171,19 @@
     display: flex;
 }
 
-.reviews-section .slick-track{
+.reviews-section .slick-track {
     gap: 12px;
     display: flex;
 }
 
-.image-category img{
+.image-category img {
     border-radius: 8px;
     filter: brightness(0.7);
 }
 
-.category-name{
+.category-name {
     bottom: 10px;
     left: 15px;
-
 }
 
 .Category-button.active {
@@ -195,20 +191,18 @@
     color: white;
 }
 
-
-.gro-card-sections{
+.gro-card-sections {
     padding: 15px;
     border-radius: 12px;
-    background-color: #43346a; 
+    background-color: #43346a;
 }
 
-
-.paragraph-Ctr>ul {
+.paragraph-Ctr > ul {
     list-style: none !important;
     padding-left: 0px !important;
 }
 
-.paragraph-Ctr>ul>li {
+.paragraph-Ctr > ul > li {
     display: inline-block;
     position: relative;
     width: 100%;
@@ -218,9 +212,9 @@
     min-height: 20px;
 }
 
-.paragraph-Ctr>ul>li::before {
-    content: '';
-    background-image: url('/assets/icons/bulletin.svg');
+.paragraph-Ctr > ul > li::before {
+    content: "";
+    background-image: url("//assets/icons/bulletin.svg");
     position: absolute;
     width: 20px;
     height: 16px;
@@ -232,67 +226,60 @@
     background-position: center top;
 }
 
-.category-table .MuiTabs-hideScrollbar .MuiTabs-indicator{
+.category-table .MuiTabs-hideScrollbar .MuiTabs-indicator {
     position: unset !important;
-
 }
 
-.category-table .Mui-selected{
+.category-table .Mui-selected {
     background-color: var(--ik_white-foreground);
     color: var(--ik_white);
 }
 
-
-.category-table .MuiTab-textColorPrimary{
+.category-table .MuiTab-textColorPrimary {
     border: 1px solid var(--ik_bordervariant) !important;
 }
-.category-table .MuiTabs-flexContainer{
+.category-table .MuiTabs-flexContainer {
     gap: 8px !important;
 }
 
-
-
-.category-table1 .MuiTabs-hideScrollbar .MuiTabs-indicator{
+.category-table1 .MuiTabs-hideScrollbar .MuiTabs-indicator {
     position: unset !important;
-
 }
 
-.category-table1 .Mui-selected{
+.category-table1 .Mui-selected {
     background-color: var(--ik_whitevariant);
     color: var(--ik_pink);
-    border: 1px solid var(--ik_pink)!important ;
+    border: 1px solid var(--ik_pink) !important ;
     border-radius: 34px;
 }
 
-
-.category-table1 .MuiTab-textColorPrimary{
-    border: 1px solid var(--ik_bordervariant2) ;
+.category-table1 .MuiTab-textColorPrimary {
+    border: 1px solid var(--ik_bordervariant2);
     /* border-radius: 34px; */
 }
-.category-table1 .MuiTabs-flexContainer{
+.category-table1 .MuiTabs-flexContainer {
     gap: 8px !important;
 }
-.font-linear{
-    background: linear-gradient(90deg, #E34061 30%, #3C1393 44%, #1E9D77 100%);
+.font-linear {
+    background: linear-gradient(90deg, #e34061 30%, #3c1393 44%, #1e9d77 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: capitalize !important;
 }
 
-.askcolor{
-    background-image: linear-gradient(272.65deg, #2E1E5A -3.81%, #E34061 116.02%);
+.askcolor {
+    background-image: linear-gradient(272.65deg, #2e1e5a -3.81%, #e34061 116.02%);
 }
-.shadow-color{
-box-shadow: 0px 10px 30px 0px hsla(0, 0%, 0%, 0.15);
-
+.shadow-color {
+    box-shadow: 0px 10px 30px 0px hsla(0, 0%, 0%, 0.15);
 }
 
 .reviews-section .slick-prev:before {
-    content: '' !important;
+    content: "" !important;
     display: inline-block !important;
     width: 10px !important;
     height: 20px !important;
-    background-image: url('/assets/icons/reviews-prev.svg') !important;
+    background-image: url("//assets/icons/reviews-prev.svg") !important;
     background-size: cover !important;
     position: relative;
     z-index: 0 !important;
@@ -302,19 +289,18 @@ box-shadow: 0px 10px 30px 0px hsla(0, 0%, 0%, 0.15);
 .reviews-section .slick-prev {
     z-index: 100;
     top: 48% !important;
-
 }
-.reviews-section .slick-track{
+.reviews-section .slick-track {
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
 .reviews-section .slick-next:before {
-    content: '' !important;
+    content: "" !important;
     display: inline-block !important;
     width: 10px !important;
     height: 20px !important;
-    background-image: url('/assets/icons/reviewa-next.svg') !important;
+    background-image: url("//assets/icons/reviewa-next.svg") !important;
     background-size: cover !important;
     position: relative;
     z-index: 9999;
@@ -325,4 +311,3 @@ box-shadow: 0px 10px 30px 0px hsla(0, 0%, 0%, 0.15);
     top: 48% !important;
     z-index: 100;
 }
-

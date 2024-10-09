@@ -27,13 +27,13 @@ const ListingReviewsComponents = dynamic(
 
 
 const ArtistDetail = () => {
-   const artistHeader = {
-       logo: "/assets/image/artist-logo.png",
-       title: "Ramakrishna Paramahamsa",
-       location: "Chennai",
-       job: "Singer (13 Years in Business)",
-    }
-  
+  const artistHeader = {
+    logo: "//assets/image/artist-logo.png",
+    title: "Ramakrishna Paramahamsa",
+    location: "Chennai",
+    job: "Singer (13 Years in Business)",
+  }
+
   return (
     <section>
       <CustomContainer>

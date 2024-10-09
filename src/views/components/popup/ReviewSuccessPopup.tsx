@@ -35,7 +35,7 @@ export default function ReviewSuccessPopup({
     >
       <div className="absolute top-0 left-0">
         <ImageComponent
-          src={"/assets/image/success-img.webp"}
+          src={"//assets/image/success-img.webp"}
           width={680}
           height={261}
           alt={"location"}

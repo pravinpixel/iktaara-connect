@@ -21,7 +21,7 @@ const RegsiterComponent = ({ handleLoginPopup, ClassNames }: RegsiterProps) => {
   return (
     <Box className="flex flex-col items-center justify-center h-full">
       <ImageComponent
-        src={"assets/logo/logo.svg"}
+        src={"/assets/logo/logo.svg"}
         width={158}
         height={60}
         alt={"iktaraa"}
@@ -37,7 +37,7 @@ const RegsiterComponent = ({ handleLoginPopup, ClassNames }: RegsiterProps) => {
           <div className="flex gap-2 justify-start items-center w-full pt-9 pl-4">
             <div className="cursor-pointer">
               <ImageComponent
-                src={"/assets/icons/arrow_prev.svg"}
+                src={"//assets/icons/arrow_prev.svg"}
                 width={8}
                 height={16}
                 alt={"arrow_prev"}
@@ -128,7 +128,7 @@ const RegsiterComponent = ({ handleLoginPopup, ClassNames }: RegsiterProps) => {
             className="text-ik_pink cursor-pointer"
             onClick={() => handleLoginPopup()}
           >
-             Login
+            Login
           </span>
         </Typography>
       </FormProvider>

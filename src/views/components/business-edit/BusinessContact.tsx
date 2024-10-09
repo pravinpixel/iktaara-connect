@@ -16,7 +16,7 @@ const BusinessContact = () => {
 
   const { handleSubmit } = methods;
 
-  const handleAbout = async () => {};
+  const handleAbout = async () => { };
   return (
     <section>
       <FormProvider {...methods}>
@@ -104,7 +104,7 @@ const BusinessContact = () => {
                   startAdornment: (
                     <IconButton>
                       <ImageComponent
-                        src="/assets/icons/search-icon.svg"
+                        src="//assets/icons/search-icon.svg"
                         width={20}
                         height={20}
                         alt="search_icon"
@@ -127,7 +127,7 @@ const BusinessContact = () => {
                   <button type="button" className="mt-3">
                     <div className="flex gap-2">
                       <ImageComponent
-                        src={"/assets/icons/icons-delete.svg"}
+                        src={"//assets/icons/icons-delete.svg"}
                         width={20}
                         height={20}
                         alt={"delete"}
@@ -150,7 +150,7 @@ const BusinessContact = () => {
               <div className="w-full">
                 <div className="flex items-center gap-3">
                   <ImageComponent
-                    src={"/assets/icons/live-icons.svg"}
+                    src={"//assets/icons/live-icons.svg"}
                     width={60}
                     height={60}
                     alt={"arrowdown"}
@@ -176,7 +176,7 @@ const BusinessContact = () => {
               <div className="w-full">
                 <div className="flex items-center gap-3">
                   <ImageComponent
-                    src={"/assets/icons/home-icons.svg"}
+                    src={"//assets/icons/home-icons.svg"}
                     width={60}
                     height={60}
                     alt={"arrowdown"}
@@ -202,7 +202,7 @@ const BusinessContact = () => {
               <div className="w-full">
                 <div className="flex items-center gap-3">
                   <ImageComponent
-                    src={"/assets/icons/distance-icons.svg"}
+                    src={"//assets/icons/distance-icons.svg"}
                     width={60}
                     height={60}
                     alt={"arrowdown"}

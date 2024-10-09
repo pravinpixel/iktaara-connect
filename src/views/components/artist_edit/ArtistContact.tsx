@@ -13,7 +13,7 @@ const ArtistContact = () => {
 
   const { handleSubmit } = methods;
 
-  const handleAbout = async () => {};
+  const handleAbout = async () => { };
   return (
     <section>
       <FormProvider {...methods}>
@@ -26,7 +26,7 @@ const ArtistContact = () => {
               <div className="w-full">
                 <div className="flex items-center gap-3">
                   <ImageComponent
-                    src={"/assets/icons/live-icons.svg"}
+                    src={"//assets/icons/live-icons.svg"}
                     width={60}
                     height={60}
                     alt={"arrowdown"}
@@ -52,7 +52,7 @@ const ArtistContact = () => {
               <div className="w-full">
                 <div className="flex items-center gap-3">
                   <ImageComponent
-                    src={"/assets/icons/home-icons.svg"}
+                    src={"//assets/icons/home-icons.svg"}
                     width={60}
                     height={60}
                     alt={"arrowdown"}
@@ -78,7 +78,7 @@ const ArtistContact = () => {
               <div className="w-full">
                 <div className="flex items-center gap-3">
                   <ImageComponent
-                    src={"/assets/icons/distance-icons.svg"}
+                    src={"//assets/icons/distance-icons.svg"}
                     width={60}
                     height={60}
                     alt={"arrowdown"}

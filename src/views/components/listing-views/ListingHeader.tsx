@@ -59,7 +59,7 @@ const ListingHeaderComponents = (props: Props) => {
               <div className="flex gap-3">
                 <div className="flex gap-2">
                   <ImageComponent
-                    src={"assets/icons/maps-location.svg"}
+                    src={"/assets/icons/maps-location.svg"}
                     width={20}
                     height={20}
                     alt={"location"}
@@ -71,7 +71,7 @@ const ListingHeaderComponents = (props: Props) => {
                 </div>
                 <div className="flex gap-2">
                   <ImageComponent
-                    src={"assets/icons/work-icons.svg"}
+                    src={"/assets/icons/work-icons.svg"}
                     width={20}
                     height={20}
                     alt={"location"}
@@ -86,7 +86,7 @@ const ListingHeaderComponents = (props: Props) => {
                   <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-3">
                     <div className="flex gap-3">
                       <ImageComponent
-                        src={"assets/icons/phone-icons.svg"}
+                        src={"/assets/icons/phone-icons.svg"}
                         width={24}
                         height={24}
                         alt={"location"}
@@ -97,63 +97,63 @@ const ListingHeaderComponents = (props: Props) => {
                     </div>
                   </button>
                 </div>
-                  <div className="group relative">
-                    <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-3 inline-flex items-center group">
-                      <div className="flex gap-3">
-                        <ImageComponent
-                          src={"assets/icons/share-icons.svg"}
-                          width={24}
-                          height={24}
-                          alt={"location"}
-                        />
-                        <span className="text-f16 text-ik_bluegreydarken3 font-normal">
-                          Share
-                        </span>
-                      </div>
-                    </button>
-                    <div className="pt-2">
-                      <div className="shadow-md shadow-ik_boxshadiowcolor  rounded-lg bg-ik_white px-6 py-[22px] absolute hidden  group-hover:block  ">
-                        <div className="flex justify-center items-center gap-5 ">
-                          <div className="w-[44px]">
-                            <ImageComponent
-                              src={"assets/icons/fb-icons.svg"}
-                              width={44}
-                              height={44}
-                              alt={"location"}
-                              className="cursor-pointer opacity-30  hover:opacity-100 "
-                            />
-                          </div>
-                          <div className="w-[44px]">
-                            <ImageComponent
-                              src={"assets/icons/inked-icons.svg"}
-                              width={44}
-                              height={44}
-                              alt={"location"}
-                              className="cursor-pointer opacity-30 hover:opacity-100"
-                            />
-                          </div>
-                          <div className="w-[44px]">
-                            <ImageComponent
-                              src={"assets/icons/twit-icons.svg"}
-                              width={44}
-                              height={44}
-                              alt={"location"}
-                              className="cursor-pointer opacity-30 hover:opacity-100"
-                            />
-                          </div>
-                          <div className="w-[44px]">
-                            <ImageComponent
-                              src={"assets/icons/whatsapp-icons.svg"}
-                              width={44}
-                              height={44}
-                              alt={"location"}
-                              className="cursor-pointer opacity-30 hover:opacity-100"
-                            />
-                          </div>
+                <div className="group relative">
+                  <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-3 inline-flex items-center group">
+                    <div className="flex gap-3">
+                      <ImageComponent
+                        src={"/assets/icons/share-icons.svg"}
+                        width={24}
+                        height={24}
+                        alt={"location"}
+                      />
+                      <span className="text-f16 text-ik_bluegreydarken3 font-normal">
+                        Share
+                      </span>
+                    </div>
+                  </button>
+                  <div className="pt-2">
+                    <div className="shadow-md shadow-ik_boxshadiowcolor  rounded-lg bg-ik_white px-6 py-[22px] absolute hidden  group-hover:block  ">
+                      <div className="flex justify-center items-center gap-5 ">
+                        <div className="w-[44px]">
+                          <ImageComponent
+                            src={"/assets/icons/fb-icons.svg"}
+                            width={44}
+                            height={44}
+                            alt={"location"}
+                            className="cursor-pointer opacity-30  hover:opacity-100 "
+                          />
+                        </div>
+                        <div className="w-[44px]">
+                          <ImageComponent
+                            src={"/assets/icons/inked-icons.svg"}
+                            width={44}
+                            height={44}
+                            alt={"location"}
+                            className="cursor-pointer opacity-30 hover:opacity-100"
+                          />
+                        </div>
+                        <div className="w-[44px]">
+                          <ImageComponent
+                            src={"/assets/icons/twit-icons.svg"}
+                            width={44}
+                            height={44}
+                            alt={"location"}
+                            className="cursor-pointer opacity-30 hover:opacity-100"
+                          />
+                        </div>
+                        <div className="w-[44px]">
+                          <ImageComponent
+                            src={"/assets/icons/whatsapp-icons.svg"}
+                            width={44}
+                            height={44}
+                            alt={"location"}
+                            className="cursor-pointer opacity-30 hover:opacity-100"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
           </div>
@@ -163,7 +163,7 @@ const ListingHeaderComponents = (props: Props) => {
                 <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-5">
                   <div className="flex gap-3">
                     <ImageComponent
-                      src={"assets/icons/star-icons.svg"}
+                      src={"/assets/icons/star-icons.svg"}
                       width={24}
                       height={24}
                       alt={"location"}

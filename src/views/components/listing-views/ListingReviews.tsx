@@ -97,7 +97,7 @@ const ListingReviewsComponents = () => {
             <div className="shadow-color p-6 rounded-3xl" key={row.id}>
               <div>
                 <ImageComponent
-                  src={"/assets/icons/arrow-icons.svg"}
+                  src={"//assets/icons/arrow-icons.svg"}
                   width={37}
                   height={37}
                   alt={"arrowdown"}
