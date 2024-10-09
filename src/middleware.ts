@@ -18,13 +18,17 @@ export function middleware(request: NextRequest) {
     'images',
     'assets',
     'api',
+    'connect',
+    '/'
   ];
 
+  console.log(fisrtIndex, "fisrtIndex")
+
   if (!removedData.includes(fisrtIndex)) {
-      const removedDataSplit = request.url.split('/');
-      removedDataSplit.splice(3, 0, 'connect');
-      const newUrlString = removedDataSplit.join('/');
-      return NextResponse.redirect(new URL(newUrlString, request.url));
+    const removedDataSplit = request.url.split('/');
+    removedDataSplit.splice(3, 0, 'connect');
+    const newUrlString = removedDataSplit.join('/');
+    return NextResponse.redirect(new URL(newUrlString, request.url));
   }
 }
 
