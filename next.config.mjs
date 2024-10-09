@@ -2,6 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     basePath: "/connect",
+    assetPrefix : "/connect/",
     typescript: {
         ignoreBuildErrors: true,
     },
