@@ -72,6 +72,9 @@ declare module "@mui/material/Button" {
     interface ButtonPropsVariantOverrides {
         white: true;
         "primary-button": true;
-        task :true
+        "payment-button": true;
+        "bottom-left": true;
+        "event-button": true;
+        task: true;
     }
 }
