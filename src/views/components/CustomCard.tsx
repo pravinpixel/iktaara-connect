@@ -7,11 +7,11 @@ import ImageComponent from "./ImageComponent";
 import { CardMedia } from "@mui/material";
 
 interface CustomCardProps {
-  variant?: "elevation" | "outlined";
+  variant?: "elevation" | "outlined" | 'bottom-right' | "bottom-left";
 
   img: string;
   text: string;
-  reviews: string;
+  reviews?: string;
   Contenttext?: string;
   img1?: string;
   width?: string | number;
@@ -42,7 +42,7 @@ export default function CustomCard(props: CustomCardProps) {
 
   return (
     <Card
-      variant={variant}
+      variant={variant as never}
       sx={{
         position: "relative",
 

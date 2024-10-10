@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import ImageComponent from "../ImageComponent";
 import EnquirePopup from "../popup/EnquirePopup";
@@ -15,9 +16,9 @@ const ListingHeaderComponents = (props: Props) => {
   const [openbusinessedit, setOpenbusinessedit] = React.useState(false);
   const [openUpdate, setOpenUpdate] = React.useState(false);
 
-  const handleClickOpencity = () => {
-    setOpencity(true);
-  };
+  // const handleClickOpencity = () => {
+  //   setOpencity(true);
+  // };
 
   const handleClosecity = () => {
     setOpencity(false);

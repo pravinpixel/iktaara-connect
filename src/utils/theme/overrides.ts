@@ -316,7 +316,7 @@ export function overrides(theme: Theme) {
           },
         },
         {
-          props: { variant: "customEventInput" },
+          props: { variant: "customEventInput" } as any,
           style: {
             border: `1px solid ${theme.palette.customColor.ik_bluegreydarken3}`,
             color: theme.palette.customColor.ik_bluegreydarken3,

@@ -15,8 +15,7 @@ const API = axios.create({
 
 
 const refreshToken = async () => {
-  const session = await getSession();
-  console.log("session", session);
+  // const session = await getSession();
 
   // if (session?.auth?.refresh_token) {
   //   try {

@@ -1,14 +1,13 @@
-import * as React from "react";
-import dynamic from "next/dynamic";
-import { useForm } from "react-hook-form";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Button } from "@mui/material";
+import dynamic from "next/dynamic";
+import * as React from "react";
 // const CustomCheckbox = dynamic(
 //   () => import("@/views/components/form-fields/CheckBox")
 // );
-import { Grid } from "@mui/material";
-import { Tab, Tabs } from "@mui/material";
-import TabPanel from "@mui/lab/TabPanel";
 import TabContext from "@mui/lab/TabContext";
+import TabPanel from "@mui/lab/TabPanel";
+import { Grid, Tab, Tabs } from "@mui/material";
 // import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const FilterLanguage = dynamic(() => import("./FilterLanguage"));
@@ -74,7 +73,7 @@ export default function EventFilterData() {
   ];
   const [value, setValue] = React.useState("1");
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue: string) => {
     setValue(newValue);
   };
 
@@ -105,9 +104,9 @@ export default function EventFilterData() {
           <Tabs
             orientation="vertical"
             value={value}
-            onChange={handleChange}
+            onChange={(_, value) => handleChange(value)}
             aria-label="Vertical tabs example"
-            variant="primary"
+            variant={"primary" as any}
             sx={{
               " & .MuiButtonBase-root": {
                 display: "flex",
@@ -119,10 +118,10 @@ export default function EventFilterData() {
               },
             }}
           >
-            <Tab label="Category" value="1" variant="primary" />
-            <Tab label="Language" value="2" variant="primary" />
-            <Tab label="Genre" value="3" variant="primary" />
-            <Tab label="Price" value="4" variant="primary" />
+            <Tab label="Category" value="1"  component='div' />
+            <Tab label="Language" value="2"  component='div'  />
+            <Tab label="Genre" value="3"  component='div' />
+            <Tab label="Price" value="4"  component='div' />
           </Tabs>
           <Box className="flex flex-col justify-between flex-grow min-h-[400px] w-[500px]">
             <TabPanel value="1">

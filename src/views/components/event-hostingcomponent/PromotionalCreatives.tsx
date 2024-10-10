@@ -1,13 +1,10 @@
-import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
-import ImageComponent from "../ImageComponent";
-import { FormProvider, useForm, useFieldArray } from "react-hook-form";
-import { Stack } from "@mui/material";
-import InputField from "../form-fields/InputField";
-import { Button } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Box, Grid, Stack, Typography } from "@mui/material";
+import { FormProvider, useFieldArray, useForm } from "react-hook-form";
 import CustomButton from "../form-fields/CustomButton";
+import InputField from "../form-fields/InputField";
+import ImageComponent from "../ImageComponent";
+
 export default function PromotionalCreatives() {
   const methods = useForm();
   const { control, register } = useForm({
@@ -15,10 +12,9 @@ export default function PromotionalCreatives() {
       eventhosting: [{ event_description: "" }],
     },
   });
-  const { fields, append, remove, swap, move, insert } = useFieldArray({
+  const { fields, append, remove } = useFieldArray({
     control, // control props comes from useForm (optional: if you are using FormContext)
     name: "eventhosting", // unique name for your Field Array
-    required: true,
   });
   return (
     <Box className="p-6 ">
@@ -93,7 +89,7 @@ export default function PromotionalCreatives() {
                 name="event"
                 placeholder="Need Singham Dhan by SID SRIRAMail"
                 type="text"
-                InputProps={{ variant: "customEventInput" }}
+                InputProps={{ variant: "customEventInput" } as any}
                 label={
                   <Typography className="font-normal text-f16 leading-5 text-ik_bluegreybluegrey">
                     Name of the Event (100 character max)
@@ -105,7 +101,7 @@ export default function PromotionalCreatives() {
                 name="event_description"
                 placeholder="Calling all music lovers! Brace yourselves for the arrival of Nee Singham Dhan, a captivating live concert experience featuring the phenomenal Sid Sriram!"
                 type="text"
-                InputProps={{ variant: "customEventInput" }}
+                InputProps={{ variant: "customEventInput" } as any}
                 label={
                   <Typography className="font-normal text-f16 leading-5 text-ik_bluegreybluegrey">
                     Event Description
@@ -120,7 +116,7 @@ export default function PromotionalCreatives() {
                         {...register(`event_description.${index}`)}
                         placeholder="Witness the maestro weave his soulful magic live, fusing Indian classical with contemporary..."
                         type="text"
-                        InputProps={{ variant: "customEventInput" }}
+                        InputProps={{ variant: "customEventInput" } as any}
                         label={
                           <Typography className="font-normal text-f16 leading-5 text-ik_bluegreybluegrey">
                             Reasons to attend (Add a max of 5 points to sell)
@@ -155,7 +151,7 @@ export default function PromotionalCreatives() {
                         {...register(`eventhosting.${index}.event_description`)}
                         placeholder="Witness the maestro weave his soulful magic live, fusing Indian classical with contemporary..."
                         type="text"
-                        InputProps={{ variant: "customEventInput" }}
+                        InputProps={{ variant: "customEventInput" } as any}
                         label={
                           <Typography className="font-normal text-f16 leading-5 text-ik_bluegreybluegrey">
                             Reasons to attend (Add a max of 5 points to sell)
@@ -181,7 +177,7 @@ export default function PromotionalCreatives() {
                         {...register(`eventhosting.${index}.event_description`)}
                         placeholder="Witness the maestro weave his soulful magic live, fusing Indian classical with contemporary..."
                         type="text"
-                        InputProps={{ variant: "customEventInput" }}
+                        InputProps={{ variant: "customEventInput" } as any}
                         className="max-w-[750px]"
                         label={
                           <Typography className="font-normal text-f16 leading-5 text-ik_bluegreybluegrey">

@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Controller,
   FormProvider,
   useFieldArray,
   useForm,
@@ -16,7 +15,7 @@ const ArtistRecognitions = () => {
 
   const { control, register, handleSubmit } = useForm({
     defaultValues: {
-      fields: [{ name: "", description: "", date: "" }],
+      recognitions: [{ name: "", description: "", date: "" }],
     },
   });
 

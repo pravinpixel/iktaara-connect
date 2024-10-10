@@ -4,11 +4,11 @@ import { Button, ButtonProps } from "@mui/material";
 interface CustomButtonType extends ButtonProps {
   label?: string;
   variant?: ButtonProps["variant"];
-  className: string;
+  className?: string;
 }
 
 function CustomButton(props: CustomButtonType) {
-  const { label, variant = "contained", className, ...rest } = props;
+  const { label, variant = "contained", className = '', ...rest } = props;
 
   return (
     <Button

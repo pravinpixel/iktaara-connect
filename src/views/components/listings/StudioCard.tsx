@@ -12,7 +12,6 @@ const CustomImageButton = dynamic(() => import("../CustomImageButton"));
 const ImageComponent = dynamic(() => import("../ImageComponent"));
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StudioCard = ({ buisnessListData }: any) => {
-  console.log(buisnessListData, "buisnessListData");
 
   return (
     <section className="mt-[15px] cursor-pointer">
