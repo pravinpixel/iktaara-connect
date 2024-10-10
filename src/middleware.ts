@@ -7,7 +7,7 @@ export { default } from 'next-auth/middleware';
 export function middleware(request: NextRequest) {
   // Split the URL path into parts
   // const urlPathName = request.nextUrl.pathname;
-  console.log(request, "request")
+  console.log(request.cookies, "request")
   // const pathParts = urlPathName.split('/');
 
   // const fisrtIndex = pathParts[1];
