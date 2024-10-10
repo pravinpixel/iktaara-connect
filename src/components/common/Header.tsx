@@ -33,7 +33,7 @@ const Header = () => {
   const [selected, setSelected] = useState<string | null>(null);
   const [openStarted, setOpenStarted] = React.useState(false);
 
-  const { status } = useSession()
+  const { status, data } = useSession()
 
   const { setPopup } = zustandStore();
 
@@ -217,7 +217,7 @@ const Header = () => {
               onClick={handleClickOpenStarted}
             />
             {
-              status === 'authenticated' ? "Logged In" : <CustomImageButton
+              status === 'authenticated' ? data?.user?.name || '' : <CustomImageButton
               width={16}
               height={19}
               image="/assets/icons/login-icons.svg"
