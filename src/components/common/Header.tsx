@@ -8,7 +8,7 @@ import { AutoCompleteSearch } from "./AutoCompleteSearch";
 import Slider from "react-slick";
 import zustandStore from "@/utils/helpers/zustand";
 import dynamic from "next/dynamic";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const CustomButton = dynamic(
   () => import("@/views/components/form-fields/CustomButton")
@@ -217,17 +217,19 @@ const Header = () => {
               onClick={handleClickOpenStarted}
             />
             {
-              status === 'authenticated' ? data?.user?.name || '' : <CustomImageButton
-              width={16}
-              height={19}
-              image="/assets/icons/login-icons.svg"
-              label={"Login"}
-              newclass="h-[48px]" 
-              className="text-f16 font-semibold text-ik_pink-foreground"
-              onClick={() => handleLoginPopup()}
-            />
+              status === 'authenticated' ? <p className="cursor-pointer hover:text-ik_pink" onClick={() => {
+                signOut()
+              }}>{data?.user?.name || ''}</p> : <CustomImageButton
+                width={16}
+                height={19}
+                image="/assets/icons/login-icons.svg"
+                label={"Login"}
+                newclass="h-[48px]"
+                className="text-f16 font-semibold text-ik_pink-foreground"
+                onClick={() => handleLoginPopup()}
+              />
             }
-          
+
           </div>
         </div>
       </CustomContainer>
