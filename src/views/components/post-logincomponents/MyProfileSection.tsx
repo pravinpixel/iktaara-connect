@@ -14,6 +14,7 @@ import SelectField from "../form-fields/SelectField";
 import { FormProvider, useForm } from "react-hook-form";
 import CustomButton from "../form-fields/CustomButton";
 import { Button } from "@mui/material";
+import InputField from "../form-fields/InputField";
 
 const MyProfileSection = () => {
   const methods = useForm();
@@ -22,7 +23,7 @@ const MyProfileSection = () => {
       <FormProvider {...methods}>
         {" "}
         <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
-          <Stack direction="row" spacing={2}>
+          <Stack direction="row" spacing={2} alignItems={"center"}>
             <Box>
               <ImageComponent
                 src="/images/static/image_57.png"
@@ -37,6 +38,16 @@ const MyProfileSection = () => {
               </Typography>
             </Box>
           </Stack>
+        </Box>
+        <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
+          <Typography>Account Information</Typography>
+          <InputField
+            name="email"
+            label="Email ID / Phone number"
+            placeholder="Email / Phone number"
+            type="email"
+            sx={{ width: "480px" }}
+          />
         </Box>
       </FormProvider>
     </>

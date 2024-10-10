@@ -4,6 +4,7 @@ import { Grid } from "@mui/material";
 import { Box } from "@mui/material";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
+import MyProfileSection from "@/views/components/post-logincomponents/MyProfileSection";
 const CustomContainer = dynamic(() => import("@/views/components/Container"));
 const CustomButton = dynamic(
   () => import("@/views/components/form-fields/CustomButton")
@@ -101,6 +102,7 @@ const PostLogin = () => {
             <Grid item xs={8}>
               {firstSection === "dashboard" && <DashboardSection />}
               {firstSection === "enquiries" && <EnquirySection />}
+              {firstSection === "myProfile" && <MyProfileSection />}
             </Grid>
           </Grid>
         </CustomContainer>
