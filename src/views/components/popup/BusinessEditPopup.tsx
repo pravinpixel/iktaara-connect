@@ -12,6 +12,7 @@ import TabList from "@mui/lab/TabList";
 import BusinessAbout from "../business-edit/BusinessAbout";
 import BusinessServices from "../business-edit/BusinessServices";
 import BusinessContact from "../business-edit/BusinessContact";
+import BusinessMedia from "../business-edit/BusinessMedia";
 // import ImageUpload from "../ImageUpload";
 // import { useForm } from "react-hook-form";
 
@@ -84,22 +85,28 @@ export default function BusinessEditPopup({
             <TabList
               onChange={handleChange}
               aria-label="lab API tabs example"
-              className="w-full flex gap-4 "
+              className="w-full flex gap-2"
+              variant="flexContainer"
             >
               <Tab
                 label="About"
                 value="1"
-                className="text-f16 font-normal h-auto min-h-[50px] w-auto max-[145px] px-7 "
+                className="text-f16 font-normal h-auto min-h-[53px] w-auto max-[145px] px-7"
               />
               <Tab
                 label="Services"
                 value="2"
-                className="text-f16 font-normal h-auto min-h-[50px] w-auto max-[145px] px-7"
+                className="text-f16 font-normal h-auto min-h-[53px] w-auto max-[145px] px-7 "
               />
               <Tab
                 label="Contact"
                 value="3"
-                className="text-f16 font-normal h-auto min-h-[50px] w-auto max-[145px] px-7 "
+                className="text-f16 font-normal h-auto min-h-[53px] w-auto max-[145px] px-7 "
+              />
+              <Tab
+                label="Media"
+                value="4"
+                className="text-f16 font-normal h-auto min-h-[53px] w-auto max-[145px] px-7 "
               />
             </TabList>
             <TabPanel value="1" className="px-0">
@@ -110,6 +117,9 @@ export default function BusinessEditPopup({
             </TabPanel>
             <TabPanel value="3" className="px-0">
               <BusinessContact />
+            </TabPanel>
+            <TabPanel value="4" className="px-0">
+              <BusinessMedia />
             </TabPanel>
           </TabContext>
         </Box>

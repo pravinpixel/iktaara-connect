@@ -7,12 +7,14 @@ interface ImageUploadProps {
   control: any;
   type: boolean;
   typeupload: boolean;
+  multiple: boolean;
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({
   control,
   type,
   typeupload,
+  multiple = false,
 }) => {
   const [imageSrc, setImageSrc] = useState<string | null>(
     "/assets/image/music-logo.png"
@@ -127,7 +129,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
             ref={fileInputRef}
             style={{ display: "none" }}
             onChange={handleFileMultipleUpload}
-            multiple
+            multiple={multiple}
           />
           <Controller
             name="profile_images"

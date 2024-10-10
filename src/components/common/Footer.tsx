@@ -1906,7 +1906,7 @@ const Footer = () => {
               </Grid>
               <Grid item xs={6} sm={6} md={2}>
                 <div>
-                  <p className="text-f12 text-ik_pink-foreground font-medium text-[13px] text-white mb-2">
+                  <p className="text-f12 text-ik_pink-foreground font-medium  text-white mb-2">
                     About Us
                   </p>
                   <ul className="list-group">
