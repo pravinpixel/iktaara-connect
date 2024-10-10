@@ -438,6 +438,15 @@ export function overrides(theme: Theme) {
             },
           },
         },
+        {
+          props: { variant: "flexContainer" },
+          style: {
+            "& .MuiTabs-flexContainer": {
+              display: "flex",
+              gap: "8px",
+            },
+          },
+        },
       ],
     },
     MuiTab: {
@@ -454,10 +463,11 @@ export function overrides(theme: Theme) {
           backgroundColor: "transparent",
           width: "100%",
           padding: "12px",
-          BorderBottom: "none",
+          borderBottom: "none",
+          // borderBottom: `2px solid ${theme.palette.customColor.ik_bluegreydarken2}`,
           borderRadius: "7px",
           display: "flex",
-          gap: "6px",
+          gap: "10px",
           justifyContent: "center",
           "&:hover": {
             backgroundColor: "#fff",
@@ -499,10 +509,18 @@ export function overrides(theme: Theme) {
                 },
               },
             },
+            {
+              props: { variant: "customtab" },
+              style: {
+                borderBottom: `2px solid ${theme.palette.customColor.ik_bluegreydarken2}`,
+                borderRadius: "0px",
+              },
+            },
           ],
         },
       },
     },
+
     MuiTabPanel: {
       styleOverrides: {
         root: {

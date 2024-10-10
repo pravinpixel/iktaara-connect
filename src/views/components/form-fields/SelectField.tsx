@@ -81,7 +81,6 @@ const SelectField = (props: {
           IconComponent={KeyboardArrowDownIcon}
           error={!!errorMessage}
           displayEmpty
-          className="mt-0"
           MenuProps={{
             sx: {
               "& ul": {
