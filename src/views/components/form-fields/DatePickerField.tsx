@@ -36,7 +36,7 @@ const DatePickerField: React.FC<DatePickerFieldProps> = ({
   return (
     <Box width="100%">
       {label && (
-        <InputLabel className="text-f14 text-ik_bluegreydarken1 font-normal">
+        <InputLabel className="text-f14 text-ik_bluegreydarken1 font-normal mb-2">
           {label}
         </InputLabel>
       )}

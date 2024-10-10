@@ -1,4 +1,10 @@
-import { Box, DialogContent, DialogTitle, IconButton, Slide } from "@mui/material";
+import {
+  Box,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+  Slide,
+} from "@mui/material";
 import { Dialog } from "@mui/material";
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
@@ -65,6 +71,7 @@ export default function PostUpdatePapup({ handleClose, open }: UpdateProps) {
                   typeupload={true}
                   type={false}
                   control={undefined}
+                  multiple={false}
                 />
               </div>
               <div className="mb-3">
