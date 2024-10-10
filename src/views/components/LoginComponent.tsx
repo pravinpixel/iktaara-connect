@@ -7,6 +7,7 @@ import { Typography } from "@mui/material";
 import { signIn, SignInOptions } from "next-auth/react";
 import dynamic from "next/dynamic";
 import { notify } from "@/utils/helpers/global-function";
+import { useRouter } from "next/router";
 
 const CustomButton = dynamic(() => import("./form-fields/CustomButton"));
 const InputField = dynamic(() => import("./form-fields/InputField"));
@@ -25,6 +26,7 @@ const LoginComponent = ({ handleRegsiterOpen, handleOtpOpen }: LoginProps) => {
     },
   });
   const { handleSubmit } = methods;
+  const { reload } = useRouter()
 
   const handleLogin = async (formValues?: SignInOptions) => {
     try {
@@ -32,10 +34,10 @@ const LoginComponent = ({ handleRegsiterOpen, handleOtpOpen }: LoginProps) => {
         redirect: false,
         ...formValues,
       }).then((res) => {
-        if (res?.ok) {
-          return res;
+        if (res?.error) {
+          throw new Error(res?.error as never);
         }
-        throw new Error(res?.error as never);
+        reload()
       });
     } catch (error) {
       notify(error);
@@ -44,7 +46,14 @@ const LoginComponent = ({ handleRegsiterOpen, handleOtpOpen }: LoginProps) => {
 
   const handleGoogleLogin = async () => {
     try {
-      await signIn("google");
+      await signIn("google", {
+        redirect: false,
+      }).then((res) => {
+        if (res?.error) {
+          throw new Error(res?.error as never);
+        }
+        reload()
+      });
     } catch (error) {
       notify(error);
     }
