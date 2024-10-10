@@ -5,6 +5,7 @@ import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import ImageComponent from "./ImageComponent";
 import { CardMedia } from "@mui/material";
+import CONSTANT from "@/utils/helpers/constant-helper";
 
 interface CustomCardProps {
   variant?: "elevation" | "outlined" | 'bottom-right' | "bottom-left";
@@ -23,6 +24,7 @@ interface CustomCardProps {
   typeleftbottom?: boolean;
   typebottomtop?: boolean;
 }
+
 export default function CustomCard(props: CustomCardProps) {
   const {
     variant,
@@ -62,7 +64,7 @@ export default function CustomCard(props: CustomCardProps) {
         }),
       }}
     >
-      <CardMedia component="img" image={img} alt="Paella dish" />
+      <CardMedia component="img" image={ CONSTANT.ASSESTPATH + img} alt="Paella dish" />
       {/* <Box sx={{ position: "relative" }}>
         <ImageComponent src={img} alt="Card Image" width={260} height={360} /> */}
       {type && (
