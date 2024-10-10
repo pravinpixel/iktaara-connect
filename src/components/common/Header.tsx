@@ -33,7 +33,7 @@ const Header = () => {
   const [selected, setSelected] = useState<string | null>(null);
   const [openStarted, setOpenStarted] = React.useState(false);
 
-  const { status, data } = useSession()
+  const { status } = useSession()
 
   const { setPopup } = zustandStore();
 
@@ -137,6 +137,10 @@ const Header = () => {
     setPopup("login");
   };
 
+  const handleLogout = ()=>{
+    signOut()
+  }
+
   const handleMouseEnter = (value: string) => {
     setSelected(value);
   };
@@ -217,9 +221,15 @@ const Header = () => {
               onClick={handleClickOpenStarted}
             />
             {
-              status === 'authenticated' ? <p className="cursor-pointer hover:text-ik_pink" onClick={() => {
-                signOut()
-              }}>{data?.user?.name || ''}</p> : <CustomImageButton
+              status === 'authenticated' ? <CustomImageButton
+              width={16}
+              height={19}
+              image="/assets/icons/login-icons.svg"
+              label={"Logout"}
+              newclass="h-[48px]"
+              className="text-f16 font-semibold text-ik_pink-foreground"
+              onClick={() => handleLogout()}
+            /> : <CustomImageButton
                 width={16}
                 height={19}
                 image="/assets/icons/login-icons.svg"
