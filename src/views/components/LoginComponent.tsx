@@ -16,7 +16,13 @@ interface LoginProps {
 }
 
 const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
-  const methods = useForm();
+  const methods = useForm<SignInOptions>({
+    defaultValues : {
+      redirect : false,
+      email : "eve.holt@reqres.in",
+      password : "cityslicka"
+    }
+  });
   const { handleSubmit } = methods;
 
   const handleLogin = async (formValues?: SignInOptions) => {
