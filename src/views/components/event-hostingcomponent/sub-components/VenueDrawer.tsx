@@ -15,7 +15,7 @@ import CustomButton from "../../form-fields/CustomButton";
 const ImageComponent = dynamic(() => import("../../ImageComponent"));
 const DatePopup = dynamic(() => import("../../popup/DatePopup"));
 
-export default function VenueDrawer() {
+export default function VenueDrawer({ setClose, setValue }: any) {
   const [open, setOpen] = useState(false);
 
   const handleDate = () => {
@@ -24,6 +24,10 @@ export default function VenueDrawer() {
 
   const handleClosePopup = () => {
     setOpen(false);
+  };
+  const handleNew = () => {
+    setClose(true);
+    setValue(false);
   };
   const methods = useForm();
   return (
@@ -35,7 +39,7 @@ export default function VenueDrawer() {
             <Typography className="text-f22 font-semibold leading-7 text-ik_bluegreydarken3 pb-2">
               Venue
             </Typography>
-            <Box>
+            <Box onClick={() => handleNew()} className="cursor-pointer">
               {" "}
               <ImageComponent
                 src="/images/static/image_53.png"

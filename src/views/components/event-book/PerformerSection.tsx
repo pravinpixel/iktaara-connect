@@ -50,10 +50,10 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           className="cursor-pointer mt-3"
         >
           <ImageComponent
-            src="/images/static/image_33.png"
+            src="/images/static/clock.svg"
             alt="image"
-            width={16}
-            height={16}
+            width={48}
+            height={48}
           />
           <Box>
             <Typography className="font-medium text-f16 leading-5 text-ik_bluegreybluegrey">
@@ -72,10 +72,10 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           className="cursor-pointer mt-3"
         >
           <ImageComponent
-            src="/images/static/image_5.png"
+            src="/images/static/location.svg"
             alt="image"
-            width={16}
-            height={16}
+            width={48}
+            height={48}
           />
           <Box>
             <Typography className="font-medium text-f16 leading-5 text-ik_bluegreybluegrey">
@@ -94,10 +94,10 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           className="cursor-pointer mt-3"
         >
           <ImageComponent
-            src="/images/static/image_34.png"
+            src="/images/static/ticket.svg"
             alt="image"
-            width={16}
-            height={16}
+            width={48}
+            height={48}
           />
           <Box>
             <Typography className="font-medium text-f16 leading-5 text-ik_bluegreybluegrey">

@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box } from "@mui/material";
 import { Grid } from "@mui/material";
 
 import { Typography } from "@mui/material";
-import PaidData from "./PaidData";
 
 import { FormProvider, useForm } from "react-hook-form";
 import InputField from "../form-fields/InputField";
@@ -12,18 +11,7 @@ import { Stack } from "@mui/material";
 
 export default function StepperContentThree() {
   const methods = useForm();
-  const location = [
-    {
-      id: 1,
-      title: "Bank Transfer",
-      image: "/images/static/image_26.png",
-    },
-    {
-      id: 2,
-      title: "UPI",
-      image: "/images/static/image_26.png",
-    },
-  ];
+  const [isSelected, setIsSelected] = useState(false);
   return (
     <>
       <FormProvider {...methods}>
@@ -33,8 +21,14 @@ export default function StepperContentThree() {
             Term and conditions
           </Typography>
           <Grid container spacing={2} className="max-w-[750px]">
-            <Grid item xs={12}>
-              <Stack direction="row" spacing={1} alignItems="center">
+            <Grid item xs={12} className="cursor-pointer">
+              <Stack
+                direction="row"
+                spacing={isSelected ? 0 : 1}
+                alignItems="center"
+                className={isSelected ? "new" : ""}
+                onClick={() => setIsSelected(true)}
+              >
                 <Box>
                   <ImageComponent
                     src="/images/static/image_49.png"
