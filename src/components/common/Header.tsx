@@ -8,6 +8,7 @@ import { AutoCompleteSearch } from "./AutoCompleteSearch";
 import Slider from "react-slick";
 import zustandStore from "@/utils/helpers/zustand";
 import dynamic from "next/dynamic";
+import { useSession } from "next-auth/react";
 
 const CustomButton = dynamic(
   () => import("@/views/components/form-fields/CustomButton")
@@ -31,6 +32,8 @@ const Header = () => {
   const [opencity, setOpencity] = React.useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [openStarted, setOpenStarted] = React.useState(false);
+
+  const { status } = useSession()
 
   const { setPopup } = zustandStore();
 
@@ -213,7 +216,8 @@ const Header = () => {
               className="text-f16 font-semibold h-[48px]"
               onClick={handleClickOpenStarted}
             />
-            <CustomImageButton
+            {
+              status === 'authenticated' ? "Logged In" : <CustomImageButton
               width={16}
               height={19}
               image="/assets/icons/login-icons.svg"
@@ -222,6 +226,8 @@ const Header = () => {
               className="text-f16 font-semibold text-ik_pink-foreground"
               onClick={() => handleLoginPopup()}
             />
+            }
+          
           </div>
         </div>
       </CustomContainer>
