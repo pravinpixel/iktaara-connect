@@ -13,15 +13,16 @@ const InputField = dynamic(() => import("./form-fields/InputField"));
 
 interface LoginProps {
   handleRegsiterOpen: () => void;
+  handleOtpOpen: () => void;
 }
 
-const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
+const LoginComponent = ({ handleRegsiterOpen, handleOtpOpen }: LoginProps) => {
   const methods = useForm<SignInOptions>({
-    defaultValues : {
-      redirect : false,
-      email : "eve.holt@reqres.in",
-      password : "cityslicka"
-    }
+    defaultValues: {
+      redirect: false,
+      email: "eve.holt@reqres.in",
+      password: "cityslicka",
+    },
   });
   const { handleSubmit } = methods;
 
@@ -37,17 +38,17 @@ const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
         throw new Error(res?.error as never);
       });
     } catch (error) {
-      notify(error)
+      notify(error);
     }
   };
 
   const handleGoogleLogin = async () => {
     try {
-      await signIn('google')
+      await signIn("google");
     } catch (error) {
-      notify(error)
+      notify(error);
     }
-  }
+  };
 
   return (
     <Box className="flex flex-col items-center justify-center h-full">
@@ -130,7 +131,10 @@ const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
             </div>
           </div>
           <div className="w-full">
-            <button className=" p-3 w-full border border-ik_bluegreylightens3 rounded-md mb-[20px]" onClick={handleGoogleLogin}>
+            <button
+              className=" p-3 w-full border border-ik_bluegreylightens3 rounded-md mb-[20px]"
+              onClick={handleGoogleLogin}
+            >
               <div className="flex justify-center items-center gap-2">
                 <ImageComponent
                   src={"/assets/icons/google-icons.svg"}
@@ -142,7 +146,10 @@ const LoginComponent = ({ handleRegsiterOpen }: LoginProps) => {
                 <span>Continue with Google</span>
               </div>
             </button>
-            <button className=" p-3 w-full border border-ik_bluegreylightens3 rounded-md mb-[20px]">
+            <button
+              className=" p-3 w-full border border-ik_bluegreylightens3 rounded-md mb-[20px]"
+              onClick={() => handleOtpOpen()}
+            >
               <div className="flex justify-center items-center gap-2">
                 <ImageComponent
                   src={"/assets/icons/iphone-icons.svg"}

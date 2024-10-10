@@ -28,7 +28,7 @@ type NotifyType = AxiosError<{
 
 type ToastPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right" | "top-center" | "bottom-center";
 
-type TypeSuggestion = 'login' | 'register' | 'event' | 'business'
+type TypeSuggestion = 'login' | 'register' | 'otp' | 'event' | 'business'
 
 
 type StoreState = {

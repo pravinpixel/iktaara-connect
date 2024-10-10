@@ -24,6 +24,10 @@ export default function LoginPopup() {
     setPopup("register");
   };
 
+  const handleOtpOpen = () => {
+    setPopup("otp");
+  }
+
   const handleClose = () => {
     setPopup(null);
   };
@@ -128,7 +132,10 @@ export default function LoginPopup() {
                                 </Typography>
                             </FormProvider>
                         </Box>  */}
-            <LoginComponent handleRegsiterOpen={handleRegsiterOpen} />
+            <LoginComponent
+              handleOtpOpen={handleOtpOpen}
+              handleRegsiterOpen={handleRegsiterOpen}
+            />
           </Grid>
         </Grid>
       </Dialog>
