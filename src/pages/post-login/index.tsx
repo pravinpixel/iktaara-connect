@@ -1,15 +1,44 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
-import CustomContainer from "@/views/components/Container";
-import CustomButton from "@/views/components/form-fields/CustomButton";
-import ImageComponent from "@/views/components/ImageComponent";
-
 import { Typography } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
+const CustomContainer = dynamic(() => import("@/views/components/Container"));
+const CustomButton = dynamic(
+  () => import("@/views/components/form-fields/CustomButton")
+);
+const EnquirySection = dynamic(
+  () => import("@/views/components/post-logincomponents/EnquirySection")
+);
+const DashboardSection = dynamic(
+  () => import("@/views/components/post-logincomponents/DashboardSection")
+);
+const ImageComponent = dynamic(
+  () => import("@/views/components/ImageComponent")
+);
 
 const PostLogin = () => {
+  const [firstSection, setFirstSection] = useState("dashboard");
+
+  const handleFirstSection = (type: string) => {
+    switch (type) {
+      case "one":
+        setFirstSection("dashboard");
+        break;
+      case "two":
+        setFirstSection("enquiries");
+        break;
+      case "three":
+        setFirstSection("events");
+        break;
+      case "four":
+        setFirstSection("myProfile");
+        break;
+      default:
+        setFirstSection(null);
+    }
+  };
   return (
     <>
       {" "}
@@ -38,64 +67,40 @@ const PostLogin = () => {
                   <CustomButton
                     label="Preview Iktaraa Profile"
                     variant="primary-button"
+                    className={""}
                   />
                 </Box>
                 <Box className="py-4">
-                  <Typography className="py-3">Dashboard</Typography>
-                  <Typography className="py-3">Enquiries</Typography>
-                  <Typography className="py-3">Events</Typography>
-                  <Typography className="py-3">My Profile</Typography>
+                  <Typography
+                    className="py-3 cursor-pointer"
+                    onClick={() => handleFirstSection("one")}
+                  >
+                    Dashboard
+                  </Typography>
+                  <Typography
+                    className="py-3 cursor-pointer"
+                    onClick={() => handleFirstSection("two")}
+                  >
+                    Enquiries
+                  </Typography>
+                  <Typography
+                    className="py-3 cursor-pointer"
+                    onClick={() => handleFirstSection("three")}
+                  >
+                    Events
+                  </Typography>
+                  <Typography
+                    className="py-3 cursor-pointer"
+                    onClick={() => handleFirstSection("four")}
+                  >
+                    My Profile
+                  </Typography>
                 </Box>
               </Box>
             </Grid>
             <Grid item xs={8}>
-              <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
-                <Typography>
-                  Hi Ramakrishna Paramahamsa, Welcome to Iktaraa connect!
-                </Typography>
-                <Typography>
-                  We’ve introduced a dashboard view to help you understand what
-                  actions to take next to quickly grow and optimize your Page
-                </Typography>
-              </Box>
-              <Box>
-                {" "}
-                <Grid container>
-                  <Grid item xs={4}>
-                    <Box className="bg-ik_white  mx-1 rounded-[8px] p-3">1</Box>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Box className="bg-ik_white mx-1  rounded-[8px] p-3">2</Box>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Box className="bg-ik_white mx-1 rounded-[8px] p-3">3</Box>
-                  </Grid>
-                </Grid>
-              </Box>
-              <Box className="mt-2">
-                {" "}
-                <Grid container>
-                  <Grid item xs={8}>
-                    <Box className="bg-ik_white  mx-1 rounded-[8px] p-3">1</Box>
-                  </Grid>
-                </Grid>
-              </Box>
-              <Box className="mt-2">
-                {" "}
-                <Grid container>
-                  <Grid item xs={8}>
-                    <Box className="bg-ik_white  mx-1 rounded-[8px] p-3">1</Box>
-                  </Grid>
-                </Grid>
-              </Box>
-              <Box className="mt-2">
-                {" "}
-                <Grid container>
-                  <Grid item xs={8}>
-                    <Box className="bg-ik_white  mx-1 rounded-[8px] p-3">1</Box>
-                  </Grid>
-                </Grid>
-              </Box>
+              {firstSection === "dashboard" && <DashboardSection />}
+              {firstSection === "enquiries" && <EnquirySection />}
             </Grid>
           </Grid>
         </CustomContainer>

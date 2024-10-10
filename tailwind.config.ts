@@ -203,6 +203,7 @@ const config: Config = {
       f64: "var(--f64)",
       f68: "var(--f68)",
       f52: "var(--f52)",
+      f56: "var(--f56)",
     },
   },
   plugins: [TailwindAnimate],
