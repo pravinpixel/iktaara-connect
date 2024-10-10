@@ -2,7 +2,6 @@ import React from "react";
 import { Button, ButtonProps } from "@mui/material";
 import { Stack } from "@mui/material";
 import ImageComponent from "./ImageComponent";
-import CONSTANT from "@/utils/helpers/constant-helper";
 
 interface CustomButtonType extends ButtonProps {
   image?: string;
@@ -13,7 +12,6 @@ interface CustomButtonType extends ButtonProps {
   newclass?: string;
 }
 
-const basePath = CONSTANT?.ASSESTPATH || ''
 
 function CustomImageButton(props: CustomButtonType) {
   const { image, variant = "contained", label, className, newclass, width, height, ...rest } = props;
@@ -32,7 +30,7 @@ function CustomImageButton(props: CustomButtonType) {
         className="p-[4px]"
       >
         <ImageComponent
-          src={basePath + image}
+          src={image}
           alt="Button Image"
           width={width ? width : 24}
           height={height ? height : 24}
