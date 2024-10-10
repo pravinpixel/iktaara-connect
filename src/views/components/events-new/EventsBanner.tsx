@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Image from "next/image";
 import React, { Fragment } from "react";
 import Slider from "react-slick";
+import ImageComponent from "../ImageComponent";
 
 // type Props = {
 //   Eventssections: any;
@@ -70,16 +70,12 @@ const EventsBanners = (props: Props) => {
           {Eventssections?.map((item: any) => (
             <Fragment key={item?.id}>
               <div>
-                <Image
+                <ImageComponent
                   src={item?.banner_image}
                   width={1496}
                   height={height ? height : 491}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "7px",
-                  }}
                   alt="slide-imag"
+                  className="w-full h-auto rounded-[7px]"
                 />
               </div>
             </Fragment>

@@ -7,7 +7,7 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import Image from "next/image";
+import ImageComponent from "../ImageComponent";
 
 const steps = [
   {
@@ -105,15 +105,15 @@ export default function VerticalLinearStepper({ onStepChange }) {
               //     ) : null
               //   }
               StepIconComponent={() => (
-                <Image
-                  width={24}
-                  height={24}
-                  alt=""
+                <ImageComponent
                   src={
                     activeStep === index
                       ? "/images/static/image_42.png"
                       : "/images/static/image_43.png"
                   }
+                  alt="image"
+                  width={24}
+                  height={24}
                 />
               )}
             >

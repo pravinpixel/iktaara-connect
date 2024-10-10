@@ -2,7 +2,7 @@
 import { useRouter } from "next/router";
 // import { loadMore } from 'src/redux/category-slice';
 import { Typography } from "@mui/material";
-import Image from "next/image";
+import ImageComponent from "../ImageComponent";
 // import { Pagination } from '@mui/material';
 interface PaginationProps {
   from: number;
@@ -87,21 +87,21 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
       <div className="flex justify-center items-center">
         {/* {total_count > 24 && ( */}
         <>
-          <Image
+          <ImageComponent
             src="/images/collections/static/Group 1171277073 (1).png"
+            width={14}
+            height={14}
             alt="loader_1"
-            width="14"
-            height="14"
             className="cursor-pointer object-contain mr-2"
             onClick={handleGoToFirstPage}
           />
-          <Image
-            onClick={handleLoadLess}
+          <ImageComponent
             src="/images/collections/static/Vector 95.png"
+            width={12}
+            height={13}
             alt="loader_2"
-            width="12"
-            height="13"
             className="mr-1 ml-2 cursor-pointer object-contain h-[13px]"
+            onClick={handleLoadLess}
           />
           <Typography
             sx={{ pr: 1 }}
@@ -131,19 +131,19 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
           >
             Next
           </Typography>
-          <Image
-            onClick={handleLoadMore}
+          <ImageComponent
             src="/images/collections/static/Vector 93.png"
+            width={12}
+            height={13}
             alt="loader_3"
-            width="12"
-            height="13"
             className="ml-1 mr-3 cursor-pointer object-contain h-[13px]"
+            onClick={handleLoadMore}
           />
-          <Image
+          <ImageComponent
             src="/images/collections/static/Group 1171277072.png"
+            width={14}
+            height={14}
             alt="loader_4"
-            width="14"
-            height="14"
             className="cursor-pointer object-contain"
             onClick={handleGoToLastPage}
           />

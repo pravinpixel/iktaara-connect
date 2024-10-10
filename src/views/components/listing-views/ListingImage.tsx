@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import { Grid, Stack, Box } from "@mui/material";
 import Lightbox from "react-18-image-lightbox";
 import "react-18-image-lightbox/style.css";
+import ImageComponent from "../ImageComponent";
 
 const images = {
   mainImage: {
@@ -60,17 +60,13 @@ const ListingImageComponents = () => {
       <Grid container spacing={1}>
         {/* Main Image */}
         <Grid item xs={12} sm={hasSmallImages ? 8 : 12}>
-          <Image
+          <ImageComponent
             src={images.mainImage.src}
             width={images.mainImage.width}
             height={images.mainImage.height}
-            style={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "15px",
-            }}
             alt="main-image"
             onClick={() => handleImageClick(-1)}
+            className="w-full h-full rounded-[15px]"
           />
         </Grid>
 
@@ -90,22 +86,18 @@ const ListingImageComponents = () => {
                       isSingleSmallImage || isTwoSmallImages
                         ? 12
                         : index === 2
-                          ? 12
-                          : 6
+                        ? 12
+                        : 6
                     }
                     key={index}
                   >
-                    <Image
+                    <ImageComponent
                       src={img.src}
                       width={img.width}
                       height={img.height}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        borderRadius: "15px",
-                      }}
                       alt={`small-image-${index}`}
                       onClick={() => handleImageClick(index)}
+                      className="w-full h-full rounded-[15px]"
                     />
                   </Grid>
                 ))}
@@ -120,17 +112,13 @@ const ListingImageComponents = () => {
                       }}
                     >
                       <Box sx={{ filter: "brightness(0.3)" }}>
-                        <Image
+                        <ImageComponent
                           src={images.smallImages[2].src}
                           width={images.smallImages[2].width}
                           height={images.smallImages[2].height}
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            borderRadius: "15px",
-                          }}
                           alt="extra-images"
                           onClick={() => handleImageClick(2)}
+                          className="w-full h-full rounded-[15px]"
                         />
                       </Box>
                       <Box
@@ -172,14 +160,14 @@ const ListingImageComponents = () => {
             currentImageIndex === -1
               ? images.smallImages[0].src
               : images.smallImages[(currentImageIndex + 1) % totalSmallImages]
-                .src
+                  .src
           }
           prevSrc={
             currentImageIndex === -1
               ? images.smallImages[totalSmallImages - 1].src
               : images.smallImages[
-                (currentImageIndex + totalSmallImages - 1) % totalSmallImages
-              ].src
+                  (currentImageIndex + totalSmallImages - 1) % totalSmallImages
+                ].src
           }
           onCloseRequest={() => setIsOpen(false)}
           onMovePrevRequest={() =>

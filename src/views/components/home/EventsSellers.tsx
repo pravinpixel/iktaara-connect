@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Image from "next/image";
 import React, { Fragment } from "react";
 import bg from "../../../../public/assets/image/bg.svg";
 import bg1 from "../../../../public/assets/image/bg1.png";
 import Slider from "react-slick";
 import CustomContainer from "@/views/components/Container";
+import ImageComponent from "../ImageComponent";
 
 type Props = {
   Eventssections: any;
@@ -74,16 +74,12 @@ const EventsSellers = (props: Props) => {
           {Eventssections?.map((item: any) => (
             <Fragment key={item?.id}>
               <div>
-                <Image
+                <ImageComponent
                   src={item?.image}
                   width={1496}
                   height={451}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "7px",
-                  }}
                   alt="slide-imag"
+                  className="w-full h-auto rounded-[7px]"
                 />
               </div>
             </Fragment>

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Autocomplete, Container, Grid, TextField } from "@mui/material";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const ImageComponent = dynamic(
@@ -82,11 +81,11 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
                             <Grid item xs={12}>
                               <Grid container md={8}>
                                 <Grid item md={1}>
-                                  <Image
+                                  <ImageComponent
                                     src="/images/demo/static/uparrow.png"
                                     width={13}
                                     height={13}
-                                    alt=""
+                                    alt="uparrow"
                                   />
                                 </Grid>
                               </Grid>
@@ -126,7 +125,6 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
                         width={17}
                         height={17}
                         alt={"search"}
-                        priority={true}
                       />
                     ),
                   }}
@@ -168,11 +166,11 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
                             <Grid item xs={12}>
                               <Grid container md={8}>
                                 <Grid item md={1}>
-                                  <Image
+                                  <ImageComponent
                                     src="/images/demo/static/uparrow.png"
                                     width={13}
                                     height={13}
-                                    alt=""
+                                    alt="uparrow"
                                   />
                                 </Grid>
                               </Grid>

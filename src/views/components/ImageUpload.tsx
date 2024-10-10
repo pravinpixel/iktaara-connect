@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { Controller } from "react-hook-form";
 import { Box } from "@mui/material";
+import ImageComponent from "./ImageComponent";
 
 interface ImageUploadProps {
   control: any;
@@ -142,13 +143,13 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           {fileNames.map((fileName, index) => (
             <div key={index} className="flex items-center gap-2 mt-2">
               <p className="text-f16">{fileName}</p>
-              <Image
+              <ImageComponent
                 src="/assets/icons/delete-icons.svg"
                 alt="delete"
                 width={20}
                 height={20}
                 onClick={() => handleFileRemove(index)}
-                style={{ cursor: "pointer" }}
+                className='cursor-pointer'
               />
             </div>
           ))}
