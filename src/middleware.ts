@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
-// import type { NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 // Export the default middleware from next-auth
 export { default } from 'next-auth/middleware';
 
-export function middleware() {
+export function middleware(request: NextRequest) {
   // Split the URL path into parts
   // const urlPathName = request.nextUrl.pathname;
-
+  console.log(request, "request")
   // const pathParts = urlPathName.split('/');
 
   // const fisrtIndex = pathParts[1];
