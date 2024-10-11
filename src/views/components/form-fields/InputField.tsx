@@ -50,8 +50,8 @@ function InputField(props: InputFieldType) {
   const errorMessage = error?.message;
 
   return (
-    <Stack>
-      <FormLabel className="mb-2">{label}</FormLabel>
+    <Stack className="">
+      <FormLabel className="mb-1">{label}</FormLabel>
       {description && <Typography>{description}</Typography>}
       <TextField
         fullWidth

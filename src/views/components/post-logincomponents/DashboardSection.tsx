@@ -54,7 +54,9 @@ const DashboardSection = () => {
                   />
                 </Box>
                 <Box>
-                  <Typography>enquiries</Typography>
+                  <Typography className="text-f16 font-semibold leading-[30px] ik_bluegreydarken3">
+                    Enquiries
+                  </Typography>
                 </Box>
               </Stack>
               <Box className="flex items-center justify-center p-3">
@@ -78,7 +80,9 @@ const DashboardSection = () => {
                   />
                 </Box>
                 <Box>
-                  <Typography>Profile Views</Typography>
+                  <Typography className="text-f16 font-semibold leading-[30px] ik_bluegreydarken3">
+                    Profile Views
+                  </Typography>
                 </Box>
               </Stack>
               <Box className="flex items-center justify-center p-3">
@@ -102,7 +106,9 @@ const DashboardSection = () => {
                   />
                 </Box>
                 <Box>
-                  <Typography>Business</Typography>
+                  <Typography className="text-f16 font-semibold leading-[30px] ik_bluegreydarken3">
+                    Business
+                  </Typography>
                 </Box>
               </Stack>
               <Box className="flex items-center justify-center p-3">
