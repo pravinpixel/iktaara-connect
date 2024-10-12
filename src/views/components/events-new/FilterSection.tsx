@@ -107,6 +107,17 @@ export default function FilterSectionEvents(props: Props) {
               label={tab.label}
               onClick={tab.onClick ? tab.onClick : undefined}
               className="text-f16 font-semibold h-auto min-h-[50px] w-auto max-[145px] rounded-full px-7 "
+              sx={{
+                "&:focus": {
+                  outline: "none!important",
+                },
+                "&:hover": {
+                  backgroundColor: "var(--ik_whitevariant)",
+                  color: "var(--ik_pink)",
+                  border: "1px solid var(--ik_pink)!important",
+                  borderRadius: "34px",
+                },
+              }}
             />
           ))}
           {/* <Tab

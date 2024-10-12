@@ -1,19 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { AutoCompleteSearch } from "@/components/common/AutoCompleteSearch";
 import ImageComponent from "@/views/components/ImageComponent";
 
-import { Stack, Tooltip } from "@mui/material";
-import { Grid } from "@mui/material";
+import { Stack } from "@mui/material";
 
 import { Typography } from "@mui/material";
 
 import { Box } from "@mui/material";
 import React from "react";
-import SelectField from "../form-fields/SelectField";
+
 import { FormProvider, useForm } from "react-hook-form";
-import CustomButton from "../form-fields/CustomButton";
-import { Button } from "@mui/material";
+
 import InputField from "../form-fields/InputField";
 
 const MyProfileSection = () => {

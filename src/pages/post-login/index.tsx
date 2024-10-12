@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import MyProfileSection from "@/views/components/post-logincomponents/MyProfileSection";
+import EventSection from "@/views/components/post-logincomponents/EventSection";
 const CustomContainer = dynamic(() => import("@/views/components/Container"));
 const CustomButton = dynamic(
   () => import("@/views/components/form-fields/CustomButton")
@@ -48,7 +49,7 @@ const PostLogin = () => {
           <Grid container>
             <Grid item xs={4}>
               <Box className="bg-ik_white my-5 mx-2 rounded-[8px]">
-                <Box className="flex items-center justify-center">
+                <Box className="flex items-center justify-center p-3">
                   <ImageComponent
                     src="/images/static/image_57.png"
                     alt="Ramakrishna Paramahamsa"
@@ -57,7 +58,7 @@ const PostLogin = () => {
                   />
                 </Box>
 
-                <Typography className="text-f24 font-bold leading-8 text-ik_bluegreydarken3 p-3">
+                <Typography className="text-f24 font-bold leading-8 text-ik_bluegreydarken3 p-3 text-center">
                   Ramakrishna Paramahamsa
                 </Typography>
                 <Typography className="text-f14 font-normal leading-[20px] text-ik_bluegreydarken1 text-center p-3">
@@ -147,6 +148,7 @@ const PostLogin = () => {
               {firstSection === "dashboard" && <DashboardSection />}
               {firstSection === "enquiries" && <EnquirySection />}
               {firstSection === "myprofile" && <MyProfileSection />}
+              {firstSection === "events" && <EventSection />}
             </Grid>
           </Grid>
         </CustomContainer>

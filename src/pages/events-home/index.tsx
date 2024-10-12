@@ -38,35 +38,35 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
     pianist: [
       {
         id: 1,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Ramaniya",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 2,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Kirankumar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 3,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Chitra Jones",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 4,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Abraham John",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 5,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Prakash Thirupuzhal",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -74,14 +74,14 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
 
       {
         id: 6,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Ram Prabhakar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 7,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Madhavi Nair",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -89,14 +89,14 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
 
       {
         id: 8,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Vamshika",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 9,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Madhavi Nair",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -104,7 +104,7 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
 
       {
         id: 10,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Vamshika",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -113,35 +113,35 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
     dancer: [
       {
         id: 1,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Abraham John",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 2,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Prakash Thirupuzhal",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 3,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Ramaniya",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 4,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Kirankumar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 5,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Madhavi Nair",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -149,21 +149,21 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
 
       {
         id: 6,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Vamshika",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 7,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Ram Prabhakar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 8,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Madhavi Nair",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -172,35 +172,35 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
     sound_engineer: [
       {
         id: 1,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Ramaniya",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 2,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Kirankumar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 3,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Chitra Jones",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 4,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Abraham John",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 5,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Prakash Thirupuzhal",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -208,7 +208,7 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
 
       {
         id: 6,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Ram Prabhakar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -217,35 +217,35 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
     theatre_artists: [
       {
         id: 1,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Abraham John",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 2,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Prakash Thirupuzhal",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 3,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Ramaniya",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 4,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Kirankumar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 5,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Madhavi Nair",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -253,21 +253,21 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
 
       {
         id: 6,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Vamshika",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 7,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Ram Prabhakar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 8,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Madhavi Nair",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -276,35 +276,35 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
     party_dJ: [
       {
         id: 1,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Ramaniya",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 2,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Kirankumar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 3,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Chitra Jones",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 4,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Abraham John",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 5,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Prakash Thirupuzhal",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -312,14 +312,14 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
 
       {
         id: 6,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Ram Prabhakar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 7,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Madhavi Nair",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -327,14 +327,14 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
 
       {
         id: 8,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Vamshika",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 9,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Madhavi Nair",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -342,7 +342,7 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
 
       {
         id: 10,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Vamshika",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -351,35 +351,35 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
     standup_comedian: [
       {
         id: 1,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Ramaniya",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 2,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Kirankumar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 3,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Chitra Jones",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 4,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Abraham John",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
       },
       {
         id: 5,
-        category_image: "/images/static/image_23.png",
+        category_image: "/connect/images/static/image_23.png",
         category_name: "Prakash Thirupuzhal",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -387,7 +387,7 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
 
       {
         id: 6,
-        category_image: "/images/static/image_25.png",
+        category_image: "/connect/images/static/image_25.png",
         category_name: "Ram Prabhakar",
         category_reviews: "4.5 (22 Reviews)",
         category_text: "Classical, Western, Hindustani",
@@ -459,7 +459,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
             event_date: "date",
             event_type: "varchar",
             event_price: 0,
-            thumbnail_image: "/images/static/image_23.png",
+            thumbnail_image: "/connect/images/static/image_23.png",
           },
         ],
         week_events: [
@@ -469,7 +469,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
             event_date: "date",
             event_type: "varchar",
             event_price: 10,
-            thumbnail_image: "/images/static/image_23.png",
+            thumbnail_image: "/connect/images/static/image_23.png",
           },
           {
             id: 2,
@@ -477,7 +477,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
             event_date: "date",
             event_type: "varchar",
             event_price: 110,
-            thumbnail_image: "/images/static/image_23.png",
+            thumbnail_image: "/connect/images/static/image_23.png",
           },
           {
             id: 3,
@@ -485,7 +485,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
             event_date: "date",
             event_type: "varchar",
             event_price: 10,
-            thumbnail_image: "/images/static/image_23.png",
+            thumbnail_image: "/connect/images/static/image_23.png",
           },
           {
             id: 4,
@@ -493,7 +493,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
             event_date: "date",
             event_type: "varchar",
             event_price: 10,
-            thumbnail_image: "/images/static/image_23.png",
+            thumbnail_image: "/connect/images/static/image_23.png",
           },
           {
             id: 5,
@@ -501,7 +501,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
             event_date: "date",
             event_type: "varchar",
             event_price: 10,
-            thumbnail_image: "/images/static/image_23.png",
+            thumbnail_image: "/connect/images/static/image_23.png",
           },
           {
             id: 6,
@@ -509,7 +509,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
             event_date: "date",
             event_type: "varchar",
             event_price: 10,
-            thumbnail_image: "/images/static/image_23.png",
+            thumbnail_image: "/connect/images/static/image_23.png",
           },
         ],
         faq: [
@@ -552,32 +552,32 @@ export const getServerSideProps = wrapper.getServerSideProps(
         {
           id: 1,
           name: "varchar",
-          icon: "/images/static/image_24.png",
+          icon: "/connect/images/static/image_24.png",
         },
         {
           id: 2,
           name: "Music Doctor",
-          icon: "/images/static/image_24.png",
+          icon: "/connect/images/static/image_24.png",
         },
         {
           id: 3,
           name: "Music Doctor",
-          icon: "/images/static/image_24.png",
+          icon: "/connect/images/static/image_24.png",
         },
         {
           id: 4,
           name: "Music Doctor",
-          icon: "/images/static/image_24.png",
+          icon: "/connect/images/static/image_24.png",
         },
         {
           id: 5,
           name: "Music Doctor",
-          icon: "/images/static/image_24.png",
+          icon: "/connect/images/static/image_24.png",
         },
         {
           id: 6,
           name: "Music Doctor",
-          icon: "/images/static/image_24.png",
+          icon: "/connect/images/static/image_24.png",
         },
       ],
     };
