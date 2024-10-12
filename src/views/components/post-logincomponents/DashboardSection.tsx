@@ -9,8 +9,18 @@ import { Typography } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Box } from "@mui/material";
 import React from "react";
+import PostUpdatePapup from "../popup/PostUpdatePapup";
 
 const DashboardSection = () => {
+  const [openUpdate, setOpenUpdate] = React.useState(false);
+
+  const handleClickUpdate = () => {
+    setOpenUpdate(true);
+  };
+
+  const handleCloseUpdate = () => {
+    setOpenUpdate(false);
+  };
   return (
     <>
       <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
@@ -182,7 +192,14 @@ const DashboardSection = () => {
                           variant="primary-button"
                           label="Update Profile"
                           className={""}
+                          onClick={handleClickUpdate}
                         />
+                        {openUpdate && (
+                          <PostUpdatePapup
+                            handleClose={handleCloseUpdate}
+                            open={openUpdate}
+                          />
+                        )}
                       </Box>
                     </Stack>
                   </Box>

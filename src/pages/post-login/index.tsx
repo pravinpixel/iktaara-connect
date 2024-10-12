@@ -34,7 +34,7 @@ const PostLogin = () => {
         setFirstSection("events");
         break;
       case "four":
-        setFirstSection("myProfile");
+        setFirstSection("myprofile");
         break;
       default:
         setFirstSection(null);
@@ -47,7 +47,7 @@ const PostLogin = () => {
         <CustomContainer>
           <Grid container>
             <Grid item xs={4}>
-              <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
+              <Box className="bg-ik_white my-5 mx-2 rounded-[8px]">
                 <Box className="flex items-center justify-center">
                   <ImageComponent
                     src="/images/static/image_57.png"
@@ -57,10 +57,10 @@ const PostLogin = () => {
                   />
                 </Box>
 
-                <Typography className="text-f24 font-bold leading-8 text-ik_bluegreydarken3">
+                <Typography className="text-f24 font-bold leading-8 text-ik_bluegreydarken3 p-3">
                   Ramakrishna Paramahamsa
                 </Typography>
-                <Typography className="text-f14 font-normal leading-[20px] text-ik_bluegreydarken1 text-center">
+                <Typography className="text-f14 font-normal leading-[20px] text-ik_bluegreydarken1 text-center p-3">
                   Calling all music lovers! Brace yourselves for the arrival of
                   "Nee Singham Dhan"...
                 </Typography>
@@ -71,38 +71,82 @@ const PostLogin = () => {
                     className={""}
                   />
                 </Box>
-                <Box className="py-4">
-                  <Typography
-                    className="py-3 cursor-pointer"
+                <Box className="py-4 ">
+                  <Box
+                    className={`py-2 cursor-pointer ${
+                      firstSection === "dashboard"
+                        ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
+                        : ""
+                    }`}
                     onClick={() => handleFirstSection("one")}
                   >
-                    Dashboard
-                  </Typography>
-                  <Typography
-                    className="py-3 cursor-pointer"
-                    onClick={() => handleFirstSection("two")}
+                    {" "}
+                    <Typography
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
+                        firstSection === "dashboard" ? "text-ik_pink" : ""
+                      }`}
+                      // className="py-3 cursor-pointer"
+                    >
+                      Dashboard
+                    </Typography>
+                  </Box>
+                  <Box
+                    className={`py-2 cursor-pointer ${
+                      firstSection === "enquiries"
+                        ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
+                        : ""
+                    }`}
                   >
-                    Enquiries
-                  </Typography>
-                  <Typography
-                    className="py-3 cursor-pointer"
-                    onClick={() => handleFirstSection("three")}
+                    <Typography
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
+                        firstSection === "enquiries" ? "text-ik_pink" : ""
+                      }`}
+                      onClick={() => handleFirstSection("two")}
+                    >
+                      Enquiries
+                    </Typography>
+                  </Box>
+                  <Box
+                    className={`py-2 cursor-pointer ${
+                      firstSection === "events"
+                        ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
+                        : ""
+                    }`}
                   >
-                    Events
-                  </Typography>
-                  <Typography
-                    className="py-3 cursor-pointer"
-                    onClick={() => handleFirstSection("four")}
+                    {" "}
+                    <Typography
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
+                        firstSection === "events" ? "text-ik_pink" : ""
+                      }`}
+                      onClick={() => handleFirstSection("three")}
+                    >
+                      Events
+                    </Typography>
+                  </Box>
+                  <Box
+                    className={`py-2 cursor-pointer ${
+                      firstSection === "myprofile"
+                        ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
+                        : ""
+                    }`}
                   >
-                    My Profile
-                  </Typography>
+                    {" "}
+                    <Typography
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
+                        firstSection === "myprofile" ? "text-ik_pink" : ""
+                      }`}
+                      onClick={() => handleFirstSection("four")}
+                    >
+                      My Profile
+                    </Typography>
+                  </Box>
                 </Box>
               </Box>
             </Grid>
             <Grid item xs={8}>
               {firstSection === "dashboard" && <DashboardSection />}
               {firstSection === "enquiries" && <EnquirySection />}
-              {firstSection === "myProfile" && <MyProfileSection />}
+              {firstSection === "myprofile" && <MyProfileSection />}
             </Grid>
           </Grid>
         </CustomContainer>

@@ -162,6 +162,9 @@ const config: Config = {
         ik_lightorangevariant: {
           DEFAULT: "var(--ik_lightorangevariant)",
         },
+        ik_greenvariant: {
+          DEFAULT: "var(--ik_greenvariant)",
+        },
       },
       boxShadow: {
         'custom-hsla': '0px 1px 2px 0px hsla(0, 0%, 0%, 0.25)',
