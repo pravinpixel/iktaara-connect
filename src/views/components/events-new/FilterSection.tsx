@@ -43,6 +43,8 @@ type TabInfo = {
 
 export default function FilterSectionEvents(props: Props) {
   const { categoryData } = props;
+  console.log(categoryData, "categoryData");
+
   const [selectedTab, setSelectedTab] = React.useState(0);
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
