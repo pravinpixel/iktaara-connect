@@ -12,7 +12,7 @@ import {
   SoundIcon,
   StandupIcon,
 } from "@/utils/theme/svg";
-import Link from "next/link";
+import ViewAllComponent from "../common/ViewAllComponent";
 
 type Props = {
   categoryData: any;
@@ -52,13 +52,14 @@ export default function CategorySection(props: Props) {
           <div className="text-f28 font-semibold text-ik_bluegreydarken4">
             <span>Find Talent by Category</span>
           </div>
-          <div>
+          <ViewAllComponent slug="artists" />
+          {/* <div>
             <Link href="" className="pt-[10px]">
               <span className="text-f18 text-ik_pink font-normal">
                 View All
               </span>
             </Link>
-          </div>
+          </div> */}
         </div>
         <Tabs
           value={selectedTab}

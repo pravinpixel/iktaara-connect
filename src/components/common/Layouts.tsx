@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import ThemeProvider from "@/utils/theme/ThemeConfig";
-import CommonPopup from "../CommonPopup";
+import CommonPopup from "../popup/CommonPopup";
 import { useRouter } from "next/router";
 
 type LayoutsTypes = {

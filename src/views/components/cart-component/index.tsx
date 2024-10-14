@@ -2,16 +2,17 @@
 import React from "react";
 import CustomCard from "../CustomCard";
 import ImageComponent from "../ImageComponent";
+import Link from "next/link";
 
 type Props = {
   cartData: any;
 };
 
-const CaetComponent = (props: Props) => {
+const CardComponent = (props: Props) => {
   const { cartData } = props;
 
   return (
-    <section>
+    <Link href={`/business/${cartData?.slug || ''}/${cartData?.music_title || ""}`}>
       <div>
         <CustomCard
           variant="bottom-left"
@@ -43,8 +44,8 @@ const CaetComponent = (props: Props) => {
           {cartData?.music_text}
         </span>
       </div>
-    </section>
+    </Link>
   );
 };
 
-export default CaetComponent;
+export default CardComponent;

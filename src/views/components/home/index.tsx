@@ -41,17 +41,14 @@ const HomePageComponent = () => {
   const Events = [
     {
       id: 1,
-      slug: "artists",
       image: "/assets/image/events-img.webp",
     },
     {
       id: 2,
-      slug: "artists",
       image: "/assets/image/events-img.webp",
     },
     {
       id: 3,
-      slug: "artists",
       image: "/assets/image/events-img.webp",
     },
   ];
@@ -468,7 +465,7 @@ const HomePageComponent = () => {
   const musictechnician_data = [
     {
       id: 1,
-      slug: "artists",
+      slug: "technicians",
       music_image: "/assets/image/music-arts.webp",
       music_logo: "/assets/image/music-logo1.png",
       music_reviews: "4.5 (22 Reviews)",
@@ -478,7 +475,7 @@ const HomePageComponent = () => {
     },
     {
       id: 2,
-      slug: "artists",
+      slug: "technicians",
       music_image: "/assets/image/schmitt.webp",
       music_logo: "/assets/image/music-logo2.png",
       music_reviews: "4.5 (22 Reviews)",
@@ -488,7 +485,7 @@ const HomePageComponent = () => {
     },
     {
       id: 3,
-      slug: "artists",
+      slug: "technicians",
       music_image: "/assets/image/kzone.webp",
       music_logo: "/assets/image/music-logo3.png",
       music_reviews: "4.5 (22 Reviews)",
@@ -498,7 +495,7 @@ const HomePageComponent = () => {
     },
     {
       id: 4,
-      slug: "artists",
+      slug: "technicians",
       music_image: "/assets/image/music-doctor.webp",
       music_logo: "/assets/image/music-logo4.png",
       music_reviews: "4.5 (22 Reviews)",
@@ -508,7 +505,7 @@ const HomePageComponent = () => {
     },
     {
       id: 5,
-      slug: "artists",
+      slug: "technicians",
       music_image: "/assets/image/music-arts.webp",
       music_logo: "/assets/image/music-logo1.png",
       music_reviews: "4.5 (22 Reviews)",
@@ -521,7 +518,7 @@ const HomePageComponent = () => {
   const jam_studios_data = [
     {
       id: 1,
-      slug: "artists",
+      slug: "jam-room",
       music_image: "/assets/image/prasad.webp",
       music_logo: "/assets/image/music-logo1.png",
       music_reviews: "4.5 (22 Reviews)",
@@ -531,7 +528,7 @@ const HomePageComponent = () => {
     },
     {
       id: 2,
-      slug: "artists",
+      slug: "jam-room",
       music_image: "/assets/image/epic.webp",
       music_logo: "/assets/image/music-logo2.png",
       music_reviews: "4.5 (22 Reviews)",
@@ -541,7 +538,7 @@ const HomePageComponent = () => {
     },
     {
       id: 3,
-      slug: "artists",
+      slug: "jam-room",
       music_image: "/assets/image/sabari.webp",
       music_logo: "/assets/image/music-logo3.png",
       music_reviews: "4.5 (22 Reviews)",
@@ -551,7 +548,7 @@ const HomePageComponent = () => {
     },
     {
       id: 4,
-      slug: "artists",
+      slug: "jam-room",
       music_image: "/assets/image/bharath.webp",
       music_logo: "/assets/image/music-logo4.png",
       music_reviews: "4.5 (22 Reviews)",
@@ -561,7 +558,7 @@ const HomePageComponent = () => {
     },
     {
       id: 5,
-      slug: "artists",
+      slug: "jam-room",
       music_image: "/assets/image/music-arts.webp",
       music_logo: "/assets/image/music-logo1.png",
       music_reviews: "4.5 (22 Reviews)",
@@ -574,21 +571,19 @@ const HomePageComponent = () => {
   const faq = [
     {
       id: 1,
-      slug: "artists",
+
       question: "How do I choose the right pianica online?",
       answer:
         "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
     },
     {
       id: 2,
-      slug: "artists",
       question: 'What are the advantages of shopping for a "Pianica Online"?',
       answer:
         "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
     },
     {
       id: 3,
-      slug: "artists",
       question: "What is the typical price of a Pianica in India?",
       answer:
         "To select the perfect pianica online, consider your skill level, budget, and desired features. Look for reputable brands, read customer reviews, and choose a model that aligns with your musical preferences.",
@@ -604,12 +599,12 @@ const HomePageComponent = () => {
       <MusicTechnicians
         musictechniciansection={musictechnician_data}
         className={"flex pt-5 pb-5 bg-ik_white"}
-        title={"Music Instrument Technicians "}
+        title={"Music Instrument Technicians"}
       />
       <MusicTechnicians
         musictechniciansection={jam_studios_data}
         className={"flex pt-7 pb-7"}
-        title={"Recording / JAM Studios Nearby "}
+        title={"Recording / JAM Studios Nearby"}
       />
       <GroSection />
       <RecordingSection />

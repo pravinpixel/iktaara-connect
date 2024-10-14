@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import CaetComponent from "@/views/components/cart-component";
+import CartComponent from "@/views/components/cart-component";
 import CustomContainer from "@/views/components/Container";
 import React from "react";
 import Slider from "react-slick";
+import ViewAllComponent from "../common/ViewAllComponent";
 
 type Props = {
   musictechniciansection: any;
@@ -68,6 +69,8 @@ const MusicTechnicians = (props: Props) => {
       },
     ],
   };
+
+  const slug = musictechniciansection?.[0]?.slug || ""
   return (
     <section className={className}>
       <CustomContainer>
@@ -75,18 +78,12 @@ const MusicTechnicians = (props: Props) => {
           <div className="text-f28 font-semibold text-ik_bluegreydarken4">
             <span>{title}</span>
           </div>
-          <div>
-            <button className="pt-[6px]">
-              <span className=" text-f18 text-ik_pink font-normal">
-                View All
-              </span>
-            </button>
-          </div>
+            <ViewAllComponent slug={slug} />
         </div>
         <div className="music-section-sec">
           <Slider {...settings}>
             {musictechniciansection?.map((item: any) => (
-              <CaetComponent cartData={item} key={item?.id} />
+              <CartComponent cartData={item} key={item?.id} />
             ))}
           </Slider>
         </div>

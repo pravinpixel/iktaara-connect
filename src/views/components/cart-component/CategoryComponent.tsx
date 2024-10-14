@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Fragment } from "react";
 import Slider from "react-slick";
 import ImageComponent from "../ImageComponent";
+import Link from "next/link";
 
 type Props = {
   Categorysection: any;
@@ -66,7 +66,7 @@ const CategoryComponent = (props: Props) => {
     <div className="category-section-sec py-4">
       <Slider {...settings}>
         {Categorysection?.map((item: any) => (
-          <Fragment key={item?.id}>
+          <Link key={item?.id} href={'/artists/' + item?.category_name || ''}>
             <div>
               <div className="relative w-full h-full image-category">
                 <ImageComponent
@@ -101,7 +101,7 @@ const CategoryComponent = (props: Props) => {
                 </span>
               </div>
             </div>
-          </Fragment>
+          </Link>
         ))}
       </Slider>
     </div>
