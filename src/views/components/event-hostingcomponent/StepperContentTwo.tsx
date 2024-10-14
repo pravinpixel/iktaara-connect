@@ -14,12 +14,12 @@ export default function StepperContentTwo() {
     {
       id: 1,
       title: "Bank Transfer",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 2,
       title: "UPI",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
   ];
   return (

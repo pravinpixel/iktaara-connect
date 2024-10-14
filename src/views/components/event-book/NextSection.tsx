@@ -39,7 +39,7 @@ const NextSection = ({
           justifyContent={justifyContent}
         >
           <ImageComponent
-            src="/images/static/image_35.png"
+            src="/assets/static/image_35.png"
             alt="image"
             width={54}
             height={54}

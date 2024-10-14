@@ -12,7 +12,7 @@ const FilterSection = () => {
     <section className="bg-ik_white rounded-xl p-[20px] mt-[15px]">
       <Stack direction="row" spacing={2} alignItems={"center"}>
         <ImageComponent
-          src="/images/static/image_14.png"
+          src="/assets/static/image_14.png"
           width={24}
           height={16}
           alt="filter"

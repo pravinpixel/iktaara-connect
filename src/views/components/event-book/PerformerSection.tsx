@@ -27,7 +27,7 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
       <CustomContainer>
         <Stack direction="row" spacing={1} alignItems="center">
           <ImageComponent
-            src="/images/static/image_32.png"
+            src="/assets/static/image_32.png"
             alt="image"
             width={134}
             height={163}
@@ -50,7 +50,7 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           className="cursor-pointer mt-3"
         >
           <ImageComponent
-            src="/images/static/clock.svg"
+            src="/assets/static/clock.svg"
             alt="image"
             width={48}
             height={48}
@@ -72,7 +72,7 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           className="cursor-pointer mt-3"
         >
           <ImageComponent
-            src="/images/static/location.svg"
+            src="/assets/static/location.svg"
             alt="image"
             width={48}
             height={48}
@@ -94,7 +94,7 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           className="cursor-pointer mt-3"
         >
           <ImageComponent
-            src="/images/static/ticket.svg"
+            src="/assets/static/ticket.svg"
             alt="image"
             width={48}
             height={48}

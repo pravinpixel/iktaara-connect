@@ -3,7 +3,8 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 
-import { CardMedia } from "@mui/material";
+// import { CardMedia } from "@mui/material";
+import CardMediaComponent from "./CardMediaComponent";
 
 interface CustomCardProps {
   variant?: "elevation" | "outlined";
@@ -51,7 +52,8 @@ export default function CustomCardEvents(props: CustomCardProps) {
           }),
       }}
     >
-      <CardMedia component="img" image={img} alt="Paella dish" />
+      {/* <CardMedia component="img" image={"/connect/" + img} alt="Paella dish" /> */}
+      <CardMediaComponent image={"/connect/" + img} alt="Paella dish" />
       {/* <Box sx={{ position: "relative" }}>
         <ImageComponent src={img} alt="Card Image" width={260} height={360} /> */}
 

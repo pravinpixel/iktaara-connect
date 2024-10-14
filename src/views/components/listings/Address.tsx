@@ -17,7 +17,7 @@ const AddressSection = () => {
       name: "Schmitt Music Repair Services",
       location: "Nungambakkam",
       inquiries: 120,
-      imgSrc: "/images/static/image_5.png",
+      imgSrc: "/assets/static/image_5.png",
       icon: "Schmitt Music Icon",
     },
     {
@@ -25,7 +25,7 @@ const AddressSection = () => {
       name: "Muzik & Art",
       location: "Nungambakkam",
       inquiries: 115,
-      imgSrc: "/images/static/image_5.png",
+      imgSrc: "/assets/static/image_5.png",
       icon: "Music & Arts Icon",
     },
     {
@@ -33,7 +33,7 @@ const AddressSection = () => {
       name: "Music Doctor",
       location: "Nungambakkam",
       inquiries: 105,
-      imgSrc: "/images/static/image_5.png",
+      imgSrc: "/assets/static/image_5.png",
       icon: "Music Doctor Icon",
     },
     // {
@@ -126,8 +126,8 @@ const AddressSection = () => {
             {" "}
             <CustomCard
               variant="bottom-right"
-              img="/images/static/image_13.png"
-              img1="/images/static/image_12.png"
+              img="/assets/static/image_13.png"
+              img1="/assets/static/image_12.png"
               type={true}
               text={""}
               reviews={""}
@@ -159,7 +159,7 @@ const AddressSection = () => {
                   justifyContent={"flex-start"}
                 >
                   <ImageComponent
-                    src="/images/static/image_6.png"
+                    src="/assets/static/image_6.png"
                     alt="Business Image"
                     width={22}
                     height={11}
@@ -172,7 +172,7 @@ const AddressSection = () => {
 
               <Box className="flex justify-end">
                 <CustomSmallButton
-                  image="/images/static/image_7.png"
+                  image="/assets/static/image_7.png"
                   width={27.57}
                   height={27.57}
                 ></CustomSmallButton>

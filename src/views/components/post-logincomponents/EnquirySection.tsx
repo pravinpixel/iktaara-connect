@@ -3,7 +3,7 @@
 import { AutoCompleteSearch } from "@/components/common/AutoCompleteSearch";
 import ImageComponent from "@/views/components/ImageComponent";
 
-import { Stack, Tooltip } from "@mui/material";
+import { Stack } from "@mui/material";
 import { Grid } from "@mui/material";
 
 import { Typography } from "@mui/material";
@@ -13,10 +13,10 @@ import React, { useState } from "react";
 import SelectField from "../form-fields/SelectField";
 import { FormProvider, useForm } from "react-hook-form";
 import CustomButton from "../form-fields/CustomButton";
-import PhoneIcon from "@mui/icons-material/Phone";
-import EmailIcon from "@mui/icons-material/Email";
-import { IconButton } from "@mui/material";
+
 import { Popover } from "@mui/material";
+import EnquiryPopOver from "./EnquiruPopOver";
+
 const EnquirySection = () => {
   const methods = useForm();
   const [selected, setSelected] = useState(false);
@@ -39,7 +39,7 @@ const EnquirySection = () => {
           <Stack direction="row" spacing={2}>
             <Box>
               <ImageComponent
-                src="/images/static/image_67.png"
+                src="/assets/static/image_67.png"
                 alt="Ramakrishna Paramahamsa"
                 width={67}
                 height={67}
@@ -92,7 +92,7 @@ const EnquirySection = () => {
                     <Stack direction={"row"} spacing={1}>
                       <Box>
                         <ImageComponent
-                          src="/images/static/image_68.png"
+                          src="/assets/static/image_68.png"
                           alt="Mahanadhi Shobana"
                           width={90}
                           height={90}
@@ -117,7 +117,7 @@ const EnquirySection = () => {
                     <Stack direction={"row"} spacing={1}>
                       <Box>
                         <ImageComponent
-                          src="/images/static/image_68.png"
+                          src="/assets/static/image_68.png"
                           alt="Mahanadhi Shobana"
                           width={90}
                           height={90}
@@ -148,7 +148,7 @@ const EnquirySection = () => {
                   <Stack direction={"row"} spacing={1}>
                     <Box>
                       <ImageComponent
-                        src="/images/static/image_68.png"
+                        src="/assets/static/image_68.png"
                         alt="Mahanadhi Shobana"
                         width={90}
                         height={90}
@@ -240,7 +240,7 @@ const EnquirySection = () => {
                     className: "rounded-lg shadow-md",
                   }}
                 >
-                  <Box className="flex gap-[10px]">
+                  {/* <Box className="flex gap-[10px]">
                     <Stack
                       direction="row"
                       alignItemss={"center"}
@@ -249,7 +249,7 @@ const EnquirySection = () => {
                     >
                       <Box>
                         <ImageComponent
-                          src="/images/static/phone.svg"
+                          src="/assets/static/phone.svg"
                           alt=""
                           width={20}
                           height={20}
@@ -265,7 +265,7 @@ const EnquirySection = () => {
                     >
                       <Box>
                         <ImageComponent
-                          src="/images/static/email.svg"
+                          src="/assets/static/email.svg"
                           alt=""
                           width={20}
                           height={20}
@@ -273,7 +273,8 @@ const EnquirySection = () => {
                       </Box>
                       <Typography>Email</Typography>
                     </Stack>
-                  </Box>
+                  </Box> */}
+                  <EnquiryPopOver />
                 </Popover>
               </Box>
             </Grid>

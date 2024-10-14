@@ -1,14 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React from "react";
-import { Box, Card } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Card, Typography, Stack } from "@mui/material";
 import { Grid } from "@mui/material";
-import CustomCard from "../CustomCard";
+// import CustomCard from "../CustomCard";
 import ImageComponent from "../ImageComponent";
-import { Stack } from "@mui/material";
+
 import CustomImageButton from "../CustomImageButton";
 import CustomButton from "../form-fields/CustomButton";
+import { Popover } from "@mui/material";
+import EventContentPopOver from "./EventContentPopOver";
 const EventContent = ({ buisnessListData }: any) => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
   return (
     <>
       <section className="mt-[15px] cursor-pointer">
@@ -50,7 +63,7 @@ const EventContent = ({ buisnessListData }: any) => {
                             alignItems={"center"}
                           >
                             <ImageComponent
-                              src="/images/static/pin.svg"
+                              src="/assets/static/pin.svg"
                               alt="Business Image"
                               width={19}
                               height={20}
@@ -66,7 +79,7 @@ const EventContent = ({ buisnessListData }: any) => {
                             mt={1}
                           >
                             <ImageComponent
-                              src="/images/static/clock_1.svg"
+                              src="/assets/static/clock_1.svg"
                               alt="Business Image"
                               width={23}
                               height={24}
@@ -95,6 +108,7 @@ const EventContent = ({ buisnessListData }: any) => {
                                 label="More"
                                 variant="primary-button"
                                 className="w-[140px]"
+                                onClick={handleClick}
                               />
                             </Box>
                           </Stack>
@@ -123,7 +137,7 @@ const EventContent = ({ buisnessListData }: any) => {
                           <Box>
                             <Stack direction="row">
                               <ImageComponent
-                                src="/images/static/image_10.png"
+                                src="/assets/static/image_10.png"
                                 width={20}
                                 height={16}
                                 alt="static"
@@ -157,6 +171,25 @@ const EventContent = ({ buisnessListData }: any) => {
             </Box>
           </Card>
         ))}
+        <Popover
+          id={id}
+          open={open}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+          PaperProps={{
+            className: "rounded-lg shadow-md",
+          }}
+        >
+          <EventContentPopOver />
+        </Popover>
       </section>
     </>
   );

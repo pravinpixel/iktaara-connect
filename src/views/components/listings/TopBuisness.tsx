@@ -36,7 +36,7 @@ const BusinessSection = () => {
                 gap={"5px"}
               >
                 <ImageComponent
-                  src="/images/static/image_4.png"
+                  src="/assets/static/image_4.png"
                   alt="Business Image"
                   width={21}
                   height={10}

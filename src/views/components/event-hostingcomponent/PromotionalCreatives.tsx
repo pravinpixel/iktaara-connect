@@ -164,7 +164,7 @@ export default function PromotionalCreatives() {
                         <>
                           <Box className="" onClick={() => remove(index)}>
                             <ImageComponent
-                              src={"/images/static/image_47.png"}
+                              src={"/assets/static/image_47.png"}
                               alt=""
                               width={21}
                               height={21}

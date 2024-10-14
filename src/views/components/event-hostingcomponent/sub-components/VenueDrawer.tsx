@@ -43,7 +43,7 @@ export default function VenueDrawer({ setClose, setValue }: any) {
             <Box onClick={() => handleNew()} className="cursor-pointer">
               {" "}
               <ImageComponent
-                src="/images/static/image_53.png"
+                src="/assets/static/image_53.png"
                 alt="bin"
                 height={16}
                 width={16}
@@ -76,7 +76,7 @@ export default function VenueDrawer({ setClose, setValue }: any) {
             <Stack direction={"row"} spacing={1}>
               <Box>
                 <ImageComponent
-                  src="/images/static/image_52.png"
+                  src="/assets/static/image_52.png"
                   alt="bin"
                   height={20}
                   width={20}
@@ -98,7 +98,7 @@ export default function VenueDrawer({ setClose, setValue }: any) {
               <Box>
                 {" "}
                 <ImageComponent
-                  src="/images/static/image_54.png"
+                  src="/assets/static/image_54.png"
                   alt="bin"
                   height={16}
                   width={16}
@@ -110,7 +110,7 @@ export default function VenueDrawer({ setClose, setValue }: any) {
             <Box>
               {" "}
               <ImageComponent
-                src="/images/static/image_55.png"
+                src="/assets/static/image_55.png"
                 alt="bin"
                 height={25}
                 width={25}
@@ -131,7 +131,7 @@ export default function VenueDrawer({ setClose, setValue }: any) {
                     <Box>
                       {" "}
                       <ImageComponent
-                        src="/images/static/image_54.png"
+                        src="/assets/static/image_54.png"
                         alt="bin"
                         height={16}
                         width={16}
@@ -167,7 +167,7 @@ export default function VenueDrawer({ setClose, setValue }: any) {
               </Grid>
               <Box className="flex items-center justify-center">
                 <ImageComponent
-                  src="/images/static/image_47.png"
+                  src="/assets/static/image_47.png"
                   alt="bin"
                   height={20}
                   width={20}
@@ -176,7 +176,7 @@ export default function VenueDrawer({ setClose, setValue }: any) {
             </Stack>
             <Box className="my-2">
               <CustomImageButton
-                image="/images/static/image_48.png"
+                image="/assets/static/image_48.png"
                 label="Add "
                 variant="event-button"
                 width={16}

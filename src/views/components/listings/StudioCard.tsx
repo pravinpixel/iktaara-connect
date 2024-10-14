@@ -12,7 +12,6 @@ const CustomImageButton = dynamic(() => import("../CustomImageButton"));
 const ImageComponent = dynamic(() => import("../ImageComponent"));
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StudioCard = ({ buisnessListData }: any) => {
-
   return (
     <section className="mt-[15px] cursor-pointer">
       {buisnessListData.data.map((business: any) => (
@@ -47,7 +46,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                           alignItems={"center"}
                         >
                           <ImageComponent
-                            src="/images/static/image_5.png"
+                            src="/assets/static/image_5.png"
                             alt="Business Image"
                             width={19}
                             height={20}
@@ -65,7 +64,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                           alignItems={"center"}
                         >
                           <ImageComponent
-                            src="/images/static/image_8.png"
+                            src="/assets/static/image_8.png"
                             alt="Business Image"
                             width={25}
                             height={25}
@@ -85,7 +84,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                             alignItems={"center"}
                           >
                             <ImageComponent
-                              src="/images/static/image_6.png"
+                              src="/assets/static/image_6.png"
                               alt="Business Image"
                               width={22}
                               height={11}
@@ -100,7 +99,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                             alignItems={"center"}
                           >
                             <ImageComponent
-                              src="/images/static/image_9.png"
+                              src="/assets/static/image_9.png"
                               alt="Business Image"
                               width={30}
                               height={30}
@@ -126,7 +125,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                             justifyContent={"flex-end"}
                           >
                             <ImageComponent
-                              src="/images/static/image_10.png"
+                              src="/assets/static/image_10.png"
                               width={20}
                               height={16}
                               alt="static"
@@ -150,7 +149,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                           </p>
                           <Box mt={1}>
                             <CustomImageButton
-                              image="/images/static/image_7.png"
+                              image="/assets/static/image_7.png"
                               label="Enquiry"
                             ></CustomImageButton>
                           </Box>
@@ -161,7 +160,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                       <Stack direction="row" spacing={1}>
                         <Box sx={{ display: "flex", alignItems: "center" }}>
                           <ImageComponent
-                            src="/images/static/image_11.png"
+                            src="/assets/static/image_11.png"
                             width={37.82}
                             height={36}
                             alt="static"
@@ -189,14 +188,14 @@ const StudioCard = ({ buisnessListData }: any) => {
                       >
                         <Box mt={1}>
                           <CustomImageButton
-                            image="/images/static/image_7.png"
+                            image="/assets/static/image_7.png"
                             label="Enquiry"
                           ></CustomImageButton>
                         </Box>
                         <Box>
                           <Stack direction="row">
                             <ImageComponent
-                              src="/images/static/image_10.png"
+                              src="/assets/static/image_10.png"
                               width={20}
                               height={16}
                               alt="static"
@@ -232,7 +231,7 @@ const StudioCard = ({ buisnessListData }: any) => {
       ))}
       <Box mt={2}>
         <ImageComponent
-          src="/images/static/image_18.png"
+          src="/assets/static/image_18.png"
           width={1118}
           height={250}
         />

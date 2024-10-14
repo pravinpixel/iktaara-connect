@@ -23,7 +23,7 @@ const MyProfileSection = () => {
           <Stack direction="row" spacing={2} alignItems={"center"}>
             <Box>
               <ImageComponent
-                src="/images/static/image_57.png"
+                src="/assets/static/image_57.png"
                 alt="Ramakrishna Paramahamsa"
                 width={67}
                 height={67}

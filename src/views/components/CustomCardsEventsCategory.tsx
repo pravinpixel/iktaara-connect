@@ -3,9 +3,10 @@ import * as React from "react";
 
 import Card from "@mui/material/Card";
 
-import { CardMedia } from "@mui/material";
+// import { CardMedia } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Stack } from "@mui/material";
+import CardMediaComponent from "./CardMediaComponent";
 
 interface CustomCardProps {
   variant?: "elevation" | "outlined";
@@ -53,9 +54,14 @@ export default function CustomCardEventsCategory(props: CustomCardProps) {
       }}
     >
       <Stack direction="column" alignItems={"center"} p={4}>
-        <CardMedia
+        {/* <CardMedia
           component="img"
-          image={img}
+          image={"/connect" + img}
+          alt="Paella dish"
+          sx={{ width: { md: 100, xs: 50 }, height: { md: 100, xs: 50 } }}
+        /> */}
+        <CardMediaComponent
+          image={"/connect" + img}
           alt="Paella dish"
           sx={{ width: { md: 100, xs: 50 }, height: { md: 100, xs: 50 } }}
         />

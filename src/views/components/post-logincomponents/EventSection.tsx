@@ -37,8 +37,8 @@ const EventSection = () => {
         title: "Madras Crocodile Bank Zoo - FREE Sunday Entry",
         sub_title: "Performance",
         description: "120 Reparist available in Chennai",
-        image: "/images/static/image_70.png",
-        logo_image: "/images/static/image_12.png",
+        image: "/assets/static/image_70.png",
+        logo_image: "/assets/static/image_12.png",
         rating: 4.2,
         reviews: 20,
         total_enquiries: 120,
@@ -54,8 +54,8 @@ const EventSection = () => {
         title: "Madras Crocodile Bank Zoo - FREE Sunday Entry",
         sub_title: "Performance",
         description: "120 Reparist available in Chennai",
-        image: "/images/static/image_70.png",
-        logo_image: "/images/static/image_12.png",
+        image: "/assets/static/image_70.png",
+        logo_image: "/assets/static/image_12.png",
         rating: 4.2,
         reviews: 20,
         total_enquiries: 120,
@@ -71,8 +71,8 @@ const EventSection = () => {
         title: "Madras Crocodile Bank Zoo - FREE Sunday Entry",
         sub_title: "Performance",
         description: "120 Reparist available in Chennai",
-        image: "/images/static/image_70.png",
-        logo_image: "/images/static/image_12.png",
+        image: "/assets/static/image_70.png",
+        logo_image: "/assets/static/image_12.png",
         rating: 4.2,
         reviews: 20,
         total_enquiries: 120,
@@ -158,7 +158,7 @@ const EventSection = () => {
               <Stack direction="row" alignItems={"center"} spacing={2}>
                 <Box>
                   <ImageComponent
-                    src="/images/static/image_69.png"
+                    src="/assets/static/image_69.png"
                     alt="Ramakrishna Paramahamsa"
                     width={67}
                     height={67}

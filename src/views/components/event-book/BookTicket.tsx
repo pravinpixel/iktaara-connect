@@ -17,7 +17,7 @@ const BookingTicket = () => {
       <CustomContainer>
         <Stack direction="row" spacing={1} alignItems="center">
           <ImageComponent
-            src="/images/static/image_31.png"
+            src="/assets/static/image_31.png"
             alt="image"
             width={16}
             height={16}

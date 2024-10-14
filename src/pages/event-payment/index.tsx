@@ -473,7 +473,7 @@ const EventPayment = () => {
                 >
                   <Box className="flex gap-2 items-center">
                     <CustomSmallButton
-                      image="/images/static/image_38.png"
+                      image="/assets/static/image_38.png"
                       width={27.57}
                       height={27.57}
                     />
@@ -509,7 +509,7 @@ const EventPayment = () => {
                 >
                   <Box className="flex gap-2 items-center">
                     <CustomSmallButton
-                      image="/images/static/image_39.png"
+                      image="/assets/static/image_39.png"
                       width={27.57}
                       height={27.57}
                     />
@@ -530,13 +530,13 @@ const EventPayment = () => {
                     />
                     <Stack direction="row" spacing={1}>
                       <ImageComponent
-                        src="/images/static/image_40.png"
+                        src="/assets/static/image_40.png"
                         alt="image"
                         width={40}
                         height={26}
                       />
                       <ImageComponent
-                        src="/images/static/image_41.png"
+                        src="/assets/static/image_41.png"
                         alt="image"
                         width={40}
                         height={26}
@@ -664,7 +664,7 @@ const PricingSummary = () => {
       </Box>
       <Box className="inline-flex my-3 gap-1 bg-ik_whitevariant p-2 rounded-lg">
         <ImageComponent
-          src="/images/static/image_37.png"
+          src="/assets/static/image_37.png"
           alt="percentage"
           width={18}
           height={12}

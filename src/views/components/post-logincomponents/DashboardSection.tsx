@@ -27,7 +27,7 @@ const DashboardSection = () => {
         <Stack direction="row" spacing={2}>
           <Box>
             <ImageComponent
-              src="/images/static/image_59.png"
+              src="/assets/static/image_59.png"
               alt="Ramakrishna Paramahamsa"
               width={73}
               height={107}
@@ -57,7 +57,7 @@ const DashboardSection = () => {
                 <Box>
                   {" "}
                   <ImageComponent
-                    src="/images/static/image_61.png"
+                    src="/assets/static/image_61.png"
                     alt="Ramakrishna Paramahamsa"
                     width={28}
                     height={28}
@@ -83,7 +83,7 @@ const DashboardSection = () => {
                 <Box>
                   {" "}
                   <ImageComponent
-                    src="/images/static/image_60.png"
+                    src="/assets/static/image_60.png"
                     alt="Ramakrishna Paramahamsa"
                     width={28}
                     height={28}
@@ -109,7 +109,7 @@ const DashboardSection = () => {
                 <Box>
                   {" "}
                   <ImageComponent
-                    src="/images/static/image_62.png"
+                    src="/assets/static/image_62.png"
                     alt="Ramakrishna Paramahamsa"
                     width={28}
                     height={28}
@@ -149,7 +149,7 @@ const DashboardSection = () => {
                     <Grid item xs={2}>
                       <Box>
                         <ImageComponent
-                          src="/images/static/image_36.png"
+                          src="/assets/static/image_36.png"
                           alt=""
                           width={73}
                           height={73}
@@ -208,7 +208,7 @@ const DashboardSection = () => {
             </Box>
             <Box>
               <ImageComponent
-                src="/images/static/image_63.png"
+                src="/assets/static/image_63.png"
                 alt=""
                 width={330}
                 height={316}
@@ -238,7 +238,7 @@ const DashboardSection = () => {
                 >
                   <Box>
                     <ImageComponent
-                      src="/images/static/image_64.svg"
+                      src="/assets/static/image_64.svg"
                       width={100}
                       height={100}
                       alt=""
@@ -263,7 +263,7 @@ const DashboardSection = () => {
                 >
                   <Box>
                     <ImageComponent
-                      src="/images/static/image_66.svg"
+                      src="/assets/static/image_66.svg"
                       width={100}
                       height={100}
                       alt=""
@@ -288,7 +288,7 @@ const DashboardSection = () => {
                 >
                   <Box>
                     <ImageComponent
-                      src="/images/static/image_65.svg"
+                      src="/assets/static/image_65.svg"
                       width={100}
                       height={100}
                       alt=""

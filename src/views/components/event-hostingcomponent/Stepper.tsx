@@ -108,8 +108,8 @@ export default function VerticalLinearStepper({ onStepChange }) {
                 <ImageComponent
                   src={
                     activeStep === index
-                      ? "/images/static/image_42.png"
-                      : "/images/static/image_43.png"
+                      ? "/assets/static/image_42.png"
+                      : "/assets/static/image_43.png"
                   }
                   alt="image"
                   width={24}

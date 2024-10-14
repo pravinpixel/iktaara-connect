@@ -19,12 +19,12 @@ export default function StepperContentOne() {
     {
       id: 1,
       title: "Free Entry",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 2,
       title: "Paid Entry",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
   ];
   return (
@@ -47,7 +47,7 @@ export default function StepperContentOne() {
             </Grid>
             <Box onClick={() => handleClick()}>
               <CustomImageButton
-                image="/images/static/image_48.png"
+                image="/assets/static/image_48.png"
                 label="Add Ticket"
                 variant="event-button"
                 width={16}

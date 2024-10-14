@@ -18,7 +18,7 @@ const VenueContentData = ({ setValue, type }: any) => {
             <Box className="flex items-center justify-center">
               {" "}
               <ImageComponent
-                src="/images/static/image_50.png"
+                src="/assets/static/image_50.png"
                 alt=""
                 width={227}
                 height={173}

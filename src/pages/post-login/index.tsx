@@ -51,7 +51,7 @@ const PostLogin = () => {
               <Box className="bg-ik_white my-5 mx-2 rounded-[8px]">
                 <Box className="flex items-center justify-center p-3">
                   <ImageComponent
-                    src="/images/static/image_57.png"
+                    src="/assets/static/image_57.png"
                     alt="Ramakrishna Paramahamsa"
                     width={166}
                     height={166}
