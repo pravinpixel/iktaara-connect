@@ -42,14 +42,17 @@ const HomePageComponent = () => {
     {
       id: 1,
       image: "/assets/image/events-img.webp",
+      link: "/events"
     },
     {
       id: 2,
       image: "/assets/image/events-img.webp",
+      link: ""
     },
     {
       id: 3,
       image: "/assets/image/events-img.webp",
+      link: ""
     },
   ];
 
