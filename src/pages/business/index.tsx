@@ -21,7 +21,7 @@ const StudioCard = dynamic(
 // import { ThemeContext } from "@emotion/react";s
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Listings = ({ buisnessListData }: any) => {
+const Business = ({ buisnessListData }: any) => {
   return (
     <>
       {" "}
@@ -168,4 +168,4 @@ export const getServerSideProps = wrapper.getServerSideProps(
   }
 );
 
-export default Listings;
+export default Business;

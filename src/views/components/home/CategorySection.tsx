@@ -12,6 +12,7 @@ import {
   SoundIcon,
   StandupIcon,
 } from "@/utils/theme/svg";
+import Link from "next/link";
 
 type Props = {
   categoryData: any;
@@ -52,11 +53,11 @@ export default function CategorySection(props: Props) {
             <span>Find Talent by Category</span>
           </div>
           <div>
-            <button className="pt-[10px]">
+            <Link href="" className="pt-[10px]">
               <span className="text-f18 text-ik_pink font-normal">
                 View All
               </span>
-            </button>
+            </Link>
           </div>
         </div>
         <Tabs
