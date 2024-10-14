@@ -38,21 +38,21 @@ const HomePageComponent = () => {
     },
   ];
 
-  const Events = [
+  const events = [
     {
       id: 1,
       image: "/assets/image/events-img.webp",
-      link: "/events"
+      link: "/events/sid-ram"
     },
     {
       id: 2,
       image: "/assets/image/events-img.webp",
-      link: ""
+      link: "/events/sid-ram"
     },
     {
       id: 3,
       image: "/assets/image/events-img.webp",
-      link: ""
+      link: "/events/sid-ram"
     },
   ];
 
@@ -597,7 +597,7 @@ const HomePageComponent = () => {
     <section>
       <BannerSection />
       <MusicalSection musicsection={music} />
-      <EventsSellers Eventssections={Events} bgChange={true} />
+      <EventsSellers events={events} bgChange={true} />
       <CategorySection categoryData={Category} />
       <MusicTechnicians
         musictechniciansection={musictechnician_data}

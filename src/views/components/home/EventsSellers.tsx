@@ -1,24 +1,25 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { Fragment } from "react";
+import React from "react";
 import bg from "../../../../public/assets/image/bg.svg";
 import bg1 from "../../../../public/assets/image/bg1.png";
 import Slider from "react-slick";
 import CustomContainer from "@/views/components/Container";
 import ImageComponent from "../ImageComponent";
+import Link from "next/link";
 
 type Props = {
-  Eventssections: any;
+  events: any;
   bgChange: any;
 };
 
 const EventsSellers = (props: Props) => {
-  const { Eventssections, bgChange } = props;
+  const { events, bgChange } = props;
   const settings = {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
-    swipe: Eventssections?.length > 1 ? true : false,
-    infinite: Eventssections?.length > 1 ? true : false,
+    swipe: events?.length > 1 ? true : false,
+    infinite: events?.length > 1 ? true : false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -71,18 +72,16 @@ const EventsSellers = (props: Props) => {
           </div>
         </CustomContainer>
         <Slider {...settings} className="slider-white-dots">
-          {Eventssections?.map((item: any) => (
-            <Fragment key={item?.id}>
-              <div>
-                <ImageComponent
-                  src={item?.image}
-                  width={1496}
-                  height={451}
-                  alt="slide-imag"
-                  className="w-full h-auto rounded-[7px]"
-                />
-              </div>
-            </Fragment>
+          {events?.map((item: any) => (
+            <Link key={item?.id} href={item?.link || ''}>
+              <ImageComponent
+                src={item?.image}
+                width={1496}
+                height={451}
+                alt="slide-imag"
+                className="w-full h-auto rounded-[7px]"
+              />
+            </Link>
           ))}
         </Slider>
       </div>
