@@ -23,7 +23,7 @@ const DashboardSection = () => {
   };
   return (
     <>
-      <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
+      <Box className="bg-ik_white mt-5 mb-2 mx-1 rounded-[8px] p-3">
         <Stack direction="row" spacing={2} alignItems="center">
           <Box>
             <ImageComponent
