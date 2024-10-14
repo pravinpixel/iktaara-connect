@@ -58,7 +58,7 @@ const EnquirySection = () => {
         <Box>
           <Grid container>
             <Grid item md={4}>
-              <Box className="bg-ik_white my-5 mx-2 rounded-[8px] ">
+              <Box className="bg-ik_white my-5 mx-2 ">
                 <Box className="w-[100%] p-3">
                   {" "}
                   <AutoCompleteSearch
@@ -142,7 +142,7 @@ const EnquirySection = () => {
               </Box>
             </Grid>
             <Grid item md={8}>
-              <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
+              <Box className="bg-ik_white my-5 mx-2 p-3">
                 {" "}
                 <Box>
                   <Stack direction={"row"} spacing={1}>

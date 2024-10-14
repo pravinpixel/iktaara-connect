@@ -6,21 +6,23 @@ import ImageComponent from "../ImageComponent";
 import { useState } from "react";
 
 const EventContentPopOver = () => {
-  const [selected, setSelected] = useState(false);
-  const handleClick = () => {
-    setSelected(true);
+  const [selected, setSelected] = useState<string | null>(null);
+
+  const handleClick = (item: string) => {
+    setSelected(item);
   };
   return (
     <>
       <Box className="flex gap-[10px]">
-        <Stack direction="column" spacing={2} p={2}>
-          {" "}
+        <Stack direction="column" spacing={1}>
           <Stack
             direction="row"
             alignItemss={"center"}
             spacing={2}
-            onClick={handleClick}
-            className={selected ? "text-red-500" : ""}
+            onClick={() => handleClick("edit")}
+            className={`cursor-pointer px-10 py-2 ${
+              selected === "edit" ? "bg-ik_bluegreylighten5 " : "bg-transparent"
+            }`}
           >
             <Box>
               <ImageComponent
@@ -32,7 +34,14 @@ const EventContentPopOver = () => {
             </Box>
             <Typography>Edit</Typography>
           </Stack>
-          <Stack direction="row" alignItemss={"center"} spacing={2}>
+          <Stack
+            direction="row"
+            alignItemss={"center"}
+            spacing={2}
+            className={`cursor-pointer px-10 py-2 ${
+              selected === "edit" ? " " : "bg-transparent"
+            }`}
+          >
             <Box>
               <ImageComponent
                 src="/assets/static/image_74.svg"
@@ -43,7 +52,14 @@ const EventContentPopOver = () => {
             </Box>
             <Typography>Preview</Typography>
           </Stack>
-          <Stack direction="row" alignItemss={"center"} spacing={2}>
+          <Stack
+            direction="row"
+            alignItemss={"center"}
+            spacing={2}
+            className={`cursor-pointer px-10 py-2 ${
+              selected === "edit" ? " " : "bg-transparent"
+            }`}
+          >
             <Box>
               <ImageComponent
                 src="/assets/static/image_71.svg"
@@ -54,7 +70,14 @@ const EventContentPopOver = () => {
             </Box>
             <Typography>Analytics</Typography>
           </Stack>
-          <Stack direction="row" alignItemss={"center"} spacing={2}>
+          <Stack
+            direction="row"
+            alignItemss={"center"}
+            spacing={2}
+            className={`cursor-pointer px-10 py-2 ${
+              selected === "edit" ? "" : "bg-transparent"
+            }`}
+          >
             <Box>
               <ImageComponent
                 src="/assets/static/image_72.svg"

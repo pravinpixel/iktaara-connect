@@ -185,7 +185,7 @@ const EventContent = ({ buisnessListData }: any) => {
             horizontal: "center",
           }}
           PaperProps={{
-            className: "rounded-lg shadow-md",
+            className: "rounded-lg shadow-md px-0 py-2",
           }}
         >
           <EventContentPopOver />

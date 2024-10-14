@@ -24,7 +24,7 @@ const DashboardSection = () => {
   return (
     <>
       <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
-        <Stack direction="row" spacing={2}>
+        <Stack direction="row" spacing={2} alignItems="center">
           <Box>
             <ImageComponent
               src="/assets/static/image_59.png"
@@ -135,76 +135,72 @@ const DashboardSection = () => {
         <Grid container>
           <Stack direction="row" spacing={1}>
             <Box>
-              <Grid item xs={12}>
-                <Box className="bg-ik_white  mx-1 rounded-[8px] p-3">
-                  <Typography className="text-f18 font-semibold leading-[30px] text-ik_bluegreydarken3">
-                    What’s Happening!
-                  </Typography>
-                  {/* <Stack direction={"row"} spacing={2}> */}
-                  <Grid
-                    container
-                    alignItems={"center"}
-                    justifyContent={"center"}
-                  >
-                    <Grid item xs={2}>
-                      <Box>
-                        <ImageComponent
-                          src="/assets/static/image_36.png"
-                          alt=""
-                          width={73}
-                          height={73}
-                        />
-                      </Box>
-                    </Grid>
-                    <Grid item xs={10}>
-                      {" "}
-                      <Box className="border border-ik_bluegreydarken1 p-3 rounded-[30px]">
-                        <Typography>Share an update...</Typography>
-                      </Box>
-                    </Grid>
+              {/* <Grid item xs={11.7}> */}
+              <Box className="bg-ik_white  mx-1 rounded-[8px] p-3 w-[540px]">
+                <Typography className="text-f18 font-semibold leading-[30px] text-ik_bluegreydarken3">
+                  What’s Happening!
+                </Typography>
+                {/* <Stack direction={"row"} spacing={2}> */}
+                <Grid container alignItems={"center"} justifyContent={"center"}>
+                  <Grid item xs={2}>
+                    <Box>
+                      <ImageComponent
+                        src="/assets/static/image_36.png"
+                        alt=""
+                        width={73}
+                        height={73}
+                      />
+                    </Box>
                   </Grid>
+                  <Grid item xs={10}>
+                    {" "}
+                    <Box className="border border-ik_bluegreydarken1 p-3 rounded-[30px]">
+                      <Typography>Share an update...</Typography>
+                    </Box>
+                  </Grid>
+                </Grid>
 
-                  {/* </Stack> */}
+                {/* </Stack> */}
+              </Box>
+              {/* </Grid> */}
+
+              {/* <Grid item xs={11.7} mt={1}> */}
+              <Box className="bg-ik_white  mx-1 rounded-[8px] p-3 mt-2 w-[540px]">
+                <Box>
+                  <Typography className="text-f18 font-semibold leading-[30px] text-ik_bluegreydarken3">
+                    Profile Completion
+                  </Typography>
                 </Box>
-              </Grid>
-
-              <Grid item xs={12} mt={1}>
-                <Box className="bg-ik_white  mx-1 rounded-[8px] p-3">
-                  <Box>
-                    <Typography className="text-f18 font-semibold leading-[30px] text-ik_bluegreydarken3">
-                      Profile Completion
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Stack direction={"row"} spacing={2}>
-                      <Box>
-                        <CircularWithValueLabel />
-                      </Box>
-                      <Box>
-                        <Typography className="text-f24 font-bold leading-[30px] text-ik_bluegreydarken3">
-                          Your profile 50% Complete
-                        </Typography>
-                        <Typography className="text-f18 font-normal leading-[30px] text-ik_bluegreydarken1">
-                          Great work! Keep your profile uptodate to get business
-                          enquiries
-                        </Typography>
-                        <CustomButton
-                          variant="primary-button"
-                          label="Update Profile"
-                          className={""}
-                          onClick={handleClickUpdate}
+                <Box>
+                  <Stack direction={"row"} spacing={2}>
+                    <Box>
+                      <CircularWithValueLabel />
+                    </Box>
+                    <Box>
+                      <Typography className="text-f24 font-bold leading-[30px] text-ik_bluegreydarken3">
+                        Your profile 50% Complete
+                      </Typography>
+                      <Typography className="text-f18 font-normal leading-[30px] text-ik_bluegreydarken1">
+                        Great work! Keep your profile uptodate to get business
+                        enquiries
+                      </Typography>
+                      <CustomButton
+                        variant="primary-button"
+                        label="Update Profile"
+                        className={""}
+                        onClick={handleClickUpdate}
+                      />
+                      {openUpdate && (
+                        <PostUpdatePapup
+                          handleClose={handleCloseUpdate}
+                          open={openUpdate}
                         />
-                        {openUpdate && (
-                          <PostUpdatePapup
-                            handleClose={handleCloseUpdate}
-                            open={openUpdate}
-                          />
-                        )}
-                      </Box>
-                    </Stack>
-                  </Box>
+                      )}
+                    </Box>
+                  </Stack>
                 </Box>
-              </Grid>
+              </Box>
+              {/* </Grid> */}
             </Box>
             <Box>
               <ImageComponent
