@@ -43,7 +43,6 @@ type TabInfo = {
 
 export default function FilterSectionEvents(props: Props) {
   const { categoryData } = props;
-  console.log(categoryData, "categoryData");
 
   const [selectedTab, setSelectedTab] = React.useState(0);
 
@@ -51,23 +50,6 @@ export default function FilterSectionEvents(props: Props) {
     setSelectedTab(newValue);
   };
 
-  const getCategoryData = () => {
-    switch (selectedTab) {
-      case 0:
-        return categoryData.pianist;
-      case 1:
-        return categoryData.dancer;
-      case 2:
-        return categoryData.sound_engineer;
-      case 3:
-        return categoryData.theatre_artists;
-      case 4:
-        return categoryData.party_dJ;
-
-      default:
-        return [];
-    }
-  };
 
   const [open, setOpen] = React.useState(false);
 
@@ -160,7 +142,7 @@ export default function FilterSectionEvents(props: Props) {
           /> */}
         </Tabs>
 
-        <FilterEventData Categorysection={getCategoryData()} />
+        <FilterEventData Categorysection={categoryData} />
         {open && <EventFilterPopup handleClose={handleClose} open={open} />}
       </CustomContainer>
     </section>

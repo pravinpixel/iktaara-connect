@@ -45,7 +45,7 @@
 //                   >
 //                     <Box className="flex gap-2 items-center">
 //                       <CustomSmallButton
-//                         image="/images/static/image_38.png"
+//                         image="/assets/static/image_38.png"
 //                         width={27.57}
 //                         height={27.57}
 //                       ></CustomSmallButton>
@@ -92,7 +92,7 @@
 //                   >
 //                     <Box className="flex gap-2 items-center">
 //                       <CustomSmallButton
-//                         image="/images/static/image_39.png"
+//                         image="/assets/static/image_39.png"
 //                         width={27.57}
 //                         height={27.57}
 //                       ></CustomSmallButton>
@@ -201,7 +201,7 @@
 //                   </Box>
 //                   <Box className="inline-flex my-3 gap-1 bg-ik_whitevariant p-2 rounded-lg">
 //                     <ImageComponent
-//                       src="/images/static/image_37.png"
+//                       src="/assets/static/image_37.png"
 //                       alt="percentage"
 //                       width={18}
 //                       height={12}
@@ -310,7 +310,7 @@
 // //           event_date: "date",
 // //           event_type: "varchar",
 // //           event_price: 10,
-// //           thumbnail_image: "/images/static/image_23.png",
+// //           thumbnail_image: "/assets/static/image_23.png",
 // //         },
 // //         {
 // //           id: 2,
@@ -318,7 +318,7 @@
 // //           event_date: "date",
 // //           event_type: "varchar",
 // //           event_price: 110,
-// //           thumbnail_image: "/images/static/image_23.png",
+// //           thumbnail_image: "/assets/static/image_23.png",
 // //         },
 // //         {
 // //           id: 3,
@@ -326,7 +326,7 @@
 // //           event_date: "date",
 // //           event_type: "varchar",
 // //           event_price: 10,
-// //           thumbnail_image: "/images/static/image_23.png",
+// //           thumbnail_image: "/assets/static/image_23.png",
 // //         },
 // //         {
 // //           id: 4,
@@ -334,7 +334,7 @@
 // //           event_date: "date",
 // //           event_type: "varchar",
 // //           event_price: 10,
-// //           thumbnail_image: "/images/static/image_23.png",
+// //           thumbnail_image: "/assets/static/image_23.png",
 // //         },
 // //         {
 // //           id: 5,
@@ -342,7 +342,7 @@
 // //           event_date: "date",
 // //           event_type: "varchar",
 // //           event_price: 10,
-// //           thumbnail_image: "/images/static/image_23.png",
+// //           thumbnail_image: "/assets/static/image_23.png",
 // //         },
 // //         {
 // //           id: 6,
@@ -350,7 +350,7 @@
 // //           event_date: "date",
 // //           event_type: "varchar",
 // //           event_price: 10,
-// //           thumbnail_image: "/images/static/image_23.png",
+// //           thumbnail_image: "/assets/static/image_23.png",
 // //         },
 // //       ],
 // //     };
@@ -360,32 +360,32 @@
 // //         {
 // //           id: 1,
 // //           name: "varchar",
-// //           icon: "/images/static/image_24.png",
+// //           icon: "/assets/static/image_24.png",
 // //         },
 // //         {
 // //           id: 2,
 // //           name: "Music Doctor",
-// //           icon: "/images/static/image_24.png",
+// //           icon: "/assets/static/image_24.png",
 // //         },
 // //         {
 // //           id: 3,
 // //           name: "Music Doctor",
-// //           icon: "/images/static/image_24.png",
+// //           icon: "/assets/static/image_24.png",
 // //         },
 // //         {
 // //           id: 4,
 // //           name: "Music Doctor",
-// //           icon: "/images/static/image_24.png",
+// //           icon: "/assets/static/image_24.png",
 // //         },
 // //         {
 // //           id: 5,
 // //           name: "Music Doctor",
-// //           icon: "/images/static/image_24.png",
+// //           icon: "/assets/static/image_24.png",
 // //         },
 // //         {
 // //           id: 6,
 // //           name: "Music Doctor",
-// //           icon: "/images/static/image_24.png",
+// //           icon: "/assets/static/image_24.png",
 // //         },
 // //       ],
 // //     };

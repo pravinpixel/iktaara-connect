@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Fragment } from "react";
 import Slider from "react-slick";
 
-import CustomCardEvents from "../CustomCardsEvents";
+import ThisWeekData from "./ThisWeekData";
 
 type Props = {
   Categorysection: any;
@@ -69,32 +68,7 @@ const FilterEventData = (props: Props) => {
     <div className="category-section-sec py-4">
       <Slider {...settings}>
         {Categorysection?.map((item: any) => (
-          <Fragment key={item?.id}>
-            <div>
-              <CustomCardEvents
-                variant="bottom-left"
-                img={item.category_image}
-                text={"Art"}
-                reviews={""}
-                typebottom={false}
-              />
-            </div>
-            <div className="py-2">
-              <div>
-                <h6 className="text-ik_bluegreydarken6 text-f20 font-semibold leading-6">
-                  {item?.category_name}
-                </h6>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-ik_bluegreydarken6 text-f16 font-normal leading-6">
-                  {item?.category_name}
-                </span>
-              </div>
-              <span className="text-ik_bluegreydarken6 text-f16 font-semibold leading-6">
-                {item?.category_reviews}
-              </span>
-            </div>
-          </Fragment>
+           <ThisWeekData cartData={item} key={item?.id} />
         ))}
       </Slider>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 
 import { Box } from "@mui/material";
 import dynamic from "next/dynamic";
@@ -12,14 +12,24 @@ const VenueSection = dynamic(
 const BookingTicket = dynamic(
   () => import("@/views/components/event-book/BookTicket")
 );
+
+
 const EventsBooking = () => {
+  const [section, setSection] = useState<EventsBookingSectionType>('date')
+  const handleSection = useCallback(() => {
+    setSection((state) => state === 'date' ? 'venue' : 'ticket')
+  }, [])
+
+  const handleBackSection = useCallback(() => {
+    setSection((state) => state === 'ticket' ? "venue" : "date")
+  }, [])
+
   return (
     <>
-      {" "}
       <Box className="bg-ik_lightblue">
         <BookingTicket />
-        <VenueSection />
-        <NextSection className={""} />
+        <VenueSection section={section} />
+        <NextSection className={""} showPrev={section !== 'date'} handleSection={handleSection} handleBackSection={handleBackSection} />
       </Box>
     </>
   );
@@ -108,7 +118,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 2,
@@ -116,7 +126,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 110,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 3,
@@ -124,7 +134,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 4,
@@ -132,7 +142,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 5,
@@ -140,7 +150,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 6,
@@ -148,7 +158,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //       ],
 //     };
@@ -158,32 +168,32 @@ const EventsBooking = () => {
 //         {
 //           id: 1,
 //           name: "varchar",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 2,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 3,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 4,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 5,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 6,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //       ],
 //     };

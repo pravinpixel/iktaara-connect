@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
 import { Box } from "@mui/material";
 
@@ -11,27 +11,21 @@ const DateSection = dynamic(() => import("./DateSection"));
 const VenueListSection = dynamic(() => import("./VenueListSection"));
 const CustomContainer = dynamic(() => import("@/views/components/Container"));
 
-const VenueSection = () => {
-  const [showVenueList, setShowVenueList] = useState(false);
-  const [showTicketList, setShowTicketList] = useState(false);
-  const [showDateList, setShowDateList] = useState(true);
-  const handleDateClick = () => {
-    setShowVenueList(true); // Show VenueListSection when the date is clicked
-    setShowTicketList(false);
-    setShowDateList(false);
-  };
+const EventSection = ({ section = 'date' }: { section: EventsBookingSectionType }) => {
+  switch (section) {
+    case 'date':
+      return <DateSection />
+    case 'venue':
+      return <VenueListSection />
+    case 'ticket':
+      return <TicketSection />
+    default:
+      return <DateSection />
+  }
+}
 
-  const handleDateClick1 = () => {
-    setShowTicketList(true);
-    setShowVenueList(false);
-    setShowDateList(false);
-  };
 
-  const handleDateClick2 = () => {
-    setShowTicketList(false);
-    setShowVenueList(false);
-    setShowDateList(true);
-  };
+const VenueSection = ({ section }: { section: EventsBookingSectionType }) => {
 
   return (
     <Box className=" mt-1 mb-[100px]">
@@ -39,15 +33,11 @@ const VenueSection = () => {
         <Grid container spacing={1}>
           <Grid item xs={4}>
             <PerformerSection
-              onDateClick={handleDateClick}
-              onDateClick1={handleDateClick1}
-              onDateClick2={handleDateClick2}
             />
           </Grid>
           <Grid item xs={8}>
-            {showVenueList && <VenueListSection />}
-            {showTicketList && <TicketSection />}
-            {showDateList && <DateSection />}
+
+            <EventSection section={section} />
           </Grid>
         </Grid>
       </CustomContainer>

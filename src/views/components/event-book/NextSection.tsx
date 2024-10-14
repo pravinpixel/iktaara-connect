@@ -14,20 +14,26 @@ const CustomContainer = dynamic(() => import("@/views/components/Container"));
 
 interface NextSectionProps {
   justifyContent?:
-    | "flex-start"
-    | "center"
-    | "flex-end"
-    | "space-between"
-    | "space-around"
-    | "space-evenly";
+  | "flex-start"
+  | "center"
+  | "flex-end"
+  | "space-between"
+  | "space-around"
+  | "space-evenly";
   alignItems?: "flex-start" | "center" | "flex-end" | "baseline" | "stretch";
   className: string;
+  showPrev: boolean;
+  handleSection: () => void
+  handleBackSection: () => void
 }
 
 const NextSection = ({
   justifyContent = "center",
   alignItems = "center",
   className = "",
+  showPrev,
+  handleSection,
+  handleBackSection
 }: NextSectionProps) => {
   return (
     <Box className={`bg-ik_white p-3 mt-1 ${className}`}>
@@ -38,13 +44,20 @@ const NextSection = ({
           alignItems={alignItems}
           justifyContent={justifyContent}
         >
-          <ImageComponent
-            src="/assets/static/image_35.png"
-            alt="image"
-            width={54}
-            height={54}
-          />
+          {
+            showPrev && <div onClick={handleBackSection} className="cursor-pointer">
+              <ImageComponent
+                src="/assets/static/image_35.png"
+                alt="image"
+                width={54}
+                height={54}
+              />
+            </div>
+          }
+
+
           <CustomButton
+            onClick={handleSection}
             label="Next"
             className="w-[217px] h-[54px]"
           ></CustomButton>

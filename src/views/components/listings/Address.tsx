@@ -41,7 +41,7 @@ const AddressSection = () => {
     //   name: "Music Doctor",
     //   location: "Nungambakkam",
     //   inquiries: 105,
-    //   imgSrc: "/images/static/image_5.png",
+    //   imgSrc: "/assets/static/image_5.png",
     //   icon: "Music Doctor Icon",
     // },
     // {
@@ -49,7 +49,7 @@ const AddressSection = () => {
     //   name: "Music Doctor",
     //   location: "Nungambakkam",
     //   inquiries: 105,
-    //   imgSrc: "/images/static/image_5.png",
+    //   imgSrc: "/assets/static/image_5.png",
     //   icon: "Music Doctor Icon",
     // },
     // {
@@ -57,7 +57,7 @@ const AddressSection = () => {
     //   name: "Music Doctor",
     //   location: "Nungambakkam",
     //   inquiries: 105,
-    //   imgSrc: "/images/static/image_5.png",
+    //   imgSrc: "/assets/static/image_5.png",
     //   icon: "Music Doctor Icon",
     // },
   ];

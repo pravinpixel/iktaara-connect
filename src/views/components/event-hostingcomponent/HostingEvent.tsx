@@ -11,32 +11,32 @@ export default function HostingEvent() {
     {
       id: 1,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 2,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 3,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 4,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 5,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 6,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
   ];
   return (

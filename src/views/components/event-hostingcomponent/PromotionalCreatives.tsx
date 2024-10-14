@@ -27,7 +27,7 @@ export default function PromotionalCreatives() {
             {" "}
             <Box className="bg-ik_bluegreylighten5 rounded-md p-5">
               <ImageComponent
-                src="/images/static/image_46.png"
+                src="/assets/static/image_46.png"
                 className="aspect-[135/55]"
                 type={2}
               />
@@ -52,7 +52,7 @@ export default function PromotionalCreatives() {
             {" "}
             <Box className="bg-ik_bluegreylighten5 rounded-md p-5">
               <ImageComponent
-                src="/images/static/image_46.png"
+                src="/assets/static/image_46.png"
                 className="aspect-[135/55]"
                 type={2}
               />

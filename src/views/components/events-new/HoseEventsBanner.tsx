@@ -10,7 +10,7 @@ const HostEventsBanner = () => {
       <Box className="flex items-center justify-center mb-5 cursor-pointer">
         <ImageComponent
           alt="calender"
-          src="/images/static/image_22.png"
+          src="/assets/static/image_22.png"
           width={1064}
           height={149}
         />

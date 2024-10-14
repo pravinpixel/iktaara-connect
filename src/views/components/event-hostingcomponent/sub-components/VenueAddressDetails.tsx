@@ -25,7 +25,7 @@ const VenueAddressDetails = () => {
                   Narada Gana Sabha in Alwarpet, Chennai
                 </Typography>
                 <Typography className="text-f18 font-normal leading-6 text-ik_bluegreydarken1">
-                  No 314, Ttk Road, 
+                  No 314, Ttk Road,
                 </Typography>
                 <Typography className="text-f18 font-normal leading-6 text-ik_bluegreydarken1">
                   Alwarpet, Chennai - 600018
@@ -58,7 +58,7 @@ const VenueAddressDetails = () => {
               <Stack direction={"row"} spacing={1}>
                 <Box>
                   <ImageComponent
-                    src="/images/static/image_56.png"
+                    src="/assets/static/image_56.png"
                     alt="bin"
                     height={19}
                     width={19}
@@ -71,7 +71,7 @@ const VenueAddressDetails = () => {
               <Stack direction={"row"} spacing={1}>
                 <Box>
                   <ImageComponent
-                    src="/images/static/image_52.png"
+                    src="/assets/static/image_52.png"
                     alt="bin"
                     height={20}
                     width={20}

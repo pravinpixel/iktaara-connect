@@ -18,7 +18,7 @@ const EventsTitle = (props: EventsTitleProps) => {
       <Stack direction="row" spacing={2} alignItems={"center"} pt={2} pb={2}>
         <ImageComponent
           alt="calender"
-          src="/images/static/image_21.png"
+          src="/assets/static/image_21.png"
           width={40}
           height={40}
         />

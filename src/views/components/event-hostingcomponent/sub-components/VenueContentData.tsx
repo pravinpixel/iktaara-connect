@@ -39,7 +39,7 @@ const VenueContentData = ({ setValue, type }: any) => {
             <Stack direction="row" spacing={1} alignItems={"center"}>
               <Box>
                 <ImageComponent
-                  src="/images/static/image_51.png"
+                  src="/assets/static/image_51.png"
                   alt="location"
                   width={91}
                   height={99}

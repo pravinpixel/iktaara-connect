@@ -1,11 +1,17 @@
 import React from "react";
 import { Box, Typography, Stack } from "@mui/material";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
 
 const CustomButton = dynamic(() => import("../form-fields/CustomButton"));
 const ImageComponent = dynamic(() => import("../ImageComponent"));
 
 export default function BookTicket() {
+  const router = useRouter()
+
+  const handleRoute = () => {
+    router.push('/events/booking')
+  }
   return (
     <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white">
       {/* Banner */}
@@ -38,14 +44,11 @@ export default function BookTicket() {
         {/* Buttons */}
         <Box className="flex gap-4 mt-4">
           <CustomButton
-            variant="contained"
-            color="error"
-            className=""
-            label="  Book Ticket"
+            onClick={handleRoute}
+            label="Book Ticket"
           ></CustomButton>
           <CustomButton
             variant="primary-button"
-            className=""
             label="Share"
           ></CustomButton>
         </Box>
@@ -55,7 +58,7 @@ export default function BookTicket() {
           {" "}
           <Stack direction="row" alignItems={"center"} spacing={1}>
             <ImageComponent
-              src="/images/static/image_27.png"
+              src="/assets/static/image_27.png"
               alt="Business Image"
               width={23.4}
               height={24}
@@ -66,7 +69,7 @@ export default function BookTicket() {
           </Stack>
           <Stack direction="row" alignItems={"center"} spacing={1}>
             <ImageComponent
-              src="/images/static/image_28.png"
+              src="/assets/static/image_28.png"
               alt="Business Image"
               width={23.4}
               height={24}

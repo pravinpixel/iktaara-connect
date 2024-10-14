@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import React from "react";
 const CustomCardEvents = dynamic(() => import("../CustomCardsEvents"));
 
@@ -11,7 +12,7 @@ const ThisWeekData = (props: Props) => {
   const { cartData } = props;
 
   return (
-    <section>
+    <Link href={'/events/' + cartData?.event_name || ''}>
       <div>
         <CustomCardEvents
           variant="bottom-left"
@@ -36,7 +37,7 @@ const ThisWeekData = (props: Props) => {
           {cartData?.event_price} Onwards
         </span>
       </div>
-    </section>
+    </Link>
   );
 };
 

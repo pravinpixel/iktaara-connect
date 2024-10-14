@@ -13,7 +13,7 @@ export default function HostInfo() {
       </Typography>
       <Stack direction="row" spacing={2} alignItems="center" my={2}>
         <ImageComponent
-          src="/images/static/image_36.png"
+          src="/assets/static/image_36.png"
           alt="Business Image"
           width={72}
           height={72}

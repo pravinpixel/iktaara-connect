@@ -18,15 +18,15 @@ const Transition = React.forwardRef(function Transition(
 });
 
 const OtpLoginWidget = () => {
-    const { setPopup, popup } = zustandStore();
+  const { setPopup, popup } = zustandStore();
 
-    const handleRegsiterOpen = () => {
-      setPopup("register");
-    };
+  const handleRegsiterOpen = () => {
+    setPopup("register");
+  };
 
-    const handleClose = () => {
-      setPopup(null);
-    };
+  const handleClose = () => {
+    setPopup(null);
+  };
   return (
     <React.Fragment>
       <Dialog
@@ -44,7 +44,7 @@ const OtpLoginWidget = () => {
           <Grid item xs={6}>
             <div className="w-full h-full">
               <ImageComponent
-                src="/images/static/image_19.png"
+                src="/assets/static/image_19.png"
                 className="h-full"
                 type={2}
               />

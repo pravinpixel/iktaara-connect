@@ -108,7 +108,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 2,
@@ -116,7 +116,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 110,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 3,
@@ -124,7 +124,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 4,
@@ -132,7 +132,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 5,
@@ -140,7 +140,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 6,
@@ -148,7 +148,7 @@ const EventsBooking = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //       ],
 //     };
@@ -158,32 +158,32 @@ const EventsBooking = () => {
 //         {
 //           id: 1,
 //           name: "varchar",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 2,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 3,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 4,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 5,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 6,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //       ],
 //     };

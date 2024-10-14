@@ -74,68 +74,60 @@ const PostLogin = () => {
                 </Box>
                 <Box className="py-4 ">
                   <Box
-                    className={`py-2 cursor-pointer ${
-                      firstSection === "dashboard"
+                    className={`py-2 cursor-pointer ${firstSection === "dashboard"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
-                    }`}
+                      }`}
                     onClick={() => handleFirstSection("one")}
                   >
                     {" "}
                     <Typography
-                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
-                        firstSection === "dashboard" ? "text-ik_pink" : ""
-                      }`}
-                      // className="py-3 cursor-pointer"
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${firstSection === "dashboard" ? "text-ik_pink" : ""
+                        }`}
+                    // className="py-3 cursor-pointer"
                     >
                       Dashboard
                     </Typography>
                   </Box>
                   <Box
-                    className={`py-2 cursor-pointer ${
-                      firstSection === "enquiries"
+                    className={`py-2 cursor-pointer ${firstSection === "enquiries"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
-                    }`}
+                      }`}
                   >
                     <Typography
-                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
-                        firstSection === "enquiries" ? "text-ik_pink" : ""
-                      }`}
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${firstSection === "enquiries" ? "text-ik_pink" : ""
+                        }`}
                       onClick={() => handleFirstSection("two")}
                     >
                       Enquiries
                     </Typography>
                   </Box>
                   <Box
-                    className={`py-2 cursor-pointer ${
-                      firstSection === "events"
+                    className={`py-2 cursor-pointer ${firstSection === "events"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
-                    }`}
+                      }`}
                   >
                     {" "}
                     <Typography
-                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
-                        firstSection === "events" ? "text-ik_pink" : ""
-                      }`}
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${firstSection === "events" ? "text-ik_pink" : ""
+                        }`}
                       onClick={() => handleFirstSection("three")}
                     >
                       Events
                     </Typography>
                   </Box>
                   <Box
-                    className={`py-2 cursor-pointer ${
-                      firstSection === "myprofile"
+                    className={`py-2 cursor-pointer ${firstSection === "myprofile"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
-                    }`}
+                      }`}
                   >
                     {" "}
                     <Typography
-                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
-                        firstSection === "myprofile" ? "text-ik_pink" : ""
-                      }`}
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${firstSection === "myprofile" ? "text-ik_pink" : ""
+                        }`}
                       onClick={() => handleFirstSection("four")}
                     >
                       My Profile
@@ -240,7 +232,7 @@ const PostLogin = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 2,
@@ -248,7 +240,7 @@ const PostLogin = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 110,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 3,
@@ -256,7 +248,7 @@ const PostLogin = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 4,
@@ -264,7 +256,7 @@ const PostLogin = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 5,
@@ -272,7 +264,7 @@ const PostLogin = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //         {
 //           id: 6,
@@ -280,7 +272,7 @@ const PostLogin = () => {
 //           event_date: "date",
 //           event_type: "varchar",
 //           event_price: 10,
-//           thumbnail_image: "/images/static/image_23.png",
+//           thumbnail_image: "/assets/static/image_23.png",
 //         },
 //       ],
 //     };
@@ -290,32 +282,32 @@ const PostLogin = () => {
 //         {
 //           id: 1,
 //           name: "varchar",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 2,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 3,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 4,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 5,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //         {
 //           id: 6,
 //           name: "Music Doctor",
-//           icon: "/images/static/image_24.png",
+//           icon: "/assets/static/image_24.png",
 //         },
 //       ],
 //     };

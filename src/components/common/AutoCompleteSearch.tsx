@@ -82,7 +82,7 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
                               <Grid container md={8}>
                                 <Grid item md={1}>
                                   <ImageComponent
-                                    src="/images/demo/static/uparrow.png"
+                                    src="/assets/demo/static/uparrow.png"
                                     width={13}
                                     height={13}
                                     alt="uparrow"
@@ -167,7 +167,7 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
                               <Grid container md={8}>
                                 <Grid item md={1}>
                                   <ImageComponent
-                                    src="/images/demo/static/uparrow.png"
+                                    src="/assets/demo/static/uparrow.png"
                                     width={13}
                                     height={13}
                                     alt="uparrow"

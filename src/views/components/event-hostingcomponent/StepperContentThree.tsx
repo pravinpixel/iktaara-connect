@@ -52,7 +52,7 @@ export default function StepperContentThree() {
               <Stack direction="row" spacing={1} alignItems="center">
                 <Box>
                   <ImageComponent
-                    src="/images/static/image_49.png"
+                    src="/assets/static/image_49.png"
                     alt="image"
                     width={4}
                     height={44}
@@ -73,7 +73,7 @@ export default function StepperContentThree() {
               <Stack direction="row" spacing={1} alignItems="center">
                 <Box>
                   <ImageComponent
-                    src="/images/static/image_49.png"
+                    src="/assets/static/image_49.png"
                     alt="image"
                     width={4}
                     height={44}
@@ -94,7 +94,7 @@ export default function StepperContentThree() {
               <Stack direction="row" spacing={1} alignItems="center">
                 <Box>
                   <ImageComponent
-                    src="/images/static/image_49.png"
+                    src="/assets/static/image_49.png"
                     alt="image"
                     width={4}
                     height={44}

@@ -11,17 +11,9 @@ const ImageComponent = dynamic(
   () => import("@/views/components/ImageComponent")
 );
 const CustomContainer = dynamic(() => import("@/views/components/Container"));
-interface PerformerSectionProps {
-  onDateClick: () => void;
-  onDateClick1: () => void;
-  onDateClick2: () => void;
-}
 
-const PerformerSection: React.FC<PerformerSectionProps> = ({
-  onDateClick,
-  onDateClick1,
-  onDateClick2,
-}) => {
+
+const PerformerSection: React.FC = () => {
   return (
     <Box className="bg-ik_white p-3 mt-1 rounded-2xl mb-3">
       <CustomContainer>
@@ -46,7 +38,6 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           direction="row"
           spacing={1}
           alignItems="center"
-          onClick={onDateClick2}
           className="cursor-pointer mt-3"
         >
           <ImageComponent
@@ -68,7 +59,7 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           direction="row"
           spacing={1}
           alignItems="center"
-          onClick={onDateClick}
+          // onClick={onDateClick}
           className="cursor-pointer mt-3"
         >
           <ImageComponent
@@ -90,7 +81,7 @@ const PerformerSection: React.FC<PerformerSectionProps> = ({
           direction="row"
           spacing={1}
           alignItems="center"
-          onClick={onDateClick1}
+          // onClick={onDateClick1}
           className="cursor-pointer mt-3"
         >
           <ImageComponent

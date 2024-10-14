@@ -47,7 +47,7 @@ export default function RegisterPopup() {
           <Grid item xs={6}>
             <div className="w-full h-full">
               <ImageComponent
-                src="/images/static/image_19.png"
+                src="/assets/static/image_19.png"
                 className="h-full"
                 type={2}
               />

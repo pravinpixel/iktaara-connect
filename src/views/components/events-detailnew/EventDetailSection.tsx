@@ -34,7 +34,7 @@ const EventDetailSection = () => {
             <Grid item xs={4}>
               <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white mt-[-24px]">
                 <ImageComponent
-                  src="/images/static/image_29.png"
+                  src="/assets/static/image_29.png"
                   alt="image"
                   width={372}
                   height={500}

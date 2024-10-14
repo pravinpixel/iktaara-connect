@@ -88,7 +88,7 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
         {/* {total_count > 24 && ( */}
         <>
           <ImageComponent
-            src="/images/collections/static/Group 1171277073 (1).png"
+            src="/assets/collections/static/Group 1171277073 (1).png"
             width={14}
             height={14}
             alt="loader_1"
@@ -96,7 +96,7 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
             onClick={handleGoToFirstPage}
           />
           <ImageComponent
-            src="/images/collections/static/Vector 95.png"
+            src="/assets/collections/static/Vector 95.png"
             width={12}
             height={13}
             alt="loader_2"
@@ -132,7 +132,7 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
             Next
           </Typography>
           <ImageComponent
-            src="/images/collections/static/Vector 93.png"
+            src="/assets/collections/static/Vector 93.png"
             width={12}
             height={13}
             alt="loader_3"
@@ -140,7 +140,7 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
             onClick={handleLoadMore}
           />
           <ImageComponent
-            src="/images/collections/static/Group 1171277072.png"
+            src="/assets/collections/static/Group 1171277072.png"
             width={14}
             height={14}
             alt="loader_4"

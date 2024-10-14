@@ -24,32 +24,32 @@ export default function EventFilterData() {
     {
       id: 1,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 3,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 3,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 4,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 5,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
     {
       id: 6,
       title: "Workshops",
-      image: "/images/static/image_26.png",
+      image: "/assets/static/image_26.png",
     },
   ];
 
@@ -118,10 +118,10 @@ export default function EventFilterData() {
               },
             }}
           >
-            <Tab label="Category" value="1"  component='div' />
-            <Tab label="Language" value="2"  component='div'  />
-            <Tab label="Genre" value="3"  component='div' />
-            <Tab label="Price" value="4"  component='div' />
+            <Tab label="Category" value="1" component='div' />
+            <Tab label="Language" value="2" component='div' />
+            <Tab label="Genre" value="3" component='div' />
+            <Tab label="Price" value="4" component='div' />
           </Tabs>
           <Box className="flex flex-col justify-between flex-grow min-h-[400px] w-[500px]">
             <TabPanel value="1">

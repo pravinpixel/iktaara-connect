@@ -38,7 +38,7 @@ const EventHosting = () => {
               <VerticalLinearStepper onStepChange={handleStepChange} />
               {/* <Box className="">
                 <ImageComponent
-                  src={"/images/static/image_45.png"}
+                  src={"/assets/static/image_45.png"}
                   className="aspect-[174/168]"
                   type={2}
                 />

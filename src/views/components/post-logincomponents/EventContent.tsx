@@ -130,7 +130,7 @@ const EventContent = ({ buisnessListData }: any) => {
                         >
                           <Box mt={1}>
                             <CustomImageButton
-                              image="/images/static/image_7.png"
+                              image="/assets/static/image_7.png"
                               label="Enquiry"
                             ></CustomImageButton>
                           </Box>
