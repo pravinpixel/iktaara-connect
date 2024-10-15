@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    basePath: "/connect",
+    basePath: process.env.NEXT_PUBLIC_IKTARAA_URL,
     typescript: {
         ignoreBuildErrors: true,
     },

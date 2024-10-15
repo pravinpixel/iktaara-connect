@@ -21,8 +21,8 @@ const LoginComponent = ({ handleRegsiterOpen, handleOtpOpen }: LoginProps) => {
   const methods = useForm<SignInOptions>({
     defaultValues: {
       redirect: false,
-      email: "eve.holt@reqres.in",
-      password: "cityslicka",
+      email: "yemiri5909@craftapk.com",
+      password: "yemiri5909@craftapk.com",
     },
   });
   const { handleSubmit } = methods;

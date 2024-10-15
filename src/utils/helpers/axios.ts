@@ -9,7 +9,7 @@ let isRefershing = false;
 
 
 const API = axios.create({
-  baseURL: CONSTANT.BASE_URL,
+  baseURL: process.env.NEXT_PUBLIC_IKTARAA_URL || '',
   timeout: CONSTANT.TIMEOUT,
 })
 
@@ -53,7 +53,7 @@ API.interceptors.response.use(
   async (error) => {
 
     if (error.response?.status === 401) {
-   
+
       if (!isRefershing) {
         isRefershing = true;
         refreshToken();

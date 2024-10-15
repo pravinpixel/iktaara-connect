@@ -19,7 +19,7 @@ const sora = Sora({
 export default function App({ Component, pageProps }: AppProps) {
   const { store } = wrapper.useWrappedStore(pageProps);
   return (
-    <SessionProvider>
+    <SessionProvider basePath={process.env.NEXT_PUBLIC_IKTARAA_URL + "/api/auth"}>
       <Provider store={store}>
         <section className={`${sora.variable} font-sora h-[100vh] w-full flex`}>
           <Layouts>

@@ -53,14 +53,14 @@ export const authOptions: NextAuthOptions = {
             async authorize(credentials) {
                 try {
                     const result = await axios.post(APIURL + "/login", credentials);
-                    const loggedUser = result?.data?.customer_data || {};
+                    const loggedUser = result?.data?.data?.customer_data || {};
                     const modifiedData = {
                         id: loggedUser.id,
                         name: loggedUser?.first_name || '',
                         email: loggedUser?.email || '',
                         data: loggedUser,
                         authorization: result?.data?.authorization || null,
-                        token: result?.data?.authorization.access_token,
+                        token: result?.data?.authorization?.access_token,
                     }
 
                     return modifiedData as never
@@ -82,14 +82,14 @@ export const authOptions: NextAuthOptions = {
             async authorize(credentials) {
                 try {
                     const result = await axios.post(APIURL + "/login/otp", credentials);
-                    const loggedUser = result?.data?.customer_data || {};
+                    const loggedUser = result?.data?.data?.customer_data || {};
                     const modifiedData = {
                         id: loggedUser.id,
                         name: loggedUser?.first_name || '',
                         email: loggedUser?.email || '',
                         data: loggedUser,
-                        authorization: result?.data?.authorization || null,
-                        token: result?.data?.authorization.access_token,
+                        authorization: result?.data?.data?.authorization || null,
+                        token: result?.data?.data?.authorization.access_token,
                     }
                     return modifiedData as never;
                 } catch (error) {
@@ -123,19 +123,19 @@ export const authOptions: NextAuthOptions = {
                 }
                 try {
                     const result = await axios.post(APIURL + '/google/callback', postData)
-                    const loggedUser = result?.data?.customer_data || {};
+                    const loggedUser = result?.data?.data?.customer_data || {};
                     const modifiedData = {
                         id: loggedUser.id,
                         name: loggedUser?.first_name || '',
                         email: loggedUser?.email || '',
                         data: loggedUser,
-                        authorization: result?.data?.authorization || null,
-                        token: result?.data?.authorization.access_token,
+                        authorization: result?.data?.data?.authorization || null,
+                        token: result?.data?.data?.authorization.access_token,
                     }
                     return modifiedData as never;
 
                 } catch (error) {
-
+                    throw new Error(JSON.stringify((error as Error)?.message));
                 }
             }
             if (user) {
