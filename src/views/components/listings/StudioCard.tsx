@@ -8,12 +8,13 @@ import { Box, Card, Grid } from "@mui/material";
 import CustomCard from "../CustomCard";
 import { Stack } from "@mui/material";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 const CustomImageButton = dynamic(() => import("../CustomImageButton"));
 const ImageComponent = dynamic(() => import("../ImageComponent"));
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StudioCard = ({ buisnessListData }: any) => {
   return (
-    <section className="mt-[15px] cursor-pointer">
+    <section className="mt-[15px] ">
       {buisnessListData.data.map((business: any) => (
         <Card className="w-full h-full bg-white mt-[15px]" key={business.id}>
           <Box sx={{ p: 2 }}>
@@ -21,76 +22,54 @@ const StudioCard = ({ buisnessListData }: any) => {
               <>
                 {" "}
                 <Grid item md={4} xs={12}>
-                  <CustomCard
-                    variant="bottom-right"
-                    img={business.image}
-                    img1={business.logo_image}
-                    type={true}
-                    text=""
-                    reviews={""}
-                    typebottom={false}
-                  />
+                  <Link
+                    href={`/business/${business?.slug || ""}/${
+                      business?.music_title || ""
+                    }`}
+                  >
+                    {" "}
+                    <CustomCard
+                      variant="bottom-right"
+                      img={business.image}
+                      img1={business.logo_image}
+                      type={true}
+                      text=""
+                      reviews={""}
+                      typebottom={false}
+                    />
+                  </Link>
                 </Grid>
                 <Grid item md={8} xs={12}>
                   <Box sx={{ padding: { xs: "5px", md: 2 } }}>
                     <Box
                       sx={{ display: "flex", justifyContent: "space-between" }}
                     >
-                      <Box>
-                        <p className="font-bold text-f24 leading-8 text-ik_bluegreydarken3">
-                          {business.title}
-                        </p>
-                        <Stack
-                          direction="row"
-                          spacing={1}
-                          alignItems={"center"}
-                        >
-                          <ImageComponent
-                            src="/assets/static/image_5.png"
-                            alt="Business Image"
-                            width={19}
-                            height={20}
-                          />
-                          <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2">
-                            {business.location}
+                      <Link
+                        href={`/business/${business?.slug || ""}/${
+                          business?.music_title || ""
+                        }`}
+                      >
+                        {" "}
+                        <Box>
+                          <p className="font-bold text-f24 leading-8 text-ik_bluegreydarken3">
+                            {business.title}
                           </p>
-                          <p className="font-normal text-f16 leading-5 text-ik_pink">
-                            View on Map
-                          </p>
-                        </Stack>
-                        <Stack
-                          direction="row"
-                          spacing={1}
-                          alignItems={"center"}
-                        >
-                          <ImageComponent
-                            src="/assets/static/image_8.png"
-                            alt="Business Image"
-                            width={25}
-                            height={25}
-                          />
-                          <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2">
-                            {business.experience} years in buisness,
-                          </p>
-                          <p className="font-bold text-f16 leading-5 text-ik_bluegreydarken2">
-                            Since 1924
-                          </p>
-                        </Stack>
-                        <Stack direction="row" spacing={1}>
-                          {" "}
                           <Stack
                             direction="row"
                             spacing={1}
                             alignItems={"center"}
                           >
                             <ImageComponent
-                              src="/assets/static/image_6.png"
+                              src="/assets/static/image_5.png"
                               alt="Business Image"
-                              width={22}
-                              height={11}
+                              width={19}
+                              height={20}
                             />
-                            <p className="font-semibold text-f16 leading-5 text-ik_pink">
-                              {business.inquiries} inquiries
+                            <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2">
+                              {business.location}
+                            </p>
+                            <p className="font-normal text-f16 leading-5 text-ik_pink">
+                              View on Map
                             </p>
                           </Stack>
                           <Stack
@@ -99,17 +78,53 @@ const StudioCard = ({ buisnessListData }: any) => {
                             alignItems={"center"}
                           >
                             <ImageComponent
-                              src="/assets/static/image_9.png"
+                              src="/assets/static/image_8.png"
                               alt="Business Image"
-                              width={30}
-                              height={30}
+                              width={25}
+                              height={25}
                             />
-                            <p className="font-semibold text-f16 leading-5 text-ik_pink">
-                              {business.inquiries} inquiries
+                            <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2">
+                              {business.experience} years in buisness,
+                            </p>
+                            <p className="font-bold text-f16 leading-5 text-ik_bluegreydarken2">
+                              Since 1924
                             </p>
                           </Stack>
-                        </Stack>
-                      </Box>
+                          <Stack direction="row" spacing={1}>
+                            {" "}
+                            <Stack
+                              direction="row"
+                              spacing={1}
+                              alignItems={"center"}
+                            >
+                              <ImageComponent
+                                src="/assets/static/image_6.png"
+                                alt="Business Image"
+                                width={22}
+                                height={11}
+                              />
+                              <p className="font-semibold text-f16 leading-5 text-ik_pink">
+                                {business.inquiries} inquiries
+                              </p>
+                            </Stack>
+                            <Stack
+                              direction="row"
+                              spacing={1}
+                              alignItems={"center"}
+                            >
+                              <ImageComponent
+                                src="/assets/static/image_9.png"
+                                alt="Business Image"
+                                width={30}
+                                height={30}
+                              />
+                              <p className="font-semibold text-f16 leading-5 text-ik_pink">
+                                {business.inquiries} inquiries
+                              </p>
+                            </Stack>
+                          </Stack>
+                        </Box>
+                      </Link>
 
                       <Box
                         sx={{

@@ -6,6 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { TransitionProps } from "@mui/material/transitions";
 import { Slide } from "@mui/material";
 import CustomButton from "../form-fields/CustomButton";
+import { useRouter } from "next/router";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -26,10 +27,22 @@ export default function Startedpopup({
   open = false,
 }: StartedDialogProps) {
   const [selectedstarted, setSelectedstarted] = useState<number>(1);
+  const router = useRouter();
 
   const handlestartedSelect = (id: number) => {
     setSelectedstarted(id);
   };
+
+  const handleContinue = () => {
+    const selectedOption = Startedpopup.find(
+      (option) => option.id === selectedstarted
+    );
+    if (selectedOption?.slug) {
+      router.push(selectedOption.slug);
+    }
+    handleClose();
+  };
+
   const Startedpopup = [
     {
       id: 1,
@@ -40,6 +53,7 @@ export default function Startedpopup({
       id: 2,
       Startedpopup_image: "/assets/icons/hostevent.svg",
       Startedpopup_title: "Host an event",
+      slug: "/event-hosting",
     },
     {
       id: 3,
@@ -52,6 +66,7 @@ export default function Startedpopup({
     //   Startedpopup_title: "Create Online Profile",
     // },
   ];
+
   return (
     <React.Fragment>
       <Dialog
@@ -94,9 +109,7 @@ export default function Startedpopup({
                 height={60}
                 alt={"iktaraa"}
                 priority={true}
-              // sx={{ marginTop: "20px" }}
               />
-
               <div className="pt-12 flex justify-start w-[80%]">
                 <h6 className="text-f22 font-semibold text-start mb-3">
                   Select how you’d like to get started
@@ -104,55 +117,53 @@ export default function Startedpopup({
               </div>
               <div className="w-[80%]">
                 {Startedpopup?.map((row) => (
-                  <>
-                    <div key={row.id}>
-                      <button
-                        className={`border py-7 pl-7 pr-5 flex items-center w-full justify-between rounded-lg mb-3 ${selectedstarted === row.id
+                  <div key={row.id}>
+                    <button
+                      className={`border py-7 pl-7 pr-5 flex items-center w-full justify-between rounded-lg mb-3 ${
+                        selectedstarted === row.id
                           ? "border-ik_bluegreybluegrey"
                           : "border-ik_bluegreylighten4"
-                          } ''`}
-                        onClick={() => handlestartedSelect(row.id)}
-                      >
-                        <div className=" flex gap-7 items-center">
-                          <div className="w-[44px] h-[44px]">
+                      }`}
+                      onClick={() => handlestartedSelect(row.id)}
+                    >
+                      <div className="flex gap-7 items-center">
+                        <div className="w-[44px] h-[44px]">
+                          <ImageComponent
+                            src={row.Startedpopup_image}
+                            width={44}
+                            height={44}
+                            alt={"artistsvenues"}
+                          />
+                        </div>
+                        <div className="text-start text-f20 font-semibold">
+                          <span>{row.Startedpopup_title}</span>
+                        </div>
+                      </div>
+                      <div>
+                        {selectedstarted === row.id ? (
+                          <div>
                             <ImageComponent
-                              src={row.Startedpopup_image}
-                              width={44}
-                              height={44}
-                              alt={"artistsvenues"}
+                              src={"/assets/icons/seect-tiki.svg"}
+                              width={32}
+                              height={32}
+                              alt={"seect"}
                             />
                           </div>
-                          <div className="text-start text-f20 font-semibold">
-                            <span>{row.Startedpopup_title}</span>
-                          </div>
-                        </div>
-                        <div>
-                          {selectedstarted === row.id ? (
-                            <div>
-                              <ImageComponent
-                                src={"/assets/icons/seect-tiki.svg"}
-                                width={32}
-                                height={32}
-                                alt={"seect"}
-                              />
-                            </div>
-                          ) : (
-                            <div className="border border-ik_bluegreylightens3 w-[32px] h-[32px] rounded-full"></div>
-                          )}
-                        </div>
-                      </button>
-                    </div>
-                  </>
+                        ) : (
+                          <div className="border border-ik_bluegreylightens3 w-[32px] h-[32px] rounded-full"></div>
+                        )}
+                      </div>
+                    </button>
+                  </div>
                 ))}
               </div>
-              <Box className="flex justify-start w-[80%] pt-5 ">
+              <Box className="flex justify-start w-[80%] pt-5">
                 <CustomButton
                   type="submit"
                   className="px-14 py-3"
                   label="Continue"
+                  onClick={handleContinue}
                 />
-                {/* Continue
-                </CustomButton> */}
               </Box>
             </Box>
           </Grid>

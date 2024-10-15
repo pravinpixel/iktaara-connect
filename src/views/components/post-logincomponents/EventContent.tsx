@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import React, { useState } from "react";
-import { Box, Card, Typography, Stack } from "@mui/material";
+import { Box, Card, Stack } from "@mui/material";
 import { Grid } from "@mui/material";
 // import CustomCard from "../CustomCard";
 import ImageComponent from "../ImageComponent";

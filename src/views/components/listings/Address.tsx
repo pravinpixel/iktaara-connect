@@ -4,6 +4,7 @@ import React from "react";
 import { Box, Stack } from "@mui/material";
 import dynamic from "next/dynamic";
 import Slider from "react-slick";
+import Link from "next/link";
 const CustomCard = dynamic(() => import("../CustomCard"));
 const CustomSmallButton = dynamic(
   () => import("../form-fields/CustomSmallButton")
@@ -19,6 +20,8 @@ const AddressSection = () => {
       inquiries: 120,
       imgSrc: "/assets/static/image_5.png",
       icon: "Schmitt Music Icon",
+      slug: "technicians",
+      music_title: "Schmitt Music Repair Services",
     },
     {
       id: 2,
@@ -27,6 +30,8 @@ const AddressSection = () => {
       inquiries: 115,
       imgSrc: "/assets/static/image_5.png",
       icon: "Music & Arts Icon",
+      slug: "technicians",
+      music_title: "Schmitt Music Repair Services",
     },
     {
       id: 3,
@@ -35,6 +40,8 @@ const AddressSection = () => {
       inquiries: 105,
       imgSrc: "/assets/static/image_5.png",
       icon: "Music Doctor Icon",
+      slug: "technicians",
+      music_title: "Schmitt Music Repair Services",
     },
     // {
     //   id: 4,
@@ -122,64 +129,71 @@ const AddressSection = () => {
       <Slider {...settings}>
         {businesses.map((business) => (
           // <Grid item xs={4} p={2}>
-          <Box key={business.id} px={1} py={1} style={{ margin: "0 10px" }}>
-            {" "}
-            <CustomCard
-              variant="bottom-right"
-              img="/assets/static/image_13.png"
-              img1="/assets/static/image_12.png"
-              type={true}
-              text={""}
-              reviews={""}
-              typebottom={false}
-            />
-            <Box className="flex justify-between mt-2">
-              <Box>
-                <p className="text-f22 leading-7 font-bold">{business.name}</p>
-                <Stack
-                  direction="row"
-                  spacing={1}
-                  alignItems={"center"}
-                  justifyContent={"flex-start"}
-                >
-                  <ImageComponent
-                    src={business.imgSrc}
-                    alt="Business Image"
-                    width={19}
-                    height={20}
-                  />
-                  <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken3">
-                    {business.location}
+          <Link
+            href={`/business/${business?.slug || ""}/${
+              business?.music_title || ""
+            }`}
+          >
+            <Box key={business.id} px={1} py={1} style={{ margin: "0 10px" }}>
+              <CustomCard
+                variant="bottom-right"
+                img="/assets/static/image_13.png"
+                img1="/assets/static/image_12.png"
+                type={true}
+                text={""}
+                reviews={""}
+                typebottom={false}
+              />
+              <Box className="flex justify-between mt-2">
+                <Box>
+                  <p className="text-f22 leading-7 font-bold">
+                    {business.name}
                   </p>
-                </Stack>
-                <Stack
-                  direction="row"
-                  spacing={1}
-                  alignItems={"center"}
-                  justifyContent={"flex-start"}
-                >
-                  <ImageComponent
-                    src="/assets/static/image_6.png"
-                    alt="Business Image"
-                    width={22}
-                    height={11}
-                  />
-                  <p className="font-semibold text-f16 leading-5 text-ik_pink">
-                    {business.inquiries} inquiries
-                  </p>
-                </Stack>
-              </Box>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    alignItems={"center"}
+                    justifyContent={"flex-start"}
+                  >
+                    <ImageComponent
+                      src={business.imgSrc}
+                      alt="Business Image"
+                      width={19}
+                      height={20}
+                    />
+                    <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken3">
+                      {business.location}
+                    </p>
+                  </Stack>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    alignItems={"center"}
+                    justifyContent={"flex-start"}
+                  >
+                    <ImageComponent
+                      src="/assets/static/image_6.png"
+                      alt="Business Image"
+                      width={22}
+                      height={11}
+                    />
+                    <p className="font-semibold text-f16 leading-5 text-ik_pink">
+                      {business.inquiries} inquiries
+                    </p>
+                  </Stack>
+                </Box>
 
-              <Box className="flex justify-end">
-                <CustomSmallButton
-                  image="/assets/static/image_7.png"
-                  width={27.57}
-                  height={27.57}
-                ></CustomSmallButton>
-                {/* <p style={{ textAlign: "right" }}>{business.icon}</p> */}
+                <Box className="flex justify-end">
+                  <CustomSmallButton
+                    image="/assets/static/image_7.png"
+                    width={27.57}
+                    height={27.57}
+                  ></CustomSmallButton>
+                  {/* <p style={{ textAlign: "right" }}>{business.icon}</p> */}
+                </Box>
               </Box>
             </Box>
-          </Box>
+          </Link>
           // </Grid>
         ))}
       </Slider>
