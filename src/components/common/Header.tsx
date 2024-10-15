@@ -19,7 +19,9 @@ const ImageComponent = dynamic(
   () => import("@/views/components/ImageComponent")
 );
 const CustomContainer = dynamic(() => import("@/views/components/Container"));
-const CityLocation = dynamic(() => import("@/views/components/popup/CityLocation"));
+const CityLocation = dynamic(
+  () => import("@/views/components/popup/CityLocation")
+);
 const Musicscomponent = dynamic(
   () => import("@/views/components/cart-component/MusicsComponent")
 );
@@ -34,19 +36,20 @@ const Header = () => {
   const [opencity, setOpencity] = React.useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [openStarted, setOpenStarted] = React.useState(false);
-   const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
-  const { status } = useSession()
+  const { status, data } = useSession();
+  console.log(data, "data");
 
   const { setPopup } = zustandStore();
 
-    const handleClick = (event: any) => {
-      setAnchorEl(event.currentTarget);
-    };
+  const handleClick = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-    const handleCloses = () => {
-      setAnchorEl(null);
-    };
+  const handleCloses = () => {
+    setAnchorEl(null);
+  };
 
   const music = [
     {
@@ -148,9 +151,9 @@ const Header = () => {
     setPopup("login");
   };
 
-  const handleLogout = ()=>{
-    signOut()
-  }
+  const handleLogout = () => {
+    signOut();
+  };
 
   const handleMouseEnter = (value: string) => {
     setSelected(value);
@@ -233,7 +236,6 @@ const Header = () => {
             />
             {status === "authenticated" ? (
               <div>
-                
                 <Avatar
                   alt="Remy Sharp"
                   src="/assets/image/artist-logo.png"
@@ -327,7 +329,7 @@ const Header = () => {
                 width={16}
                 height={19}
                 image="/assets/icons/login-icons.svg"
-                label={"Logout"}
+                label={"Login"}
                 newclass="h-[48px]"
                 className="text-f16 font-semibold text-ik_pink-foreground"
                 onClick={() => handleLoginPopup()}
