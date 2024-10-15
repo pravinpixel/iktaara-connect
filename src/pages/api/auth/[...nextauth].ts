@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import type { NextAuthOptions } from "next-auth";
-import API from "@/utils/helpers/axios";
+import axios from "axios";
 
 interface CustomUser {
     id: string;
@@ -11,6 +11,8 @@ interface CustomUser {
     email: string;
     mobile_no: string;
     customer_no: string;
+    token: string;
+    data: CustomUser;
     authorization: {
         access_token: string;
         token_type: string;
@@ -23,12 +25,14 @@ declare module "next-auth" {
         user: CustomUser;
     }
 
-    interface User extends CustomUser {}
+    interface User extends CustomUser { }
 
     interface JWT {
         user: CustomUser;
     }
 }
+
+const APIURL = process.env.NEXT_PUBLIC_API_BASE_URL || ''
 
 export const authOptions: NextAuthOptions = {
     pages: {
@@ -48,11 +52,18 @@ export const authOptions: NextAuthOptions = {
             },
             async authorize(credentials) {
                 try {
-                    const result = await API.post("/login", credentials);
-                    const resultData = result.data.data;
-                    const customerData: CustomUser = resultData.customer_data;
-                    customerData.authorization = resultData.authorization;
-                    return customerData;
+                    const result = await axios.post(APIURL + "/login", credentials);
+                    const loggedUser = result?.data?.customer_data || {};
+                    const modifiedData = {
+                        id: loggedUser.id,
+                        name: loggedUser?.first_name || '',
+                        email: loggedUser?.email || '',
+                        data: loggedUser,
+                        authorization: result?.data?.authorization || null,
+                        token: result?.data?.authorization.access_token,
+                    }
+
+                    return modifiedData as never
                 } catch (error) {
                     throw new Error(JSON.stringify((error as Error)?.message));
                 }
@@ -70,11 +81,17 @@ export const authOptions: NextAuthOptions = {
             },
             async authorize(credentials) {
                 try {
-                    const result = await API.post("/login", credentials);
-                    const resultData = result.data.data;
-                    const customerData = resultData.customer_data;
-                    customerData.authorization = resultData.authorization;
-                    return customerData;
+                    const result = await axios.post(APIURL + "/login/otp", credentials);
+                    const loggedUser = result?.data?.customer_data || {};
+                    const modifiedData = {
+                        id: loggedUser.id,
+                        name: loggedUser?.first_name || '',
+                        email: loggedUser?.email || '',
+                        data: loggedUser,
+                        authorization: result?.data?.authorization || null,
+                        token: result?.data?.authorization.access_token,
+                    }
+                    return modifiedData as never;
                 } catch (error) {
                     throw new Error(JSON.stringify((error as Error)?.message));
                 }
@@ -94,18 +111,49 @@ export const authOptions: NextAuthOptions = {
             if (user) return !!user;
             return false;
         },
-        async jwt({ token, user }) {
+        async jwt({ token, user, account, profile }) {
+            if (account?.provider === 'google') {
+                const postData = {
+                    provider: account.provider,
+                    type: account.provider,
+                    sub: account.providerAccountId,
+                    name: profile?.name,
+                    email: profile?.email,
+                    picture: profile?.image,
+                }
+                try {
+                    const result = await axios.post(APIURL + '/google/callback', postData)
+                    const loggedUser = result?.data?.customer_data || {};
+                    const modifiedData = {
+                        id: loggedUser.id,
+                        name: loggedUser?.first_name || '',
+                        email: loggedUser?.email || '',
+                        data: loggedUser,
+                        authorization: result?.data?.authorization || null,
+                        token: result?.data?.authorization.access_token,
+                    }
+                    return modifiedData as never;
+
+                } catch (error) {
+
+                }
+            }
             if (user) {
-                token.user = user as CustomUser;
+                token.user_id = user?.id || null;
+                token.token = user?.token || null
+                return token
             }
             return token;
         },
         async session({ session, token }) {
-            if (token.user) {
-                const customUser = token.user as CustomUser;
-                session.user = customUser;
+            return {
+                ...session,
+                user: {
+                    ...session.user,
+                    user_id: token.user_id,
+                    token: token.token,
+                },
             }
-            return session;
         },
     },
 };
