@@ -47,22 +47,26 @@ const Header = () => {
       id: 1,
       image: "/assets/image/music1.webp",
       music_title: "Artists",
+      url: "/business/artist",
     },
     {
       id: 2,
       image: "/assets/image/music2.webp",
       music_title: "Recording /JAM Studios",
       music_text: "Find venues for every musical occasions",
+      url: "/business/technicians",
     },
     {
       id: 3,
       image: "/assets/image/music3.webp",
       music_title: "Music Instrument Sales & Service",
+      url: "/business/technicians",
     },
     {
       id: 4,
       image: "/assets/image/music4.webp",
       music_title: "Events",
+      url: "/events",
     },
   ];
 

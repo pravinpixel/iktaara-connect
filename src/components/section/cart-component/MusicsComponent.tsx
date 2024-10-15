@@ -15,7 +15,6 @@ const Musicscomponent = (props: Props) => {
   const { musicsection } = props;
   return (
     <Link href={musicsection.url}>
-      {" "}
       <CustomCard
         variant="top-right"
         img={musicsection.image}
