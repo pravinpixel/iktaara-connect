@@ -12,24 +12,16 @@ import dynamic from "next/dynamic";
 import { signOut, useSession } from "next-auth/react";
 import { MenuItem } from "@mui/material";
 
-const CustomButton = dynamic(
-  () => import("@/views/components/form-fields/CustomButton")
-);
-const ImageComponent = dynamic(
-  () => import("@/views/components/ImageComponent")
-);
-const CustomContainer = dynamic(() => import("@/views/components/Container"));
-const CityLocation = dynamic(
-  () => import("@/views/components/popup/CityLocation")
-);
+const CustomButton = dynamic(() => import("./form-fields/CustomButton"));
+const ImageComponent = dynamic(() => import("./form-fields/ImageComponent"));
+const CustomContainer = dynamic(() => import("./form-fields/Container"));
+const CityLocation = dynamic(() => import("../popup/CityLocation"));
 const Musicscomponent = dynamic(
-  () => import("@/views/components/cart-component/MusicsComponent")
+  () => import("../section/cart-component/MusicsComponent")
 );
-const Startedpopup = dynamic(
-  () => import("@/views/components/popup/Startedpopup")
-);
+const Startedpopup = dynamic(() => import("../popup/Startedpopup"));
 const CustomImageButton = dynamic(
-  () => import("@/views/components/CustomImageButton")
+  () => import("./form-fields/CustomImageButton")
 );
 
 const Header = () => {
@@ -38,8 +30,7 @@ const Header = () => {
   const [openStarted, setOpenStarted] = React.useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const { status, data } = useSession();
-  console.log(data, "data");
+  const { status } = useSession();
 
   const { setPopup } = zustandStore();
 

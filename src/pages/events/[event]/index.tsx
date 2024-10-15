@@ -3,30 +3,35 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 // import { wrapper } from "@/redux/store";
-const EventsBanners = dynamic(
-  () => import("@/views/components/events-new/EventsBanner")
-);
-const EventsTitle = dynamic(
-  () => import("@/views/components/events-new/EventsTitle")
-);
 
-const EventsThisWeek = dynamic(
-  () => import("@/views/components/events-new/EventsThisWeek")
-);
 import {
   eventCategory,
   eventDetails,
   similarEventDetails,
 } from "@/redux/services/eventService";
 import { wrapper } from "@/redux/store";
-import ImageComponent from "@/views/components/ImageComponent";
+
 import { Box } from "@mui/material";
 
 const EventDetailSection = dynamic(
-  () => import("@/views/components/events-detailnew/EventDetailSection")
+  () =>
+    import("@/components/section/events/events-detailnew/EventDetailSection")
 );
 const EventsByCategory = dynamic(
-  () => import("@/views/components/events-new/EventsByCategory")
+  () => import("@/components/section/events/events-new/EventsByCategory")
+);
+const EventsBanners = dynamic(
+  () => import("@/components/section/events/events-new/EventsBanner")
+);
+const EventsTitle = dynamic(
+  () => import("@/components/section/events/events-new/EventsTitle")
+);
+
+const EventsThisWeek = dynamic(
+  () => import("@/components/section/events/events-new/EventsThisWeek")
+);
+const ImageComponent = dynamic(
+  () => import("@/components/common/form-fields/ImageComponent")
 );
 // import { eventHome } from "@/redux/services/eventService";
 

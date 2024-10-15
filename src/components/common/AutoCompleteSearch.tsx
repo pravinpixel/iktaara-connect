@@ -3,12 +3,8 @@ import { Autocomplete, Container, Grid, TextField } from "@mui/material";
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 
-const ImageComponent = dynamic(
-  () => import("@/views/components/ImageComponent")
-);
-const Searchcompound = dynamic(
-  () => import("@/views/components/Searchcompound")
-);
+const ImageComponent = dynamic(() => import("./form-fields/ImageComponent"));
+const Searchcompound = dynamic(() => import("./form-fields/Searchcompound"));
 
 interface CustomCardProps {
   placeholder: string;
@@ -57,7 +53,7 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
                   Sorry we could not find the relevant one. Explore similar
                   products.
                 </p>
-                <div className='pt-[24px]'>
+                <div className="pt-[24px]">
                   <div className="text-f16 font-semibold leading-[20px] text-ik_bluegreydarken6 mb-2">
                     <span>Services</span>
                   </div>

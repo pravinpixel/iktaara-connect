@@ -3,20 +3,24 @@ import { Box, Grid } from "@mui/material";
 import dynamic from "next/dynamic";
 import { wrapper } from "@/redux/store";
 
-const Breadcrumb = dynamic(() => import("@/views/components/BreadCrumb"));
-const Title = dynamic(() => import("@/views/components/Title"));
-const BusinessSection = dynamic(
-  () => import("@/views/components/listings/TopBuisness")
+const Breadcrumb = dynamic(
+  () => import("@/components/common/form-fields/BreadCrumb")
 );
-const CustomContainer = dynamic(() => import("@/views/components/Container"));
+const Title = dynamic(() => import("@/components/common/form-fields/Title"));
+const BusinessSection = dynamic(
+  () => import("@/components/section/business/listings/TopBuisness")
+);
+const CustomContainer = dynamic(
+  () => import("@/components/common/form-fields/Container")
+);
 const FilterSection = dynamic(
-  () => import("@/views/components/listings/FilterSection")
+  () => import("@/components/section/business/listings/FilterSection")
 );
 const Pagination = dynamic(
-  () => import("@/views/components/listings/Pagination")
+  () => import("@/components/section/business/listings/Pagination")
 );
 const StudioCard = dynamic(
-  () => import("@/views/components/listings/StudioCard")
+  () => import("@/components/section/business/listings/StudioCard")
 );
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

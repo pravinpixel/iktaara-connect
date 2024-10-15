@@ -1,30 +1,42 @@
 import React from "react";
-import { Grid } from '@mui/material';
-import dynamic from 'next/dynamic';
+import { Grid } from "@mui/material";
+import dynamic from "next/dynamic";
 
 const AritistHeaderComponents = dynamic(
-  () => import("@/views/components/artist_profile/AritistHeader")
+  () =>
+    import(
+      "@/components/section/artist/artist_edit/artist_profile/AritistHeader"
+    )
 );
 const AritistStoresComponents = dynamic(
-  () => import("@/views/components/artist_profile/AritistStores")
+  () =>
+    import(
+      "@/components/section/artist/artist_edit/artist_profile/AritistStores"
+    )
 );
 const AritistVideoComponents = dynamic(
-  () => import("@/views/components/artist_profile/AritistVideo")
+  () =>
+    import(
+      "@/components/section/artist/artist_edit/artist_profile/AritistVideo"
+    )
 );
 const ArtistAboutComponents = dynamic(
-  () => import("@/views/components/artist_profile/ArtistAbout")
+  () =>
+    import("@/components/section/artist/artist_edit/artist_profile/ArtistAbout")
 );
 const ArtistCustomerComponents = dynamic(
-  () => import("@/views/components/artist_profile/ArtistCustomer")
+  () =>
+    import(
+      "@/components/section/artist/artist_edit/artist_profile/ArtistCustomer"
+    )
 );
 const CustomContainer = dynamic(() => import("@/views/components/Container"));
 const ListingBusinessComponents = dynamic(
-  () => import("@/views/components/listing-views/ListingBusiness")
+  () => import("@/components/section/business/listing-views/ListingBusiness")
 );
 const ListingReviewsComponents = dynamic(
-  () => import("@/views/components/listing-views/ListingReviews")
+  () => import("@/components/section/business/listing-views/ListingReviews")
 );
-
 
 const ArtistDetail = () => {
   const artistHeader = {
@@ -32,7 +44,7 @@ const ArtistDetail = () => {
     title: "Ramakrishna Paramahamsa",
     location: "Chennai",
     job: "Singer (13 Years in Business)",
-  }
+  };
 
   return (
     <section>
@@ -53,6 +65,6 @@ const ArtistDetail = () => {
       </CustomContainer>
     </section>
   );
-}
+};
 
-export default ArtistDetail
+export default ArtistDetail;

@@ -1,28 +1,32 @@
-import { Grid } from '@mui/material'
-import React from 'react'
+import { Grid } from "@mui/material";
+import React from "react";
 import { wrapper } from "@/redux/store";
-import { listingView } from '@/redux/services/listingService'
-import dynamic from 'next/dynamic';
+import { listingView } from "@/redux/services/listingService";
+import dynamic from "next/dynamic";
 
-const ListingBusinessComponents = dynamic(() => import("@/views/components/listing-views/ListingBusiness"));
+const ListingBusinessComponents = dynamic(
+  () => import("@/components/section/business/listing-views/ListingBusiness")
+);
 const ListingReviewsComponents = dynamic(
-  () => import("@/views/components/listing-views/ListingReviews")
+  () => import("@/components/section/business/listing-views/ListingReviews")
 );
 const ListingStoresComponents = dynamic(
-  () => import("@/views/components/listing-views/ListingStores")
+  () => import("@/components/section/business/listing-views/ListingStores")
 );
 const ListingImageComponents = dynamic(
-  () => import("@/views/components/listing-views/ListingImage")
+  () => import("@/components/section/business/listing-views/ListingImage")
 );
-const CustomContainer = dynamic(() => import("@/views/components/Container"));
+const CustomContainer = dynamic(
+  () => import("@/components/common/form-fields/Container")
+);
 const ListingAboutComponents = dynamic(
-  () => import("@/views/components/listing-views/ListingAbout")
+  () => import("@/components/section/business/listing-views/ListingAbout")
 );
 const ListingCustomerComponents = dynamic(
-  () => import("@/views/components/listing-views/ListingCustomer")
+  () => import("@/components/section/business/listing-views/ListingCustomer")
 );
 const ListingHeaderComponents = dynamic(
-  () => import("@/views/components/listing-views/ListingHeader")
+  () => import("@/components/section/business/listing-views/ListingHeader")
 );
 
 const ListingsView = () => {
@@ -53,7 +57,7 @@ const ListingsView = () => {
   );
 };
 
-export default ListingsView
+export default ListingsView;
 
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {

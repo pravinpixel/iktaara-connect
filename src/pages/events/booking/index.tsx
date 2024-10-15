@@ -4,32 +4,36 @@ import { Box } from "@mui/material";
 import dynamic from "next/dynamic";
 
 const NextSection = dynamic(
-  () => import("@/views/components/event-book/NextSection")
+  () => import("@/components/section/events/event-book/NextSection")
 );
 const VenueSection = dynamic(
-  () => import("@/views/components/event-book/VenueSection")
+  () => import("@/components/section/events/event-book/VenueSection")
 );
 const BookingTicket = dynamic(
-  () => import("@/views/components/event-book/BookTicket")
+  () => import("@/components/section/events/event-book/BookTicket")
 );
 
-
 const EventsBooking = () => {
-  const [section, setSection] = useState<EventsBookingSectionType>('date')
+  const [section, setSection] = useState<EventsBookingSectionType>("date");
   const handleSection = useCallback(() => {
-    setSection((state) => state === 'date' ? 'venue' : 'ticket')
-  }, [])
+    setSection((state) => (state === "date" ? "venue" : "ticket"));
+  }, []);
 
   const handleBackSection = useCallback(() => {
-    setSection((state) => state === 'ticket' ? "venue" : "date")
-  }, [])
+    setSection((state) => (state === "ticket" ? "venue" : "date"));
+  }, []);
 
   return (
     <>
       <Box className="bg-ik_lightblue">
         <BookingTicket />
         <VenueSection section={section} />
-        <NextSection className={""} showPrev={section !== 'date'} handleSection={handleSection} handleBackSection={handleBackSection} />
+        <NextSection
+          className={""}
+          showPrev={section !== "date"}
+          handleSection={handleSection}
+          handleBackSection={handleBackSection}
+        />
       </Box>
     </>
   );

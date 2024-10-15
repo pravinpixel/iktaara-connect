@@ -3,38 +3,38 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 // import { wrapper } from "@/redux/store";
-const EventsBanners = dynamic(
-  () => import("@/views/components/events-new/EventsBanner")
-);
-const EventsTitle = dynamic(
-  () => import("@/views/components/events-new/EventsTitle")
-);
-const HostEventsBanner = dynamic(
-  () => import("@/views/components/events-new/HoseEventsBanner")
-);
-const EventsThisWeek = dynamic(
-  () => import("@/views/components/events-new/EventsThisWeek")
-);
+
 import { eventCategory, eventHome } from "@/redux/services/eventService";
 import { wrapper } from "@/redux/store";
 import { Divider } from "@mui/material";
 
 const FilterSectionEvents = dynamic(
-  () => import("@/views/components/events-new/FilterSection")
+  () => import("@/components/section/events/events-new/FilterSection")
 );
 const AboutIktaraaEvents = dynamic(
-  () => import("@/views/components/events-new/AboutIktaraaEvents")
+  () => import("@/components/section/events/events-new/AboutIktaraaEvents")
 );
 const FrequentlyAskedSection = dynamic(
-  () => import("@/views/components/home/FrequentlyAsked")
+  () => import("@/components/section/home/FrequentlyAsked")
 );
 const EventsByCategory = dynamic(
-  () => import("@/views/components/events-new/EventsByCategory")
+  () => import("@/components/section/events/events-new/EventsByCategory")
+);
+const EventsBanners = dynamic(
+  () => import("@/components/section/events/events-new/EventsBanner")
+);
+const EventsTitle = dynamic(
+  () => import("@/components/section/events/events-new/EventsTitle")
+);
+const HostEventsBanner = dynamic(
+  () => import("@/components/section/events/events-new/HoseEventsBanner")
+);
+const EventsThisWeek = dynamic(
+  () => import("@/components/section/events/events-new/EventsThisWeek")
 );
 // import { eventHome } from "@/redux/services/eventService";
 
 const EventsHome = ({ eventData, eventCategoryData }: any) => {
-
   return (
     <>
       <EventsTitle label="Events" subLabel="in Chennai" />

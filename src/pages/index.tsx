@@ -1,8 +1,6 @@
 import dynamic from "next/dynamic";
 
-const HomePageComponent = dynamic(() => import("@/views/components/home"));
+const HomePageComponent = dynamic(() => import("@/components/section/home"));
 export default function Home() {
-  return (
-      <HomePageComponent />
-  );
+  return <HomePageComponent />;
 }

@@ -4,20 +4,23 @@ import { Grid } from "@mui/material";
 import { Box } from "@mui/material";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
-import MyProfileSection from "@/views/components/post-logincomponents/MyProfileSection";
-import EventSection from "@/views/components/post-logincomponents/EventSection";
-const CustomContainer = dynamic(() => import("@/views/components/Container"));
+import MyProfileSection from "@/components/section/post-login/MyProfileSection";
+import EventSection from "@/components/section/post-login/EventSection";
+
+const CustomContainer = dynamic(
+  () => import("@/components/common/form-fields/Container")
+);
 const CustomButton = dynamic(
-  () => import("@/views/components/form-fields/CustomButton")
+  () => import("@/components/common/form-fields/CustomButton")
 );
 const EnquirySection = dynamic(
-  () => import("@/views/components/post-logincomponents/EnquirySection")
+  () => import("@/components/section/post-login/EnquirySection")
 );
 const DashboardSection = dynamic(
-  () => import("@/views/components/post-logincomponents/DashboardSection")
+  () => import("@/components/section/post-login/DashboardSection")
 );
 const ImageComponent = dynamic(
-  () => import("@/views/components/ImageComponent")
+  () => import("@/components/common/form-fields/ImageComponent")
 );
 
 const PostLogin = () => {
@@ -74,60 +77,68 @@ const PostLogin = () => {
                 </Box>
                 <Box className="py-4 ">
                   <Box
-                    className={`py-2 cursor-pointer ${firstSection === "dashboard"
+                    className={`py-2 cursor-pointer ${
+                      firstSection === "dashboard"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
-                      }`}
+                    }`}
                     onClick={() => handleFirstSection("one")}
                   >
                     {" "}
                     <Typography
-                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${firstSection === "dashboard" ? "text-ik_pink" : ""
-                        }`}
-                    // className="py-3 cursor-pointer"
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
+                        firstSection === "dashboard" ? "text-ik_pink" : ""
+                      }`}
+                      // className="py-3 cursor-pointer"
                     >
                       Dashboard
                     </Typography>
                   </Box>
                   <Box
-                    className={`py-2 cursor-pointer ${firstSection === "enquiries"
+                    className={`py-2 cursor-pointer ${
+                      firstSection === "enquiries"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
-                      }`}
+                    }`}
                   >
                     <Typography
-                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${firstSection === "enquiries" ? "text-ik_pink" : ""
-                        }`}
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
+                        firstSection === "enquiries" ? "text-ik_pink" : ""
+                      }`}
                       onClick={() => handleFirstSection("two")}
                     >
                       Enquiries
                     </Typography>
                   </Box>
                   <Box
-                    className={`py-2 cursor-pointer ${firstSection === "events"
+                    className={`py-2 cursor-pointer ${
+                      firstSection === "events"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
-                      }`}
+                    }`}
                   >
                     {" "}
                     <Typography
-                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${firstSection === "events" ? "text-ik_pink" : ""
-                        }`}
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
+                        firstSection === "events" ? "text-ik_pink" : ""
+                      }`}
                       onClick={() => handleFirstSection("three")}
                     >
                       Events
                     </Typography>
                   </Box>
                   <Box
-                    className={`py-2 cursor-pointer ${firstSection === "myprofile"
+                    className={`py-2 cursor-pointer ${
+                      firstSection === "myprofile"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
-                      }`}
+                    }`}
                   >
                     {" "}
                     <Typography
-                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${firstSection === "myprofile" ? "text-ik_pink" : ""
-                        }`}
+                      className={`pl-5 text-f18 font-semibold leading-[49px] text-ik_bluegreydarken3 ${
+                        firstSection === "myprofile" ? "text-ik_pink" : ""
+                      }`}
                       onClick={() => handleFirstSection("four")}
                     >
                       My Profile
