@@ -1,14 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // import { NAV } from "@/utils/helpers/constant-helper";
 import React, { useState } from "react";
 // import { SearchBar } from "./SearchBar";
 import Link from "next/link";
-import { Box } from "@mui/material";
+import { Avatar, Box, Menu } from "@mui/material";
 import { ArrowdownIcon } from "@/utils/theme/svg";
 import { AutoCompleteSearch } from "./AutoCompleteSearch";
 import Slider from "react-slick";
 import zustandStore from "@/utils/helpers/zustand";
 import dynamic from "next/dynamic";
 import { signOut, useSession } from "next-auth/react";
+import { MenuItem } from "@mui/material";
 
 const CustomButton = dynamic(
   () => import("@/views/components/form-fields/CustomButton")
@@ -32,10 +34,19 @@ const Header = () => {
   const [opencity, setOpencity] = React.useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [openStarted, setOpenStarted] = React.useState(false);
+   const [anchorEl, setAnchorEl] = useState(null);
 
   const { status } = useSession()
 
   const { setPopup } = zustandStore();
+
+    const handleClick = (event: any) => {
+      setAnchorEl(event.currentTarget);
+    };
+
+    const handleCloses = () => {
+      setAnchorEl(null);
+    };
 
   const music = [
     {
@@ -220,26 +231,108 @@ const Header = () => {
               className="text-f16 font-semibold h-[48px]"
               onClick={handleClickOpenStarted}
             />
-            {
-              status === 'authenticated' ? <CustomImageButton
-              width={16}
-              height={19}
-              image="/assets/icons/login-icons.svg"
-              label={"Logout"}
-              newclass="h-[48px]"
-              className="text-f16 font-semibold text-ik_pink-foreground"
-              onClick={() => handleLogout()}
-            /> : <CustomImageButton
+            {status === "authenticated" ? (
+              <div>
+                
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/assets/image/artist-logo.png"
+                  sx={{ width: "48px", height: "48px" }}
+                  onClick={handleClick}
+                />
+                <Menu
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleCloses}
+                  elevation={0}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "right",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  sx={{
+                    "& .MuiPaper-elevation": {
+                      padding: "0px",
+                      boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+                    },
+                    "& .MuiList-padding": {
+                      paddingTop: "0px",
+                      paddingBottom: "30px",
+                    },
+                  }}
+                >
+                  <MenuItem onClick={handleCloses} className="p-1">
+                    <div className="bg-ik_bluegreylighten7 px-4 py-3 rounded-lg">
+                      <div className="text-f18 text-ik_bluegreydarken6 font-semibold leading-[23px]">
+                        Hi Ramakrishna
+                      </div>
+                      <div className="text-f16 font-normal text-ik_lightgrey leading-[22.44px]">
+                        ramakrishnan@gmail.com
+                      </div>
+                    </div>
+                  </MenuItem>
+                  <Link href={"/post-login"}>
+                    <MenuItem className="py-3 px-5 bg-ik_bordervariant2 gap-[15px] text-f18 font-normal leading-[22px] text-ik_bluegreydarken3">
+                      <ImageComponent
+                        src="/assets/icons/view-profile.svg"
+                        width={24}
+                        height={24}
+                        alt="view-profile"
+                      />
+                      View Profile
+                    </MenuItem>
+                  </Link>
+                  <Link href={""}>
+                    <MenuItem className="py-3 px-5 gap-[15px] text-f18 font-normal leading-[22px] text-ik_bluegreydarken3">
+                      <ImageComponent
+                        src="/assets/icons/enquiries-pr.svg"
+                        width={24}
+                        height={24}
+                        alt="enquiries"
+                      />
+                      Enquiries
+                    </MenuItem>
+                  </Link>
+                  <Link href={""}>
+                    <MenuItem className="py-3 px-5 gap-[15px] text-f18 font-normal leading-[22px] text-ik_bluegreydarken3">
+                      <ImageComponent
+                        src="/assets/icons/host-event.svg"
+                        width={24}
+                        height={24}
+                        alt="host-event"
+                      />
+                      Host Event
+                      <span>New</span>
+                    </MenuItem>
+                  </Link>
+                  <MenuItem
+                    className="py-3 px-5 gap-[15px] text-f18 font-normal leading-[22px] text-ik_pink"
+                    onClick={() => handleLogout()}
+                  >
+                    <ImageComponent
+                      src="/assets/icons/logout.svg"
+                      width={24}
+                      height={24}
+                      alt="logout"
+                    />
+                    Logout
+                  </MenuItem>
+                </Menu>
+              </div>
+            ) : (
+              <CustomImageButton
                 width={16}
                 height={19}
                 image="/assets/icons/login-icons.svg"
-                label={"Login"}
+                label={"Logout"}
                 newclass="h-[48px]"
                 className="text-f16 font-semibold text-ik_pink-foreground"
                 onClick={() => handleLoginPopup()}
               />
-            }
-
+            )}
           </div>
         </div>
       </CustomContainer>

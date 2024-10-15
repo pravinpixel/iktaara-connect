@@ -141,6 +141,9 @@ const config: Config = {
         ik_bluegreylighten6: {
           DEFAULT: "var(--ik_bluegreylighten6)",
         },
+        ik_bluegreylighten7: {
+          DEFAULT: "var(--ik_bluegreylighten7)",
+        },
         ik_lightorange: {
           DEFAULT: "var(--ik_lightorange)",
         },
@@ -167,7 +170,7 @@ const config: Config = {
         },
       },
       boxShadow: {
-        'custom-hsla': '0px 1px 2px 0px hsla(0, 0%, 0%, 0.25)',
+        "custom-hsla": "0px 1px 2px 0px hsla(0, 0%, 0%, 0.25)",
       },
       border: "hsl(var(--border))",
       input: "hsl(var(--input))",
