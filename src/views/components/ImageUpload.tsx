@@ -19,7 +19,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   multiple = false,
 }) => {
   const [imageSrc, setImageSrc] = useState<string | null>(
-    "/assets/image/music-logo.png"
+    // "/assets/image/music-logo.png"
   );
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [imageSrcs, setImageSrcs] = useState<string[]>([]);
@@ -61,8 +61,8 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     <section>
       {type && (
         <div>
-          <div className="" onClick={handleImageClick}>
-            {imageSrc && (
+          <div onClick={handleImageClick}>
+            {imageSrc ? (
               <div
                 style={{
                   width: "160px",
@@ -77,9 +77,19 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                   style={{
                     objectFit: "cover",
                     borderRadius: "12px",
+                    cursor: "pointer",
                   }}
                 />
               </div>
+            ) : (
+              <div
+                style={{
+                  width: "160px",
+                  height: "160px",
+                  backgroundColor: "lightgray",
+                  borderRadius: "12px",
+                }}
+              />
             )}
           </div>
           <input
@@ -89,7 +99,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
             onChange={handleFileUpload}
           />
           <Controller
-            name="profile_image"
+            name="logo"
             control={control}
             render={({ field }) => (
               <input type="hidden" {...field} value={imageSrc || ""} />
@@ -149,7 +159,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                 width={20}
                 height={20}
                 onClick={() => handleFileRemove(index)}
-                className='cursor-pointer'
+                className="cursor-pointer"
               />
             </div>
           ))}

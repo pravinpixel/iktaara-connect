@@ -19,9 +19,8 @@ const StudioCard = dynamic(
   () => import("@/views/components/listings/StudioCard")
 );
 
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Business = ({ buisnessListData }: {buisnessListData : any}) => {
+const Business = ({ buisnessListData }: { buisnessListData: any }) => {
   return (
     <>
       {" "}
@@ -76,6 +75,8 @@ export const getServerSideProps = wrapper.getServerSideProps(
           experience: 10,
           created_at: "2024-09-22T12:34:56.000000Z",
           updated_at: "2024-09-22T12:34:56.000000Z",
+          slug: "technicians",
+          music_title: "new",
         },
         {
           id: 2,
@@ -92,6 +93,8 @@ export const getServerSideProps = wrapper.getServerSideProps(
           experience: 10,
           created_at: "2024-09-22T12:34:56.000000Z",
           updated_at: "2024-09-22T12:34:56.000000Z",
+          slug: "technicians",
+          music_title: "new",
         },
         {
           id: 3,
@@ -108,6 +111,8 @@ export const getServerSideProps = wrapper.getServerSideProps(
           experience: 10,
           created_at: "2024-09-22T12:34:56.000000Z",
           updated_at: "2024-09-22T12:34:56.000000Z",
+          slug: "technicians",
+          music_title: "new",
         },
       ],
       first_page_url: "http://example.com/api/items?page=1",
