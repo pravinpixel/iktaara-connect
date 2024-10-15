@@ -62,8 +62,8 @@ const PostLogin = () => {
                   Ramakrishna Paramahamsa
                 </Typography>
                 <Typography className="text-f14 font-normal leading-[20px] text-ik_bluegreydarken1 text-center p-3">
-                  Calling all music lovers! Brace yourselves for the arrival of
-                  "Nee Singham Dhan"...
+                 {` Calling all music lovers! Brace yourselves for the arrival of
+                  "Nee Singham Dhan"...`}
                 </Typography>
                 <Box className="flex items-center justify-center m-4">
                   <CustomButton
