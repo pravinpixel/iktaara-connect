@@ -3,12 +3,11 @@ import React from "react";
 
 import { Box, Typography } from "@mui/material";
 import dynamic from "next/dynamic";
-import { Stack } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { Grid } from "@mui/material";
 
 const CustomRadio = dynamic(() => import("../form-fields/RadioButton"));
-const ImageComponent = dynamic(() => import("../ImageComponent"));
+// const ImageComponent = dynamic(() => import("../ImageComponent"));
 // const CustomContainer = dynamic(() => import("../Container"));
 
 type EventsTitleProps = {

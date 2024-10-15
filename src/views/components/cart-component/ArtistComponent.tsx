@@ -3,7 +3,13 @@ import ImageComponent from "../ImageComponent";
 import CustomCard from "../CustomCard";
 
 type Props = {
-  cartData: any;
+  cartData: {
+    artists_image: string;
+    artists_name: string;
+    artists_title: string;
+    artists_reviews: string;
+    artists_text: string;
+  };
 };
 
 const ArtistComponent = (props: Props) => {

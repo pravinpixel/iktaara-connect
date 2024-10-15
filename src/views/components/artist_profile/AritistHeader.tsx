@@ -2,12 +2,17 @@ import React from "react";
 import ImageComponent from "../ImageComponent";
 import AritistEnquirePopup from "../popup/AritistEnquirePopup";
 import CustomButton from "../form-fields/CustomButton";
-import BusinessEditPopup from "../popup/BusinessEditPopup";
+// import BusinessEditPopup from "../popup/BusinessEditPopup";
 import AritistEditPopup from "../popup/AritistEditPopup";
 import PostUpdatePapup from "../popup/PostUpdatePapup";
 
 type Props = {
-  ListHeader: any;
+  ListHeader: {
+    logo: string;
+    title: string;
+    location: string;
+    job: string;
+  };
 };
 
 const AritistHeaderComponents = (props: Props) => {
@@ -16,9 +21,9 @@ const AritistHeaderComponents = (props: Props) => {
   const [openaritistedit, setOpenaritistedit] = React.useState(false);
   const [openUpdate, setOpenUpdate] = React.useState(false);
 
-  const handleClickOpenEnquire = () => {
-    setOpenEnquire(true);
-  };
+  // const handleClickOpenEnquire = () => {
+  //   setOpenEnquire(true);
+  // };
 
   const handleCloseEnquire = () => {
     setOpenEnquire(false);
