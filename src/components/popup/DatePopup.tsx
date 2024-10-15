@@ -13,8 +13,13 @@ import DialogActions from "@mui/material/DialogActions";
 import { TransitionProps } from "@mui/material/transitions";
 
 import dynamic from "next/dynamic";
-const DateEventPicker = dynamic(() => import("../DateEventPicker"));
-const CustomButton = dynamic(() => import("../form-fields/CustomButton"));
+
+const DateEventPicker = dynamic(
+  () => import("../common/form-fields/DateEventPicker")
+);
+const CustomButton = dynamic(
+  () => import("../common/form-fields/CustomButton")
+);
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {

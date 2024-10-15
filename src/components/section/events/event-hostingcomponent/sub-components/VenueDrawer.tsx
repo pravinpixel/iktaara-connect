@@ -20,7 +20,7 @@ const ImageComponent = dynamic(
   () => import("@/components/common/form-fields/ImageComponent")
 );
 
-const DatePopup = dynamic(() => import("@/views/components/popup/DatePopup"));
+const DatePopup = dynamic(() => import("@/components/popup/DatePopup"));
 const CustomImageButton = dynamic(
   () => import("@/components/common/form-fields/CustomImageButton")
 );

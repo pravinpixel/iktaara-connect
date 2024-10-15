@@ -4,24 +4,41 @@ import React, { useState } from "react";
 
 import { Box, Grid } from "@mui/material";
 
-import VerticalLinearStepper from "@/views/components/event-hostingcomponent/Stepper";
-import StepperContent from "@/views/components/event-hostingcomponent/StepperContent";
-// import ImageComponent from "@/views/components/ImageComponent";
-import NextSection from "@/views/components/event-book/NextSection";
-
 import dynamic from "next/dynamic";
 
+const VerticalLinearStepper = dynamic(
+  () => import("@/components/section/events/event-hostingcomponent/Stepper")
+);
+const NextSection = dynamic(
+  () => import("@/components/section/events/event-book/NextSection")
+);
+const StepperContent = dynamic(
+  () =>
+    import("@/components/section/events/event-hostingcomponent/StepperContent")
+);
 const StepperContentTwo = dynamic(
-  () => import("@/views/components/event-hostingcomponent/StepperContentTwo")
+  () =>
+    import(
+      "@/components/section/events/event-hostingcomponent/StepperContentTwo"
+    )
 );
 const StepperContentOne = dynamic(
-  () => import("@/views/components/event-hostingcomponent/StepperContentOne")
+  () =>
+    import(
+      "@/components/section/events/event-hostingcomponent/StepperContentOne"
+    )
 );
 const StepperContentFour = dynamic(
-  () => import("@/views/components/event-hostingcomponent/StepperContentFour")
+  () =>
+    import(
+      "@/components/section/events/event-hostingcomponent/StepperContentFour"
+    )
 );
 const StepperContentThree = dynamic(
-  () => import("@/views/components/event-hostingcomponent/StepperContentThree")
+  () =>
+    import(
+      "@/components/section/events/event-hostingcomponent/StepperContentThree"
+    )
 );
 const EventHosting = () => {
   const [activeStep, setActiveStep] = useState(0);

@@ -59,7 +59,7 @@ export default function Startedpopup({
       id: 2,
       Startedpopup_image: "/assets/icons/hostevent.svg",
       Startedpopup_title: "Host an event",
-      slug: "/event-hosting",
+      slug: "/events/hosting",
     },
     {
       id: 3,
