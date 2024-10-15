@@ -5,32 +5,33 @@ import dynamic from "next/dynamic";
 const AritistHeaderComponents = dynamic(
   () =>
     import(
-      "@/components/section/artist/artist_edit/artist_profile/AritistHeader"
+      "@/components/section/artist/artist_profile/AritistHeader"
     )
 );
 const AritistStoresComponents = dynamic(
   () =>
     import(
-      "@/components/section/artist/artist_edit/artist_profile/AritistStores"
+      "@/components/section/artist/artist_profile/AritistStores"
     )
 );
 const AritistVideoComponents = dynamic(
   () =>
     import(
-      "@/components/section/artist/artist_edit/artist_profile/AritistVideo"
+      "@/components/section/artist/artist_profile/AritistVideo"
     )
 );
 const ArtistAboutComponents = dynamic(
   () =>
-    import("@/components/section/artist/artist_edit/artist_profile/ArtistAbout")
+    import("@/components/section/artist/artist_profile/ArtistAbout")
 );
 const ArtistCustomerComponents = dynamic(
   () =>
     import(
-      "@/components/section/artist/artist_edit/artist_profile/ArtistCustomer"
+      "@/components/section/artist/artist_profile/ArtistCustomer"
     )
 );
-const CustomContainer = dynamic(() => import("@/views/components/Container"));
+const CustomContainer = dynamic(() => import("@/components/common/form-fields/Container"));
+
 const ListingBusinessComponents = dynamic(
   () => import("@/components/section/business/listing-views/ListingBusiness")
 );

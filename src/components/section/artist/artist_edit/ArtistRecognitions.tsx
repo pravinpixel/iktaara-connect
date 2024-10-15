@@ -8,6 +8,10 @@ const ImageComponent = dynamic(
   () => import("@/components/common/form-fields/ImageComponent")
 );
 
+const CustomButton = dynamic(
+  () => import("@/components/common/form-fields/CustomButton")
+);
+
 const DatePickerField = dynamic(
   () => import("@/components/common/form-fields/DatePickerField")
 );
@@ -30,7 +34,7 @@ const ArtistRecognitions = () => {
     name: "recognitions",
   });
 
-  const handleServices = async () => {};
+  const handleServices = async () => { };
   return (
     <section>
       <div>

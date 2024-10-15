@@ -434,18 +434,18 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-const CustomContainer = dynamic(() => import("@/views/components/Container"));
+const CustomContainer = dynamic(() => import("@/components/common/form-fields/Container"));
 const InputField = dynamic(
-  () => import("@/views/components/form-fields/InputField")
+  () => import("@/components/common/form-fields/InputField")
 );
 const CustomButton = dynamic(
-  () => import("@/views/components/form-fields/CustomButton")
+  () => import("@/components/common/form-fields/CustomButton")
 );
 const CustomSmallButton = dynamic(
-  () => import("@/views/components/form-fields/CustomSmallButton")
+  () => import("@/components/common/form-fields/CustomSmallButton")
 );
 const CustomRadio = dynamic(
-  () => import("@/views/components/form-fields/RadioButton")
+  () => import("@/components/common/form-fields/RadioButton")
 );
 const ImageComponent = dynamic(
   () => import("@/views/components/ImageComponent")
