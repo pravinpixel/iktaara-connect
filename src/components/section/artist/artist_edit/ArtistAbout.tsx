@@ -15,15 +15,9 @@ const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
 );
 const ArtistAbout = () => {
-  // const methods = useForm();
-  const {
-    handleSubmit,
-    setValue,
+  const { handleSubmit } = useFormContext();
 
-    formState: { isSubmitting },
-  } = useFormContext();
-
-  const handleAbout = async (values) => {
+  const handleAbout = async (values: any) => {
     console.log(values, "values");
   };
 

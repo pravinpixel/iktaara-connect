@@ -6,6 +6,10 @@ import { Box } from "@mui/material";
 import dynamic from "next/dynamic";
 import { useFormContext } from "react-hook-form";
 
+const InputField = dynamic(
+  () => import("@/components/common/form-fields/InputField")
+);
+
 const ImageUpload = dynamic(
   () => import("@/components/common/form-fields/ImageUpload")
 );
@@ -15,12 +19,7 @@ const CustomButton = dynamic(
 );
 
 const ArtistMedia = () => {
-  const {
-    handleSubmit,
-    watch, // To track the form values
-    setValue,
-    formState: { isSubmitting },
-  } = useFormContext();
+  const { handleSubmit } = useFormContext();
 
   const handleMedia = async (values) => {
     console.log(values, "customer_services");
@@ -32,7 +31,7 @@ const ArtistMedia = () => {
         <div className="mb-3">
           <div className="mb-3">
             <span className="text-f22 font-semibold text-ik_bluegreydarken3">
-              Post Update
+              Image Upload
             </span>
           </div>
           <ImageUpload
@@ -40,6 +39,14 @@ const ArtistMedia = () => {
             type={false}
             control={undefined}
             multiple={true}
+          />
+        </div>
+        <div className="mb-2">
+          <InputField
+            name="url"
+            label="Video Url"
+            placeholder="Enter video url"
+            type="text"
           />
         </div>
         <Box className="flex justify-start w-full mt-6">

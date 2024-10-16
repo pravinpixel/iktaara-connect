@@ -18,9 +18,8 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   typeupload,
   multiple = false,
 }) => {
-  const [imageSrc, setImageSrc] = useState<string | null>(
-    // "/assets/image/music-logo.png"
-  );
+  const [imageSrc, setImageSrc] = useState<string | null>();
+  // "/assets/image/music-logo.png"
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [imageSrcs, setImageSrcs] = useState<string[]>([]);
   const [fileNames, setFileNames] = useState<string[]>([]);
@@ -144,7 +143,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
             multiple={multiple}
           />
           <Controller
-            name="profile_images"
+            name="documents"
             control={control}
             render={({ field }) => (
               <input type="hidden" {...field} value={imageSrcs.join(",")} />

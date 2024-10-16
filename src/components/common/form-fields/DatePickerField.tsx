@@ -46,6 +46,7 @@ const DatePickerField: React.FC<DatePickerFieldProps> = ({
           label=""
           {...field}
           value={value}
+          views={["year", "month"]} // Add this line to specify the views
           slots={{
             openPickerIcon: DatapickerIcon,
           }}

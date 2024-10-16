@@ -1,10 +1,9 @@
 import React from "react";
-// import ImageComponent from "../ImageComponent";
 
-import { useForm, useFormContext } from "react-hook-form";
-// import InputField from "../form-fields/InputField";
+import { useFormContext } from "react-hook-form";
+
 import { Box } from "@mui/material";
-// import CustomButton from "../form-fields/CustomButton";
+
 import dynamic from "next/dynamic";
 import CustomCheckbox from "@/components/common/form-fields/CheckBox";
 
@@ -22,30 +21,30 @@ const InputField = dynamic(
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const ArtistContact = () => {
-  // const methods = useForm();
-
-  // const { handleSubmit } = methods;
-
-  // const handleAbout = async () => {};
   const {
     handleSubmit,
-    watch, // To track the form values
-    setValue,
+
     formState: { isSubmitting },
   } = useFormContext();
 
   const handleAbout = async (values) => {
-    // const customer_services = {
-    //   0: {
-    //     live_online: values.live_online || 0,
-    //     live_online_description: values.live_online_description,
-    //     home_pickup: values.home_pickup || 0,
-    //     home_pickup_description: values.home_pickup_description,
-    //     distance_service: values.distance_service || 0,
-    //     distance_service_description: values.distance_service_description,
-    //   },
-    // };
-    console.log(values, "customer_services");
+    const customer_services = [
+      {
+        live_online: values.live_online ? 1 : 0,
+        live_online_description: values.live_online_description || "",
+        home_pickup: values.home_pickup ? 1 : 0,
+        home_pickup_description: values.home_pickup_description || "",
+        distance_service: values.distance_service ? 1 : 0,
+        distance_service_description: values.distance_service_description || "",
+      },
+    ];
+
+    const temp = {
+      ...values,
+      customer_services,
+    };
+
+    console.log(temp, "customer_services array");
   };
   return (
     <section>
