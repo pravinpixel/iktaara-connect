@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 
 import dynamic from "next/dynamic";
 import { useFormContext } from "react-hook-form";
+import UploadFile from "@/components/common/form-fields/UploadFile";
 
 const InputField = dynamic(
   () => import("@/components/common/form-fields/InputField")
@@ -19,7 +20,7 @@ const CustomButton = dynamic(
 );
 
 const ArtistMedia = () => {
-  const { handleSubmit } = useFormContext();
+  const { handleSubmit, control } = useFormContext();
 
   const handleMedia = async (values) => {
     console.log(values, "customer_services");
@@ -34,10 +35,16 @@ const ArtistMedia = () => {
               Image Upload
             </span>
           </div>
-          <ImageUpload
+          {/* <ImageUpload
             typeupload={true}
             type={false}
             control={undefined}
+            multiple={true}
+          /> */}
+          <UploadFile
+            typeupload={true}
+            type={false}
+            control={control}
             multiple={true}
           />
         </div>
