@@ -1,14 +1,17 @@
 
-export const { NEXT_PUBLIC_API_BASE_URL } = process.env;
-
 const CONSTANT = {
-    BASE_URL: NEXT_PUBLIC_API_BASE_URL,
+    IKTARAA_CONNECT_BASE_URL: process.env.NEXT_PUBLIC_API_IKTARAA_CONNECT_BASE_URL,
+    IKTARAA_BASE_URL: process.env.NEXT_PUBLIC_API_IKTARAA_BASE_URL,
     NAV: "110px",
 
     // SECONDS * MILISECONDS
     TIMEOUT: 30 * 1000,
 
-    ASSESTPATH: '/connect'
+    ISPRODUCTION: process.env.NODE_ENV === 'production',
+    ISSTAGING: process.env.NODE_ENV === 'test',
+    ISLOCAL: process.env.NODE_ENV === 'development',
+
+    ASSESTPATH: process.env.NEXT_PUBLIC_IKTARAA_URl || ''
 }
 
 

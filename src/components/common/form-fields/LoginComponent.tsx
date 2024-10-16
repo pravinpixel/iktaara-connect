@@ -127,6 +127,7 @@ const LoginComponent = ({ handleRegsiterOpen, handleOtpOpen }: LoginProps) => {
             </div>
             <CustomButton
               type="submit"
+              label="Login"
               className={"py-4 px-[69px] text-f18  font-semibold border-8"}
             >
               Login

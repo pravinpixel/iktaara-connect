@@ -7,6 +7,7 @@ import Card from "@mui/material/Card";
 import { Typography } from "@mui/material";
 import { Stack } from "@mui/material";
 import CardMediaComponent from "./CardMediaComponent";
+import CONSTANT from "@/utils/helpers/constant-helper";
 
 interface CustomCardProps {
   variant?: "elevation" | "outlined";
@@ -23,6 +24,9 @@ interface CustomCardProps {
   typetop?: boolean;
   typebottom: boolean;
 }
+
+const basePath = CONSTANT.ASSESTPATH || ''
+
 export default function CustomCardEventsCategory(props: CustomCardProps) {
   const { variant, img, text } = props;
 
@@ -40,28 +44,28 @@ export default function CustomCardEventsCategory(props: CustomCardProps) {
         overflow: "hidden",
         padding: "20px",
         ...(props.typebottomleft &&
-          {
-            /* Custom style for bottom-left */
-          }),
+        {
+          /* Custom style for bottom-left */
+        }),
         ...(props.typetop &&
-          {
-            /* Custom style for top-right */
-          }),
+        {
+          /* Custom style for top-right */
+        }),
         ...(props.typebottom &&
-          {
-            /* Custom style for bottom-right */
-          }),
+        {
+          /* Custom style for bottom-right */
+        }),
       }}
     >
       <Stack direction="column" alignItems={"center"} p={4}>
         {/* <CardMedia
           component="img"
-          image={"/connect" + img}
+          image={basePath + img}
           alt="Paella dish"
           sx={{ width: { md: 100, xs: 50 }, height: { md: 100, xs: 50 } }}
         /> */}
         <CardMediaComponent
-          image={"/connect" + img}
+          image={basePath + img}
           alt="Paella dish"
           sx={{ width: { md: 100, xs: 50 }, height: { md: 100, xs: 50 } }}
         />

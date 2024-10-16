@@ -2,13 +2,14 @@ import axios from "axios";
 import CONSTANT from "./constant-helper";
 import zustandStore from "./zustand";
 import { getSession } from "next-auth/react";
+// import { signIn } from "next-auth/react";
 
 
 let isRefershing = false;
 
 
-const API = axios.create({
-  baseURL: CONSTANT.IKTARAA_CONNECT_BASE_URL || '',
+const AUTHAPI = axios.create({
+  baseURL: CONSTANT.IKTARAA_BASE_URL || '',
   timeout: CONSTANT.TIMEOUT,
 })
 
@@ -30,7 +31,7 @@ const refreshToken = async () => {
   // }
 };
 
-API.interceptors.request.use(async function (config) {
+AUTHAPI.interceptors.request.use(async function (config) {
   const session = await getSession()
   const token = zustandStore.getState().token;
   // Client Side
@@ -45,7 +46,7 @@ API.interceptors.request.use(async function (config) {
 });
 
 
-API.interceptors.response.use(
+AUTHAPI.interceptors.response.use(
   async (response) => {
     return response;
   },
@@ -71,4 +72,4 @@ API.interceptors.response.use(
 
 
 
-export default API
+export default AUTHAPI

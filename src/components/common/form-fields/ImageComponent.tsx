@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import CONSTANT from "@/utils/helpers/constant-helper";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-const basePath = process.env.NEXT_PUBLIC_IKTARAA_URL || ''
+const basePath = CONSTANT.ASSESTPATH|| ''
 
 
 const ImageComponent = (props: any) => {

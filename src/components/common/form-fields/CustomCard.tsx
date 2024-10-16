@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import ImageComponent from "./ImageComponent";
 
 import CardMediaComponent from "./CardMediaComponent";
+import CONSTANT from "@/utils/helpers/constant-helper";
 
 interface CustomCardProps {
   variant?: "elevation" | "outlined" | "bottom-right" | "bottom-left";
@@ -25,7 +26,7 @@ interface CustomCardProps {
   typebottomtop?: boolean;
 }
 
-const basePath = process.env.NEXT_PUBLIC_IKTARAA_URL || ''
+const basePath = CONSTANT.ASSESTPATH || ''
 
 export default function CustomCard(props: CustomCardProps) {
   const {

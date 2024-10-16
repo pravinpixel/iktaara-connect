@@ -17,7 +17,7 @@ function CustomButton(props: CustomButtonType) {
       sx={{ textTransform: "capitalize" }}
       className={className}
     >
-      {label || "Login"}
+      {label || ""}
     </Button>
   );
 }
