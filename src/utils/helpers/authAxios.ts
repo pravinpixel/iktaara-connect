@@ -48,7 +48,7 @@ AUTHAPI.interceptors.request.use(async function (config) {
 
 AUTHAPI.interceptors.response.use(
   async (response) => {
-    return response;
+    return response.data;
   },
   async (error) => {
 

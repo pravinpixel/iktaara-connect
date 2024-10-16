@@ -9,7 +9,7 @@ import { Provider } from "react-redux";
 import { Sora } from "next/font/google";
 import Layouts from "@/components/common/Layouts";
 import { wrapper } from "@/redux/store";
-import CONSTANT from "@/utils/helpers/constant-helper";
+// import CONSTANT from "@/utils/helpers/constant-helper";
 
 const sora = Sora({
   variable: "--sora",
@@ -20,7 +20,7 @@ const sora = Sora({
 export default function App({ Component, pageProps }: AppProps) {
   const { store } = wrapper.useWrappedStore(pageProps);
   return (
-    <SessionProvider basePath={CONSTANT.ASSESTPATH + "/api/auth"}>
+    <SessionProvider  >
       <Provider store={store}>
         <section className={`${sora.variable} font-sora h-[100vh] w-full flex`}>
           <Layouts>

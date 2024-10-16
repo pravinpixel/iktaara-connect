@@ -8,6 +8,7 @@ import { signIn, SignInOptions } from "next-auth/react";
 import dynamic from "next/dynamic";
 import { notify } from "@/utils/helpers/global-function";
 import { useRouter } from "next/router";
+import CONSTANT from "@/utils/helpers/constant-helper";
 
 const CustomButton = dynamic(() => import("./CustomButton"));
 const InputField = dynamic(() => import("./InputField"));
@@ -47,12 +48,13 @@ const LoginComponent = ({ handleRegsiterOpen, handleOtpOpen }: LoginProps) => {
   const handleGoogleLogin = async () => {
     try {
       await signIn("google", {
-        redirect: false,
+        redirect: true,
+        callbackUrl: CONSTANT.ASSESTPATH
       }).then((res) => {
         if (res?.error) {
           throw new Error(res?.error as never);
         }
-        reload();
+        // reload();
       });
     } catch (error) {
       notify(error);
@@ -142,8 +144,9 @@ const LoginComponent = ({ handleRegsiterOpen, handleOtpOpen }: LoginProps) => {
           </div>
           <div className="w-full">
             <button
+              type="button"
               className=" p-3 w-full border border-ik_bluegreylightens3 rounded-md mb-[20px]"
-              onClick={handleGoogleLogin}
+              onClick={() => handleGoogleLogin()}
             >
               <div className="flex justify-center items-center gap-2">
                 <ImageComponent

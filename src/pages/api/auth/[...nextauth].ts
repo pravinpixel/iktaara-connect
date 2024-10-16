@@ -88,7 +88,7 @@ export const authOptions: NextAuthOptions = {
                         email: loggedUser?.email || '',
                         data: loggedUser,
                         authorization: result?.data?.authorization || null,
-                        token: result?.data?.authorization.access_token,
+                        token: result?.data?.authorization?.access_token,
                     }
                     return modifiedData as never;
                 } catch (error) {
@@ -129,7 +129,7 @@ export const authOptions: NextAuthOptions = {
                         email: loggedUser?.email || '',
                         data: loggedUser,
                         authorization: result?.data?.authorization || null,
-                        token: result?.data?.authorization.access_token,
+                        token: result?.data?.authorization?.access_token,
                     }
                     return modifiedData as never;
 

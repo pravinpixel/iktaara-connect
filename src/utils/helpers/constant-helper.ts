@@ -11,7 +11,7 @@ const CONSTANT = {
     ISSTAGING: process.env.NODE_ENV === 'test',
     ISLOCAL: process.env.NODE_ENV === 'development',
 
-    ASSESTPATH: process.env.NEXT_PUBLIC_IKTARAA_URl || ''
+    ASSESTPATH: process.env.NEXT_PUBLIC_IKTARAA_URL || ''
 }
 
 
