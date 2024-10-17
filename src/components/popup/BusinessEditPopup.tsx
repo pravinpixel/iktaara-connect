@@ -7,7 +7,6 @@ import { TransitionProps } from "@mui/material/transitions";
 import dynamic from "next/dynamic";
 import { FormProvider, useForm } from "react-hook-form";
 
-
 const BusinessEditTabs = dynamic(
   () => import("../section/business/business-edit/BusinessEditTabs")
 );
@@ -27,7 +26,10 @@ interface BusinessEditProps {
   open?: boolean;
 }
 
-export default function BusinessEditPopup({ handleClose, open }: BusinessEditProps) {
+export default function BusinessEditPopup({
+  handleClose,
+  open,
+}: BusinessEditProps) {
   const { control } = useForm();
   const methods = useForm({
     defaultValues: {

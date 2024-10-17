@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import dynamic from "next/dynamic";
-import { artistView } from "@/redux/services/artistService";
+import { artistViewApi } from "@/redux/services/artistService";
 import { wrapper } from "@/redux/store";
 const AritistHeaderComponents = dynamic(
   () => import("@/components/section/artist/artist_profile/AritistHeader")
@@ -66,7 +66,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
     const [artistDetailView] = await Promise.all([
       await store
-        .dispatch(artistView())
+        .dispatch(artistViewApi())
         .unwrap()
         .then((res) => res?.data)
         .catch(() => {

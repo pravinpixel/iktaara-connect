@@ -22,7 +22,7 @@ const UploadFile: React.FC<ImageUploadProps> = ({
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "images", // Field name for the array
+    name: "documents", // Field name for the array
   });
 
   const handleImageClick = () => {

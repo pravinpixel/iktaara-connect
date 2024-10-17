@@ -139,6 +139,7 @@ import { Slide } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import dynamic from "next/dynamic";
 import { FormProvider, useForm } from "react-hook-form";
+import SingleUpload from "../common/form-fields/SingleUpload";
 
 const ArtistEditTabs = dynamic(
   () => import("../section/artist/artist_edit/ArtistEditTabs")
@@ -188,12 +189,13 @@ export default function ArtistEditPopup({
       <FormProvider {...methods}>
         <DialogTitle>
           <div className="flex flex-col items-center justify-center h-full">
-            <ImageComponent
+            {/* <ImageComponent
               src={"/assets/image/artist-logo.png"}
               width={160}
               height={160}
               alt={"music-logo"}
-            />
+            /> */}
+            <SingleUpload />
             <div className="pt-2">
               <h6 className="text-f24 font-semibold text-ik_bluegreydarken3">
                 Ramakrishna Paramahamsa

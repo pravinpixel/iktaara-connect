@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { artistView } from "../services/artistService";
+import { artistSaveApi, artistViewApi } from "../services/artistService";
 
 const artistCases = [
-   { api: artistView, name: "artistView", isLoading: true },
- 
+   { api: artistViewApi, name: "artistViewApi", isLoading: true },
+   { api: artistSaveApi, name: "artistSaveApi", isLoading: true },
 ];
 
 type AsyncAction = {

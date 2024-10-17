@@ -1,23 +1,25 @@
 import SERVER from "@/utils/helpers/axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-// export const ListingApi = createAsyncThunk(
-//     "buisnessListingApi",
-//     async (params, thunkAPI) => {
+export const artistSaveApi = createAsyncThunk(
+    "artistSaveApi",
+    async (params, thunkAPI) => {
+        console.log(params,"params");
+        
  
-//       try {
-//         const response = await SERVER.get(`/services`, {
-//           params
-//         });
-//         return response?.data;
-//       } catch (error) {
-//         return thunkAPI.rejectWithValue(error );
-//       }
-//     }
-//   );
+      try {
+        const response = await SERVER.get(`/artist/save`, 
+          params
+        );
+        return response?.data;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error );
+      }
+    }
+  );
 
 
-export const artistView = createAsyncThunk(
+export const artistViewApi = createAsyncThunk(
   "artistView",
   async (params, thunkAPI) => {
     try {
