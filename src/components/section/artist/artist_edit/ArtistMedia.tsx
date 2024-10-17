@@ -4,15 +4,12 @@ import React from "react";
 import { Box } from "@mui/material";
 
 import dynamic from "next/dynamic";
-import { useFormContext } from "react-hook-form";
+import { useFieldArray, useFormContext } from "react-hook-form";
 import UploadFile from "@/components/common/form-fields/UploadFile";
+import ImageComponent from "@/views/components/ImageComponent";
 
 const InputField = dynamic(
   () => import("@/components/common/form-fields/InputField")
-);
-
-const ImageUpload = dynamic(
-  () => import("@/components/common/form-fields/ImageUpload")
 );
 
 const CustomButton = dynamic(
@@ -21,6 +18,10 @@ const CustomButton = dynamic(
 
 const ArtistMedia = () => {
   const { handleSubmit, control } = useFormContext();
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "videoUrls",
+  });
 
   const handleMedia = async (values) => {
     console.log(values, "customer_services");
@@ -48,14 +49,30 @@ const ArtistMedia = () => {
             multiple={true}
           />
         </div>
-        <div className="mb-2">
-          <InputField
-            name="url"
-            label="Video Url"
-            placeholder="Enter video url"
-            type="text"
-          />
-        </div>
+        {fields.map((field, index) => (
+          <div className="mb-2" key={field.id}>
+            <InputField
+              name={`videoUrls[${index}].url`}
+              label="Video Url"
+              placeholder="Enter video url"
+              type="text"
+            />
+            <Box onClick={() => remove(index)}>
+              <ImageComponent
+                src="/assets/icons/delete-icons.svg"
+                alt="delete"
+                width={20}
+                height={20}
+                className="cursor-pointer"
+              />
+            </Box>
+          </div>
+        ))}
+        <CustomButton
+          className="px-16 py-3.5"
+          label="Add"
+          onClick={() => append({ url: "" })}
+        ></CustomButton>
         <Box className="flex justify-start w-full mt-6">
           <CustomButton type="submit" className="px-16 py-3.5" label="Save">
             Save
