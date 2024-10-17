@@ -4,9 +4,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const artistSaveApi = createAsyncThunk(
     "artistSaveApi",
     async (params, thunkAPI) => {
-        console.log(params,"params");
-        
- 
+   
       try {
         const response = await SERVER.get(`/artist/save`, 
           params

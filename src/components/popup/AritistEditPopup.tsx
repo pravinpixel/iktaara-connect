@@ -133,20 +133,22 @@
 
 import { DialogContent, IconButton } from "@mui/material";
 import { Dialog, DialogTitle } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { Slide } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import dynamic from "next/dynamic";
 import { FormProvider, useForm } from "react-hook-form";
 import SingleUpload from "../common/form-fields/SingleUpload";
+import { essentialApi } from "@/redux/services/essentialService";
+import { useDispatch } from "react-redux";
 
 const ArtistEditTabs = dynamic(
   () => import("../section/artist/artist_edit/ArtistEditTabs")
 );
-const ImageComponent = dynamic(
-  () => import("../common/form-fields/ImageComponent")
-);
+// const ImageComponent = dynamic(
+//   () => import("../common/form-fields/ImageComponent")
+// );
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -166,6 +168,7 @@ export default function ArtistEditPopup({
   handleClose,
   open,
 }: BusinessEditProps) {
+  const dispatch = useDispatch();
   const methods = useForm({
     defaultValues: {
       type: 0,
@@ -174,7 +177,19 @@ export default function ArtistEditPopup({
   });
 
   const type = methods.watch("type");
-  console.log(type, "type");
+
+  const essentialList = async (type: string) => {
+    try {
+      const res = await dispatch(essentialApi({ type })).unwrap();
+      console.log(res, "tttt");
+    } catch (error) {
+      console.log(error, "error");
+    }
+  };
+
+  useEffect(() => {
+    essentialList("instrument_type,genere");
+  });
 
   return (
     <Dialog
