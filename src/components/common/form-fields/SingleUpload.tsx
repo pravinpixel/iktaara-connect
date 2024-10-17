@@ -1,22 +1,30 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef, useState } from "react";
 import Image from "next/image";
-import { Controller } from "react-hook-form";
+import { useController } from "react-hook-form";
 import { Box } from "@mui/material";
 import ImageComponent from "./ImageComponent";
 
 interface ImageUploadProps {
   control: any;
+  name: string;
   type?: string;
   typeupload?: string;
 }
 
-const SingleUpload: React.FC<ImageUploadProps> = ({ control }) => {
+const SingleUpload: React.FC<ImageUploadProps> = ({ name, control }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadedFile, setUploadedFile] = useState<any>(null); // Track the uploaded file
 
+  // Get the field's onChange, value, and other input props from useController
+  const {
+    field: { onChange, value },
+  } = useController({
+    name, // The name of the form field
+    control, // The control object from react-hook-form
+  });
+
   const handleImageClick = () => {
-    fileInputRef.current?.click();
+    fileInputRef.current?.click(); // Simulate a click on the hidden file input
   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,13 +37,19 @@ const SingleUpload: React.FC<ImageUploadProps> = ({ control }) => {
           src: reader.result, // Store the base64 string for display
           name: file.name,
         });
+        onChange({
+          file, // Store the original File object
+          src: reader.result, // Pass the base64 string as the value for the form
+          name: file.name,
+        }); // Update the form value
       };
-      reader.readAsDataURL(file); // Convert file to base64
+      reader.readAsDataURL(file); // Convert the file to base64
     }
   };
 
   const handleRemoveFile = () => {
-    setUploadedFile(null); // Remove the file
+    setUploadedFile(null); // Remove the file from the component state
+    onChange(null); // Reset the form value
   };
 
   return (
@@ -65,18 +79,6 @@ const SingleUpload: React.FC<ImageUploadProps> = ({ control }) => {
           ref={fileInputRef}
           style={{ display: "none" }}
           onChange={handleFileUpload}
-        />
-
-        <Controller
-          name="document"
-          control={control}
-          render={({ field }) => (
-            <input
-              type="hidden"
-              {...field}
-              value={uploadedFile ? uploadedFile.src : ""}
-            />
-          )}
         />
 
         {uploadedFile && (
