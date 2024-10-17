@@ -3,18 +3,20 @@ import React from "react";
 
 import dynamic from "next/dynamic";
 
+
 const ImageComponent = dynamic(
-  () => import("@/components/common/form-fields/TitleComponent")
+  () => import("@/views/components/ImageComponent")
 );
 const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
 );
-
 const PostUpdatePapup = dynamic(
   () => import("@/components/popup/PostUpdatePapup")
 );
 const EnquirePopup = dynamic(() => import("@/components/popup/EnquirePopup"));
-const BusinessEditPopup = dynamic(() => import("../../home/BusinessEditPopup"));
+const BusinessEditPopup = dynamic(
+  () => import("@/components/popup/BusinessEditPopup")
+);
 type Props = {
   ListHeader: any;
 };

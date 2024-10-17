@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Grid } from "@mui/material";
 import React from "react";
 import { wrapper } from "@/redux/store";
 import { listingView } from "@/redux/services/listingService";
 import dynamic from "next/dynamic";
+import { GetServerSideProps } from "next";
 
 const ListingBusinessComponents = dynamic(
   () => import("@/components/section/business/listing-views/ListingBusiness")
@@ -29,7 +31,8 @@ const ListingHeaderComponents = dynamic(
   () => import("@/components/section/business/listing-views/ListingHeader")
 );
 
-const ListingsView = () => {
+const ListingsView = ({ listingsView }: any) => {
+  console.log(listingsView, "listingsView");
   const ListingHeader = {
     logo: "/assets/image/music-logo.png",
     title: "Musee Musicals Pvt. Ltd.",
@@ -59,11 +62,33 @@ const ListingsView = () => {
 
 export default ListingsView;
 
-export const getServerSideProps = wrapper.getServerSideProps(
-  (store) => async () => {
+// export const getServerSideProps = wrapper.getServerSideProps(
+//   (store) => async () => {
+//     const [listingsView] = await Promise.all([
+//       await store
+//         .dispatch(listingView({ slug }))
+//         .unwrap()
+//         .then((res) => res?.data)
+//         .catch(() => {
+//           return {
+//             data: [],
+//           };
+//         }),
+//     ]);
+//     return {
+//       props: {
+//         listingsView: listingsView,
+//       },
+//     };
+//   }
+// );
+export const getServerSideProps: GetServerSideProps =
+  wrapper.getServerSideProps((store) => async () => {
+    // const { slug } = ctx.query as unknown as Params;
+
     const [listingsView] = await Promise.all([
-      await store
-        .dispatch(listingView())
+      store
+        .dispatch(listingView(3))
         .unwrap()
         .then((res) => res?.data)
         .catch(() => {
@@ -72,10 +97,10 @@ export const getServerSideProps = wrapper.getServerSideProps(
           };
         }),
     ]);
+
     return {
       props: {
-        listingsView: listingsView,
+        listingsView,
       },
     };
-  }
-);
+  });

@@ -22,6 +22,7 @@ const CustomImageButton = dynamic(
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StudioCard = ({ buisnessListData }: any) => {
+  console.log(buisnessListData, "buisnessListData");
   return (
     <section className="mt-[15px] ">
       {buisnessListData.data.map((business: any) => (

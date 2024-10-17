@@ -71,7 +71,7 @@ const ArtistContact = () => {
                 <InputField
                   name="live_online_description"
                   label=""
-                  placeholder="Business Name"
+                  placeholder="Enter Live Online"
                   type="text"
                 />
               </div>
@@ -97,7 +97,7 @@ const ArtistContact = () => {
                 <InputField
                   name="home_pickup_description"
                   label=""
-                  placeholder="Business Name"
+                  placeholder="Enter Home Pickup"
                   type="text"
                 />
               </div>
@@ -123,7 +123,7 @@ const ArtistContact = () => {
                 <InputField
                   name="distance_service_description"
                   label=""
-                  placeholder="Business Name"
+                  placeholder="Enter Distance"
                   type="text"
                 />
               </div>

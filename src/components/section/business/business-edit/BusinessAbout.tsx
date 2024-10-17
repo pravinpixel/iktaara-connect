@@ -1,10 +1,13 @@
 import React from "react";
-import { FormProvider, useForm } from "react-hook-form";
 
 import { Box } from "@mui/material";
 
-
 import dynamic from "next/dynamic";
+import { useFormContext } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { businessEditApi } from "@/redux/services/listingService";
+import { AppDispatch } from "@/redux/store";
+
 
 const InputField = dynamic(
   () => import("@/components/common/form-fields/InputField")
@@ -18,76 +21,103 @@ const DatePickerField = dynamic(
 const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
 );
+const MultipleSelectField = dynamic(
+  () => import("@/components/common/form-fields/MultipleSelectField")
+);
+
+type Props = {
+  business_description: string;
+  business_name: string;
+  business_specialist: string;
+  business_type: string;
+  established_year: string | number;
+};
 
 const BusinessAbout = () => {
-  const methods = useForm();
+  const dispatch = useDispatch<AppDispatch>();
+  const { handleSubmit } = useFormContext();
+  
 
-  const { handleSubmit } = methods;
+  const handleAbout = async (values: Props) => {
+    const aboutData = {
+      business_description: values.business_description || "",
+      business_name: values.business_name || "",
+      business_specialist: values.business_specialist || "",
+      business_type: values.business_type || "",
+      established_year: values.established_year || "",
+      type: "about",
+    };
 
-  const handleAbout = async () => {};
+    try {
+      await dispatch(businessEditApi(aboutData)).unwrap();
+    } catch (error) {}
+    // console.log(values, "about");
+  };
+
   return (
     <section>
-      <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(handleAbout)}>
-          <div className="mb-2">
-            <InputField
-              name="business_name"
-              label="Business Name"
-              placeholder="Business Name"
-              type="text"
-            />
-          </div>
-          <div className="mb-2">
-            <SelectField
-              label={"Business Type"}
-              name={"business_type"}
-              options={[
-                { id: 10, name: "Repair Services" },
-                { id: 20, name: "Repair" },
-                { id: 30, name: "Services" },
-              ]}
-            />
-          </div>
-          <div className="mb-2">
-            <DatePickerField
-              name="established_year"
-              label="Date"
-              fieldProps={{
-                placeholder: "Date",
-              }}
-            />
-          </div>
-          <div className="mb-2">
-            <SelectField
-              label={"Instrument Types"}
-              name={"business_specalist"}
-              options={[
-                { id: 10, name: "Repair Services" },
-                { id: 20, name: "Repair" },
-                { id: 30, name: "Services" },
-              ]}
-            />
-          </div>
-          <div className="mb-2">
-            <InputField
-              name="business_description"
-              label="Business Description"
-              placeholder="Business Description"
-              type="text"
-              rows={5}
-              multiline={true}
-              InputProps={{ variant: "customtextarea" }}
-            />
-          </div>
-          <Box className="flex justify-start w-full mt-6">
-            <CustomButton type="submit" className="px-16 py-3.5" label="Save">
-              Save
-            </CustomButton>
-          </Box>
-        </form>
-      </FormProvider>
+      <Box component={"form"} onSubmit={handleSubmit(handleAbout)}>
+        <div className="mb-2">
+          <InputField
+            name="business_name"
+            label="Business Name"
+            placeholder="Business Name"
+            type="text"
+          />
+        </div>
+        <div className="mb-2">
+          <SelectField
+            label={"Business Type"}
+            name={"business_type"}
+            options={[
+              { id: 10, name: "Repair Services" },
+              { id: 20, name: "Repair" },
+              { id: 30, name: "Services" },
+            ]}
+          />
+        </div>
+        <div className="mb-2">
+          <DatePickerField
+            name="established_year"
+            label="Date"
+            fieldProps={{
+              placeholder: "Date",
+            }}
+          />
+        </div>
+        <div className="mb-2">
+          <MultipleSelectField
+            label={"Instrument Types"}
+            name={"business_specialist"}
+            placeholder={"Select Instrument Types"}
+            options={[
+              { id: 10, name: "Repair Services" },
+              { id: 20, name: "Repair" },
+              { id: 30, name: "Services" },
+            ]}
+          />
+        </div>
+        <div className="mb-2">
+          <InputField
+            name="business_description"
+            label="Business Description"
+            placeholder="Business Description"
+            type="text"
+            rows={5}
+            multiline={true}
+            InputProps={{ variant: "customtextarea" }}
+          />
+        </div>
+        <Box className="flex justify-start w-full mt-6">
+          <CustomButton type="submit" className="px-16 py-3.5" label="Save">
+            Save
+          </CustomButton>
+        </Box>
+      </Box>
     </section>
   );
 };
 
 export default BusinessAbout;
+
+

@@ -1,9 +1,9 @@
 import React from "react";
-import { FormProvider, useForm } from "react-hook-form";
 
 import { Box } from "@mui/material";
 
 import dynamic from "next/dynamic";
+import { useFormContext } from "react-hook-form";
 
 const ImageUpload = dynamic(
   () => import("@/components/common/form-fields/ImageUpload")
@@ -14,48 +14,47 @@ const CustomButton = dynamic(
 );
 
 const BusinessMedia = () => {
-  const methods = useForm();
+   const { handleSubmit, control } = useFormContext();
 
-  const { handleSubmit } = methods;
+   const handleMedia = async (values) => {
+     console.log(values, "customer_services");
+   };
 
-  const handleAbout = async () => {};
   return (
     <section>
-      <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(handleAbout)}>
+      <Box component={"form"} onSubmit={handleSubmit(handleMedia)}>
+        <div className="mb-3">
           <div className="mb-3">
-            <div className="mb-3">
-              <span className="text-f22 font-semibold text-ik_bluegreydarken3">
-                Cover Update
-              </span>
-            </div>
-            <ImageUpload
-              typeupload={true}
-              type={false}
-              control={undefined}
-              multiple={false}
-            />
+            <span className="text-f22 font-semibold text-ik_bluegreydarken3">
+              Cover Update
+            </span>
           </div>
+          <ImageUpload
+            typeupload={true}
+            type={false}
+            control={control}
+            multiple={false}
+          />
+        </div>
+        <div className="mb-3">
           <div className="mb-3">
-            <div className="mb-3">
-              <span className="text-f22 font-semibold text-ik_bluegreydarken3">
-                Post Update
-              </span>
-            </div>
-            <ImageUpload
-              typeupload={true}
-              type={false}
-              control={undefined}
-              multiple={true}
-            />
+            <span className="text-f22 font-semibold text-ik_bluegreydarken3">
+              Post Update
+            </span>
           </div>
-          <Box className="flex justify-start w-full mt-6">
-            <CustomButton type="submit" className="px-16 py-3.5" label="Save">
-              Save
-            </CustomButton>
-          </Box>
-        </form>
-      </FormProvider>
+          <ImageUpload
+            typeupload={true}
+            type={false}
+            control={control}
+            multiple={true}
+          />
+        </div>
+        <Box className="flex justify-start w-full mt-6">
+          <CustomButton type="submit" className="px-16 py-3.5" label="Save">
+            Save
+          </CustomButton>
+        </Box>
+      </Box>
     </section>
   );
 };

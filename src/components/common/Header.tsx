@@ -210,10 +210,10 @@ const Header = () => {
           >
             <div className="relative">
               <button
-                className="flex items-center py-[22px] gap-2 hover:text-ik_whitevariant-foreground hover:underline underline-offset-8 decoration-2"
+                className="flex items-center py-[22px] gap-2 hover:text-ik_whitevariant-foreground hover:underline underline-offset-8 decoration-2 h-[110px]"
                 onMouseEnter={() => handleMouseEnter("Services")}
               >
-                <span className="text-f16 text-ik_bluegreydarken3 font-semibold transition-colors duration-200 ease-in-out ">
+                <span className="text-f16 text-ik_bluegreydarken3 font-semibold transition-colors duration-200 ease-in-out hover:text-ik_pink">
                   Services
                 </span>
                 <ArrowdownIcon

@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { listingView } from "../services/listingService";
+import { businessEditApi, listingView } from "../services/listingService";
 
 
 import { buisnessListingApi } from "../services/listingService";
 
-const buisnessListingCases = [{ api: buisnessListingApi, name: "buisnessListingApi", isLoading: true },
-   { api: listingView, name: "listingView", isLoading: true },
- 
+const buisnessListingCases = [
+  { api: buisnessListingApi, name: "buisnessListingApi", isLoading: true },
+  { api: listingView, name: "listingView", isLoading: true },
+  { api: businessEditApi, name: "businessEditApi", isLoading: true },
 ];
 
 type AsyncAction = {
