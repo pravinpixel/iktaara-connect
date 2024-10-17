@@ -1,7 +1,8 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import dynamic from "next/dynamic";
-
+import { artistView } from "@/redux/services/artistService";
+import { wrapper } from "@/redux/store";
 const AritistHeaderComponents = dynamic(
   () => import("@/components/section/artist/artist_profile/AritistHeader")
 );
@@ -26,8 +27,11 @@ const ListingBusinessComponents = dynamic(
 const ListingReviewsComponents = dynamic(
   () => import("@/components/section/business/listing-views/ListingReviews")
 );
-
-const ArtistDetail = () => {
+interface ArtistDetailProps {
+  artistDetailView: Artist;
+}
+const ArtistDetail = ({ artistDetailView }: ArtistDetailProps) => {
+  console.log(artistDetailView, " artistDetailView");
   const artistHeader = {
     logo: "/assets/image/artist-logo.png",
     title: "Ramakrishna Paramahamsa",
@@ -57,3 +61,24 @@ const ArtistDetail = () => {
 };
 
 export default ArtistDetail;
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) => async () => {
+    const [artistDetailView] = await Promise.all([
+      await store
+        .dispatch(artistView())
+        .unwrap()
+        .then((res) => res?.data)
+        .catch(() => {
+          return {
+            data: [],
+          };
+        }),
+    ]);
+    return {
+      props: {
+        artistDetailView,
+      },
+    };
+  }
+);
