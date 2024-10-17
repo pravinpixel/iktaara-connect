@@ -1,19 +1,20 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef, useState } from "react";
 import Image from "next/image";
-import { Controller } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 import { Box } from "@mui/material";
 import ImageComponent from "./ImageComponent";
 
 interface ImageUploadProps {
-  control: any;
+  control: Control;
   type: boolean;
+  name: string;
   typeupload: boolean;
   multiple: boolean;
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({
   control,
+  name,
   type,
   typeupload,
   multiple = false,
@@ -98,7 +99,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
             onChange={handleFileUpload}
           />
           <Controller
-            name="logo"
+            name={name}
             control={control}
             render={({ field }) => (
               <input type="hidden" {...field} value={imageSrc || ""} />
