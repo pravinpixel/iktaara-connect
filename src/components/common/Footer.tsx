@@ -1856,20 +1856,20 @@ const Footer = () => {
             <Grid container className="py-5">
               <Grid item xs={6} sm={6} md={2}>
                 <div>
-                  <p className="text-ik_pink-foreground font-medium text-[13px] text-white mb-2">
+                  <p className="text-ik_pink-foreground font-semibold text-f16px leading-[20.16px] mb-4">
                     Services
                   </p>
                   <ul className="list-group">
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/">Artists</Link>
                     </li>
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px]  font-normal py-2">
                       <Link href="/">Studio/Venues</Link>
                     </li>
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/">Shows</Link>
                     </li>
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/">Music Instrument Repair</Link>
                     </li>
                   </ul>
@@ -1877,23 +1877,23 @@ const Footer = () => {
               </Grid>
               <Grid item xs={6} sm={6} md={2}>
                 <div>
-                  <p className="text-ik_pink-foreground font-medium text-[13px] text-white mb-2">
+                  <p className="text-ik_pink-foreground font-semibold text-f16px leading-[20.16px] mb-4">
                     Support
                   </p>
                   <ul className="list-group">
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/">Return / Cancellation</Link>
                     </li>
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/">Privacy Policy</Link>
                     </li>
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/">Terms &amp; Conditions</Link>
                     </li>
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/buy/faq">FAQ</Link>
                     </li>
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/" target="_blank">
                         Blog
                       </Link>
@@ -1903,28 +1903,28 @@ const Footer = () => {
               </Grid>
               <Grid item xs={6} sm={6} md={2}>
                 <div>
-                  <p className="text-f12 text-ik_pink-foreground font-medium  text-white mb-2">
+                  <p className="text-ik_pink-foreground font-semibold text-f16px leading-[20.16px] mb-4">
                     About Us
                   </p>
                   <ul className="list-group">
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/buy/who-is-iktaraa">Who is Iktaraa</Link>
                     </li>
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/buy/about-us">About Iktaraa</Link>
                     </li>
-                    <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                    <li className="text-f12 text-ik_pink-foreground leading-[19.95px] font-normal py-2">
                       <Link href="/buy/contact-us">Contact Us</Link>
                     </li>
                   </ul>
                 </div>
               </Grid>
-              <Grid item xs={12} sm={6} md={5}>
-                <p className="text-ik_pink-foreground font-medium text-[13px] text-white mb-2">
+              <Grid item xs={12} sm={6} md={4}>
+                <p className="text-ik_pink-foreground font-semibold text-f16px leading-[20.16px] mb-4">
                   Sign Up for our Newsletter
                 </p>
                 <ul className="list-group">
-                  <li className="text-f12 text-ik_pink-foreground font-normal py-2">
+                  <li className="text-f12 text-ik_pink-foreground font-normal leading-[19.95px] py-2">
                     Stay tuned to the latest musical trends
                   </li>
                 </ul>

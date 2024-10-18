@@ -30,7 +30,7 @@ const EventsSellers = (props: Props) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    centerPadding: "59px",
+    centerPadding: "35px",
     className: "center",
     centerMode: true,
     dots: true,
@@ -40,7 +40,7 @@ const EventsSellers = (props: Props) => {
       {
         breakpoint: 1200,
         settings: {
-          centerPadding: "100px",
+          centerPadding: "95px",
         },
       },
       {
@@ -67,14 +67,14 @@ const EventsSellers = (props: Props) => {
 
   return (
     <section
-      className="best-sellers-section bg-cover bg-no-repeat pt-5 pb-14"
+      className="best-sellers-section bg-cover bg-no-repeat pt-[24.83px] pb-[66.64px]"
       style={{
         backgroundImage: `url(${bgChange ? bg1.src : bg.src})`,
       }}
     >
       <div>
         <CustomContainer>
-          <div className="text-f28 font-semibold mb-3 text-ik_bluegreydarken4">
+          <div className="text-f28 font-semibold mb-[23.91px] text-ik_bluegreydarken4 leading-[35.28px]">
             <span>Popular Events in the City</span>
           </div>
         </CustomContainer>

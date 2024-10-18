@@ -82,7 +82,7 @@ const MusicTechnicians = (props: Props) => {
   return (
     <section className={className}>
       <CustomContainer>
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-3 mb-[29px]">
           <div className="text-f28 font-semibold text-ik_bluegreydarken4">
             <span>{title}</span>
           </div>

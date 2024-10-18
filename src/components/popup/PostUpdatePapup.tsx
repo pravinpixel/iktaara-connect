@@ -16,7 +16,7 @@ import { FormProvider, useForm } from "react-hook-form";
 
 import dynamic from "next/dynamic";
 
-const ImageUpload = dynamic(() => import("../common/form-fields/ImageUpload"));
+const UploadFile = dynamic(() => import("../common/form-fields/UploadFile"));
 const InputField = dynamic(() => import("../common/form-fields/InputField"));
 const CustomButton = dynamic(
   () => import("../common/form-fields/CustomButton")
@@ -75,11 +75,10 @@ export default function PostUpdatePapup({ handleClose, open }: UpdateProps) {
           <FormProvider {...methods}>
             <form onSubmit={handleSubmit(handleAbout)}>
               <div className="mb-3">
-                <ImageUpload
+                <UploadFile
                   typeupload={true}
                   type={false}
-                  control={undefined}
-                  multiple={false}
+                  multiple={true}
                 />
               </div>
               <div className="mb-3">

@@ -3,7 +3,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 const ImageComponent = dynamic(
-  () => import("@/components/common/form-fields/TitleComponent")
+  () => import("@/views/components/ImageComponent")
 );
 const ListingCustomerComponents = () => {
   const customer_data = [
@@ -28,10 +28,10 @@ const ListingCustomerComponents = () => {
   ];
   return (
     <>
-      <div className="text-f20 font-semibold text-ik_bluegreydarken3">
+      <div className="text-f20 font-semibold text-ik_bluegreydarken3 leading-[25.2px]">
         <h6>Customer Service</h6>
       </div>
-      <div className="pt-3 pb-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
+      <div className="pt-3 pb-[31.76px] relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
         {customer_data?.map((row) => (
           <>
             <div className="flex gap-3 items-center mb-2" key={row.id}>
@@ -55,12 +55,14 @@ const ListingCustomerComponents = () => {
           </>
         ))}
       </div>
-      <div className="pt-3 pb-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
-        <div className="text-f20 font-semibold text-ik_bluegreydarken3 pt-5">
+      <div className="pt-[24.45px] pb-[29.87px] relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
+        <div className="text-f20 font-semibold text-ik_bluegreydarken3 leading-[25.2px]">
           <h6>Location</h6>
         </div>
         <div className=" mt-3">
-          <span className="text-f18 font-normal text-ik_bluegreydarken1">
+          <span
+            className="text-f18 font-normal text-ik_bluegreydarken1 leading-[28px]"
+          >
             No 8, MCN Nagar Extension Road, MCN Nagar, Thoraipakkam,
             Thoraipakkam Chennai - 600097
           </span>

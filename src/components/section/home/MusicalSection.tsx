@@ -77,18 +77,18 @@ const MusicalSection = (props: Props) => {
     ],
   };
   return (
-    <section className="pt-7 pb-9 relative">
+    <section className="pt-[40px] pb-[29.57px] relative">
       <CustomContainer>
-        <div className="absolute top-10 left-0">
+        <div className="absolute top-16 z-[-1] left-0  2xl:left-1">
           <ImageComponent
             src={"/assets/image/star1.webp"}
-            width={60}
-            height={60}
+            width={90}
+            height={90}
             alt={"arrowdown"}
             priority={true}
           />
         </div>
-        <div className="text-f28 font-semibold mb-3 text-ik_bluegreydarken4">
+        <div className="text-f28 font-semibold mb-[26.91px] text-ik_bluegreydarken4 leading-[35.28px]">
           <span>Destination for everyone with musical interest</span>
         </div>
         <div className="music-select">
@@ -98,11 +98,11 @@ const MusicalSection = (props: Props) => {
             ))}
           </Slider>
         </div>
-        <div className="absolute bottom-5 right-2">
+        <div className="absolute bottom-5  z-[-1] right-2  2xl:right-1">
           <ImageComponent
             src={"/assets/image/star2.webp"}
-            width={60}
-            height={60}
+            width={90}
+            height={90}
             alt={"arrowdown"}
             priority={true}
           />

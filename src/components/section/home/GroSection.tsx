@@ -8,7 +8,7 @@ const ImageComponent = dynamic(
 const GroSection = () => {
   return (
     <>
-      <section className="py-5">
+      <section >
         <div className="w-full hidden sm:flex cursor-pointer">
           <ImageComponent
             src={"/assets/image/gro-img.webp"}

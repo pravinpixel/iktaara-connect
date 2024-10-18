@@ -135,6 +135,9 @@ const config: Config = {
         ik_lightbluevariant: {
           DEFAULT: "var(--ik_lightbluevariant)",
         },
+        ik_lightbluevariant1: {
+          DEFAULT: "var(--ik_lightbluevariant1)",
+        },
         ik_bluegreylightens3: {
           DEFAULT: "var(--ik_bluegreylightens3)",
         },
