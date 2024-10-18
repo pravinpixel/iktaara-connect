@@ -34,18 +34,23 @@ const RatingSection = () => {
 
   return (
     <FormProvider {...methods}>
-      <Box mt={1}>
+      <Box mt={"22.22px"}>
         <>
           {" "}
           <p className="font-semibold text-f18 leading-6 text-ik_bluegreydarken3">
             Ratings
           </p>
-          <Box mt={1}>
+          <Box mt={"12.5px"}>
             {" "}
             {image?.map((row) => (
-              <Stack key={row.id} direction="row" alignItems={"center"}>
+              <Stack
+                key={row.id}
+                direction="row"
+                alignItems={"center"}
+                sx={{ height: "36px" }}
+              >
                 <CustomCheckbox name={`rating_${row.id}`} label="" />
-                <Box sx={{ paddingTop: "5px" }}>
+                <Box>
                   <ImageComponent
                     src={row.imgSrc}
                     width={135}

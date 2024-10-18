@@ -43,8 +43,8 @@ const CustomCheckbox: React.FC<CheckboxProps> = ({ label, name }) => {
 
         // />}
         sx={{
-          marginTop: 0.8,
-          paddingLeft: "0px!important",
+          // marginTop: 0.8,
+          padding: "0px!important",
         }}
         checked={field?.value === 1}
         onChange={(e) => {

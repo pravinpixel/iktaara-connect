@@ -11,7 +11,7 @@ const InstrumentType = dynamic(() => import("./InstrumentTypes"));
 const RatingSection = dynamic(() => import("./RatingSection"));
 const FilterSection = () => {
   return (
-    <section className="bg-ik_white rounded-xl p-[20px] mt-[15px]">
+    <section className="bg-ik_white rounded-xl px-[26.28px] py-[30.43px] mt-[16.2px]">
       <Stack direction="row" spacing={2} alignItems={"center"}>
         <ImageComponent
           src="/assets/static/image_14.png"

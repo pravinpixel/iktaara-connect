@@ -38,18 +38,18 @@ const InstrumentType = () => {
   return (
     <>
       <FormProvider {...methods}>
-        <Box mt={1}>
+        <Box mt={"6.22px"}>
           <>
             {" "}
             <p className="font-semibold text-f18 leading-6 text-ik_bluegreydarken3">
               Instrument Types
             </p>
-            <Box mt={1}>
+            <Box mt={"12.5px"}>
               {" "}
               {location?.map((row) => (
                 <Stack key={row.id} direction="row" alignItems={"center"}>
                   <CustomCheckbox name={`rating_${row.id}`} label="" />
-                  <Box sx={{ paddingTop: "5px" }}>
+                  <Box>
                     <p className="font-normal text-f18 leading-9 text-ik_bluegreydarken1">
                       {row.name}
                     </p>

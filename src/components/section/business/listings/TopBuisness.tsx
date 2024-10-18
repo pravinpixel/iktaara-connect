@@ -13,30 +13,25 @@ const BusinessSection = () => {
   const theme = useTheme();
 
   return (
-    <section className="mt-[15px]">
+    <section className="mt-[16.2px]">
       {" "}
       <Card className="w-full h-full bg-white">
-        <Grid
-          container
+        <Box
           sx={{ borderTop: `6px solid ${theme.palette.customColor.ik_pink}` }}
         >
-          <Grid item md={4.5} xs={11}>
+          <Box>
             <Box
               sx={{
                 background: theme.palette.customColor.ik_pink,
-                ml: 3,
+                ml: "20.93px",
                 textAlign: "center",
                 borderRadius: "0px 0px 9px 9px",
-                padding: "5px",
+                padding: "6px 16px 6px 16px",
                 color: theme.palette.customColor.ik_white,
+                width: "fit-content",
               }}
             >
-              <Stack
-                direction="row"
-                alignItems={"center"}
-                justifyContent={"center"}
-                gap={"5px"}
-              >
+              <Stack className="flex-row items-center gap-1 ">
                 <ImageComponent
                   src="/assets/static/image_4.png"
                   alt="Business Image"
@@ -45,14 +40,14 @@ const BusinessSection = () => {
                   priority={true}
                   // style={{ width: "22px", height: "11px" }}s
                 />
-                <p className="text-f16 font-semibold leading-8">
+                <p className="text-f16 font-semibold leading-8 ">
                   {" "}
                   Top Businesses by Enquiries
                 </p>
               </Stack>
             </Box>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
         <AddressSection />
       </Card>
     </section>

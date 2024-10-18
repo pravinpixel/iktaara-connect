@@ -34,7 +34,7 @@ const Business = ({ buisnessListData }: any) => {
         <CustomContainer>
           {" "}
           <Breadcrumb />
-          <Box sx={{ mt: 1, mb: 2 }}>
+          <Box>
             <Title
               className="text-ik_blue font-bold text-f38 leading-8"
               secondaryClass="text-ik_bluegreydarken2 font-normal text-f18 leading-6"

@@ -10,7 +10,7 @@ import { Box } from "@mui/material";
 
 export default function Breadcrumb() {
   return (
-    <Box>
+    <Box className="pt-[8.86px] pb-[16.17px]">
       <Breadcrumbs aria-label="breadcrumb">
         <Link
           // underline="hover"

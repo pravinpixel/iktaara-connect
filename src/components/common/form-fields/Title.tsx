@@ -11,7 +11,9 @@ export default function Title(props: TitleProps) {
   return (
     <div>
       <p className={className}>Violin Repairist in Chennai</p>
-      <p className={secondaryClass}>120 Reparist available in Chennai</p>
+      <p className={secondaryClass}>
+        120 Technician/repairist available to assist
+      </p>
     </div>
   );
 }

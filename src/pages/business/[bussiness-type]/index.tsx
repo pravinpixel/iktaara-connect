@@ -32,9 +32,9 @@ const Business = ({ buisnessListData }: { buisnessListData: any }) => {
         <CustomContainer>
           {" "}
           <Breadcrumb />
-          <Box sx={{ mt: 1, mb: 2 }}>
+          <Box sx={{ mb: "15.77px" }}>
             <Title
-              className="text-ik_blue font-bold text-f38 leading-8"
+              className="text-ik_blue font-bold text-f38 leading-8 pb-[14.2px]"
               secondaryClass="text-ik_bluegreydarken2 font-normal text-f18 leading-6"
             />
           </Box>
@@ -42,11 +42,17 @@ const Business = ({ buisnessListData }: { buisnessListData: any }) => {
       </section>
       <section className="bg-ik_lightblue">
         <CustomContainer>
-          <Grid container spacing={2}>
-            <Grid item md={3} xs={12} className="hidden md:block">
+          <Grid container>
+            <Grid
+              item
+              md={3.5}
+              xs={12}
+              className="hidden md:block mr-[17.32px]"
+            >
               <FilterSection />
             </Grid>
-            <Grid item md={9} xs={12}>
+
+            <Grid item md={8.3} xs={12}>
               <BusinessSection />
               <StudioCard buisnessListData={buisnessListData} />
               <Pagination from={0} to={0} total_count={0}></Pagination>
