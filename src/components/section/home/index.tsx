@@ -531,7 +531,7 @@ const HomePageComponent = () => {
       music_reviews: "4.5 (22 Reviews)",
       music_title: "Prasad Studios Corp",
       music_location: "Virugambakkam",
-      music_text: "Influencer Interviews / Interviews",
+      music_dec: "Influencer Interviews / Interviews",
     },
     {
       id: 2,
@@ -541,7 +541,7 @@ const HomePageComponent = () => {
       music_reviews: "4.5 (22 Reviews)",
       music_title: "Epic Recording",
       music_location: "Saligramam",
-      music_text: "Music Recording / Interviews / Product Photos",
+      music_dec: "Music Recording / Interviews / Product Photos",
     },
     {
       id: 3,
@@ -551,7 +551,7 @@ const HomePageComponent = () => {
       music_reviews: "4.5 (22 Reviews)",
       music_title: "Sabari Music Station",
       music_location: "Kodambakkam",
-      music_text: "Influencer Interviews / Music Recording / Interviews",
+      music_dec: "Influencer Interviews / Music Recording / Interviews",
     },
     {
       id: 4,
@@ -561,7 +561,7 @@ const HomePageComponent = () => {
       music_reviews: "4.5 (22 Reviews)",
       music_title: "Bharath Studios",
       music_location: "Nungambakkam",
-      music_text: "Sound Engineering / Sound Mixing / Recording",
+      music_dec: "Sound Engineering / Sound Mixing / Recording",
     },
     {
       id: 5,
@@ -571,7 +571,7 @@ const HomePageComponent = () => {
       music_reviews: "4.5 (22 Reviews)",
       music_title: "MUSIC & ARTS",
       music_location: "Adyar",
-      music_text: "Specialist in Piano, Violin",
+      music_dec: "Specialist in Piano, Violin",
     },
   ];
 
@@ -605,19 +605,19 @@ const HomePageComponent = () => {
       <CategorySection categoryData={Category} />
       <MusicTechnicians
         musictechniciansection={musictechnician_data}
-        className={"flex pt-5 pb-5 bg-ik_white"}
+        className={"flex pt-[26px] pb-[43px] bg-ik_lightbluevariant1"}
         title={"Music Instrument Technicians"}
       />
       <MusicTechnicians
         musictechniciansection={jam_studios_data}
-        className={"flex pt-7 pb-7"}
+        className={"flex pt-[34px] pb-[37px]"}
         title={"Recording / JAM Studios Nearby"}
       />
       <GroSection />
       <RecordingSection />
       <FrequentlyAskedSection
         faqsection={faq}
-        className={"flex pt-5 pb-5 bg-ik_redvariant1"}
+        className={"flex pt-[40.61px] pb-[40.11px] bg-ik_whitevariant"}
       />
     </section>
   );

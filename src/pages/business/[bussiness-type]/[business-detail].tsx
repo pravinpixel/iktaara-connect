@@ -48,7 +48,7 @@ const ListingsView = ({ listingsView }: any) => {
           <Grid item xs={12} md={8}>
             <ListingAboutComponents />
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} pl={'6px'}>
             <ListingCustomerComponents />
           </Grid>
         </Grid>

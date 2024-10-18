@@ -53,10 +53,10 @@ export default function CategorySection(props: Props) {
   };
 
   return (
-    <section className="section-padding pt-5 pb-14">
+    <section className="section-padding pt-[39.43px] pb-14">
       <CustomContainer>
-        <div className="flex items-center gap-3 mb-4">
-          <div className="text-f28 font-semibold text-ik_bluegreydarken4">
+        <div className="flex items-center gap-3 mb-[23px]">
+          <div className="text-f28 font-semibold text-ik_bluegreydarken4 leading-[35.28px]">
             <span>Find Talent by Category</span>
           </div>
           <ViewAllComponent slug="artists" />

@@ -54,17 +54,17 @@ export default function CustomCard(props: CustomCardProps) {
         width: width,
         borderRadius: "16px",
         ...(typebottomleft &&
-        {
-          /* Custom style for bottom-left */
-        }),
+          {
+            /* Custom style for bottom-left */
+          }),
         ...(typetop &&
-        {
-          /* Custom style for top-right */
-        }),
+          {
+            /* Custom style for top-right */
+          }),
         ...(typebottom &&
-        {
-          /* Custom style for bottom-right */
-        }),
+          {
+            /* Custom style for bottom-right */
+          }),
       }}
     >
       <CardMediaComponent image={basePath + img} alt="Paella dish" />
@@ -114,28 +114,31 @@ export default function CustomCard(props: CustomCardProps) {
               />
               {/* </div> */}
             </Box>
-            <Box
-              sx={{
-                display: "flex",
-                gap: "9px",
-                justifyContent: "end",
-                alignItems: "center",
-                width: "100%",
-                position: "absolute",
-                right: "13px",
-                bottom: "12px",
-              }}
-            >
-              <ImageComponent
-                src={"/assets/icons/star.svg"}
-                alt="Overlay Image"
-                width={19}
-                height={19}
-              />
-              <span className="text-f18 font-normal text-ik_blue-foreground leading-5">
-                {reviews}
-              </span>
-            </Box>
+            {reviews &&
+            (
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: "9px",
+                  justifyContent: "end",
+                  alignItems: "center",
+                  width: "100%",
+                  position: "absolute",
+                  right: "13px",
+                  bottom: "12px",
+                }}
+              >
+                <ImageComponent
+                  src={"/assets/icons/star.svg"}
+                  alt="Overlay Image"
+                  width={19}
+                  height={19}
+                />
+                <span className="text-f18 font-normal text-ik_blue-foreground leading-5">
+                  {reviews}
+                </span>
+              </Box>
+            )}
           </div>
         </>
       )}
@@ -213,6 +216,5 @@ export default function CustomCard(props: CustomCardProps) {
       )}
       {/* </Box> */}
     </Card>
-
   );
 }

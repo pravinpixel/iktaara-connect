@@ -27,9 +27,9 @@ const ListingHeaderComponents = (props: Props) => {
   const [openbusinessedit, setOpenbusinessedit] = React.useState(false);
   const [openUpdate, setOpenUpdate] = React.useState(false);
 
-  // const handleClickOpencity = () => {
-  //   setOpencity(true);
-  // };
+  const handleClickOpencity = () => {
+    setOpencity(true);
+  };
 
   const handleClosecity = () => {
     setOpencity(false);
@@ -53,22 +53,24 @@ const ListingHeaderComponents = (props: Props) => {
   return (
     <>
       <section>
-        <div className={`w-ful flex items-center justify-between pt-7 pb-5`}>
-          <div className="flex items-center justify-between gap-5 w-100">
-            <div className="h-[70px] w-[100px] flex items-center  ">
+        <div
+          className={`w-ful flex items-center justify-between pt-[31px] pb-[22.41px]`}
+        >
+          <div className="flex items-center justify-between gap-4 w-100">
+            <div className="h-[120px] w-[120px] flex items-center  ">
               <ImageComponent
                 src={ListHeader.logo}
                 width={120}
                 height={120}
                 alt={"music-logo"}
-                className={"rounded-xl"}
+                className={"rounded-xl w-full h-full"}
               />
             </div>
             <div className="">
-              <h6 className="text-f30 font-bold text-ik_bluegreydarken3">
+              <h6 className="text-f30 font-bold text-ik_bluegreydarken3 leading-[37.8px] mb-1">
                 {ListHeader.title}
               </h6>
-              <div className="flex gap-3">
+              <div className="flex gap-3 mb-3">
                 <div className="flex gap-2">
                   <ImageComponent
                     src={"/assets/icons/maps-location.svg"}
@@ -76,8 +78,7 @@ const ListingHeaderComponents = (props: Props) => {
                     height={20}
                     alt={"location"}
                   />
-                  <span className="text-16 font-normal text-ik_bluegreydarken3">
-                    Chennai
+                  <span className="text-16 font-normal text-ik_bluegreydarken3 leading-[20.16px]">
                     {ListHeader.location}
                   </span>
                 </div>
@@ -88,7 +89,7 @@ const ListingHeaderComponents = (props: Props) => {
                     height={20}
                     alt={"location"}
                   />
-                  <span className="text-16 font-normal text-ik_bluegreydarken3">
+                  <span className="text-16 font-normal text-ik_bluegreydarken3 leading-[20.16px]">
                     {ListHeader.job}
                   </span>
                 </div>
@@ -172,7 +173,7 @@ const ListingHeaderComponents = (props: Props) => {
           <div>
             <div className="flex gap-3 mt-2">
               {/* <div>
-                <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-5">
+                <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-5 w-[190px] h-[74px]">
                   <div className="flex gap-3">
                     <ImageComponent
                       src={"/assets/icons/star-icons.svg"}
@@ -188,10 +189,10 @@ const ListingHeaderComponents = (props: Props) => {
                     </div>
                   </div>
                 </button>
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <button
-                  className=" h-100 px-16 py-6 bg-ik_pink text-white text-f20  font-semibold rounded-lg"
+                  className=" h-100 px-16 py-6 bg-ik_pink text-white text-f20  font-semibold rounded-lg w-[236px] h-[74px]"
                   onClick={handleClickOpencity}
                 >
                   <span>Enquire</span>
@@ -199,7 +200,7 @@ const ListingHeaderComponents = (props: Props) => {
               </div> */}
 
               <button
-                className="border border-ik_bluegreylightens3 rounded-lg py-[23px] px-7"
+                className="border border-ik_bluegreylightens3 rounded-lg py-[23px] px-7 w-[236px] h-[74px]"
                 onClick={handleClickUpdate}
               >
                 <span className="text-f20 font-semibold text-ik_pink">
@@ -210,7 +211,7 @@ const ListingHeaderComponents = (props: Props) => {
                 <CustomButton
                   variant="contained"
                   label="Edit Profile"
-                  className="py-[23px] px-7 text-f20 font-semibold"
+                  className="py-[23px] px-7 text-f20 font-semibold w-[236px] h-[74px]"
                   onClick={handleClickOpenbusiness}
                 />
               </div>

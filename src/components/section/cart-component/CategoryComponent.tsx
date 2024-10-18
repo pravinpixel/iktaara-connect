@@ -12,7 +12,7 @@ const CategoryComponent = (props: Props) => {
   const { Categorysection } = props;
 
   const settings = {
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: Categorysection?.length > 4 ? true : false,
     swipe: Categorysection?.length > 8 ? true : false,
     dots: Categorysection?.length > 8 ? true : false,
@@ -22,6 +22,7 @@ const CategoryComponent = (props: Props) => {
     arrows: Categorysection?.length > 8 ? true : false,
     rows: 2,
     speed: 500,
+    lazyLoad: "ondemand" as "ondemand" | "progressive" | undefined,
     customPaging: () => <div className="reactslick-custom-dots" />,
     responsive: [
       {
@@ -64,7 +65,7 @@ const CategoryComponent = (props: Props) => {
   };
 
   return (
-    <div className="category-section-sec py-4">
+    <div className="category-section-sec py-[20.25px]">
       <Slider {...settings}>
         {Categorysection?.map((item: any) => (
           <Link key={item?.id} href={"/artists/" + item?.category_name || ""}>
@@ -84,8 +85,8 @@ const CategoryComponent = (props: Props) => {
                   </span>
                 </div>
               </div>
-              <div className="py-2">
-                <div className="flex items-center gap-2">
+              <div className="pt-4 pb-[28px]">
+                <div className="flex items-center gap-2 mb-[5px]">
                   <ImageComponent
                     src={"/assets/icons/star.svg"}
                     width={20}
@@ -93,8 +94,12 @@ const CategoryComponent = (props: Props) => {
                     alt={"star"}
                     priority={true}
                   />
-                  <span className="text-ik_bluegreydarken3 text-f18 font-normal">
-                    {item?.category_reviews}
+                  <span className="text-ik_bluegreydarken3 text-f18 font-semibold">
+                    {/* {item?.category_reviews} */}
+                    {item?.category_reviews?.split(" ")[0]}
+                  </span>
+                  <span className="text-ik_bluegreydarken3 text-f18 font-normal ">
+                    {item?.category_reviews?.split(" ").slice(1).join(" ")}
                   </span>
                 </div>
                 <span className="text-ik_bluegreydarken1 text-f16 font-normal">

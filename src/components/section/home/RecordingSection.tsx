@@ -8,13 +8,13 @@ const CustomContainer = dynamic(
 
 const RecordingSection = () => {
   return (
-    <section className="pt-7 pb-7">
+    <section className="py-10">
       <CustomContainer>
-        <div className="text-f28 font-semibold  text-ik_bluegreydarken4 mb-3 ">
+        <div className="text-f28 font-semibold  text-ik_bluegreydarken4 leading-[35.28px] mb-4 ">
           <span>Recording / JAM Studios Nearby</span>
         </div>
         <div>
-          <p className="mb-4 text-f18 font-normal text-ik_bluegreydarken3">
+          <p className="mb-6 text-f18 font-normal text-ik_bluegreydarken3 leading-[28px]">
             {`Iktaraa Connect is an innovative platform designed to seamlessly
             connect musical talents with business opportunities. Our mission is
             to create a vibrant ecosystem where musicians, composers, and
@@ -25,7 +25,7 @@ const RecordingSection = () => {
             your career.`}
           </p>
           <div>
-            <h6 className="text-f22 font-semibold  text-ik_bluegreydarken4 leading-7 mb-3">
+            <h6 className="text-f22 font-semibold  text-ik_bluegreydarken4 leading-[27.72px] mb-3">
               Talent Showcase:
             </h6>
             <div className="paragraph-Ctr mb-5">
@@ -39,7 +39,7 @@ const RecordingSection = () => {
                   collaborators.
                 </li>
               </ul>
-              <h6 className="text-f22 font-semibold  text-ik_bluegreydarken4 leading-7 mb-3">
+              <h6 className="text-f22 font-semibold  text-ik_bluegreydarken4 leading-[27.72px] mb-[23.91px]">
                 Business Opportunities:
               </h6>
               <div className="paragraph-Ctr mb-5">
@@ -65,7 +65,7 @@ const RecordingSection = () => {
             </div>
           </div>
           <div>
-            <span className=" text-f18 font-normal text-ik_bluegreydarken3">
+            <span className=" text-f18 font-normal text-ik_bluegreydarken3 leading-[28px]">
               At Iktaraa Connect, we believe in the power of music to transform
               lives and businesses. Join us and take the next step in your
               musical journey, connecting your talent with the world of

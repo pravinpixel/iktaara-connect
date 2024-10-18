@@ -37,10 +37,11 @@ const FrequentlyAskedSection = (props: Props) => {
             justifyContent: "center",
             alignItems: "center",
           }}
-          my={3}
         >
-          <Grid item xs={12} mb={3}>
-            <div className="text-f28 font-semibold text-ik_bluegreydarken4 text-center">
+          <Grid item xs={12}>
+            <div
+              className="text-f28 font-semibold text-ik_bluegreydarken4 text-center leading-[27.16px] mb-[36.33px]"
+            >
               <span>Frequently Asked Questions</span>
             </div>
           </Grid>

@@ -25,16 +25,18 @@ const ListingAboutComponents = () => {
   ];
   return (
     <section>
-      <Grid container spacing={2}>
+      <Grid container spacing={'12px'}>
         {pivkup_data?.map((row) => (
           <>
             <Grid item xs={12} md={4} key={row.id}>
-              <div className="bg-ik_bluegreylighten6 py-7 px-5 rounded-[12px] h-full">
+              <div className="bg-ik_bluegreylighten6 py-[27.53px] px-5 rounded-[12px] h-full">
                 <div className="text-center">
-                  <h6 className="text-f20 font-bold font-linear bg-clip-text mb-2 capitalize">
+                  <h6 className="text-f20 font-bold font-linear bg-clip-text mb-1 leading-[28px] capitalize">
                     {row.title}
                   </h6>
-                  <span className="text-f16 font-normal text-ik_bluegreydarken3">
+                  <span
+                    className="text-f16 font-normal text-ik_bluegreydarken3 leading-[23px]"
+                  >
                     {" "}
                     {row.text}
                   </span>
@@ -44,7 +46,7 @@ const ListingAboutComponents = () => {
           </>
         ))}
       </Grid>
-      <div className="py-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
+      <div className="py-6 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
         <TitleComponent first_title="About" seconds_title="Studio" />
         <div className="text-f18 font-normal text-ik_bluegreydarken2">
           <p>
@@ -71,7 +73,7 @@ const ListingAboutComponents = () => {
         </div>
       </div>
 
-      <div className="py-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
+      <div className="pt-[27.62px] pb-[32.5px] relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
         <TitleComponent first_title="Available" seconds_title="Facilities" />
         <Grid container>
           <Grid item xs={12} md={6}>
@@ -103,7 +105,7 @@ const ListingAboutComponents = () => {
         </Grid>
       </div>
 
-      <div className="py-5">
+      <div className="pt-[25.03px] pb-[37.95px]">
         <TitleComponent first_title="Store" seconds_title="Hours" />
         <div className="text-f18 font-normal text-ik_bluegreydarken2">
           <span>Open 24/7</span>

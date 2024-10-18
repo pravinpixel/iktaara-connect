@@ -47,7 +47,7 @@ const ListingImageComponents = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const handleImageClick = (index) => {
+  const handleImageClick = (index: React.SetStateAction<number>) => {
     setCurrentImageIndex(index);
     setIsOpen(true);
   };
@@ -60,7 +60,7 @@ const ListingImageComponents = () => {
   const remainingImagesCount = totalSmallImages - smallImagesToShow.length;
 
   return (
-    <section className="pb-5">
+    <section className="pb-[32.59px]">
       <Grid container spacing={1}>
         {/* Main Image */}
         <Grid item xs={12} sm={hasSmallImages ? 8 : 12}>
