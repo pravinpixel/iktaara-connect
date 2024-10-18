@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFieldArray, useFormContext } from "react-hook-form";
 
 import { Box } from "@mui/material";
@@ -28,9 +28,16 @@ const ArtistRecognitions = () => {
     name: "recognitions",
   });
 
+
   const handleRecognitions = async (values) => {
     console.log(values, "Recognition Form Values");
   };
+
+  //  useEffect(() => {
+  //   if (fields.length === 0) {
+  //     append({ name: "", description: "", date: "" });
+  //   }
+  // }, [fields, append]);
   return (
     <section>
       <Box component={"form"} onSubmit={handleSubmit(handleRecognitions)}>

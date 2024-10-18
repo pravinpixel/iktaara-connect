@@ -21,7 +21,7 @@ const SelectField = dynamic(
 const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
 );
-const ArtistAbout = () => {
+const ArtistAbout = ({essentialList}:{essentialList:any}) => {
   const { handleSubmit } = useFormContext();
   const dispatch = useDispatch();
   const handleAbout = async (values: any) => {
@@ -65,11 +65,7 @@ const ArtistAbout = () => {
           <SelectField
             label={"Artist Type"}
             name={"artist_type"}
-            options={[
-              { id: 10, name: "Repair Services" },
-              { id: 20, name: "Repair" },
-              { id: 30, name: "Services" },
-            ]}
+            options={essentialList?.artist_type.map(item => ({ id: item.id, name: item.name }))}
           />
         </div>
         <div className="mb-2">
@@ -88,12 +84,7 @@ const ArtistAbout = () => {
             label={"Performing Languages"}
             name={"perform_languages"}
             placeholder={"Select Languages"}
-            options={[
-              { id: 10, name: "Engilsh" },
-              { id: 20, name: "Hindi" },
-              { id: 30, name: "Bengali" },
-              { id: 40, name: "Punjabi" },
-            ]}
+              options={essentialList?.languages.map(item => ({ id: item.id, name: item.name }))}
           />
         </div>
         <div className="mb-2">
@@ -101,12 +92,13 @@ const ArtistAbout = () => {
             label={"Instruments"}
             name={"instruments"}
             placeholder={"Select Instruments"}
-            options={[
-              { id: 10, name: "Engilsh" },
-              { id: 20, name: "Hindi" },
-              { id: 30, name: "Bengali" },
-              { id: 40, name: "Punjabi" },
-            ]}
+            // options={[
+            //   { id: 10, name: "Engilsh" },
+            //   { id: 20, name: "Hindi" },
+            //   { id: 30, name: "Bengali" },
+            //   { id: 40, name: "Punjabi" },
+            // ]}
+            options={essentialList?.instrument_type.map(item => ({ id: item.id, name: item.name }))}
           />
         </div>
         <div className="mb-2">
@@ -114,11 +106,7 @@ const ArtistAbout = () => {
             label={"Genre"}
             name={"perform_genere"}
             placeholder={"Select Genre"}
-            options={[
-              { id: 10, name: "Classical" },
-              { id: 20, name: "Western" },
-              { id: 30, name: "Hindustani" },
-            ]}
+           options={essentialList?.genere.map(item => ({ id: item.id, name: item.name }))}
           />
         </div>
         <div className="mb-2">
@@ -126,11 +114,7 @@ const ArtistAbout = () => {
             label={"Preferred Events"}
             name={"prefered_events"}
             placeholder={"Select Events"}
-            options={[
-              { id: 10, name: "Corporate Parties" },
-              { id: 20, name: "Large Events" },
-              { id: 30, name: "Concerts" },
-            ]}
+            options={essentialList?.event_type.map(item => ({ id: item.id, name: item.name }))}
           />
         </div>
         <div className="mb-2">
@@ -140,11 +124,7 @@ const ArtistAbout = () => {
               <SelectField
                 label={"City"}
                 name={"city"}
-                options={[
-                  { id: 10, name: "Repair Services" },
-                  { id: 20, name: "Repair" },
-                  { id: 30, name: "Services" },
-                ]}
+                options={essentialList?.city.map(item => ({ id: item.id, name: item.name }))}
               />
             </Grid>
             <Grid item xs={5}>
@@ -152,11 +132,7 @@ const ArtistAbout = () => {
               <SelectField
                 label={"Location"}
                 name={"location"}
-                options={[
-                  { id: 10, name: "Repair Services" },
-                  { id: 20, name: "Repair" },
-                  { id: 30, name: "Services" },
-                ]}
+                options={essentialList?.location.map(item => ({ id: item.id, name: item.name }))}
               />
             </Grid>
             <Grid item xs={3}>

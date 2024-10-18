@@ -8,7 +8,7 @@ export const essentialApi = createAsyncThunk(
     console.log(params,"paramssss");
     
     try {
-      const response = await SERVERNEW.get(`/common/essentials?required=${params.type}`);
+      const response = await SERVERNEW.get(`/common/essentials?required=${params.essentialData}`);
       return response?.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);

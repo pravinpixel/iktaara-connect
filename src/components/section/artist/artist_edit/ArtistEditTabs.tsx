@@ -70,9 +70,10 @@ const ArtistMedia = dynamic(() => import("./ArtistMedia"));
 interface ArtistEditTabsProps {
   type: number;
   setStep: (name: string, value: number) => void;
+  data:any
 }
 
-export default function ArtistEditTabs({ type, setStep }: ArtistEditTabsProps) {
+export default function ArtistEditTabs({ type, setStep,data }: ArtistEditTabsProps) {
   const [value, setValue] = React.useState(type.toString());
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -111,7 +112,7 @@ export default function ArtistEditTabs({ type, setStep }: ArtistEditTabsProps) {
         </TabList>
 
         <TabPanel value="0" className="px-0">
-          <ArtistAbout />
+          <ArtistAbout essentialList={data}/>
         </TabPanel>
         <TabPanel value="1" className="px-0">
           <ArtistRecognitions />

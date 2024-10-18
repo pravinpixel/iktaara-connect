@@ -133,7 +133,7 @@
 
 import { DialogContent, IconButton } from "@mui/material";
 import { Dialog, DialogTitle } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { Slide } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
@@ -172,24 +172,34 @@ export default function ArtistEditPopup({
   const methods = useForm({
     defaultValues: {
       type: 0,
+      recognitions: [
+        { name: "", description: "", date: "" }, // Initial recognition field
+      ],
+      videoUrls:[
+        {url:""}
+      ]
     },
+    
     mode: "onSubmit",
   });
 
   const type = methods.watch("type");
-
-  const essentialList = async (type: string) => {
+  const [data,setData] = useState(null)
+ 
+  
+  const essentialList = async (essentialData: string) => {
     try {
-      const res = await dispatch(essentialApi({ type })).unwrap();
-      console.log(res, "tttt");
+      const res = await dispatch(essentialApi({ essentialData })).unwrap();
+      
+      setData(res);
     } catch (error) {
       console.log(error, "error");
     }
   };
 
   useEffect(() => {
-    essentialList("instrument_type,genere");
-  });
+    essentialList("country,state,city,location,artist_type,genere,languages,instrument_type,event_type");
+  },[]);
 
   return (
     <Dialog
@@ -233,7 +243,7 @@ export default function ArtistEditPopup({
         </IconButton>
 
         <DialogContent className="pt-0">
-          <ArtistEditTabs type={type} setStep={methods.setValue} />
+          <ArtistEditTabs type={type} setStep={methods.setValue} data={data}/>
         </DialogContent>
       </FormProvider>
     </Dialog>
