@@ -31,9 +31,9 @@ export const buisnessListingApi = createAsyncThunk(
 // );
 
 
-export const listingView = createAsyncThunk("listingView", async (id?: string) => {
+export const listingView = createAsyncThunk("listingView", async () => {
   try {
-    const response = await SERVER.get(`/business/${id}`);
+    const response = await SERVER.get(`/business/3`);
     return response.data;
   } catch (error) {
     

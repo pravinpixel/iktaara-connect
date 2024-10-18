@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import dynamic from "next/dynamic";
 import { useFormContext } from "react-hook-form";
+import SelectField from "@/components/common/form-fields/SelectField";
+import { businessEditApi } from "@/redux/services/listingService";
+import { AppDispatch } from "@/redux/store";
+import { useDispatch } from "react-redux";
 
 const CustomCheckbox = dynamic(
   () => import("@/components/common/form-fields/CheckBox")
@@ -19,7 +23,7 @@ const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
 );
 
-const BusinessContact = () => {
+const BusinessContact = ({ essentialList }: { essentialList: any }) => {
   const daysOfWeek = [
     { id: 1, name: "Monday" },
     { id: 2, name: "Tuesday" },
@@ -30,8 +34,9 @@ const BusinessContact = () => {
     { id: 7, name: "Sunday" },
   ];
 
-  const [entries, setEntries] = useState([daysOfWeek[0]]);
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [entries, setEntries] = useState([{ day_of_week: daysOfWeek[0].name }]);
+  // const [currentIndex, setCurrentIndex] = useState(1);
+  const dispatch = useDispatch<AppDispatch>();
 
   const handleChange = (index, field, value) => {
     const newEntries = [...entries];
@@ -39,39 +44,49 @@ const BusinessContact = () => {
     setEntries(newEntries);
   };
 
+  // const append = () => {
+  //   if (currentIndex < daysOfWeek.length) {
+  //     const newEntry = { day_of_week: daysOfWeek[currentIndex].name };
+  //     setEntries([...entries, newEntry]);
+  //     setCurrentIndex(currentIndex + 1);
+  //   }
+  // };
   const append = () => {
-    if (currentIndex < daysOfWeek.length) {
-      const newEntry = daysOfWeek[currentIndex];
-      setEntries([...entries, newEntry]);
-      setCurrentIndex(currentIndex + 1);
-    }
+    setEntries([...entries, { day_of_week: daysOfWeek[0].name }]);
+  };
+
+  const remove = (index: number) => {
+    const newEntries = entries.filter((_, i) => i !== index);
+    setEntries(newEntries);
   };
 
   const {
     handleSubmit,
-    getValues,
+    // getValues,
     formState: { isSubmitting },
   } = useFormContext();
 
   const handleCustomer = async (values) => {
-    const open_hours = entries.map((entry, index) => {
-      const open_time = getValues(`open_hours[${index}][open_time]`);
-      const close_time = getValues(`open_hours[${index}][close_time]`);
-      
-      return {
-        day_of_week: entry.name,
-        open_time: open_time || null,
-        close_time: close_time || null,
-        is_closed: !open_time && !close_time ? 1 : 0, // 1 if closed, 0 if open
-      };
-    });
+    // const open_hours = entries.map((entry, index) => {
+    //   const open_time = getValues(`open_hours[${index}][open_time]`);
+    //   const close_time = getValues(`open_hours[${index}][close_time]`);
+    //   return {
+    //     day_of_week: entry.day_of_week,
+    //     open_time: open_time || null,
+    //     close_time: close_time || null,
+    //   };
+    // });
+    // const contactData = {
+    //   ...values,
+    //   // open_hours,
 
-    const temp = {
-      ...values,
-      open_hours,
-    };
+    // };
 
-    console.log(temp, "open_hours");
+    try {
+      await dispatch(businessEditApi(values)).unwrap();
+    } catch (error) {}
+
+    console.log(values, "open_hours");
   };
 
   return (
@@ -86,7 +101,7 @@ const BusinessContact = () => {
               <table className="w-full">
                 <thead>
                   <tr>
-                    <th className="text-f16 text-ik_bluegreybluegrey text-start font-normal w-[200px]">
+                    <th className="text-f16 text-ik_bluegreybluegrey text-start font-normal w-[140px]">
                       Selected Dates
                     </th>
                     <th className="text-f16 text-ik_bluegreybluegrey text-start font-normal">
@@ -99,24 +114,18 @@ const BusinessContact = () => {
                 </thead>
                 <tbody>
                   {entries.map((entry, index) => (
-                    <tr key={entry.id} className="cart-border">
+                    <tr key={index} className="cart-border">
                       <td>
-                        <div>
-                          <button
-                            type="button"
-                            className="border border-ik_bluegreylighten1 p-3.5 w-full rounded-md max-[232px] text-start"
-                          >
-                            <span>{entry.name}</span>
-                          </button>
-                          <input
-                            type="hidden"
+                        <div className="pt-0">
+                          <SelectField
+                            label={""}
                             name={`open_hours[${index}][day_of_week]`}
-                            value={entry.name}
+                            options={daysOfWeek}
                           />
                         </div>
                       </td>
                       <td>
-                        <div>
+                        <div className="pt-[6px]">
                           <TimePickerField
                             label={""}
                             name={`open_hours[${index}][open_time]`}
@@ -127,7 +136,7 @@ const BusinessContact = () => {
                         </div>
                       </td>
                       <td>
-                        <div>
+                        <div className="pt-[6px]">
                           <TimePickerField
                             label={""}
                             name={`open_hours[${index}][close_time]`}
@@ -138,20 +147,26 @@ const BusinessContact = () => {
                         </div>
                       </td>
                       <td>
-                        <div>
+                        <button type="button" onClick={() => remove(index)}>
+                          <ImageComponent
+                            src={"/assets/icons/delete-icons.svg"}
+                            width={20}
+                            height={20}
+                            alt={"delete"}
+                          />
+                        </button>
+                        <div className="">
                           <button
                             type="button"
-                            className="bg-ik_bluegreylighten3 rounded-md p-3"
+                            className="bg-ik_bluegreylighten3 rounded-md p-2"
                             onClick={append}
                           >
-                            <div className="flex gap-1">
-                              <ImageComponent
-                                src={"/assets/icons/add-icons.svg"}
-                                width={86}
-                                height={86}
-                                alt={"add-icons"}
-                              />
-                            </div>
+                            <ImageComponent
+                              src={"/assets/icons/add-icons.svg"}
+                              width={46}
+                              height={46}
+                              alt={"add-icons"}
+                            />
                           </button>
                         </div>
                       </td>
@@ -165,6 +180,56 @@ const BusinessContact = () => {
         <div>
           <div className="text-f22 font-semibold text-ik_bluegreydarken3 mb-2">
             <h6>Location</h6>
+          </div>
+          <div className="mb-2">
+            <Grid container spacing={2}>
+              <Grid item xs={6}>
+                <SelectField
+                  label={"City"}
+                  name={"city"}
+                  options={[
+                    { id: 10, name: "Repair Services" },
+                    { id: 20, name: "Repair" },
+                    { id: 30, name: "Services" },
+                  ]}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <SelectField
+                  label={"Location"}
+                  name={"location"}
+                  options={[
+                    { id: 10, name: "Repair Services" },
+                    { id: 20, name: "Repair" },
+                    { id: 30, name: "Services" },
+                  ]}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <InputField
+                  name="address_line1"
+                  label="Address 1"
+                  placeholder="Address"
+                  type="text"
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <InputField
+                  name="address_line2"
+                  label="Address 2"
+                  placeholder="Address"
+                  type="text"
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <InputField
+                  name="pincode"
+                  label="Pincode "
+                  placeholder="Enter Pincode"
+                  type="text"
+                />
+              </Grid>
+            </Grid>
           </div>
           <div className="mt-2">
             <h6 className="text-f20 font-semibold">
@@ -195,7 +260,7 @@ const BusinessContact = () => {
             <h6>Customer Services</h6>
           </div>
           <div className="flex gap-4 pb-3">
-            <div className="pt-5">
+            <div className="">
               <CustomCheckbox label="" name="live_online" />
             </div>
             <div className="w-full">
@@ -230,7 +295,7 @@ const BusinessContact = () => {
                   src={"/assets/icons/home-icons.svg"}
                   width={60}
                   height={60}
-                  alt={"home"}
+                  alt={"arrowdown"}
                 />
                 <div className="text-f18 font-semibold text-ik_bluegreydarken3">
                   <span>Home Pickup</span>
@@ -256,7 +321,7 @@ const BusinessContact = () => {
                   src={"/assets/icons/distance-icons.svg"}
                   width={60}
                   height={60}
-                  alt={"distance"}
+                  alt={"arrowdown"}
                 />
                 <div className="text-f18 font-semibold text-ik_bluegreydarken3">
                   <span>Distance</span>

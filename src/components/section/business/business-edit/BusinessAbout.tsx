@@ -31,12 +31,13 @@ type Props = {
   business_specialist: string;
   business_type: string;
   established_year: string | number;
+  type: string | number;
+  logo: string | null;
 };
 
-const BusinessAbout = () => {
+const BusinessAbout = ({ essentialList }: { essentialList: any }) => {
   const dispatch = useDispatch<AppDispatch>();
   const { handleSubmit } = useFormContext();
-  
 
   const handleAbout = async (values: Props) => {
     const aboutData = {
@@ -45,13 +46,14 @@ const BusinessAbout = () => {
       business_specialist: values.business_specialist || "",
       business_type: values.business_type || "",
       established_year: values.established_year || "",
-      type: "about",
+      type: values.type === 0 ? "about" : values.type,
+      logo: values.logo || null,
     };
 
     try {
       await dispatch(businessEditApi(aboutData)).unwrap();
     } catch (error) {}
-    // console.log(values, "about");
+    console.log(values, "about");
   };
 
   return (
@@ -69,11 +71,15 @@ const BusinessAbout = () => {
           <SelectField
             label={"Business Type"}
             name={"business_type"}
-            options={[
-              { id: 10, name: "Repair Services" },
-              { id: 20, name: "Repair" },
-              { id: 30, name: "Services" },
-            ]}
+            options={essentialList?.business_type.map((item) => ({
+              id: item.id,
+              name: item.name,
+            }))}
+            // options={[
+            //   { id: 10, name: "Repair Services" },
+            //   { id: 20, name: "Repair" },
+            //   { id: 30, name: "Services" },
+            // ]}
           />
         </div>
         <div className="mb-2">
@@ -90,11 +96,15 @@ const BusinessAbout = () => {
             label={"Instrument Types"}
             name={"business_specialist"}
             placeholder={"Select Instrument Types"}
-            options={[
-              { id: 10, name: "Repair Services" },
-              { id: 20, name: "Repair" },
-              { id: 30, name: "Services" },
-            ]}
+            options={essentialList?.instrument_type.map((item) => ({
+              id: item.id,
+              name: item.name,
+            }))}
+            // options={[
+            //   { id: 10, name: "Repair Services" },
+            //   { id: 20, name: "Repair" },
+            //   { id: 30, name: "Services" },
+            // ]}
           />
         </div>
         <div className="mb-2">

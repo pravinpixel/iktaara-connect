@@ -47,10 +47,11 @@ const BusinessServices = () => {
 
   const handleServices = async (values) => {
    const servicesData = {
-     highlights: values.highlights || [], 
+     highlights: values.highlights || [],
      services: values.services || [],
-     facilities: values.facilities || [], 
-     type: "services",
+     facilities: values.facilities || [],
+     type: values.type === 1 ? "services" : values.type,
+     logo: values.logo || null,
    };
 
     try {

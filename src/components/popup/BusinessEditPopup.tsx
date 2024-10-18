@@ -1,11 +1,14 @@
 import { DialogContent, IconButton } from "@mui/material";
 import { Dialog, DialogTitle } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { Slide } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import dynamic from "next/dynamic";
 import { FormProvider, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/redux/store";
+import { essentialApi } from "@/redux/services/essentialService";
 
 const BusinessEditTabs = dynamic(
   () => import("../section/business/business-edit/BusinessEditTabs")
@@ -30,16 +33,35 @@ export default function BusinessEditPopup({
   handleClose,
   open,
 }: BusinessEditProps) {
-  const { control } = useForm();
+  const dispatch = useDispatch<AppDispatch>();
   const methods = useForm({
     defaultValues: {
       type: 0,
+      recognitions: [
+        { name: "", description: "", date: "" }, 
+      ],
     },
     mode: "onSubmit",
   });
 
   const type = methods.watch("type");
-  console.log(type, "type");
+const [data, setData] = useState(null);
+
+const essentialList = async (essentialData: string) => {
+  try {
+    const res = await dispatch(essentialApi({ essentialData })).unwrap();
+
+    setData(res);
+  } catch (error) {
+    console.log(error, "error");
+  }
+};
+
+useEffect(() => {
+  essentialList(
+    "country,state,city,location,business_type,instrument_type,"
+  );
+}, []);
 
   return (
     <Dialog
@@ -54,13 +76,7 @@ export default function BusinessEditPopup({
       <FormProvider {...methods}>
         <DialogTitle>
           <div className="flex flex-col items-center justify-center h-full">
-            <ImageUpload
-              control={control}
-              type={true}
-              typeupload={false}
-              multiple={false}
-              name={"logo"}
-            />
+            <ImageUpload name={"logo"} control={undefined} />
             <div className="pt-2">
               <h6 className="text-f24 font-semibold text-ik_bluegreydarken3">
                 Oasis Recording Studio
@@ -83,7 +99,11 @@ export default function BusinessEditPopup({
         </IconButton>
 
         <DialogContent className="pt-0">
-          <BusinessEditTabs type={type} setStep={methods.setValue} />
+          <BusinessEditTabs
+            type={type}
+            setStep={methods.setValue}
+            data={data}
+          />
         </DialogContent>
       </FormProvider>
     </Dialog>

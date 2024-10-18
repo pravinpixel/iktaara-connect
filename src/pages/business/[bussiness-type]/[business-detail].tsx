@@ -88,7 +88,7 @@ export const getServerSideProps: GetServerSideProps =
 
     const [listingsView] = await Promise.all([
       store
-        .dispatch(listingView(3))
+        .dispatch(listingView())
         .unwrap()
         .then((res) => res?.data)
         .catch(() => {

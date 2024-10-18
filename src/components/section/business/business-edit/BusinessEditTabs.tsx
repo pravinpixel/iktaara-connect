@@ -13,9 +13,10 @@ const BusinessMedia = dynamic(() => import("./BusinessMedia"));
 interface ArtistEditTabsProps {
   type: number;
   setStep: (name: string, value: number) => void;
+  data: any;
 }
 
-export default function BusinessEditTabs({ type, setStep }: ArtistEditTabsProps) {
+export default function BusinessEditTabs({ type, setStep, data }: ArtistEditTabsProps) {
   const [value, setValue] = React.useState(type.toString());
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -54,7 +55,7 @@ export default function BusinessEditTabs({ type, setStep }: ArtistEditTabsProps)
         </TabList>
 
         <TabPanel value="0" className="px-0">
-          <BusinessAbout />
+          <BusinessAbout essentialList={data} />
         </TabPanel>
         <TabPanel value="1" className="px-0">
           <BusinessServices />

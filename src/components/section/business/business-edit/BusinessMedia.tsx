@@ -4,9 +4,15 @@ import { Box } from "@mui/material";
 
 import dynamic from "next/dynamic";
 import { useFormContext } from "react-hook-form";
+// import UploadFile from "@/components/common/form-fields/UploadFile";
 
-const ImageUpload = dynamic(
-  () => import("@/components/common/form-fields/ImageUpload")
+
+// const ImageUpload = dynamic(
+//   () => import("@/components/common/form-fields/ImageUpload")
+// );
+
+const UploadFile = dynamic(
+  () => import("@/components/common/form-fields/UploadFile")
 );
 
 const CustomButton = dynamic(
@@ -29,7 +35,7 @@ const BusinessMedia = () => {
               Cover Update
             </span>
           </div>
-          <ImageUpload
+          <UploadFile
             typeupload={true}
             type={false}
             control={control}
@@ -42,7 +48,7 @@ const BusinessMedia = () => {
               Post Update
             </span>
           </div>
-          <ImageUpload
+          <UploadFile
             typeupload={true}
             type={false}
             control={control}
