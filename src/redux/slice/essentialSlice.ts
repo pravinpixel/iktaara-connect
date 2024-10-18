@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { essentialApi } from "../services/essentialService";
+import { essentialApi, essentialLocationApi } from "../services/essentialService";
 
 
 
 const essentialCases = [
     { api: essentialApi, name: "essentialApi", isLoading: true },
- 
+    { api: essentialLocationApi, name: "essentialLocationApi", isLoading: true },
 ];
 
 type AsyncAction = {

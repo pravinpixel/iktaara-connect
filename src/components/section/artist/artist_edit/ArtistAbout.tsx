@@ -21,7 +21,7 @@ const SelectField = dynamic(
 const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
 );
-const ArtistAbout = ({essentialList}:{essentialList:any}) => {
+const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
   const { handleSubmit } = useFormContext();
   const dispatch = useDispatch();
   const handleAbout = async (values: any) => {
@@ -65,7 +65,10 @@ const ArtistAbout = ({essentialList}:{essentialList:any}) => {
           <SelectField
             label={"Artist Type"}
             name={"artist_type"}
-            options={essentialList?.artist_type.map(item => ({ id: item.id, name: item.name }))}
+            options={essentialList?.artist_type.map((item) => ({
+              id: item.id,
+              name: item.name,
+            }))}
           />
         </div>
         <div className="mb-2">
@@ -84,7 +87,10 @@ const ArtistAbout = ({essentialList}:{essentialList:any}) => {
             label={"Performing Languages"}
             name={"perform_languages"}
             placeholder={"Select Languages"}
-              options={essentialList?.languages.map(item => ({ id: item.id, name: item.name }))}
+            options={essentialList?.languages.map((item) => ({
+              id: item.id,
+              name: item.name,
+            }))}
           />
         </div>
         <div className="mb-2">
@@ -98,7 +104,10 @@ const ArtistAbout = ({essentialList}:{essentialList:any}) => {
             //   { id: 30, name: "Bengali" },
             //   { id: 40, name: "Punjabi" },
             // ]}
-            options={essentialList?.instrument_type.map(item => ({ id: item.id, name: item.name }))}
+            options={essentialList?.instrument_type.map((item) => ({
+              id: item.id,
+              name: item.name,
+            }))}
           />
         </div>
         <div className="mb-2">
@@ -106,7 +115,10 @@ const ArtistAbout = ({essentialList}:{essentialList:any}) => {
             label={"Genre"}
             name={"perform_genere"}
             placeholder={"Select Genre"}
-           options={essentialList?.genere.map(item => ({ id: item.id, name: item.name }))}
+            options={essentialList?.genere.map((item) => ({
+              id: item.id,
+              name: item.name,
+            }))}
           />
         </div>
         <div className="mb-2">
@@ -114,7 +126,10 @@ const ArtistAbout = ({essentialList}:{essentialList:any}) => {
             label={"Preferred Events"}
             name={"prefered_events"}
             placeholder={"Select Events"}
-            options={essentialList?.event_type.map(item => ({ id: item.id, name: item.name }))}
+            options={essentialList?.event_type.map((item) => ({
+              id: item.id,
+              name: item.name,
+            }))}
           />
         </div>
         <div className="mb-2">
@@ -124,7 +139,10 @@ const ArtistAbout = ({essentialList}:{essentialList:any}) => {
               <SelectField
                 label={"City"}
                 name={"city"}
-                options={essentialList?.city.map(item => ({ id: item.id, name: item.name }))}
+                options={essentialList?.city.map((item) => ({
+                  id: item.id,
+                  name: item.name,
+                }))}
               />
             </Grid>
             <Grid item xs={5}>
@@ -132,7 +150,7 @@ const ArtistAbout = ({essentialList}:{essentialList:any}) => {
               <SelectField
                 label={"Location"}
                 name={"location"}
-                options={essentialList?.location.map(item => ({ id: item.id, name: item.name }))}
+                // options={essentialList?.location.map(item => ({ id: item.id, name: item.name }))}
               />
             </Grid>
             <Grid item xs={3}>
