@@ -22,12 +22,11 @@ const CustomImageButton = dynamic(
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StudioCard = ({ buisnessListData }: any) => {
-  console.log(buisnessListData, "buisnessListData");
   return (
-    <section className="mt-[15px] ">
+    <section className="mt-[12.68px] ">
       {buisnessListData.data.map((business: any) => (
         <Card className="w-full h-full bg-white mt-[15px]" key={business.id}>
-          <Box sx={{ p: 2 }}>
+          <Box className="pt-[10px] pl-[10px]  pr-[24.32px] pb-[10.6px]">
             <Grid container>
               <>
                 {" "}
@@ -46,11 +45,13 @@ const StudioCard = ({ buisnessListData }: any) => {
                       text=""
                       reviews={""}
                       typebottom={false}
+                      width={"312px"}
+                      height={"226px"}
                     />
                   </Link>
                 </Grid>
-                <Grid item md={8} xs={12}>
-                  <Box sx={{ padding: { xs: "5px", md: 2 } }}>
+                <Grid item md={8} xs={12} className="pl-[20px]">
+                  <Box>
                     <Box
                       sx={{ display: "flex", justifyContent: "space-between" }}
                     >
@@ -61,13 +62,14 @@ const StudioCard = ({ buisnessListData }: any) => {
                       >
                         {" "}
                         <Box>
-                          <p className="font-bold text-f24 leading-8 text-ik_bluegreydarken3">
+                          <p className="font-bold text-f24 leading-8 text-ik_bluegreydarken3 pt-[6px]">
                             {business.title}
                           </p>
                           <Stack
                             direction="row"
                             spacing={1}
                             alignItems={"center"}
+                            className="pt-[12px]"
                           >
                             <ImageComponent
                               src="/assets/static/image_5.png"
@@ -75,7 +77,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                               width={19}
                               height={20}
                             />
-                            <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2">
+                            <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken2 ">
                               {business.location}
                             </p>
                             <p className="font-normal text-f16 leading-5 text-ik_pink">
@@ -86,6 +88,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                             direction="row"
                             spacing={1}
                             alignItems={"center"}
+                            className="pt-[6px]"
                           >
                             <ImageComponent
                               src="/assets/static/image_8.png"
@@ -104,8 +107,9 @@ const StudioCard = ({ buisnessListData }: any) => {
                             {" "}
                             <Stack
                               direction="row"
-                              spacing={1}
+                              spacing={"10px"}
                               alignItems={"center"}
+                              className="pt-[8px]"
                             >
                               <ImageComponent
                                 src="/assets/static/image_6.png"
@@ -121,6 +125,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                               direction="row"
                               spacing={1}
                               alignItems={"center"}
+                              className="pt-[8px]"
                             >
                               <ImageComponent
                                 src="/assets/static/image_9.png"
@@ -140,6 +145,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                         sx={{
                           display: { xs: "none", md: "flex" },
                           justifyContent: "flex-end",
+                          paddingTop: "6px",
                         }}
                       >
                         <Stack direction="column">
@@ -168,14 +174,15 @@ const StudioCard = ({ buisnessListData }: any) => {
 
                           <p
                             style={{ textAlign: "right" }}
-                            className="font-noraml text-f16 leading-5 text-ik_bluegreydarken1"
+                            className="font-noraml text-f16 leading-5 text-ik_bluegreydarken1 pt-[2px]"
                           >
                             {business.reviews}Reviews
                           </p>
-                          <Box mt={1}>
+                          <Box mt={"15.1px"}>
                             <CustomImageButton
                               image="/assets/static/image_7.png"
                               label="Enquiry"
+                              newclass="w-[200px] h-[60px]"
                             ></CustomImageButton>
                           </Box>
                         </Stack>

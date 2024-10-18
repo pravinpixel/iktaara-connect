@@ -26,7 +26,7 @@ interface CustomCardProps {
   typebottomtop?: boolean;
 }
 
-const basePath = CONSTANT.ASSESTPATH || ''
+const basePath = CONSTANT.ASSESTPATH || "";
 
 export default function CustomCard(props: CustomCardProps) {
   const {
@@ -37,6 +37,7 @@ export default function CustomCard(props: CustomCardProps) {
     Contenttext,
     img1,
     width = "100%",
+    height = "100%",
     type,
     typebottomleft,
     typetop,
@@ -50,24 +51,30 @@ export default function CustomCard(props: CustomCardProps) {
       variant={variant as never}
       sx={{
         position: "relative",
-
-        width: width,
+        height: "100%",
+        width: "100%",
+        maxWidth: { width },
+        maxHeight: { height },
         borderRadius: "16px",
         ...(typebottomleft &&
-        {
-          /* Custom style for bottom-left */
-        }),
+          {
+            /* Custom style for bottom-left */
+          }),
         ...(typetop &&
-        {
-          /* Custom style for top-right */
-        }),
+          {
+            /* Custom style for top-right */
+          }),
         ...(typebottom &&
-        {
-          /* Custom style for bottom-right */
-        }),
+          {
+            /* Custom style for bottom-right */
+          }),
       }}
     >
-      <CardMediaComponent image={basePath + img} alt="Paella dish" />
+      <CardMediaComponent
+        image={basePath + img}
+        alt="Paella dish"
+        sx={{ height: "226px" }}
+      />
       {/* <Box sx={{ position: "relative" }}>
         <ImageComponent src={img} alt="Card Image" width={260} height={360} /> */}
       {type && (
@@ -213,6 +220,5 @@ export default function CustomCard(props: CustomCardProps) {
       )}
       {/* </Box> */}
     </Card>
-
   );
 }

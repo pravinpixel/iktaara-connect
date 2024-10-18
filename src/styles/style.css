@@ -135,7 +135,9 @@
     bottom: 60px;
     /* top: -11px !important; */
 }
-
+.business-slick .slick-next:before {
+    right: 1px!important;
+}
 .slick-next {
     right: 13px !important;
     z-index: 100;

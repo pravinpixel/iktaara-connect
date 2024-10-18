@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 
-import { Box, Card, Grid, Stack, useTheme } from "@mui/material";
+import { Box, Card, Stack, useTheme } from "@mui/material";
 import dynamic from "next/dynamic";
 
 const AddressSection = dynamic(() => import("./Address"));

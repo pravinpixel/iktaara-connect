@@ -42,17 +42,12 @@ const Business = ({ buisnessListData }: { buisnessListData: any }) => {
       </section>
       <section className="bg-ik_lightblue">
         <CustomContainer>
-          <Grid container>
-            <Grid
-              item
-              md={3.5}
-              xs={12}
-              className="hidden md:block mr-[17.32px]"
-            >
+          <Grid container className="mx-auto ">
+            <Grid item md={3} xs={12} className="hidden md:block ">
               <FilterSection />
             </Grid>
 
-            <Grid item md={8.3} xs={12}>
+            <Grid item md={9} xs={12} className="pl-[17.32px]">
               <BusinessSection />
               <StudioCard buisnessListData={buisnessListData} />
               <Pagination from={0} to={0} total_count={0}></Pagination>
@@ -75,7 +70,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
           title: "Violin Repairist in Chennai",
           description: "120 Reparist available in Chennai",
           image: "/assets/static/image_13.png",
-          logo_image: "/assets/static/image_12.png",
+          logo_image: "/assets/static/image_2.png",
           rating: 4.2,
           reviews: 20,
           total_enquiries: 120,
@@ -93,7 +88,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
           title: "Violin Repairist in Chennai",
           description: "120 Reparist available in Chennai",
           image: "/assets/static/image_13.png",
-          logo_image: "/assets/static/image_12.png",
+          logo_image: "/assets/static/image_2.png",
           rating: 4.2,
           reviews: 20,
           total_enquiries: 120,
@@ -111,7 +106,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
           title: "Violin Repairist in Chennai",
           description: "120 Reparist available in Chennai",
           image: "/assets/static/image_13.png",
-          logo_image: "/assets/static/image_12.png",
+          logo_image: "/assets/static/image_2.png",
           rating: 4.2,
           reviews: 20,
           total_enquiries: 120,

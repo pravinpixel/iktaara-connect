@@ -75,8 +75,9 @@ const AddressSection = () => {
   ];
   const settings = {
     autoplay: true,
-    autoplaySpeed: 3000,
+
     arrows: true,
+
     swipe: businesses?.length > 5 ? true : false,
     dots: businesses?.length > 5 ? true : false,
     infinite: businesses?.length > 5 ? true : false,
@@ -84,6 +85,7 @@ const AddressSection = () => {
     slidesToShow: 3,
     slidesToScroll: businesses?.length >= 5 ? 5 : 1,
     lazyLoad: "progressive" as const,
+
     customPaging: () => <div className="reactslick-custom-dots" />,
     responsive: [
       {
@@ -121,17 +123,17 @@ const AddressSection = () => {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 2,
           swipe: true,
         },
       },
     ],
   };
   return (
-    <Box className="mt-[16px]s cursor-pointer">
+    <Box className="mt-[12px] ml-[19.18px] mb-[13.48px] mr-[19.18px]">
       {/* <Grid container> */}{" "}
-      <Slider {...settings}>
+      <Slider {...settings} className="business-slick">
         {businesses.map((business) => (
           // <Grid item xs={4} p={2}>
           <Link
@@ -139,17 +141,17 @@ const AddressSection = () => {
               business?.music_title || ""
             }`}
           >
-            <Box key={business.id} px={1} py={1} style={{ margin: "0 10px" }}>
+            <Box key={business.id} className="pr-[15.18px]  w-[348px]">
               <CustomCard
                 variant="bottom-right"
                 img="/assets/static/image_13.png"
-                img1="/assets/static/image_12.png"
+                img1="/assets/static/image_2.png"
                 type={true}
                 text={""}
                 reviews={""}
                 typebottom={false}
               />
-              <Box className="flex justify-between mt-2">
+              <Box className="flex justify-between mt-[12px] ">
                 <Box>
                   <p className="text-f22 leading-7 font-bold">
                     {business.name}
@@ -163,10 +165,10 @@ const AddressSection = () => {
                     <ImageComponent
                       src={business.imgSrc}
                       alt="Business Image"
-                      width={19}
-                      height={20}
+                      width={22}
+                      height={22}
                     />
-                    <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken3">
+                    <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken3 py-[6.41px] ">
                       {business.location}
                     </p>
                   </Stack>
