@@ -88,12 +88,12 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
   };
   // const isLastPage = to === total_count;
   return (
-    <div className="col-12 text-center mt-2">
+    <div className="col-12 text-center mt-[20px] mb-[51px]">
       <div className="flex justify-center items-center">
         {/* {total_count > 24 && ( */}
         <>
           <ImageComponent
-            src="/assets/collections/static/Group 1171277073 (1).png"
+            src="/assets/static/Group 1171277073 (1).png"
             width={14}
             height={14}
             alt="loader_1"
@@ -101,7 +101,7 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
             onClick={handleGoToFirstPage}
           />
           <ImageComponent
-            src="/assets/collections/static/Vector 95.png"
+            src="/assets/static/Vector 95.png"
             width={12}
             height={13}
             alt="loader_2"
@@ -137,7 +137,7 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
             Next
           </Typography>
           <ImageComponent
-            src="/assets/collections/static/Vector 93.png"
+            src="/assets/static/Vector 93.png"
             width={12}
             height={13}
             alt="loader_3"
@@ -145,7 +145,7 @@ const Pagination = ({ from, to, total_count }: PaginationProps) => {
             onClick={handleLoadMore}
           />
           <ImageComponent
-            src="/assets/collections/static/Group 1171277072.png"
+            src="/assets/static/Group 1171277072.png"
             width={14}
             height={14}
             alt="loader_4"

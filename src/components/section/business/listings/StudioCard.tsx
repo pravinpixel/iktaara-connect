@@ -23,20 +23,32 @@ const CustomImageButton = dynamic(
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StudioCard = ({ buisnessListData }: any) => {
   return (
-    <section className="mt-[12.68px] ">
+    <section className="mt-[12.68px]">
       {buisnessListData.data.map((business: any) => (
-        <Card className="w-full h-full bg-white mt-[15px]" key={business.id}>
-          <Box className="pt-[10px] pl-[10px]  pr-[24.32px] pb-[10.6px]">
-            <Grid container>
-              <>
-                {" "}
-                <Grid item md={4} xs={12}>
+        <Card className="w-full h-full bg-white mt-[16px] " key={business.id}>
+          <Box className="pt-[10px] pl-[10px]  pr-[24.32px] pb-[10.6px] ">
+             <Box
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "column", md: "row" },
+                justifyContent: "space-between",
+              }}
+            >
+              {/* First Item - Flex with fixed width */}
+              <Box
+                sx={{
+                  flexBasis: "312px",
+                  flexShrink: 0,
+                  width: { xs: "100%", md: "312px" }, // Full width on small screens, fixed on larger
+                  marginBottom: { xs: "16px", md: 0 },
+                }}
+              >
                   <Link
                     href={`/business/${business?.slug || ""}/${
                       business?.music_title || ""
                     }`}
                   >
-                    {" "}
+                    
                     <CustomCard
                       variant="bottom-right"
                       img={business.image}
@@ -49,9 +61,9 @@ const StudioCard = ({ buisnessListData }: any) => {
                       height={"226px"}
                     />
                   </Link>
-                </Grid>
-                <Grid item md={8} xs={12} className="pl-[20px]">
-                  <Box>
+                </Box>
+               <Box sx={{ flexGrow: 1, pl: { md: "20px" } }}>
+                  <Box >
                     <Box
                       sx={{ display: "flex", justifyContent: "space-between" }}
                     >
@@ -165,9 +177,9 @@ const StudioCard = ({ buisnessListData }: any) => {
                               <span className="font-semibold text-f26 leading-8 text-ik_bluegreydarken3">
                                 {business.rating}
                               </span>
-                              /
+                             
                               <span className="font-normal text-f26 leading-8 text-ik_bluegreydarken3">
-                                5
+                                /5
                               </span>
                             </p>
                           </Stack>
@@ -176,7 +188,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                             style={{ textAlign: "right" }}
                             className="font-noraml text-f16 leading-5 text-ik_bluegreydarken1 pt-[2px]"
                           >
-                            {business.reviews}Reviews
+                            {business.reviews}&nbsp;Reviews
                           </p>
                           <Box mt={"15.1px"}>
                             <CustomImageButton
@@ -188,7 +200,7 @@ const StudioCard = ({ buisnessListData }: any) => {
                         </Stack>
                       </Box>
                     </Box>
-                    <Box mt={4}>
+                    <Box mt={"50px"}>
                       <Stack direction="row" spacing={1}>
                         <Box sx={{ display: "flex", alignItems: "center" }}>
                           <ImageComponent
@@ -245,19 +257,19 @@ const StudioCard = ({ buisnessListData }: any) => {
                             </p>
                           </Stack>
 
-                          <p
+                          {/* <p
                             style={{ textAlign: "right" }}
                             className="font-normal text-f16 leading-5 text-ik_bluegreydarken1"
                           >
                             {business.reviews} Reviews
-                          </p>
+                          </p> */}
                         </Box>
                       </Stack>
                     </Box>
                   </Box>
-                </Grid>
-              </>
-            </Grid>
+                </Box>
+           
+            </Box>
           </Box>
         </Card>
       ))}
@@ -273,3 +285,5 @@ const StudioCard = ({ buisnessListData }: any) => {
 };
 
 export default StudioCard;
+
+

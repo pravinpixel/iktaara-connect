@@ -1,22 +1,44 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/jsx-key */
+
+// export default CenterMode
+
+
 import React from "react";
 import { Box, Stack } from "@mui/material";
 import dynamic from "next/dynamic";
 import Slider from "react-slick";
 import Link from "next/link";
 
-const CustomCard = dynamic(
-  () => import("@/components/common/form-fields/CustomCard")
-);
-const CustomSmallButton = dynamic(
-  () => import("@/components/common/form-fields/CustomSmallButton")
-);
-const ImageComponent = dynamic(
-  () => import("@/components/common/form-fields/ImageComponent")
-);
+const CustomCard = dynamic(() => import("@/components/common/form-fields/CustomCard"));
+const CustomSmallButton = dynamic(() => import("@/components/common/form-fields/CustomSmallButton"));
+const ImageComponent = dynamic(() => import("@/components/common/form-fields/ImageComponent"));
 
-const AddressSection = () => {
+function AddressSection() {
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,  // Number of slides visible at once
+    speed: 500,
+    arrows: true,     // Enable navigation arrows if needed
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2, // For tablet screens
+          centerPadding: "40px",
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1, // For mobile screens
+          centerPadding: "20px",
+        }
+      }
+    ]
+  };
+
   const businesses = [
     {
       id: 1,
@@ -48,100 +70,43 @@ const AddressSection = () => {
       slug: "technicians",
       music_title: "Schmitt Music Repair Services",
     },
-    // {
-    //   id: 4,
-    //   name: "Music Doctor",
-    //   location: "Nungambakkam",
-    //   inquiries: 105,
-    //   imgSrc: "/assets/static/image_5.png",
-    //   icon: "Music Doctor Icon",
-    // },
-    // {
-    //   id: 5,
-    //   name: "Music Doctor",
-    //   location: "Nungambakkam",
-    //   inquiries: 105,
-    //   imgSrc: "/assets/static/image_5.png",
-    //   icon: "Music Doctor Icon",
-    // },
-    // {
-    //   id: 6,
-    //   name: "Music Doctor",
-    //   location: "Nungambakkam",
-    //   inquiries: 105,
-    //   imgSrc: "/assets/static/image_5.png",
-    //   icon: "Music Doctor Icon",
-    // },
+    {
+      id: 4,
+      name: "Music Doctor",
+      location: "Nungambakkam",
+      inquiries: 105,
+      imgSrc: "/assets/static/image_5.png",
+      icon: "Music Doctor Icon",
+      slug: "technicians",
+      music_title: "Schmitt Music Repair Services",
+    },
+    {
+      id: 5,
+      name: "Music Doctor",
+      location: "Nungambakkam",
+      inquiries: 105,
+      imgSrc: "/assets/static/image_5.png",
+      icon: "Music Doctor Icon",
+      slug: "technicians",
+      music_title: "Schmitt Music Repair Services",
+    }
   ];
-  const settings = {
-    autoplay: true,
 
-    arrows: true,
-
-    swipe: businesses?.length > 5 ? true : false,
-    dots: businesses?.length > 5 ? true : false,
-    infinite: businesses?.length > 5 ? true : false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: businesses?.length >= 5 ? 5 : 1,
-    lazyLoad: "progressive" as const,
-
-    customPaging: () => <div className="reactslick-custom-dots" />,
-    responsive: [
-      {
-        breakpoint: 420,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          swipe: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          swipe: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          swipe: true,
-        },
-      },
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          swipe: true,
-        },
-      },
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          swipe: true,
-        },
-      },
-    ],
-  };
   return (
-    <Box className="mt-[12px] ml-[19.18px] mb-[13.48px] mr-[19.18px]">
-      {/* <Grid container> */}{" "}
-      <Slider {...settings} className="business-slick">
+    <Box className="mt-[12px] ml-[19.18px] mb-[13.48px] mr-[19.18px]"><div className="slider-container">
+      <Slider {...settings}>
         {businesses.map((business) => (
-          // <Grid item xs={4} p={2}>
-          <Link
-            href={`/business/${business?.slug || ""}/${
-              business?.music_title || ""
-            }`}
+          <div className="slide-item" key={business.id}>
+           <Link
+            href={`/business/${business?.slug || ""}/${business?.music_title || ""}`}
+            key={business.id}
           >
-            <Box key={business.id} className="pr-[15.18px]  w-[348px]">
+            <Box
+              className="pr-[10.18px]"
+              sx={{
+                width: "348px", // Fixed card width for all screen sizes
+              }}
+            >
               <CustomCard
                 variant="bottom-right"
                 img="/assets/static/image_13.png"
@@ -151,11 +116,9 @@ const AddressSection = () => {
                 reviews={""}
                 typebottom={false}
               />
-              <Box className="flex justify-between mt-[12px] ">
-                <Box>
-                  <p className="text-f22 leading-7 font-bold">
-                    {business.name}
-                  </p>
+              <Box className="flex justify-between mt-[12px]">
+                <Box >
+                  <p className="text-f22 leading-7 font-bold">{business.name}</p>
                   <Stack
                     direction="row"
                     spacing={1}
@@ -168,7 +131,7 @@ const AddressSection = () => {
                       width={22}
                       height={22}
                     />
-                    <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken3 py-[6.41px] ">
+                    <p className="font-normal text-f16 leading-5 text-ik_bluegreydarken3 py-[6.41px]">
                       {business.location}
                     </p>
                   </Stack>
@@ -185,7 +148,7 @@ const AddressSection = () => {
                       height={11}
                     />
                     <p className="font-semibold text-f16 leading-5 text-ik_pink">
-                      {business.inquiries} inquiries
+                      {business.inquiries} people enquired
                     </p>
                   </Stack>
                 </Box>
@@ -195,18 +158,17 @@ const AddressSection = () => {
                     image="/assets/static/image_7.png"
                     width={27.57}
                     height={27.57}
-                  ></CustomSmallButton>
-                  {/* <p style={{ textAlign: "right" }}>{business.icon}</p> */}
+                  />
                 </Box>
               </Box>
             </Box>
           </Link>
-          // </Grid>
+          </div>
         ))}
       </Slider>
-      {/* </Grid> */}
-    </Box>
+    </div></Box>
+    
   );
-};
+}
 
 export default AddressSection;
