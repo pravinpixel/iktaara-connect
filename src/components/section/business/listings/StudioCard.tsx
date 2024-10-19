@@ -26,7 +26,7 @@ const StudioCard = ({ buisnessListData }: any) => {
     <section className="mt-[12.68px]">
       {buisnessListData.data.map((business: any) => (
         <Card className="w-full h-full bg-white mt-[16px] " key={business.id}>
-          <Box className="pt-[10px] pl-[10px]  pr-[24.32px] pb-[10.6px] ">
+          <Box className="pt-[10px] pl-[10px]  pr-[19.18px] pb-[10.6px] ">
              <Box
               sx={{
                 display: "flex",
