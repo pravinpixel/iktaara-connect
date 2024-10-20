@@ -24,7 +24,7 @@ const MyProfileSection = () => {
     <>
       <FormProvider {...methods}>
         {" "}
-        <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
+        <Box className="bg-ik_white mt-4 ml-[16px]  rounded-[8px] px-[28.88px] pt-[26.51px] pb-[41.51px] ">
           <Stack direction="row" spacing={2} alignItems={"center"}>
             <Box>
               <ImageComponent
@@ -38,15 +38,18 @@ const MyProfileSection = () => {
               <Typography className="text-f24 font-bold leading-[30px] text-ik_bluegreydarken3">
                 My Profile
               </Typography>
+              <Typography className="text-f18 font-normal leading-[26px] text-ik_bluegreydarken1">
+               Space to keep your login information uptodate.
+              </Typography>
             </Box>
           </Stack>
         </Box>
-        <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
+        <Box className="bg-ik_white mt-[16px] ml-[16px] rounded-[8px] py-[24.76px] px-[28.87px] mb-[60px]">
           <Box className="my-1">
-            <Typography className="my-2 text-f22 font-semibold leading-[28px] text-ik_bluegreydarken3">
+            <Typography className="mb-[14.2px] text-f22 font-semibold leading-[28px] text-ik_bluegreydarken3">
               Account Information
             </Typography>
-            <Box className="mb-3">
+            <Box className="mb-[19px]">
               <InputField
                 name="name"
                 label="Name"
@@ -55,7 +58,7 @@ const MyProfileSection = () => {
                 sx={{ width: "480px" }}
               />
             </Box>
-            <Box className="mb-3">
+            <Box className="mb-[19px]">
               <InputField
                 name="email"
                 label="Email"
@@ -64,7 +67,7 @@ const MyProfileSection = () => {
                 sx={{ width: "480px" }}
               />{" "}
             </Box>
-            <Box className="mb-3">
+            <Box className="mb-[8px]">
               {" "}
               <InputField
                 name="phone"
@@ -75,11 +78,11 @@ const MyProfileSection = () => {
               />
             </Box>
           </Box>
-          <Box className="my-1">
-            <Typography className="my-2 text-f22 font-semibold leading-[28px] text-ik_bluegreydarken3">
+          <Box className="mt-[30px]">
+            <Typography className="mt-2 mb-[16px] text-f22 font-semibold leading-[28px] text-ik_bluegreydarken3">
               Change Password
             </Typography>
-            <Box className="mb-3">
+            <Box className="mb-[19px]">
               {" "}
               <InputField
                 name="password"
@@ -89,7 +92,7 @@ const MyProfileSection = () => {
                 sx={{ width: "480px" }}
               />
             </Box>
-            <Box className="mb-2">
+            <Box className="mb-[19px]">
               {" "}
               <InputField
                 name="password"

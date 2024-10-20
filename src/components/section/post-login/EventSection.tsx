@@ -156,7 +156,7 @@ const EventSection = () => {
     <>
       <FormProvider {...methods}>
         {" "}
-        <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
+        <Box className="bg-ik_white mt-4 ml-[16px] rounded-[8px] px-[36.9px] py-[33.5px]">
           <Grid container>
             <Grid item xs={8}>
               {" "}
@@ -182,12 +182,12 @@ const EventSection = () => {
             <Grid item xs={4} className="flex justify-end items-center">
               {" "}
               <Box>
-                <CustomButton label="Create Event" />
+                <CustomButton label="Create Event" className="w-[217px] h-[64px]"/>
               </Box>
             </Grid>
           </Grid>
         </Box>
-        <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
+        <Box className="bg-ik_white mt-4 ml-[16px] rounded-[8px] px-[24.36px] py-[28.2px] mb-[80px]">
           {" "}
           <Tabs
             value={selectedTab}

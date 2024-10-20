@@ -32,32 +32,26 @@ const EventContent = ({ buisnessListData }: any) => {
   const id = open ? "simple-popover" : undefined;
   return (
     <>
-      <section className="mt-[15px] cursor-pointer">
+      <section className="mt-[19.15px] cursor-pointer last-of-type:mb-[64px]">
         {buisnessListData.data.map((business: any) => (
           <Card className="w-full h-full bg-white mt-[15px]" key={business.id}>
-            <Box sx={{ p: 2 }}>
-              <Grid container>
-                <>
-                  {" "}
-                  <Grid item md={2} xs={12}>
-                    <Box>
+            <Box sx={{ py:"18.37px" ,px:"16px" }}>
+              <Box className="flex flex-row" > 
+                <Box>
                       <ImageComponent
                         src={business.image}
                         alt="Business Image"
                         width={134}
                         height={175}
                       />
-                    </Box>
-                  </Grid>
-                  <Grid item md={10} xs={12}>
-                    <Box sx={{ padding: { xs: "5px", md: 2 } }}>
-                      <Box
+                    </Box>  
+                    {/* <Box
                         sx={{
                           display: "flex",
                           justifyContent: "space-between",
                         }}
-                      >
-                        <Box>
+                      > */}
+                        <Box className="pl-[20px] w-[457px]">
                           <p className="font-semibold text-f22 leading-8 text-ik_bluegreydarken3">
                             {business.title}
                           </p>
@@ -101,27 +95,33 @@ const EventContent = ({ buisnessListData }: any) => {
                         <Box
                           sx={{
                             display: { xs: "none", md: "flex" },
-                            justifyContent: "flex-end",
+                            // justifyContent: "flex-end",
                           }}
+                          className="pl-[110px]"
                         >
                           <Stack direction="column">
                             <Box mt={1}>
                               <CustomButton
                                 label="Create Event"
-                                className="w-[140px]"
+                                 className="w-[200px] h-[54px]"
                               />
                             </Box>
                             <Box mt={1}>
                               <CustomButton
                                 label="More"
                                 variant="primary-button"
-                                className="w-[140px]"
+                                className="w-[200px] h-[54px]"
                                 onClick={handleClick}
                               />
                             </Box>
                           </Stack>
                         </Box>
                       </Box>
+                      {/* </Box> */}
+                <>
+                
+                    {/* <Box sx={{ padding: { xs: "5px", md: 2 } }}> */}
+                    
 
                       <Box
                         sx={{
@@ -172,10 +172,10 @@ const EventContent = ({ buisnessListData }: any) => {
                           </Box>
                         </Stack>
                       </Box>
-                    </Box>
-                  </Grid>
+                    {/* </Box> */}
+                
                 </>
-              </Grid>
+             
             </Box>
           </Card>
         ))}

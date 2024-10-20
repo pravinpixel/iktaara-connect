@@ -51,8 +51,8 @@ const PostLogin = () => {
         <CustomContainer>
           <Grid container>
             <Grid item xs={4}>
-              <Box className="bg-ik_white my-5 mx-2 rounded-[8px]">
-                <Box className="flex items-center justify-center p-3">
+              <Box className="bg-ik_white my-4 rounded-[8px]">
+                <Box className="flex items-center justify-center pt-[32px] px-[92px]">
                   <ImageComponent
                     src="/assets/static/image_57.png"
                     alt="Ramakrishna Paramahamsa"
@@ -61,10 +61,10 @@ const PostLogin = () => {
                   />
                 </Box>
 
-                <Typography className="text-f24 font-bold leading-8 text-ik_bluegreydarken3 p-3 text-center">
+                <Typography className="text-f24 font-bold leading-8 text-ik_bluegreydarken3 px-[16px] pt-[12.62px] pb-[4px] text-center">
                   Ramakrishna Paramahamsa
                 </Typography>
-                <Typography className="text-f14 font-normal leading-[20px] text-ik_bluegreydarken1 text-center p-3">
+                <Typography className="text-f14 font-normal leading-[20px] text-ik_bluegreydarken1 text-center px-3">
                  {` Calling all music lovers! Brace yourselves for the arrival of
                   "Nee Singham Dhan"...`}
                 </Typography>
@@ -75,9 +75,9 @@ const PostLogin = () => {
                     className={""}
                   />
                 </Box>
-                <Box className="py-4 ">
+                <Box className="pt-2  pb-[30.13px]">
                   <Box
-                    className={`py-2 cursor-pointer ${
+                    className={`cursor-pointer ${
                       firstSection === "dashboard"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
@@ -95,7 +95,7 @@ const PostLogin = () => {
                     </Typography>
                   </Box>
                   <Box
-                    className={`py-2 cursor-pointer ${
+                    className={`cursor-pointer ${
                       firstSection === "enquiries"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
@@ -111,7 +111,7 @@ const PostLogin = () => {
                     </Typography>
                   </Box>
                   <Box
-                    className={`py-2 cursor-pointer ${
+                    className={`cursor-pointer ${
                       firstSection === "events"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
@@ -128,7 +128,7 @@ const PostLogin = () => {
                     </Typography>
                   </Box>
                   <Box
-                    className={`py-2 cursor-pointer ${
+                    className={` cursor-pointer ${
                       firstSection === "myprofile"
                         ? "bg-ik_whitevariant  border-l-2 border-ik_pink "
                         : ""
