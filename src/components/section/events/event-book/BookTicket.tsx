@@ -15,7 +15,7 @@ const CustomContainer = dynamic(
 
 const BookingTicket = () => {
   return (
-    <Box className="bg-ik_white p-3 mt-1">
+    <Box className="bg-ik_white p-[30px] mt-1">
       <CustomContainer>
         <Stack direction="row" spacing={1} alignItems="center">
           <ImageComponent

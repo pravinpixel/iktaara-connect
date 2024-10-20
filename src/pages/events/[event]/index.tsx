@@ -42,12 +42,12 @@ const EventsDetails = ({
 }: any) => {
   return (
     <>
-      <EventsTitle label="Events" subLabel="in Chennai" />
+      <EventsTitle label="Events" subLabel="in Chennai" className="pb-[25px]"/>
       <EventsBanners
         Eventssections={eventDetailData?.data.banners}
         height={400}
       />
-      <Box sx={{ marginTop: "-378px" }}>
+      <Box className="event-banner">
         <ImageComponent
           src="/assets/static/image_30.png"
           alt="image"
@@ -58,7 +58,7 @@ const EventsDetails = ({
       <EventDetailSection />
       <EventsThisWeek
         musictechniciansection={similarEventsData?.data}
-        className={"flex pt-5 pb-5 bg-ik_lightblue"}
+        className={"flex pt-[38.63px] pb-5 bg-ik_lightblue"}
         title={"Similar Events"}
       />
       <EventsByCategory

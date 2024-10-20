@@ -7,6 +7,7 @@ import Card from "@mui/material/Card";
 import CardMediaComponent from "./CardMediaComponent";
 import CONSTANT from "@/utils/helpers/constant-helper";
 
+
 interface CustomCardProps {
   variant?: "elevation" | "outlined";
 
@@ -16,6 +17,7 @@ interface CustomCardProps {
   Contenttext?: string;
   img1?: string;
   width?: string | number;
+  
   height?: string | number;
   type?: boolean;
   typebottomleft?: boolean;
@@ -28,7 +30,7 @@ export default function CustomCardEvents(props: CustomCardProps) {
     variant,
     img,
     text,
-
+    height="100%",
     width = "100%",
   } = props;
 
@@ -37,7 +39,7 @@ export default function CustomCardEvents(props: CustomCardProps) {
       variant={variant}
       sx={{
         position: "relative",
-
+        height:height,
         width: width,
         borderRadius: "16px",
         ...(props.typebottomleft &&
@@ -67,11 +69,11 @@ export default function CustomCardEvents(props: CustomCardProps) {
               width: "84px",
               height: "84px",
               borderRadius: "12px",
-              left: "19px",
+              left: "10px",
               bottom: "-34px",
             }}
           >
-            <Box className="bg-ik_bluevariantcolor text-center text-ik_white rounded-lg w-[67px] h-[37px] flex items-center justify-center">
+            <Box className="bg-ik_bluevariantcolor text-center text-ik_white rounded-lg flex items-center justify-center w-fit h-[37px] p-3" >
               {text}
             </Box>
           </Box>

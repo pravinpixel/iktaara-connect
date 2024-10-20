@@ -34,7 +34,7 @@ export default function ViewAllDialog() {
   return (
     // <Box sx={{ "& .MuiPaper": { padding: "200px!important" } }}>
     <>
-      <Grid container>
+      <Grid container className="mt-[12px]">
         <FormProvider {...methods}>
           {location?.map((row) => (
             <Grid item xs={5} key={row.id}>

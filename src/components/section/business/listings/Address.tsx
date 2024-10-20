@@ -94,7 +94,7 @@ function AddressSection() {
 
   return (
     <Box className="mt-[12px] ml-[19.18px] mb-[13.48px] mr-[19.18px]"><div className="slider-container">
-      <Slider {...settings}>
+      <Slider {...settings} className="buisness-slicknew">
         {businesses.map((business) => (
           <div className="slide-item" key={business.id}>
            <Link

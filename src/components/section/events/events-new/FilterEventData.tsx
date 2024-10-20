@@ -2,6 +2,7 @@
 import Slider from "react-slick";
 
 import ThisWeekData from "./ThisWeekData";
+import { Box } from "@mui/material";
 
 type Props = {
   Categorysection: any;
@@ -65,12 +66,22 @@ const FilterEventData = (props: Props) => {
   };
 
   return (
-    <div className="category-section-sec py-4">
-      <Slider {...settings}>
-        {Categorysection?.map((item: any) => (
+    <div className="category-section-sec py-2 pt-[30.37px]">
+      {/* <Slider {...settings}> */}
+       
+      {/* </Slider> */}
+
+         <Box
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="center"
+          gap={2}  // Adds spacing between items
+          className=" cursor-pointer"
+        >
+          {Categorysection?.map((item: any) => (
            <ThisWeekData cartData={item} key={item?.id} />
         ))}
-      </Slider>
+        </Box>
     </div>
   );
 };

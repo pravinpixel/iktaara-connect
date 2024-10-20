@@ -35,9 +35,9 @@ const CustomRadio: React.FC<RadioProps> = ({ label, name, value }) => {
         value={value}
         icon={<RadioButtonUncheckedIcon />}
         checkedIcon={<CheckCircleIcon />}
-        sx={{
-          marginTop: 0.8,
-        }}
+        // sx={{
+        //   marginTop: 0.8,
+        // }}
         checked={field?.value === 1}
         onChange={(e) => {
           field?.onChange(e?.target?.checked ? 1 : 0);

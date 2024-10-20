@@ -41,7 +41,7 @@ const NextSection = ({
   handleBackSection,
 }: NextSectionProps) => {
   return (
-    <Box className={`bg-ik_white p-3 mt-1 ${className}`}>
+    <Box className={`bg-ik_white p-6  ${className}`}>
       <CustomContainer>
         <Stack
           direction="row"

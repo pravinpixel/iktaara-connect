@@ -344,10 +344,19 @@
   display: flex;
   background-color: var(--ik_bluegreylighten5) !important;
 }
-
+.date-picker-event {
+  padding-top: 0px !important;
+}
 .date-picker-event table tbody {
   display: block !important;
-  padding: 5px !important;
+  padding-inline: 8px !important;
+  padding-block: 10px !important;
+}
+
+.date-picker-event table tbody td {
+  padding-block: 8px !important;
+  padding-inline: 2px !important;
+  background-color: white !important;
 }
 
 .date-picker-event table td button {
@@ -367,28 +376,119 @@
   color: white !important;
 }
 
-.slider-container {
+.buisness-slicknew .slider-container {
   width: 100%;
   margin: 0 auto; /* Center the slider */
 }
 
-.slick-slide {
+.buisness-slicknew .slick-slide {
   width: 348px !important; /* Force each slide to be 348px */
   display: inline-block; /* Ensure that the slides stay in a single row */
   justify-content: center;
   height: 346px !important;
 }
-.slick-track {
+.buisness-slicknew .slick-track {
   display: flex !important; /* Ensure all slides are in the same row */
   align-items: center; /* Vertically align slides (optional) */
 }
 
-.slick-list {
+.buisness-slicknew .slick-list {
   overflow: hidden; /* Hide overflow to avoid slide content spilling */
   /* white-space: nowrap; Prevent slides from wrapping to a new line */
 }
-.slide-item {
+.buisness-slicknew .slide-item {
   width: 100%; /* Allow responsive adjustment for card width */
   display: flex;
   justify-content: center;
+}
+
+.events-slider .slick-slide {
+  width: 280px !important;
+  display: inline-block;
+  justify-content: center;
+}
+
+@media screen and (max-width: 575px) {
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+}
+
+@media screen and (min-width: 768px) and (max-width: 995px) {
+  .event-banner {
+    margin-top: -428px !important;
+  }
+
+  .event-image {
+    margin-top: -139px !important;
+  }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+  .event-banner {
+    margin-top: -468px !important;
+  }
+  .event-image {
+    margin-top: -139px !important;
+  }
+}
+@media screen and (min-width: 1401px) and (max-width: 1500px) {
+  .event-banner {
+    margin-top: -428px !important;
+  }
+  .event-image {
+    margin-top: -139px !important;
+  }
+}
+
+@media screen and (min-width: 1501px) and (max-width: 1600px) {
+  .event-banner {
+    margin-top: -468px !important;
+  }
+  .event-image {
+    margin-top: -162px !important;
+  }
+}
+
+@media screen and (min-width: 1601px) and (max-width: 1800px) {
+  .event-banner {
+    margin-top: -525px !important;
+  }
+  .event-image {
+    margin-top: -160px !important;
+  }
+}
+
+@media screen and (min-width: 1801px) and (max-width: 2000px) {
+  .event-banner {
+    margin-top: -590px !important;
+  }
+  .event-image {
+    margin-top: -158px !important;
+  }
+}
+
+@media screen and (min-width: 2001px) and (max-width: 2200px) {
+  .event-banner {
+    margin-top: -635px !important;
+  }
+  .event-image {
+    margin-top: -158px !important;
+  }
+}
+
+@media screen and (min-width: 2201px) and (max-width: 4000px) {
+  .event-banner {
+    margin-top: -705px !important;
+  }
+  .event-image {
+    margin-top: -158px !important;
+  }
+}
+.event-banner {
+  margin-top: -428px;
+}
+
+.event-image {
+  margin-top: -139px;
 }

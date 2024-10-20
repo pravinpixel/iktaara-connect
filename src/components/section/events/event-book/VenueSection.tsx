@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { Box } from "@mui/material";
 
@@ -31,15 +31,23 @@ const EventSection = ({
 };
 
 const VenueSection = ({ section }: { section: EventsBookingSectionType }) => {
+  const [activeSection, setActiveSection] = useState<EventsBookingSectionType>(
+    "date" // Default section to display
+  );
+
+  // Step 2: Use a single function to handle all section changes
+  const handleSectionChange = (section: EventsBookingSectionType) => {
+    setActiveSection(section);
+  };
   return (
-    <Box className=" mt-1 mb-[100px]">
+    <Box className="  mb-[219.02px]">
       <CustomContainer>
         <Grid container spacing={1}>
           <Grid item xs={4}>
-            <PerformerSection />
+            <PerformerSection onSectionChange={handleSectionChange} />
           </Grid>
           <Grid item xs={8}>
-            <EventSection section={section} />
+            <EventSection section={activeSection}  />
           </Grid>
         </Grid>
       </CustomContainer>

@@ -11,7 +11,7 @@ import { Box } from "@mui/material";
 const HostEventsBanner = () => {
   return (
     <CustomContainer>
-      <Box className="flex items-center justify-center mb-5 cursor-pointer">
+      <Box className="flex items-center justify-center mb-8 cursor-pointer">
         <ImageComponent
           alt="calender"
           src="/assets/static/image_22.png"

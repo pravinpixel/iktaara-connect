@@ -9,11 +9,11 @@ const ImageComponent = dynamic(
 
 export default function HostInfo() {
   return (
-    <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white p-4">
+    <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white p-5">
       <Typography className="text-f22 font-semibold leading-8 text-ik_bluegreydarken3">
         Host Info
       </Typography>
-      <Stack direction="row" spacing={2} alignItems="center" my={2}>
+      <Stack direction="row" spacing={2} alignItems="center" mt={2} mb={"9.78px"}>
         <ImageComponent
           src="/assets/static/image_36.png"
           alt="Business Image"

@@ -61,7 +61,7 @@ export default function EventFilterPopup({
         }}
       >
         <DialogTitle
-          sx={{ m: 0, p: 2 }}
+          sx={{ m: 0, py:"28.7px" ,px:"24px"}}
           className="font-semibold text-f22 text-ik_bluegreydarken3 leading-7"
         >
           Filter By
@@ -73,7 +73,7 @@ export default function EventFilterPopup({
           sx={(theme) => ({
             position: "absolute",
             right: 8,
-            top: 8,
+            top: 18,
             color: theme.palette.grey[500],
           })}
         >

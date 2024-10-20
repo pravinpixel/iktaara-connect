@@ -14,12 +14,13 @@ const CustomContainer = dynamic(
 type EventsTitleProps = {
   label: string;
   subLabel: string;
+  className:string;
 };
 const EventsTitle = (props: EventsTitleProps) => {
-  const { label, subLabel } = props;
+  const { label, subLabel,className} = props;
   return (
     <CustomContainer>
-      <Stack direction="row" spacing={2} alignItems={"center"} pt={2} pb={2}>
+      <Stack direction="row" spacing={2} alignItems={"center"} pt={"22.7px"} className={className}>
         <ImageComponent
           alt="calender"
           src="/assets/static/image_21.png"

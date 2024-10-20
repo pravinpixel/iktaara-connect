@@ -42,7 +42,7 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
       <HostEventsBanner />
       <EventsThisWeek
         musictechniciansection={eventData?.data?.week_events}
-        className={"flex pt-5 mb-[60px] bg-ik_white "}
+        className={"flex pt-5 mb-[40px] bg-ik_white "}
         title={"This Week "}
       />
       <EventsByCategory
@@ -56,7 +56,7 @@ const EventsHome = ({ eventData, eventCategoryData }: any) => {
       <HostEventsBanner />
       <FrequentlyAskedSection
         faqsection={eventData?.data?.faq}
-        className={"flex pt-3 pb-5 "}
+        className={"flex pt-3 mb-[50px] "}
       />
     </>
   );
@@ -106,48 +106,48 @@ export const getServerSideProps = wrapper.getServerSideProps(
           {
             id: 1,
             event_name: "SID SRIRAM",
-            event_date: "date",
-            event_type: "SID SRIRAM",
+            event_date: "Aug 5",
+            event_type: "Adventure",
             event_price: 10,
             thumbnail_image: "/assets/static/image_23.png",
           },
           {
             id: 2,
             event_name: "SID SRIRAM",
-            event_date: "date",
-            event_type: "SID SRIRAM",
+          event_date: "Aug 5",
+     event_type: "Adventure",
             event_price: 110,
             thumbnail_image: "/assets/static/image_23.png",
           },
           {
             id: 3,
             event_name: "SID SRIRAM",
-            event_date: "date",
-            event_type: "SID SRIRAM",
+            event_date: "Aug 5",
+           event_type: "Adventure",
             event_price: 10,
             thumbnail_image: "/assets/static/image_23.png",
           },
           {
             id: 4,
             event_name: "SID SRIRAM",
-            event_date: "date",
-            event_type: "SID SRIRAM",
+            event_date: "Aug 5",
+           event_type: "Adventure",
             event_price: 10,
             thumbnail_image: "/assets/static/image_23.png",
           },
           {
             id: 5,
             event_name: "SID SRIRAM",
-            event_date: "date",
-            event_type: "SID SRIRAM",
+            event_date: "Aug 5",
+         event_type: "Adventure",
             event_price: 10,
             thumbnail_image: "/assets/static/image_23.png",
           },
           {
             id: 6,
             event_name: "SID SRIRAM",
-            event_date: "date",
-            event_type: "SID SRIRAM",
+           event_date: "Aug 5",
+     event_type: "Adventure",
             event_price: 10,
             thumbnail_image: "/assets/static/image_23.png",
           },

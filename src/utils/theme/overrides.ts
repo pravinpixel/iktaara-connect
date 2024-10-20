@@ -466,7 +466,7 @@ export function overrides(theme: Theme) {
           padding: "12px",
           borderBottom: "none",
           // borderBottom: `2px solid ${theme.palette.customColor.ik_bluegreydarken2}`,
-          borderRadius: "7px",
+          // borderRadius: "7px",
           display: "flex",
           gap: "10px",
           justifyContent: "center",
@@ -488,7 +488,7 @@ export function overrides(theme: Theme) {
             cursor: "not-allowed",
           },
           "&.Mui-selected": {
-            backgroundColor: "#fff",
+            backgroundColor: "var(--ik_bluegreylighten7)",
             color: "#455A64",
             boxShadow: "none",
             fontWeight: 600,

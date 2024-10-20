@@ -70,13 +70,13 @@ export default function FilterSectionEvents(props: Props) {
       categoryKey: "pianist",
       onClick: handleClickOpen,
     },
-    { label: "Performances", categoryKey: "dancer" },
-    { label: "FREE ENTRY", categoryKey: "sound_engineer" },
-    { label: "English", categoryKey: "theatre_artists" },
-    { label: "Theatre Artists", categoryKey: "party_dJ" },
+    // { label: "Performances", categoryKey: "dancer" },
+    // { label: "FREE ENTRY", categoryKey: "sound_engineer" },
+    // { label: "English", categoryKey: "theatre_artists" },
+    // { label: "Theatre Artists", categoryKey: "party_dJ" },
   ];
   return (
-    <section className="section-padding pt-5 pb-14 bg-ik_lightbluevariant">
+    <section className="section-padding pt-10 pb-14 bg-ik_lightbluevariant">
       <CustomContainer>
         <Tabs
           value={selectedTab}

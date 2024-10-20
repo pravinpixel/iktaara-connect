@@ -21,12 +21,14 @@ const DateEventPicker = () => {
     <>
       <Box>
         <Calendar
+          className="!bg-transparent date-picker-event"
           mode="single"
           selected={date}
           onSelect={setDate}
-          className="date-picker-event"
+     
           formatters={{ formatWeekdayName: customWeekdayFormatter }}
           // showOutsideDays={false}
+          
         />
       </Box>
     </>

@@ -19,10 +19,10 @@ const AboutIktaraaEvents = (props: EventsTitleProps) => {
     <CustomContainer>
       {aboutData?.map((item: any) => (
         <Box key={item.id}>
-          <Typography className="font-bold text-f24 text-ik_bluegreydarken6 leading-8 mt-[30px]">
+          <Typography className="font-bold text-f24 text-ik_bluegreydarken6 leading-8 mt-[30.14px]">
             {item?.title}
           </Typography>
-          <Typography className="font-normal text-f18 text-ik_bluegreydarken6 leading-7 mt-[30px] mb-[40px]">
+          <Typography className="font-normal text-f18 text-ik_bluegreydarken6 leading-7 mt-[16px] mb-[40px]">
             {item?.description}
           </Typography>
         </Box>

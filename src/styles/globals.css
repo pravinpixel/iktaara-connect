@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,8 +7,6 @@
   .text-balance {
     text-wrap: balance;
   }
-
-
 }
 
 @layer base {
@@ -34,7 +32,6 @@
     --f52: 52px;
     --f56: 56px;
 
-
     /* font */
 
     /* color */
@@ -49,9 +46,18 @@
     --ik_green-foreground: hsla(0, 0%, 100%, 1);
     --ik_blue: hsla(256, 50%, 24%, 1);
     --ik_blue-foreground: hsla(0, 0%, 100%, 1);
-    --ik_multicolor: linear-gradient(180deg, #E34061 0%, #00968A 100%);
-    --ik_multicolor1: linear-gradient(90deg, #E34061 0%, #3C1393 44%, #1E9D77 100%);
-    --ik_multicolor2: linear-gradient(272.65deg, #2E1E5A -3.81%, #E34061 116.02%);
+    --ik_multicolor: linear-gradient(180deg, #e34061 0%, #00968a 100%);
+    --ik_multicolor1: linear-gradient(
+      90deg,
+      #e34061 0%,
+      #3c1393 44%,
+      #1e9d77 100%
+    );
+    --ik_multicolor2: linear-gradient(
+      272.65deg,
+      #2e1e5a -3.81%,
+      #e34061 116.02%
+    );
     --ik_multicolor-foreground: hsla(0, 0%, 100%, 1);
     --ik_white: hsla(0, 0%, 100%, 1);
     --ik_white-foreground: hsla(348, 75%, 57%, 1);
@@ -76,8 +82,6 @@
     --ik_bluegreylighten6: hsla(174, 38%, 95%, 1);
     --ik_bluegreylightens3: hsla(200, 15%, 73%, 1);
 
-
-
     --ik_redvariant1: hsla(51, 83%, 92%, 1);
     --ik_bordervariant: hsla(0, 0%, 80%, 1);
     --ik_bordervariant2: hsla(213, 15%, 85%, 1);
@@ -85,17 +89,17 @@
     --ik_lightgrey: hsla(224, 8%, 54%, 1);
     --ik_darkblue: hsla(212, 100%, 44%, 1);
     --ik_darkblue1: hsla(210, 79%, 46%, 1);
-    --ik_titlecolor: linear-gradient(90deg, #FF5252 0%, #2E1E5A 51.5%, #10BAC5 100%);
-
-
+    --ik_titlecolor: linear-gradient(
+      90deg,
+      #ff5252 0%,
+      #2e1e5a 51.5%,
+      #10bac5 100%
+    );
 
     --ik_lightorange: hsla(48, 100%, 88%, 1);
     --ik_boxshadiowcolor: hsla(0, 0%, 0%, 0.15);
     --ik_lightorangevariant: hsla(47, 100%, 90%, 1);
     --ik_greenvariant: hsla(176, 44%, 94%, 1);
-
-
-
 
     /* color */
     --background: 0 0% 100%;
@@ -153,14 +157,9 @@
   }
 }
 
-
-
-
-
-
 @layer base {
   * {
-    @apply box-border
+    @apply box-border;
   }
 
   body {

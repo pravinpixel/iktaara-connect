@@ -276,7 +276,7 @@ const StudioCard = ({ buisnessListData }: any) => {
       <Box mt={2}>
         <ImageComponent
           src="/assets/static/image_18.png"
-          width={1118}
+          width={1134.67}
           height={250}
         />
       </Box>

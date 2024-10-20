@@ -115,13 +115,15 @@ export default function EventFilterData() {
               " &.MuiTabs-root": {
                 borderRight: "1px solid var(--ik_bordervariant2)",
                 width: "200px!important",
+             
               },
+                
             }}
           >
-            <Tab label="Category" value="1" component='div' />
-            <Tab label="Language" value="2" component='div' />
-            <Tab label="Genre" value="3" component='div' />
-            <Tab label="Price" value="4" component='div' />
+            <Tab label="Category" value="1" component='div' sx={{py:"20px"}}/>
+            <Tab label="Language" value="2" component='div' sx={{py:"20px"}}/>
+            <Tab label="Genre" value="3" component='div' sx={{py:"20px"}}/>
+            <Tab label="Price" value="4" component='div' sx={{py:"20px"}}/>
           </Tabs>
           <Box className="flex flex-col justify-between flex-grow min-h-[400px] w-[500px]">
             <TabPanel value="1">
@@ -136,7 +138,7 @@ export default function EventFilterData() {
                 </Grid>
               </Box>
             </TabPanel>
-            <TabPanel value="2">
+            <TabPanel value="2" sx={{paddingTop:"16px"}}>
               {language?.map((item) => (
                 <Grid item xs={6} key={item.id}>
                   <FilterLanguage filterLanguage={item} />

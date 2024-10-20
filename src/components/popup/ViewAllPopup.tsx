@@ -56,7 +56,8 @@ export default function ViewAllPopup({
         sx={{
           " & .MuiDialog-paper": {
             padding: "0px",
-            width: "500px",
+            width: "100%",
+            maxWidth:"842px!important"
           },
         }}
       >
@@ -86,6 +87,7 @@ export default function ViewAllPopup({
               placeholder="Search Location"
               typeheader={true}
               typebanner={false}
+              className="w-[400px] h-[48px]"
             />
           </div>
           <ViewAllDialog />

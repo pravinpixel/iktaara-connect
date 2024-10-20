@@ -17,7 +17,7 @@ const EventsThisWeek = (props: Props) => {
   const { musictechniciansection, title, className } = props;
 
   const settings = {
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 3000,
     arrows: true,
     swipe: musictechniciansection?.length > 5 ? true : false,
@@ -25,7 +25,7 @@ const EventsThisWeek = (props: Props) => {
     infinite: musictechniciansection?.length > 5 ? true : false,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: musictechniciansection?.length >= 5 ? 5 : 1,
+    slidesToScroll:1,
     lazyLoad: "progressive" as const,
     customPaging: () => <div className="reactslick-custom-dots" />,
     responsive: [
@@ -74,7 +74,7 @@ const EventsThisWeek = (props: Props) => {
   return (
     <section className={className}>
       <CustomContainer>
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center gap-3 mb-[16.81px]">
           <div className="text-f24 font-bold text-ik_bluegreydarken6 leading-9">
             <span>{title}</span>
           </div>
@@ -87,7 +87,7 @@ const EventsThisWeek = (props: Props) => {
           </div>
         </div>
         <div className="music-section-sec1 cursor-pointer">
-          <Slider {...settings}>
+          <Slider {...settings} className="events-slider">
             {musictechniciansection?.map((item: any) => (
               <ThisWeekData cartData={item} key={item?.id} />
             ))}

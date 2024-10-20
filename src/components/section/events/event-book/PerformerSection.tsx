@@ -13,12 +13,17 @@ const ImageComponent = dynamic(
 const CustomContainer = dynamic(
   () => import("@/components/common/form-fields/Container")
 );
+interface PerformerSectionProps {
+  onSectionChange: (section: EventsBookingSectionType) => void; // Single function for section changes
+}
 
-const PerformerSection: React.FC = () => {
+const PerformerSection: React.FC<PerformerSectionProps> = ({
+  onSectionChange,
+}) => {
   return (
-    <Box className="bg-ik_white p-3 mt-1 rounded-2xl mb-3">
+    <Box className="bg-ik_white px-3 pt-3 pb-[31.15px] mt-[16px] rounded-2xl mb-3">
       <CustomContainer>
-        <Stack direction="row" spacing={1} alignItems="center">
+        <Stack direction="row" spacing="20px" alignItems="center">
           <ImageComponent
             src="/assets/static/image_32.png"
             alt="image"
@@ -34,12 +39,13 @@ const PerformerSection: React.FC = () => {
             </Typography>
           </Box>
         </Stack>
-        <Divider className="my-2" />
+        <Divider className="my-[16px]" />
         <Stack
           direction="row"
-          spacing={1}
+          spacing={2}
           alignItems="center"
           className="cursor-pointer mt-3"
+          onClick={() => onSectionChange("date")} 
         >
           <ImageComponent
             src="/assets/static/clock.svg"
@@ -58,10 +64,10 @@ const PerformerSection: React.FC = () => {
         </Stack>
         <Stack
           direction="row"
-          spacing={1}
+          spacing={2}
           alignItems="center"
-          // onClick={onDateClick}
-          className="cursor-pointer mt-3"
+        onClick={() => onSectionChange("venue")} 
+          className="cursor-pointer mt-[20.27px]"
         >
           <ImageComponent
             src="/assets/static/location.svg"
@@ -80,10 +86,10 @@ const PerformerSection: React.FC = () => {
         </Stack>
         <Stack
           direction="row"
-          spacing={1}
+          spacing={2}
           alignItems="center"
-          // onClick={onDateClick1}
-          className="cursor-pointer mt-3"
+      onClick={() => onSectionChange("ticket")} 
+              className="cursor-pointer mt-[20.27px]"
         >
           <ImageComponent
             src="/assets/static/ticket.svg"

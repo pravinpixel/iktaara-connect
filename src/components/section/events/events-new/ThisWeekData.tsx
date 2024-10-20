@@ -20,9 +20,11 @@ const ThisWeekData = (props: Props) => {
         <CustomCardEvents
           variant="bottom-left"
           img={cartData.thumbnail_image}
-          text={cartData?.event_type}
+          text={cartData?.event_date}
           reviews={""}
           typebottom={false}
+          width={"280px"}
+          height="366px"
         />
       </div>
       <div className="py-2">

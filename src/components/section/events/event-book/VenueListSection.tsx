@@ -15,14 +15,14 @@ const CustomButton = dynamic(
 const VenueListSection = () => {
   return (
     <>
-      <Box className="bg-ik_white p-3 mt-1 rounded-2xl">
-        <Box className="font-semibold text-f20 leading-6 text-ik_bluegreydarken3 text-center">
+      <Box className="bg-ik_white py-[26px] px-[21px] mt-[16px] rounded-2xl">
+        <Box className="font-semibold text-f20 leading-6 text-ik_bluegreydarken3 text-center mb-[23.2px]">
           Venue
         </Box>
-        <Box className="border border-ik_bluegreydarken3-500 p-3 rounded-2xl">
+        <Box className="border border-ik_bluegreydarken3-500 py-[29.39px] px-[24px] rounded-2xl">
           <Stack direction="row">
             <Grid item xs={8}>
-              <Typography className="text-f20 font-semibold leading-7 text-ik_bluegreydarken3">
+              <Typography className="text-f20 font-semibold leading-7 text-ik_bluegreydarken3 mb-[8px]">
                 Medai - The Stage, Alwarpet, Chennai
               </Typography>
               <Typography className="text-f16 font-normal leading-6 text-ik_bluegreylighten1">
@@ -39,7 +39,7 @@ const VenueListSection = () => {
                 justifyContent: "flex-end",
               }}
             >
-              <CustomButton className={""} label="Selected" />
+              <CustomButton className={"w-[176px] h-[54px]"} label="Selected" />
             </Grid>
           </Stack>
         </Box>

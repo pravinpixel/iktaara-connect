@@ -25,7 +25,7 @@ const EventsBanners = (props: Props) => {
   const { Eventssections, height } = props;
 
   const settings = {
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
     swipe: Eventssections?.length > 1 ? true : false,
@@ -69,7 +69,7 @@ const EventsBanners = (props: Props) => {
   };
 
   return (
-    <section className="best-sellers-section bg-cover bg-no-repeat pt-5 pb-6">
+    <section className="best-sellers-section bg-cover bg-no-repeat pt-5 pb-[36.5px] ">
       <div>
         <Slider {...settings}>
           {Eventssections?.map((item: any) => (
@@ -81,6 +81,7 @@ const EventsBanners = (props: Props) => {
                   height={height ? height : 491}
                   alt="slide-imag"
                   className="w-full h-auto rounded-[7px]"
+                  
                 />
               </div>
             </Fragment>
