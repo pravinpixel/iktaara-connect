@@ -113,8 +113,12 @@ import React from "react";
 import { Box, Typography, Stack } from "@mui/material";
 import dynamic from "next/dynamic";
 
-const CustomContainer = dynamic(() => import("@/components/common/form-fields/Container"));
-const CustomCardEventsCategory = dynamic(() => import("@/components/common/form-fields/CustomCardsEventsCategory"));
+const CustomContainer = dynamic(
+  () => import("@/components/common/form-fields/Container")
+);
+const CustomCardEventsCategory = dynamic(
+  () => import("@/components/common/form-fields/CustomCardsEventsCategory")
+);
 
 type EventsTitleProps = {
   label: string;
@@ -132,7 +136,7 @@ const EventsByCategory = (props: EventsTitleProps) => {
           direction="row"
           spacing={2}
           alignItems={"center"}
-          className="mt-[40.88px] mb-[24.37px]"
+          className="pt-[40.88px] pb-[24.37px]"
         >
           <Typography className="font-bold text-f24 text-ik_bluegreydarken6 leading-9 ">
             {label}
@@ -144,13 +148,13 @@ const EventsByCategory = (props: EventsTitleProps) => {
           display="flex"
           flexWrap="wrap"
           justifyContent="center"
-          gap={2}  // Adds spacing between items
-          className="mb-[40.38px] cursor-pointer"
+          gap={2} // Adds spacing between items
+          className="pb-[60.45px] cursor-pointer"
         >
           {eventByCate?.map((business: any) => (
             <Box
               key={business.id}
-               width="236px" 
+              width="236px"
               display="flex"
               justifyContent="center"
             >

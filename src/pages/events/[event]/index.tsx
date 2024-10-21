@@ -59,19 +59,20 @@ const EventsDetails = ({
           />
         </Box>
       </Box>
+      <Box className="mt-[-100px] ">
+        <EventDetailSection />
 
-      <EventDetailSection />
-
-      <EventsThisWeek
-        musictechniciansection={similarEventsData?.data}
-        className={"flex pt-[38.63px] pb-5 bg-ik_lightblue"}
-        title={"Similar Events"}
-      />
-      <EventsByCategory
-        label="Events by Category"
-        className="bg-ik_lightblue"
-        eventByCate={eventCategoryData?.data}
-      />
+        <EventsThisWeek
+          musictechniciansection={similarEventsData?.data}
+          className={"flex pt-[38.63px] pb-5 bg-ik_lightblue"}
+          title={"Similar Events"}
+        />
+        <EventsByCategory
+          label="Events by Category"
+          className="bg-ik_lightblue"
+          eventByCate={eventCategoryData?.data}
+        />
+      </Box>
     </Box>
   );
 };
