@@ -54,11 +54,11 @@ const EventsDetails = ({
           <EventsBanners
             Eventssections={eventDetailData?.data.banners}
             height={400}
-            imageClassName="w-full h-[335px] 2xl:h-[400px] rounded-[7px]"
+            imageClassName="w-full h-[400px] 2xl:h-[400px] rounded-[7px]"
           />
         </Box>
       </Box>
-      <Box className="mt-[-100px] ">
+      <Box className="">
         <EventDetailSection />
 
         <EventsThisWeek

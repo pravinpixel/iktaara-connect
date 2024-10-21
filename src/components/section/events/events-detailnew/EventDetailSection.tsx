@@ -24,7 +24,7 @@ const EventDetailSection = () => {
       <CustomContainer>
         <Box
           // sx={{ marginTop: "-180px" }}
-          className="relative top-[-190px] 2xl:top-[-160px]  z-[100]"
+          className="relative top-[-220px] 2xl:top-[-200px]  z-[100]"
         >
           <Grid container className="mx-auto">
             <Grid item xs={8}>
