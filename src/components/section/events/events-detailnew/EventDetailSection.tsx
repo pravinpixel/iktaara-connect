@@ -22,8 +22,8 @@ const EventDetailSection = () => {
   return (
     <Box className="bg-ik_lightblue">
       <CustomContainer>
-        <Box 
-        sx={{ marginTop: "-80px" }}
+        <Box
+        // sx={{ marginTop: "-180px" }}
         >
           <Grid container className="mx-auto">
             <Grid item xs={8}>

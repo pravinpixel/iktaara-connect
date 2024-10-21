@@ -41,21 +41,27 @@ const EventsDetails = ({
   eventCategoryData,
 }: any) => {
   return (
-    <>
-      <EventsTitle label="Events" subLabel="in Chennai" className="pb-[25px]"/>
-      <EventsBanners
-        Eventssections={eventDetailData?.data.banners}
-        height={400}
-      />
+    <Box className="">
+      <EventsTitle label="Events" subLabel="in Chennai" className="pb-[10px]" />
+
       <Box className="event-banner">
-        <ImageComponent
+        {/* <ImageComponent
           src="/assets/static/image_30.png"
           alt="image"
           width={1920}
           height={691}
-        />
+        /> */}
+        <Box className="mt-[9.9px]">
+          {" "}
+          <EventsBanners
+            Eventssections={eventDetailData?.data.banners}
+            height={400}
+          />
+        </Box>
       </Box>
+
       <EventDetailSection />
+
       <EventsThisWeek
         musictechniciansection={similarEventsData?.data}
         className={"flex pt-[38.63px] pb-5 bg-ik_lightblue"}
@@ -66,7 +72,7 @@ const EventsDetails = ({
         className="bg-ik_lightblue"
         eventByCate={eventCategoryData?.data}
       />
-    </>
+    </Box>
   );
 };
 export const getServerSideProps = wrapper.getServerSideProps(
