@@ -30,9 +30,7 @@ const EventsTitle = dynamic(
 const EventsThisWeek = dynamic(
   () => import("@/components/section/events/events-new/EventsThisWeek")
 );
-const ImageComponent = dynamic(
-  () => import("@/components/common/form-fields/ImageComponent")
-);
+
 // import { eventHome } from "@/redux/services/eventService";
 
 const EventsDetails = ({
@@ -51,11 +49,12 @@ const EventsDetails = ({
           width={1920}
           height={691}
         /> */}
-        <Box className="mt-[9.9px]">
+        <Box className="pt-[9.9px]">
           {" "}
           <EventsBanners
             Eventssections={eventDetailData?.data.banners}
             height={400}
+            imageClassName="w-full h-[335px] 2xl:h-[400px] rounded-[7px]"
           />
         </Box>
       </Box>
@@ -64,7 +63,7 @@ const EventsDetails = ({
 
         <EventsThisWeek
           musictechniciansection={similarEventsData?.data}
-          className={"flex pt-[38.63px] pb-5 bg-ik_lightblue"}
+          className={"flex pt-[8.63px]  bg-ik_lightblue"}
           title={"Similar Events"}
         />
         <EventsByCategory

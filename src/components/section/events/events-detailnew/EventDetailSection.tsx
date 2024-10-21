@@ -20,10 +20,11 @@ const CustomContainer = dynamic(
 // };
 const EventDetailSection = () => {
   return (
-    <Box className="bg-ik_lightblue">
+    <Box className="bg-ik_lightblue h-[639px]">
       <CustomContainer>
         <Box
-        // sx={{ marginTop: "-180px" }}
+          // sx={{ marginTop: "-180px" }}
+          className="relative top-[-190px] 2xl:top-[-160px]  z-[100]"
         >
           <Grid container className="mx-auto">
             <Grid item xs={8}>
@@ -37,7 +38,7 @@ const EventDetailSection = () => {
             <Grid item xs={8} sx={{ paddingTop: "0px!important" }}>
               <WhyShouldAttend />
             </Grid>
-            <Grid item xs={4} className="pl-[16px]">
+            <Grid item xs={4} className="pl-[16px] mt-[-136px] 2xl:mt-[-156px]">
               <Box className="w-full border border-gray-300 rounded-md shadow-md  bg-white event-image">
                 <ImageComponent
                   src="/assets/static/image_29.png"

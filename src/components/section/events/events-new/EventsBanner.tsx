@@ -19,10 +19,11 @@ type Props = {
     event_name: string;
   }>;
   height: number;
+  imageClassName: string;
 };
 
 const EventsBanners = (props: Props) => {
-  const { Eventssections, height } = props;
+  const { Eventssections, height, imageClassName } = props;
 
   const settings = {
     // autoplay: true,
@@ -80,8 +81,7 @@ const EventsBanners = (props: Props) => {
                   width={1496}
                   height={height ? height : 491}
                   alt="slide-imag"
-                  className="w-full h-auto rounded-[7px]"
-                  
+                  className={imageClassName}
                 />
               </div>
             </Fragment>
