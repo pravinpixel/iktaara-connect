@@ -37,9 +37,9 @@ const AritistHeaderComponents = (props: Props) => {
   const [openaritistedit, setOpenaritistedit] = React.useState(false);
   const [openUpdate, setOpenUpdate] = React.useState(false);
 
-  // const handleClickOpenEnquire = () => {
-  //   setOpenEnquire(true);
-  // };
+  const handleClickOpenEnquire = () => {
+    setOpenEnquire(true);
+  };
 
   const handleCloseEnquire = () => {
     setOpenEnquire(false);
@@ -63,9 +63,11 @@ const AritistHeaderComponents = (props: Props) => {
   return (
     <>
       <section>
-        <div className={`w-ful flex items-center justify-between pt-7 pb-5`}>
+        <div
+          className={`w-ful flex items-center justify-between pt-[31px]`}
+        >
           <div className="flex items-center justify-between gap-5 w-100">
-            <div className="h-[70px] w-[100px] flex items-center  ">
+            <div className="h-[132px] w-[132px] flex items-center  ">
               <ImageComponent
                 src={ListHeader.logo}
                 width={132}
@@ -75,10 +77,10 @@ const AritistHeaderComponents = (props: Props) => {
               />
             </div>
             <div className="">
-              <h6 className="text-f30 font-bold text-ik_bluegreydarken3">
+              <h6 className="text-f30 font-bold text-ik_bluegreydarken3 leading-[40.32px] mb-[6px]">
                 {ListHeader.title}
               </h6>
-              <div className="flex gap-3">
+              <div className="flex gap-3 mb-[19.7px]">
                 <div className="flex gap-2">
                   <ImageComponent
                     src={"/assets/icons/maps-location.svg"}
@@ -86,7 +88,7 @@ const AritistHeaderComponents = (props: Props) => {
                     height={20}
                     alt={"location"}
                   />
-                  <span className="text-16 font-normal text-ik_bluegreydarken3">
+                  <span className="text-16 font-normal text-ik_bluegreydarken3 leading-[20.16px]">
                     {ListHeader.location}
                   </span>
                 </div>
@@ -97,14 +99,14 @@ const AritistHeaderComponents = (props: Props) => {
                     height={20}
                     alt={"location"}
                   />
-                  <span className="text-16 font-normal text-ik_bluegreydarken3">
+                  <span className="text-16 font-normal text-ik_bluegreydarken3 leading-[20.16px]">
                     {ListHeader.job}
                   </span>
                 </div>
               </div>
-              <div className="flex gap-3 mt-2">
+              <div className="flex gap-3">
                 <div>
-                  <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-3">
+                  <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-3 ">
                     <div className="flex gap-3">
                       <ImageComponent
                         src={"/assets/icons/phone-icons.svg"}
@@ -181,7 +183,7 @@ const AritistHeaderComponents = (props: Props) => {
           <div>
             <div className="flex gap-3 mt-2">
               {/* <div>
-                <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-5">
+                <button className="border border-ik_bluegreylightens3 rounded-lg py-3 px-5 w-[190px] h-[74px]">
                   <div className="flex gap-3">
                     <ImageComponent
                       src={"/assets/icons/star-icons.svg"}
@@ -200,7 +202,7 @@ const AritistHeaderComponents = (props: Props) => {
               </div>
               <div>
                 <button
-                  className=" h-100 px-16 py-6 bg-ik_pink text-white text-f20  font-semibold rounded-lg"
+                  className=" h-100 px-16 py-6 bg-ik_pink text-white text-f20  font-semibold rounded-lg w-[236px] h-[74px]"
                   onClick={handleClickOpenEnquire}
                 >
                   <span>Enquire</span>
@@ -208,7 +210,7 @@ const AritistHeaderComponents = (props: Props) => {
               </div> */}
 
               <button
-                className="border border-ik_bluegreylightens3 rounded-lg py-[23px] px-7"
+                className="border border-ik_bluegreylightens3 rounded-lg py-[23px] px-7 w-[236px] h-[74px]"
                 onClick={handleClickUpdate}
               >
                 <span className="text-f20 font-semibold text-ik_pink">
@@ -219,7 +221,7 @@ const AritistHeaderComponents = (props: Props) => {
                 <CustomButton
                   variant="contained"
                   label="Edit Profile"
-                  className="py-[23px] px-7 text-f20 font-semibold"
+                  className="py-[23px] px-7 text-f20 font-semibold w-[236px] h-[74px]"
                   onClick={handleClickOpenAritist}
                 />
               </div>

@@ -133,7 +133,9 @@ const AritistStoresComponents = () => {
   return (
     <section className="mb-14 pt-5">
       <div className="text-f26 font-bold mb-5">
-        <h6 className="text-ik_bluegreydarken3 ">
+        <h6
+          className="text-ik_bluegreydarken3 leading-[35.28px]"
+        >
           Most Viewed <span className="text-ik_pink">Stores</span>
         </h6>
       </div>

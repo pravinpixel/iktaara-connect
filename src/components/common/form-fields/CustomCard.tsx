@@ -121,8 +121,7 @@ export default function CustomCard(props: CustomCardProps) {
               />
               {/* </div> */}
             </Box>
-            {reviews &&
-            (
+            {reviews && (
               <Box
                 sx={{
                   display: "flex",
@@ -213,7 +212,12 @@ export default function CustomCard(props: CustomCardProps) {
               }}
             >
               <Typography
-                sx={{ fontSize: "20px", fontWeight: 500, color: "#fff" }}
+                sx={{
+                  fontSize: "20px",
+                  fontWeight: 500,
+                  color: "#fff",
+                  lineHeight: "28px",
+                }}
               >
                 {text}
               </Typography>

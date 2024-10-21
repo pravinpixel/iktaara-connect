@@ -103,8 +103,8 @@ const ListingReviewsComponents = () => {
       <Slider {...settings}>
         {reviews?.map((row) => (
           <>
-            <div className="shadow-color p-6 rounded-3xl" key={row.id}>
-              <div>
+            <div className="shadow-custom-shadow p-6 rounded-3xl" key={row.id}>
+              <div className="mb-[25.5px]">
                 <ImageComponent
                   src={"/assets/icons/arrow-icons.svg"}
                   width={37}
@@ -112,24 +112,24 @@ const ListingReviewsComponents = () => {
                   alt={"arrowdown"}
                 />
               </div>
-              <div className="text-f18 font-normal text-ik_bluegreydarken3 h-full max-h-[250px] py-4 overflow-hidden text-ellipsis">
+              <div className="text-f18 font-normal text-ik_bluegreydarken3 h-full max-h-[250px] pb-[15.68px] overflow-hidden text-ellipsis leading-[26px]">
                 <p className="line-clamp-6">{row.reviews_text}</p>
               </div>
-              <div className="flex gap-3 items-center">
+              <div className="flex gap-4 items-center">
                 <StarRatings count={2} />
                 <div className="text-center">
-                  <span className="text-ik_bluegreydarken2 text-f16 font-normal">
+                  <span className="text-ik_bluegreydarken2 text-f16 font-normal leading-[20.16px]">
                     July 1, 2024
                   </span>
                 </div>
               </div>
-              <div className="flex gap-2 items-center pt-7">
+              <div className="flex gap-3 items-center pt-6">
                 <Avatar alt="Remy Sharp" src="" className="w-[70px] h-[70px]" />
                 <div>
-                  <h6 className="text-ik_bluegreydarken2 text-f16 font-semibold">
+                  <h6 className="text-ik_bluegreydarken2 text-f16 font-semibold leading-[20.16px]">
                     {row.reviews_name}
                   </h6>
-                  <span className="text-ik_bluegreydarken2 text-f16 font-normal">
+                  <span className="text-ik_bluegreydarken2 text-f16 font-normal leading-[20.16px]">
                     {row.reviews_location}
                   </span>
                 </div>

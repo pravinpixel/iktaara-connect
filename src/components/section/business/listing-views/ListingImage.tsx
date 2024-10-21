@@ -61,7 +61,7 @@ const ListingImageComponents = () => {
 
   return (
     <section className="pb-[32.59px]">
-      <Grid container spacing={1}>
+      <Grid container>
         {/* Main Image */}
         <Grid item xs={12} sm={hasSmallImages ? 8 : 12}>
           <ImageComponent
@@ -70,7 +70,7 @@ const ListingImageComponents = () => {
             height={images.mainImage.height}
             alt="main-image"
             onClick={() => handleImageClick(-1)}
-            className="w-full h-full rounded-[15px]"
+            className="w-full h-full rounded-[15px] pr-[9.42px]"
           />
         </Grid>
 
@@ -82,7 +82,7 @@ const ListingImageComponents = () => {
               useFlexGap
               sx={{ flexWrap: "wrap", height: "100%" }}
             >
-              <Grid container spacing={1}>
+              <Grid container>
                 {smallImagesToShow.map((img, index) => (
                   <Grid
                     item
@@ -93,6 +93,7 @@ const ListingImageComponents = () => {
                         ? 12
                         : 6
                     }
+                  className={`pr-2 ${index === 1 ? 'pr-0' : ''}`}
                     key={index}
                   >
                     <ImageComponent
@@ -101,7 +102,7 @@ const ListingImageComponents = () => {
                       height={img.height}
                       alt={`small-image-${index}`}
                       onClick={() => handleImageClick(index)}
-                      className="w-full h-full rounded-[15px]"
+                      className="w-full h-full rounded-[15px] pb-2"
                     />
                   </Grid>
                 ))}

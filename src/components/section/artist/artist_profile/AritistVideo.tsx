@@ -80,8 +80,8 @@ const AritistVideoComponents = () => {
     ],
   };
   return (
-    <section className="mb-7 pt-5">
-      <div className="music-section-sec">
+    <section className="pt-[40px] pb-[32.41px]">
+      <div className="video-section-sec">
         <Slider className="" {...settings}>
           {artists_data?.map((row) => (
             <div key={row.id}>

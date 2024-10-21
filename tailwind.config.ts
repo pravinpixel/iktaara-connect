@@ -174,6 +174,7 @@ const config: Config = {
       },
       boxShadow: {
         "custom-hsla": "0px 1px 2px 0px hsla(0, 0%, 0%, 0.25)",
+        "custom-shadow": "0 4px 30px rgba(0, 0, 0, 0.1)",
       },
       border: "hsl(var(--border))",
       input: "hsl(var(--input))",

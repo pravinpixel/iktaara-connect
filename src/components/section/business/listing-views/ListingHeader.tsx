@@ -27,9 +27,9 @@ const ListingHeaderComponents = (props: Props) => {
   const [openbusinessedit, setOpenbusinessedit] = React.useState(false);
   const [openUpdate, setOpenUpdate] = React.useState(false);
 
-  const handleClickOpencity = () => {
-    setOpencity(true);
-  };
+  // const handleClickOpencity = () => {
+  //   setOpencity(true);
+  // };
 
   const handleClosecity = () => {
     setOpencity(false);

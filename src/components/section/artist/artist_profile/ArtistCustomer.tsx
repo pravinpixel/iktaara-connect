@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 import dynamic from "next/dynamic";
 
 const ImageComponent = dynamic(
-  () => import("@/components/common/form-fields/TitleComponent")
+  () => import("@/views/components/ImageComponent")
 );
 const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
@@ -83,41 +83,44 @@ const ArtistCustomerComponents = () => {
   ];
   return (
     <section>
-      <div className="py-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
-        <div className="text-f18 font-semibold text-ik_bluegreydarken3">
+      <div className=" pb-[22.41px] relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
+        <div className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px] mb-2">
           <span>Performing Languages</span>
         </div>
-        <div className="text-f18 font-normal text-ik_bluegreydarken1">
+        <div className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px] ">
           <p>English, Hindi, Bengali, Punjabi</p>
         </div>
       </div>
 
-      <div className="py-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
-        <div className="text-f18 font-semibold text-ik_bluegreydarken3">
+      <div className="pt-[20.67px] pb-[22.67px] relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
+        <div className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px] mb-2">
           <span>Genre</span>
         </div>
-        <div className="text-f18 font-normal text-ik_bluegreydarken1">
+        <div className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px]">
           <p>Classical, Western, Hindustani</p>
         </div>
       </div>
 
-      <div className="py-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
-        <div className="text-f18 font-semibold text-ik_bluegreydarken3">
+      <div className="pt-5 pb-[21.99px] relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
+        <div className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px] mb-2">
           <span>Preferred Events</span>
         </div>
-        <div className="text-f18 font-normal text-ik_bluegreydarken1">
+        <div className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px]">
           <p>Corporate Parties, Large Events, Concerts</p>
         </div>
       </div>
 
-      <div className="py-5">
-        <div className="text-f18 font-semibold text-ik_bluegreydarken3">
+      <div className="py-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
+        <div className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px]">
           <h6>Location Preferences</h6>
         </div>
-        <div className="pt-3 ">
+        <div className="pt-[14px] ">
           {customer_data?.map((row) => (
             <>
-              <div className="flex gap-3 items-center mb-2" key={row.id}>
+              <div
+                className="flex gap-[10.38px] items-center mb-2"
+                key={row.id}
+              >
                 <div>
                   <ImageComponent
                     src={row.customer_image}
@@ -127,10 +130,10 @@ const ArtistCustomerComponents = () => {
                   />
                 </div>
                 <div>
-                  <p className="text-f18 font-semibold text-ik_bluegreydarken3">
+                  <p className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px]">
                     {row.customer_title}
                   </p>
-                  <span className="text-f12 font-normal text-ik_bluegreylighten1">
+                  <span className="text-f12 font-normal text-ik_bluegreylighten1 leading-[15.12px]">
                     {row.customer_text}
                   </span>
                 </div>
@@ -140,43 +143,50 @@ const ArtistCustomerComponents = () => {
         </div>
       </div>
 
-      <div className="pb-7 ">
+      <div className="py-5  leading-[25.2px]">
         <div className="text-f18 font-semibold text-ik_bluegreydarken3">
           <h6>Similar Profiles</h6>
         </div>
-        {similar_profiles?.map((row) => (
-          <div className="flex gap-4 py-3" key={row?.id}>
-            <div>
-              <ImageComponent
-                src={row?.profiles_image}
-                width={84}
-                height={84}
-                alt={"arrowdown"}
-                className="rounded-full"
-              />
-            </div>
-            <div>
-              <h6 className="text-f19 font-semibold text-ik_bluegreydarken3">
-                {row?.profiles_name}
-              </h6>
-              <p className="text-f16 font-normal text-ik_bluegreydarken3">
-                {row?.profiles_text}
-              </p>
-              <div className="flex items-center gap-2">
+        <div className="mt-[19.12px]">
+          {similar_profiles?.map((row) => (
+            <div className="flex gap-[15.5px] py-3" key={row?.id}>
+              <div>
                 <ImageComponent
-                  src={"/assets/icons/star.svg"}
-                  width={20}
-                  height={19}
-                  alt={"star"}
+                  src={row?.profiles_image}
+                  width={84}
+                  height={84}
+                  alt={"arrowdown"}
+                  className="rounded-full"
                 />
-                <span className="text-ik_bluegreydarken3 text-f16 font-normal">
-                  {row?.profiles_reviews}
-                </span>
+              </div>
+              <div>
+                <h6 className="text-f19 font-semibold text-ik_bluegreydarken3 leading-[23.94px] mb-[6px]">
+                  {row?.profiles_name}
+                </h6>
+                <p className="text-f16 font-normal text-ik_bluegreydarken3 leading-[20.16px] mb-1">
+                  {row?.profiles_text}
+                </p>
+                <div className="flex items-center gap-2">
+                  <ImageComponent
+                    src={"/assets/icons/star.svg"}
+                    width={20}
+                    height={19}
+                    alt={"star"}
+                  />
+                  <div className="flex gap-1">
+                    <span className="text-ik_bluegreydarken3 text-f16 font-semibold leading-[20.16px]">
+                      {row?.profiles_reviews?.split(" ")[0]}
+                    </span>
+                    <span className="text-ik_bluegreydarken3 text-f16 font-normal leading-[20.16px]">
+                      {row?.profiles_reviews?.split(" ").slice(1).join(" ")}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-        <div>
+          ))}
+        </div>
+        <div className="mt-6">
           <button className="flex gap-2 items-center">
             <span className="text-f16 font-normal text-ik_pink">
               View all Profile

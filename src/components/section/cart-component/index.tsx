@@ -53,7 +53,7 @@ const CardComponent = (props: Props) => {
           </span>
         </div>
         {cartData.music_text && (
-          <div className="text-ik_bluegreydarken1 text-f16  leading-[20.16px] flex gap-1">
+          <div className="text-ik_bluegreydarken1 text-f16  leading-[20.16px] flex gap-1 mb-[6px]">
             <p className="font-semibold">
               {cartData?.music_text?.split(" ")[0]}
             </p>
@@ -76,10 +76,10 @@ const CardComponent = (props: Props) => {
               alt={"star"}
               priority={true}
             />
-            <span className="text-ik_bluegreydarken3 text-f18 font-semibold">
+            <span className="text-ik_bluegreydarken3 text-f18 font-semibold leading-[20.16px]">
               {cartData.music_reviewsnwe?.split(" ")[0]}
             </span>
-            <span className="text-ik_bluegreydarken3 text-f18 font-normal ">
+            <span className="text-ik_bluegreydarken3 text-f18 font-normal leading-[20.16px]">
               {cartData.music_reviewsnwe?.split(" ").slice(1).join(" ")}
             </span>
           </div>
