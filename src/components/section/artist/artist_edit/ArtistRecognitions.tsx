@@ -3,6 +3,8 @@ import { useFieldArray, useFormContext } from "react-hook-form";
 
 import { Box } from "@mui/material";
 import dynamic from "next/dynamic";
+import { artistSaveApi } from "@/redux/services/artistService";
+import { useDispatch } from "react-redux";
 
 const ImageComponent = dynamic(
   () => import("@/components/common/form-fields/ImageComponent")
@@ -27,10 +29,20 @@ const ArtistRecognitions = () => {
     control,
     name: "recognitions",
   });
-
-
+  const dispatch = useDispatch();
   const handleRecognitions = async (values) => {
-    console.log(values, "Recognition Form Values");
+    console.log(values, "values");
+    const updatedValues = {
+      ...values,
+      type: values.type === 1 ? "recognition" : values.type, // Replace 0 with 'new_type_value'
+    };
+    console.log(updatedValues, "updated values");
+    try {
+      const res = await dispatch(artistSaveApi(updatedValues)).unwrap();
+      console.log(res, "tttt");
+    } catch (error) {
+      console.log(error, "error");
+    }
   };
 
   //  useEffect(() => {

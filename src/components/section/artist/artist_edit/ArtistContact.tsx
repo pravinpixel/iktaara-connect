@@ -6,6 +6,8 @@ import { Box } from "@mui/material";
 
 import dynamic from "next/dynamic";
 import CustomCheckbox from "@/components/common/form-fields/CheckBox";
+import { artistSaveApi } from "@/redux/services/artistService";
+import { useDispatch } from "react-redux";
 
 const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
@@ -27,6 +29,7 @@ const ArtistContact = () => {
     formState: { isSubmitting },
   } = useFormContext();
 
+  const dispatch = useDispatch();
   const handleAbout = async (values) => {
     const customer_services = [
       {
@@ -38,13 +41,18 @@ const ArtistContact = () => {
         distance_service_description: values.distance_service_description || "",
       },
     ];
-
-    const temp = {
+    const updatedValues = {
       ...values,
       customer_services,
+      type: values.type === 2 ? "contact" : values.type, // Replace 0 with 'new_type_value'
     };
-
-    console.log(temp, "customer_services array");
+    console.log(updatedValues, "updated values");
+    try {
+      const res = await dispatch(artistSaveApi(updatedValues)).unwrap();
+      console.log(res, "tttt");
+    } catch (error) {
+      console.log(error, "error");
+    }
   };
   return (
     <section>

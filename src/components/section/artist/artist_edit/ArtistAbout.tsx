@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Box } from "@mui/material";
 
 import dynamic from "next/dynamic";
 import { useFormContext } from "react-hook-form";
-import { Stack } from "@mui/material";
+
 import { Grid } from "@mui/material";
 import { artistSaveApi } from "@/redux/services/artistService";
 import { useDispatch } from "react-redux";
+import { essentialLocationApi } from "@/redux/services/essentialService";
 
 const MultipleSelectField = dynamic(
   () => import("@/components/common/form-fields/MultipleSelectField")
@@ -22,15 +23,43 @@ const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
 );
 const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
-  const { handleSubmit } = useFormContext();
+  const { handleSubmit, setValue } = useFormContext();
   const dispatch = useDispatch();
+
+  const [locationOptions, setLocationOptions] = useState([]);
   const handleAbout = async (values: any) => {
     console.log(values, "values");
+    const updatedValues = {
+      ...values,
+      type: values.type === 0 ? "about" : values.type, // Replace 0 with 'new_type_value'
+    };
+    console.log(updatedValues, "updated values");
     try {
-      const res = await dispatch(artistSaveApi(values)).unwrap();
+      const res = await dispatch(artistSaveApi(updatedValues)).unwrap();
       console.log(res, "tttt");
+      if (res?.artist?.id) {
+        setValue("artist_id", res.artist.id); // Set artist_id in the form
+        console.log("Artist ID set in form:", res.artist.id);
+      }
     } catch (error) {
       console.log(error, "error");
+    }
+  };
+
+  const handleCityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const cityId = event.target.value;
+    locationList(Number(cityId)); // Pass selected city ID to locationList API call
+  };
+
+  const locationList = async (cityId: number) => {
+    try {
+      const res = await dispatch(essentialLocationApi({ id: cityId })).unwrap();
+      console.log(res, "Location List Response");
+      setLocationOptions(res);
+      // Assuming you want to update the locations in the form dynamically:
+      setValue("location", res); // Update location field options
+    } catch (error) {
+      console.log(error, "Location API Error");
     }
   };
 
@@ -143,6 +172,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
                   id: item.id,
                   name: item.name,
                 }))}
+                onChange={handleCityChange}
               />
             </Grid>
             <Grid item xs={5}>
@@ -150,7 +180,10 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
               <SelectField
                 label={"Location"}
                 name={"location"}
-                // options={essentialList?.location.map(item => ({ id: item.id, name: item.name }))}
+                options={locationOptions?.map((item) => ({
+                  id: item.id,
+                  name: item.name,
+                }))}
               />
             </Grid>
             <Grid item xs={3}>

@@ -27,6 +27,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 type EssentailTypeListResponse = {
   id: number | string;
   name: string;
+  onChange: () => void;
 };
 
 // Define the options array
@@ -49,8 +50,10 @@ const SelectField = (props: {
   label: string;
   name: string;
   options?: EssentailTypeListResponse[];
+  sx?: object;
+  onChange?: (event: React.ChangeEvent<{ value: unknown }>) => void;
 }) => {
-  const { label, name, options = [], sx } = props;
+  const { label, name, options = [], sx, onChange } = props;
   const { control } = useFormContext();
   const {
     field,
@@ -63,6 +66,11 @@ const SelectField = (props: {
   const dropDowns = options || [];
 
   const errorMessage = error?.message;
+
+  const handleSelectChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    field.onChange(event);
+    if (onChange) onChange(event);
+  };
   return (
     <>
       <Box
@@ -80,6 +88,7 @@ const SelectField = (props: {
           variant="outlined"
           IconComponent={KeyboardArrowDownIcon}
           error={!!errorMessage}
+          onChange={handleSelectChange}
           displayEmpty
           MenuProps={{
             sx: {

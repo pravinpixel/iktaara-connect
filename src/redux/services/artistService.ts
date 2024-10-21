@@ -6,7 +6,7 @@ export const artistSaveApi = createAsyncThunk(
     async (params, thunkAPI) => {
    
       try {
-        const response = await SERVER.get(`/artist/save`, 
+        const response = await SERVER.post(`/artist/save`, 
           params
         );
         return response?.data;

@@ -7,6 +7,8 @@ import dynamic from "next/dynamic";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import UploadFile from "@/components/common/form-fields/UploadFile";
 import ImageComponent from "@/views/components/ImageComponent";
+import { artistSaveApi } from "@/redux/services/artistService";
+import { useDispatch } from "react-redux";
 
 const InputField = dynamic(
   () => import("@/components/common/form-fields/InputField")
@@ -22,9 +24,20 @@ const ArtistMedia = () => {
     control,
     name: "videoUrls",
   });
-
+  const dispatch = useDispatch();
   const handleMedia = async (values) => {
-    console.log(values, "customer_services");
+    console.log(values, "values");
+    const updatedValues = {
+      ...values,
+      type: values.type === 3 ? "media" : values.type, // Replace 0 with 'new_type_value'
+    };
+    console.log(updatedValues, "updated values");
+    try {
+      const res = await dispatch(artistSaveApi(updatedValues)).unwrap();
+      console.log(res, "tttt");
+    } catch (error) {
+      console.log(error, "error");
+    }
   };
   return (
     <section>
