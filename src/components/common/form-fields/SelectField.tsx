@@ -27,7 +27,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 type EssentailTypeListResponse = {
   id: number | string;
   name: string;
-  onChange: () => void;
+  onChange?: (event: React.ChangeEvent<{ value: unknown }>) => void;
 };
 
 // Define the options array

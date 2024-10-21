@@ -30,7 +30,7 @@ const ArtistContact = () => {
   } = useFormContext();
 
   const dispatch = useDispatch();
-  const handleAbout = async (values) => {
+  const handleAbout = async (values:any) => {
     const customer_services = [
       {
         live_online: values.live_online ? 1 : 0,

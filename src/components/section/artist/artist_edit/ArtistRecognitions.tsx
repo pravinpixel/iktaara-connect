@@ -30,7 +30,7 @@ const ArtistRecognitions = () => {
     name: "recognitions",
   });
   const dispatch = useDispatch();
-  const handleRecognitions = async (values) => {
+  const handleRecognitions = async (values:any) => {
     console.log(values, "values");
     const updatedValues = {
       ...values,

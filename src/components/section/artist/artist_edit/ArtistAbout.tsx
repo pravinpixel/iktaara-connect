@@ -27,37 +27,88 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
   const dispatch = useDispatch();
 
   const [locationOptions, setLocationOptions] = useState([]);
-  const handleAbout = async (values: any) => {
-    console.log(values, "values");
-    const updatedValues = {
-      ...values,
-      type: values.type === 0 ? "about" : values.type, // Replace 0 with 'new_type_value'
-    };
-    console.log(updatedValues, "updated values");
-    try {
-      const res = await dispatch(artistSaveApi(updatedValues)).unwrap();
-      console.log(res, "tttt");
-      if (res?.artist?.id) {
-        setValue("artist_id", res.artist.id); // Set artist_id in the form
-        console.log("Artist ID set in form:", res.artist.id);
-      }
-    } catch (error) {
-      console.log(error, "error");
-    }
-  };
+  // const handleAbout = async (values: any) => {
+  //   console.log(values, "values");
+  //   const updatedValues = {
+  //     ...values,
+  //     type: values.type === 0 ? "about" : values.type, // Replace 0 with 'new_type_value'
+  //   };
+  //   console.log(updatedValues, "updated values");
+  //   try {
+  //     const res = await dispatch(artistSaveApi(updatedValues)).unwrap();
+  //     console.log(res, "tttt");
+  //     if (res?.artist?.id) {
+  //       setValue("artist_id", res.artist.id); // Set artist_id in the form
+  //       console.log("Artist ID set in form:", res.artist.id);
+  //     }
+  //   } catch (error) {
+  //     console.log(error, "error");
+  //   }
+  // };
 
-  const handleCityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const cityId = event.target.value;
-    locationList(Number(cityId)); // Pass selected city ID to locationList API call
-  };
+
+  const handleAbout = async (values: any) => {
+  console.log(values, "values");
+
+ 
+  const formData = new FormData();
+
+
+   Object.keys(values).forEach((key) => {
+    if (key !== "profile_pic" && key !== "type") {
+      if (Array.isArray(values[key])) {
+    
+        values[key].forEach((item: any) => {
+          formData.append(`${key}[]`, item);
+        });
+
+     
+      } else {
+        formData.append(key, values[key]);
+      }
+    }
+  });
+  
+  if (values.profile_pic?.file) {
+    formData.append("profile_pic", values.profile_pic.file);
+  }
+
+ 
+  formData.append("type", values.type === 0 ? "about" : values.type);
+
+
+  console.log(formData, "updated values");
+
+  try {
+    const res = await dispatch(artistSaveApi(formData)).unwrap();
+    console.log(res, "tttt");
+
+    if (res?.artist?.id) {
+      setValue("artist_id", res.artist.id); 
+      console.log("Artist ID set in form:", res.artist.id);
+    }
+  } catch (error) {
+    console.log(error, "error");
+  }
+};
+
+  // const handleCityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const cityId = event.target.value;
+  //   locationList(Number(cityId)); 
+  // };
+const handleCityChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+  const cityId = event.target.value as string;
+  locationList(Number(cityId));
+};
+
 
   const locationList = async (cityId: number) => {
     try {
       const res = await dispatch(essentialLocationApi({ id: cityId })).unwrap();
       console.log(res, "Location List Response");
       setLocationOptions(res);
-      // Assuming you want to update the locations in the form dynamically:
-      setValue("location", res); // Update location field options
+    
+      setValue("location", res); 
     } catch (error) {
       console.log(error, "Location API Error");
     }
@@ -94,7 +145,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
           <SelectField
             label={"Artist Type"}
             name={"artist_type"}
-            options={essentialList?.artist_type.map((item) => ({
+            options={essentialList?.artist_type.map((item: any) => ({
               id: item.id,
               name: item.name,
             }))}
@@ -116,7 +167,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
             label={"Performing Languages"}
             name={"perform_languages"}
             placeholder={"Select Languages"}
-            options={essentialList?.languages.map((item) => ({
+            options={essentialList?.languages.map((item:any) => ({
               id: item.id,
               name: item.name,
             }))}
@@ -133,7 +184,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
             //   { id: 30, name: "Bengali" },
             //   { id: 40, name: "Punjabi" },
             // ]}
-            options={essentialList?.instrument_type.map((item) => ({
+            options={essentialList?.instrument_type.map((item:any) => ({
               id: item.id,
               name: item.name,
             }))}
@@ -144,7 +195,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
             label={"Genre"}
             name={"perform_genere"}
             placeholder={"Select Genre"}
-            options={essentialList?.genere.map((item) => ({
+            options={essentialList?.genere.map((item:any) => ({
               id: item.id,
               name: item.name,
             }))}
@@ -155,7 +206,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
             label={"Preferred Events"}
             name={"prefered_events"}
             placeholder={"Select Events"}
-            options={essentialList?.event_type.map((item) => ({
+            options={essentialList?.event_type.map((item:any) => ({
               id: item.id,
               name: item.name,
             }))}
@@ -168,7 +219,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
               <SelectField
                 label={"City"}
                 name={"city"}
-                options={essentialList?.city.map((item) => ({
+                options={essentialList?.city.map((item:any) => ({
                   id: item.id,
                   name: item.name,
                 }))}
@@ -180,9 +231,10 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
               <SelectField
                 label={"Location"}
                 name={"location"}
-                options={locationOptions?.map((item) => ({
+                options={locationOptions?.map((item:any) => ({
                   id: item.id,
                   name: item.name,
+                  onChange: () => {}
                 }))}
               />
             </Grid>

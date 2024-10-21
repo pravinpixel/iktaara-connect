@@ -25,20 +25,59 @@ const ArtistMedia = () => {
     name: "videoUrls",
   });
   const dispatch = useDispatch();
-  const handleMedia = async (values) => {
-    console.log(values, "values");
-    const updatedValues = {
-      ...values,
-      type: values.type === 3 ? "media" : values.type, // Replace 0 with 'new_type_value'
-    };
-    console.log(updatedValues, "updated values");
-    try {
-      const res = await dispatch(artistSaveApi(updatedValues)).unwrap();
-      console.log(res, "tttt");
-    } catch (error) {
-      console.log(error, "error");
+ 
+
+ const handleMedia = async (values:any) => {
+  console.log(values, "values");
+
+  
+  const formData = new FormData();
+
+  
+  // Object.keys(values).forEach((key) => {
+  //   if (key !== 'documents') { 
+  //     formData.append(key, values[key]);
+  //   }
+  // });
+
+   Object.keys(values).forEach((key) => {
+    if (key !== "type" && key !== "documents" && key !== "profile_pic") {
+      if (Array.isArray(values[key])) {
+    
+        values[key].forEach((item: any) => {
+          formData.append(`${key}[]`, item);
+        });
+
+     
+      } else {
+        formData.append(key, values[key]);
+      }
     }
-  };
+  });
+
+    if (values.profile_pic?.file) {
+    formData.append("profile_pic", values.profile_pic.file);
+  }
+
+  formData.append('type', values.type === 3 ? "media" : values.type);
+
+
+  values.documents.forEach((doc) => {
+    formData.append('documents', doc.file); 
+  });
+
+  console.log([...formData], "FormData entries");
+
+  try {
+
+    const res = await dispatch(artistSaveApi(formData)).unwrap();
+    console.log(res, "Response from API");
+  } catch (error) {
+    console.log(error, "Error from API");
+  }
+};
+
+
   return (
     <section>
       <Box component={"form"} onSubmit={handleSubmit(handleMedia)}>

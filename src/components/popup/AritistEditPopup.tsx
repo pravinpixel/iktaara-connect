@@ -86,7 +86,7 @@ export default function ArtistEditPopup({
               height={160}
               alt={"music-logo"}
             /> */}
-            <SingleUpload name="logo" />
+            <SingleUpload name="profile_pic" />
             <div className="pt-2">
               <h6 className="text-f24 font-semibold text-ik_bluegreydarken3">
                 Ramakrishna Paramahamsa
