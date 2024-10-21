@@ -39,7 +39,7 @@ const ArtistAboutComponents = () => {
     <section>
       <div className="mb-7">
         <TitleComponent first_title="About" seconds_title="Artist" />
-        <div className="text-f18 font-normal text-ik_bluegreydarken2">
+        <div className="text-f18 font-normal text-ik_bluegreydarken2 leading-[26px] mt-3">
           <p>
             {` I'm a fulltime musician and i've been in playing since more than 9
             years and a teaching since almost 5+ years, I'm great in
@@ -52,35 +52,37 @@ const ArtistAboutComponents = () => {
       </div>
       <div>
         <TitleComponent first_title="Industry" seconds_title="Recognitions" />
-        {Industry?.map((row) => (
-          <>
-            <div className="flex gap-4 mb-6" key={row?.id}>
-              <div>
-                <ImageComponent
-                  src={row?.industry_image}
-                  width={72}
-                  height={72}
-                  alt={"arrowdown"}
-                />
+        <div className="mt-4">
+          {Industry?.map((row) => (
+            <>
+              <div className="flex gap-4 mb-6" key={row?.id}>
+                <div>
+                  <ImageComponent
+                    src={row?.industry_image}
+                    width={72}
+                    height={72}
+                    alt={"arrowdown"}
+                  />
+                </div>
+                <div>
+                  <p className="text-f14 font-medium text-ik_bluegreydarken2 leading-[17.64px] mb-1">
+                    {row?.industry_text}
+                  </p>
+                  <h6 className="text-f20 font-semibold text-ik_bluegreydarken3 leading-[25.2px] mb-1">
+                    {row?.industry_title}
+                  </h6>
+                  <span className="text-f14 font-medium text-ik_bluegreylighten1 leading-[17.64px]">
+                    {row?.industry_data}
+                  </span>
+                </div>
               </div>
-              <div>
-                <p className="text-f14 font-medium text-ik_bluegreydarken2">
-                  {row?.industry_text}
-                </p>
-                <h6 className="text-f20 font-semibold text-ik_bluegreydarken3">
-                  {row?.industry_title}
-                </h6>
-                <span className="text-f14 font-medium text-ik_bluegreylighten1">
-                  {row?.industry_data}
-                </span>
-              </div>
-            </div>
-          </>
-        ))}
+            </>
+          ))}
+        </div>
       </div>
       <div>
         <TitleComponent first_title="Whats" seconds_title="Happening!" />
-        <div>
+        <div className="mt-[20.06px]">
           <div>
             <Grid container>
               <Grid item xs={12} sm={9}>
@@ -122,19 +124,19 @@ const ArtistAboutComponents = () => {
               </Grid>
             </Grid>
             <div className="mt-4">
-              <p className="text-f16 font-normal text-ik_bluegreylighten1">
+              <p className="text-f16 font-normal text-ik_bluegreylighten1 leading-[20.16px] mb-1">
                 July 28, 2024
               </p>
-              <h6 className="text-f22 font-semibold text-ik_bluegreydarken3">
+              <h6 className="text-f22 font-semibold text-ik_bluegreydarken3 leading-[27.72px] mb-1">
                 Winning the Junior super singer award from Vijay TV
               </h6>
-              <span className="text-f18 font-normal text-ik_bluegreydarken1">
+              <span className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px]">
                 Won the prestigious super signer award participated by 10,000+
                 juniors across tamil nadu.
               </span>
             </div>
           </div>
-          <div className="mt-7">
+          <div className="mt-[33.11px]">
             <ImageComponent
               src={"/assets/image/happen1.webp"}
               width={967}
@@ -144,19 +146,19 @@ const ArtistAboutComponents = () => {
             />
           </div>
           <div className="mt-4">
-            <p className="text-f16 font-normal text-ik_bluegreylighten1">
+            <p className="text-f16 font-normal text-ik_bluegreylighten1 leading-[20.16px] mb-1">
               July 28, 2024
             </p>
-            <h6 className="text-f22 font-semibold text-ik_bluegreydarken3">
+            <h6 className="text-f22 font-semibold text-ik_bluegreydarken3 leading-[27.72px] mb-1">
               Winning the Junior super singer award from Vijay TV
             </h6>
-            <span className="text-f18 font-normal text-ik_bluegreydarken1">
+            <span className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px]">
               Won the prestigious super signer award participated by 10,000+
               juniors across tamil nadu.
             </span>
           </div>
         </div>
-        <div className="my-7 pb-5">
+        <div className="mt-[34.26px] mb-[54.93px]">
           <Grid container>
             <Grid item xs={6}>
               <div>
@@ -182,13 +184,13 @@ const ArtistAboutComponents = () => {
             </Grid>
           </Grid>
           <div className="mt-4">
-            <p className="text-f16 font-normal text-ik_bluegreylighten1">
+            <p className="text-f16 font-normal text-ik_bluegreylighten1 leading-[20.16px] mb-1">
               July 28, 2024
             </p>
-            <h6 className="text-f22 font-semibold text-ik_bluegreydarken3">
+            <h6 className="text-f22 font-semibold text-ik_bluegreydarken3 leading-[27.72px] mb-1">
               Singapore performance show organized by MK Events
             </h6>
-            <span className="text-f18 font-normal text-ik_bluegreydarken1">
+            <span className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px]">
               100th Outside India performance show.
             </span>
           </div>

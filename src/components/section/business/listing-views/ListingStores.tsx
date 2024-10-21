@@ -111,9 +111,9 @@ const ListingStoresComponents = () => {
     ],
   };
   return (
-    <section className="mb-14 pt-5">
+    <section className="pb-[60.1px] pt-[30px]">
       <TitleComponent first_title="Most Viewed" seconds_title="Stores" />
-      <div className="music-section-sec">
+      <div className="music-section-sec mt-[27.01px]">
         <Slider {...settings}>
           {musictechnician_data?.map((row) => (
             <CaetComponent cartData={row} key={row?.id} />

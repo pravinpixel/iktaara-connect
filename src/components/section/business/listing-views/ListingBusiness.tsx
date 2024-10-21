@@ -39,7 +39,7 @@ const ListingBusinessComponents = () => {
               <div className="bg-ik_bluegreylighten3 rounded-[18px] py-8 px-16 h-full">
                 <Grid container>
                   <Grid item xs={12} sm={6}>
-                    <div className="flex gap-3 border-b md:border-b-0 md:border-r border-ik_bluegreylightens3 justify-center md:justify-normal">
+                    <div className="flex gap-4 border-b md:border-b-0 md:border-r border-ik_bluegreylightens3 justify-center md:justify-normal">
                       <ImageComponent
                         src={"/assets/icons/star-icons.svg"}
                         width={60}
@@ -93,10 +93,12 @@ const ListingBusinessComponents = () => {
                       />
                     </div>
                     <div>
-                      <h6 className="text-f28 font-semibold text-ik_blue-foreground">
+                      <h6 className="text-f28 font-semibold text-ik_blue-foreground leading-[35.28px] mb-1">
                         Ask Business
                       </h6>
-                      <span className="text-f18 font-normal text-ik_blue-foreground">
+                      <span
+                        className="text-f18 font-normal text-ik_blue-foreground leading-[25.2px]"
+                      >
                         Get your queries resolved instantly
                       </span>
                     </div>
