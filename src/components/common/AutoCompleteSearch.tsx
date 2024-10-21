@@ -14,7 +14,7 @@ interface CustomCardProps {
 }
 
 export const AutoCompleteSearch = (props: CustomCardProps) => {
-  const { placeholder, typeheader, typebanner, className } = props;
+  const { placeholder, typeheader, typebanner, className, sx } = props;
   const [open, setOpen] = useState(false);
   const temp = useRef(null);
 
@@ -45,7 +45,7 @@ export const AutoCompleteSearch = (props: CustomCardProps) => {
                 ? className
                 : "auto-item bg-ik_bluegreylighten3 h-[48px]"
             }
-            sx={{ width: "100%", border: "none" }}
+            sx={{ width: "100%", border: "none", ...sx }}
             getOptionLabel={(option: any) => option.product_name}
             noOptionsText={
               <>

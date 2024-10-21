@@ -33,7 +33,7 @@ const DashboardSection = () => {
   };
   return (
     <>
-      <Box className="bg-ik_white mt-5 mb-2 mx-1 rounded-[8px] p-3">
+      <Box className="bg-ik_white mt-[16px] mb-[12px] rounded-[8px] px-[38.49px] py-[22.87px] ml-[16px]">
         <Stack direction="row" spacing={2} alignItems="center">
           <Box>
             <ImageComponent
@@ -60,9 +60,9 @@ const DashboardSection = () => {
       </Box>
       <Box>
         {" "}
-        <Grid container>
+        <Grid container className="mx-auto">
           <Grid item xs={4}>
-            <Box className="bg-ik_white  mx-1 rounded-[8px] p-3">
+            <Box className="bg-ik_white ml-[16px] rounded-[8px] px-[15.6px] py-[11.94px]">
               <Stack direction="row" spacing={2}>
                 <Box>
                   {" "}
@@ -87,7 +87,7 @@ const DashboardSection = () => {
             </Box>
           </Grid>
           <Grid item xs={4}>
-            <Box className="bg-ik_white mx-1  rounded-[8px] p-3">
+            <Box className="bg-ik_white  rounded-[8px] px-[15.6px] py-[11.94px] ml-[13.06px]">
               {" "}
               <Stack direction="row" spacing={2}>
                 <Box>
@@ -113,7 +113,7 @@ const DashboardSection = () => {
             </Box>
           </Grid>
           <Grid item xs={4}>
-            <Box className="bg-ik_white mx-1 rounded-[8px] p-3">
+            <Box className="bg-ik_white rounded-[8px] px-[15.6px] py-[11.94px] ml-[13.06px]">
               {" "}
               <Stack direction="row" spacing={2}>
                 <Box>
@@ -140,13 +140,13 @@ const DashboardSection = () => {
           </Grid>
         </Grid>
       </Box>
-      <Box className="mt-2">
+      <Box className="mt-[12px]">
         {" "}
         <Grid container>
-          <Stack direction="row" spacing={1}>
+          <Stack direction="row">
             <Box>
               {/* <Grid item xs={11.7}> */}
-              <Box className="bg-ik_white  mx-1 rounded-[8px] p-3 w-[540px]">
+              <Box className="bg-ik_white  ml-[16px] rounded-[8px] p-3 w-[552px] 2xl:w-[665px]">
                 <Typography className="text-f18 font-semibold leading-[30px] text-ik_bluegreydarken3">
                   What’s Happening!
                 </Typography>
@@ -175,14 +175,14 @@ const DashboardSection = () => {
               {/* </Grid> */}
 
               {/* <Grid item xs={11.7} mt={1}> */}
-              <Box className="bg-ik_white  mx-1 rounded-[8px] p-3 mt-2 w-[540px]">
+              <Box className="bg-ik_white  rounded-[8px] px-[16.54px]  py-[10.57px] mt-2 w-[552px] 2xl:w-[665px]  ml-[16px]">
                 <Box>
                   <Typography className="text-f18 font-semibold leading-[30px] text-ik_bluegreydarken3">
                     Profile Completion
                   </Typography>
                 </Box>
-                <Box>
-                  <Stack direction={"row"} spacing={2}>
+                <Box className="mt-[23.9px]">
+                  <Stack direction={"row"} spacing="29.59px">
                     <Box>
                       <CircularWithValueLabel />
                     </Box>
@@ -197,7 +197,7 @@ const DashboardSection = () => {
                       <CustomButton
                         variant="primary-button"
                         label="Update Profile"
-                        className={""}
+                        className={"mt-[12.78px ] mb-[31.92px]"}
                         onClick={handleClickUpdate}
                       />
                       {openUpdate && (
@@ -212,7 +212,7 @@ const DashboardSection = () => {
               </Box>
               {/* </Grid> */}
             </Box>
-            <Box>
+            <Box className="ml-[12px]">
               <ImageComponent
                 src="/assets/static/image_63.png"
                 alt=""
@@ -228,19 +228,19 @@ const DashboardSection = () => {
         {" "}
         <Grid container>
           <Grid item xs={8}>
-            <Box className="bg-ik_white  mx-1 rounded-[8px] p-3">
+            <Box className="bg-ik_white ml-[16px] rounded-[8px] px-[16.59px] pt-[12.51px]">
               <Box>
                 <Typography className="text-f18 font-semibold leading-[30px] text-ik_bluegreydarken3">
                   Tips for Business Leads
                 </Typography>
               </Box>
-              <Box className="mt-4">
+              <Box className="mt-[29.7px]">
                 <Stack
                   direction="row"
                   spacing={2}
                   alignItems={"center"}
                   justifyContent={"center"}
-                  my={3}
+                  mt={"24.7px"}
                 >
                   <Box>
                     <ImageComponent
@@ -265,7 +265,7 @@ const DashboardSection = () => {
                   spacing={2}
                   alignItems={"center"}
                   justifyContent={"center"}
-                  my={3}
+                  mt={"24.7px"}
                 >
                   <Box>
                     <ImageComponent
@@ -290,7 +290,9 @@ const DashboardSection = () => {
                   spacing={2}
                   alignItems={"center"}
                   justifyContent={"center"}
-                  my={3}
+                  mt={"24.7px"}
+                  pb="35.34px"
+                  mb="77.67px"
                 >
                   <Box>
                     <ImageComponent

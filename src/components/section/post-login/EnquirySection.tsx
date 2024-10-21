@@ -44,7 +44,7 @@ const EnquirySection = () => {
     <>
       <FormProvider {...methods}>
         {" "}
-        <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
+        <Box className="bg-ik_white mt-4 rounded-[8px] py-[31.56px] px-[37.97px] ml-[16px]">
           <Stack direction="row" spacing={2}>
             <Box>
               <ImageComponent
@@ -65,22 +65,35 @@ const EnquirySection = () => {
           </Stack>
         </Box>
         <Box>
-          <Grid container>
-            <Grid item md={4}>
-              <Box className="bg-ik_white my-5 mx-2 ">
-                <Box className="w-[100%] p-3">
+          <Grid container className="mx-auto">
+            <Grid item md={4.5}>
+              <Box className="bg-ik_white mt-[12px] ml-[16px]">
+                <Box className="w-[100%] px-3 py-[16.6px]">
                   {" "}
                   <AutoCompleteSearch
-                    placeholder="Find Address"
+                    sx={{
+                      "& .MuiFormControl-root.MuiTextField-root": {
+                        border: "1px solid var(--ik_bluegreylighten3)",
+                      },
+                    }}
+                    placeholder="Search Enquiries"
                     typeheader={true}
                     typebanner={false}
-                    className="w-[100%] bg-ik_white rounded-[6px] border border-ik_bluegreylighten3"
+                    className="w-[100%] bg-ik_white rounded-[6px] border border-ik_bluegreylighten3 text-ik_bluegreydarken1 text-f16 font-normal leading-[19.84px] h-[42px]"
                   />
                 </Box>
                 <Box>
-                  <Box className="p-3">
+                  <Box className="px-3 pb-[8px]">
                     {" "}
                     <SelectField
+                      sx={{
+                        border: "none!important",
+                        margin: "0px!important",
+                        "& .css-cckka6-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
+                          {
+                            paddingLeft: "0px!important",
+                          },
+                      }}
                       label={""}
                       name={"Business"}
                       options={[
@@ -95,7 +108,9 @@ const EnquirySection = () => {
                   <Box
                     onClick={() => setSelected(true)}
                     className={
-                      selected ? "bg-ik_lightblue p-0 pt-3 pb-3" : "p-3 "
+                      selected
+                        ? "bg-ik_lightblue pl-[17px] pr-[15.12px] pt-3 pb-3"
+                        : "pl-[17px] pr-[15.12px] pt-3 pb-3 "
                     }
                   >
                     <Stack direction={"row"} spacing={1}>
@@ -116,13 +131,13 @@ const EnquirySection = () => {
                         </Typography>
                       </Box>
                     </Stack>
-                    <Box className="flex justify-end mt-2">
+                    <Box className="flex justify-end mt-[4.5px]">
                       <Typography className="text-f14 font-normal leading-[18px] text-ik_bluegreydarken1">
                         08:00
                       </Typography>
                     </Box>
                   </Box>
-                  <Box className="p-3 ">
+                  <Box className="pl-[17px] pr-[15.12px] pt-3 pb-3 ">
                     <Stack direction={"row"} spacing={1}>
                       <Box>
                         <ImageComponent
@@ -141,7 +156,7 @@ const EnquirySection = () => {
                         </Typography>
                       </Box>
                     </Stack>
-                    <Box className="flex justify-end mt-2">
+                    <Box className="flex justify-end mt-[4.5px]">
                       <Typography className="text-f14 font-normal leading-[18px] text-ik_bluegreydarken1">
                         08:00
                       </Typography>
@@ -150,8 +165,8 @@ const EnquirySection = () => {
                 </Box>
               </Box>
             </Grid>
-            <Grid item md={8}>
-              <Box className="bg-ik_white my-5 mx-2 p-3">
+            <Grid item md={7.5}>
+              <Box className="bg-ik_white mt-[12px] ml-[3px] px-[22.2px] py-[19.95px]">
                 {" "}
                 <Box>
                   <Stack direction={"row"} spacing={1}>
@@ -175,13 +190,13 @@ const EnquirySection = () => {
                 </Box>
               </Box>
               <Box className="px-3 flex items-center justify-center">
-                <Typography className="text-f14 font-normal leading-[18px] text-ik_bluegreydarken1">
+                <Typography className="text-f14 font-normal leading-[18px] text-ik_bluegreydarken1 pt-[5px]">
                   Today, Aug 7, 2024
                 </Typography>
               </Box>
-              <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3">
+              <Box className="bg-ik_white mt-[22.5px] ml-[3px] px-[20.5px] pt-[16.56px]">
                 {" "}
-                <Box className="bg-ik_lightblue rounded-none rounded-br-[32px] rounded-bl-[32px] p-3 w-[400px] rounded-tr-[32px]">
+                <Box className="bg-ik_lightblue rounded-none rounded-br-[32px] rounded-bl-[32px] px-[20px] py-[20px] w-[400px] rounded-tr-[32px]">
                   <Typography className="my-1 text-f18 font-semibold leading-[26px] text-ik_bluegreydarken3">
                     Instruments promotion enquiry
                   </Typography>
@@ -207,25 +222,25 @@ const EnquirySection = () => {
                     </Typography>
                   </Box>
                   <Box className="flex justify-end">
-                    <Typography className="my-3 text-f14 font-normal leading-[20px] text-ik_bluegreydarken1">
+                    <Typography className=" text-f14 font-normal leading-[20px] text-ik_bluegreydarken1">
                       08:00
                     </Typography>
                   </Box>
                 </Box>
                 <Box className="flex justify-end">
                   {" "}
-                  <Box className="bg-ik_lightblue rounded-none rounded-br-[32px] rounded-bl-[32px] p-3 w-[400px] rounded-tl-[32px] my-2">
+                  <Box className="bg-ik_lightblue rounded-none rounded-br-[32px] rounded-bl-[32px] p-3 w-[400px] rounded-tl-[32px] my-[17px] ">
                     <Typography className="text-f18 font-normal leading-[26px] text-ik_bluegreydarken3">
                       Responded customer by Email
                     </Typography>
                   </Box>
                 </Box>
               </Box>
-              <Box className="bg-ik_white my-5 mx-2 rounded-[8px] p-3 flex justify-end">
+              <Box className="bg-ik_white mt-[3px] ml-[3px]  mb-[67.85px] py-[30px] px-[24.09px] flex justify-end">
                 {/* <Tooltip title="Add" arrow> */}
                 <CustomButton
                   label="Update Status"
-                  className={""}
+                  className={"h-[48px] w-[200px]"}
                   onClick={handleClick}
                 />
                 {/* </Tooltip> */}

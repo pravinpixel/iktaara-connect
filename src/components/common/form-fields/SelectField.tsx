@@ -40,8 +40,8 @@ const EssentailTypeListResponse = [
 const renderValue = (label: string, value?: string) => {
   return !value
     ? {
-      renderValue: () => <Typography>{`Select ${label}`}</Typography>,
-    }
+        renderValue: () => <Typography>{`Select ${label}`}</Typography>,
+      }
     : {};
 };
 
@@ -50,7 +50,7 @@ const SelectField = (props: {
   name: string;
   options?: EssentailTypeListResponse[];
 }) => {
-  const { label, name, options = [] } = props;
+  const { label, name, options = [], sx } = props;
   const { control } = useFormContext();
   const {
     field,
@@ -72,10 +72,10 @@ const SelectField = (props: {
           },
         }}
       >
-        <FormLabel >{label}</FormLabel>
+        <FormLabel>{label}</FormLabel>
         <Select
           size="small"
-          sx={{ mt: 1, width: "100%" }}
+          sx={{ mt: 1, width: "100%", ...sx }}
           {...field}
           variant="outlined"
           IconComponent={KeyboardArrowDownIcon}
