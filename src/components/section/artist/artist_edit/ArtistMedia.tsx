@@ -62,9 +62,14 @@ const ArtistMedia = () => {
   formData.append('type', values.type === 3 ? "media" : values.type);
 
 
-  values.documents.forEach((doc) => {
-    formData.append('documents', doc.file); 
+  // values.documents.forEach((doc) => {
+  //   formData.append('documents', doc.file); 
+  // });
+
+   values.documents.forEach((doc, index) => {
+    formData.append(`documents[${index}]`, doc.file);
   });
+
 
   console.log([...formData], "FormData entries");
 
