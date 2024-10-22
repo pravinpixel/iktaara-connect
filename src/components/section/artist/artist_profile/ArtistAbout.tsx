@@ -11,7 +11,7 @@ const TitleComponent = dynamic(
   () => import("@/components/common/form-fields/TitleComponent")
   
 );
-const ArtistAboutComponents = () => {
+const ArtistAboutComponents = ({artistDetailView}: {artistDetailView :ArtistType}) => {
   const Industry = [
     {
       id: 1,
@@ -41,38 +41,41 @@ const ArtistAboutComponents = () => {
         <TitleComponent first_title="About" seconds_title="Artist" />
         <div className="text-f18 font-normal text-ik_bluegreydarken2 leading-[26px] mt-3">
           <p>
-            {` I'm a fulltime musician and i've been in playing since more than 9
+            {/* {` I'm a fulltime musician and i've been in playing since more than 9
             years and a teaching since almost 5+ years, I'm great in
             understanding youngsters and even adults, I love blues, pop, rock
             and rnb music, with core ability to understand my student needs,
             I've completed grade 8th in rock and pop guitar from trinity music
-            school of london and currently pursuing 8th grade in western vocals.`}
+            school of london and currently pursuing 8th grade in western vocals.`} */}
+            {artistDetailView?.artist_description}
           </p>
         </div>
       </div>
       <div>
         <TitleComponent first_title="Industry" seconds_title="Recognitions" />
         <div className="mt-4">
-          {Industry?.map((row) => (
+          {artistDetailView?.artist_recogitions?.map((row,index) => (
             <>
               <div className="flex gap-4 mb-6" key={row?.id}>
+                   
                 <div>
                   <ImageComponent
-                    src={row?.industry_image}
+                    src={Industry[index]?.industry_image}
                     width={72}
                     height={72}
                     alt={"arrowdown"}
                   />
                 </div>
+               
                 <div>
                   <p className="text-f14 font-medium text-ik_bluegreydarken2 leading-[17.64px] mb-1">
-                    {row?.industry_text}
+                    {row?.title}
                   </p>
                   <h6 className="text-f20 font-semibold text-ik_bluegreydarken3 leading-[25.2px] mb-1">
-                    {row?.industry_title}
+                    {row?.description}
                   </h6>
                   <span className="text-f14 font-medium text-ik_bluegreylighten1 leading-[17.64px]">
-                    {row?.industry_data}
+                    {row?.date}
                   </span>
                 </div>
               </div>

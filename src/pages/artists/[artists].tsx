@@ -28,33 +28,28 @@ const ListingReviewsComponents = dynamic(
   () => import("@/components/section/business/listing-views/ListingReviews")
 );
 interface ArtistDetailProps {
-  artistDetailView: Artist;
+  artistDetailView: ArtistType;
 }
 const ArtistDetail = ({ artistDetailView }: ArtistDetailProps) => {
   console.log(artistDetailView, " artistDetailView");
-  const artistHeader = {
-    logo: "/assets/image/artist-logo.png",
-    title: "Ramakrishna Paramahamsa",
-    location: "Chennai",
-    job: "Singer (13 Years in Business)",
-  };
+
 
   return (
     <section>
       <CustomContainer>
-        <AritistHeaderComponents ListHeader={artistHeader} />
-        <AritistVideoComponents />
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={8}>
-            <ArtistAboutComponents />
+        <AritistHeaderComponents  artistDetailView={artistDetailView} />
+        <AritistVideoComponents artistDetailView={artistDetailView}/>
+        <Grid container spacing={3} >
+          <Grid item xs={12} md={8} >
+            <ArtistAboutComponents artistDetailView={artistDetailView}/>
           </Grid>
           <Grid item xs={12} md={4}>
-            <ArtistCustomerComponents />
+            <ArtistCustomerComponents artistDetailView={artistDetailView}/>
           </Grid>
         </Grid>
-        <ListingBusinessComponents />
-        <ListingReviewsComponents />
-        <AritistStoresComponents />
+        <ListingBusinessComponents artistDetailView={artistDetailView}/>
+        <ListingReviewsComponents artistDetailView={artistDetailView}/>
+        <AritistStoresComponents artistDetailView={artistDetailView}/>
       </CustomContainer>
     </section>
   );

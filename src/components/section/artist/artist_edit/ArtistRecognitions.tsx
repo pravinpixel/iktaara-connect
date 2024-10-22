@@ -78,8 +78,8 @@ const ArtistRecognitions = () => {
                   /> */}
                   <InputField
                     name={`recognitions.${index}.name`}
-                    label="Artist Name"
-                    placeholder="Enter Artist Name"
+                    label="Title"
+                    placeholder="Title"
                     type="text"
                   />
                 </div>
@@ -91,8 +91,8 @@ const ArtistRecognitions = () => {
                   /> */}
                   <InputField
                     name={`recognitions.${index}.description`}
-                    label="Artist Name"
-                    placeholder="Enter Artist Name"
+                    label="Descriptions"
+                    placeholder="Descriptions"
                     type="text"
                   />
                 </div>

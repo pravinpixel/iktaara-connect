@@ -22,17 +22,10 @@ const AritistEditPopup = dynamic(
 const PostUpdatePapup = dynamic(
   () => import("@/components/popup/PostUpdatePapup")
 );
-type Props = {
-  ListHeader: {
-    logo: string;
-    title: string;
-    location: string;
-    job: string;
-  };
-};
 
-const AritistHeaderComponents = (props: Props) => {
-  const { ListHeader } = props;
+
+const AritistHeaderComponents = ({artistDetailView}: {artistDetailView :ArtistType}) => {
+
   const [openEnquire, setOpenEnquire] = React.useState(false);
   const [openaritistedit, setOpenaritistedit] = React.useState(false);
   const [openUpdate, setOpenUpdate] = React.useState(false);
@@ -68,17 +61,23 @@ const AritistHeaderComponents = (props: Props) => {
         >
           <div className="flex items-center justify-between gap-5 w-100">
             <div className="h-[132px] w-[132px] flex items-center  ">
-              <ImageComponent
-                src={ListHeader.logo}
+                {artistDetailView.profile_pic !== null ?  <ImageComponent
+                src={artistDetailView.profile_pic}
                 width={132}
                 height={132}
                 alt={"music-logo"}
                 className={"rounded-full"}
-              />
+              /> : <div className="h-[132px] w-[132px] flex items-center  bg-ik_bluegreylightens3 rounded-full">
+
+              </div>}
+             
+
+             
+              
             </div>
             <div className="">
               <h6 className="text-f30 font-bold text-ik_bluegreydarken3 leading-[40.32px] mb-[6px]">
-                {ListHeader.title}
+                {artistDetailView.artist_name}
               </h6>
               <div className="flex gap-3 mb-[19.7px]">
                 <div className="flex gap-2">
@@ -89,7 +88,7 @@ const AritistHeaderComponents = (props: Props) => {
                     alt={"location"}
                   />
                   <span className="text-16 font-normal text-ik_bluegreydarken3 leading-[20.16px]">
-                    {ListHeader.location}
+                    {artistDetailView.locations}
                   </span>
                 </div>
                 <div className="flex gap-2">
@@ -100,7 +99,7 @@ const AritistHeaderComponents = (props: Props) => {
                     alt={"location"}
                   />
                   <span className="text-16 font-normal text-ik_bluegreydarken3 leading-[20.16px]">
-                    {ListHeader.job}
+                    {artistDetailView.artist_type === "Singer" ? artistDetailView.artist_type :" Singer (13 Years in Business)"}
                   </span>
                 </div>
               </div>

@@ -85,6 +85,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
 
     if (res?.artist?.id) {
       setValue("artist_id", res.artist.id); 
+      setValue("id", res.artist.id); 
       console.log("Artist ID set in form:", res.artist.id);
     }
   } catch (error) {
