@@ -107,7 +107,7 @@ const UploadDocumentField = (
           </span>
         </div>
       </Box>
-      {(field?.value as unknown as File[]) ? (
+      {multiple ? (
         <>
           {" "}
           {(field?.value as unknown as File[])?.map((row, index) => (
