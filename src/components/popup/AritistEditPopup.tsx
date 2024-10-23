@@ -27,22 +27,23 @@ const Transition = React.forwardRef(function Transition(
 });
 
 interface BusinessEditProps {
-  handleClose: () => void;
+  handleClose?: () => void;
   open?: boolean;
+  artistDetailView?: ArtistType;
 }
 
 export default function ArtistEditPopup({
   handleClose,
   open,
+  artistDetailView,
 }: BusinessEditProps) {
   const dispatch = useDispatch();
   const methods = useForm({
     defaultValues: {
-      type: 0,
-      recognitions: [
-        { name: "", description: "", date: "" }, // Initial recognition field
-      ],
+      type: "about",
+      recognitions: [{ name: "", description: "", date: "" }],
       videoUrls: [{ url: "" }],
+      ...artistDetailView,
     },
 
     mode: "onSubmit",
@@ -109,7 +110,12 @@ export default function ArtistEditPopup({
         </IconButton>
 
         <DialogContent className="pt-0">
-          <ArtistEditTabs type={type} setStep={methods.setValue} data={data} />
+          <ArtistEditTabs
+            type={type}
+            setStep={methods.setValue}
+            data={data}
+            artistDetailView={artistDetailView}
+          />
         </DialogContent>
       </FormProvider>
     </Dialog>

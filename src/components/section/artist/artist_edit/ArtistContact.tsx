@@ -25,30 +25,14 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const ArtistContact = () => {
   const {
     handleSubmit,
-
     formState: { isSubmitting },
   } = useFormContext();
 
   const dispatch = useDispatch();
-  const handleAbout = async (values:any) => {
-    const customer_services = [
-      {
-        live_online: values.live_online ? 1 : 0,
-        live_online_description: values.live_online_description || "",
-        home_pickup: values.home_pickup ? 1 : 0,
-        home_pickup_description: values.home_pickup_description || "",
-        distance_service: values.distance_service ? 1 : 0,
-        distance_service_description: values.distance_service_description || "",
-      },
-    ];
-    const updatedValues = {
-      ...values,
-      customer_services,
-      type: values.type === 2 ? "contact" : values.type, // Replace 0 with 'new_type_value'
-    };
-    console.log(updatedValues, "updated values");
+  const handleAbout = async (values: any) => {
+    console.log(values, "values");
     try {
-      const res = await dispatch(artistSaveApi(updatedValues)).unwrap();
+      const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "tttt");
     } catch (error) {
       console.log(error, "error");
@@ -61,7 +45,7 @@ const ArtistContact = () => {
         <div>
           <div className="flex gap-4 pb-3">
             <div className="pt-5">
-              <CustomCheckbox label="" name="live_online" />
+              <CustomCheckbox label="" name="is_live_online" />
             </div>
             <div className="w-full">
               <div className="flex items-center gap-3">
@@ -87,7 +71,7 @@ const ArtistContact = () => {
           </div>
           <div className="flex gap-4 pb-3">
             <div className="pt-5">
-              <CustomCheckbox label="" name="home_pickup" />
+              <CustomCheckbox label="" name="is_home_pickup" />
             </div>
             <div className="w-full">
               <div className="flex items-center gap-3">
@@ -113,7 +97,7 @@ const ArtistContact = () => {
           </div>
           <div className="flex gap-4 pb-3">
             <div className="pt-5">
-              <CustomCheckbox label="" name="distance_service" />
+              <CustomCheckbox label="" name="is_distance_service" />
             </div>
             <div className="w-full">
               <div className="flex items-center gap-3">

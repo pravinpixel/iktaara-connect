@@ -25,63 +25,51 @@ const ArtistMedia = () => {
     name: "videoUrls",
   });
   const dispatch = useDispatch();
- 
 
- const handleMedia = async (values:any) => {
-  console.log(values, "values");
+  const handleMedia = async (values: any) => {
+    console.log(values, "values");
 
-  
-  const formData = new FormData();
+    const formData = new FormData();
 
-  
-  // Object.keys(values).forEach((key) => {
-  //   if (key !== 'documents') { 
-  //     formData.append(key, values[key]);
-  //   }
-  // });
+    // Object.keys(values).forEach((key) => {
+    //   if (key !== 'documents') {
+    //     formData.append(key, values[key]);
+    //   }
+    // });
 
-   Object.keys(values).forEach((key) => {
-    if (key !== "type" && key !== "documents" && key !== "profile_pic") {
-      if (Array.isArray(values[key])) {
-    
-        values[key].forEach((item: any) => {
-          formData.append(`${key}[]`, item);
-        });
-
-     
-      } else {
-        formData.append(key, values[key]);
+    Object.keys(values).forEach((key) => {
+      if (key !== "type" && key !== "documents" && key !== "profile_pic") {
+        if (Array.isArray(values[key])) {
+          values[key].forEach((item: any) => {
+            formData.append(`${key}[]`, item);
+          });
+        } else {
+          formData.append(key, values[key]);
+        }
       }
-    }
-  });
+    });
 
     if (values.profile_pic?.file) {
-    formData.append("profile_pic", values.profile_pic.file);
-  }
+      formData.append("profile_pic", values.profile_pic.file);
+    }
 
-  formData.append('type', values.type === 3 ? "media" : values.type);
+    // values.documents.forEach((doc) => {
+    //   formData.append('documents', doc.file);
+    // });
 
+    values.documents.forEach((doc, index) => {
+      formData.append(`documents[${index}]`, doc.file);
+    });
 
-  // values.documents.forEach((doc) => {
-  //   formData.append('documents', doc.file); 
-  // });
+    console.log([...formData], "FormData entries");
 
-   values.documents.forEach((doc, index) => {
-    formData.append(`documents[${index}]`, doc.file);
-  });
-
-
-  console.log([...formData], "FormData entries");
-
-  try {
-
-    const res = await dispatch(artistSaveApi(formData)).unwrap();
-    console.log(res, "Response from API");
-  } catch (error) {
-    console.log(error, "Error from API");
-  }
-};
-
+    try {
+      const res = await dispatch(artistSaveApi(formData)).unwrap();
+      console.log(res, "Response from API");
+    } catch (error) {
+      console.log(error, "Error from API");
+    }
+  };
 
   return (
     <section>
