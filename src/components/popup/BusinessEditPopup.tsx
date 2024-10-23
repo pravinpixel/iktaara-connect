@@ -35,11 +35,13 @@ export default function BusinessEditPopup({
   open,
   listingsView,
 }: BusinessEditProps) {
+  console.log(listingsView, "listingsView");
   const dispatch = useDispatch<AppDispatch>();
   const methods = useForm({
     defaultValues: {
-      type: 0,
+      type: "about",
       recognitions: [{ name: "", description: "", date: "" }],
+      ...listingsView,
     },
     mode: "onSubmit",
   });

@@ -10,8 +10,8 @@ import { TimepickerIcon } from "@/utils/theme/svg";
 
 
 type TimePickerFieldType = {
-  label: string;
-  name: string;
+  label?: string;
+  name?: string;
 };
 
 
@@ -40,7 +40,7 @@ const { label, name,  } = props;
         <TimePicker
           {...field}
           label=""
-          value={dayjs(field.value, "hh:mm a")}
+          value={dayjs(field.value, "HH:mm:ss")}
           onChange={(e) => field.onChange(dayjs(e).format("hh:mm A"))}
           slots={{
             openPickerIcon: TimepickerIcon,

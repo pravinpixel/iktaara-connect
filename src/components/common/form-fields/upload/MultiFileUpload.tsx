@@ -129,15 +129,17 @@ const UploadDocumentField = (
       ) : (
         <div className="flex items-center gap-2 mt-2">
           <p className="text-f16">{convertUrl(field.value)}</p>
-          <Box>
-            <ImageComponent
-              src="/assets/icons/delete-icons.svg"
-              alt="delete"
-              width={20}
-              height={20}
-              className="cursor-pointer"
-            />
-          </Box>
+          {field.value && (
+            <Box>
+              <ImageComponent
+                src="/assets/icons/delete-icons.svg"
+                alt="delete"
+                width={20}
+                height={20}
+                className="cursor-pointer"
+              />
+            </Box>
+          )}
         </div>
       )}
 

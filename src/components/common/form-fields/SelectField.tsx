@@ -47,8 +47,8 @@ const renderValue = (label: string, value?: string) => {
 };
 
 const SelectField = (props: {
-  label: string;
-  name: string;
+  label?: string;
+  name?: string;
   options?: EssentailTypeListResponse[];
   sx?: object;
   onChange?: (event: React.ChangeEvent<{ value: unknown }>) => void;

@@ -11,7 +11,7 @@ const BusinessContact = dynamic(() => import("./BusinessContact"));
 const BusinessMedia = dynamic(() => import("./BusinessMedia"));
 
 interface ArtistEditTabsProps {
-  type: number;
+  type: string;
   setStep: (name: string, value: number) => void;
   data: any;
   listingsView: BusinessTypeForm;
@@ -40,36 +40,36 @@ export default function BusinessEditTabs({
         >
           <Tab
             label="About"
-            value="0"
+            value="about"
             className="text-f16 font-normal h-auto min-h-[50px] w-auto max-[145px] px-7"
           />
           <Tab
             label="Services"
-            value="1"
+            value="services"
             className="text-f16 font-normal h-auto min-h-[50px] w-auto max-[145px] px-7"
           />
           <Tab
             label="Contact"
-            value="2"
+            value="contact"
             className="text-f16 font-normal h-auto min-h-[50px] w-auto max-[145px] px-7"
           />
           <Tab
             label="Media"
-            value="3"
+            value="media"
             className="text-f16 font-normal h-auto min-h-[50px] w-auto max-[145px] px-7"
           />
         </TabList>
 
-        <TabPanel value="0" className="px-0">
-          <BusinessAbout essentialList={data} listingsView={listingsView} />
+        <TabPanel value="about" className="px-0">
+          <BusinessAbout essentialList={data} />
         </TabPanel>
-        <TabPanel value="1" className="px-0">
+        <TabPanel value="services" className="px-0">
           <BusinessServices />
         </TabPanel>
-        <TabPanel value="2" className="px-0">
-          <BusinessContact essentialList={data} />
+        <TabPanel value="contact" className="px-0">
+          <BusinessContact essentialList={data} listingsView={listingsView} />
         </TabPanel>
-        <TabPanel value="3" className="px-0">
+        <TabPanel value="media" className="px-0">
           <BusinessMedia />
         </TabPanel>
       </TabContext>

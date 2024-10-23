@@ -15,10 +15,16 @@ type BusinessTypeForm = {
   day_of_week: string;
   open_time: string;
   close_time: string;
-  locations: string | null;
-  City: string;
-  address_line1: string;
-  address_line2: string;
+  location_id: string | null;
+  city_id: string;
+  locations: {
+    name: string;
+  };
+  city: {
+    name: string;
+  };
+  address_line_1: string;
+  address_line_2: string;
   pincode: number | string;
   live_online: boolean;
   live_online_description: string;

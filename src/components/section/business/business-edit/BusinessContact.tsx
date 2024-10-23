@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Grid } from "@mui/material";
 import dynamic from "next/dynamic";
-import { useFormContext } from "react-hook-form";
+import {  useFieldArray, useFormContext } from "react-hook-form";
 import SelectField from "@/components/common/form-fields/SelectField";
 import { businessEditApi } from "@/redux/services/listingService";
 import { AppDispatch } from "@/redux/store";
@@ -25,7 +25,13 @@ const CustomLoadingButton = dynamic(
   () => import("@/components/common/form-fields/CustomLoadingButton")
 );
 
-const BusinessContact = ({ essentialList }: { essentialList: any }) => {
+const BusinessContact = ({
+  essentialList,
+  listingsView,
+}: {
+  essentialList: any;
+  listingsView: BusinessTypeForm;
+}) => {
   const daysOfWeek = [
     { id: 1, name: "Monday" },
     { id: 2, name: "Tuesday" },
@@ -36,64 +42,27 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
     { id: 7, name: "Sunday" },
   ];
 
-  const [entries, setEntries] = useState([{ day_of_week: daysOfWeek[0].name }]);
-  // const [currentIndex, setCurrentIndex] = useState(1);
   const dispatch = useDispatch<AppDispatch>();
   const [locationOptions, setLocationOptions] = useState([]);
 
-  const handleChange = (index, field, value) => {
-    const newEntries = [...entries];
-    newEntries[index][field] = value;
-    setEntries(newEntries);
-  };
-
-  // const append = () => {
-  //   if (currentIndex < daysOfWeek.length) {
-  //     const newEntry = { day_of_week: daysOfWeek[currentIndex].name };
-  //     setEntries([...entries, newEntry]);
-  //     setCurrentIndex(currentIndex + 1);
-  //   }
-  // };
-  const append = () => {
-    setEntries([...entries, { day_of_week: daysOfWeek[0].name }]);
-  };
-
-  const remove = (index: number) => {
-    const newEntries = entries.filter((_, i) => i !== index);
-    setEntries(newEntries);
-  };
-
   const {
     handleSubmit,
+    control,
     setValue,
     formState: { isSubmitting },
   } = useFormContext();
 
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "open_hours",
+    defaultValues: [{ day_of_week: "", open_time: "", close_time: "" }],
+  });
+
   const handleCustomer = async (values: BusinessTypeForm) => {
-    // const open_hours = entries.map((entry, index) => {
-    //   const open_time = getValues(`open_hours[${index}][open_time]`);
-    //   const close_time = getValues(`open_hours[${index}][close_time]`);
-    //   return {
-    //     day_of_week: entry.day_of_week,
-    //     open_time: open_time || null,
-    //     close_time: close_time || null,
-    //   };
-    // });
-    const customer_services = [
-      {
-        live_online: values.live_online ? 1 : 0,
-        live_online_description: values.live_online_description || "",
-        home_pickup: values.home_pickup ? 1 : 0,
-        home_pickup_description: values.home_pickup_description || "",
-        distance_service: values.distance_service ? 1 : 0,
-        distance_service_description: values.distance_service_description || "",
-      },
-    ];
     const contactData = {
       ...values,
-      customer_services,
       type: "contact",
-      business_id: values.business_id,
+      business_id: values.id,
       logo: values?.logo || "",
     };
 
@@ -121,7 +90,7 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
     <section>
       <Box component={"form"} onSubmit={handleSubmit(handleCustomer)}>
         <div>
-          <div className="text-f22 font-semibold text-ik_bluegreydarken3 mb-2">
+          <div className="text-f22 font-semibold text-ik_bluegreydarken3 mb-4">
             <h6>Open Hours</h6>
           </div>
           <div>
@@ -141,13 +110,12 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {entries.map((entry, index) => (
-                    <tr key={index} className="cart-border">
+                  {fields.map((item, index) => (
+                    <tr key={item.id} className="cart-border">
                       <td>
                         <div className="pt-0">
                           <SelectField
-                            label={""}
-                            name={`open_hours[${index}][day_of_week]`}
+                            name={`open_hours[${index}].day_of_week`}
                             options={daysOfWeek}
                           />
                         </div>
@@ -155,27 +123,23 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
                       <td>
                         <div className="pt-[6px]">
                           <TimePickerField
-                            label={""}
-                            name={`open_hours[${index}][open_time]`}
-                            onChange={(value) =>
-                              handleChange(index, "open_time", value)
-                            }
+                            name={`open_hours[${index}].open_time`}
                           />
                         </div>
                       </td>
                       <td>
                         <div className="pt-[6px]">
                           <TimePickerField
-                            label={""}
-                            name={`open_hours[${index}][close_time]`}
-                            onChange={(value) =>
-                              handleChange(index, "close_time", value)
-                            }
+                            name={`open_hours[${index}].close_time`}
                           />
                         </div>
                       </td>
                       <td>
-                        <button type="button" onClick={() => remove(index)}>
+                        <button
+                          type="button"
+                          className="bg-ik_bluegreylighten3 rounded-md p-[5px]"
+                          onClick={() => remove(index)}
+                        >
                           <ImageComponent
                             src={"/assets/icons/delete-icons.svg"}
                             width={20}
@@ -183,11 +147,17 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
                             alt={"delete"}
                           />
                         </button>
-                        <div className="">
+                        <div className="pt-2">
                           <button
                             type="button"
-                            className="bg-ik_bluegreylighten3 rounded-md p-2"
-                            onClick={append}
+                            className="bg-ik_bluegreylighten3 rounded-md p-[5px]"
+                            onClick={() =>
+                              append({
+                                day_of_week: "",
+                                open_time: "",
+                                close_time: "",
+                              })
+                            }
                           >
                             <ImageComponent
                               src={"/assets/icons/add-icons.svg"}
@@ -206,61 +176,71 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
           </div>
         </div>
         <div>
-          <div className="text-f22 font-semibold text-ik_bluegreydarken3 mb-2">
+          <div className="text-f22 font-semibold text-ik_bluegreydarken3 my-2">
             <h6>Location</h6>
           </div>
           <div className="mb-2">
             <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <SelectField
-                  label={"City"}
-                  name={"city_id"}
-                  options={essentialList?.city.map(
-                    (item: { id: number; name: string }) => ({
-                      id: item.id,
-                      name: item.name,
-                    })
-                  )}
-                  onChange={handleCityChange}
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <SelectField
-                  label={"Location"}
-                  name={"location_id"}
-                  options={locationOptions?.map(
-                    (item: { id: number; name: string }) => ({
-                      id: item.id,
-                      name: item.name,
-                      onChange: () => {},
-                    })
-                  )}
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <InputField
-                  name="address_line_1"
-                  label="Address 1"
-                  placeholder="Address"
-                  type="text"
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <InputField
-                  name="address_line_2"
-                  label="Address 2"
-                  placeholder="Address"
-                  type="text"
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <InputField
-                  name="pincode"
-                  label="Pincode "
-                  placeholder="Enter Pincode"
-                  type="text"
-                />
-              </Grid>
+              {!listingsView?.city_id && (
+                <Grid item xs={6}>
+                  <SelectField
+                    label={"City"}
+                    name={"city_id"}
+                    options={essentialList?.city.map(
+                      (item: { id: number; name: string }) => ({
+                        id: item.id,
+                        name: item.name,
+                      })
+                    )}
+                    onChange={handleCityChange}
+                  />
+                </Grid>
+              )}
+              {!listingsView?.location_id && (
+                <Grid item xs={6}>
+                  <SelectField
+                    label={"Location"}
+                    name={"location_id"}
+                    options={locationOptions?.map(
+                      (item: { id: number; name: string }) => ({
+                        id: item.id,
+                        name: item.name,
+                        onChange: () => {},
+                      })
+                    )}
+                  />
+                </Grid>
+              )}
+              {!listingsView?.address_line_1 && (
+                <Grid item xs={6}>
+                  <InputField
+                    name="address_line_1"
+                    label="Address 1"
+                    placeholder="Address"
+                    type="text"
+                  />
+                </Grid>
+              )}
+              {!listingsView?.address_line_2 && (
+                <Grid item xs={6}>
+                  <InputField
+                    name="address_line_2"
+                    label="Address 2"
+                    placeholder="Address"
+                    type="text"
+                  />
+                </Grid>
+              )}
+              {!listingsView?.pincode && (
+                <Grid item xs={6}>
+                  <InputField
+                    name="pincode"
+                    label="Pincode "
+                    placeholder="Enter Pincode"
+                    type="text"
+                  />
+                </Grid>
+              )}
             </Grid>
           </div>
           <div className="mt-2">
@@ -269,7 +249,10 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
             </h6>
             <div className="text-f18 w-[60%] text-ik_bluegreydarken2 mt-2">
               <p>
-                No 314, Ttk Road, Alwarpet, Chennai - 600018 Near Sankara Hall
+                {/* No 314, Ttk Road, Alwarpet, Chennai - 600018 Near Sankara Hall */}
+                {listingsView?.address_line_1}, {listingsView?.address_line_2},
+                {listingsView?.city?.name},{listingsView?.locations?.name} -{" "}
+                {listingsView?.pincode}
               </p>
               <div>
                 <button type="button" className="mt-3">
@@ -293,7 +276,7 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
           </div>
           <div className="flex gap-4 pb-3">
             <div className="pt-5">
-              <CustomCheckbox label="" name="live_online" />
+              <CustomCheckbox label="" name="is_live_online" />
             </div>
             <div className="w-full">
               <div className="flex items-center gap-3">
@@ -319,7 +302,7 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
           </div>
           <div className="flex gap-4 pb-3">
             <div className="pt-5">
-              <CustomCheckbox label="" name="home_pickup" />
+              <CustomCheckbox label="" name="is_home_pickup" />
             </div>
             <div className="w-full">
               <div className="flex items-center gap-3">
@@ -345,7 +328,7 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
           </div>
           <div className="flex gap-4 pb-3">
             <div className="pt-5">
-              <CustomCheckbox label="" name="distance_service" />
+              <CustomCheckbox label="" name="is_distance_service" />
             </div>
             <div className="w-full">
               <div className="flex items-center gap-3">

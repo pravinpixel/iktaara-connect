@@ -22,7 +22,7 @@ const DatePickerField: React.FC<DatePickerFieldProps> = ({
   pickerProps,
   name,
 }) => {
-  const [value, setValue] = React.useState<Dayjs | null>(dayjs(null));
+  // const [value, setValue] = React.useState<Dayjs | null>(dayjs(null));
   const { control } = useFormContext();
   const {
     field: { ref: fieldRef, ...field },
@@ -32,6 +32,10 @@ const DatePickerField: React.FC<DatePickerFieldProps> = ({
     control,
     defaultValue: null,
   });
+
+  const checkDate = (dates?: Date | string) => {
+    return dayjs(dates).isValid() && dates;
+  };
 
   return (
     <Box width="100%">
@@ -45,8 +49,17 @@ const DatePickerField: React.FC<DatePickerFieldProps> = ({
         <DatePicker
           label=""
           {...field}
-          value={value}
-          views={["year", "month"]} // Add this line to specify the views
+          // value={value}
+          format="DD/MM/YYYY"
+          value={checkDate(field?.value) ? dayjs(field?.value) : null}
+          minDate={dayjs().startOf("day")}
+          onChange={(date) => {
+            if (date) {
+              field.onChange(dayjs(date).format("YYYY-MM-DD"));
+            } else {
+              field.onChange(null);
+            }
+          }}
           slots={{
             openPickerIcon: DatapickerIcon,
           }}
@@ -63,10 +76,6 @@ const DatePickerField: React.FC<DatePickerFieldProps> = ({
               inputRef: fieldRef,
               className: "text-ik_bluegreydarken3",
             },
-          }}
-          onChange={(newValue) => {
-            setValue(newValue);
-            field.onChange(newValue);
           }}
           {...pickerProps}
         />

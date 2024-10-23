@@ -57,7 +57,7 @@ const BusinessServices = () => {
       services: values.services || [],
       facilities: values.facilities || [],
       type: "services",
-      business_id: values.business_id,
+      business_id: values.id,
       logo: values?.logo || "",
     };
     try {
