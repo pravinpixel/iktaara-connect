@@ -31,25 +31,24 @@ interface ArtistDetailProps {
   artistDetailView: ArtistType;
 }
 const ArtistDetail = ({ artistDetailView }: ArtistDetailProps) => {
-  console.log(artistDetailView, " artistDetailView");
-
+  console.log(artistDetailView, artistDetailView);
 
   return (
     <section>
       <CustomContainer>
-        <AritistHeaderComponents  artistDetailView={artistDetailView} />
-        <AritistVideoComponents artistDetailView={artistDetailView}/>
-        <Grid container spacing={3} >
-          <Grid item xs={12} md={8} >
-            <ArtistAboutComponents artistDetailView={artistDetailView}/>
+        <AritistHeaderComponents artistDetailView={artistDetailView} />
+        <AritistVideoComponents artistDetailView={artistDetailView} />
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={8}>
+            <ArtistAboutComponents artistDetailView={artistDetailView} />
           </Grid>
           <Grid item xs={12} md={4}>
-            <ArtistCustomerComponents artistDetailView={artistDetailView}/>
+            <ArtistCustomerComponents artistDetailView={artistDetailView} />
           </Grid>
         </Grid>
-        <ListingBusinessComponents artistDetailView={artistDetailView}/>
-        <ListingReviewsComponents artistDetailView={artistDetailView}/>
-        <AritistStoresComponents artistDetailView={artistDetailView}/>
+        <ListingBusinessComponents artistDetailView={artistDetailView} />
+        <ListingReviewsComponents artistDetailView={artistDetailView} />
+        <AritistStoresComponents artistDetailView={artistDetailView} />
       </CustomContainer>
     </section>
   );

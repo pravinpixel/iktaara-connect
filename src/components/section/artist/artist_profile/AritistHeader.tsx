@@ -23,9 +23,11 @@ const PostUpdatePapup = dynamic(
   () => import("@/components/popup/PostUpdatePapup")
 );
 
-
-const AritistHeaderComponents = ({artistDetailView}: {artistDetailView :ArtistType}) => {
-
+const AritistHeaderComponents = ({
+  artistDetailView,
+}: {
+  artistDetailView: ArtistType;
+}) => {
   const [openEnquire, setOpenEnquire] = React.useState(false);
   const [openaritistedit, setOpenaritistedit] = React.useState(false);
   const [openUpdate, setOpenUpdate] = React.useState(false);
@@ -56,24 +58,20 @@ const AritistHeaderComponents = ({artistDetailView}: {artistDetailView :ArtistTy
   return (
     <>
       <section>
-        <div
-          className={`w-ful flex items-center justify-between pt-[31px]`}
-        >
+        <div className={`w-ful flex items-center justify-between pt-[31px]`}>
           <div className="flex items-center justify-between gap-5 w-100">
             <div className="h-[132px] w-[132px] flex items-center  ">
-                {artistDetailView.profile_pic !== null ?  <ImageComponent
-                src={artistDetailView.profile_pic}
-                width={132}
-                height={132}
-                alt={"music-logo"}
-                className={"rounded-full"}
-              /> : <div className="h-[132px] w-[132px] flex items-center  bg-ik_bluegreylightens3 rounded-full">
-
-              </div>}
-             
-
-             
-              
+              {artistDetailView.profile_pic !== null ? (
+                <ImageComponent
+                  src={artistDetailView.profile_pic}
+                  width={132}
+                  height={132}
+                  alt={"music-logo"}
+                  className={"rounded-full"}
+                />
+              ) : (
+                <div className="h-[132px] w-[132px] flex items-center  bg-ik_bluegreylightens3 rounded-full"></div>
+              )}
             </div>
             <div className="">
               <h6 className="text-f30 font-bold text-ik_bluegreydarken3 leading-[40.32px] mb-[6px]">
@@ -99,7 +97,9 @@ const AritistHeaderComponents = ({artistDetailView}: {artistDetailView :ArtistTy
                     alt={"location"}
                   />
                   <span className="text-16 font-normal text-ik_bluegreydarken3 leading-[20.16px]">
-                    {artistDetailView.artist_type === "Singer" ? artistDetailView.artist_type :" Singer (13 Years in Business)"}
+                    {artistDetailView.artist_type === "Singer"
+                      ? artistDetailView.artist_type
+                      : " Singer (13 Years in Business)"}
                   </span>
                 </div>
               </div>
@@ -239,6 +239,7 @@ const AritistHeaderComponents = ({artistDetailView}: {artistDetailView :ArtistTy
         <AritistEditPopup
           handleClose={handleCloseAritist}
           open={openaritistedit}
+          artistDetailView={artistDetailView}
         />
       )}
       {openUpdate && (

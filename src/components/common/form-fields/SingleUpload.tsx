@@ -37,15 +37,18 @@ const SingleUpload: React.FC<ImageUploadProps> = ({ name, control }) => {
           src: reader.result, // Store the base64 string for display
           name: file.name,
         });
-        onChange(file); // Update the form value
+        onChange({
+          ...file, // Store the original File object
+          src: reader.result, // Pass the base64 string as the value for the form
+        }); // Update the form value
       };
       reader.readAsDataURL(file); // Convert the file to base64
     }
   };
 
   const handleRemoveFile = () => {
-    setUploadedFile(null); 
-    onChange(null); 
+    setUploadedFile(null);
+    onChange(null);
   };
 
   return (

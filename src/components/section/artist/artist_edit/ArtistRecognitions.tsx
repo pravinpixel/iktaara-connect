@@ -30,15 +30,9 @@ const ArtistRecognitions = () => {
     name: "recognitions",
   });
   const dispatch = useDispatch();
-  const handleRecognitions = async (values:any) => {
-    console.log(values, "values");
-    const updatedValues = {
-      ...values,
-      type: values.type === 1 ? "recognition" : values.type, // Replace 0 with 'new_type_value'
-    };
-    console.log(updatedValues, "updated values");
+  const handleRecognitions = async (values: any) => {
     try {
-      const res = await dispatch(artistSaveApi(updatedValues)).unwrap();
+      const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "tttt");
     } catch (error) {
       console.log(error, "error");

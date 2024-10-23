@@ -10,7 +10,11 @@ const ImageComponent = dynamic(
 const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
 );
-const ArtistCustomerComponents = ({artistDetailView}: {artistDetailView :ArtistType}) => {
+const ArtistCustomerComponents = ({
+  artistDetailView,
+}: {
+  artistDetailView: ArtistType;
+}) => {
   const customer_data = [
     {
       id: 1,
@@ -88,23 +92,27 @@ const ArtistCustomerComponents = ({artistDetailView}: {artistDetailView :ArtistT
           <span>Performing Languages</span>
         </div>
         {artistDetailView?.performed_languages?.map((row) => (
-             <div className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px] " key={row.id}>
-          <p>{row.name}</p>
-        </div>
+          <div
+            className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px] "
+            key={row.id}
+          >
+            <p>{row.name}</p>
+          </div>
         ))}
-     
       </div>
 
-       <div className=" pt-[20.67px] pb-[22.41px] relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
+      <div className=" pt-[20.67px] pb-[22.41px] relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
         <div className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px] mb-2">
           <span>Performing Languages</span>
         </div>
         {artistDetailView?.performed_genere?.map((row) => (
-             <div className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px] " key={row.id}>
-          <p>{row.name} </p>
-        </div>
+          <div
+            className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px] "
+            key={row.id}
+          >
+            <p>{row.name} </p>
+          </div>
         ))}
-     
       </div>
 
       {/* <div className="pt-[20.67px] pb-[22.67px] relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
@@ -123,27 +131,25 @@ const ArtistCustomerComponents = ({artistDetailView}: {artistDetailView :ArtistT
 
       <div className="pt-5 pb-[21.99px] relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
         <div className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px] mb-2">
-              <span>Performing Languages</span>
+          <span>Performing Languages</span>
         </div>
-         {artistDetailView?.performed_events?.map((row) => (
-             <div className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px]">
-          <p>{row.name} </p>
-        </div>
+        {artistDetailView?.performed_events?.map((row) => (
+          <div className="text-f18 font-normal text-ik_bluegreydarken1 leading-[26px]">
+            <p>{row.name} </p>
+          </div>
         ))}
-        
       </div>
 
       <div className="py-5 relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-[0px] after:w-[104px] after:h-[1px] after:bg-ik_bluegreylighten4">
         <div className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px]">
           <h6>Location Preferences</h6>
         </div>
+
         <div className="pt-[14px] ">
           {/* {customer_data?.map((row) => ( */}
-            <>
-              <div
-                className="flex gap-[10.38px] items-center mb-2"
-               
-              >
+          <>
+            {artistDetailView?.customer_services?.live_online ? (
+              <div className="flex gap-[10.38px] items-center mb-2">
                 <div>
                   <ImageComponent
                     src={"/assets/icons/live-icons.svg"}
@@ -154,17 +160,23 @@ const ArtistCustomerComponents = ({artistDetailView}: {artistDetailView :ArtistT
                 </div>
                 <div>
                   <p className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px]">
-                    {artistDetailView?.customer_services?.live_online ? "Live Online" : ""}
+                    {artistDetailView?.customer_services?.live_online
+                      ? "Live Online"
+                      : ""}
                   </p>
                   <span className="text-f12 font-normal text-ik_bluegreylighten1 leading-[15.12px]">
-                       {artistDetailView?.customer_services?.live_online_description}
+                    {
+                      artistDetailView?.customer_services
+                        ?.live_online_description
+                    }
                   </span>
                 </div>
               </div>
-                <div
-                className="flex gap-[10.38px] items-center mb-2"
-               
-              >
+            ) : (
+              ""
+            )}
+            {artistDetailView?.customer_services?.home_pickup ? (
+              <div className="flex gap-[10.38px] items-center mb-2">
                 <div>
                   <ImageComponent
                     src={"/assets/icons/home-icons.svg"}
@@ -175,17 +187,23 @@ const ArtistCustomerComponents = ({artistDetailView}: {artistDetailView :ArtistT
                 </div>
                 <div>
                   <p className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px]">
-                    {artistDetailView?.customer_services?.live_online ? "Live Online" : ""}
+                    {artistDetailView?.customer_services?.live_online
+                      ? "Live Online"
+                      : ""}
                   </p>
                   <span className="text-f12 font-normal text-ik_bluegreylighten1 leading-[15.12px]">
-                       {artistDetailView?.customer_services?.live_online_description}
+                    {
+                      artistDetailView?.customer_services
+                        ?.live_online_description
+                    }
                   </span>
                 </div>
               </div>
-                <div
-                className="flex gap-[10.38px] items-center mb-2"
-               
-              >
+            ) : (
+              ""
+            )}
+            {artistDetailView?.customer_services?.distance_service ? (
+              <div className="flex gap-[10.38px] items-center mb-2">
                 <div>
                   <ImageComponent
                     src={"/assets/icons/distance-icons.svg"}
@@ -196,15 +214,22 @@ const ArtistCustomerComponents = ({artistDetailView}: {artistDetailView :ArtistT
                 </div>
                 <div>
                   <p className="text-f18 font-semibold text-ik_bluegreydarken3 leading-[22.68px]">
-                    {artistDetailView?.customer_services?.live_online ? "Live Online" : ""}
+                    {artistDetailView?.customer_services?.live_online
+                      ? "Live Online"
+                      : ""}
                   </p>
                   <span className="text-f12 font-normal text-ik_bluegreylighten1 leading-[15.12px]">
-                       {artistDetailView?.customer_services?.live_online_description}
+                    {
+                      artistDetailView?.customer_services
+                        ?.live_online_description
+                    }
                   </span>
                 </div>
               </div>
-              
-            </>
+            ) : (
+              ""
+            )}
+          </>
           {/* ))} */}
         </div>
       </div>
