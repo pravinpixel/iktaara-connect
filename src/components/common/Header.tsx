@@ -30,7 +30,12 @@ const Header = () => {
   const [openStarted, setOpenStarted] = React.useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const { status } = useSession();
+  const { status, data } = useSession();
+
+  const { email, name } = data?.user || {
+    email: "",
+    name: ""
+  }
 
   const { setPopup } = zustandStore();
 
@@ -264,10 +269,10 @@ const Header = () => {
                   <MenuItem onClick={handleCloses} className="p-1">
                     <div className="bg-ik_bluegreylighten7 px-4 py-3 rounded-lg">
                       <div className="text-f18 text-ik_bluegreydarken6 font-semibold leading-[23px]">
-                        Hi Ramakrishna
+                        Hi {name}
                       </div>
                       <div className="text-f16 font-normal text-ik_lightgrey leading-[22.44px]">
-                        ramakrishnan@gmail.com
+                        {email}
                       </div>
                     </div>
                   </MenuItem>
