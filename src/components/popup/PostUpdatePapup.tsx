@@ -39,7 +39,7 @@ interface UpdateProps {
 export default function PostUpdatePapup({ handleClose, open }: UpdateProps) {
   const methods = useForm();
 
-  const { handleSubmit } = methods;
+  const { handleSubmit, control } = methods;
 
   const handleAbout = async () => {};
   return (
@@ -75,11 +75,7 @@ export default function PostUpdatePapup({ handleClose, open }: UpdateProps) {
           <FormProvider {...methods}>
             <form onSubmit={handleSubmit(handleAbout)}>
               <div className="mb-3">
-                <UploadFile
-                  typeupload={true}
-                  type={false}
-                  multiple={true}
-                />
+                <UploadFile multiple={true} control={control} name={""} />
               </div>
               <div className="mb-3">
                 <InputField

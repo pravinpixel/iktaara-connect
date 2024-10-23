@@ -6,6 +6,8 @@ import SelectField from "@/components/common/form-fields/SelectField";
 import { businessEditApi } from "@/redux/services/listingService";
 import { AppDispatch } from "@/redux/store";
 import { useDispatch } from "react-redux";
+import { essentialLocationApi } from "@/redux/services/essentialService";
+import { notify } from "@/utils/helpers/global-function";
 
 const CustomCheckbox = dynamic(
   () => import("@/components/common/form-fields/CheckBox")
@@ -19,8 +21,8 @@ const InputField = dynamic(
 const TimePickerField = dynamic(
   () => import("@/components/common/form-fields/TimePickerField")
 );
-const CustomButton = dynamic(
-  () => import("@/components/common/form-fields/CustomButton")
+const CustomLoadingButton = dynamic(
+  () => import("@/components/common/form-fields/CustomLoadingButton")
 );
 
 const BusinessContact = ({ essentialList }: { essentialList: any }) => {
@@ -37,6 +39,7 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
   const [entries, setEntries] = useState([{ day_of_week: daysOfWeek[0].name }]);
   // const [currentIndex, setCurrentIndex] = useState(1);
   const dispatch = useDispatch<AppDispatch>();
+  const [locationOptions, setLocationOptions] = useState([]);
 
   const handleChange = (index, field, value) => {
     const newEntries = [...entries];
@@ -62,11 +65,11 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
 
   const {
     handleSubmit,
-    // getValues,
+    setValue,
     formState: { isSubmitting },
   } = useFormContext();
 
-  const handleCustomer = async (values) => {
+  const handleCustomer = async (values: BusinessTypeForm) => {
     // const open_hours = entries.map((entry, index) => {
     //   const open_time = getValues(`open_hours[${index}][open_time]`);
     //   const close_time = getValues(`open_hours[${index}][close_time]`);
@@ -76,17 +79,42 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
     //     close_time: close_time || null,
     //   };
     // });
-    // const contactData = {
-    //   ...values,
-    //   // open_hours,
-
-    // };
+    const customer_services = [
+      {
+        live_online: values.live_online ? 1 : 0,
+        live_online_description: values.live_online_description || "",
+        home_pickup: values.home_pickup ? 1 : 0,
+        home_pickup_description: values.home_pickup_description || "",
+        distance_service: values.distance_service ? 1 : 0,
+        distance_service_description: values.distance_service_description || "",
+      },
+    ];
+    const contactData = {
+      ...values,
+      customer_services,
+      type: "contact",
+      business_id: values.business_id,
+      logo: values?.logo || "",
+    };
 
     try {
-      await dispatch(businessEditApi(values)).unwrap();
+      await dispatch(businessEditApi(contactData)).unwrap();
     } catch (error) {}
+  };
 
-    console.log(values, "open_hours");
+  const handleCityChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    const cityId = event.target.value as string;
+    locationList(Number(cityId));
+  };
+
+  const locationList = async (cityId: number) => {
+    try {
+      const res = await dispatch(essentialLocationApi({ id: cityId })).unwrap();
+      setLocationOptions(res);
+      setValue("location", res);
+    } catch (error) {
+      notify(error);
+    }
   };
 
   return (
@@ -186,28 +214,32 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
               <Grid item xs={6}>
                 <SelectField
                   label={"City"}
-                  name={"city"}
-                  options={[
-                    { id: 10, name: "Repair Services" },
-                    { id: 20, name: "Repair" },
-                    { id: 30, name: "Services" },
-                  ]}
+                  name={"city_id"}
+                  options={essentialList?.city.map(
+                    (item: { id: number; name: string }) => ({
+                      id: item.id,
+                      name: item.name,
+                    })
+                  )}
+                  onChange={handleCityChange}
                 />
               </Grid>
               <Grid item xs={6}>
                 <SelectField
                   label={"Location"}
-                  name={"location"}
-                  options={[
-                    { id: 10, name: "Repair Services" },
-                    { id: 20, name: "Repair" },
-                    { id: 30, name: "Services" },
-                  ]}
+                  name={"location_id"}
+                  options={locationOptions?.map(
+                    (item: { id: number; name: string }) => ({
+                      id: item.id,
+                      name: item.name,
+                      onChange: () => {},
+                    })
+                  )}
                 />
               </Grid>
               <Grid item xs={6}>
                 <InputField
-                  name="address_line1"
+                  name="address_line_1"
                   label="Address 1"
                   placeholder="Address"
                   type="text"
@@ -215,7 +247,7 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
               </Grid>
               <Grid item xs={6}>
                 <InputField
-                  name="address_line2"
+                  name="address_line_2"
                   label="Address 2"
                   placeholder="Address"
                   type="text"
@@ -260,7 +292,7 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
             <h6>Customer Services</h6>
           </div>
           <div className="flex gap-4 pb-3">
-            <div className="">
+            <div className="pt-5">
               <CustomCheckbox label="" name="live_online" />
             </div>
             <div className="w-full">
@@ -339,9 +371,12 @@ const BusinessContact = ({ essentialList }: { essentialList: any }) => {
           </div>
         </div>
         <Box className="flex justify-start w-full mt-6">
-          <CustomButton type="submit" className="px-16 py-3.5" label="Save">
-            Save
-          </CustomButton>
+          <CustomLoadingButton
+            type="submit"
+            className="px-16 py-3.5"
+            label="Save"
+            loading={isSubmitting}
+          />
         </Box>
       </Box>
     </section>

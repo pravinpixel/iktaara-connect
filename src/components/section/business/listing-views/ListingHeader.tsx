@@ -19,10 +19,11 @@ const BusinessEditPopup = dynamic(
 );
 type Props = {
   ListHeader: any;
+  listingsView: BusinessTypeForm;
 };
 
 const ListingHeaderComponents = (props: Props) => {
-  const { ListHeader } = props;
+  const { ListHeader, listingsView } = props;
   const [opencity, setOpencity] = React.useState(false);
   const [openbusinessedit, setOpenbusinessedit] = React.useState(false);
   const [openUpdate, setOpenUpdate] = React.useState(false);
@@ -229,6 +230,7 @@ const ListingHeaderComponents = (props: Props) => {
         <BusinessEditPopup
           handleClose={handleClosebusiness}
           open={openbusinessedit}
+          listingsView={listingsView}
         />
       )}
     </>

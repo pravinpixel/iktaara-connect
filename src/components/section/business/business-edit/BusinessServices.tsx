@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import { businessEditApi } from "@/redux/services/listingService";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
+import { notify } from "@/utils/helpers/global-function";
 
 const ImageComponent = dynamic(
   () => import("@/components/common/form-fields/ImageComponent")
@@ -19,12 +20,17 @@ const InputField = dynamic(
   () => import("@/components/common/form-fields/InputField")
 );
 
-const CustomButton = dynamic(
-  () => import("@/components/common/form-fields/CustomButton")
+const CustomLoadingButton = dynamic(
+  () => import("@/components/common/form-fields/CustomLoadingButton")
 );
+
 const BusinessServices = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { handleSubmit, control } = useFormContext();
+  const {
+    handleSubmit,
+    control,
+    formState: { isSubmitting },
+  } = useFormContext();
     const {
       fields: servicesFields,
       append: appendService,
@@ -45,19 +51,20 @@ const BusinessServices = () => {
      defaultValue: [{ title: "" }],
    });
 
-  const handleServices = async (values) => {
-   const servicesData = {
-     highlights: values.highlights || [],
-     services: values.services || [],
-     facilities: values.facilities || [],
-     type: values.type === 1 ? "services" : values.type,
-     logo: values.logo || null,
-   };
-
+  const handleServices = async (values: BusinessTypeForm) => {
+    const servicesData = {
+      highlights: values.highlights || [],
+      services: values.services || [],
+      facilities: values.facilities || [],
+      type: "services",
+      business_id: values.business_id,
+      logo: values?.logo || "",
+    };
     try {
       await dispatch(businessEditApi(servicesData)).unwrap();
-    } catch (error) {}
-    console.log(values, "Services Form Values");
+    } catch (error) {
+      notify(error);
+    }
   };
 
   return (
@@ -181,9 +188,12 @@ const BusinessServices = () => {
           </div>
         </div>
         <Box className="flex justify-start w-full mt-6">
-          <CustomButton type="submit" className="px-16 py-3.5" label="Save">
-            Save
-          </CustomButton>
+          <CustomLoadingButton
+            type="submit"
+            className="px-16 py-3.5"
+            label="Save"
+            loading={isSubmitting}
+          />
         </Box>
       </Box>
     </section>

@@ -100,11 +100,10 @@ const ArtistMedia = () => {
             multiple={true}
           /> */}
           <UploadFile
-            typeupload={true}
-            type={false}
             control={control}
-            multiple={true}
-          />
+            multiple={true} 
+            name={"documents"}         
+             />
         </div>
         {fields.map((field, index) => (
           <div className="mb-2" key={field.id}>

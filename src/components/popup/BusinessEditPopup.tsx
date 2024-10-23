@@ -27,41 +27,37 @@ const Transition = React.forwardRef(function Transition(
 interface BusinessEditProps {
   handleClose: () => void;
   open?: boolean;
+  listingsView: BusinessTypeForm;
 }
 
 export default function BusinessEditPopup({
   handleClose,
   open,
+  listingsView,
 }: BusinessEditProps) {
   const dispatch = useDispatch<AppDispatch>();
   const methods = useForm({
     defaultValues: {
       type: 0,
-      recognitions: [
-        { name: "", description: "", date: "" }, 
-      ],
+      recognitions: [{ name: "", description: "", date: "" }],
     },
     mode: "onSubmit",
   });
 
   const type = methods.watch("type");
-const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
 
-const essentialList = async (essentialData: string) => {
-  try {
-    const res = await dispatch(essentialApi({ essentialData })).unwrap();
+  const essentialList = async (essentialData: string) => {
+    try {
+      const res = await dispatch(essentialApi({ essentialData })).unwrap();
+      setData(res);
+    } catch (error) {
+    }
+  };
 
-    setData(res);
-  } catch (error) {
-    console.log(error, "error");
-  }
-};
-
-useEffect(() => {
-  essentialList(
-    "country,state,city,location,business_type,instrument_type,"
-  );
-}, []);
+  useEffect(() => {
+    essentialList("country,state,city,location,business_type,instrument_type,");
+  }, []);
 
   return (
     <Dialog
@@ -76,12 +72,14 @@ useEffect(() => {
       <FormProvider {...methods}>
         <DialogTitle>
           <div className="flex flex-col items-center justify-center h-full">
-            <ImageUpload name={"logo"} control={undefined} />
-            <div className="pt-2">
-              <h6 className="text-f24 font-semibold text-ik_bluegreydarken3">
-                Oasis Recording Studio
-              </h6>
-            </div>
+            <ImageUpload name={"logo"} listingsView={listingsView} />
+            {listingsView?.business_name && (
+              <div className="pt-2">
+                <h6 className="text-f24 font-semibold text-ik_bluegreydarken3">
+                  {listingsView?.business_name}
+                </h6>
+              </div>
+            )}
           </div>
         </DialogTitle>
 
@@ -103,6 +101,7 @@ useEffect(() => {
             type={type}
             setStep={methods.setValue}
             data={data}
+            listingsView={listingsView}
           />
         </DialogContent>
       </FormProvider>

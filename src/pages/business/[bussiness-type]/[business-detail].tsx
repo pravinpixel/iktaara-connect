@@ -32,7 +32,6 @@ const ListingHeaderComponents = dynamic(
 );
 
 const ListingsView = ({ listingsView }: any) => {
-  console.log(listingsView, "listingsView");
   const ListingHeader = {
     logo: "/assets/image/music-logo.png",
     title: "Musee Musicals Pvt. Ltd.",
@@ -42,13 +41,16 @@ const ListingsView = ({ listingsView }: any) => {
   return (
     <section>
       <CustomContainer>
-        <ListingHeaderComponents ListHeader={ListingHeader} />
+        <ListingHeaderComponents
+          ListHeader={ListingHeader}
+          listingsView={listingsView}
+        />
         <ListingImageComponents />
         <Grid container>
           <Grid item xs={12} md={8}>
             <ListingAboutComponents />
           </Grid>
-          <Grid item xs={12} md={4} pl={'6px'}>
+          <Grid item xs={12} md={4} pl={"6px"}>
             <ListingCustomerComponents />
           </Grid>
         </Grid>

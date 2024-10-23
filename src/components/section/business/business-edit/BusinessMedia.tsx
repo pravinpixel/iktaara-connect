@@ -4,27 +4,44 @@ import { Box } from "@mui/material";
 
 import dynamic from "next/dynamic";
 import { useFormContext } from "react-hook-form";
-// import UploadFile from "@/components/common/form-fields/UploadFile";
-
-
-// const ImageUpload = dynamic(
-//   () => import("@/components/common/form-fields/ImageUpload")
-// );
+import { AppDispatch } from "@/redux/store";
+import { useDispatch } from "react-redux";
+import { businessEditApi } from "@/redux/services/listingService";
+import { notify } from "@/utils/helpers/global-function";
 
 const UploadFile = dynamic(
   () => import("@/components/common/form-fields/UploadFile")
 );
 
-const CustomButton = dynamic(
-  () => import("@/components/common/form-fields/CustomButton")
+const CustomLoadingButton = dynamic(
+  () => import("@/components/common/form-fields/CustomLoadingButton")
 );
 
 const BusinessMedia = () => {
-   const { handleSubmit, control } = useFormContext();
+    const dispatch = useDispatch<AppDispatch>();
+  const {
+    handleSubmit,
+    control,
+    formState: { isSubmitting },
+  } = useFormContext();
 
-   const handleMedia = async (values) => {
-     console.log(values, "customer_services");
-   };
+  const handleMedia = async (values: BusinessTypeForm) => {
+    const mediaData = {
+      ...values,
+      type: "media",
+      business_id: values.business_id,
+      cover_image: values?.cover_image || "",
+      documents: values?.documents || [],
+      logo: values?.logo || "",
+    };
+
+    try {
+      await dispatch(businessEditApi(mediaData)).unwrap();
+    } catch (error) {
+       notify(error);
+    }
+    console.log(values, "mediaData");
+  };
 
   return (
     <section>
@@ -36,10 +53,9 @@ const BusinessMedia = () => {
             </span>
           </div>
           <UploadFile
-            typeupload={true}
-            type={false}
             control={control}
             multiple={false}
+            name={"cover_image"}
           />
         </div>
         <div className="mb-3">
@@ -49,16 +65,18 @@ const BusinessMedia = () => {
             </span>
           </div>
           <UploadFile
-            typeupload={true}
-            type={false}
             control={control}
             multiple={true}
+            name={"documents"}
           />
         </div>
         <Box className="flex justify-start w-full mt-6">
-          <CustomButton type="submit" className="px-16 py-3.5" label="Save">
-            Save
-          </CustomButton>
+          <CustomLoadingButton
+            type="submit"
+            className="px-16 py-3.5"
+            label="Save"
+            loading={isSubmitting}
+          />
         </Box>
       </Box>
     </section>
