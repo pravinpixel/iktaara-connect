@@ -9,6 +9,7 @@ import UploadFile from "@/components/common/form-fields/UploadFile";
 import ImageComponent from "@/views/components/ImageComponent";
 import { artistSaveApi } from "@/redux/services/artistService";
 import { useDispatch } from "react-redux";
+import UploadDocumentField from "@/components/common/form-fields/upload/MultiFileUpload";
 
 const InputField = dynamic(
   () => import("@/components/common/form-fields/InputField")
@@ -28,43 +29,8 @@ const ArtistMedia = () => {
 
   const handleMedia = async (values: any) => {
     console.log(values, "values");
-
-    const formData = new FormData();
-
-    // Object.keys(values).forEach((key) => {
-    //   if (key !== 'documents') {
-    //     formData.append(key, values[key]);
-    //   }
-    // });
-
-    Object.keys(values).forEach((key) => {
-      if (key !== "type" && key !== "documents" && key !== "profile_pic") {
-        if (Array.isArray(values[key])) {
-          values[key].forEach((item: any) => {
-            formData.append(`${key}[]`, item);
-          });
-        } else {
-          formData.append(key, values[key]);
-        }
-      }
-    });
-
-    if (values.profile_pic?.file) {
-      formData.append("profile_pic", values.profile_pic.file);
-    }
-
-    // values.documents.forEach((doc) => {
-    //   formData.append('documents', doc.file);
-    // });
-
-    values.documents.forEach((doc, index) => {
-      formData.append(`documents[${index}]`, doc.file);
-    });
-
-    console.log([...formData], "FormData entries");
-
     try {
-      const res = await dispatch(artistSaveApi(formData)).unwrap();
+      const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "Response from API");
     } catch (error) {
       console.log(error, "Error from API");
@@ -87,11 +53,12 @@ const ArtistMedia = () => {
             control={undefined}
             multiple={true}
           /> */}
-          <UploadFile
+          {/* <UploadFile control={control} multiple={true} name={"documents"} /> */}
+          <UploadDocumentField
             control={control}
-            multiple={true} 
-            name={"documents"}         
-             />
+            multiple={true}
+            name={"documentsnew"}
+          />
         </div>
         {fields.map((field, index) => (
           <div className="mb-2" key={field.id}>

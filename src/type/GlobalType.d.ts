@@ -18,7 +18,7 @@ type ParamsType = {
 type DocumentsType = {
 	id?: number;
 	name?: string;
-	document?: string;
+	document_url?: string;
 } & File;
 type NotifyType = AxiosError<{
 	error?: unknown;
@@ -37,3 +37,4 @@ type StoreState = {
 	setToken: (token: string | null) => void;
 	setPopup: (popup: TypeSuggestion | null) => void;
 };
+

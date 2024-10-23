@@ -49,28 +49,8 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
   const handleAbout = async (values: any) => {
     console.log(values, "values");
 
-    const formData = new FormData();
-
-    Object.keys(values).forEach((key) => {
-      if (key !== "profile_pic") {
-        if (Array.isArray(values[key])) {
-          values[key].forEach((item: any) => {
-            formData.append(`${key}[]`, item);
-          });
-        } else {
-          formData.append(key, values[key]);
-        }
-      }
-    });
-
-    if (values.profile_pic?.file) {
-      formData.append("profile_pic", values.profile_pic.file);
-    }
-
-    console.log(formData, "updated values");
-
     try {
-      const res = await dispatch(artistSaveApi(formData)).unwrap();
+      const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "tttt");
 
       if (res?.artist?.id) {
@@ -97,7 +77,6 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
       const res = await dispatch(essentialLocationApi({ id: cityId })).unwrap();
       console.log(res, "Location List Response");
       setLocationOptions(res);
-
       setValue("location", res);
     } catch (error) {
       console.log(error, "Location API Error");

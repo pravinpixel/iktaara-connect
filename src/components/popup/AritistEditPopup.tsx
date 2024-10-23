@@ -41,8 +41,12 @@ export default function ArtistEditPopup({
   const methods = useForm({
     defaultValues: {
       type: "about",
-      recognitions: [{ name: "", description: "", date: "" }],
+      // recognitions: [{ name: "", description: "", date: "" }],
       videoUrls: [{ url: "" }],
+      recognitions: artistDetailView?.artist_recogitions || [
+        { name: "", description: "", date: "" },
+      ],
+      artist_id: artistDetailView?.id,
       ...artistDetailView,
     },
 
