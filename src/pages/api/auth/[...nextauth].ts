@@ -8,6 +8,7 @@ interface CustomUser {
     id: string;
     first_name: string;
     last_name: string;
+    name: string,
     email: string;
     mobile_no: string;
     customer_no: string;

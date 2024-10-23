@@ -16,7 +16,7 @@ const CONSTANT = {
     UPLOAD_MAX_COUNT: 5,
     UPLOAD_MAX_SIZE: 2,
 
-    allowedTypes: {
+    ALLOWEDTYPES: {
         '.txt': 'text/plain',
         '.jpeg': 'image/jpeg',
         '.jpg': 'image/jpeg',
@@ -26,7 +26,10 @@ const CONSTANT = {
         '.pdf': 'application/pdf',
     },
     
-    DeleteKey : "_de"
+    DELETEDKEY : "_deleted_ids",
+
+    STOREID : process.env.NEXT_PUBLIC_STORE_ID
+
 }
 
 
