@@ -69,7 +69,7 @@ const ListingHeaderComponents = (props: Props) => {
             </div>
             <div className="">
               <h6 className="text-f30 font-bold text-ik_bluegreydarken3 leading-[37.8px] mb-1">
-                {/* {listingsView.business_name} */}
+                {listingsView.business_name}
               </h6>
               <div className="flex gap-3 mb-3">
                 <div className="flex gap-2">
