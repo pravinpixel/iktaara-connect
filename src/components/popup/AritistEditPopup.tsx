@@ -9,6 +9,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import SingleUpload from "../common/form-fields/SingleUpload";
 import { essentialApi } from "@/redux/services/essentialService";
 import { useDispatch } from "react-redux";
+import ImageUpload from "../common/form-fields/ImageUpload";
 
 const ArtistEditTabs = dynamic(
   () => import("../section/artist/artist_edit/ArtistEditTabs")
@@ -91,7 +92,10 @@ export default function ArtistEditPopup({
               height={160}
               alt={"music-logo"}
             /> */}
-            <SingleUpload name="profile_pic" />
+            <ImageUpload
+              name={"profile_pic"}
+              profileImage={artistDetailView?.profile_pic}
+            />
             <div className="pt-2">
               <h6 className="text-f24 font-semibold text-ik_bluegreydarken3">
                 Ramakrishna Paramahamsa

@@ -1,5 +1,141 @@
+// import React, { useRef, useState } from "react";
+// import Image from "next/image";
+// import { useController } from "react-hook-form";
+// import { Box } from "@mui/material";
+// import ImageComponent from "./ImageComponent";
+
+// interface ImageUploadProps {
+//   control?: any;
+//   name: string;
+//   type?: string;
+//   typeupload?: string;
+//   artistDetailView: ArtistType;
+// }
+
+// const SingleUpload: React.FC<ImageUploadProps> = ({
+//   name,
+//   control,
+//   artistDetailView,
+// }) => {
+//   const fileInputRef = useRef<HTMLInputElement>(null);
+//   const [uploadedFile, setUploadedFile] = useState<any>(null); // Track the uploaded file
+//   console.log(uploadedFile, "uploadedFile");
+
+//   // Get the field's onChange, value, and other input props from useController
+//   const {
+//     field: { onChange, value },
+//   } = useController({
+//     name, // The name of the form field
+//     control, // The control object from react-hook-form
+//   });
+
+//   const handleImageClick = () => {
+//     fileInputRef.current?.click(); // Simulate a click on the hidden file input
+//   };
+
+//   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+//     const file = event.target.files?.[0]; // Handle only one file
+//     if (file) {
+//       const reader = new FileReader();
+//       reader.onloadend = () => {
+//         setUploadedFile({
+//           file, // Store the original File object
+//           src: reader.result, // Store the base64 string for display
+//           name: file.name,
+//         });
+//         onChange(file); // Update the form value
+//       };
+//       reader.readAsDataURL(file); // Convert the file to base64
+//     }
+//   };
+
+//   const handleRemoveFile = () => {
+//     setUploadedFile(null);
+//     onChange(null);
+//   };
+
+//   return (
+//     <section>
+//       <div>
+//         {/* {!uploadedFile ? ( */}
+//         {artistDetailView?.profile_pic ? (
+//           <>
+//             {" "}
+//             <ImageComponent
+//               src={
+//                 process.env.NEXT_PUBLIC_IKTARAA_IMAGE_URL +
+//                 artistDetailView?.profile_pic
+//               }
+//               alt="Uploaded image"
+//               width={150}
+//               height={150}
+//               className="object-contain"
+//             />
+//             <div className="flex items-center gap-2 mt-2">
+//               <Box onClick={handleRemoveFile}>
+//                 <ImageComponent
+//                   src="/assets/icons/delete-icons.svg"
+//                   alt="delete"
+//                   width={20}
+//                   height={20}
+//                   className="cursor-pointer"
+//                 />
+//               </Box>
+//             </div>
+//           </>
+//         ) : (
+//           <div
+//             className="flex items-center justify-center bg-ik_bluegreylighten5 w-[132px] h-[132px] rounded-[70px] cursor-pointer"
+//             onClick={handleImageClick}
+//           >
+//             Add Image
+//           </div>
+//         )}
+
+//         {/* )} */}
+
+//         <input
+//           type="file"
+//           ref={fileInputRef}
+//           style={{ display: "none" }}
+//           onChange={handleFileUpload}
+//         />
+
+//         {/* {uploadedFile && (
+//           <>
+//             {" "}
+//             <div className="text-center">
+//               <ImageComponent
+//                 src={
+//                   process.env.NEXT_PUBLIC_IKTARAA_IMAGE_URL + uploadedFile.name
+//                 }
+//                 alt="Uploaded image"
+//                 width={150}
+//                 height={150}
+//                 className="object-contain"
+//               />
+//             </div>
+//             <div className="flex items-center gap-2 mt-2">
+//               <Box onClick={handleRemoveFile}>
+//                 <ImageComponent
+//                   src="/assets/icons/delete-icons.svg"
+//                   alt="delete"
+//                   width={20}
+//                   height={20}
+//                   className="cursor-pointer"
+//                 />
+//               </Box>
+//             </div>
+//           </>
+//         )} */}
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default SingleUpload;
+
 import React, { useRef, useState } from "react";
-import Image from "next/image";
 import { useController } from "react-hook-form";
 import { Box } from "@mui/material";
 import ImageComponent from "./ImageComponent";
@@ -9,64 +145,85 @@ interface ImageUploadProps {
   name: string;
   type?: string;
   typeupload?: string;
+  artistDetailView: ArtistType;
 }
 
-const SingleUpload: React.FC<ImageUploadProps> = ({ name, control }) => {
+const SingleUpload: React.FC<ImageUploadProps> = ({
+  name,
+  control,
+  artistDetailView,
+}) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [uploadedFile, setUploadedFile] = useState<any>(null); // Track the uploaded file
+  const [uploadedFile, setUploadedFile] = useState<any>(null);
 
-  // Get the field's onChange, value, and other input props from useController
+  // Get the field's onChange from useController
   const {
     field: { onChange, value },
   } = useController({
-    name, // The name of the form field
-    control, // The control object from react-hook-form
+    name,
+    control,
   });
 
   const handleImageClick = () => {
-    fileInputRef.current?.click(); // Simulate a click on the hidden file input
+    fileInputRef.current?.click();
   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]; // Handle only one file
+    const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setUploadedFile({
-          file, // Store the original File object
-          src: reader.result, // Store the base64 string for display
+          file,
+          src: reader.result,
           name: file.name,
         });
-        onChange(file); // Update the form value
+        onChange(file); // Update form value with the file
       };
-      reader.readAsDataURL(file); // Convert the file to base64
+      reader.readAsDataURL(file);
     }
   };
 
   const handleRemoveFile = () => {
-    setUploadedFile(null);
-    onChange(null);
+    setUploadedFile(null); // Clear the uploaded file state
+    onChange(null); // Clear the form value
   };
 
   return (
     <section>
       <div>
-        {!uploadedFile ? (
-          <div
-            className="flex items-center justify-center bg-ik_bluegreylighten5 w-[132px] h-[132px] rounded-[70px] cursor-pointer"
-            onClick={handleImageClick}
-          >
-            Add Image
-          </div>
-        ) : (
-          <div className="text-center">
+        {uploadedFile || artistDetailView?.profile_pic ? (
+          <>
+            {/* Display uploaded image or artist's existing profile picture */}
             <ImageComponent
-              src={process.env.NEXT_PUBLIC_IKTARAA_IMAGE_URL + uploadedFile.src}
+              src={
+                uploadedFile
+                  ? uploadedFile.src
+                  : `${process.env.NEXT_PUBLIC_IKTARAA_IMAGE_URL}${artistDetailView?.profile_pic}`
+              }
               alt="Uploaded image"
               width={150}
               height={150}
               className="object-contain"
             />
+            <div className="flex items-center gap-2 mt-2">
+              <Box onClick={handleRemoveFile}>
+                <ImageComponent
+                  src="/assets/icons/delete-icons.svg"
+                  alt="delete"
+                  width={20}
+                  height={20}
+                  className="cursor-pointer"
+                />
+              </Box>
+            </div>
+          </>
+        ) : (
+          <div
+            className="flex items-center justify-center bg-ik_bluegreylighten5 w-[132px] h-[132px] rounded-[70px] cursor-pointer"
+            onClick={handleImageClick}
+          >
+            Add Image
           </div>
         )}
 
@@ -76,20 +233,6 @@ const SingleUpload: React.FC<ImageUploadProps> = ({ name, control }) => {
           style={{ display: "none" }}
           onChange={handleFileUpload}
         />
-
-        {uploadedFile && (
-          <div className="flex items-center gap-2 mt-2">
-            <Box onClick={handleRemoveFile}>
-              <ImageComponent
-                src="/assets/icons/delete-icons.svg"
-                alt="delete"
-                width={20}
-                height={20}
-                className="cursor-pointer"
-              />
-            </Box>
-          </div>
-        )}
       </div>
     </section>
   );

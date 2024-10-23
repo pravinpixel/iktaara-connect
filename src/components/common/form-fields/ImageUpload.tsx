@@ -7,19 +7,24 @@ import ImageComponent from "./ImageComponent";
 interface ImageUploadProps {
   control?: any;
   name?: string;
-  listingsView: BusinessTypeForm;
+  profileImage: string;
 }
 
-const ImageUpload: React.FC<ImageUploadProps> = ({ name, control, listingsView }) => {
+const ImageUpload: React.FC<ImageUploadProps> = ({
+  name,
+  control,
+  profileImage,
+}) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [uploadedFile, setUploadedFile] = useState<any>(listingsView?.logo); 
+  const [uploadedFile, setUploadedFile] = useState<any>(
+    process.env.NEXT_PUBLIC_IKTARAA_IMAGE_URL + profileImage
+  );
 
-  
   const {
-    field: { onChange},
+    field: { onChange },
   } = useController({
-    name, 
-    control, 
+    name,
+    control,
   });
 
   const handleImageClick = () => {
@@ -27,24 +32,24 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ name, control, listingsView }
   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]; 
+    const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setUploadedFile({
-          file, 
-          src: reader.result, 
+          file,
+          src: reader.result,
           name: file.name,
         });
         onChange(file);
       };
-      reader.readAsDataURL(file); 
+      reader.readAsDataURL(file);
     }
   };
 
   const handleRemoveFile = () => {
-    setUploadedFile(null); 
-    onChange(null); 
+    setUploadedFile(null);
+    onChange(null);
   };
 
   return (
@@ -60,7 +65,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ name, control, listingsView }
         ) : (
           <div className="text-center w-[160px] h-[160px]">
             <Image
-              src={uploadedFile.src}
+              src={uploadedFile}
               alt="Uploaded image"
               width={160}
               height={160}
@@ -95,4 +100,3 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ name, control, listingsView }
 };
 
 export default ImageUpload;
-
