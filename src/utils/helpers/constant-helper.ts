@@ -11,7 +11,22 @@ const CONSTANT = {
     ISSTAGING: process.env.NODE_ENV === 'test',
     ISLOCAL: process.env.NODE_ENV === 'development',
 
-    ASSESTPATH: process.env.NEXT_PUBLIC_IKTARAA_URL || ''
+    ASSESTPATH: process.env.NEXT_PUBLIC_IKTARAA_URL || '',
+
+    UPLOAD_MAX_COUNT: 5,
+    UPLOAD_MAX_SIZE: 2,
+
+    allowedTypes: {
+        '.txt': 'text/plain',
+        '.jpeg': 'image/jpeg',
+        '.jpg': 'image/jpeg',
+        '.png': 'image/png',
+        '.xls': 'application/vnd.ms-excel',
+        '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        '.pdf': 'application/pdf',
+    },
+    
+    DeleteKey : "_de"
 }
 
 

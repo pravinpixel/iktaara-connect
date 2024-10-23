@@ -36,8 +36,8 @@ const UploadFile: React.FC<ImageUploadProps> = ({
   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files) {
+    const files = event?.target?.files || [];
+    if (files?.length > 0) {
       const fileArray = Array.from(files);
       if (multiple) {
         if (fields.length + fileArray.length > 5) {
@@ -64,9 +64,8 @@ const UploadFile: React.FC<ImageUploadProps> = ({
         reader.onloadend = () => {
           onChange(file);
           setUploadedFile({
-            file,
+            ...file,
             src: reader.result,
-            name: file.name,
           });
         };
         reader.readAsDataURL(file);

@@ -57,3 +57,5 @@ export function notify({ error, message = 'Something went wrong!', success }: { 
       break;
   }
 }
+
+export const stringFileName = (fileName: string) => String(fileName)?.split('/')?.slice(-1)?.[0];
