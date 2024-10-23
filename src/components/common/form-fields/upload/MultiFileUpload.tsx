@@ -24,7 +24,6 @@ import {
   FormHelperText,
 } from "@mui/material";
 
-// import DeleteFieldButton from './DeleteFieldButton';
 import { stringFileName } from "@/utils/helpers/global-function";
 import ImageComponent from "../ImageComponent";
 
@@ -108,11 +107,28 @@ const UploadDocumentField = (
           </span>
         </div>
       </Box>
-
-      {(field?.value as unknown as File[])?.map((row, index) => (
-        // eslint-disable-next-line react/jsx-key
+      {(field?.value as unknown as File[]) ? (
+        <>
+          {" "}
+          {(field?.value as unknown as File[])?.map((row, index) => (
+            // eslint-disable-next-line react/jsx-key
+            <div className="flex items-center gap-2 mt-2" key={index}>
+              <p className="text-f16">{convertUrl(row)}</p>
+              <Box>
+                <ImageComponent
+                  src="/assets/icons/delete-icons.svg"
+                  alt="delete"
+                  width={20}
+                  height={20}
+                  className="cursor-pointer"
+                />
+              </Box>
+            </div>
+          ))}{" "}
+        </>
+      ) : (
         <div className="flex items-center gap-2 mt-2">
-          <p className="text-f16">{convertUrl(row)}</p>
+          <p className="text-f16">{convertUrl(field.value)}</p>
           <Box>
             <ImageComponent
               src="/assets/icons/delete-icons.svg"
@@ -123,7 +139,8 @@ const UploadDocumentField = (
             />
           </Box>
         </div>
-      ))}
+      )}
+
       <input
         type="file"
         ref={fileInputRef}
@@ -132,78 +149,6 @@ const UploadDocumentField = (
         onChange={handleUpload}
       />
     </section>
-    // <Box width={"100%"}>
-    //   <ButtonGroup
-    //     variant="contained"
-    //     aria-label="Button group with a nested menu"
-    //     fullWidth
-    //     onClick={() => {
-    //       fileInputRef?.current?.click();
-    //     }}
-    //     sx={{ boxShadow: "unset" }}
-    //   >
-    //     <Box
-    //       ref={fieldRef}
-    //       sx={({ palette }) => ({
-    //         width: "100%",
-    //         gap: 1,
-    //         display: "flex",
-    //         flexDirection: "row",
-    //         alignItems: "center",
-    //         p: 2,
-    //         height: "2.8125rem",
-    //         border: `1px solid ${
-    //           ((error as CustomErrorType)?.length ? error : error?.message)
-    //             ? palette.error.main
-    //             : palette.grey[400]
-    //         }`,
-    //         cursor: "pointer",
-    //         borderRadius: `6px 0 0 6px`,
-    //       })}
-    //     >
-    //       {/* <Typography variant="subtitle2">Choose File</Typography> */}
-    //       <Typography color={({ palette }) => palette.grey[600]}>
-    //         {(
-    //           multiple
-    //             ? !!(field?.value as unknown as File[])?.length
-    //             : field.value
-    //         )
-    //           ? FileName
-    //           : ""}
-    //       </Typography>
-    //     </Box>
-    //     <Button
-    //       sx={{
-    //         width: "30%",
-    //       }}
-    //     >
-    //       Browse
-    //     </Button>
-    //   </ButtonGroup>
-    //   {(field?.value as unknown as File[])?.map((row, index) => (
-    //     // eslint-disable-next-line react/jsx-key
-    //     <div className="flex items-center gap-2 mt-2">
-    //       <p className="text-f16">{convertUrl(row)}</p>
-    //       <Box>
-    //         <ImageComponent
-    //           src="/assets/icons/delete-icons.svg"
-    //           alt="delete"
-    //           width={20}
-    //           height={20}
-    //           className="cursor-pointer"
-    //         />
-    //       </Box>
-    //     </div>
-    //   ))}
-
-    //   <input
-    //     type="file"
-    //     ref={fileInputRef}
-    //     hidden
-    //     multiple={multiple}
-    //     onChange={handleUpload}
-    //   />
-    // </Box>
   );
 };
 
