@@ -32,12 +32,15 @@ const ArtistRecognitions = () => {
   });
   const dispatch = useDispatch();
   const handleRecognitions = async (values: any) => {
+    console.log(values, "values");
+
     try {
       const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "tttt");
-      notify(res.message);
+      notify(res);
     } catch (error) {
       console.log(error, "error");
+      notify(error);
     }
   };
 

@@ -35,9 +35,11 @@ const ArtistContact = () => {
     try {
       const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "tttt");
+      notify(res);
       notify(res.message);
     } catch (error) {
       console.log(error, "error");
+      notify(error);
     }
   };
   return (

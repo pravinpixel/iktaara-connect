@@ -53,7 +53,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
     try {
       const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "tttt");
-      notify(res.message);
+      notify(res);
       if (res?.artist?.id) {
         setValue("artist_id", res.artist.id);
         setValue("id", res.artist.id);

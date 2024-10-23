@@ -33,7 +33,7 @@ const ArtistMedia = () => {
     try {
       const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "Response from API");
-      notify(res.message);
+      notify(res);
     } catch (error) {
       console.log(error, "Error from API");
     }

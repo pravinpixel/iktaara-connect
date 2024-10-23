@@ -21,7 +21,7 @@ export const artistViewApi = createAsyncThunk(
   "artistView",
   async (params, thunkAPI) => {
     try {
-      const response = await SERVER.get(`/artist/28
+      const response = await SERVER.get(`/artist/29
         `);
       return response?.data;
     } catch (error) {
