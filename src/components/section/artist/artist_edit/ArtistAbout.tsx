@@ -9,6 +9,7 @@ import { Grid } from "@mui/material";
 import { artistSaveApi } from "@/redux/services/artistService";
 import { useDispatch } from "react-redux";
 import { essentialLocationApi } from "@/redux/services/essentialService";
+import { notify } from "@/utils/helpers/global-function";
 
 const MultipleSelectField = dynamic(
   () => import("@/components/common/form-fields/MultipleSelectField")
@@ -52,7 +53,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
     try {
       const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "tttt");
-
+      notify(res.message);
       if (res?.artist?.id) {
         setValue("artist_id", res.artist.id);
         setValue("id", res.artist.id);
@@ -78,6 +79,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
       console.log(res, "Location List Response");
       setLocationOptions(res);
       setValue("location", res);
+      notify(res.message);
     } catch (error) {
       console.log(error, "Location API Error");
     }

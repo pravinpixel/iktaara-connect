@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 import dynamic from "next/dynamic";
 import { artistSaveApi } from "@/redux/services/artistService";
 import { useDispatch } from "react-redux";
+import { notify } from "@/utils/helpers/global-function";
 
 const ImageComponent = dynamic(
   () => import("@/components/common/form-fields/ImageComponent")
@@ -34,6 +35,7 @@ const ArtistRecognitions = () => {
     try {
       const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "tttt");
+      notify(res.message);
     } catch (error) {
       console.log(error, "error");
     }

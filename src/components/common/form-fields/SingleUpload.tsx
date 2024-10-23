@@ -61,7 +61,7 @@ const SingleUpload: React.FC<ImageUploadProps> = ({ name, control }) => {
         ) : (
           <div className="text-center">
             <ImageComponent
-              src={uploadedFile.src}
+              src={process.env.NEXT_PUBLIC_IKTARAA_IMAGE_URL + uploadedFile.src}
               alt="Uploaded image"
               width={150}
               height={150}

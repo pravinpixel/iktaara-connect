@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import CustomCheckbox from "@/components/common/form-fields/CheckBox";
 import { artistSaveApi } from "@/redux/services/artistService";
 import { useDispatch } from "react-redux";
+import { notify } from "@/utils/helpers/global-function";
 
 const CustomButton = dynamic(
   () => import("@/components/common/form-fields/CustomButton")
@@ -34,6 +35,7 @@ const ArtistContact = () => {
     try {
       const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "tttt");
+      notify(res.message);
     } catch (error) {
       console.log(error, "error");
     }

@@ -10,6 +10,7 @@ import ImageComponent from "@/views/components/ImageComponent";
 import { artistSaveApi } from "@/redux/services/artistService";
 import { useDispatch } from "react-redux";
 import UploadDocumentField from "@/components/common/form-fields/upload/MultiFileUpload";
+import { notify } from "@/utils/helpers/global-function";
 
 const InputField = dynamic(
   () => import("@/components/common/form-fields/InputField")
@@ -32,6 +33,7 @@ const ArtistMedia = () => {
     try {
       const res = await dispatch(artistSaveApi(values)).unwrap();
       console.log(res, "Response from API");
+      notify(res.message);
     } catch (error) {
       console.log(error, "Error from API");
     }
