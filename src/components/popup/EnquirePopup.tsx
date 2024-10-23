@@ -100,6 +100,7 @@ export default function EnquirePopup({ handleClose, open }: EnquirePopupProps) {
                 fieldProps={{
                   placeholder: "Date",
                 }}
+                views={["year", "month"]}
               />
             </div>
             <div className="pt-5">

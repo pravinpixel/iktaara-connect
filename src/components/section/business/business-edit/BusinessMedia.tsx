@@ -8,6 +8,7 @@ import { AppDispatch } from "@/redux/store";
 import { useDispatch } from "react-redux";
 import { businessEditApi } from "@/redux/services/listingService";
 import { notify } from "@/utils/helpers/global-function";
+import UploadDocumentField from "@/components/common/form-fields/upload/MultiFileUpload";
 
 const UploadFile = dynamic(
   () => import("@/components/common/form-fields/UploadFile")
@@ -29,11 +30,12 @@ const BusinessMedia = () => {
     const mediaData = {
       ...values,
       type: "media",
-      business_id: values.business_id,
+      business_id: values.id,
       cover_image: values?.cover_image || "",
       documents: values?.documents || [],
       logo: values?.logo || "",
     };
+    
 
     try {
       await dispatch(businessEditApi(mediaData)).unwrap();
@@ -52,7 +54,7 @@ const BusinessMedia = () => {
               Cover Update
             </span>
           </div>
-          <UploadFile
+          <UploadDocumentField
             control={control}
             multiple={false}
             name={"cover_image"}
@@ -64,7 +66,7 @@ const BusinessMedia = () => {
               Post Update
             </span>
           </div>
-          <UploadFile
+          <UploadDocumentField
             control={control}
             multiple={true}
             name={"documents"}

@@ -33,7 +33,7 @@ export const buisnessListingApi = createAsyncThunk(
 
 export const listingView = createAsyncThunk("listingView", async () => {
   try {
-    const response = await SERVER.get(`/business/10`);
+    const response = await SERVER.get(`/business/12`);
     return response.data;
   } catch (error) {
     
