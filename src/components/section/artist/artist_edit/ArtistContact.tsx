@@ -1,8 +1,8 @@
 import React from "react";
 
-import { useFormContext } from "react-hook-form";
+import { useController, useFormContext } from "react-hook-form";
 
-import { Box } from "@mui/material";
+import { Box, FormHelperText } from "@mui/material";
 
 import dynamic from "next/dynamic";
 import CustomCheckbox from "@/components/common/form-fields/CheckBox";
@@ -26,8 +26,10 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const ArtistContact = () => {
   const {
     handleSubmit,
-    formState: { isSubmitting },
+    formState: { isSubmitting, errors },
   } = useFormContext();
+
+  console.log(errors, "jjjjj");
 
   const dispatch = useDispatch();
   const handleAbout = async (values: any) => {
@@ -51,6 +53,7 @@ const ArtistContact = () => {
             <div className="pt-5">
               <CustomCheckbox label="" name="is_live_online" />
             </div>
+
             <div className="w-full">
               <div className="flex items-center gap-3">
                 <ImageComponent
@@ -62,6 +65,13 @@ const ArtistContact = () => {
                 <div className="text-f18 font-semibold text-ik_bluegreydarken3">
                   <span>LIVE Online</span>
                 </div>
+              </div>
+              <div>
+                {errors?.is_live_online?.message && (
+                  <FormHelperText>
+                    {errors?.is_live_online?.message}
+                  </FormHelperText>
+                )}
               </div>
               <div className="mt-2">
                 <InputField
@@ -89,6 +99,13 @@ const ArtistContact = () => {
                   <span>Home Pickup</span>
                 </div>
               </div>
+              <div>
+                {errors?.is_home_pickup?.message && (
+                  <FormHelperText>
+                    {errors?.is_home_pickup?.message}
+                  </FormHelperText>
+                )}
+              </div>
               <div className="mt-2">
                 <InputField
                   name="home_pickup_description"
@@ -114,6 +131,13 @@ const ArtistContact = () => {
                 <div className="text-f18 font-semibold text-ik_bluegreydarken3">
                   <span>Distance</span>
                 </div>
+              </div>
+              <div>
+                {errors?.is_distance_service?.message && (
+                  <FormHelperText>
+                    {errors?.is_distance_service?.message}
+                  </FormHelperText>
+                )}
               </div>
               <div className="mt-2">
                 <InputField

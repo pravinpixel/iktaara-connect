@@ -686,6 +686,15 @@ export function overrides(theme: Theme) {
         },
       ],
     },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          [`&.${formHelperTextClasses.root}`]: {
+            color: theme.palette.error.main,
+          },
+        },
+      },
+    },
     // MuiInputLabel: {
     // 	styleOverrides: {
     // 		root: {

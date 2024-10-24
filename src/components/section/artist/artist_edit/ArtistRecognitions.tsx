@@ -76,7 +76,7 @@ const ArtistRecognitions = () => {
                     type="text"
                   /> */}
                   <InputField
-                    name={`recognitions.${index}.name`}
+                    name={`recognitions.${index}.title`}
                     label="Title"
                     placeholder="Title"
                     type="text"

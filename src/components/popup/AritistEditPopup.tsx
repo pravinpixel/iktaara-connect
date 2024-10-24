@@ -10,7 +10,8 @@ import SingleUpload from "../common/form-fields/SingleUpload";
 import { essentialApi } from "@/redux/services/essentialService";
 import { useDispatch } from "react-redux";
 import ImageUpload from "../common/form-fields/ImageUpload";
-
+import { artistAboutValidation } from "@/utils/helpers/ValidationSchema";
+import { yupResolver } from "@hookform/resolvers/yup";
 const ArtistEditTabs = dynamic(
   () => import("../section/artist/artist_edit/ArtistEditTabs")
 );
@@ -44,13 +45,16 @@ export default function ArtistEditPopup({
       type: "about",
       // recognitions: [{ name: "", description: "", date: "" }],
       videoUrls: [{ url: "" }],
-      recognitions: artistDetailView?.artist_recogitions || [
-        { name: "", description: "", date: "" },
-      ],
+      recognitions:
+        artistDetailView?.artist_recogitions?.length === 0
+          ? [{ title: "", description: "", date: "" }]
+          : artistDetailView?.artist_recogitions || [
+              { name: "", description: "", date: "" },
+            ],
       artist_id: artistDetailView?.id,
       ...artistDetailView,
     },
-
+    resolver: yupResolver(artistAboutValidation),
     mode: "onSubmit",
   });
 
