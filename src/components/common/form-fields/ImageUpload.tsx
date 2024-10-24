@@ -17,9 +17,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadedFile, setUploadedFile] = useState<any>(
-    profileImage
-      ? process.env.NEXT_PUBLIC_IKTARAA_IMAGE_URL + profileImage
-      : null
+    profileImage ? profileImage : null
   );
 
   const {
@@ -69,7 +67,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         ) : (
           <div className="text-center w-[160px] h-[160px]">
             <Image
-              src={uploadedFile.src}
+              src={
+                typeof uploadedFile === "object"
+                  ? uploadedFile.src
+                  : uploadedFile
+              }
               alt="Uploaded image"
               width={160}
               height={160}
