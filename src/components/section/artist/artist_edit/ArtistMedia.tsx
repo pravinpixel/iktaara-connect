@@ -11,6 +11,8 @@ import { artistSaveApi } from "@/redux/services/artistService";
 import { useDispatch } from "react-redux";
 import UploadDocumentField from "@/components/common/form-fields/upload/MultiFileUpload";
 import { notify } from "@/utils/helpers/global-function";
+import { FormHelperText } from "@mui/material";
+import SingleFileUpload from "@/components/common/form-fields/upload/SingleFileUpload";
 
 const InputField = dynamic(
   () => import("@/components/common/form-fields/InputField")
@@ -21,10 +23,15 @@ const CustomButton = dynamic(
 );
 
 const ArtistMedia = () => {
-  const { handleSubmit, control } = useFormContext();
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useFormContext();
+  console.log(errors, "jjjjj");
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "videoUrls",
+    name: "videos",
   });
   const dispatch = useDispatch();
 
@@ -59,10 +66,15 @@ const ArtistMedia = () => {
           <UploadDocumentField
             control={control}
             multiple={true}
-            name={"documentsnew"}
+            name={"documents"}
           />
+          {errors?.documents?.document_url?.message && (
+            <FormHelperText error>
+              {errors?.documents?.document_url?.message}
+            </FormHelperText>
+          )}
         </div>
-        {fields.map((field, index) => (
+        {/* {fields.map((field, index) => (
           <div className="mb-2" key={field.id}>
             <InputField
               name={`videoUrls[${index}].url`}
@@ -80,12 +92,75 @@ const ArtistMedia = () => {
               />
             </Box>
           </div>
-        ))}
-        <CustomButton
+        ))} */}
+        <Box>
+          <div>
+            {fields.map((field, index) => (
+              <div key={field.id}>
+                <div className=" py-2.5 px-3 rounded-md mb-2.5">
+                  <div className="flex justify-between items-center">
+                    <div className="text-f16 font-normal mb-2">
+                      <p>Videos {index + 1}</p>
+                    </div>
+                    <button type="button" onClick={() => remove(index)}>
+                      <ImageComponent
+                        src={"/assets/icons/delete-icons.svg"}
+                        width={20}
+                        height={20}
+                        alt={"delete"}
+                      />
+                    </button>
+                  </div>
+                  <div className="mb-2">
+                    {/* <InputField
+                    {...register(`recognitions.${index}.name`)}
+                    placeholder="Business Name"
+                    type="text"
+                  /> */}
+                    <InputField
+                      name={`videos[${index}].url`}
+                      label="Video Url"
+                      placeholder="Enter video url"
+                      type="text"
+                    />
+                  </div>
+
+                  <div>
+                    <SingleFileUpload
+                      control={control}
+                      multiple={false}
+                      name={`videos[${index}].documents`}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div className="mt-5">
+              <button
+                type="button"
+                className="bg-ik_bluegreylighten3 rounded-md p-3"
+                onClick={() => append({ url: "", documents: "" })}
+              >
+                <div className="flex gap-1">
+                  <ImageComponent
+                    src={"/assets/icons/add-icons.svg"}
+                    width={26}
+                    height={26}
+                    alt={"add-icons"}
+                  />
+                  <span className="text-f20 font-semibold text-ik_bluegreydarken3">
+                    Add New
+                  </span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </Box>
+        {/* <CustomButton
           className="px-16 py-3.5"
           label="Add"
           onClick={() => append({ url: "" })}
-        ></CustomButton>
+        ></CustomButton> */}
         <Box className="flex justify-start w-full mt-6">
           <CustomButton type="submit" className="px-16 py-3.5" label="Save">
             Save

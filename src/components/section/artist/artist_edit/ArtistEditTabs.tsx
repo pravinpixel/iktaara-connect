@@ -45,7 +45,7 @@ export default function ArtistEditTabs({
           />
           <Tab
             label="Recognitions"
-            value="recognitions"
+            value="recognition"
             className="text-f16 font-normal h-auto min-h-[50px] w-auto max-[145px] px-7"
           />
           <Tab
@@ -63,7 +63,7 @@ export default function ArtistEditTabs({
         <TabPanel value="about" className="px-0">
           <ArtistAbout essentialList={data} />
         </TabPanel>
-        <TabPanel value="recognitions" className="px-0">
+        <TabPanel value="recognition" className="px-0">
           <ArtistRecognitions />
         </TabPanel>
         <TabPanel value="contact" className="px-0">

@@ -29,8 +29,6 @@ const ArtistContact = () => {
     formState: { isSubmitting, errors },
   } = useFormContext();
 
-  console.log(errors, "jjjjj");
-
   const dispatch = useDispatch();
   const handleAbout = async (values: any) => {
     console.log(values, "values");

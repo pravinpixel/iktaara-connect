@@ -44,7 +44,7 @@ export default function ArtistEditPopup({
     defaultValues: {
       type: "about",
       // recognitions: [{ name: "", description: "", date: "" }],
-      videoUrls: [{ url: "" }],
+      videos: [{ url: "", documents: "" }],
       recognitions:
         artistDetailView?.artist_recogitions?.length === 0
           ? [{ title: "", description: "", date: "" }]
@@ -52,9 +52,10 @@ export default function ArtistEditPopup({
               { name: "", description: "", date: "" },
             ],
       artist_id: artistDetailView?.id,
+      documents: artistDetailView?.artist_post_documents,
       ...artistDetailView,
     },
-    resolver: yupResolver(artistAboutValidation),
+    // resolver: yupResolver(artistAboutValidation),
     mode: "onSubmit",
   });
 

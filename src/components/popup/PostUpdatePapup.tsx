@@ -15,6 +15,7 @@ import { FormProvider, useForm } from "react-hook-form";
 // import ImageUpload from "../ImageUpload";
 
 import dynamic from "next/dynamic";
+import UploadDocumentField from "../common/form-fields/upload/MultiFileUpload";
 
 const UploadFile = dynamic(() => import("../common/form-fields/UploadFile"));
 const InputField = dynamic(() => import("../common/form-fields/InputField"));
@@ -41,7 +42,9 @@ export default function PostUpdatePapup({ handleClose, open }: UpdateProps) {
 
   const { handleSubmit, control } = methods;
 
-  const handleAbout = async () => {};
+  const handleShareUpdate = async (values) => {
+    console.log(values, "values");
+  };
   return (
     <Dialog
       open={open ?? false}
@@ -73,13 +76,17 @@ export default function PostUpdatePapup({ handleClose, open }: UpdateProps) {
       <DialogContent className="pt-0">
         <section>
           <FormProvider {...methods}>
-            <form onSubmit={handleSubmit(handleAbout)}>
+            <form onSubmit={handleSubmit(handleShareUpdate)}>
               <div className="mb-3">
-                <UploadFile multiple={true} control={control} name={""} />
+                <UploadDocumentField
+                  control={control}
+                  multiple={true}
+                  name={"documents"}
+                />
               </div>
               <div className="mb-3">
                 <InputField
-                  name="post-title"
+                  name="title"
                   label="Post Title"
                   placeholder="Enter Post Title"
                   type="text"
@@ -87,7 +94,7 @@ export default function PostUpdatePapup({ handleClose, open }: UpdateProps) {
               </div>
               <div className="mb-3">
                 <InputField
-                  name="post-description"
+                  name="description"
                   label="Post Description"
                   placeholder="Enter Post Description"
                   type="text"

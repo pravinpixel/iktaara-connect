@@ -26,48 +26,55 @@ const artistAboutValidation = yup.object().shape({
     .string()
     .max(300, "Description should be less than 300 character")
     .required("Description is required"),
-    perform_languages: whenStepIs("about",yup.array().required("Select Perform Language")),
-    instruments:whenStepIs("about",yup.array().required("Select Instrument Type")),
-    perform_genere: whenStepIs("about",yup.array().required("Select Perform Genere")),
-    prefered_events: whenStepIs("about",yup.array().required("Select Preferred Events")),
+    // perform_languages: whenStepIs("about",yup.array().required("Select Perform Language")),
+    // instruments:whenStepIs("about",yup.array().required("Select Instrument Type")),
+    // perform_genere: whenStepIs("about",yup.array().required("Select Perform Genere")),
+    // prefered_events: whenStepIs("about",yup.array().required("Select Preferred Events")),
     city:whenStepIs("about",yup.string().required("City is Required")),
     location: whenStepIs("about",yup.string().required("Location is Required")),
     pincode: whenStepIs("about",yup.string().required("Pincode is Required")),
-    recognitions: yup.array().of(
-      yup.object().shape({
-        title: whenStepIs("recognitions",yup
-          .string()
-          .required("Title is required")),
-          // .matches(/^[aA-zZ\s]+$/, "Numbers are not allowed  "),
-        description: whenStepIs("recognitions",yup
-          .string()
-          .required("Description is required")),
-          // .matches(/^[0-9]+$/, "Must be only digits"),
-        date: whenStepIs("recognitions",yup
-          .string()
-          .required("Date is required")),
-          // .matches(/^\d+(\.\d+)?$/, "Must be only digits"),
-      })
+
+    recognitions: whenStepIs(
+      "recognition",
+      yup.array().of(
+        yup.object().shape({
+          title: yup.string().required("Title is required"),
+          description: yup.string().required("Description is required"),
+          date: yup.string().required("Date is required"),
+        })
+      )
     ),
-    is_live_online: yup
+    
+    is_live_online: whenStepIs("contact",yup
     .number()
     .oneOf([1], "Please select the checkbox")
-    .required("Please select the checkbox"),
+    .required("Please select the checkbox")),
   
 
     live_online_description: whenStepIs("contact",yup.string().required("Description is required")),
-    is_home_pickup: yup
+    is_home_pickup:whenStepIs("contact", yup
     .number()
     .oneOf([1], "Please select the checkbox") 
-    .required("Please select the checkbox"),
+    .required("Please select the checkbox")),
 
     home_pickup_description: whenStepIs("contact",yup.string().required("Description is required")),
-    is_distance_service: yup
+    is_distance_service: whenStepIs("contact",yup
     .number()
     .oneOf([1], "Please select the checkbox") 
-    .required("Please select the checkbox"),
+    .required("Please select the checkbox")),
     
     distance_service_description: whenStepIs("contact",yup.string().required("Description is required")),
+    // documents: whenStepIs(
+    //   "media", 
+    //     yup.object().shape({
+    //       document_url: yup
+    //         .string()
+    //         .url("Invalid URL format")
+    //         .required("Document URL is required"),
+    //       name: yup.string().required("Document name is required"),
+    //     })
+    //   ).min(1, "At least one document is required") 
+    
 });
 
 export { businessSchema,artistAboutValidation };

@@ -5,7 +5,7 @@
  * It used for uploading documents in Form Fields
  *
  */
-import { Ref, useRef, forwardRef, useState } from "react";
+import { Ref, useRef, forwardRef } from "react";
 import {
   Path,
   Control,
@@ -42,14 +42,11 @@ const convertUrl = (document: DocumentsType) => {
   return name;
 };
 
-const UploadDocumentField = (
+const SingleFileUpload = (
   props: any & { control: Control; multiple: boolean }
 ) => {
   const { name, control, multiple = false } = props;
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [deletedFileIds, setDeletedFileIds] = useState<string[]>([]);
-  console.log(deletedFileIds, "jjjjj");
-
   const {
     field: { ref: fieldRef, ...field },
     fieldState: { error },
@@ -59,7 +56,6 @@ const UploadDocumentField = (
     defaultValue: multiple ? [] : "",
   });
   // const isViewPage = useWatch({ control, name: PROJECT_CONSTANTS.isViewPage as Path<T> });
-  console.log(field.value, "kkkkkk");
 
   const FileName = multiple
     ? (field?.value as unknown as File[])?.length + " File Selected"
@@ -74,15 +70,8 @@ const UploadDocumentField = (
         ]);
       } else field.onChange(fileInputRef?.current?.files?.[0]);
   };
-  const handleDeleteImage = (index: number) => {
-    const updatedImages = (field?.value as unknown as File[]).filter(
-      (_, i) => i !== index
-    );
-    // Add the deleted file ID (or name) to the state
-    const deletedFile = (field?.value as unknown as File[])[index];
-    const deletedFileName = convertUrl(deletedFile);
-    setDeletedFileIds((prev) => [...prev, deletedFileName]);
-    field.onChange(updatedImages);
+  const handleDeleteImage = () => {
+    field.onChange("");
   };
   return (
     <section>
@@ -98,7 +87,7 @@ const UploadDocumentField = (
           borderStyle: "dashed",
           borderRadius: "6px",
           cursor: "pointer",
-          minHeight: "195px",
+          minHeight: "95px",
           background: "#FFEFF2",
         }}
         onClick={() => {
@@ -115,41 +104,21 @@ const UploadDocumentField = (
           </span>
         </div>
       </Box>
-      {multiple ? (
-        <>
-          {" "}
-          {(field?.value as unknown as File[])?.map((row, index) => (
-            // eslint-disable-next-line react/jsx-key
-            <div className="flex items-center gap-2 mt-2" key={index}>
-              <p className="text-f16">{convertUrl(row)}</p>
-              <Box onClick={() => handleDeleteImage(index)}>
-                <ImageComponent
-                  src="/assets/icons/delete-icons.svg"
-                  alt="delete"
-                  width={20}
-                  height={20}
-                  className="cursor-pointer"
-                />
-              </Box>
-            </div>
-          ))}{" "}
-        </>
-      ) : (
-        <div className="flex items-center gap-2 mt-2">
-          <p className="text-f16">{convertUrl(field.value)}</p>
-          {field.value && (
-            <Box onClick={() => handleDeleteImage(0)}>
-              <ImageComponent
-                src="/assets/icons/delete-icons.svg"
-                alt="delete"
-                width={20}
-                height={20}
-                className="cursor-pointer"
-              />
-            </Box>
-          )}
-        </div>
-      )}
+
+      <div className="flex items-center gap-2 mt-2">
+        <p className="text-f16">{convertUrl(field.value)}</p>
+        {field.value && (
+          <Box onClick={() => handleDeleteImage()}>
+            <ImageComponent
+              src="/assets/icons/delete-icons.svg"
+              alt="delete"
+              width={20}
+              height={20}
+              className="cursor-pointer"
+            />
+          </Box>
+        )}
+      </div>
 
       <input
         type="file"
@@ -162,4 +131,4 @@ const UploadDocumentField = (
   );
 };
 
-export default UploadDocumentField;
+export default SingleFileUpload;

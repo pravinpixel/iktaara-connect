@@ -24,8 +24,14 @@ const InputField = dynamic(
 );
 
 const ArtistRecognitions = () => {
-  const { control, register, handleSubmit } = useFormContext();
+  const {
+    control,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useFormContext();
 
+  console.log(errors, "jjjjj");
   const { fields, append, remove } = useFieldArray({
     control,
     name: "recognitions",

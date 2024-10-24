@@ -9,16 +9,11 @@ type CheckboxProps = {
 const CustomCheckbox: React.FC<CheckboxProps> = ({ label, name }) => {
   const theme = useTheme();
   const { control } = useFormContext();
-  const {
-    field,
-    fieldState: { error },
-  } = useController({
+  const { field } = useController({
     control,
     name,
     defaultValue: 0,
   });
-  const errorMessage = error?.message;
-  console.log(error, "error");
 
   return (
     <>

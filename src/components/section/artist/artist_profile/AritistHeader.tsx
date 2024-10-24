@@ -65,10 +65,7 @@ const AritistHeaderComponents = ({
             <div className="h-[132px] w-[132px] flex items-center  ">
               {artistDetailView.profile_pic !== null ? (
                 <ImageComponent
-                  src={
-                    process.env.NEXT_PUBLIC_IKTARAA_IMAGE_URL +
-                    artistDetailView.profile_pic
-                  }
+                  src={artistDetailView.profile_pic}
                   width={132}
                   height={132}
                   alt={"music-logo"}
