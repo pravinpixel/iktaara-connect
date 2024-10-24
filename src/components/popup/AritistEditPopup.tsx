@@ -43,19 +43,19 @@ export default function ArtistEditPopup({
   const methods = useForm({
     defaultValues: {
       type: "about",
-      // recognitions: [{ name: "", description: "", date: "" }],
-      videos: [{ url: "", documents: "" }],
-      recognitions:
-        artistDetailView?.artist_recogitions?.length === 0
-          ? [{ title: "", description: "", date: "" }]
-          : artistDetailView?.artist_recogitions || [
-              { name: "", description: "", date: "" },
-            ],
-      artist_id: artistDetailView?.id,
-      documents: artistDetailView?.artist_post_documents,
-      ...artistDetailView,
+    // videos: artistDetailView?.videos?.length > 0 ? artistDetailView?.videos :[{url:"",thumbnail:""}],
+    //   ...artistDetailView,
+    //   recognitions:
+    //     artistDetailView?.artist_recogitions?.length === 0
+    //       ? [{ title: "", description: "", date: "" }]
+    //       : artistDetailView?.artist_recogitions || [
+    //           { name: "", description: "", date: "" },
+    //         ],
+    //   artist_id: artistDetailView?.id,
+    //   documents: artistDetailView?.documents,
+
     },
-    // resolver: yupResolver(artistAboutValidation),
+    resolver: yupResolver(artistAboutValidation),
     mode: "onSubmit",
   });
 

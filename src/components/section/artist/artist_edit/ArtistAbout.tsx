@@ -134,7 +134,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
           <MultipleSelectField
             label={"Performing Languages"}
             name={"perform_languages"}
-            placeholder={"Select Languages"}
+            // placeholder={"Select Languages"}
             options={essentialList?.languages}
           />
         </div>
@@ -142,7 +142,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
           <MultipleSelectField
             label={"Instruments"}
             name={"instruments"}
-            placeholder={"Select Instruments"}
+            // placeholder={"Select Instruments"}
             // options={[
             //   { id: 10, name: "Engilsh" },
             //   { id: 20, name: "Hindi" },
@@ -156,7 +156,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
           <MultipleSelectField
             label={"Genre"}
             name={"perform_genere"}
-            placeholder={"Select Genre"}
+            // placeholder={"Select Genre"}
             options={essentialList?.genere}
           />
         </div>
@@ -164,7 +164,7 @@ const ArtistAbout = ({ essentialList }: { essentialList: any }) => {
           <MultipleSelectField
             label={"Preferred Events"}
             name={"prefered_events"}
-            placeholder={"Select Events"}
+            // placeholder={"Select Events"}
             options={essentialList?.event_type}
           />
         </div>

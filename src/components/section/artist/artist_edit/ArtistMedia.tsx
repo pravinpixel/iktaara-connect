@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { FormProvider, useForm } from "react-hook-form";
 
 import { Box } from "@mui/material";
@@ -26,9 +26,13 @@ const ArtistMedia = () => {
   const {
     handleSubmit,
     control,
+    setValue,
     formState: { errors },
   } = useFormContext();
-  console.log(errors, "jjjjj");
+
+  console.log(errors,"lllll");
+  
+
   const { fields, append, remove } = useFieldArray({
     control,
     name: "videos",
@@ -45,7 +49,9 @@ const ArtistMedia = () => {
       console.log(error, "Error from API");
     }
   };
-
+  useEffect(() => {
+    setValue("videos", [{ url: "", thumbnail: "" }]);
+  }, [setValue]);
   return (
     <section>
       <Box component={"form"} onSubmit={handleSubmit(handleMedia)}>
@@ -68,9 +74,9 @@ const ArtistMedia = () => {
             multiple={true}
             name={"documents"}
           />
-          {errors?.documents?.document_url?.message && (
+          {errors?.documents?.message && (
             <FormHelperText error>
-              {errors?.documents?.document_url?.message}
+              {errors?.documents?.message}
             </FormHelperText>
           )}
         </div>
@@ -129,8 +135,9 @@ const ArtistMedia = () => {
                     <SingleFileUpload
                       control={control}
                       multiple={false}
-                      name={`videos[${index}].documents`}
+                      name={`videos[${index}].thumbnail`}
                     />
+                   
                   </div>
                 </div>
               </div>
@@ -139,7 +146,7 @@ const ArtistMedia = () => {
               <button
                 type="button"
                 className="bg-ik_bluegreylighten3 rounded-md p-3"
-                onClick={() => append({ url: "", documents: "" })}
+                onClick={() => append({ url: "", thumbnail: "" })}
               >
                 <div className="flex gap-1">
                   <ImageComponent

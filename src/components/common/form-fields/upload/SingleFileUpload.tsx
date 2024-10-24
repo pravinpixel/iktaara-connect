@@ -26,6 +26,8 @@ import {
 
 import { stringFileName } from "@/utils/helpers/global-function";
 import ImageComponent from "../ImageComponent";
+import { log } from "console";
+import { Login } from "@mui/icons-material";
 
 type FormValues = {
   [key: string]: unknown;
@@ -56,6 +58,7 @@ const SingleFileUpload = (
     defaultValue: multiple ? [] : "",
   });
   // const isViewPage = useWatch({ control, name: PROJECT_CONSTANTS.isViewPage as Path<T> });
+
 
   const FileName = multiple
     ? (field?.value as unknown as File[])?.length + " File Selected"
@@ -119,7 +122,11 @@ const SingleFileUpload = (
           </Box>
         )}
       </div>
-
+ {error?.message && (
+            <FormHelperText>
+              {error?.message}
+            </FormHelperText>
+          )}
       <input
         type="file"
         ref={fileInputRef}

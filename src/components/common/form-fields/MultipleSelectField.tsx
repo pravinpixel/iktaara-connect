@@ -19,13 +19,13 @@ const EssentailTypeListResponse = [
   { id: 40, name: "Forty" },
 ];
 
-const renderValue = (label: string, value?: string) => {
-  return !value
-    ? {
-        renderValue: () => <Typography>{`Select ${label}`}</Typography>,
-      }
-    : {};
+const renderValue = (label: string) => (selected: any) => {
+  if (selected.length === 0) {
+    return <Typography>{`Select ${label}`}</Typography>;
+  }
+  return selected.map((value: string) => value).join(", ");
 };
+
 
 const MultipleSelectField = (props: {
   label: string;
@@ -75,7 +75,7 @@ const MultipleSelectField = (props: {
               },
             },
           }}
-          {...renderValue(label, field?.value || "")}
+      renderValue={renderValue(label)}
         >
           {dropDowns?.map((d) => (
             <MenuItem value={String(d?.id)} key={d?.id}>

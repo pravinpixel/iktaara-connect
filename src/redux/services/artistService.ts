@@ -16,6 +16,21 @@ export const artistSaveApi = createAsyncThunk(
     }
   );
 
+  export const artistShareUpdateApi = createAsyncThunk(
+    "artistShareUpdateApi",
+    async (params, thunkAPI) => {
+   
+      try {
+        const response = await SERVER.postForm(`/artist/save`, 
+          params
+        );
+        return response?.data;
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error );
+      }
+    }
+  );
+
 
 export const artistViewApi = createAsyncThunk(
   "artistView",

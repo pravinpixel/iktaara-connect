@@ -39,6 +39,7 @@ const EssentailTypeListResponse = [
 ];
 
 const renderValue = (label: string, value?: string) => {
+    console.log(label, value, "valuess");
   return !value
     ? {
         renderValue: () => <Typography>{`Select ${label}`}</Typography>,

@@ -11,7 +11,7 @@ const businessSchema = yup.object().shape({
     .max(300, "Description should be less than 300 character")
     .required("Description is required"),
 });
-const whenStepIs = (expectedStep: string, schema: yup.StringSchema) => {
+const whenStepIs = (expectedStep: string, schema: yup.StringSchema<any>) => {
 	return yup
 		.string()
 		.when("type", ([type]: string[]) => (type === expectedStep ? schema : yup.string().notRequired()));
@@ -22,14 +22,17 @@ const artistAboutValidation = yup.object().shape({
   email: whenStepIs("about",yup.string().required("Email is required")),
   mobile: whenStepIs("about",yup.string().required("Mobile Number is Required")),
   artist_type: whenStepIs("about",yup.string().required("Select Artist specialist")),
-  artist_description: yup
+  artist_description:whenStepIs("about",yup
     .string()
     .max(300, "Description should be less than 300 character")
-    .required("Description is required"),
-    // perform_languages: whenStepIs("about",yup.array().required("Select Perform Language")),
-    // instruments:whenStepIs("about",yup.array().required("Select Instrument Type")),
-    // perform_genere: whenStepIs("about",yup.array().required("Select Perform Genere")),
-    // prefered_events: whenStepIs("about",yup.array().required("Select Preferred Events")),
+    .required("Description is required")),
+ perform_languages: whenStepIs(
+    "about",
+    yup.array().min(1, "Select Perform Language").required("Select Perform Language")
+  ),
+    instruments:whenStepIs("about",yup.array().min(1, "Select Instruments").required("Select Instrument Type")),
+    perform_genere: whenStepIs("about",yup.array().min(1, "Select Perform Genre").required("Select Perform Genere")),
+    prefered_events: whenStepIs("about",yup.array().min(1, "Select Preferred Events").required("Select Preferred Events")),
     city:whenStepIs("about",yup.string().required("City is Required")),
     location: whenStepIs("about",yup.string().required("Location is Required")),
     pincode: whenStepIs("about",yup.string().required("Pincode is Required")),
@@ -64,16 +67,21 @@ const artistAboutValidation = yup.object().shape({
     .required("Please select the checkbox")),
     
     distance_service_description: whenStepIs("contact",yup.string().required("Description is required")),
-    // documents: whenStepIs(
-    //   "media", 
-    //     yup.object().shape({
-    //       document_url: yup
-    //         .string()
-    //         .url("Invalid URL format")
-    //         .required("Document URL is required"),
-    //       name: yup.string().required("Document name is required"),
-    //     })
-    //   ).min(1, "At least one document is required") 
+     documents: whenStepIs("media",yup.array().min(1, "Upload Minimum 1 Document").required("Upload Documents")),
+
+     videos: whenStepIs("media",yup
+    .array()
+    .of(
+      yup.object().shape({
+        url: yup
+          .string()
+          .url("Invalid video URL")
+          .required("Video URL is required"),
+        thumbnail: yup.string().min(1, "Upload Minimum 1 Document").required("Thumbnail is required"), // This assumes thumbnail is an uploaded file
+       
+      })
+    ))
+   
     
 });
 

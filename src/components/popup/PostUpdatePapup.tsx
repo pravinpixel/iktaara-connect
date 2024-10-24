@@ -16,6 +16,9 @@ import { FormProvider, useForm } from "react-hook-form";
 
 import dynamic from "next/dynamic";
 import UploadDocumentField from "../common/form-fields/upload/MultiFileUpload";
+import { artistShareUpdateApi } from "@/redux/services/artistService";
+import { useDispatch } from "react-redux";
+import { notify } from "@/utils/helpers/global-function";
 
 const UploadFile = dynamic(() => import("../common/form-fields/UploadFile"));
 const InputField = dynamic(() => import("../common/form-fields/InputField"));
@@ -41,10 +44,19 @@ export default function PostUpdatePapup({ handleClose, open }: UpdateProps) {
   const methods = useForm();
 
   const { handleSubmit, control } = methods;
-
-  const handleShareUpdate = async (values) => {
+  const dispatch = useDispatch();
+  const handleShareUpdate = async (values : any) => {
     console.log(values, "values");
+        try {
+      const res = await dispatch(artistShareUpdateApi(values)).unwrap();
+      console.log(res, "tttt");
+      notify(res);
+      
+    } catch (error) {
+      console.log(error, "error");
+    }
   };
+  
   return (
     <Dialog
       open={open ?? false}
